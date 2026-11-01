@@ -9,9 +9,9 @@ const names=['universal-ai-film-director','film-storytelling','film-visual-direc
 
 test('README introduces product, real install commands and versioned releases',()=>{
  const readme=read('README.md');
- for(const term of ['## 🚀 Quick start','## 📦 Installation','## 🎥 How filmmaking works','## 🎬 Meet the film crew','## 🤖 Agent compatibility','## 🏷️ Versions & releases','## ❓ FAQ','git clone','npx skills add ./skills/universal-ai-film-director','v1.0.0','v2.0.0','private','not a bundled video-rendering service'])
+ for(const term of ['## 🚀 Quick start','## 📦 Installation','## 🎥 How filmmaking works','## 🎬 Meet the film crew','## 🤖 Agent compatibility','## 🏷️ Versions & releases','## ❓ FAQ','npx skills add montadhahri/universal-ai-film-director --skill universal-ai-film-director','v1.0.0','v2.0.0','private','not a bundled video-rendering service'])
   assert(readme.toLowerCase().includes(term.toLowerCase()),'README missing '+term);
- for(const name of names)assert(readme.includes('npx skills add ./skills/'+name),'Missing installation for '+name);
+ for(const name of names)assert(readme.includes('npx skills add montadhahri/universal-ai-film-director --skill '+name),'Missing installation for '+name);
 });
 test('each specialist has a task-specific, nontrivial and discoverable worked example',()=>{
  for(const name of names){
@@ -38,7 +38,6 @@ test('public-ready Quick Start is usable without private-repository instructions
  assert(readme.includes("npx skills add montadhahri/universal-ai-film-director --skill '*'"));
  assert(readme.includes('npx skills add montadhahri/universal-ai-film-director --list'));
  assert(install.includes('git clone https://github.com/montadhahri/universal-ai-film-director.git'));
- assert(readme.includes('npx skills add ./skills/universal-ai-film-director'));
  assert(!readme.includes('Clone the repository using GitHub credentials'));
  assert(!readme.includes('authenticated local checkout'));
  assert(readme.includes('until publication') || readme.includes('until it becomes public') || readme.includes('until publication, repository access is required'));
