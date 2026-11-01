@@ -12,7 +12,7 @@
 ![Video](https://img.shields.io/badge/video%20rendering-external%20tool-required-informational)
 [![Validate skill](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml/badge.svg)](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml)
 
-[**Roadmap**](docs/ROADMAP.md) · [**Illustrative storyboard (not a generated film)**](examples/flagship-film/README.md) · [**Release readiness**](docs/release-checklist.md) · [**Changelog**](CHANGELOG.md) · [**Get started**](#-quick-start) · [**Install**](#-installation-by-agent) · [**Full example**](#-complete-walkthrough-a-90-second-film) · [**File guide**](#-what-each-file-does) · [**Troubleshooting**](#-troubleshooting) · [**Contribute**](CONTRIBUTING.md)
+[**Roadmap**](docs/ROADMAP.md) · [**v2.0.0 plan**](docs/V2-ROADMAP.md) · [**Illustrative storyboard (not a generated film)**](examples/flagship-film/README.md) · [**Release readiness**](docs/release-checklist.md) · [**Changelog**](CHANGELOG.md) · [**Get started**](#-quick-start) · [**Install**](#-installation-by-agent) · [**Full example**](#-complete-walkthrough-a-90-second-film) · [**File guide**](#-what-each-file-does) · [**Troubleshooting**](#-troubleshooting) · [**Contribute**](CONTRIBUTING.md)
 
 </div>
 

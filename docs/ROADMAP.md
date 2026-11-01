@@ -111,13 +111,11 @@ the now-completed migration plan without erasing its history in Git.
 | High-quality AI-generated 30s film using the skill | No accepted output; PR #22 rejected | NOT DONE |
 | Security / privacy / release owner sign-off | v1.0.0 review pending | HOLD |
 
-### v2.0.0 design direction (not implemented)
+### v2.0.0 design direction (planning only)
 
-Consider an orchestrator Director skill with specialist screenplay, visual
-direction, cinematography, video production, sound, and continuity/QA skills.
-The design must preserve the portable single-agent mode; cross-skill invocation
-is agent-platform dependent. No v2 implementation, release or migration is
-authorized by this roadmap note.
+See the dedicated [v2.0.0 modular Director and specialist-skills roadmap](V2-ROADMAP.md).
+This is planning only. No v2 implementation, migration, public release or
+production authorization is granted by adding the document.
 
 **No tags, release publishing, visibility changes or PROD GO** without
 separate explicit owner authorization.
