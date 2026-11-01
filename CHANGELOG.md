@@ -8,6 +8,7 @@ v0.1.0 is listed under **Unreleased** until a release is explicitly approved.
 ## [Unreleased]
 
 ### Fixed
+- Align Project Bible JSON Schema with documented approval-evidence and LOCKED-shot invariants; expand Markdown Project Bible into a provenance- and checkpoint-aware template (PR #23).
 - Repair two package-related Markdown link failures: link to the installable `SKILL.md` rather than a directory, and keep the packaged agent compatibility reference self-contained (PR #20 CI fix).
 - Fix invalid `PLANNED` shot states in templates and clarify new-project versus checkpoint-resume behavior in the skill and director instructions; add contract regression checks (PR #19).
 - Normalize only known malformed-JSON parser diagnostics when comparing Python and Node parity; behavioral errors and process exit codes remain strictly compared (PR #17 CI fix).
