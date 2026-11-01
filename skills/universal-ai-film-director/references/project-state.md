@@ -57,3 +57,7 @@ When the host can execute local Node.js and persist its own project JSON, the re
 ## Stage and timeline validation
 
 The production planning engine is described in `docs/production-pipeline.md` and implemented in optional `scripts/production-pipeline.js`. Move in order: discovery, script, visual_bible, storyboard, sound, generator. Do not skip screenplay, visual or storyboard user approval gates. The `generate`, `review` and `delivery` states are declared for future provider/media-capable workflows but **blocked in the planning-only engine**. Before entering sound, require a validated storyboard with unique shot IDs, integer millisecond boundaries, complete coverage and no unaccounted overlap. The initial validator supports cuts only; a dissolve must have an explicit timed transition model before acceptance. Provider accounts, media jobs and publication are never implied.
+
+## Audio and dependency planning
+
+Optional `audio_timeline` and `dependency_graph` objects extend the canonical Project Bible. Use `scripts/audio-continuity.js` where Node.js is available; otherwise check the same invariants manually. Silence, required narration and cross-track overlaps are distinct concepts. Dependency edges point **from prerequisite to dependent**. An audio-only repair must not change locked visuals; a proposed change involving locked picture requires new scoped authorization. Reports are plans, not evidence of rendering or inspection.

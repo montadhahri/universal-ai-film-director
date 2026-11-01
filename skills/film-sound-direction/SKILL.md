@@ -26,3 +26,7 @@ Consult [sound craft](references/guide.md).
 ## Worked example and acceptance scenario
 
 For a concrete stage-specific example, handoff output and failure case, read the [illustrative production example](references/worked-example.md) when designing or testing a comparable scene. It is not approval or real media evidence.
+
+## Optional deterministic audio timing checks
+
+For Node.js-compatible projects, validate an audio plan using `scripts/audio-continuity.js` and the Project Bible `audio_timeline` contract. Required narration windows must be filled explicitly, while silence and cross-track mixing use deliberate timing rules. Audio cue plans are **not generated assets**. For a reported dropout propose a scoped repair and preserve picture; never overwrite the existing approved cue sheet automatically. See `docs/audio-continuity.md` when repository files are available.
