@@ -8,7 +8,7 @@ function intersects(a,b){return a.start_ms<b.end_ms&&b.start_ms<a.end_ms}
 // Whitespace-token convention: contractions count as one word. No linguistic word segmentation claim.
 function countNarrationWords(text){
  if(typeof text!=='string')throw Error('Narration text must be a string');
- return text.trim()?text.trim().split(/\\s+/u).length:0;
+ return text.trim()?text.trim().split(/\s+/u).length:0;
 }
 function reviewDraft(d){
  if(!d||!positive(d.duration_ms)||!Array.isArray(d.beats)||d.beats.length===0||!Array.isArray(d.narration))
