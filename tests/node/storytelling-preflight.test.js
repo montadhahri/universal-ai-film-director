@@ -91,8 +91,8 @@ test('REG-05 audio-only declared revision preserves locked screenplay',()=>{
  protected_versions:[{id:'SCREENPLAY-V2'},{id:'VISUAL-V2'}]});
  assert.equal(r.status,'READY_FOR_DIRECTOR_REVIEW');assert.equal(r.approval_granted,false);
 });
-test('REG-01 lighthouse 11-word VO at 100 WPM exceeds six-second cue',()=>{
- const d=lighthouse();d.narration=[vo(39000,45000,'Some lights are left on for someone who may return.',100)];
+test('REG-01 lighthouse 10-word VO at 90 WPM exceeds six-second cue',()=>{
+ const d=lighthouse();d.narration=[vo(39000,45000,'Some lights are left on for someone who may return.',90)];
  assert(reviewDraft(d).issues.some(x=>x.includes('Narration does not fit')));
 });
 test('REG-02 compressed musician handover is an editorial warning',()=>{
