@@ -29,8 +29,13 @@ class FlagshipTests(unittest.TestCase):
         self.assertIn("explicit owner authorization", (ROOT/"docs"/"release-checklist.md").read_text())
     def test_installation_documented(self):
         self.assertIn("npx skills add", (ROOT/"docs"/"end-to-end-workflow.md").read_text())
-    def test_roadmap_is_not_prematurely_merged(self):
-        self.assertIn("In review", (ROOT/"docs"/"ROADMAP.md").read_text())
+    def test_roadmap_phase_merged_but_release_not_approved(self):
+        roadmap = (ROOT/"docs"/"ROADMAP.md").read_text()
+        phase8 = next(line for line in roadmap.splitlines()
+                      if line.startswith("| 8 |"))
+        self.assertIn("Merged", phase8)
+        self.assertIn("release not approved", phase8)
+        self.assertIn("Production GO is not authorized", roadmap)
     def test_changelog_updated(self):
         self.assertIn("Phase 8", (ROOT/"CHANGELOG.md").read_text())
 

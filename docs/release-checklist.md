@@ -3,6 +3,13 @@
 **Current state:** release **candidate preparation**, NOT a released v1.0.
 Owner approval is required to tag or publish any version.
 
+## Private pre-production gate (NO PROD GO)
+
+- [ ] Keep GitHub repository PRIVATE; no visibility change.
+- [ ] Run [private validation workflow](private-preprod-validation.md).
+- [ ] Capture real-agent evidence separately; synthetic tests are insufficient.
+- [ ] Require a distinct explicit production GO after validation.
+
 ## Repository and CI
 - [ ] All existing baseline files preserved; no unauthorized deletions.
 - [ ] Run `python tests/regression/check_preservation.py`.
