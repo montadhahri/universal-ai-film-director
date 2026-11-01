@@ -3,7 +3,7 @@
 Follow the [flagship example](../examples/flagship-film/README.md) as a
 **synthetic demonstration**, not evidence of production.
 
-1. **Install:** use `npx skills add montadhahri/universal-ai-film-director -g`
+1. **Install:** use `npx skills add https://github.com/montadhahri/universal-ai-film-director/tree/main/skills/universal-ai-film-director -g`
    for a supported agent with GitHub access, or use manual instructions.
 2. **Discover:** one question per turn; capture audience, tone, length,
    language, rights and generator constraints without inventing facts.

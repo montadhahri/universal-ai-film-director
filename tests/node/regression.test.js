@@ -1,4 +1,4 @@
-// Node.js regression parity for Python static/semantic suites.
+// Node.js semantic/static regression tests migrated from the original Python suites.
 // No model, video generator or network execution occurs here.
 const test = require('node:test');
 const assert = require('node:assert/strict');
