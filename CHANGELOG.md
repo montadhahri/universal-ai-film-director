@@ -8,6 +8,7 @@ v0.1.0 is listed under **Unreleased** until a release is explicitly approved.
 ## [Unreleased]
 
 ### Fixed
+- Normalize only known malformed-JSON parser diagnostics when comparing Python and Node parity; behavioral errors and process exit codes remain strictly compared (PR #17 CI fix).
 - Replace the obsolete Phase 8 `In review` regression assertion with checks that Phase 8 is merged and production release remains unauthorized (PR #11 CI fix).
 
 ### Added

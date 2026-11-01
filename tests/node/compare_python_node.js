@@ -10,9 +10,19 @@ function invoke(cmd,args) {
  if(p.error)throw new Error(cmd+': '+p.error.message);
  return {exit:p.status,stdout:p.stdout,stderr:p.stderr};
 }
+// Only normalize known JSON-parser diagnostics when parsing failed before
+// a scenario was extracted. Keep behavioral validation errors byte-for-byte.
+function normalizeErrors(result) {
+  if (result.scenario !== undefined || result.passed !== false ||
+      !Array.isArray(result.errors) || result.errors.length !== 1) return result.errors;
+  const message = result.errors[0];
+  if (/^(?:Expecting property name enclosed in double quotes|Expected property name or '\\}' in JSON)/.test(message))
+    return ['MALFORMED_JSON_OBJECT_KEY'];
+  return result.errors;
+}
 function normalized(report){
  return {suite:report.suite,model_executed:report.model_executed,total:report.total,passed:report.passed,failed:report.failed,
- results:report.results.map(x=>({file:x.file,scenario:x.scenario??null,provenance:x.provenance??null,passed:x.passed,errors:x.errors}))};
+ results:report.results.map(x=>({file:x.file,scenario:x.scenario??null,provenance:x.provenance??null,passed:x.passed,errors:normalizeErrors(x)}))};
 }
 function compare(dir,strict=false){
  const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'film-parity-'));
@@ -56,4 +66,4 @@ function main(){
  return report.passed?0:1;
 }
 if(require.main===module){try{process.exitCode=main();}catch(e){console.error(e.stack);process.exitCode=1;}}
-module.exports={normalized,compare,main};
+module.exports={normalized,normalizeErrors,compare,main};
