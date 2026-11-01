@@ -36,3 +36,11 @@ test('Video guidance and packet require visible transfer with retained state',()
  assert.match(packet,/downstream retained state/);
  assert.match(selection,/\.\.\/assets\/shot-packet-template\.md/);
 });
+
+test('VP-01 v1.2 grounds approved pickup, transfer and retained lantern location',()=>{
+ const prompt=pack.cases.find(c=>c.id==='VP-01').prompt;
+ assert.match(prompt,/finds and picks up the single amber SPARK-01/);
+ assert.match(prompt,/carries that same SPARK-01 in their hands/);
+ assert.match(prompt,/visibly places and releases it inside TOWER-01's lantern/);
+ assert.match(prompt,/remains inside TOWER-01's lantern/);
+});
