@@ -12,14 +12,15 @@ Use `reviewBrief` for structured hard timing constraints before drafting. Compat
 2. **Emotional breathing room:** Allow enough screen time to register a decision and its consequence, especially the final image. Review a payoff under ~3.5 seconds, not as a universally invalid cut.
 3. **Filmable action:** Mark complex physical actions for scrutiny when compressed into under ~4 seconds. Estimate camera/readability and possible edit pacing, not just narration words.
 4. **Narrative redundancy and causality:** Challenge VO that repeats the picture, mystery revelations without setup, payoffs unrelated to the opening, and unmotivated location changes. These require **human creative judgment**, not automatic scores. Review emotional specificity, protagonist choice/recognition and a transformed earlier motif; allow unconventional storytelling.
-5. **Timing and constraints:** No invalid beat boundaries, beat gaps, narration that cannot fit its estimated delivery, or violation of a strict no-VO/maximum-word constraint.
-6. **Revision discipline:** Identify up to three most important changes and their beat IDs. Make the **smallest proposed revision** before handoff. Never silently modify previously approved screenplay, picture, or audio.
+5. **Prop continuity:** Track story-critical props by owner/location across beat IDs. Explicitly identify transfers; if the same scarf appears on a departing character and later indoors with no handoff, flag the contradiction. A self-declared continuity PASS is insufficient.
+6. **Timing and constraints:** No invalid beat boundaries, beat gaps, narration that cannot fit its estimated delivery, or violation of a strict no-VO/maximum-word constraint.
+7. **Revision discipline:** Identify up to three most important changes and their beat IDs. Make the **smallest proposed revision** before handoff. Never silently modify previously approved screenplay, picture, or audio.
 
 ## Optional deterministic aid
 
 `scripts/storytelling-preflight.js` consumes a *proposed*, structured screenplay draft with beat intervals, optional visual_attention annotations (`READ_TEXT`, `SUBTLE_REACTION`), narration cues and optional assumed speaking rate. Its outputs are `REVISION_REQUIRED` for objective issues or `READY_FOR_DIRECTOR_REVIEW` when no objective violations are detected; both may carry editorial warnings.
 
-The rule-of-thumb reaction and physical-action thresholds (3.5 and 4 seconds) are **prompts for review**, not established film laws. On-screen reading conflicts rely on a correctly annotated beat, not actual media observation. Speaking rate estimates do not establish audio synchronization. A structural PASS does not imply artistic merit or user approval.
+The rule-of-thumb reaction and physical-action thresholds (3.5 and 4 seconds) are **prompts for review**, not established film laws. On-screen reading conflicts rely on a correctly annotated beat, not actual media observation. Word counts use whitespace-separated tokens from the finalized narration text (including contractions as one token). A supplied `declared_word_count` is checked against that count; do not trust an agent's stated total. Speaking rate estimates do not establish audio synchronization. A structural PASS does not imply artistic merit or user approval.
 
 ## Reproduce the four offline scenarios
 
