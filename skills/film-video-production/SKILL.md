@@ -24,3 +24,7 @@ Consult [generator checklist](references/guide.md). No universal Google Flow/bro
 - For other providers use [general generator guidance](references/other-generators.md) and [prompt design](references/prompt-engineering.md).
 - Prepare a copy-ready [shot packet](assets/shot-packet-template.md) with separate image reference, video, narration/audio and editing instructions. Never pretend packet preparation is successful tool execution.
 - Read [generator checklist](references/guide.md) when verifying permissions, outputs and retry risks.
+
+## Worked example and acceptance scenario
+
+For a concrete stage-specific example, handoff output and failure case, read the [illustrative production example](references/worked-example.md) when designing or testing a comparable scene. It is not approval or real media evidence.

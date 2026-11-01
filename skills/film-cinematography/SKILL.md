@@ -23,3 +23,7 @@ Consult [shot craft](references/guide.md) for camera and timing review. Do not c
 - For scene spatial continuity, light sources, palette and composition: [lighting and composition](references/lighting-composition.md).
 - For the production plan use the [shot plan template](assets/shot-plan-template.md) and [storyboard template](assets/storyboard-template.md). Reconcile total duration including transition overlaps.
 - Use [shot craft](references/guide.md) for decision checks; templates are proposals, not finished clips.
+
+## Worked example and acceptance scenario
+
+For a concrete stage-specific example, handoff output and failure case, read the [illustrative production example](references/worked-example.md) when designing or testing a comparable scene. It is not approval or real media evidence.

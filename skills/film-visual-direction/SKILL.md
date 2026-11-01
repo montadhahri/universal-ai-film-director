@@ -19,3 +19,7 @@ For consistency and reference guidance consult [visual craft](references/guide.m
 ## Detailed reference
 
 Read [visual identity and continuity](references/visual-style.md) alongside [visual craft](references/guide.md) when defining character proportion, stable wardrobe, locations, props, linework, reference images and approved look changes. Keep a versioned, approval-ready Visual Bible without inventing image assets.
+
+## Worked example and acceptance scenario
+
+For a concrete stage-specific example, handoff output and failure case, read the [illustrative production example](references/worked-example.md) when designing or testing a comparable scene. It is not approval or real media evidence.

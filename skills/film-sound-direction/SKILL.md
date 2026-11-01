@@ -22,3 +22,7 @@ Consult [sound craft](references/guide.md).
 - For voice/dubbing, read [dubbing and localization](references/dubbing-localization.md); preserve meaning, dialect, speaker identity and rights.
 - For brief decisions use [sound craft](references/guide.md) and [audio design](references/audio-design.md).
 - Create the cue sheet from the [audio timeline template](assets/audio-timeline-template.md). Label planned media vs real supplied or generated audio, and preserve locked visual edits on audio repair.
+
+## Worked example and acceptance scenario
+
+For a concrete stage-specific example, handoff output and failure case, read the [illustrative production example](references/worked-example.md) when designing or testing a comparable scene. It is not approval or real media evidence.

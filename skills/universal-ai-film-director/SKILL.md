@@ -47,3 +47,7 @@ New film with no supplied story: ask only **"What story do you want this film to
 - For previously approved work, resuming, shot changes or handoffs: [shot state and gates](references/project-state.md) and [continuity verification](references/continuity.md).
 - To document a new project or transfer it across agents: copy the [Project Bible template](assets/project-bible-template.md) or the [checkpoint template](assets/checkpoint-template.md). These are output resources; do not mistake a template for a persisted artifact.
 - For specialized filmmaking output, follow the applicable specialist `SKILL.md` when installed; otherwise use the same logical stage in portable single-agent mode. No skill is assumed to invoke another agent automatically.
+
+## Worked example and acceptance scenario
+
+For a concrete stage-specific example, handoff output and failure case, read the [illustrative production example](references/worked-example.md) when designing or testing a comparable scene. It is not approval or real media evidence.
