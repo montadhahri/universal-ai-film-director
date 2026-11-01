@@ -1,0 +1,2 @@
+# Contributing
+Open an issue describing the problem and affected phase. Make focused changes with reproducible examples. Keep core instructions provider-neutral; put generator-specific details in adapters. Do not submit private personal data, copyrighted media or unauthorized voice clones. Update documentation and examples with behavior changes. Explain trade-offs in pull requests.
