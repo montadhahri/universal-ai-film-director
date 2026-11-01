@@ -37,11 +37,11 @@ Shot IDs are stable; no protected shot revisions are overwritten.
 
 | Shot | Output time | Dramatic beat | State |
 | --- | --- | --- | --- |
-| S01 | 0–6s | Establish the rainy shelter | SIMULATED_APPROVED |
-| S02 | 6–12s | Stranger arrives without shelter | SIMULATED_APPROVED |
-| S03 | 12–19s | Tiny yellow umbrella opens | SIMULATED_APPROVED |
-| S04 | 19–26s | Shared cover becomes the punchline | SIMULATED_APPROVED |
-| S05 | 26–30s | Rain clears; concluding caption | SIMULATED_APPROVED |
+| S01 | 0–6s | Establish the rainy shelter | APPROVED (fictional example only) |
+| S02 | 6–12s | Stranger arrives without shelter | APPROVED (fictional example only) |
+| S03 | 12–19s | Tiny yellow umbrella opens | APPROVED (fictional example only) |
+| S04 | 19–26s | Shared cover becomes the punchline | APPROVED (fictional example only) |
+| S05 | 26–30s | Rain clears; concluding caption | APPROVED (fictional example only) |
 
 **Audio:** original programmatically synthesized pink-noise ambience and
 a quiet sine-tone bed; no third-party recordings, dialogue or AI-generated voice.
