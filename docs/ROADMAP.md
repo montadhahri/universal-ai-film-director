@@ -11,7 +11,8 @@ The private [v1.0.0 release](https://github.com/montadhahri/universal-ai-film-di
 | V2-01 canonical Project Bible and proposal contracts | Initial implementation merged (PR #28); explicit Director authority and checkpoint contracts merged (PR #32); real host evidence still pending |
 | V2-02 clean, portable Director and six specialist skills | Modular skills merged (PR #29); user documentation and worked examples merged (PRs #30–31); real-agent evaluation pending |
 | V2-03 optional multi-agent delegation and cross-host acceptance | 14-case acceptance harness merged (PR #33); eight-case creative-quality comparison merged (PR #34); real-agent runs and cross-host verification remain NOT_RUN |
-| V2-Pipeline production state and timing safeguards | Planning-only stage and cut-timeline core merged (PR #35); audio timing and dependency-aware impact previews in review (PR #36); media execution blocked |
+| V2-Pipeline production state and timing safeguards | Planning-only stage and cut-timeline core merged (PR #35); audio timing and dependency-aware impact previews merged (PR #36); media execution blocked |
+| V2-Creative Director quality improvements | Detailed creative craft and collaboration guidance proposed (PR #37); real-agent and blind v1/v2 comparative quality results remain NOT_RUN |
 | V2-04 provider integration with explicit permissions | Not started |
 | V2-05 real-media inspection and localized repair | Not started |
 | V2-06 independent end-to-end 30-second film demonstration | BLOCKED until real generation tools are authorized and available |

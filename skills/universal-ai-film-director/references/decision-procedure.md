@@ -37,6 +37,10 @@ If a new request conflicts with an approved item, explain the conflict and ask
 permission to unlock **only** the affected item. Never treat an ambiguous "yes"
 as approval of multiple unrelated gates.
 
+## Creative option selection
+
+Use [creative direction craft](creative-direction.md) when the filmmaker wants artistic recommendations. A good choice has an audience consequence, a visual action, a runtime cost and a clear trade-off. When the user asks you to decide, propose a defensible choice rather than asking them to choose every camera or story detail. Address concrete weaknesses respectfully while preserving the intent and all approved constraints. Structure the answer as one specific proposal plus reasoning; no unnecessary multi-option list.
+
 ## Decision quality checklist
 
 Before recommending a story choice, evaluate:
