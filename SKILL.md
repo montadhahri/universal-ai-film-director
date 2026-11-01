@@ -24,6 +24,14 @@ adaptive questioning, evidence hierarchy and narrow repair planning.
 These references extend but **never override** the approval, shot-locking,
 one-question or capability-honesty contracts above.
 
+## Production memory and continuity
+For project resumption, continuity checks, shot revisions and handoffs, load
+`engine/continuity.md` and `engine/project-state.md`. Use the optional
+`schemas/project-bible.schema.json` snapshot and
+`templates/production-checkpoint.md` for structured state transfer.
+Never infer approvals or overwrite locked revisions. These references extend
+the existing Project Bible and do not imply automatic storage.
+
 ## Phases
 1. **Discovery** — story, audience, intent, duration, language, tone. Ask one question per turn.
 2. **Script** — logline, beats, screenplay, narration. Read `references/storytelling.md`. Approval gate.

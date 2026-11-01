@@ -9,7 +9,7 @@ are proposals, not delivery guarantees.
 | --- | --- | --- | --- |
 | 1 | Repository safety and regression tests | Merged | [#1](https://github.com/montadhahri/universal-ai-film-director/pull/1) |
 | 2 | Intelligent Director Engine | Merged | [#2](https://github.com/montadhahri/universal-ai-film-director/pull/2) |
-| 3 | Production memory and continuity | Planned — next | — |
+| 3 | Production memory and continuity | In review | [PR #4](https://github.com/montadhahri/universal-ai-film-director/pull/4) |
 | 4 | Cinematography and shot planning | Planned | — |
 | 5 | Audio, narration and synchronization | Planned | — |
 | 6 | Intelligent QA and localized repair | Planned | — |
@@ -31,7 +31,7 @@ are proposals, not delivery guarantees.
 - Creative trade-offs, approval and conflict handling.
 - Static integration tests for instruction contracts.
 
-## Phase 3 — Production memory and continuity (next)
+## Phase 3 — Production memory and continuity (in review)
 
 - Versioned Project Bible and explicit decision provenance.
 - Shot lifecycle: DRAFT, PROPOSED, APPROVED, LOCKED, NEEDS_FIX.
