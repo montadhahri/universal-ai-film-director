@@ -27,3 +27,7 @@ Consult [QA and repair craft](references/guide.md).
 ## Worked example and acceptance scenario
 
 For a concrete stage-specific example, handoff output and failure case, read the [illustrative production example](references/worked-example.md) when designing or testing a comparable scene. It is not approval or real media evidence.
+
+## Dependency-aware change previews
+
+If a dependency graph exists in the Project Bible, optionally use `previewRepairImpact` in `scripts/audio-continuity.js` to identify downstream shot/audio/anchor IDs and locked shots requiring specific permission. This returns an **impact preview only**: it does not diagnose footage without evidence, authorize unlocking or modify a file. Missing or inaccurate dependency edges must be reported rather than assumed correct. See `docs/audio-continuity.md` for the graph convention.

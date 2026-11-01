@@ -7,6 +7,7 @@ tags, not by duplicated skill source folders.
 ## [Unreleased]
 
 ### Added
+- Extend the planning-only pipeline with explicit narration coverage and intentional-silence validation, cross-track audio mixing rules, dependency graph integrity and non-mutating, scoped repair impact previews.
 - Introduce deterministic, provider-free Production Pipeline Core with single-step stage transitions, user-approval dependencies, exact cut-only shot timeline validation, optimistic project revisions and blocked media execution. Include negative regression tests.
 - Add eight filmmaking quality scenarios with anchored nine-dimension v1.0.0/v2 blind-review comparison, human evidence capture format and offline reporting of regressions, ties and improvements. No agent outcomes are simulated.
 - Add V2-03 cross-agent acceptance manifest (14 cases spanning all seven skills) and offline evidence-aware reporting with PASS/FAIL/BLOCKED/NOT_RUN; missing real-agent captures remain NOT_RUN, never simulated PASS.
