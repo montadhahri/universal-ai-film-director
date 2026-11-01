@@ -65,12 +65,14 @@ flowchart TD
 
 **No coding required** if your AI agent can read Markdown files.
 
-1. Download this repository as a ZIP using **Code → Download ZIP**, or clone it:
+1. Install using the Skills CLI (Node.js/npm required; authenticate GitHub first for this private repository):
    ```bash
-   git clone https://github.com/montadhahri/universal-ai-film-director.git
-   cd universal-ai-film-director
+   npx skills add montadhahri/universal-ai-film-director -g
    ```
-2. Follow the [agent-specific installation](#-installation-by-agent) below.
+   Select your supported agent when prompted. For a project-local installation, omit `-g`.
+   If the CLI cannot access the repository or your agent does not support native
+   skills, use the [manual installation fallback](#universal-manual-method).
+2. See [installation options](#-installation-by-agent) to target a particular agent, update the skill or install manually.
 3. Start with this request:
    > Use the Universal AI Film Director skill. Help me make a 10-minute emotional stickman film for a workplace audience, using Google Flow for video clips. Ask one question at a time. Do not write video prompts before I approve the screenplay and storyboard.
 4. Answer the agent's first question. Approve each major stage.
@@ -79,6 +81,48 @@ flowchart TD
 **Expected first response:** a brief introduction and **one** question: *“What story do you want this film to tell?”* If the agent produces an entire script immediately, ask it to reload `SKILL.md` and follow the interaction contract.
 
 ## 📦 Installation by agent
+
+### Recommended: Skills CLI (npx)
+
+Use the [open-source Skills CLI](https://www.skills.sh/docs/cli) to install the
+skill into supported coding agents. **Node.js and npm are required**; the CLI
+is not a video generator.
+
+```bash
+# Interactive installation to a user-level location (across projects)
+npx skills add montadhahri/universal-ai-film-director -g
+
+# Interactive installation in the current project (default)
+npx skills add montadhahri/universal-ai-film-director
+
+# Target particular agents at user scope
+npx skills add montadhahri/universal-ai-film-director -g -a claude-code -a codex
+
+# Inspect discovered skills before installing
+npx skills add montadhahri/universal-ai-film-director --list
+
+# Check and update installed skills
+npx skills check
+npx skills update -g
+```
+
+**Scope:** `-g` means user-level installation for **selected supported agents**,
+available across their projects. It does **not** install the skill into every LLM
+application or automatically activate it in ChatGPT web/app. Agent discovery
+and reload behavior depend on each agent and its version.
+
+**Private repository:** This repository currently requires GitHub access.
+Configure Git credentials, `gh auth login`, or SSH before installing. The CLI
+supports authenticated private GitHub sources; it cannot bypass access control.
+For an SSH source, use
+`npx skills add git@github.com:montadhahri/universal-ai-film-director.git -g`.
+
+**Compatibility:** Installation support is not a claim of end-to-end testing.
+The repository has a root `SKILL.md`; confirm discovery with `--list` and
+verify the skill appears in your agent after installation. If discovery fails,
+use the existing manual method below.
+
+### Manual / agent-specific fallback
 
 **Compatibility is instruction-level.** Native skill discovery and exact configuration paths depend on the agent, its version and its settings. If native skills are unavailable, use the universal manual method.
 
