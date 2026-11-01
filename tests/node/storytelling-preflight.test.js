@@ -112,3 +112,46 @@ test('REG-10 unconventional narrative is not automatically failed by motif metad
 test('invalid exclusion boundaries cannot silently produce feasibility',()=>{
  assert.throws(()=>reviewBrief(brief(1,[{start_ms:19000,end_ms:21000}])));
 });
+const {countNarrationWords}=require('../../scripts/storytelling-preflight.js');
+test('ST-01 actual six-word VO contradicts claimed seven words',()=>{
+ const d=lighthouse();d.narration=[{...vo(38000,42000,'A place can hold a promise.',110),declared_word_count:7}];
+ const r=reviewDraft(d);
+ assert.equal(countNarrationWords(d.narration[0].text),6);
+ assert(r.issues.some(x=>x.includes('word count mismatch')));
+ assert.equal(r.status,'REVISION_REQUIRED');
+});
+test('ST-01 exact six-word VO at 110 WPM fits four seconds',()=>{
+ const d=lighthouse();d.narration=[{...vo(38000,42000,'A place can hold a promise.',110),declared_word_count:6}];
+ const r=reviewDraft(d);
+ assert(!r.issues.some(x=>x.includes('Narration does not fit')));
+ assert(!r.issues.some(x=>x.includes('word count mismatch')));
+});
+test('contractions and punctuation follow documented whitespace-token convention',()=>{
+ assert.equal(countNarrationWords("I'll be back for the scarf."),6);
+ assert.equal(countNarrationWords("  Don't   go.  "),2);
+ assert.equal(countNarrationWords(''),0);
+});
+test('unverified declared word counts must not be silently accepted',()=>{
+ const d=lighthouse();d.narration=[{...vo(38000,42000,'A place can hold a promise.',110),declared_word_count:-1}];
+ assert.throws(()=>reviewDraft(d),/Invalid declared narration word count/);
+});
+
+
+test('ST-01 scarf cannot jump from ferry visitor to indoor chair',()=>{
+ const d=lighthouse();
+ d.beats[0].prop_states=[{id:'blue-scarf',owner:'visitor',location:'ferry-landing'}];
+ d.beats[2].prop_states=[{id:'blue-scarf',owner:'keeper',location:'lighthouse-chair'}];
+ const r=reviewDraft(d);
+ assert.equal(r.status,'REVISION_REQUIRED');
+ assert(r.issues.some(x=>x.includes('Unexplained prop transfer blue-scarf from LH01 to LH03')));
+});
+test('ST-01 explicit scarf handoff resolves the structured continuity defect',()=>{
+ const d=lighthouse();
+ d.beats[0].prop_states=[{id:'blue-scarf',owner:'visitor',location:'ferry-landing'}];
+ d.beats[1].prop_states=[{id:'blue-scarf',owner:'keeper',location:'lighthouse-chair',transfer_from_previous:'Visitor hands scarf to keeper before boarding'}];
+ d.beats[2].prop_states=[{id:'blue-scarf',owner:'keeper',location:'lighthouse-chair'}];
+ assert(!reviewDraft(d).issues.some(x=>x.includes('Unexplained prop transfer')));
+});
+test('no prop annotations preserve backwards-compatible draft review',()=>{
+ assert.equal(reviewDraft(musician()).status,'READY_FOR_DIRECTOR_REVIEW');
+});

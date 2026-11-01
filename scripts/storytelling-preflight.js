@@ -5,6 +5,11 @@ const validText=x=>typeof x==='string'&&x.trim().length>0;
 const positive=n=>Number.isSafeInteger(n)&&n>0;
 const nonnegative=n=>Number.isSafeInteger(n)&&n>=0;
 function intersects(a,b){return a.start_ms<b.end_ms&&b.start_ms<a.end_ms}
+// Whitespace-token convention: contractions count as one word. No linguistic word segmentation claim.
+function countNarrationWords(text){
+ if(typeof text!=='string')throw Error('Narration text must be a string');
+ return text.trim()?text.trim().split(/\s+/u).length:0;
+}
 function reviewDraft(d){
  if(!d||!positive(d.duration_ms)||!Array.isArray(d.beats)||d.beats.length===0||!Array.isArray(d.narration))
   throw Error('Draft requires positive duration_ms, nonempty beats, and narration array');
@@ -20,12 +25,35 @@ function reviewDraft(d){
   cursor=b.end_ms;ordered.push(b);
  }
  if(cursor!==d.duration_ms)issues.push('Beat plan does not cover requested duration');
+ // Optional structured prop trace: explicit state changes need a transfer annotation.
+ // This validates supplied annotations, not unstructured prose or rendered media.
+ const previousProps=new Map();
+ for(const b of ordered){
+  if(b.prop_states===undefined)continue;
+  if(!Array.isArray(b.prop_states))throw Error('Invalid prop states at '+b.id);
+  const seenProps=new Set();
+  for(const p of b.prop_states){
+   if(!p||!validText(p.id)||!validText(p.location)||!validText(p.owner))
+    throw Error('Invalid prop state at '+b.id);
+   if(seenProps.has(p.id))issues.push('Duplicate prop state '+p.id+' at '+b.id);
+   seenProps.add(p.id);
+   const previous=previousProps.get(p.id);
+   if(previous&&(previous.location!==p.location||previous.owner!==p.owner)&&
+      !validText(p.transfer_from_previous))
+    issues.push('Unexplained prop transfer '+p.id+' from '+previous.beat+' to '+b.id);
+   previousProps.set(p.id,{beat:b.id,location:p.location,owner:p.owner});
+  }
+ }
  const narration=d.narration.slice().sort((a,b)=>a.start_ms-b.start_ms);
  for(const [i,n] of narration.entries()){
   if(!n||!validText(n.text)||!nonnegative(n.start_ms)||!positive(n.end_ms)||n.end_ms<=n.start_ms||n.end_ms>d.duration_ms)
    throw Error('Invalid narration cue '+i);
   if(i&&intersects(narration[i-1],n))warnings.push('Narration cues overlap: verify delivery and sound handoff');
-  const words=n.text.trim().split(/\s+/u).length;
+  const words=countNarrationWords(n.text);
+  if(n.declared_word_count!==undefined){
+   if(!nonnegative(n.declared_word_count))throw Error('Invalid declared narration word count '+i);
+   if(n.declared_word_count!==words)issues.push('Narration word count mismatch at '+n.start_ms+': declared '+n.declared_word_count+', actual '+words);
+  }
   if(!Number.isFinite(n.assumed_wpm)||n.assumed_wpm<=0)warnings.push('Narration speaking rate not documented at '+n.start_ms);
   else if(words/n.assumed_wpm*60000>n.end_ms-n.start_ms)
    issues.push('Narration does not fit estimated cue window at '+n.start_ms);
@@ -38,7 +66,7 @@ function reviewDraft(d){
   }
  }
  if(nonnegative(d.max_narration_words)){
-  const total=narration.reduce((sum,n)=>sum+n.text.trim().split(/\s+/u).length,0);
+  const total=narration.reduce((sum,n)=>sum+countNarrationWords(n.text),0);
   if(total>d.max_narration_words)issues.push('Narration exceeds maximum word budget: '+total);
  }
  if(d.no_narration===true&&narration.length)issues.push('No-narration constraint violated');
@@ -103,4 +131,4 @@ function reviewRevisionScope(change){
  return {status:issues.length?'REVISION_REQUIRED':'READY_FOR_DIRECTOR_REVIEW',
   issues,approval_granted:false,media_inspected:false};
 }
-module.exports={reviewDraft,reviewBrief,reviewRevisionScope};
+module.exports={reviewDraft,reviewBrief,reviewRevisionScope,countNarrationWords};
