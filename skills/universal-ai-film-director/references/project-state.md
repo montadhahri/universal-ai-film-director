@@ -49,3 +49,7 @@ A new revision must not replace the old locked record.
 When resuming: read snapshot, verify internal IDs, enumerate locked shots and
 missing inputs, then offer the next unfinished task. Do not claim snapshot
 was automatically saved or synchronized between tools.
+
+## Optional deterministic approval ledgers
+
+When the host can execute local Node.js and persist its own project JSON, the repository's `scripts/director-authority.js` offers `proposeGate`, `approveGate`, `proposeLockedShotRevision`, `recordPermission`, `inspectCheckpoint` and `restoreCheckpoint`. The implementation stores distinct gate, unlock and operation-permission ledgers. It **cannot authenticate the user** or save files itself: supply actual user-message evidence; never fabricate message references. The code records permissions but never enables media generation or publication. See **docs/director-authority.md** in the repository when available. For non-Node hosts, follow the same rules with a manually maintained Project Bible.

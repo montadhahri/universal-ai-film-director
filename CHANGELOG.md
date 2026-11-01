@@ -7,6 +7,7 @@ tags, not by duplicated skill source folders.
 ## [Unreleased]
 
 ### Added
+- Add deterministic Director authority contract for exact user approval gates, scoped locked-shot revisions, recorded-only external permissions and honest checkpoint recovery, with synthetic negative tests; no provider execution.
 - Transfer 31 original v1 cinematic direction procedures, generator reference guides and output templates into their responsible specialist skills, with progressive-disclosure references and parity tests. No duplicate root runtime tree.
 
 ### Changed

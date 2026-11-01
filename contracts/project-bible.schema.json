@@ -94,13 +94,13 @@
       ],
       "properties": {
         "production_go": {
-          "type": "boolean"
+          "const": false
         },
         "provider_job_allowed": {
-          "type": "boolean"
+          "const": false
         },
         "publication_allowed": {
-          "type": "boolean"
+          "const": false
         }
       }
     },
@@ -108,6 +108,174 @@
       "type": "array",
       "items": {
         "type": "string"
+      }
+    },
+    "gate_proposals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "proposal_id",
+          "gate",
+          "version",
+          "artifact_ref",
+          "status",
+          "created_revision"
+        ],
+        "properties": {
+          "proposal_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "gate": {
+            "enum": [
+              "script",
+              "visual_bible",
+              "storyboard"
+            ]
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "artifact_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "PENDING",
+              "APPROVED"
+            ]
+          },
+          "created_revision": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "approved_evidence": {
+            "$ref": "#/$defs/userEvidence"
+          }
+        }
+      }
+    },
+    "approval_ledger": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "kind",
+          "gate",
+          "proposal_id",
+          "version",
+          "artifact_ref",
+          "evidence"
+        ],
+        "properties": {
+          "kind": {
+            "const": "GATE"
+          },
+          "gate": {
+            "enum": [
+              "script",
+              "visual_bible",
+              "storyboard"
+            ]
+          },
+          "proposal_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "artifact_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence": {
+            "$ref": "#/$defs/userEvidence"
+          }
+        }
+      }
+    },
+    "unlock_ledger": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "authorization_ref",
+          "shot_id",
+          "source_revision",
+          "new_revision",
+          "reason",
+          "evidence"
+        ],
+        "properties": {
+          "authorization_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "shot_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_revision": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "new_revision": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence": {
+            "$ref": "#/$defs/userEvidence"
+          }
+        }
+      }
+    },
+    "permission_ledger": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "grant_id",
+          "permission",
+          "scope",
+          "evidence",
+          "status"
+        ],
+        "properties": {
+          "grant_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "permission": {
+            "enum": [
+              "production_go",
+              "provider_job",
+              "publication"
+            ]
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence": {
+            "$ref": "#/$defs/userEvidence"
+          },
+          "status": {
+            "const": "RECORDED_ONLY"
+          }
+        }
       }
     }
   },
@@ -221,6 +389,28 @@
           }
         }
       ]
+    },
+    "userEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "actor",
+        "source_ref",
+        "quote"
+      ],
+      "properties": {
+        "actor": {
+          "const": "USER"
+        },
+        "source_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
     }
   }
 }

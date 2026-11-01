@@ -11,7 +11,8 @@ function newProject(projectId) {
  if (!nonempty(projectId)) reject('Project ID required');
  return {schema_version:'2.0',project_id:projectId,revision:1,phase:'discovery',
   gates:Object.fromEntries(gates.map(k=>[k,{approved:false}])),decisions:[],continuity:[],
-  shots:[],proposals:[],authorization:{production_go:false,provider_job_allowed:false,publication_allowed:false},open_questions:[]};
+  shots:[],proposals:[],gate_proposals:[],approval_ledger:[],unlock_ledger:[],permission_ledger:[],
+  authorization:{production_go:false,provider_job_allowed:false,publication_allowed:false},open_questions:[]};
 }
 function validateProject(p) {
  if (!isObject(p)||p.schema_version!=='2.0'||!nonempty(p.project_id)||!Number.isInteger(p.revision)||p.revision<1) reject('Invalid project identity/revision');
@@ -24,7 +25,8 @@ function validateProject(p) {
   const key=s.id+':'+s.revision;if(keys.has(key))reject('Duplicate shot revision');keys.add(key);
   if(s.state==='LOCKED'&&!nonempty(s.approved_asset))reject('LOCKED shot requires approved asset');
  }
- if (!isObject(p.authorization)||!['production_go','provider_job_allowed','publication_allowed'].every(k=>typeof p.authorization[k]==='boolean'))reject('Explicit authorization flags required');
+ if (!isObject(p.authorization)||!['production_go','provider_job_allowed','publication_allowed'].every(k=>p.authorization[k]===false))reject('No operational authorization without separate execution adapter');
+ for(const key of ['gate_proposals','approval_ledger','unlock_ledger','permission_ledger'])if(p[key]!==undefined&&!Array.isArray(p[key]))reject('Invalid authority ledger: '+key);
  return true;
 }
 function validateProposal(p,q) {

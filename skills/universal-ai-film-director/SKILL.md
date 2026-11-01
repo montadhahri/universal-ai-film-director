@@ -51,3 +51,7 @@ New film with no supplied story: ask only **"What story do you want this film to
 ## Worked example and acceptance scenario
 
 For a concrete stage-specific example, handoff output and failure case, read the [illustrative production example](references/worked-example.md) when designing or testing a comparable scene. It is not approval or real media evidence.
+
+## Structured authority and recovery
+
+For environments with filesystem access and Node.js, optional repository helpers `scripts/director-authority.js` and `scripts/project-contracts.js` can validate exact pending approvals, shot-scoped revision requests and JSON checkpoints. They are **not bundled runtime dependencies**, do not verify user identity, and cannot persist a checkpoint or authorize provider execution on their own. Always bind recorded evidence to a real user message. On other platforms, maintain the same approval ledger manually in the Project Bible.

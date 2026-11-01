@@ -8,8 +8,8 @@ The private [v1.0.0 release](https://github.com/montadhahri/universal-ai-film-di
 | --- | --- |
 | v1.0.0 private release | Published; historical |
 | V2-00 portable architecture RFC | Approved / merged (PR #27) |
-| V2-01 canonical Project Bible and proposal contracts | Initial implementation merged (PR #28); further authorization and provenance work pending |
-| V2-02 clean, portable Director and six specialist skills | Proposed in current implementation PR |
+| V2-01 canonical Project Bible and proposal contracts | Initial implementation merged (PR #28); explicit Director authority and checkpoint contracts in review (PR #32); real host evidence still pending |
+| V2-02 clean, portable Director and six specialist skills | Modular skills merged (PR #29); user documentation and worked examples merged (PRs #30–31); real-agent evaluation pending |
 | V2-03 optional multi-agent delegation and cross-host acceptance | Not started |
 | V2-04 provider integration with explicit permissions | Not started |
 | V2-05 real-media inspection and localized repair | Not started |
