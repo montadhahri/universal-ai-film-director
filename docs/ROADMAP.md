@@ -11,8 +11,8 @@ are proposals, not delivery guarantees.
 | 2 | Intelligent Director Engine | Merged | [#2](https://github.com/montadhahri/universal-ai-film-director/pull/2) |
 | 3 | Production memory and continuity | Merged | [PR #4](https://github.com/montadhahri/universal-ai-film-director/pull/4) |
 | 4 | Cinematography and shot planning | Merged | [PR #6](https://github.com/montadhahri/universal-ai-film-director/pull/6) |
-| 5 | Audio, narration and synchronization | In review | [PR #7](https://github.com/montadhahri/universal-ai-film-director/pull/7) |
-| 6 | Intelligent QA and localized repair | Planned | — |
+| 5 | Audio, narration and synchronization | Merged | [PR #7](https://github.com/montadhahri/universal-ai-film-director/pull/7) |
+| 6 | Intelligent QA and localized repair | In review | [PR #8](https://github.com/montadhahri/universal-ai-film-director/pull/8) |
 | 7 | Generator and agent compatibility | Planned | — |
 | 8 | Flagship demo and v1.0 readiness | Planned | — |
 
