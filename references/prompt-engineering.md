@@ -1,0 +1,2 @@
+# Video prompts
+Every shot needs an ID, purpose, duration, character anchors, environment, chronological action, framing, camera, lighting, style, continuity, constraints and acceptance criteria. Keep each shot visually simple and coherent. Separate video prompts from reference-image prompts, narration and editing. Verify model capabilities using official documentation.

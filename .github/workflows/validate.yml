@@ -1,0 +1,19 @@
+name: Validate skill
+on:
+  push:
+  pull_request:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify skill structure
+        shell: bash
+        run: |
+          set -euo pipefail
+          for file in SKILL.md README.md AGENT-INSTRUCTIONS.md templates/project-bible.md templates/shot-prompt.md adapters/google-flow.md; do
+            test -s "$file" || { echo "Missing $file"; exit 1; }
+          done
+          grep -q '^name: universal-ai-film-director' SKILL.md
+          grep -q 'one question' SKILL.md
+          echo "Skill checks passed"

@@ -1,0 +1,11 @@
+# Shot review
+- Shot ID / revision:
+- Actual video inspected? yes/no
+- Expected versus observed:
+- Character continuity:
+- Camera and action:
+- Timing and audio:
+- Defects:
+- Minimal repair:
+- Decision: NEEDS_FIX / APPROVED / LOCKED
+- Approval date:

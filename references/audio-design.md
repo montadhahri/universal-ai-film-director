@@ -1,0 +1,2 @@
+# Sound direction
+Maintain a cue sheet by shot ID: narration, dialogue, music, ambience, effects and silence. Budget speech time and pauses. If generated speech fails or stops, use a separate complete narration track and synchronize it in editing. Respect music licensing and voice consent.
