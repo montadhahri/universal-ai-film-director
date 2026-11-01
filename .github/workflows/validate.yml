@@ -7,13 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify skill structure
-        shell: bash
-        run: |
-          set -euo pipefail
-          for file in SKILL.md README.md AGENT-INSTRUCTIONS.md templates/project-bible.md templates/shot-prompt.md adapters/google-flow.md; do
-            test -s "$file" || { echo "Missing $file"; exit 1; }
-          done
-          grep -q '^name: universal-ai-film-director' SKILL.md
-          grep -q 'one question' SKILL.md
-          echo "Skill checks passed"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check skill structure, contract and Markdown links
+        run: python tests/validate_repo.py
