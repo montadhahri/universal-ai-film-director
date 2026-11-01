@@ -7,12 +7,12 @@
 **A portable filmmaking Agent Skill for storytelling, screenwriting, storyboarding, visual continuity, video-generation prompts, sound design, shot review, and editing.**
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-![Status](https://img.shields.io/badge/status-v1.0.0%20candidate%20%E2%80%94%20hold-orange)
+![Status](https://img.shields.io/badge/status-v1.0.0%20private%20release-blue)
 ![Skill](https://img.shields.io/badge/format-Agent%20Skill-blueviolet)
 ![Video](https://img.shields.io/badge/video%20rendering-external%20tool-required-informational)
 [![Validate skill](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml/badge.svg)](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml)
 
-[**Roadmap**](docs/ROADMAP.md) · [**Illustrative storyboard (not a generated film)**](examples/flagship-film/README.md) · [**v1.0.0 release notes (draft)**](docs/releases/v1.0.0.md) · [**Release readiness**](docs/release-checklist.md) · [**Changelog**](CHANGELOG.md) · [**Get started**](#-quick-start) · [**Install**](#-installation-by-agent) · [**Full example**](#-complete-walkthrough-a-90-second-film) · [**File guide**](#-what-each-file-does) · [**Troubleshooting**](#-troubleshooting) · [**Contribute**](CONTRIBUTING.md)
+[**Roadmap**](docs/ROADMAP.md) · [**v2.0.0 plan**](docs/V2-ROADMAP.md) · [**Illustrative storyboard (not a generated film)**](examples/flagship-film/README.md) · [**v1.0.0 release notes (draft)**](docs/releases/v1.0.0.md) · [**Release readiness**](docs/release-checklist.md) · [**Changelog**](CHANGELOG.md) · [**Get started**](#-quick-start) · [**Install**](#-installation-by-agent) · [**Full example**](#-complete-walkthrough-a-90-second-film) · [**File guide**](#-what-each-file-does) · [**Troubleshooting**](#-troubleshooting) · [**Contribute**](CONTRIBUTING.md)
 
 </div>
 
@@ -427,7 +427,7 @@ Suggested repository topics:
 
 `ai-agent-skills` · `ai-filmmaking` · `agent-skills` · `google-flow` · `google-veo` · `storyboarding` · `video-generation` · `prompt-engineering` · `cinematic-ai` · `generative-ai`
 
-**v1.0.0 version notes are prepared, but no tag or GitHub release has been published.** The repository remains PRIVATE and PROD GO is on HOLD. No release tag, public publication or readiness claim is authorized. CI has verified offline tests and local-folder CLI packaging, **not** authenticated private remote installation, independent agent behavior or AI-generated film production. See the [v1.0.0 release checklist](docs/release-checklist.md).
+**[v1.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) has been published as a private GitHub release.** The repository remains PRIVATE and PROD GO is on HOLD. The version tag does not authorize public marketing or actual media-generation operations. CI has verified offline tests and local-folder CLI packaging, **not** authenticated private remote installation, independent agent behavior or AI-generated film production. See the [v1.0.0 release checklist](docs/release-checklist.md).
 
 ## 📜 License
 

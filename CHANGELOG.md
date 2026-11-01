@@ -2,12 +2,17 @@
 
 Notable changes to Universal AI Film Director are documented here.
 Entries follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
-categories and use semantic versioning for releases. Work merged after
-v0.1.0 is listed under **Unreleased** until a release is explicitly approved.
+categories and semantic versioning. Work not included in a tagged release
+remains under **Unreleased**.
 
 ## [Unreleased]
 
-- v1.0.0 version preparation is tracked in [draft release notes](docs/releases/v1.0.0.md). Keep this section unreleased until the final versioned commit is merged and the tag is actually created.
+### Added
+- Proposed v2.0.0 modular Director + six specialist skills roadmap, Codex skill-creator baseline review, trigger/evaluation guidance, and compatibility/safety gates (roadmap PR #25; documentation only).
+
+## [1.0.0] — 2026-11-01
+
+Private release tag [v1.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) published. Original changes and release limitations are documented in [release notes](docs/releases/v1.0.0.md).
 
 ### Fixed
 - Align Project Bible JSON Schema with documented approval-evidence and LOCKED-shot invariants; expand Markdown Project Bible into a provenance- and checkpoint-aware template (PR #23).

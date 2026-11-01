@@ -168,7 +168,7 @@ check('flagship: no real media claim and approvals',()=>{
  has('docs/release-checklist.md','explicit owner authorization');
  has('docs/end-to-end-workflow.md','npx skills add');
  const phase=read('docs/ROADMAP.md').split('\n').find(x=>x.startsWith('| 8 |'));
- assert(phase.includes('Merged')&&phase.includes('release not approved'));
+ assert(phase.includes('Merged')&&phase.includes('v1.0.0 privately released'));
  has('docs/ROADMAP.md','Production GO is not authorized');
  has('CHANGELOG.md','Phase 8');
 });
