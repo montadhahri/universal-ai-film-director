@@ -10,8 +10,8 @@ are proposals, not delivery guarantees.
 | 1 | Repository safety and regression tests | Merged | [#1](https://github.com/montadhahri/universal-ai-film-director/pull/1) |
 | 2 | Intelligent Director Engine | Merged | [#2](https://github.com/montadhahri/universal-ai-film-director/pull/2) |
 | 3 | Production memory and continuity | Merged | [PR #4](https://github.com/montadhahri/universal-ai-film-director/pull/4) |
-| 4 | Cinematography and shot planning | In review | [PR #6](https://github.com/montadhahri/universal-ai-film-director/pull/6) |
-| 5 | Audio, narration and synchronization | Planned | — |
+| 4 | Cinematography and shot planning | Merged | [PR #6](https://github.com/montadhahri/universal-ai-film-director/pull/6) |
+| 5 | Audio, narration and synchronization | In review | [PR #7](https://github.com/montadhahri/universal-ai-film-director/pull/7) |
 | 6 | Intelligent QA and localized repair | Planned | — |
 | 7 | Generator and agent compatibility | Planned | — |
 | 8 | Flagship demo and v1.0 readiness | Planned | — |
