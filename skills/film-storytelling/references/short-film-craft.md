@@ -14,6 +14,10 @@ A useful short-film premise states:
 
 Genre can change the shape. Comedy may rely on setup, repetition and a visual reversal; a lyrical film may rely on motif and emotional contrast with little causality; documentary or autobiographical work must respect true supplied facts. Do not enforce a mechanical three-act arc where it damages the filmmaker's intent.
 
+## Brief feasibility before drafting
+
+Estimate narration as words / WPM × 60 seconds. Exclude intervals where narration is forbidden, counting their union rather than summing overlaps. Reading a note may overlap absolute silence. For a 20-second film with five seconds of silence at both ends, ten seconds remain for narration; 100 words at 120 WPM need 50 seconds, regardless of whether four seconds of note reading overlap silence. Report BLOCKED rather than changing mandatory constraints without permission. These are estimates, not verified audio.
+
 ## Design beats before prose
 
 For each proposed beat, write `beat_id`, `start_ms`, `end_ms`, `visible_action`, `dramatic_function`, `new_information_or_change`, and optional `dialogue_or_vo`. Exact beats must fit the requested runtime and leave space for understandable actions, audience reaction and transitions. These are **screenplay timing estimates**, not verified shot or audio sync. The Director and Cinematography must reconcile them into an approved shot timeline.

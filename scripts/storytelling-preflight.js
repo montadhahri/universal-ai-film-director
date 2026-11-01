@@ -59,4 +59,48 @@ function reviewDraft(d){
   media_inspected:false,quality_proven:false,
   interpretation:'Structural checks and editorial prompts only. Creative merit and approval require human review.'};
 }
-module.exports={reviewDraft};
+
+/** Pre-draft timing feasibility. Exclusions prohibit narration and may overlap. */
+function reviewBrief(brief){
+ if(!brief||!positive(brief.duration_ms)||!nonnegative(brief.narration_words)||
+    !Number.isFinite(brief.max_wpm)||brief.max_wpm<=0||
+    !Array.isArray(brief.narration_exclusions))
+  throw Error('Invalid timing brief');
+ const intervals=brief.narration_exclusions.map((v,i)=>{
+  if(!v||!nonnegative(v.start_ms)||!positive(v.end_ms)||
+     v.end_ms<=v.start_ms||v.end_ms>brief.duration_ms)
+   throw Error('Invalid exclusion '+i);
+  return v;
+ }).sort((a,b)=>a.start_ms-b.start_ms);
+ let reserved=0,start=-1,end=-1;
+ for(const v of intervals){
+  if(start<0){start=v.start_ms;end=v.end_ms;}
+  else if(v.start_ms<=end)end=Math.max(end,v.end_ms);
+  else{reserved+=end-start;start=v.start_ms;end=v.end_ms;}
+ }
+ if(start>=0)reserved+=end-start;
+ const available_ms=brief.duration_ms-reserved;
+ const required_ms=brief.narration_words/brief.max_wpm*60000;
+ return {status:required_ms<=available_ms?'FEASIBLE':'BLOCKED',
+  available_ms,required_ms,reserved_ms:reserved,
+  shortfall_ms:Math.max(0,required_ms-available_ms),
+  approval_granted:false,media_inspected:false,
+  interpretation:'Timing estimate only; pauses and actual synchronization unverified.'};
+}
+/** Declarative scope check, not a real diff or authorization verification. */
+function reviewRevisionScope(change){
+ if(!change||!Array.isArray(change.allowed_types)||
+    !Array.isArray(change.changed_artifacts)||!Array.isArray(change.protected_versions))
+  throw Error('Invalid revision scope');
+ const issues=[];
+ for(const a of change.changed_artifacts){
+  if(!a||!validText(a.id)||!validText(a.type))throw Error('Invalid changed artifact');
+  if(!change.allowed_types.includes(a.type))
+   issues.push('Unauthorized artifact type: '+a.type+' ('+a.id+')');
+  if(change.protected_versions.some(p=>p.id===a.id))
+   issues.push('Protected approved artifact changed: '+a.id);
+ }
+ return {status:issues.length?'REVISION_REQUIRED':'READY_FOR_DIRECTOR_REVIEW',
+  issues,approval_granted:false,media_inspected:false};
+}
+module.exports={reviewDraft,reviewBrief,reviewRevisionScope};
