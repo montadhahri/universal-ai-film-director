@@ -101,7 +101,37 @@
         "evidence": {
           "type": "string"
         }
-      }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "approved": {
+                "const": true
+              }
+            },
+            "required": [
+              "approved"
+            ]
+          },
+          "then": {
+            "required": [
+              "version",
+              "evidence"
+            ],
+            "properties": {
+              "version": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
     },
     "decision": {
       "type": "object",
@@ -229,7 +259,32 @@
             "type": "string"
           }
         }
-      }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "LOCKED"
+              }
+            },
+            "required": [
+              "state"
+            ]
+          },
+          "then": {
+            "required": [
+              "approved_asset"
+            ],
+            "properties": {
+              "approved_asset": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
     }
   }
 }

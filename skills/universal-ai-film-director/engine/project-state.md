@@ -35,8 +35,13 @@ An ambiguous "yes" approves only the single unambiguous decision just asked.
 
 Each decision: `id`, `scope`, `status` (PROPOSED or APPROVED),
 `value`, `source` (user message reference), `version`.
-Each shot: stable `id`, `revision`, `state`, `approved_asset` if known,
+Each shot: stable `id`, `revision`, `state`, `approved_asset` when state is LOCKED,
 `continuity_refs`, `issues`, and optional `parent_revision`.
+For a gate with `approved: true`, record its non-empty exact version and
+user approval evidence. The JSON schema now enforces these fields; it also
+requires a non-empty approved asset reference for a LOCKED shot. Do not
+invent those values merely to pass validation. If the actual artifact is
+missing, keep the candidate PROPOSED and mark the asset unavailable.
 A new revision must not replace the old locked record.
 
 ## Safe recovery
