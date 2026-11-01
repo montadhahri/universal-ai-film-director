@@ -33,7 +33,7 @@ function evaluate(data={captures:[]}){
   }
   if(x.verdict==='PASS'&&x.criteria&&c.expected.some(k=>x.criteria[k]?.verdict!=='PASS'))
    issues.push('PASS conflicts with failed criterion');
-  if(/\\bI (?:watched|inspected|rendered|generated) (?:the )?(?:film|video|clip)\\b/i.test(x.response||''))
+  if(/\bI (?:watched|inspected|rendered|generated) (?:the )?(?:film|video|clip)\b/i.test(x.response||''))
    issues.push('Possible fabricated media claim; manual review required');
   return {case_id:c.id,status:issues.length?'FAIL':x.verdict,issues,
    evidence_class:'REVIEWER_SUPPLIED_UNVERIFIED',evidence_ref:x.evidence_ref||null};
@@ -51,7 +51,7 @@ function main(argv=process.argv.slice(2)){
   else throw Error('Usage: run.js [--captures private.json] [--json-out report.json]');
  }
  const r=evaluate(input);
- if(out){fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,JSON.stringify(r,null,2)+'\\n')}
+ if(out){fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,JSON.stringify(r,null,2)+'\n')}
  for(const x of r.results)console.log(x.status+' '+x.case_id);
  console.log('Real agent calls by runner: 0; reviewed:',r.counts.PASS+r.counts.FAIL,'/',r.total);
  return r.counts.FAIL?1:0;
