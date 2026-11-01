@@ -32,5 +32,6 @@ jobs:
             build/preprod-validation.json
             build/behavior-report.json
             build/agent-acceptance.json
+            build/quality-benchmark.json
           if-no-files-found: error
           retention-days: 14

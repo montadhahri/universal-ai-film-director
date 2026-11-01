@@ -20,3 +20,6 @@ Good outcomes preserve the user's creative authority: the user supplies the visi
 ## Runnable V2-03 acceptance matrix
 
 The current [14-case cross-agent acceptance matrix](agent-acceptance.md) covers all seven skills. Run the offline harness to see `NOT_RUN` outcomes until separately collected agent captures exist. Fixture and repository tests are **not** proof of actual agent quality. Real-agent outputs require independent review and clear evidence.\n
+## V1 versus V2 filmmaking quality
+
+For creative quality beyond approval and safety tests, use the [anchored blind-review benchmark](quality-benchmark.md). Its eight creative scenarios compare the original tagged v1.0.0 Director with current modular v2 outputs. The offline report is NOT_RUN without real independent agent captures; it does not generate video or automatically score film quality.
