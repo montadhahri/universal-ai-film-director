@@ -64,3 +64,25 @@ Python CI evidence.
 **Python scripts and workflows remain untouched** and run independently.
 Stage 4 must compare reports and failure cases across languages before
 considering any deletions. These heuristics do not prove real agent behavior.
+
+## Stage 4 — independent parity evidence before deletion
+
+The independent parity gate runs the Python and Node transcript evaluators on
+the **same inputs**, compares normalized JSON reports and process exit codes,
+and writes `build/python-node-parity.json`. It includes positive fixtures,
+strict-provenance rejection, malformed JSON, missing assistant responses and
+negative behavioral cases.
+
+```bash
+node tests/node/compare_python_node.js
+```
+
+Requires both Python 3.12 and Node.js 22 **for this temporary migration
+verification only**. No AI model or video is executed.
+
+**Limitations:** this gate compares transcript evaluator behavior, not all
+regression assertions, pre-production runner reports or every possible input.
+The Python and Node runners intentionally use different check names and report
+filenames. Before any deletion, review semantic coverage and all workflow,
+protected-baseline, documentation and report consumers. Existing Python
+files and workflows are not removed by this stage.

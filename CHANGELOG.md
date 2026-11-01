@@ -11,6 +11,7 @@ v0.1.0 is listed under **Unreleased** until a release is explicitly approved.
 - Replace the obsolete Phase 8 `In review` regression assertion with checks that Phase 8 is merged and production release remains unauthorized (PR #11 CI fix).
 
 ### Added
+- Stage 4 independent Python/Node transcript evaluator parity gate with positive, strict, negative and malformed inputs, JSON evidence and read-only CI; no Python deletion (PR #17).
 - Stage 3 additive Node.js transcript evaluator, behavior negative tests, offline pre-production runner, and CI report artifacts; Python counterparts remain in place for parity review (PR #16).
 - Stage 2 Node.js regression parity tests for audio, continuity, shot planning, repair, director, compatibility, flagship and pre-production contracts; Python behavior evaluator remains for Stage 3 (PR #15).
 - Stage 1 Python-free maintainer tooling: additive Node.js built-in preservation/structure validators, negative tests and independent CI workflow; existing Python checks retained pending parity verification (implementation PR).
