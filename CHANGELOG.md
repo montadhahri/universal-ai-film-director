@@ -8,6 +8,7 @@ v0.1.0 is listed under **Unreleased** until a release is explicitly approved.
 ## [Unreleased]
 
 ### Added
+- Phase 5 audio synchronization procedure, dubbing/localization guidance, cue-sheet template, illustrative example and timing regression checks ([PR #7](https://github.com/montadhahri/universal-ai-film-director/pull/7)).
 - Phase 4 shot planning, cinematography, lighting/composition references, timing template, illustrative timeline and regression checks ([PR #6](https://github.com/montadhahri/universal-ai-film-director/pull/6)).
 - Phase 3 continuity guidance, shot lifecycle and versioned Project Bible JSON schema, checkpoint template, illustrative snapshot and regression tests ([PR #4](https://github.com/montadhahri/universal-ai-film-director/pull/4)).
 - Development roadmap with phase status, acceptance criteria and PR links.

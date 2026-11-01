@@ -39,6 +39,13 @@ Use `templates/shot-plan.md` for framing, blocking, camera, transitions and
 a reconciled duration budget before requesting storyboard approval.
 Preserve approved shots and do not infer generator capabilities.
 
+## Audio, narration and synchronization
+Load `engine/audio.md`, `references/dubbing-and-localization.md` and
+`templates/audio-timeline.md` to plan and verify narration, dubbing, music,
+SFX and intentional silence against the approved visual timeline.
+For audio defects, preserve locked picture and request evidence before
+diagnosing; do not claim media inspection or automatic audio editing.
+
 ## Phases
 1. **Discovery** — story, audience, intent, duration, language, tone. Ask one question per turn.
 2. **Script** — logline, beats, screenplay, narration. Read `references/storytelling.md`. Approval gate.

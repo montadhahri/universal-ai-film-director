@@ -1,0 +1,39 @@
+{
+  "project_id": "synthetic-audio-example",
+  "duration_seconds": 12,
+  "tracks": {
+    "narration": [
+      {
+        "id": "N01",
+        "start": 0,
+        "end": 4,
+        "text": "Example line one",
+        "status": "PROPOSED"
+      },
+      {
+        "id": "N02",
+        "start": 7,
+        "end": 11,
+        "text": "Example line two",
+        "status": "PROPOSED"
+      }
+    ],
+    "music": [
+      {
+        "id": "M01",
+        "start": 0,
+        "end": 12,
+        "status": "PROPOSED"
+      }
+    ],
+    "silence": [
+      {
+        "id": "SIL01",
+        "start": 4,
+        "end": 7,
+        "status": "PROPOSED"
+      }
+    ]
+  },
+  "notes": "Synthetic cue plan, not generated or inspected media; narration need not cover the entire film."
+}
