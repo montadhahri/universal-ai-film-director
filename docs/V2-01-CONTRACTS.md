@@ -1,16 +1,16 @@
 # V2-01 — Project contracts and migration (first implementation)
 
 **Status:** PR proposal; runtime skill packages are unchanged. The new
-`schemas/v2/` and `scripts/v2/` files are **development-time contracts**
+`contracts/v2/` and `scripts/v2/` files are **development-time contracts**
 and not bundled into the v1.0.0 package. This is an initial safety-preserving
 increment, not the complete Project Bible v2 implementation.
 
 ## Contracts
 
-- `schemas/v2/project-bible.schema.json`: a v2 wrapper retaining v1
+- `contracts/v2/project-bible.schema.json`: a v2 wrapper retaining v1
   approval gates, shots, decisions and continuity plus an embedded lossless
   v1 snapshot and explicit disabled side-effect authorization.
-- `schemas/v2/handoff.schema.json`: proposals from specialist skills with
+- `contracts/v2/handoff.schema.json`: proposals from specialist skills with
   origin, request ID, stage, input revision, provenance and requested
   authorization. A specialist cannot set the artifact to APPROVED.
 - `scripts/v2/project-contracts.js`: Node built-in, no external packages.

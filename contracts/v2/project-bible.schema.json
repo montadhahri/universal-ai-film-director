@@ -99,7 +99,7 @@
           "const": "1.0"
         },
         "snapshot": {
-          "$ref": "../project-bible.schema.json"
+          "$ref": "../../schemas/project-bible.schema.json"
         }
       }
     },
