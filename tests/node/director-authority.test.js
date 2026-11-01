@@ -50,7 +50,7 @@ test('specific generation and publication intent is recorded separately without 
  assert.equal(n.authorization.provider_job_allowed,false);
  assert.equal(n.authorization.production_go,false);
  assert.equal(n.authorization.publication_allowed,false);
- assert.equal(p.permission_ledger,undefined);
+ assert.deepEqual(p.permission_ledger,[]);
  assert.throws(()=>recordPermission(p,{expected_revision:p.revision,permission:'provider_job',scope:'shot',grant_id:'x',evidence:user('maybe later')}),/Explicit permission/);
 });
 test('checkpoint roundtrip preserves exact approved/locked revisions and never claims media inspected or persisted',()=>{
@@ -59,5 +59,5 @@ test('checkpoint roundtrip preserves exact approved/locked revisions and never c
  const report=inspectCheckpoint(restored);assert.equal(report.locked[0].asset_ref,'asset://fake-fixture');
  assert.equal(report.media_inspected,false);assert.equal(report.persisted,false);assert.equal(report.provider_execution_performed,false);
  assert.throws(()=>restoreCheckpoint('}{'),/Invalid checkpoint/);
- assert.throws(()=>restoreCheckpoint(JSON.stringify({...p,gates:{script:{approved:true}}})),/evidence/);
+ assert.throws(()=>restoreCheckpoint(JSON.stringify({...p,gates:{...p.gates,script:{approved:true}}})),/evidence/);
 });
