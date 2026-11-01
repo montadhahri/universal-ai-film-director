@@ -36,20 +36,13 @@ Bring your own story, or start with a single sentence. Universal AI Film Directo
 
 ## 🚀 Quick start
 
-**1. Get the skills.** Clone the repository from GitHub:
+**1. Install the Film Director.** With a [Skills CLI](https://skills.sh/)-compatible agent, install directly from GitHub — no clone needed:
 
 ```bash
-git clone https://github.com/montadhahri/universal-ai-film-director.git
-cd universal-ai-film-director
+npx skills add montadhahri/universal-ai-film-director --skill universal-ai-film-director
 ```
 
-**2. Install the Director.** With a supported agent and the [Skills CLI](https://skills.sh/), install from your local checkout:
-
-```bash
-npx skills add ./skills/universal-ai-film-director
-```
-
-**3. Start a film.** In your agent, try:
+**2. Start a film.** In your agent, try:
 
 > I want to create a 30-second cinematic animated film. A young girl finds the last spark of light in a city without a sun, carries it to an ancient tower, and releases it into the sky. Help me direct it, one step at a time.
 
@@ -59,31 +52,35 @@ For agents without native skills support, provide the content of `skills/univers
 
 ## 📦 Installation
 
-The repository is currently private and scheduled for a future public launch. Until it is made public, cloning requires repository access; the commands below are written for general users once it is publicly available.
+The repository is currently private and planned for public release. The commands below are written for the public version; until publication, repository access is required.
 
 The repository contains **seven individually installable skill folders**. Install the Director for the complete guided experience; install specialists separately when your agent supports skill discovery.
 
-| What you want | Local installation command |
+| What you want | Install directly from GitHub |
 | --- | --- |
-| Full interactive filmmaking workflow | `npx skills add ./skills/universal-ai-film-director` |
-| Screenplay and narrative work | `npx skills add ./skills/film-storytelling` |
-| Characters, locations and art direction | `npx skills add ./skills/film-visual-direction` |
-| Camera direction and storyboards | `npx skills add ./skills/film-cinematography` |
-| Generator prompts and execution planning | `npx skills add ./skills/film-video-production` |
-| Narration, dubbing and music planning | `npx skills add ./skills/film-sound-direction` |
-| Continuity checks and repair proposals | `npx skills add ./skills/film-continuity-qa` |
+| Full interactive filmmaking workflow | `npx skills add montadhahri/universal-ai-film-director --skill universal-ai-film-director` |
+| Screenplay and narrative work | `npx skills add montadhahri/universal-ai-film-director --skill film-storytelling` |
+| Characters, locations and art direction | `npx skills add montadhahri/universal-ai-film-director --skill film-visual-direction` |
+| Camera direction and storyboards | `npx skills add montadhahri/universal-ai-film-director --skill film-cinematography` |
+| Generator prompts and execution planning | `npx skills add montadhahri/universal-ai-film-director --skill film-video-production` |
+| Narration, dubbing and music planning | `npx skills add montadhahri/universal-ai-film-director --skill film-sound-direction` |
+| Continuity checks and repair proposals | `npx skills add montadhahri/universal-ai-film-director --skill film-continuity-qa` |
 
-To install all seven skills, run the commands above from the cloned repository, or use your agent's documented skill installation method.
-
-**Installation note:** The commands above use a local checkout, which is the installation path verified by CI. Direct GitHub URL installation has not yet been verified. Skill discovery depends on your agent; installation does not grant access to a video generator or paid credits.
-
-For a pinned historical version:
+**Install all seven skills** in one command:
 
 ```bash
-git checkout v1.0.0
+npx skills add montadhahri/universal-ai-film-director --skill '*'
 ```
 
-That tag contains the original single-skill architecture. The current codebase has one modular implementation rather than duplicated version folders.
+**See available skills before installing:**
+
+```bash
+npx skills add montadhahri/universal-ai-film-director --list
+```
+
+**Installation note:** These GitHub commands are the supported Skills CLI syntax, but remote installation from this specific repository has not yet been independently tested. The repository is currently private; public visitors can use these commands once it is published. Until then, repository access is required. Installing a skill does not connect a video generator or spend credits.
+
+For local development, cloning, offline installs, or checking out the historical `v1.0.0` tag, see [the installation guide](docs/installation.md).
 
 [Installation details and troubleshooting](docs/installation.md)
 

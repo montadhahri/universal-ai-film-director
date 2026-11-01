@@ -34,11 +34,25 @@ test('examples do not advertise completed video, provider access or user approva
 test('public-ready Quick Start is usable without private-repository instructions',()=>{
  const readme=read('README.md');
  const install=read('docs/installation.md');
- assert(readme.includes('git clone https://github.com/montadhahri/universal-ai-film-director.git'));
+ assert(readme.includes('npx skills add montadhahri/universal-ai-film-director --skill universal-ai-film-director'));
+ assert(readme.includes("npx skills add montadhahri/universal-ai-film-director --skill '*'"));
+ assert(readme.includes('npx skills add montadhahri/universal-ai-film-director --list'));
+ assert(install.includes('git clone https://github.com/montadhahri/universal-ai-film-director.git'));
  assert(readme.includes('npx skills add ./skills/universal-ai-film-director'));
  assert(!readme.includes('Clone the repository using GitHub credentials'));
  assert(!readme.includes('authenticated local checkout'));
- assert(readme.includes('Until it is made public'));
- assert(install.includes('Before the public launch'));
+ assert(readme.includes('until publication') || readme.includes('until it becomes public') || readme.includes('until publication, repository access is required'));
+ assert(install.includes('currently private'));
  assert(!install.includes('With an authenticated clone'));
+});
+
+test('direct GitHub install is primary, clone is optional development workflow',()=>{
+ const readme=read('README.md');
+ const guide=read('docs/installation.md');
+ assert(readme.indexOf('npx skills add montadhahri/universal-ai-film-director --skill universal-ai-film-director')<readme.indexOf('## 📦 Installation'));
+ assert(guide.indexOf('## Quick install')<guide.indexOf('## Optional: clone'));
+ for(const name of ['universal-ai-film-director','film-storytelling','film-visual-direction','film-cinematography','film-video-production','film-sound-direction','film-continuity-qa'])
+   assert(readme.includes('npx skills add montadhahri/universal-ai-film-director --skill '+name),name);
+ assert(!readme.includes('| Local installation command |'));
+ assert(guide.includes('npx skills add ./skills/universal-ai-film-director'),'Keep tested local developer path');
 });
