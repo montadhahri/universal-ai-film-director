@@ -1,0 +1,144 @@
+{
+  "suite": "v2-creative-quality",
+  "version": "1.0",
+  "baseline": "v1.0.0",
+  "candidate": "v2-development",
+  "scale": "1–5 anchored rubric",
+  "dimensions": {
+    "story": {
+      "description": "Filmable storytelling and earned emotional payoff",
+      "score_1": "Generic/unfilmable",
+      "score_3": "Coherent but predictable",
+      "score_5": "Strong visual arc with earned resolution"
+    },
+    "collaboration": {
+      "description": "User ownership, focused questions and justified recommendations",
+      "score_1": "Overrides or interrogates user",
+      "score_3": "Accepts constraints with little craft guidance",
+      "score_5": "Respects vision and recommends purposeful choices"
+    },
+    "feasibility": {
+      "description": "Runtime, shot and audio accounting and production realism",
+      "score_1": "Contradictions or infeasible",
+      "score_3": "Mostly workable with gaps",
+      "score_5": "Explicit coherent timing and constraints"
+    },
+    "specificity": {
+      "description": "Actionable stage output without inventing context",
+      "score_1": "Vague or fabricated",
+      "score_3": "Partial but usable",
+      "score_5": "Detailed production-ready and traceable"
+    },
+    "continuity": {
+      "description": "Consistent character, props, environment and visual evolution",
+      "score_1": "Identity/style drift",
+      "score_3": "Incomplete anchors",
+      "score_5": "Stable IDs and motivated change"
+    },
+    "camera": {
+      "description": "Motivated camera, blocking and edit flow",
+      "score_1": "Decorative/confusing moves",
+      "score_3": "Basic frames without intent",
+      "score_5": "Camera advances drama and geography"
+    },
+    "sound": {
+      "description": "Cue timing, layering, emotional contrast and meaningful silence",
+      "score_1": "Broken/incoherent timeline",
+      "score_3": "Basic sound coverage",
+      "score_5": "Precisely layered, intentional sound"
+    },
+    "repair": {
+      "description": "Minimal evidence-based repair and protected material",
+      "score_1": "Unjustified broad rebuild",
+      "score_3": "Partial diagnosis",
+      "score_5": "Smallest remedy with rollback and verification"
+    },
+    "honesty": {
+      "description": "Accurate evidence, approval, rights and media/tool claims",
+      "score_1": "Fabricated capabilities or inspection",
+      "score_3": "Unclear provenance",
+      "score_5": "Precise separation of observed and planned"
+    }
+  },
+  "cases": [
+    {
+      "id": "CREATIVE-01",
+      "skill": "universal-ai-film-director",
+      "prompt": "I want a 60-second animated story about moving away from home: funny opening, emotional ending, European Portuguese narration. I haven't chosen visual style. Help me start.",
+      "dimensions": [
+        "story",
+        "collaboration",
+        "feasibility"
+      ]
+    },
+    {
+      "id": "CREATIVE-02",
+      "skill": "film-storytelling",
+      "prompt": "Write a PROPOSED 45-second visual screenplay about a lonely lighthouse keeper finding a handwritten note. Maximum 15 words of narration; include exact beat timing.",
+      "dimensions": [
+        "story",
+        "feasibility",
+        "specificity"
+      ]
+    },
+    {
+      "id": "CREATIVE-03",
+      "skill": "film-storytelling",
+      "prompt": "Create a 30-second bittersweet filmable story about an old musician giving away an instrument. No narration. The screenplay is not approved.",
+      "dimensions": [
+        "story",
+        "specificity"
+      ]
+    },
+    {
+      "id": "CREATIVE-04",
+      "skill": "film-visual-direction",
+      "prompt": "Propose a visual bible for a stylized 40-second film: a child carries a red scarf through rainy blue streets into warm sunlight. Keep character, prop and geography stable; no image assets exist.",
+      "dimensions": [
+        "continuity",
+        "specificity",
+        "honesty"
+      ]
+    },
+    {
+      "id": "CREATIVE-05",
+      "skill": "film-cinematography",
+      "prompt": "Plan a 30-second five-shot film: a person finds a key, approaches a door, hesitates, turns the key, then reveals an empty room. Show camera motivation and exact contiguous timing.",
+      "dimensions": [
+        "camera",
+        "feasibility",
+        "specificity"
+      ]
+    },
+    {
+      "id": "CREATIVE-06",
+      "skill": "film-sound-direction",
+      "prompt": "Design an exact 30-second sound cue sheet for someone reading a letter alone: ambience, paper effects, one eight-second spoken line, music, and intentional silence. Picture locked; no audio exists.",
+      "dimensions": [
+        "sound",
+        "feasibility",
+        "honesty"
+      ]
+    },
+    {
+      "id": "CREATIVE-07",
+      "skill": "film-video-production",
+      "prompt": "Give a generator-neutral six-second shot packet: a character in the same coat lights a candle inside a dark library. Separate reference, video, audio and edit instructions. No provider or media is available.",
+      "dimensions": [
+        "specificity",
+        "continuity",
+        "honesty"
+      ]
+    },
+    {
+      "id": "CREATIVE-08",
+      "skill": "film-continuity-qa",
+      "prompt": "A user reports repeated frames at 18–19 seconds and missing narration at 24 seconds in a locked 40-second film. No media is supplied. Propose precise scoped fixes.",
+      "dimensions": [
+        "repair",
+        "honesty",
+        "collaboration"
+      ]
+    }
+  ]
+}
