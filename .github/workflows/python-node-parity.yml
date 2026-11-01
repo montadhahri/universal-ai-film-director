@@ -1,0 +1,35 @@
+name: Python and Node parity gate
+on:
+  pull_request:
+    paths:
+      - 'tests/**'
+      - '.github/workflows/python-node-parity.yml'
+      - 'docs/python-free-tooling.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compare-evaluators:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test parity diagnostic normalization
+        run: node --test tests/node/parity-normalization.test.js
+      - name: Compare transcript evaluator outputs and exit codes
+        run: node tests/node/compare_python_node.js
+      - name: Upload parity evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-node-parity-evidence
+          path: build/python-node-parity.json
+          if-no-files-found: warn
+          retention-days: 14
