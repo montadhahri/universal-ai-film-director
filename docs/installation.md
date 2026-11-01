@@ -1,6 +1,6 @@
 # Installing the current filmmaking skills
 
-The repository is PRIVATE. Installation requires access to the private source or a user-approved copy of a skill folder; it does not authorize any personal video service or cloud account.
+Clone the repository and install skills from the local checkout. **Before the public launch, cloning requires repository access.** Installing a skill does not authorize access to personal video services, cloud accounts or paid credits.
 
 Each package is a self-contained `skills/<name>/` directory with `SKILL.md` and `references/guide.md`. Compatible agents may support the Agent Skills convention natively; behavior and installation vary by host.
 
@@ -14,7 +14,12 @@ native skill-to-skill invocation.
 
 ## Skills CLI (where supported)
 
-With an authenticated clone or checkout of this PRIVATE repository:
+```bash
+git clone https://github.com/montadhahri/universal-ai-film-director.git
+cd universal-ai-film-director
+```
+
+Then install from your local checkout:
 
 ```bash
 npx skills add ./skills/universal-ai-film-director
@@ -32,7 +37,7 @@ npx skills add ./skills/film-continuity-qa
 ```
 
 The local-folder CLI smoke workflow checks the install mechanics.
-A remote authenticated private URL or automatic multi-agent invocation
+Direct GitHub URL installation and automatic multi-agent invocation
 should be treated as UNVERIFIED until directly tested on the chosen host.
 
 ## Tool limitations

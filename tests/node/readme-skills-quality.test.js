@@ -30,3 +30,15 @@ test('examples do not advertise completed video, provider access or user approva
   assert(!/we (generated|rendered|published) the film/i.test(example),name+': fabricated production evidence');
  }
 });
+
+test('public-ready Quick Start is usable without private-repository instructions',()=>{
+ const readme=read('README.md');
+ const install=read('docs/installation.md');
+ assert(readme.includes('git clone https://github.com/montadhahri/universal-ai-film-director.git'));
+ assert(readme.includes('npx skills add ./skills/universal-ai-film-director'));
+ assert(!readme.includes('Clone the repository using GitHub credentials'));
+ assert(!readme.includes('authenticated local checkout'));
+ assert(readme.includes('Until it is made public'));
+ assert(install.includes('Before the public launch'));
+ assert(!install.includes('With an authenticated clone'));
+});

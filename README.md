@@ -36,14 +36,14 @@ Bring your own story, or start with a single sentence. Universal AI Film Directo
 
 ## 🚀 Quick start
 
-**1. Obtain the skills.** Clone the repository using GitHub credentials with access to this **private** repository:
+**1. Get the skills.** Clone the repository from GitHub:
 
 ```bash
 git clone https://github.com/montadhahri/universal-ai-film-director.git
 cd universal-ai-film-director
 ```
 
-**2. Install the Director.** For a target agent supported by the [Skills CLI](https://skills.sh/), install the Director from your authenticated local checkout:
+**2. Install the Director.** With a supported agent and the [Skills CLI](https://skills.sh/), install from your local checkout:
 
 ```bash
 npx skills add ./skills/universal-ai-film-director
@@ -59,6 +59,8 @@ For agents without native skills support, provide the content of `skills/univers
 
 ## 📦 Installation
 
+The repository is currently private and scheduled for a future public launch. Until it is made public, cloning requires repository access; the commands below are written for general users once it is publicly available.
+
 The repository contains **seven individually installable skill folders**. Install the Director for the complete guided experience; install specialists separately when your agent supports skill discovery.
 
 | What you want | Local installation command |
@@ -71,9 +73,9 @@ The repository contains **seven individually installable skill folders**. Instal
 | Narration, dubbing and music planning | `npx skills add ./skills/film-sound-direction` |
 | Continuity checks and repair proposals | `npx skills add ./skills/film-continuity-qa` |
 
-To install all seven from the checkout, execute each command above (or use your chosen agent's documented native skill installation method).
+To install all seven skills, run the commands above from the cloned repository, or use your agent's documented skill installation method.
 
-**Private-repository note:** A local-folder Skills CLI install is checked in CI; authenticated **direct installation from the private GitHub URL** has not been independently verified. The installer needs access to the local folder, and native discovery depends on the agent. Installing a skill does not connect a video generator or pay for rendering.
+**Installation note:** The commands above use a local checkout, which is the installation path verified by CI. Direct GitHub URL installation has not yet been verified. Skill discovery depends on your agent; installation does not grant access to a video generator or paid credits.
 
 For a pinned historical version:
 
@@ -81,7 +83,7 @@ For a pinned historical version:
 git checkout v1.0.0
 ```
 
-That tag contains the original single-skill architecture. The development branch has one clean current implementation; there are no `v1/`, `v2/` or `v3/` source duplicates.
+That tag contains the original single-skill architecture. The current codebase has one modular implementation rather than duplicated version folders.
 
 [Installation details and troubleshooting](docs/installation.md)
 
@@ -142,7 +144,7 @@ Skills can guide a production on any compatible agent, but they **cannot guarant
 
 | Version | Meaning | Link |
 | --- | --- | --- |
-| **v1.0.0** | Published private release; original single-skill system | [Release notes and source](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) |
+| **v1.0.0** | First tagged release; original single-skill system | [Release notes and source](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) |
 | **v2.0.0** | Modular Director and six specialists, in development | [Roadmap](docs/ROADMAP.md) · [Unreleased changes](CHANGELOG.md) |
 
 Git tags preserve released versions. The working tree contains **one current source of truth**, not multiple runtime copies for each version. No v2 release tag is implied by its development status.
