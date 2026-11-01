@@ -1,19 +1,19 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/montadhahri/universal-ai-film-director/schemas/v2/project-bible.schema.json",
-  "title": "Film Director v2 Project Bible wrapper and immutable v1 migration snapshot",
+  "title": "Project Bible current contract",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "schema_version",
     "project_id",
     "revision",
+    "phase",
     "gates",
-    "shots",
     "decisions",
     "continuity",
-    "provenance",
-    "source"
+    "shots",
+    "proposals",
+    "authorization"
   ],
   "properties": {
     "schema_version": {
@@ -26,6 +26,19 @@
     "revision": {
       "type": "integer",
       "minimum": 1
+    },
+    "phase": {
+      "enum": [
+        "discovery",
+        "script",
+        "visual_bible",
+        "storyboard",
+        "sound",
+        "generator",
+        "generate",
+        "review",
+        "delivery"
+      ]
     },
     "gates": {
       "type": "object",
@@ -47,12 +60,6 @@
         }
       }
     },
-    "shots": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/shot"
-      }
-    },
     "decisions": {
       "type": "array",
       "items": {
@@ -65,42 +72,10 @@
         "type": "object"
       }
     },
-    "provenance": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "kind",
-        "evidence"
-      ],
-      "properties": {
-        "kind": {
-          "enum": [
-            "MIGRATED_V1",
-            "NATIVE_V2"
-          ]
-        },
-        "evidence": {
-          "type": [
-            "string",
-            "null"
-          ]
-        }
-      }
-    },
-    "source": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "schema_version",
-        "snapshot"
-      ],
-      "properties": {
-        "schema_version": {
-          "const": "1.0"
-        },
-        "snapshot": {
-          "$ref": "../../schemas/project-bible.schema.json"
-        }
+    "shots": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/shot"
       }
     },
     "proposals": {
@@ -119,14 +94,20 @@
       ],
       "properties": {
         "production_go": {
-          "const": false
+          "type": "boolean"
         },
         "provider_job_allowed": {
-          "const": false
+          "type": "boolean"
         },
         "publication_allowed": {
-          "const": false
+          "type": "boolean"
         }
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
       }
     }
   },
@@ -173,6 +154,7 @@
     },
     "shot": {
       "type": "object",
+      "additionalProperties": false,
       "required": [
         "id",
         "revision",
@@ -189,6 +171,10 @@
           "type": "integer",
           "minimum": 1
         },
+        "parent_revision": {
+          "type": "integer",
+          "minimum": 1
+        },
         "state": {
           "enum": [
             "DRAFT",
@@ -198,21 +184,22 @@
             "NEEDS_FIX"
           ]
         },
+        "approved_asset": {
+          "type": "string",
+          "minLength": 1
+        },
         "continuity_refs": {
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "uniqueItems": true
         },
         "issues": {
           "type": "array",
           "items": {
             "type": "string"
           }
-        },
-        "approved_asset": {
-          "type": "string",
-          "minLength": 1
         }
       },
       "allOf": [

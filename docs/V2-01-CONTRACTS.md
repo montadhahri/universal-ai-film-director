@@ -1,54 +1,54 @@
-# V2-01 — Project contracts and migration (first implementation)
+# V2-01 — Canonical project and handoff contracts
 
-**Status:** PR proposal; runtime skill packages are unchanged. The new
-`contracts/v2/` and `scripts/v2/` files are **development-time contracts**
-and not bundled into the v1.0.0 package. This is an initial safety-preserving
-increment, not the complete Project Bible v2 implementation.
+**Status:** Initial implementation PR. Folder names are intentionally **version-neutral**.
 
-## Contracts
+## Clean repository strategy
 
-- `contracts/v2/project-bible.schema.json`: a v2 wrapper retaining v1
-  approval gates, shots, decisions and continuity plus an embedded lossless
-  v1 snapshot and explicit disabled side-effect authorization.
-- `contracts/v2/handoff.schema.json`: proposals from specialist skills with
-  origin, request ID, stage, input revision, provenance and requested
-  authorization. A specialist cannot set the artifact to APPROVED.
-- `scripts/v2/project-contracts.js`: Node built-in, no external packages.
-  `migrateV1` copies source and produces revision 1 without inferring
-  approvals or generating media. `restoreV1` returns the exact original
-  v1 snapshot, **not** a reverse conversion of later v2 edits.
-  `recordProposal` only stores a proposal in a *new* revision, without
-  approving or modifying locked media.
+This repository has a single **current implementation** in its working branch.
+Versions are tracked with Git commits, immutable release tags and changelog
+headings, **not folders named v1/v2/v3**.
 
-## Safety and compatibility
+- `contracts/project-bible.schema.json`: canonical current project contract.
+- `contracts/handoff.schema.json`: canonical specialist proposal contract.
+- `scripts/project-contracts.js`: optional deterministic Node.js operations.
+- `tests/node/contracts.test.js`: offline acceptance/negative tests.
+- `docs/V2-ARCHITECTURE-RFC.md`: one-time historical RFC (the phase name
+  is not a runtime package folder).
 
-- The frozen `v1.0.0` Git tag and existing schema remain unchanged.
-- No Python dependency, no API credentials, no provider calls, no automated
-  video or audio generation.
-- No implicit escalation of provider job, publication or Production GO.
-- All sample approvals and asset IDs in tests are **synthetic fixtures**.
-- A schema alone does not guarantee all cross-field invariants. Use both the
-  schema and executable validators; richer approval/evidence validation
-  and native-v2 project creation are future increments.
+The existing v1 `schemas/project-bible.schema.json` and frozen runtime
+package have not yet been replaced **in this intermediate PR**. They will
+be removed, refactored or replaced in a separately reviewed migration
+once new modular skills are ready, rather than maintained forever in parallel.
+Historical v1.0.0 is recoverable from its Git tag.
 
-## Test matrix
+## Current contracts
+
+`newProject(projectId)` creates native canonical state with no user
+approvals, no media, and all provider/publishing permissions false.
+`validateProject` enforces approval-evidence and locked-shot invariants.
+`validateProposal` ensures only a defined specialist may submit a
+`PROPOSED` artifact for the current revision. `recordProposal` creates
+an updated copy without granting approval or changing locked assets.
+
+**Not implemented here:** user approval operations, scoped unlocks,
+generation permission workflows, real media provenance, specialist skill
+packages and full schema-validator integration. These will be proposed
+in subsequent phases; testing the validator against synthetic fixtures
+does not mean a real agent executed the skill.
+
+## Validation
 
 ```bash
-node --test tests/node/v2-contracts.test.js
+node --test tests/node/contracts.test.js
 node --test tests/node/*.test.js
 node tests/package/validate-package.js
 node tests/validate_repo.js
 ```
 
-Tests cover lossless v1 restore, real evidence requirements, locked shot
-references, duplicate/stale proposal detection, refusal to accept fabricated
-inspection and unapproved generator permissions. These are offline contracts,
-not agent execution or media quality tests.
+Old project formats remain available from the `v1.0.0` Git tag;
+automatic old-checkpoint migration is not supplied in this PR. If we
+need it for previously saved projects, design a temporary import tool
+rather than version-named folders.
 
-## Next contracts (not implemented here)
-
-Native-v2 state creation, asset/provenance manifests, explicit user approval
-commands with transcript references, scoped unlock/replacement ledger,
-production job authorization, binary media checksums, and schema versioned
-cross-host interchange. Their tests must avoid implying real media or
-approval that was never observed.
+**Safety:** Repo PRIVATE, no published v2 release, no provider credentials,
+no actual video generation, no automatic merge or Production GO.

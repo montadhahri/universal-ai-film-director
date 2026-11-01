@@ -1,7 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/montadhahri/universal-ai-film-director/schemas/v2/handoff.schema.json",
-  "title": "v2 specialist proposal, Director-only application",
+  "title": "Specialist proposal contract",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -59,6 +58,7 @@
     },
     "proposed_artifact": {
       "type": "object",
+      "additionalProperties": true,
       "required": [
         "id",
         "revision",
@@ -77,8 +77,7 @@
           "type": "string",
           "minLength": 1
         }
-      },
-      "additionalProperties": true
+      }
     },
     "provenance": {
       "type": "object",
@@ -89,11 +88,7 @@
       ],
       "properties": {
         "kind": {
-          "enum": [
-            "AGENT_DRAFT",
-            "USER_REPORT",
-            "DIRECT_INSPECTION"
-          ]
+          "const": "AGENT_DRAFT"
         },
         "evidence_ref": {
           "type": [
