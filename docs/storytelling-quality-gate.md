@@ -2,12 +2,16 @@
 
 This is an **editorial preflight**, not a screenplay approval, an autonomous creative critic, a production gate, or evidence that the skill outperforms v1. It runs *before* the specialist returns a **PROPOSED** screenplay to the Director. A clean structural report only means the proposal is ready for a human/Director review.
 
+## Pre-generation feasibility
+
+Use `reviewBrief` for structured hard timing constraints before drafting. Compatible note-reading and absolute-silence intervals may overlap; calculate their union. BLOCKED means constraints are infeasible, not that artistic quality is poor.
+
 ## Review sequence
 
 1. **Audience attention:** Does the audience need to read an on-screen note, recognize a visual clue, or study a subtle facial reaction? Avoid simultaneous explanatory voice-over unless the artist intentionally chooses that effect. Flag competing VO as a review warning rather than blindly prohibiting overlapping sound.
 2. **Emotional breathing room:** Allow enough screen time to register a decision and its consequence, especially the final image. Review a payoff under ~3.5 seconds, not as a universally invalid cut.
 3. **Filmable action:** Mark complex physical actions for scrutiny when compressed into under ~4 seconds. Estimate camera/readability and possible edit pacing, not just narration words.
-4. **Narrative redundancy and causality:** Challenge VO that repeats the picture, mystery revelations without setup, payoffs unrelated to the opening, and unmotivated location changes. These require **human creative judgment**, not automatic scores.
+4. **Narrative redundancy and causality:** Challenge VO that repeats the picture, mystery revelations without setup, payoffs unrelated to the opening, and unmotivated location changes. These require **human creative judgment**, not automatic scores. Review emotional specificity, protagonist choice/recognition and a transformed earlier motif; allow unconventional storytelling.
 5. **Timing and constraints:** No invalid beat boundaries, beat gaps, narration that cannot fit its estimated delivery, or violation of a strict no-VO/maximum-word constraint.
 6. **Revision discipline:** Identify up to three most important changes and their beat IDs. Make the **smallest proposed revision** before handoff. Never silently modify previously approved screenplay, picture, or audio.
 
@@ -29,6 +33,10 @@ node --test tests/node/storytelling-preflight.test.js
 - Unseen test B: a new door-opening film with an extremely short final reaction.
 
 These are **synthetic regression fixtures**, not independent agent-generated screenplays. To claim improved storytelling, run the prompts through the actual installed skill on an independent host, capture its responses, review the outputs and compare them using the repo's v1/v2 benchmark.
+
+## Scoped revision safety
+
+For audio-only changes, preserve approved visuals, screenplay and shot timing. Declare changed artifact IDs, protected versions and dependencies; escalate conflicts to the Director. `reviewRevisionScope` checks declared types only, not real diffs or authentic approval.
 
 ## Approval boundary
 
