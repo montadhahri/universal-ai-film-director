@@ -15,6 +15,7 @@ v0.1.0 is listed under **Unreleased** until a release is explicitly approved.
 - Replace the obsolete Phase 8 `In review` regression assertion with checks that Phase 8 is merged and production release remains unauthorized (PR #11 CI fix).
 
 ### Added
+- Real Skills CLI local-folder smoke-test workflow, installed-file inventory comparison, and explicit owner-operated private-remote and agent acceptance protocol (PR #21).
 - Isolated installable skill folder with a strict runtime-only allowlist and byte-for-byte mirror guard; recommended direct-path Skills CLI installation (private install remains unverified; PR #20).
 - Stage 4 independent Python/Node transcript evaluator parity gate with positive, strict, negative and malformed inputs, JSON evidence and read-only CI; no Python deletion (PR #17).
 - Stage 3 additive Node.js transcript evaluator, behavior negative tests, offline pre-production runner, and CI report artifacts; Python counterparts remain in place for parity review (PR #16).
