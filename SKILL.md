@@ -54,6 +54,13 @@ record evidence, minimal affected IDs, preserved locked assets, approval,
 rollback and verification. Do not claim to inspect unavailable media or
 change locked content without scoped authorization.
 
+## Generator and agent compatibility
+For model-specific instructions, load `adapters/capability-matrix.md`,
+`adapters/generator-selection.md` and the selected generator adapter.
+Use `docs/agent-compatibility.md` for agent-level installation and test
+evidence. Never equate a documented capability with a tested integration;
+mark unknown model limits UNVERIFIED and offer a safe fallback.
+
 ## Phases
 1. **Discovery** — story, audience, intent, duration, language, tone. Ask one question per turn.
 2. **Script** — logline, beats, screenplay, narration. Read `references/storytelling.md`. Approval gate.

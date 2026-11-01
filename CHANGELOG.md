@@ -8,6 +8,7 @@ v0.1.0 is listed under **Unreleased** until a release is explicitly approved.
 ## [Unreleased]
 
 ### Added
+- Phase 7 generator capability verification matrix, selection guidance, Google Flow checklist, agent compatibility evidence and manual integration scenarios ([PR #9](https://github.com/montadhahri/universal-ai-film-director/pull/9)).
 - Phase 6 evidence-based quality assurance, localized repair workflow, defect/repair templates, illustrative defect ticket and regression checks ([PR #8](https://github.com/montadhahri/universal-ai-film-director/pull/8)).
 - Phase 5 audio synchronization procedure, dubbing/localization guidance, cue-sheet template, illustrative example and timing regression checks ([PR #7](https://github.com/montadhahri/universal-ai-film-director/pull/7)).
 - Phase 4 shot planning, cinematography, lighting/composition references, timing template, illustrative timeline and regression checks ([PR #6](https://github.com/montadhahri/universal-ai-film-director/pull/6)).
