@@ -30,5 +30,7 @@ unittest fixtures alone.
 
 ## Installation
 
-See [installation.md](installation.md). Skills CLI installation depends on
-agent support and GitHub access for this private repository.
+For setup details, consult the repository's installation documentation on
+GitHub or use the manual skill loading instructions supplied by your agent.
+The packaged skill intentionally omits maintainer documentation. Skills CLI
+installation depends on agent support and authenticated access to this private repository.

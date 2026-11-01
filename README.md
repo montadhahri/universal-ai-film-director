@@ -136,7 +136,7 @@ use the existing manual method below.
 
 After installation, the skill instructions require neither Python nor Node.js; the host agent may have its own requirements. A global `-g` install applies to selected compatible agents, not every LLM product.
 
-**Packaging:** Use the dedicated [runtime-only install directory](skills/universal-ai-film-director/) instead of the repository root. It is guarded against development files and stale copies by [package validation](docs/skill-package.md). An actual private Skills CLI installation is still **not independently verified**; inspect the installed directory.
+**Packaging:** Use the dedicated [runtime-only install directory](skills/universal-ai-film-director/SKILL.md) instead of the repository root. It is guarded against development files and stale copies by [package validation](docs/skill-package.md). An actual private Skills CLI installation is still **not independently verified**; inspect the installed directory.
 
 See [installation details](docs/installation.md) and the [tooling roadmap](docs/ROADMAP.md).
 
