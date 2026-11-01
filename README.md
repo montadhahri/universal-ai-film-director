@@ -18,7 +18,7 @@
 | `skills/film-sound-direction/` | Narration, dubbing, music, cues and intentional silence |
 | `skills/film-continuity-qa/` | Defect reports, media review and scoped repairs |
 
-Each skill is a self-contained `SKILL.md` with a just-in-time `references/guide.md`. Skills are not required to execute other skills: if the host has no delegation, a single agent can follow the Director instructions and stage logic sequentially.
+Each skill is a self-contained `SKILL.md` with focused, on-demand `references/` and reusable output `assets/` when needed. The v1 filmmaking knowledge has been redistributed across these specialist resources rather than retained in obsolete root folders. Skills are not required to execute other skills: if the host has no delegation, a single agent can follow the Director instructions and stage logic sequentially.
 
 ## Use
 

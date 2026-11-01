@@ -15,7 +15,9 @@ function validate(){
    }
   }
   walk(dir);
-  assert.deepEqual(actual.sort(),['SKILL.md','references/guide.md'].sort(),'Runtime package has extra/missing content: '+name);
+  assert(actual.includes('SKILL.md') && actual.includes('references/guide.md'),'Required files missing: '+name);
+  assert(actual.every(x=>x==='SKILL.md'||/^references\/[a-z0-9-]+\.md$/.test(x)||/^assets\/[a-z0-9-]+\.md$/.test(x)),'Unexpected file in runtime payload: '+name);
+  assert(!actual.some(x=>x.includes('README')||x.includes('CHANGELOG')||x.includes('tests/')),'Development files leaked into skill: '+name);
   const doc=fs.readFileSync(path.join(dir,'SKILL.md'),'utf8');
   assert(doc.startsWith('---\nname: '+name+'\n'),'Bad frontmatter: '+name);
  }

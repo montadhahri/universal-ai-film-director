@@ -6,8 +6,8 @@ tags, not by duplicated skill source folders.
 
 ## [Unreleased]
 
-### Changed
-- Replace the v1 monolithic root skill and mirrored package with one clean,
+### Added
+- Transfer 31 original v1 cinematic direction procedures, generator reference guides and output templates into their responsible specialist skills, with progressive-disclosure references and parity tests. No duplicate root runtime tree.\n\n### Changed\n- Replace the v1 monolithic root skill and mirrored package with one clean,
   portable Director and six specialist Agent Skills (Story, Visual Direction,
   Cinematography, Video Production, Sound, Continuity/QA).
 - Keep canonical current Project Bible and proposal contracts in `contracts/`;

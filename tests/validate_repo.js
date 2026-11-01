@@ -23,7 +23,7 @@ function validate(root=ROOT){
   if(!match||!new RegExp('^name:\\s*'+name+'\\s*$','m').test(match[1])||!/^description:\s*.+$/m.test(match?.[1]||''))errors.push('Invalid skill frontmatter: '+name);
   if(!fs.existsSync(path.join(dir,'references/guide.md')))errors.push('Missing guide: '+name);
   if(!s.includes('references/guide.md'))errors.push('Guide not discoverable: '+name);
-  const files=list(dir);if(files.some(f=>!['SKILL.md','references/guide.md'].includes(f)))errors.push('Unexpected skill payload: '+name);
+  const files=list(dir);if(files.some(f=>f!=='SKILL.md' && !/^references\/[a-z0-9-]+\.md$/.test(f) && !/^assets\/[a-z0-9-]+\.md$/.test(f)))errors.push('Unexpected skill payload: '+name);
  }
  for(const dir of ['engine','adapters','references','schemas','templates','examples']){
   if(fs.existsSync(path.join(root,dir)))errors.push('Obsolete root directory: '+dir);
