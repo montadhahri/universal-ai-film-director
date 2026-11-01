@@ -18,3 +18,14 @@ test('VD pack remains distinct from canonical V2-03 acceptance suite',()=>{
  assert.equal(base.cases.length,14);
  assert(!base.cases.some(c=>pack.cases.some(v=>v.id===c.id)));
 });
+
+test('VD-04 v1.1 supplies the amber hue it expects',()=>{
+ const c=pack.cases.find(c=>c.id==='VD-04');
+ assert.match(c.prompt,/amber spark/);
+ assert(c.expected.some(e=>e.includes('amber hue')));
+ assert.equal(pack.version,'1.1');
+});
+test('VD-06 still does not supply actual image provenance',()=>{
+ const c=pack.cases.find(c=>c.id==='VD-06');
+ assert.match(c.prompt,/no image, URL, license or creator attribution/);
+});
