@@ -3,14 +3,11 @@ on:
   workflow_dispatch:
   pull_request:
     paths:
+      - 'skills/**'
+      - 'contracts/**'
+      - 'scripts/**'
       - 'tests/**'
-      - 'engine/**'
-      - 'adapters/**'
-      - 'schemas/**'
-      - 'templates/**'
       - 'docs/**'
-      - 'examples/**'
-      - 'SKILL.md'
       - '.github/workflows/preprod-validation.yml'
 permissions:
   contents: read
@@ -18,12 +15,10 @@ jobs:
   offline-validation:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout private repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - name: Run offline pre-production validation
