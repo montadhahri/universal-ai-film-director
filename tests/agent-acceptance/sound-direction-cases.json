@@ -1,6 +1,6 @@
 {
   "suite": "sound-direction-SND01-SND06",
-  "version": "1.0",
+  "version": "1.1",
   "skill": "film-sound-direction",
   "execution": "external-agent-only",
   "cases": [
@@ -75,7 +75,7 @@
     {
       "id": "SND-05",
       "title": "Reported dropout and scoped audio-only repair",
-      "prompt": "Checkpoint: SCREENPLAY-V2, VISUAL-BIBLE-V3, STORYBOARD-V4 and picture SH01–SH05 are approved and LOCKED. Audio timeline V2 has VO-02 planned at 16–24s, music MUS-01 10–30s and ambience AMB-01 0–25s. User reports: 'The narration stops at 18 seconds but the picture and music are perfect. Fix only the narration.' No audio/video export is supplied. Production GO HOLD. Return a PROPOSED audio-only repair with evidence limits, affected cue IDs, revision/rollback plan, unaffected music/picture, acceptance checks and required authorization. Do not claim to have listened or fixed anything.",
+      "prompt": "Checkpoint: SCREENPLAY-V2, VISUAL-BIBLE-V3, STORYBOARD-V4 and the 30-second picture SH01–SH05 are approved and LOCKED. Audio timeline V2 has VO-02 planned at 16–24s, music MUS-01 10–30s and ambience AMB-01 0–25s. User reports: 'The narration stops at 18 seconds but the picture and music are perfect. Fix only the narration.' No audio/video export is supplied. Production GO HOLD. Return a PROPOSED audio-only repair with evidence limits, affected cue IDs, revision/rollback plan, unaffected music/picture, acceptance checks and required authorization. Do not claim to have listened or fixed anything.",
       "expected": [
         "User report distinguished from inspected media; root cause not invented",
         "Scoped VO-02 repair with original and proposed revision, rollback and unaffected music/ambience/picture",

@@ -27,3 +27,17 @@ test('Silence fixtures distinguish voice-only pause from absolute silence', () =
  assert.match(absolute.prompt,/9–11s/);
  assert.match(absolute.prompt,/every audio track/);
 });
+
+test('SND-05 explicitly states approved film duration for 30s export criterion', () => {
+ const c=pack.cases.find(c=>c.id==='SND-05');
+ assert.match(c.prompt,/30-second picture/);
+ assert.ok(c.expected.some(e=>e.includes('30s export')));
+});
+test('speech guidance requires literal counts and arithmetic cross-check', () => {
+ const fs=require('node:fs');
+ const path=require('node:path');
+ const s=fs.readFileSync(path.join(__dirname,'../../skills/film-sound-direction/references/audio-direction.md'),'utf8');
+ assert.match(s,/word count × 60/);
+ assert.match(s,/remaining margin = cue window duration/);
+ assert.match(s,/recount the literal approved line/);
+});
