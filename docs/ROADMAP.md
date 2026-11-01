@@ -14,7 +14,7 @@ are proposals, not delivery guarantees.
 | 5 | Audio, narration and synchronization | Merged | [PR #7](https://github.com/montadhahri/universal-ai-film-director/pull/7) |
 | 6 | Intelligent QA and localized repair | Merged | [PR #8](https://github.com/montadhahri/universal-ai-film-director/pull/8) |
 | 7 | Generator and agent compatibility | Merged | [PR #9](https://github.com/montadhahri/universal-ai-film-director/pull/9) |
-| 8 | Flagship demo and v1.0 readiness | In review — release not approved | [PR #10](https://github.com/montadhahri/universal-ai-film-director/pull/10) |
+| 8 | Flagship demo and v1.0 readiness | Merged — release not approved | [PR #10](https://github.com/montadhahri/universal-ai-film-director/pull/10) |
 
 ## Phase 1 — Repository safety and regression tests (merged)
 
@@ -99,3 +99,12 @@ are proposals, not delivery guarantees.
 Phase 3: 1–2 weeks; Phase 4: 1–2 weeks; Phase 5: 1–2 weeks;
 Phase 6: 1–2 weeks; Phase 7: 2–3 weeks; Phase 8: 1–2 weeks.
 These are rough estimates, not a scheduled commitment.
+
+## Pre-production validation (after Phase 8; NOT a release)
+
+All eight implementation phases have merged. Private repository validation is
+tracked separately from production authorization. See
+[private pre-production validation](private-preprod-validation.md).
+**Production GO is not authorized**; no public repository change or release tag
+is planned. Offline tests, authenticated private installation and real-agent
+acceptance each require their own evidence.
