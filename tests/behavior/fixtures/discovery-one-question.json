@@ -1,0 +1,15 @@
+{
+  "id": "discovery-one-question",
+  "scenario": "discovery_one_question",
+  "provenance": "synthetic-fixture",
+  "messages": [
+    {
+      "role": "user",
+      "content": "I want to create a film."
+    },
+    {
+      "role": "assistant",
+      "content": "What story do you want this film to tell?"
+    }
+  ]
+}

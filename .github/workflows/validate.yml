@@ -10,5 +10,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Check skill structure, contract and Markdown links
+      - name: Validate repository structure and links
         run: python tests/validate_repo.py
+      - name: Evaluate synthetic behavior fixtures
+        run: python tests/behavior/evaluate.py --json-out build/behavior-report.json
+      - name: Upload deterministic evaluation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: behavior-evaluation-report
+          path: build/behavior-report.json
+          if-no-files-found: warn

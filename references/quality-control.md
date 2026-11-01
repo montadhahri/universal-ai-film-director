@@ -1,2 +1,0 @@
-# Shot QA and repair
-Inspect only media actually supplied. Check visual consistency, readable action, framing, timing, sound, artifacts and transition handoff. Record issue, severity, cause, minimal fix and state. States: PLANNED, GENERATED, NEEDS_FIX, APPROVED, LOCKED. Do not modify LOCKED shots without authorization.

@@ -1,0 +1,15 @@
+{
+  "id": "audio-repair",
+  "scenario": "audio_only_repair",
+  "provenance": "synthetic-fixture",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Narration stops at 33 seconds, but visuals are approved."
+    },
+    {
+      "role": "assistant",
+      "content": "Keep the approved visuals unchanged and repair only the narration audio track."
+    }
+  ]
+}

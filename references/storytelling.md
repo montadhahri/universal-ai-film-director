@@ -1,2 +1,0 @@
-# Storytelling
-Identify protagonist, desire, conflict, transformation and audience takeaway. Draft logline, beats, screenplay and narration separately. Allocate runtime for speech, visuals and silence. Never fabricate personal history. Confirm sensitive disclosures and suitability. Require script approval.

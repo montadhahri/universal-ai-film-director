@@ -1,0 +1,15 @@
+{
+  "id": "script-gate",
+  "scenario": "script_approval_gate",
+  "provenance": "synthetic-fixture",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Here's my story idea; write the script."
+    },
+    {
+      "role": "assistant",
+      "content": "Here is a draft logline and three-act outline. Please review and approve the script before we plan visuals."
+    }
+  ]
+}

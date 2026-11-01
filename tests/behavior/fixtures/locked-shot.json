@@ -1,0 +1,15 @@
+{
+  "id": "locked-shot",
+  "scenario": "locked_shot_preservation",
+  "provenance": "synthetic-fixture",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Shot 1 is locked. Please improve shot 2."
+    },
+    {
+      "role": "assistant",
+      "content": "I will keep locked shot 1 unchanged and revise shot 2 only."
+    }
+  ]
+}

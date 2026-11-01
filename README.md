@@ -336,6 +336,19 @@ More: [Troubleshooting guide](docs/troubleshooting.md).
 - This repository does not include a video-generation API integration or rendering engine.
 - Sample film projects are illustrative and have **not** been rendered or independently benchmarked.
 
+## 🧪 Automated agent behavior evaluation
+
+Phase 1 includes [eight deterministic transcript scenarios](tests/behavior/README.md) and a
+[standard-library Python evaluator](tests/behavior/evaluate.py). Run:
+
+```bash
+python3 tests/behavior/evaluate.py --json-out build/behavior-report.json
+```
+
+**Important:** Included examples are synthetic fixtures, **not real agent executions**.
+GitHub Actions evaluates the fixtures and uploads a JSON report; actual agent compatibility
+requires capturing transcripts from each target agent and evaluating them separately.
+
 ## 🛠️ For contributors
 
 Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md), [CHANGELOG.md](CHANGELOG.md), and the [validation workflow](.github/workflows/validate.yml).

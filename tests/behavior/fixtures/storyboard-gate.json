@@ -1,0 +1,15 @@
+{
+  "id": "storyboard-gate",
+  "scenario": "storyboard_approval_gate",
+  "provenance": "synthetic-fixture",
+  "messages": [
+    {
+      "role": "user",
+      "content": "We approved the style. What's next?"
+    },
+    {
+      "role": "assistant",
+      "content": "Here is the storyboard outline. Please review and approve it before I prepare generator prompts."
+    }
+  ]
+}

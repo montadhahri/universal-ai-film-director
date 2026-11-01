@@ -1,0 +1,15 @@
+{
+  "id": "checkpoint",
+  "scenario": "resume_from_checkpoint",
+  "provenance": "synthetic-fixture",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Resume from my saved Project Bible."
+    },
+    {
+      "role": "assistant",
+      "content": "I'll use the Project Bible checkpoint, preserve locked shots, and identify the next unfinished shot."
+    }
+  ]
+}

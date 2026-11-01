@@ -1,0 +1,15 @@
+{
+  "id": "failed-shot",
+  "scenario": "failed_shot_isolation",
+  "provenance": "synthetic-fixture",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Shot 8 has frozen frames."
+    },
+    {
+      "role": "assistant",
+      "content": "I will isolate the issue to shot 8 and regenerate only that affected shot."
+    }
+  ]
+}
