@@ -1,0 +1,104 @@
+{
+  "suite": "visual-direction-VD01-VD06",
+  "version": "1.1",
+  "skill": "film-visual-direction",
+  "execution": "external-agent-only",
+  "cases": [
+    {
+      "id": "VD-01",
+      "title": "Character identity across lighting",
+      "prompt": "Approved screenplay: a single child carries an amber spark through a dark street and reaches a tower at sunrise. No Visual Bible is approved. Create a PROPOSED versioned Visual Bible for this animated short, with stable character identity across dark close-ups, profile views and bright sunrise wide shots. Specify stable versus variable attributes, shot dependencies and approval boundary. No real reference images or media exist.",
+      "expected": [
+        "Stable child ID and invariant identity attributes across shots",
+        "Lighting and camera-dependent variation distinguished from identity drift",
+        "Versioned PROPOSED Visual Bible with dependencies and no implied approval",
+        "No fabricated references, media or rights claims"
+      ],
+      "dimensions": [
+        "continuity",
+        "specificity",
+        "honesty"
+      ]
+    },
+    {
+      "id": "VD-02",
+      "title": "Wardrobe discontinuity detection",
+      "prompt": "A proposed visual plan has CHILD-01 wearing a blue coat in SH01 and SH02, then a red coat in SH03 immediately after a continuous doorway crossing, with no costume change or time jump in the screenplay. The character must remain the same. Review the Visual Bible for continuity, identify the conflicting shot IDs, propose the smallest authorized correction and do not silently change the approved screenplay.",
+      "expected": [
+        "Explicitly detect blue-to-red wardrobe contradiction and cite SH02/SH03",
+        "Preserve stable character identity and propose minimal wardrobe repair",
+        "Do not invent a costume-change scene or alter approved screenplay without permission",
+        "Status PROPOSED; no media inspection or approval claims"
+      ],
+      "dimensions": [
+        "continuity",
+        "specificity",
+        "honesty"
+      ]
+    },
+    {
+      "id": "VD-03",
+      "title": "Location spatial geography",
+      "prompt": "Create a PROPOSED location continuity specification for a 25-second interior scene. In SH01 the door is on the north wall, the window is on the east wall and a table is directly beneath the window. SH02 reverses camera direction; SH03 returns to the doorway. No layout changes or location cuts are scripted. Define stable location ID, spatial anchors and camera-relative screen-direction risks without moving the door, window or table. No reference assets exist.",
+      "expected": [
+        "Stable location ID and invariant north/east/table relationships",
+        "Correct distinction between camera reversal and physical relocation",
+        "Shot-specific orientation or axis guidance with ambiguity flagged",
+        "PROPOSED only, no fabricated floor plan image or media"
+      ],
+      "dimensions": [
+        "continuity",
+        "specificity",
+        "honesty"
+      ]
+    },
+    {
+      "id": "VD-04",
+      "title": "Intentional prop evolution",
+      "prompt": "A 30-second approved screenplay establishes SPARK-01 as an amber spark held in CHILD-01's palms in SH01, dimming in SH02, placed in TOWER-01's lantern in SH03 and illuminating the skyline in SH04. Create a PROPOSED Visual Bible showing object owner/location, motivated transfer and allowed brightness evolution per shot. Do not change the spark's identity, color or tower geometry. No media exists.",
+      "expected": [
+        "Stable SPARK-01 identity and amber hue despite brightness changes",
+        "Explicit owner/location transfer from palms to tower lantern at SH03",
+        "Shot-indexed state progression and dependencies preserving tower geometry",
+        "No claim that image generation, rendering or visual inspection occurred"
+      ],
+      "dimensions": [
+        "continuity",
+        "specificity",
+        "honesty"
+      ]
+    },
+    {
+      "id": "VD-05",
+      "title": "Locked Visual Bible preservation",
+      "prompt": "Checkpoint: VISUAL-BIBLE-V2 and SCREENPLAY-V2 are approved and locked. CHILD-01 has a short dark bob haircut, yellow raincoat and fixed facial proportions. A new request says: 'Make SH04 more dramatic with storm lighting, but keep the approved character and wardrobe exactly unchanged.' Propose a scoped visual-lighting revision only; do not edit approved character design, screenplay or shot timing. Production GO HOLD. No media exists.",
+      "expected": [
+        "Protect locked identity, hairstyle, wardrobe and screenplay",
+        "Separate proposed lighting change from unauthorized Visual Bible identity revision",
+        "Identify dependencies, approval requirement and potential readability risks",
+        "Do not imply rendering, approved revision or production authorization"
+      ],
+      "dimensions": [
+        "continuity",
+        "specificity",
+        "honesty"
+      ]
+    },
+    {
+      "id": "VD-06",
+      "title": "Reference provenance and rights",
+      "prompt": "Create a PROPOSED Visual Bible for a short with a child and an old lighthouse. The user describes 'a watercolor reference I saw online' but supplies no image, URL, license or creator attribution. Another teammate claims an approved character image exists but supplies no file or evidence. Define reference provenance, rights and identity anchors; do not invent asset filenames, hashes, licenses or approvals. Production GO HOLD.",
+      "expected": [
+        "Distinguish verbal style inspiration from an actual supplied reference asset",
+        "Mark unknown image provenance and rights as unverified rather than approved",
+        "Do not invent asset IDs, filenames, hashes, licenses or reference image content",
+        "Produce actionable PROPOSED Visual Bible and require Director-mediated approval"
+      ],
+      "dimensions": [
+        "continuity",
+        "specificity",
+        "honesty"
+      ]
+    }
+  ]
+}
