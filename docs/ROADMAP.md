@@ -100,22 +100,82 @@ Phase 3: 1–2 weeks; Phase 4: 1–2 weeks; Phase 5: 1–2 weeks;
 Phase 6: 1–2 weeks; Phase 7: 2–3 weeks; Phase 8: 1–2 weeks.
 These are rough estimates, not a scheduled commitment.
 
-## Backlog: evaluate Python-free maintainer tooling
+## Next roadmap — repository professionalization first (proposed)
 
-**Status: investigation only.** Python is not a runtime requirement for this Agent Skill. The existing Python scripts are for repository validation and regression tests.
+**Status:** proposed for owner review; no implementation or deletion is
+authorized by this roadmap change. All eight original implementation phases
+are merged. The repository remains **PRIVATE** and **PROD GO is on hold**.
 
-Options:
-- Keep existing standard-library Python tests in CI (lowest risk).
-- Evaluate replacing them with built-in Node.js `node:test` and `node:assert` (no extra testing library required), only if equivalent coverage is demonstrated.
-- Investigate a minimal distributable skill package containing `SKILL.md` and referenced resources. Verify private Skills CLI discovery and packaging rather than assuming it excludes tests.
+The next sequence prioritizes clean, maintainable source and reproducible
+checks **before** installation, real-agent acceptance, or release.
 
-Acceptance gates:
-- Inventory current scripts and their CI consumers.
-- Preserve equivalent or better behavior, safety, and file-preservation checks.
-- Verify authenticated installation from the private repository and correct relative references.
-- Do not remove Python files until replacements pass and the owner separately approves deletions.
-- Use a new PR with CI evidence and changelog update.
-- Keep the repository private and production release on hold.
+| Order | Workstream | Priority | Exit criterion |
+| --- | --- | --- | --- |
+| 1 | Python-free maintainer tooling | P0 | Node.js-based checks reproduce all existing safety, regression, fixture and offline-validation coverage |
+| 2 | Repository structure and quality cleanup | P0 | Clear runtime/maintainer boundaries, consistent naming, documentation and CI; no orphaned references |
+| 3 | Minimal skill packaging | P0 | A reproducible, reference-complete skill payload excludes development-only files when supported |
+| 4 | Authenticated private installation verification | P0 | Actual `npx skills add` discovery and installation checked with private credentials |
+| 5 | Real-agent integration validation | P1 | Recorded results for supported agents, including failures and untested agents |
+| 6 | End-to-end filmmaking acceptance | P1 | Real evidence for approvals, continuity, audio and localized repair; synthetic results labeled |
+| 7 | Security, reliability and release-candidate audit | P1 | Privacy, permissions, failure recovery and release gates reviewed; owner decides separately on PROD GO |
+
+### Workstream 1 — Python-free maintainer tooling (FIRST)
+
+**Current inventory:** 13 `.py` files under `tests/`, used for structure
+validation, protected-file preservation, regression tests, synthetic behavior
+fixtures and offline pre-production validation. Python is **not** a runtime
+dependency of the Agent Skill.
+
+**Target:** use Node.js built-in `node:test`, `node:assert/strict` and
+standard-library filesystem/process utilities. Prefer **no npm test
+dependencies**. Keep `SKILL.md` and its referenced resources plain Markdown;
+the skill must not require Node.js to run after installation.
+
+**Migration plan (separate implementation PRs):**
+
+1. Inventory every Python script, assertion, fixture and GitHub Actions caller.
+   Record a baseline count and behavior for existing checks.
+2. Port structure, links and protected-file checks to JavaScript; compare
+   results against the existing Python implementation.
+3. Port regression tests and synthetic behavior evaluator with the same
+   positive, negative and multi-turn fixtures. Preserve the explicit
+   distinction between synthetic evaluation and real-agent execution.
+4. Port offline pre-production runner and machine-readable JSON reports.
+   Update CI workflows and maintainer documentation to use Node.js.
+5. Run old and new checks side by side. Confirm equivalent or stronger
+   assertions, nonzero failure exits and artifact outputs.
+6. **Only after explicit owner approval**, remove superseded Python scripts
+   in a dedicated cleanup PR, update the protected-file baseline carefully
+   and confirm no broken links or stale Python commands remain.
+
+**Acceptance:** green CI; zero Python runtime dependencies; no lost checks;
+no accidental file deletions; reproducible reports; all changes reviewed in
+PRs. A JavaScript rewrite by itself does not prove behavioral equivalence.
+
+### Workstream 2 — Repository structure and quality cleanup
+
+- Define and document **skill runtime files** versus **maintainer-only files**.
+- Review README, installation docs, examples, schemas, paths and naming.
+- Standardize scripts, CI naming and developer contribution instructions.
+- Remove duplication or obsolete files **only with explicit owner approval**
+  and protected-file baseline updates.
+- Keep backward compatibility and existing working skill behavior.
+
+### Workstream 3 — Minimal skill packaging
+
+- Determine the exact resource graph from `SKILL.md`.
+- Investigate a single-source package containing the entry point and
+  required `engine/`, `references/`, `templates/`, `adapters/` and
+  schemas. Do not assume the Skills CLI excludes `tests/` automatically.
+- Verify packaging against a private repository without publishing it.
+
+### Workstreams 4–7 — Validation and release preparation
+
+After repository cleanup and packaging, validate authenticated private
+installation, then real-agent behavior, then real filmmaking workflows.
+Record evidence and limitations. Complete security/reliability review
+before proposing any release candidate. **No tag, publication, repository
+visibility change or PROD GO without a separate explicit owner decision.**
 
 ## Pre-production validation (after Phase 8; NOT a release)
 
