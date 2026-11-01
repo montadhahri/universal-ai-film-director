@@ -60,6 +60,10 @@ Before proposing screenplay approval, identify at most the **three highest-impac
 
 When asked to revise an approved screenplay, do **not** overwrite it. Name the exact affected beat IDs, preserve the original approved revision and request scoped authorization if required by the Director's gate/lock rules.
 
+## Pre-handoff quality review
+
+Before returning a screenplay, apply [Creative Quality Gate](creative-quality-gate.md). Identify VO-versus-text or subtle-action conflicts, rushed emotional payoffs, physically implausible beat durations and redundant exposition. Treat editorial warnings as reasons to consider a revision, not hard cinema laws. A clean check means READY_FOR_DIRECTOR_REVIEW, never approved or verified media.
+
 ## Portable output contract
 
 ```text

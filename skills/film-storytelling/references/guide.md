@@ -9,3 +9,7 @@ Check: clear cause and effect; emotional climax supported by setup; no event req
 ## Deeper filmable story review
 
 When a proposed story is vague or emotionally flat, use [short-film craft](short-film-craft.md) to make the protagonist's goal, physical choice, causal change and final visual payoff explicit. Use beat IDs and global timing estimates, not invented synchronization claims. A reflective no-voice-over film can still contain music and effects; distinguish NO_VO from absolute silence.
+
+## Pre-handoff review
+
+Use [Creative Quality Gate](creative-quality-gate.md) before returning a screenplay: protect the audience's attention, allow reaction time, identify redundant narration and provide the smallest beat-level fix. This is a director review aid, never automatic screenplay approval.
