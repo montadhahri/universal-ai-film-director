@@ -1,4 +1,4 @@
-name: Node validation parity (stages 1-2)
+name: Node validation parity (stages 1-3)
 on:
   push:
   pull_request:
@@ -17,4 +17,19 @@ jobs:
       - name: Run Node.js structure and links check
         run: node tests/validate_repo.js
       - name: Run Node.js negative and repository tests
-        run: node --test tests/node/validation.test.js tests/node/regression.test.js
+        run: node --test tests/node/validation.test.js tests/node/regression.test.js tests/node/behavior.test.js tests/node/preprod.test.js
+
+      - name: Evaluate synthetic fixtures with Node.js
+        run: node tests/behavior/evaluate.js --json-out build/behavior-report-node.json
+      - name: Run offline pre-production checks with Node.js
+        run: node tests/preprod/run_validation.js --out build/preprod-validation-node.json
+      - name: Upload Node.js validation reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: node-validation-reports
+          path: |
+            build/behavior-report-node.json
+            build/preprod-validation-node.json
+          if-no-files-found: warn
+          retention-days: 14

@@ -40,3 +40,27 @@ The Python behavior-evaluator tests (`test_behavior.py`) are deliberately
 both together in Stage 3 prevents misleading cross-language parity claims.
 The Node pre-production tests currently check the existing Python runner's
 safety contract, not a replacement Node runner. No Python files are removed.
+
+## Stage 3 — behavior evaluator and offline pre-production runner
+
+Node.js equivalents now implement the transcript heuristic evaluator and the
+offline pre-production report runner, with built-in `node:fs`,
+`node:child_process`, `node:test` and `node:assert/strict` only.
+
+```bash
+node tests/behavior/evaluate.js --json-out build/behavior-report-node.json
+node tests/behavior/evaluate.js --transcripts /path/to/captures --strict
+node --test tests/node/behavior.test.js tests/node/preprod.test.js
+node tests/preprod/run_validation.js --out build/preprod-validation-node.json
+```
+
+The report preserves `suite`, `model_executed:false`, result counts,
+per-file errors and provenance. The offline report preserves
+`report_schema:preprod-validation-v1`, safety flags, checks and limitations.
+The Node runner uses Node syntax checks in place of Python `compileall` and
+tests the Node suite. Its report uses distinct filenames to avoid overwriting
+Python CI evidence.
+
+**Python scripts and workflows remain untouched** and run independently.
+Stage 4 must compare reports and failure cases across languages before
+considering any deletions. These heuristics do not prove real agent behavior.
