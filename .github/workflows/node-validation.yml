@@ -1,0 +1,20 @@
+name: Node validation parity (stage 1)
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  node-parity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run Node.js preservation check
+        run: node tests/regression/check_preservation.js
+      - name: Run Node.js structure and links check
+        run: node tests/validate_repo.js
+      - name: Run Node.js negative and repository tests
+        run: node --test tests/node/validation.test.js
