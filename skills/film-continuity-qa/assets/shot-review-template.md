@@ -10,6 +10,7 @@
 - Defects:
 - Minimal repair:
 - Shot lifecycle recommendation: NEEDS_FIX / APPROVED / LOCKED / UNVERIFIED (QA recommendation only; Director controls approval)
-- Related repair ticket ID/status (separate):
+- Related repair ticket ID:
+- Related repair ticket status (separate from shot lifecycle):
 - Post-repair verification evidence (or NOT_INSPECTED):
 - Approval date:
