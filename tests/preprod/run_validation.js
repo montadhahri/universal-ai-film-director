@@ -13,7 +13,8 @@ const COMMANDS=[
  ['package-allowlist',['tests/package/validate-package.js']],
  ['regression-tests',['--test',...NODE_TEST_FILES]],
  ['synthetic-fixtures',['tests/behavior/evaluate.js','--json-out','build/behavior-report.json']],
- ['agent-acceptance-matrix',['tests/agent-acceptance/run.js','--json-out','build/agent-acceptance.json']]
+ ['agent-acceptance-matrix',['tests/agent-acceptance/run.js','--json-out','build/agent-acceptance.json']],
+ ['creative-quality-matrix',['tests/quality-benchmark/run.js','--json-out','build/quality-benchmark.json']]
 ];
 function run(out=path.join(ROOT,'build/preprod-validation.json')) {
  const checks=[];
