@@ -1,0 +1,226 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Project Bible current contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project_id",
+    "revision",
+    "phase",
+    "gates",
+    "decisions",
+    "continuity",
+    "shots",
+    "proposals",
+    "authorization"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "2.0"
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "phase": {
+      "enum": [
+        "discovery",
+        "script",
+        "visual_bible",
+        "storyboard",
+        "sound",
+        "generator",
+        "generate",
+        "review",
+        "delivery"
+      ]
+    },
+    "gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "script",
+        "visual_bible",
+        "storyboard"
+      ],
+      "properties": {
+        "script": {
+          "$ref": "#/$defs/gate"
+        },
+        "visual_bible": {
+          "$ref": "#/$defs/gate"
+        },
+        "storyboard": {
+          "$ref": "#/$defs/gate"
+        }
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "continuity": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "shots": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/shot"
+      }
+    },
+    "proposals": {
+      "type": "array",
+      "items": {
+        "$ref": "handoff.schema.json"
+      }
+    },
+    "authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "production_go",
+        "provider_job_allowed",
+        "publication_allowed"
+      ],
+      "properties": {
+        "production_go": {
+          "type": "boolean"
+        },
+        "provider_job_allowed": {
+          "type": "boolean"
+        },
+        "publication_allowed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "approved"
+      ],
+      "properties": {
+        "approved": {
+          "type": "boolean"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "approved": {
+                "const": true
+              }
+            },
+            "required": [
+              "approved"
+            ]
+          },
+          "then": {
+            "required": [
+              "version",
+              "evidence"
+            ]
+          }
+        }
+      ]
+    },
+    "shot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "revision",
+        "state",
+        "continuity_refs",
+        "issues"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "parent_revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "state": {
+          "enum": [
+            "DRAFT",
+            "PROPOSED",
+            "APPROVED",
+            "LOCKED",
+            "NEEDS_FIX"
+          ]
+        },
+        "approved_asset": {
+          "type": "string",
+          "minLength": 1
+        },
+        "continuity_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "LOCKED"
+              }
+            },
+            "required": [
+              "state"
+            ]
+          },
+          "then": {
+            "required": [
+              "approved_asset"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
