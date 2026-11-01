@@ -10,6 +10,8 @@ tags, not by duplicated skill source folders.
 - Transfer 31 original v1 cinematic direction procedures, generator reference guides and output templates into their responsible specialist skills, with progressive-disclosure references and parity tests. No duplicate root runtime tree.
 
 ### Changed
+- Add a user-facing nine-stage production workflow and modular Director/specialist architecture diagrams to README, with explicit user approvals, generation permission boundaries and single-agent fallback.
+- Make direct GitHub Skills CLI installation the primary public Quick Start, with one-command Director, all-skills, list and specialist examples; retain Git clone as optional development path and disclose pre-launch private access requirements.
 - Add task-specific worked filmmaking examples for all seven skills and validate README installation/release discoverability, user approval boundaries and negative media-claim scenarios.
 - Replace maintainer-focused README with user-first filmmaking overview, local/private installation commands, current release and development badges, professional workflow examples, agent compatibility and FAQ.
 - Replace the v1 monolithic root skill and mirrored package with one clean,

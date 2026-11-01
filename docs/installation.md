@@ -1,43 +1,64 @@
-# Installing the current filmmaking skills
+# Installation
 
-The repository is PRIVATE. Installation requires access to the private source or a user-approved copy of a skill folder; it does not authorize any personal video service or cloud account.
+Universal AI Film Director is a collection of seven portable Agent Skills. The primary installation path is the [Skills CLI](https://skills.sh/), which supports GitHub sources without cloning.
 
-Each package is a self-contained `skills/<name>/` directory with `SKILL.md` and `references/guide.md`. Compatible agents may support the Agent Skills convention natively; behavior and installation vary by host.
+> **Availability:** This repository is currently private and planned for public release. Until it becomes public, remote installation requires repository access. The commands below describe how visitors will install it once public. GitHub remote installation from this specific repository is not independently tested yet.
 
-## Single-agent mode
-
-Start by providing the content of
-`skills/universal-ai-film-director/SKILL.md` and
-`skills/universal-ai-film-director/references/guide.md` to your agent.
-This Director includes the full stage sequence and can operate without
-native skill-to-skill invocation.
-
-## Skills CLI (where supported)
-
-With an authenticated clone or checkout of this PRIVATE repository:
+## Quick install — Film Director
 
 ```bash
+npx skills add montadhahri/universal-ai-film-director --skill universal-ai-film-director
+```
+
+Start a film by giving your compatible AI agent a story idea and requested runtime. The Director asks at most one focused discovery question at a time, proposes professional creative choices, and requests your approval of the screenplay, Visual Bible and storyboard.
+
+## Install all skills
+
+```bash
+npx skills add montadhahri/universal-ai-film-director --skill '*'
+```
+
+## List available skills
+
+```bash
+npx skills add montadhahri/universal-ai-film-director --list
+```
+
+## Install individual specialists
+
+```bash
+npx skills add montadhahri/universal-ai-film-director --skill film-storytelling
+npx skills add montadhahri/universal-ai-film-director --skill film-visual-direction
+npx skills add montadhahri/universal-ai-film-director --skill film-cinematography
+npx skills add montadhahri/universal-ai-film-director --skill film-video-production
+npx skills add montadhahri/universal-ai-film-director --skill film-sound-direction
+npx skills add montadhahri/universal-ai-film-director --skill film-continuity-qa
+```
+
+The CLI installs skills for the agents it supports and asks for installation preferences. A target agent's native discovery and skill-to-skill delegation may vary.
+
+## Optional: clone for development or local installation
+
+If you want to inspect, modify or test the source:
+
+```bash
+git clone https://github.com/montadhahri/universal-ai-film-director.git
+cd universal-ai-film-director
 npx skills add ./skills/universal-ai-film-director
 ```
 
-Install specialists individually when the target agent supports discovery:
+The **local-folder installation path** is covered by this repository's automated Skills CLI smoke test. To inspect the original single-skill release from the clone:
 
 ```bash
-npx skills add ./skills/film-storytelling
-npx skills add ./skills/film-visual-direction
-npx skills add ./skills/film-cinematography
-npx skills add ./skills/film-video-production
-npx skills add ./skills/film-sound-direction
-npx skills add ./skills/film-continuity-qa
+git checkout v1.0.0
 ```
 
-The local-folder CLI smoke workflow checks the install mechanics.
-A remote authenticated private URL or automatic multi-agent invocation
-should be treated as UNVERIFIED until directly tested on the chosen host.
+This historical checkout is not required for the current modular skill installation.
 
-## Tool limitations
+## Compatible agents without Skills CLI
 
-No integrated video generation, narration synthesis or cloud browser is
-included. Obtain explicit user authorization before any external account
-connection, paid job, upload or publication. Without a provider, deliver plans
-and report `BLOCKED_NO_PROVIDER`; never invent clips or a final MP4.
+If your environment cannot install Agent Skills through the CLI, load `skills/universal-ai-film-director/SKILL.md` and the linked `references/` documents in your agent, using its supported instructions mechanism. The Director can carry out the workflow using one agent, without native specialist delegation.
+
+## Generator access and permissions
+
+Installing these instruction skills does **not** install or authorize an image/video model, audio synthesis, browser access, a paid account or publishing. Actual rendering requires supported tools and separate user approval. Without them, the Director should provide production plans and prompts, not claim to have generated a finished film.

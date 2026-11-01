@@ -13,7 +13,7 @@ A portable, modular **Agent Skills** collection for writing screenplays, designi
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 ![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-blueviolet)
 
-[**Quick start**](#-quick-start) · [**Installation**](#-installation) · [**How it works**](#-how-filmmaking-works) · [**Specialist skills**](#-meet-the-film-crew) · [**Compatibility**](#-agent-compatibility) · [**Releases**](#-versions--releases) · [**FAQ**](#-faq)
+[**Quick start**](#-quick-start) · [**Installation**](#-installation) · [**Production workflow**](#-film-production-workflow) · [**Skills architecture**](#-how-the-skills-work-together) · [**Specialist skills**](#-meet-the-film-crew) · [**Compatibility**](#-agent-compatibility) · [**Releases**](#-versions--releases) · [**FAQ**](#-faq)
 
 </div>
 
@@ -36,20 +36,13 @@ Bring your own story, or start with a single sentence. Universal AI Film Directo
 
 ## 🚀 Quick start
 
-**1. Obtain the skills.** Clone the repository using GitHub credentials with access to this **private** repository:
+**1. Install the Film Director.** With a [Skills CLI](https://skills.sh/)-compatible agent, install directly from GitHub — no clone needed:
 
 ```bash
-git clone https://github.com/montadhahri/universal-ai-film-director.git
-cd universal-ai-film-director
+npx skills add montadhahri/universal-ai-film-director --skill universal-ai-film-director
 ```
 
-**2. Install the Director.** For a target agent supported by the [Skills CLI](https://skills.sh/), install the Director from your authenticated local checkout:
-
-```bash
-npx skills add ./skills/universal-ai-film-director
-```
-
-**3. Start a film.** In your agent, try:
+**2. Start a film.** In your agent, try:
 
 > I want to create a 30-second cinematic animated film. A young girl finds the last spark of light in a city without a sun, carries it to an ancient tower, and releases it into the sky. Help me direct it, one step at a time.
 
@@ -59,31 +52,90 @@ For agents without native skills support, provide the content of `skills/univers
 
 ## 📦 Installation
 
+The repository is currently private and planned for public release. The commands below are written for the public version; until publication, repository access is required.
+
 The repository contains **seven individually installable skill folders**. Install the Director for the complete guided experience; install specialists separately when your agent supports skill discovery.
 
-| What you want | Local installation command |
+| What you want | Install directly from GitHub |
 | --- | --- |
-| Full interactive filmmaking workflow | `npx skills add ./skills/universal-ai-film-director` |
-| Screenplay and narrative work | `npx skills add ./skills/film-storytelling` |
-| Characters, locations and art direction | `npx skills add ./skills/film-visual-direction` |
-| Camera direction and storyboards | `npx skills add ./skills/film-cinematography` |
-| Generator prompts and execution planning | `npx skills add ./skills/film-video-production` |
-| Narration, dubbing and music planning | `npx skills add ./skills/film-sound-direction` |
-| Continuity checks and repair proposals | `npx skills add ./skills/film-continuity-qa` |
+| Full interactive filmmaking workflow | `npx skills add montadhahri/universal-ai-film-director --skill universal-ai-film-director` |
+| Screenplay and narrative work | `npx skills add montadhahri/universal-ai-film-director --skill film-storytelling` |
+| Characters, locations and art direction | `npx skills add montadhahri/universal-ai-film-director --skill film-visual-direction` |
+| Camera direction and storyboards | `npx skills add montadhahri/universal-ai-film-director --skill film-cinematography` |
+| Generator prompts and execution planning | `npx skills add montadhahri/universal-ai-film-director --skill film-video-production` |
+| Narration, dubbing and music planning | `npx skills add montadhahri/universal-ai-film-director --skill film-sound-direction` |
+| Continuity checks and repair proposals | `npx skills add montadhahri/universal-ai-film-director --skill film-continuity-qa` |
 
-To install all seven from the checkout, execute each command above (or use your chosen agent's documented native skill installation method).
-
-**Private-repository note:** A local-folder Skills CLI install is checked in CI; authenticated **direct installation from the private GitHub URL** has not been independently verified. The installer needs access to the local folder, and native discovery depends on the agent. Installing a skill does not connect a video generator or pay for rendering.
-
-For a pinned historical version:
+**Install all seven skills** in one command:
 
 ```bash
-git checkout v1.0.0
+npx skills add montadhahri/universal-ai-film-director --skill '*'
 ```
 
-That tag contains the original single-skill architecture. The development branch has one clean current implementation; there are no `v1/`, `v2/` or `v3/` source duplicates.
+**See available skills before installing:**
+
+```bash
+npx skills add montadhahri/universal-ai-film-director --list
+```
+
+**Installation note:** These GitHub commands are the supported Skills CLI syntax, but remote installation from this specific repository has not yet been independently tested. The repository is currently private; public visitors can use these commands once it is published. Until then, repository access is required. Installing a skill does not connect a video generator or spend credits.
+
+For local development, cloning, offline installs, or checking out the historical `v1.0.0` tag, see [the installation guide](docs/installation.md).
 
 [Installation details and troubleshooting](docs/installation.md)
+
+## 🎞️ Film production workflow
+
+The Director follows the same **nine-stage filmmaking journey** as the original single-skill release, now supported by six focused specialties. You start with an idea, collaborate on creative decisions and approve each major milestone.
+
+```mermaid
+flowchart TD
+    A["1 · Discovery<br/>Your story, audience, tone and runtime"] --> B["2 · Screenplay<br/>Story beats, dialogue and narration"]
+    B --> G1{"You approve<br/>the screenplay?"}
+    G1 -- "Revise" --> B
+    G1 -- "Approve" --> C["3 · Visual Bible<br/>Characters, world and style"]
+    C --> G2{"You approve<br/>the visual design?"}
+    G2 -- "Revise" --> C
+    G2 -- "Approve" --> D["4 · Storyboard<br/>Shot IDs, camera and exact timing"]
+    D --> G3{"You approve<br/>the storyboard?"}
+    G3 -- "Revise" --> D
+    G3 -- "Approve" --> E["5 · Sound direction<br/>Voice, music, SFX and silence"]
+    E --> F["6 · Generator setup<br/>Verify actual tools and capabilities"]
+    F --> P{"Authorized tools<br/>and permissions?"}
+    P -- "No" --> PLAN["Generation-ready shot packets<br/>No footage claimed"]
+    P -- "Yes" --> H["7 · Generate<br/>Create/retrieve real shot assets"]
+    H --> I["8 · Review<br/>Inspect footage and repair defects"]
+    I --> J["9 · Edit and deliver<br/>Check final export"]
+    I -- "Scoped repair needed" --> I
+```
+
+**Approval gates are yours:** the AI does not automatically approve the screenplay, Visual Bible or storyboard. It may recommend camera, pacing or sound choices inside your approved direction. Generating video, connecting an account or spending credits requires separate permission and a genuinely available tool. If generation is unavailable, the deliverable is a **production plan**, not a finished film.
+
+The Director keeps a **Project Bible** with the decisions, approved revisions, character and location anchors, shot IDs, continuity dependencies, audio cues and next safe step. You can resume from a checkpoint without restarting the story.
+
+## 🧩 How the skills work together
+
+The Director is your **creative partner and production coordinator**, not a replacement for you. Specialists contribute proposals; the Director reconciles them with your vision and presents approvals for you to decide.
+
+```mermaid
+flowchart TB
+    U["You · filmmaker and final creative authority"]
+    D["AI Film Director<br/>Project Bible · approvals · workflow"]
+    U <-->|"Brief · feedback · explicit approvals"| D
+    D <--> S["Storytelling<br/>Screenplay"]
+    D <--> V["Visual Direction<br/>Character and style bible"]
+    D <--> C["Cinematography<br/>Storyboard and camera"]
+    D <--> P["Video Production<br/>Shot packets and tool checks"]
+    D <--> A["Sound Direction<br/>Audio timeline and dubbing"]
+    D <--> Q["Continuity & QA<br/>Evidence and minimal repairs"]
+```
+
+**Two ways to use the skills:**
+
+- **One agent:** install the Director and work through the entire film interactively. The Director can follow the specialist procedures in a single-agent workflow; native delegation is not required.
+- **Modular skills:** install individual specialists for focused tasks. Where your agent supports skill discovery or delegation, the Director can coordinate their proposed outputs; exact cross-agent behavior depends on the host.
+
+Each skill contains an entrypoint (`SKILL.md`), focused filmmaking references and reusable output templates. This helps keep prompts manageable while preserving detailed methods for camera continuity, generator capability checks, audio-only repairs and other demanding production tasks.
 
 ## 🎥 How filmmaking works
 
@@ -142,7 +194,7 @@ Skills can guide a production on any compatible agent, but they **cannot guarant
 
 | Version | Meaning | Link |
 | --- | --- | --- |
-| **v1.0.0** | Published private release; original single-skill system | [Release notes and source](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) |
+| **v1.0.0** | First tagged release; original single-skill system | [Release notes and source](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) |
 | **v2.0.0** | Modular Director and six specialists, in development | [Roadmap](docs/ROADMAP.md) · [Unreleased changes](CHANGELOG.md) |
 
 Git tags preserve released versions. The working tree contains **one current source of truth**, not multiple runtime copies for each version. No v2 release tag is implied by its development status.
