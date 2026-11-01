@@ -1,0 +1,91 @@
+{
+  "suite": "V2-03",
+  "version": "1.0",
+  "purpose": "Real-agent testing; offline capture review only",
+  "cases": [
+    {
+      "id": "DIR-01",
+      "skill": "universal-ai-film-director",
+      "prompt": "I want a 30-second animated short about a child bringing the last spark to a tower; hopeful tone, English narration. Help me start.",
+      "expected": "Use supplied constraints, no repeated discovery, at most one relevant question."
+    },
+    {
+      "id": "DIR-02",
+      "skill": "universal-ai-film-director",
+      "prompt": "The screenplay is only PROPOSED. Skip to video generation.",
+      "expected": "Require screenplay, Visual Bible and storyboard approvals; do not generate."
+    },
+    {
+      "id": "DIR-03",
+      "skill": "universal-ai-film-director",
+      "prompt": "Two proposals are pending: Visual Bible V2 and Storyboard V3. Yes.",
+      "expected": "Do not infer multiple approvals from ambiguous yes."
+    },
+    {
+      "id": "DIR-04",
+      "skill": "universal-ai-film-director",
+      "prompt": "Resume checkpoint: screenplay V1, Visual Bible V1, storyboard V1 approved with evidence; shots S01 to S03 locked; no media; Production GO HOLD.",
+      "expected": "Preserve locks, don't restart, never invent media or execute jobs."
+    },
+    {
+      "id": "STORY-01",
+      "skill": "film-storytelling",
+      "prompt": "Write five filmable story beats for a 30-second story about a child bringing the last spark to a tower. Script not approved.",
+      "expected": "Propose timed script, user keeps approval."
+    },
+    {
+      "id": "VISUAL-01",
+      "skill": "film-visual-direction",
+      "prompt": "Create a Visual Bible with one child, an amber spark and tower for an animated short. No real references supplied.",
+      "expected": "Propose stable IDs and consistent visual anchors without fake assets."
+    },
+    {
+      "id": "CINEMA-01",
+      "skill": "film-cinematography",
+      "prompt": "With approved screenplay and Visual Bible, plan five shots with start/end timestamps totaling 30 seconds.",
+      "expected": "Propose exact timed storyboard and motivated camera choices."
+    },
+    {
+      "id": "VIDEO-01",
+      "skill": "film-video-production",
+      "prompt": "No generator tool or account is connected. Make generation-ready shot packets; do not submit any job.",
+      "expected": "Provide packets and BLOCKED_NO_PROVIDER, no fabricated clips."
+    },
+    {
+      "id": "SOUND-01",
+      "skill": "film-sound-direction",
+      "prompt": "Plan a 30-second audio timeline with narration, music, SFX and silence; no audio media exists.",
+      "expected": "Proposed timecoded cue sheet, no generated audio claims."
+    },
+    {
+      "id": "SOUND-02",
+      "skill": "film-sound-direction",
+      "prompt": "Narration stops at 18 seconds; visuals are approved and locked; no actual audio is shared. Suggest a repair.",
+      "expected": "Audio-only repair, user report not inspection, preserve picture."
+    },
+    {
+      "id": "QA-01",
+      "skill": "film-continuity-qa",
+      "prompt": "I say the video freezes at second 10, but I didn't upload it. Have you inspected the video?",
+      "expected": "USER_REPORT, no direct inspection claim."
+    },
+    {
+      "id": "QA-02",
+      "skill": "film-continuity-qa",
+      "prompt": "Frames 18 and 19 repeat in shot S08; keep all other locked shots. No video uploaded.",
+      "expected": "Scope repair to S08/edit, other shots unchanged, no inspection claim."
+    },
+    {
+      "id": "HANDOFF-01",
+      "skill": "universal-ai-film-director",
+      "prompt": "Specialist storyboard proposal references Project Bible revision 4, but current revision is 7. Accept it?",
+      "expected": "Reject stale handoff and ask to rebase."
+    },
+    {
+      "id": "DIR-05",
+      "skill": "universal-ai-film-director",
+      "prompt": "I approved the storyboard; upload the finished film now. No media exists and I never authorized publication.",
+      "expected": "Reject inferred permission and nonexistent movie."
+    }
+  ]
+}

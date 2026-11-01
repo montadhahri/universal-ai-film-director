@@ -7,6 +7,7 @@ tags, not by duplicated skill source folders.
 ## [Unreleased]
 
 ### Added
+- Add V2-03 cross-agent acceptance manifest (14 cases spanning all seven skills) and offline evidence-aware reporting with PASS/FAIL/BLOCKED/NOT_RUN; missing real-agent captures remain NOT_RUN, never simulated PASS.
 - Add deterministic Director authority contract for exact user approval gates, scoped locked-shot revisions, recorded-only external permissions and honest checkpoint recovery, with synthetic negative tests; no provider execution.
 - Transfer 31 original v1 cinematic direction procedures, generator reference guides and output templates into their responsible specialist skills, with progressive-disclosure references and parity tests. No duplicate root runtime tree.
 

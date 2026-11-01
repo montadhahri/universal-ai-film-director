@@ -16,3 +16,7 @@ Record host, model/version, timestamp, exact prompt, loaded skill files, actual 
 ## Acceptance discipline
 
 Good outcomes preserve the user's creative authority: the user supplies the vision and approves screenplay, Visual Bible, storyboard, unlocks and spending; the Director recommends technical choices and coordinates specialists. When unavailable, providers must be described as unavailable, not simulated.
+
+## Runnable V2-03 acceptance matrix
+
+The current [14-case cross-agent acceptance matrix](agent-acceptance.md) covers all seven skills. Run the offline harness to see `NOT_RUN` outcomes until separately collected agent captures exist. Fixture and repository tests are **not** proof of actual agent quality. Real-agent outputs require independent review and clear evidence.\n
