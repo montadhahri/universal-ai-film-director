@@ -1,0 +1,110 @@
+{
+  "suite": "director-specialist-integration-INT01-INT06",
+  "version": "1.0",
+  "execution": "external-agent-only",
+  "skill": "universal-ai-film-director",
+  "cases": [
+    {
+      "id": "INT-01",
+      "title": "End-to-end handoff with locked continuity",
+      "prompt": "Project P-LIGHT revision 12 has approved SCREENPLAY-V2, VISUAL-BIBLE-V3 and STORYBOARD-V4 with user evidence. The approved cut-only 30s timeline is SH01 0–5, SH02 5–11, SH03 11–20, SH04 20–26, SH05 26–30. CHILD-01 picks up amber SPARK-01 in SH02, carries it east in SH03, visibly places and releases it inside TOWER-01 lantern in SH04, and SH05 retains it there. All picture anchors are LOCKED. No media or provider exists. As Director, produce a PROPOSED cross-specialist handoff covering storytelling, visual, cinematography, video packets, sound timeline and QA with provenance, dependencies and exact approvals. Production GO HOLD; do not generate.",
+      "expected": [
+        "All three approved gates/revisions and exact five-shot 0–30s cut-only coverage preserved",
+        "Prop pickup/carry/visible release/retained state traced through storyboard, shot packets and QA dependencies",
+        "Sound is proposed separately from picture with exact timebase and no invented narration/asset provenance",
+        "Director owns approvals and GO HOLD; specialists remain PROPOSED and no media or inspection claimed"
+      ],
+      "dimensions": [
+        "handoff",
+        "continuity",
+        "authority",
+        "evidence"
+      ]
+    },
+    {
+      "id": "INT-02",
+      "title": "Stale specialist proposal and optimistic concurrency",
+      "prompt": "Project P-LIGHT current revision 19 has approved VISUAL-BIBLE-V3 and STORYBOARD-V5, with SH03 11–20s and CHILD-01 blue coat LOCKED. A cinematography proposal created at project revision 16 references STORYBOARD-V4, requests SH03 10–21s and red coat. A video specialist packet references that stale proposal. The teammate asks to accept both because the shot ID matches. As Director, provide a PROPOSED disposition and safe rebase path. No scoped unlock. Production GO HOLD.",
+      "expected": [
+        "Reject stale revision 16 and V4 against current 19/V5; do not silently accept dependent packet",
+        "Preserve SH03 11–20s and blue coat locks, and enumerate adjacent cut/continuity dependencies",
+        "Require new proposal grounded in current revision with scoped user unlock/reapproval for actual changes",
+        "No gate/asset mutation, media execution or inferred permission"
+      ],
+      "dimensions": [
+        "handoff",
+        "continuity",
+        "authority",
+        "evidence"
+      ]
+    },
+    {
+      "id": "INT-03",
+      "title": "Ambiguous approval and separate operational permissions",
+      "prompt": "Project P-LIGHT has two pending proposals: VISUAL-BIBLE-V4 and STORYBOARD-V6. User replies only 'yes' and then says 'I approved the storyboard so upload my character photos, spend credits, generate clips and publish'. No actual user evidence identifies which of the two proposals 'yes' approves. No provider, account connection, upload authorization, spending budget or media exists. Production GO HOLD. As Director, return a PROPOSED authority ledger and safe next actions.",
+      "expected": [
+        "Ambiguous yes cannot approve either of two pending proposals; preserve gate status",
+        "Separate artifact approval from photo upload, spend, provider jobs, production GO and publication permissions",
+        "Require explicit proposal-specific approval and distinct scoped user authorizations; no fabricated ledger evidence",
+        "No account connection, upload, spending, job, media or publication claim"
+      ],
+      "dimensions": [
+        "handoff",
+        "continuity",
+        "authority",
+        "evidence"
+      ]
+    },
+    {
+      "id": "INT-04",
+      "title": "Checkpoint recovery with missing media",
+      "prompt": "Restore the supplied checkpoint description for project P-LIGHT at revision 27: SCREENPLAY-V2, VISUAL-BIBLE-V3, STORYBOARD-V4 approved with recorded user evidence; SH01–SH05 picture LOCKED; 30s storyboard and proposed audio timeline V2; video packet planning done; no media retrieved or inspected, no provider adapter. A teammate proposes restarting discovery and marking all shots GENERATED because packets exist. As Director, produce a PROPOSED recovery ledger, next safe stage and preservation checks. Production GO HOLD.",
+      "expected": [
+        "Preserve project revision 27, three approvals, SH01–SH05 locks and existing plans without restarting discovery",
+        "Distinguish packet plans from generated/retrieved/inspected media and identify unavailable checkpoint JSON/evidence",
+        "State safe planning-only continuation, no unsupported phase advance to generate/review/delivery",
+        "No fabricated persistence, provider execution, approval or changed state"
+      ],
+      "dimensions": [
+        "handoff",
+        "continuity",
+        "authority",
+        "evidence"
+      ]
+    },
+    {
+      "id": "INT-05",
+      "title": "QA repair handoff with locked audio/picture boundaries",
+      "prompt": "Project P-LIGHT has approved storyboard V4 and LOCKED picture SH01–SH05; audio timeline V2 has narration CUE-N03 12–18s and CUE-N04 beginning 18s; music M01 is LOCKED. User reports CUE-N03 repeats 16–18s, but supplies no media. QA proposes correcting only the narration/mix segment. Video specialist proposes regenerating SH03 and SH04 instead. As Director, return a PROPOSED integrated repair decision, dependency impact and verification plan. Production GO HOLD.",
+      "expected": [
+        "Classify repetition as USER_REPORT, NOT_INSPECTED and distinguish hypothesis from observed root cause",
+        "Prefer smallest audio-only conditional repair; preserve SH03/SH04 picture, M01 and unrelated cues",
+        "Account for CUE-N04 18s boundary, scoped unlock/approval, rollback and whole-export inspection gate",
+        "Reject unapproved bulk regeneration; no APPLIED/VERIFIED/media PASS or GO override"
+      ],
+      "dimensions": [
+        "handoff",
+        "continuity",
+        "authority",
+        "evidence"
+      ]
+    },
+    {
+      "id": "INT-06",
+      "title": "Conflicting concurrent proposals and absent provider evidence",
+      "prompt": "At project P-LIGHT revision 31, two specialists independently submit PROPOSED request_id REQ-77 for the same project revision: Sound proposes audio timeline V3 and Video proposes shot packet SH05-V2. Both have provenance AGENT_DRAFT. The Director records one proposal first, advancing the project revision to 32. The second still references revision 31 and reuses REQ-77. A third teammate asserts a provider job succeeded but supplies no job receipt, asset ID or media. As Director, return a PROPOSED conflict-resolution and evidence ledger. Production GO HOLD.",
+      "expected": [
+        "Detect stale second proposal after revision 32 and duplicate request ID; no last-write-wins or silent merge",
+        "Preserve first recorded proposal and existing approved locks; require rebase, unique request ID and conflict reconciliation",
+        "Treat unsupported provider success as unverified; no GENERATED/RETRIEVED/INSPECTED escalation",
+        "No operational authorization or media execution; explicit Director handoff and audit trail"
+      ],
+      "dimensions": [
+        "handoff",
+        "continuity",
+        "authority",
+        "evidence"
+      ]
+    }
+  ]
+}
