@@ -1,7 +1,7 @@
 # Agent behavior evaluation — Phase 1
 
 ## What this tests
-`evaluate.py` checks **recorded assistant transcripts** against eight simple behavioral contracts:
+`evaluate.js` checks **recorded assistant transcripts** against eight simple behavioral contracts:
 one question in discovery, script/storyboard approval gates, locked-shot preservation,
 failed-shot isolation, checkpoint resumption, honesty about unseen media, and audio-only repair.
 
@@ -12,9 +12,9 @@ can recognize these examples; it does not establish agent compliance.
 ## Run locally
 
 ```bash
-python3 tests/behavior/evaluate.py
-python3 tests/behavior/evaluate.py --json-out build/behavior-report.json
-python3 tests/behavior/evaluate.py --transcripts path/to/captured-agent-transcripts --strict
+node tests/behavior/evaluate.js
+node tests/behavior/evaluate.js --json-out build/behavior-report.json
+node tests/behavior/evaluate.js --transcripts path/to/captured-agent-transcripts --strict
 ```
 
 No dependencies or API credentials are needed for fixture validation. CI runs the deterministic

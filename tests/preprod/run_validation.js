@@ -9,10 +9,10 @@ const COMMANDS=[
  ['node-syntax',['--check','tests/behavior/evaluate.js']],
  ['protected-files',['tests/regression/check_preservation.js']],
  ['repo-structure',['tests/validate_repo.js']],
- ['regression-tests',['--test','tests/node/validation.test.js','tests/node/regression.test.js','tests/node/behavior.test.js']],
- ['synthetic-fixtures',['tests/behavior/evaluate.js','--json-out','build/behavior-report-node.json']]
+ ['regression-tests',['--test','tests/node/validation.test.js','tests/node/regression.test.js','tests/node/behavior.test.js','tests/node/preprod.test.js']],
+ ['synthetic-fixtures',['tests/behavior/evaluate.js','--json-out','build/behavior-report.json']]
 ];
-function run(out=path.join(ROOT,'build/preprod-validation-node.json')) {
+function run(out=path.join(ROOT,'build/preprod-validation.json')) {
  const checks=[];
  for (const [name,args] of COMMANDS) {
   const proc=spawnSync(process.execPath,args,{cwd:ROOT,encoding:'utf8',timeout:120000,maxBuffer:8*1024*1024});

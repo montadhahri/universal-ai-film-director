@@ -102,8 +102,8 @@ These are rough estimates, not a scheduled commitment.
 
 ## Next roadmap — repository professionalization first (proposed)
 
-**Status:** proposed for owner review; no implementation or deletion is
-authorized by this roadmap change. All eight original implementation phases
+**Status:** approved and in progress through reviewed PRs; Python-free
+maintainer migration is being completed in a separately reviewed cleanup PR. All eight original implementation phases
 are merged. The repository remains **PRIVATE** and **PROD GO is on hold**.
 
 The next sequence prioritizes clean, maintainable source and reproducible
@@ -121,9 +121,10 @@ checks **before** installation, real-agent acceptance, or release.
 
 ### Workstream 1 — Python-free maintainer tooling (FIRST)
 
-**Current inventory:** 13 `.py` files under `tests/`, used for structure
+**Original inventory:** 13 `.py` files under `tests/`, used for structure
 validation, protected-file preservation, regression tests, synthetic behavior
-fixtures and offline pre-production validation. Python is **not** a runtime
+fixtures and offline pre-production validation. Node.js counterparts were
+added in PRs #14–#16 and parity was checked in PR #17. Python is **not** a runtime
 dependency of the Agent Skill.
 
 **Target:** use Node.js built-in `node:test`, `node:assert/strict` and
@@ -144,9 +145,9 @@ the skill must not require Node.js to run after installation.
    Update CI workflows and maintainer documentation to use Node.js.
 5. Run old and new checks side by side. Confirm equivalent or stronger
    assertions, nonzero failure exits and artifact outputs.
-6. **Only after explicit owner approval**, remove superseded Python scripts
-   in a dedicated cleanup PR, update the protected-file baseline carefully
-   and confirm no broken links or stale Python commands remain.
+6. Propose removal of the 13 superseded Python scripts in a **separate cleanup
+   PR requiring explicit owner approval**, update the protected-file baseline
+   and verify all Node-only CI, links and report consumers.
 
 **Acceptance:** green CI; zero Python runtime dependencies; no lost checks;
 no accidental file deletions; reproducible reports; all changes reviewed in

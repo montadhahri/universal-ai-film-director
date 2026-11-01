@@ -1,5 +1,5 @@
 {
-  "description": "Protected files present before Phase 1 safety PR. Additions are allowed; deletions require explicit baseline review.",
+  "description": "Protected skill and fixture baseline; two obsolete Python tool entries replaced with JavaScript equivalents in explicit cleanup PR #18. Other baseline entries unchanged.",
   "base_commit": "3e603f99b6d86f47347f8ddffdbae4bfe684aad1",
   "required_paths": [
     ".github/ISSUE_TEMPLATE/bug_report.md",
@@ -33,7 +33,7 @@
     "templates/shot-review.md",
     "templates/storyboard.md",
     "tests/behavior/README.md",
-    "tests/behavior/evaluate.py",
+    "tests/behavior/evaluate.js",
     "tests/behavior/fixtures/audio-repair.json",
     "tests/behavior/fixtures/checkpoint.json",
     "tests/behavior/fixtures/discovery-one-question.json",
@@ -42,6 +42,6 @@
     "tests/behavior/fixtures/script-gate.json",
     "tests/behavior/fixtures/storyboard-gate.json",
     "tests/behavior/fixtures/unseen-media.json",
-    "tests/validate_repo.py"
+    "tests/validate_repo.js"
   ]
 }

@@ -1,5 +1,4 @@
 name: Private pre-production validation
-
 on:
   workflow_dispatch:
   pull_request:
@@ -13,10 +12,8 @@ on:
       - 'examples/**'
       - 'SKILL.md'
       - '.github/workflows/preprod-validation.yml'
-
 permissions:
   contents: read
-
 jobs:
   offline-validation:
     runs-on: ubuntu-latest
@@ -25,13 +22,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: '3.12'
+          node-version: '22'
       - name: Run offline pre-production validation
-        run: python tests/preprod/run_validation.py --out build/preprod-validation.json
-      - name: Upload validation report
+        run: node tests/preprod/run_validation.js --out build/preprod-validation.json
+      - name: Upload validation reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -39,5 +36,5 @@ jobs:
           path: |
             build/preprod-validation.json
             build/behavior-report.json
-          if-no-files-found: warn
+          if-no-files-found: error
           retention-days: 14
