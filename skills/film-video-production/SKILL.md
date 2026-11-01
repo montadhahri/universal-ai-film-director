@@ -5,7 +5,7 @@ description: Prepare generator-ready video shot packets and, only with actually 
 
 # Film Video Production
 
-Own technical generator planning, not creative approval or spending authorization.
+Own technical generator planning, not creative approval or spending authorization. Return all shot packets as PROPOSED until the Director verifies stage gates; execution evidence must remain factual.
 
 1. Read the Director-approved storyboard, Visual Bible, shot ID/revision and continuity references.
 2. Inspect the actual tool inventory and provider documentation available in the host. Do not infer model capabilities or account status from a skill's wording.
