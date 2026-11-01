@@ -14,7 +14,8 @@ test('QA-01–QA-06 exact prompts and private criteria are structurally valid',(
 test('QA pack remains distinct from canonical V2 acceptance suite',()=>{
  const base=require('../agent-acceptance/cases.json');
  assert.equal(base.cases.length,14);
- assert.ok(!base.cases.some(c=>pack.cases.some(q=>q.id===c.id)));
+ assert.deepEqual(base.cases.map(c=>c.id),['DIR-01','DIR-02','DIR-03','DIR-04','STORY-01','VISUAL-01','CINEMA-01','VIDEO-01','SOUND-01','SOUND-02','QA-01','QA-02','HANDOFF-01','DIR-05']);
+ // IDs are scoped to their suite: QA-01 and QA-02 also exist in the canonical suite.
 });
 test('QA scenarios ground every criterion-specific approved dependency',()=>{
  const get=id=>pack.cases.find(c=>c.id===id).prompt;
