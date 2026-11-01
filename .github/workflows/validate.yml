@@ -10,8 +10,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Guard all protected repository files
+        run: python tests/regression/check_preservation.py
       - name: Validate repository structure and links
         run: python tests/validate_repo.py
+      - name: Run negative and multi-turn evaluator regression tests
+        run: python3 -m unittest discover -s tests/regression -p 'test_*.py' -v
       - name: Evaluate synthetic behavior fixtures
         run: python tests/behavior/evaluate.py --json-out build/behavior-report.json
       - name: Upload deterministic evaluation report
