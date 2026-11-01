@@ -122,6 +122,25 @@ The repository has a root `SKILL.md`; confirm discovery with `--list` and
 verify the skill appears in your agent after installation. If discovery fails,
 use the existing manual method below.
 
+### Runtime requirements and development tools
+
+**Python is not required to install or use this skill.** No pip, pytest, virtual environment, or Python packages are runtime dependencies. The skill consists of `SKILL.md` and supporting Markdown/templates, interpreted by a compatible AI agent.
+
+| Tool or file | End-user requirement | Maintainer requirement |
+| --- | --- | --- |
+| Python / pip | No | Python standard library currently runs repository tests |
+| Node.js / npm / npx | Only for the Skills CLI installation command | Optional installation smoke testing |
+| SKILL.md and referenced resources | Yes | Yes |
+| tests/ and .github/workflows/ | No | Used for quality checks |
+| GitHub authentication | Required to fetch this private repository | Required for private repository access |
+| Video or audio generation tools | Only for actual media generation | Required for real-media integration tests |
+
+After installation, the skill instructions require neither Python nor Node.js; the host agent may have its own requirements. A global `-g` install applies to selected compatible agents, not every LLM product.
+
+**Packaging caveat:** We have not verified which files the Skills CLI copies from this private repository. The installer may include maintainer files; that does not mean they execute. Check `--list` and inspect the installed directory. Keep the repository private.
+
+See [installation details](docs/installation.md) and the [tooling roadmap](docs/ROADMAP.md).
+
 ### Manual / agent-specific fallback
 
 **Compatibility is instruction-level.** Native skill discovery and exact configuration paths depend on the agent, its version and its settings. If native skills are unavailable, use the universal manual method.
@@ -141,7 +160,7 @@ your-project/
             └── templates/
 ```
 
-Copy the **entire repository content**, not only `SKILL.md`, so relative reference paths remain available. Start a Claude Code session in the project and ask it to use `universal-ai-film-director`. If skill discovery does not work, reference the file explicitly and consult your installed Claude Code documentation.
+Copy `SKILL.md` and its referenced supporting directories so relative paths remain available. Development-only `tests/` and `.github/` files are not needed for skill usage. Start a Claude Code session in the project and ask it to use `universal-ai-film-director`. If skill discovery does not work, reference the file explicitly and consult your installed Claude Code documentation.
 
 ### OpenAI Codex
 

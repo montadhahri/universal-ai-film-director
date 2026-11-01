@@ -22,6 +22,7 @@ v0.1.0 is listed under **Unreleased** until a release is explicitly approved.
   integration checks ([PR #2](https://github.com/montadhahri/universal-ai-film-director/pull/2)).
 
 ### Changed
+- Clarify Python-free skill usage, installer versus maintainer requirements, and optional Node.js test migration investigation (PR #12).
 - Document Skills CLI (`npx skills add`) as the recommended global/project installation method, with private-repository authentication, agent selection and manual fallbacks ([PR #5](https://github.com/montadhahri/universal-ai-film-director/pull/5)).
 - GitHub Actions validation includes baseline preservation and regression tests.
 - `SKILL.md` now links to the intelligent director and discovery guidance.
