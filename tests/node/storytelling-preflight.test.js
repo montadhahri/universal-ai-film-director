@@ -61,3 +61,54 @@ test('correct timing and no structural issues never count as automatic approval'
  assert.equal(r.status,'READY_FOR_DIRECTOR_REVIEW');assert.equal(r.approval_granted,false);
  assert.equal(r.quality_proven,false);
 });
+
+
+const {reviewBrief,reviewRevisionScope}=require('../../scripts/storytelling-preflight.js');
+const brief=(words,exclusions=[])=>({duration_ms:20000,narration_words:words,max_wpm:120,narration_exclusions:exclusions});
+const silent=[{start_ms:0,end_ms:5000},{start_ms:15000,end_ms:20000}];
+test('REG-06 impossible 100 words in 20s is blocked',()=>{
+ const r=reviewBrief(brief(100,[...silent,{start_ms:5000,end_ms:9000}]));
+ assert.equal(r.status,'BLOCKED');assert.equal(r.available_ms,6000);
+ assert.equal(r.required_ms,50000);assert.equal(r.shortfall_ms,44000);
+});
+test('REG-07 overlapping reading and silence are not double-counted',()=>{
+ const r=reviewBrief(brief(10,[...silent,{start_ms:1000,end_ms:5000}]));
+ assert.equal(r.reserved_ms,10000);assert.equal(r.available_ms,10000);
+ assert.equal(r.status,'FEASIBLE');
+});
+test('REG-08 feasible 20s narration fits ten available seconds',()=>{
+ assert.equal(reviewBrief(brief(20,silent)).status,'FEASIBLE');
+});
+test('REG-09 unauthorized visual changes and protected versions are rejected',()=>{
+ const r=reviewRevisionScope({allowed_types:['AUDIO'],changed_artifacts:[
+  {id:'VISUAL-V2',type:'VISUAL'},{id:'AUDIO-V1',type:'AUDIO'}],
+  protected_versions:[{id:'VISUAL-V2'}]});
+ assert.equal(r.status,'REVISION_REQUIRED');assert.equal(r.issues.length,2);
+});
+test('REG-05 audio-only declared revision preserves locked screenplay',()=>{
+ const r=reviewRevisionScope({allowed_types:['AUDIO'],
+ changed_artifacts:[{id:'AUDIO-V2',type:'AUDIO'}],
+ protected_versions:[{id:'SCREENPLAY-V2'},{id:'VISUAL-V2'}]});
+ assert.equal(r.status,'READY_FOR_DIRECTOR_REVIEW');assert.equal(r.approval_granted,false);
+});
+test('REG-01 lighthouse 11-word VO at 100 WPM exceeds six-second cue',()=>{
+ const d=lighthouse();d.narration=[vo(39000,45000,'Some lights are left on for someone who may return.',100)];
+ assert(reviewDraft(d).issues.some(x=>x.includes('Narration does not fit')));
+});
+test('REG-02 compressed musician handover is an editorial warning',()=>{
+ const d=musician();d.beats[3].start_ms=18000;d.beats[3].end_ms=21000;
+ d.beats[4].start_ms=21000;d.beats[4].end_ms=30000;
+ assert(reviewDraft(d).warnings.some(x=>x.includes('Complex action')));
+});
+test('REG-03 and REG-04 emotional causality require human editorial evaluation',()=>{
+ const r=reviewDraft(musician());
+ assert.equal(r.quality_proven,false);assert.equal(r.approval_granted,false);
+});
+test('REG-10 unconventional narrative is not automatically failed by motif metadata',()=>{
+ const d=musician();delete d.opening_motif;delete d.ending_payoff;
+ const r=reviewDraft(d);assert.equal(r.status,'READY_FOR_DIRECTOR_REVIEW');
+ assert(r.warnings.some(x=>x.includes('motif')));
+});
+test('invalid exclusion boundaries cannot silently produce feasibility',()=>{
+ assert.throws(()=>reviewBrief(brief(1,[{start_ms:19000,end_ms:21000}])));
+});
