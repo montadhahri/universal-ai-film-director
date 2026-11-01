@@ -18,3 +18,21 @@ test('Execution states are tested independently',()=>{
  assert.match(pack.cases.find(c=>c.id==='VP-05').prompt,/FAILED/);
  assert.match(pack.cases.find(c=>c.id==='VP-06').prompt,/INSPECTED/);
 });
+
+test('VP-04 and VP-06 prompts ground every criterion-specific continuity fact',()=>{
+ const v4=pack.cases.find(c=>c.id==='VP-04').prompt;
+ const v6=pack.cases.find(c=>c.id==='VP-06').prompt;
+ assert.match(v4,/approved V5 SH03 runs 11–20s/);
+ assert.match(v4,/approved coat is blue/);
+ assert.match(v6,/SH05 depends on the same SPARK-01 remaining inside/);
+});
+test('Video guidance and packet require visible transfer with retained state',()=>{
+ const fs=require('node:fs'),path=require('node:path');
+ const root=path.join(__dirname,'../../skills/film-video-production');
+ const guide=fs.readFileSync(path.join(root,'references/guide.md'),'utf8');
+ const packet=fs.readFileSync(path.join(root,'assets/shot-packet-template.md'),'utf8');
+ const selection=fs.readFileSync(path.join(root,'references/generator-selection.md'),'utf8');
+ assert.match(guide,/visible contact\/transfer\/release/);
+ assert.match(packet,/downstream retained state/);
+ assert.match(selection,/\.\.\/assets\/shot-packet-template\.md/);
+});
