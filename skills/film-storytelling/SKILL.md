@@ -18,6 +18,10 @@ Scope: premise, theme, logline, narrative arc, character motivations, scene beat
 
 Never claim generated footage or imply permission for a video-generation service. Consult [narrative craft](references/guide.md) when a deeper beat or narration audit is needed.
 
+## Story craft — use when beats or emotional direction need strengthening
+
+Create **filmable drama**, not generic plot summaries. Look for a visible protagonist objective, a meaningful change, an earned payoff and an image that transforms the opening. Prefer picture and action over redundant narration; show why the story choice suits the requested runtime, genre and audience. Challenge weak beats constructively, but respect unconventional, lyrical or comedic forms. Mark all draft material PROPOSED and never revise approved wording silently. Read [short-film craft and worked examples](references/short-film-craft.md) when proposing, improving or critiquing a screenplay, especially for emotional arcs, narrative pacing and dialogue restraint.
+
 ## Detailed reference
 
 When refining premise, character motivation, beat timing, filmable action or narration, read [storytelling principles](references/storytelling.md) and [narrative craft](references/guide.md). If the user provided a personal biography, never invent missing facts or assume consent to disclose them.

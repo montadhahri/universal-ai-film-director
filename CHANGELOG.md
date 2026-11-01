@@ -7,6 +7,7 @@ tags, not by duplicated skill source folders.
 ## [Unreleased]
 
 ### Added
+- Deepen the Storytelling specialist with filmable short-form dramatic construction, visible choices, emotional motifs, genre adaptation, narrator timing assumptions, constructive story editing and two new worked stories, while preserving user approvals.
 - Add Director creative judgment guidance for emotional arcs, visual-first filmmaking, thoughtful recommendations, professional trade-offs, sensitive personal stories and two filmable worked examples, with regression checks protecting approval and media boundaries.
 - Extend the planning-only pipeline with explicit narration coverage and intentional-silence validation, cross-track audio mixing rules, dependency graph integrity and non-mutating, scoped repair impact previews.
 - Introduce deterministic, provider-free Production Pipeline Core with single-step stage transitions, user-approval dependencies, exact cut-only shot timeline validation, optimistic project revisions and blocked media execution. Include negative regression tests.
