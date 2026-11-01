@@ -7,6 +7,9 @@ v0.1.0 is listed under **Unreleased** until a release is explicitly approved.
 
 ## [Unreleased]
 
+### Fixed
+- Replace the obsolete Phase 8 `In review` regression assertion with checks that Phase 8 is merged and production release remains unauthorized (PR #11 CI fix).
+
 ### Added
 - Private pre-production validation runner, read-only GitHub Actions workflow, real-agent evidence template and explicit NO PROD GO instructions ([PR #11](https://github.com/montadhahri/universal-ai-film-director/pull/11)).
 - Phase 8 synthetic flagship film walkthrough, Project Bible example, end-to-end onboarding, v1.0 release checklist and regression checks ([PR #10](https://github.com/montadhahri/universal-ai-film-director/pull/10)).
