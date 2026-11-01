@@ -12,7 +12,8 @@ const COMMANDS=[
  ['repo-structure',['tests/validate_repo.js']],
  ['package-allowlist',['tests/package/validate-package.js']],
  ['regression-tests',['--test',...NODE_TEST_FILES]],
- ['synthetic-fixtures',['tests/behavior/evaluate.js','--json-out','build/behavior-report.json']]
+ ['synthetic-fixtures',['tests/behavior/evaluate.js','--json-out','build/behavior-report.json']],
+ ['agent-acceptance-matrix',['tests/agent-acceptance/run.js','--json-out','build/agent-acceptance.json']]
 ];
 function run(out=path.join(ROOT,'build/preprod-validation.json')) {
  const checks=[];
