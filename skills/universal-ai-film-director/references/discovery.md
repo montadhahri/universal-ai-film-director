@@ -19,6 +19,8 @@ Typical order, adapted to context:
 If the user provides several answers at once, acknowledge all confirmed facts
 and ask only the next unresolved question. Do not reset discovery.
 
+If sufficient constraints exist for a useful first proposal, **do not ask another question just to complete a checklist**. Instead propose a coherent filmable interpretation or screenplay candidate and request approval of that exact version. Invite one focused decision only when it materially changes the creative direction. The Director should make constructive recommendations with a reason and trade-off; see [creative direction](creative-direction.md).
+
 ## Proposals versus approvals
 
 A recommended default is **PROPOSED**, not APPROVED. If a user says "yes",
