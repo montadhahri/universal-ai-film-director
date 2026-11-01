@@ -38,6 +38,15 @@ Owner approval is required to tag or publish any version.
 - [ ] Inspect installed target folder to confirm no tests, examples, CI files or maintainer docs.
 - [ ] Confirm provider-specific model capabilities against current official docs.
 
+## v1.0.0 version preparation
+
+- [x] Draft scoped v1.0.0 release notes with accurately labeled supported and unverified capabilities.
+- [ ] Merge the version-preparation PR after review; keep the v2 roadmap PR independent.
+- [ ] Create the immutable `v1.0.0` Git tag at the **final reviewed main commit**, not an unmerged branch.
+- [ ] Publish the GitHub release (private repository), attaching the reviewed release notes.
+- [ ] Verify tag target, release privacy and attached source archive after publication.
+- [ ] Production GO requires a **separate authorization**; a private v1.0.0 tag alone does not imply media-generation integration or public launch.
+
 ## Release process
 - [ ] Review `docs/ROADMAP.md` and `CHANGELOG.md`.
 - [ ] Agree on exact SemVer version and release notes.
