@@ -9,8 +9,8 @@ Take approved script and visual references as inputs. Propose a shot plan; the D
 
 1. Identify every story beat and assign each a stable shot ID with narrative purpose.
 2. Choose framing, camera movement, eyeline, actor blocking, lens intent and motivated lighting. Avoid contradictory directions and random camera moves.
-3. Assign exact start/end time, transitions and audio cue relationship. Reconcile the requested film duration without missing or repeated intervals.
-4. Keep character and location geography consistent; preserve the visual axis unless intentionally motivated.
+3. Assign exact start/end time, transitions and audio cue relationship. Reconcile the requested film duration without missing or repeated intervals. Keep global edit timestamps separate from overlapping source-clip durations; do not subtract transition overlaps twice.
+4. Keep character and location geography consistent; preserve the visual axis unless intentionally motivated. Record shot-to-shot screen direction, prop/action handoffs and dependent IDs; do not mirror approved geography to fix a camera reversal.
 5. Produce a storyboard table plus generator-friendly per-shot visual plan, and mark any tool-specific assumption UNVERIFIED.
 6. Flag changes affecting locked shots, screenplay or visual anchors for scoped Director authorization.
 
