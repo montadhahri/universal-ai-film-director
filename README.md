@@ -2,17 +2,17 @@
 
 # 🎬 Universal AI Film Director
 
-### From a rough idea to a production-ready AI film — with an AI director that actually follows your decisions.
+### A guided film-production workflow, from first idea to reviewed shot plans
 
-**A portable, multi-agent filmmaking skill for storytelling, screenwriting, storyboarding, visual continuity, video-generation prompts, sound design, shot review, and editing.**
+**A portable filmmaking Agent Skill for storytelling, screenwriting, storyboarding, visual continuity, video-generation prompts, sound design, shot review, and editing.**
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-![Status](https://img.shields.io/badge/status-early%20release-orange)
+![Status](https://img.shields.io/badge/status-v1.0.0%20candidate%20%E2%80%94%20hold-orange)
 ![Skill](https://img.shields.io/badge/format-Agent%20Skill-blueviolet)
 ![Video](https://img.shields.io/badge/video%20rendering-external%20tool-required-informational)
 [![Validate skill](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml/badge.svg)](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml)
 
-[**Roadmap**](docs/ROADMAP.md) · [**Flagship demo**](examples/flagship-film/README.md) · [**Release readiness**](docs/release-checklist.md) · [**Changelog**](CHANGELOG.md) · [**Get started**](#-quick-start) · [**Install**](#-installation-by-agent) · [**Full example**](#-complete-walkthrough-a-90-second-film) · [**File guide**](#-what-each-file-does) · [**Troubleshooting**](#-troubleshooting) · [**Contribute**](CONTRIBUTING.md)
+[**Roadmap**](docs/ROADMAP.md) · [**Illustrative storyboard (not a generated film)**](examples/flagship-film/README.md) · [**Release readiness**](docs/release-checklist.md) · [**Changelog**](CHANGELOG.md) · [**Get started**](#-quick-start) · [**Install**](#-installation-by-agent) · [**Full example**](#-complete-walkthrough-a-90-second-film) · [**File guide**](#-what-each-file-does) · [**Troubleshooting**](#-troubleshooting) · [**Contribute**](CONTRIBUTING.md)
 
 </div>
 
@@ -61,6 +61,10 @@ flowchart TD
 
 **Approval gates:** screenplay → style bible → storyboard → shot-by-shot review. The agent must not pretend a shot was generated or inspected if it wasn't.
 
+## Release readiness
+
+**Current status:** v1.0.0 candidate / PRIVATE / HOLD. The skill's documentation and synthetic validation are available, but independent agent execution, authenticated private GitHub installation and a successful AI-generated end-to-end showcase have **not** been evidenced. Do not market the illustrative example as generated footage or mark production release approved.
+
 ## ⚡ Quick start
 
 **No coding required** if your AI agent can read Markdown files.
@@ -76,9 +80,9 @@ flowchart TD
 3. Start with this request:
    > Use the Universal AI Film Director skill. Help me make a 10-minute emotional stickman film for a workplace audience, using Google Flow for video clips. Ask one question at a time. Do not write video prompts before I approve the screenplay and storyboard.
 4. Answer the agent's first question. Approve each major stage.
-5. Copy the resulting shot prompts into your video generator, review the clips and assemble the film in an editor.
+5. Use the resulting shot packets with a video generator you can access, review the actual clips and assemble the film in an editor. An authorized agent may operate supported external tools, but this skill alone provides **no automated Google Flow integration**.
 
-**Expected first response:** a brief introduction and **one** question: *“What story do you want this film to tell?”* If the agent produces an entire script immediately, ask it to reload `SKILL.md` and follow the interaction contract.
+**Expected first response for a new project without a supplied premise:** a brief introduction and **one** question: *“What story do you want this film to tell?”* When the user has already provided a premise or checkpoint, the agent should continue from that context, not restart discovery.
 
 ## 📦 Installation by agent
 
@@ -136,7 +140,7 @@ use the existing manual method below.
 
 After installation, the skill instructions require neither Python nor Node.js; the host agent may have its own requirements. A global `-g` install applies to selected compatible agents, not every LLM product.
 
-**Packaging:** Use the dedicated [runtime-only install directory](skills/universal-ai-film-director/SKILL.md) instead of the repository root. It is guarded against development files and stale copies by [package validation](docs/skill-package.md). An actual private Skills CLI installation is still **not independently verified**; inspect the installed directory.
+**Packaging:** Use the dedicated [runtime-only install directory](skills/universal-ai-film-director/SKILL.md) instead of the repository root. It is guarded against development files and stale copies by [package validation](docs/skill-package.md). An actual Skills CLI **local-folder** installation passed CI in PR #21, including byte-for-byte installed-file verification. Authentication and installation directly from the **private GitHub URL** remain **NOT TESTED**. Inspect the installed directory; see [installation evidence](docs/installation-evidence.md).
 
 See [installation details](docs/installation.md) and the [tooling roadmap](docs/ROADMAP.md).
 
@@ -400,14 +404,14 @@ More: [Troubleshooting guide](docs/troubleshooting.md).
 
 ## 🧪 Automated agent behavior evaluation
 
-Phase 1 includes [eight deterministic transcript scenarios](tests/behavior/README.md) and a
+The offline suite includes [eight deterministic transcript scenarios](tests/behavior/README.md) and a
 [Node.js built-in evaluator](tests/behavior/evaluate.js). Run:
 
 ```bash
 node tests/behavior/evaluate.js --json-out build/behavior-report.json
 ```
 
-**Important:** Included examples are synthetic fixtures, **not real agent executions**.
+**Important:** Included examples are synthetic fixtures, **not real agent executions**. The [30-second flagship example](examples/flagship-film/README.md) is an illustrative plan, not an AI-generated marketing film. The scripted FFmpeg marketing proposal (PR #22) was rejected and never merged.
 GitHub Actions evaluates the fixtures and uploads a JSON report; actual agent compatibility
 requires capturing transcripts from each target agent and evaluating them separately.
 
@@ -423,7 +427,7 @@ Suggested repository topics:
 
 `ai-agent-skills` · `ai-filmmaking` · `agent-skills` · `google-flow` · `google-veo` · `storyboarding` · `video-generation` · `prompt-engineering` · `cinematic-ai` · `generative-ai`
 
-Recommended first release: **v0.1.0** (early release). A release tag should only be created after verifying the intended commit and CI status. The README badges do not imply that cross-agent or rendering tests have passed.
+**v1.0.0 is a release candidate, not an approved release.** The repository remains PRIVATE and PROD GO is on HOLD. No release tag, public publication or readiness claim is authorized. CI has verified offline tests and local-folder CLI packaging, **not** authenticated private remote installation, independent agent behavior or AI-generated film production. See the [v1.0.0 release checklist](docs/release-checklist.md).
 
 ## 📜 License
 

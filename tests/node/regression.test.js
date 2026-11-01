@@ -1,4 +1,4 @@
-// Node.js regression parity for Python static/semantic suites.
+// Node.js semantic/static regression tests migrated from the original Python suites.
 // No model, video generator or network execution occurs here.
 const test = require('node:test');
 const assert = require('node:assert/strict');
@@ -173,7 +173,7 @@ check('flagship: no real media claim and approvals',()=>{
  has('CHANGELOG.md','Phase 8');
 });
 check('preprod: runner safety',()=>{
- containsAll('tests/preprod/run_validation.js',['production_go:false','agent_executed:false','video_generated:false','check_preservation.js','validate_repo.js','evaluate.js','regression.test.js']);
+ containsAll('tests/preprod/run_validation.js',['production_go:false','agent_executed:false','video_generated:false','check_preservation.js','validate_repo.js','evaluate.js','NODE_TEST_FILES']);
 });
 check('preprod: private CI',()=>{
  containsAll('.github/workflows/preprod-validation.yml',['contents: read','persist-credentials: false']);

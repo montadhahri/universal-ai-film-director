@@ -28,9 +28,9 @@ From an authenticated private GitHub environment, use:
 npx skills add https://github.com/montadhahri/universal-ai-film-director/tree/main/skills/universal-ai-film-director -g
 ```
 
-The folder itself is validated in CI. **An actual authenticated installation
-from this private GitHub repository has not yet been performed**, so the
+The folder itself is validated in CI. **An authenticated installation directly from this private GitHub URL
+has not yet been performed**, so the
 resulting installed file list must still be checked in a manual smoke test.
-For manual installation, copy this folder only, preserving internal paths.
+A **local-folder installation** via the real CLI passed PR #21's smoke test and byte comparison. For manual installation, copy this folder only, preserving internal paths.
 
 The repo must remain PRIVATE. No release or production GO is authorized.

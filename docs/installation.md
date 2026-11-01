@@ -24,7 +24,7 @@ The Skills CLI supports interactive agent selection, `-g` user scope,
 `-a` agent selection and authenticated private GitHub repositories.
 Authenticate with Git/SSH or GitHub CLI first for this **private** repository.
 Confirm discovery with `--list` and test the installed skill in your agent.
-The exact result for this private repository has not been tested with the CLI here; its isolated source folder has been statically validated.
+The published Skills CLI passed a **local-folder** installation smoke test in PR #21, with exact installed-file comparison. A direct authenticated installation via this **private GitHub URL** has **not been tested**; it still needs an owner-operated check. See [installation evidence](installation-evidence.md).
 
 Global installation is **not universal installation across all LLM products**.
 It is user-scoped for compatible selected agents. ChatGPT web/app generally
@@ -48,4 +48,4 @@ or built-in video generation is implied.
 
 No Python, pip, pytest, virtual environment or runtime libraries are required to use the installed skill. Node.js/npm is needed only to invoke the optional `npx skills add` installer. The selected AI agent and video tools have independent requirements.
 
-The separate `skills/universal-ai-film-director/` folder is validated to contain only the complete runtime resources, **not tests or development docs**. The actual private Skills CLI installation has not yet been observed; inspect the installed directory. For manual installation, copy only that folder. See [package documentation](skill-package.md).
+The separate `skills/universal-ai-film-director/` folder is validated to contain only the complete runtime resources, **not tests or development docs**. Local-folder Skills CLI installation has been verified in CI; remote private-GitHub authentication remains unverified. Inspect the installed directory. For manual installation, copy only that folder. See [package documentation](skill-package.md).

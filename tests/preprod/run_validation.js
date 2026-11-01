@@ -5,11 +5,13 @@ const fs=require('node:fs');
 const path=require('node:path');
 const {spawnSync}=require('node:child_process');
 const ROOT=path.resolve(__dirname,'../..');
+const NODE_TEST_FILES=fs.readdirSync(path.join(ROOT,'tests/node')).filter(x=>x.endsWith('.test.js')).sort().map(x=>'tests/node/'+x);
 const COMMANDS=[
  ['node-syntax',['--check','tests/behavior/evaluate.js']],
  ['protected-files',['tests/regression/check_preservation.js']],
  ['repo-structure',['tests/validate_repo.js']],
- ['regression-tests',['--test','tests/node/validation.test.js','tests/node/regression.test.js','tests/node/behavior.test.js','tests/node/preprod.test.js']],
+ ['package-allowlist',['tests/package/validate-package.js']],
+ ['regression-tests',['--test',...NODE_TEST_FILES]],
  ['synthetic-fixtures',['tests/behavior/evaluate.js','--json-out','build/behavior-report.json']]
 ];
 function run(out=path.join(ROOT,'build/preprod-validation.json')) {
@@ -29,7 +31,7 @@ function run(out=path.join(ROOT,'build/preprod-validation.json')) {
   release_authorized:false,production_go:false,repository_visibility_change:false,
   agent_executed:false,video_generated:false,checks,
   passed:checks.every(x=>x.passed),
-  limitations:['Offline validation only; does not prove agent behavior','No private npx installation or generator test executed','Real-agent and real-media sign-off remain manual']
+  limitations:['Offline validation only; does not prove agent behavior','Local-folder Skills CLI installation validated separately; authenticated private remote installation not tested','Real-agent and real-media sign-off remain manual']
  };
  fs.mkdirSync(path.dirname(out),{recursive:true});
  fs.writeFileSync(out,JSON.stringify(report,null,2)+'\n');

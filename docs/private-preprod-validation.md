@@ -6,7 +6,7 @@ grant production authorization. The repository owner decides when to release.
 
 ## 1. Automated checks on private GitHub Actions
 
-The existing `validate.yml` runs preservation, repository structure, regression
+The existing `validate.yml` runs preservation, repository structure, packaging and regression
 unit tests and synthetic behavior fixtures on pushes and pull requests. The
 additional pre-production workflow runs an offline, Node.js standard-library-only validation
 runner and uploads a machine-readable report as a private Actions artifact.
@@ -24,13 +24,15 @@ repository checks passed**, not that a real agent or video model was tested.
 
 ## 2. Private installation smoke test (owner-operated)
 
+CI has successfully run the real Skills CLI using a **local checkout** of the private skill package (PR #21). It confirmed the installed bytes and absence of maintainer files. This is not proof of authenticated installation directly from the private GitHub URL; that step remains **NOT TESTED**. See [installation evidence](installation-evidence.md).
+
 Do **not** make the repository public. Use a machine with Node.js/npm and
 GitHub credentials that can read this private repository.
 
 ```bash
 gh auth status
-npx skills add montadhahri/universal-ai-film-director --list
-npx skills add montadhahri/universal-ai-film-director -g
+npx skills add https://github.com/montadhahri/universal-ai-film-director/tree/main/skills/universal-ai-film-director --list
+npx skills add https://github.com/montadhahri/universal-ai-film-director/tree/main/skills/universal-ai-film-director -g
 ```
 
 Choose a supported agent when prompted. Confirm the skill is discoverable and
