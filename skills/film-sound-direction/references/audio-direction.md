@@ -11,10 +11,9 @@ unprovided media was inspected or rendered.
 - Separate narration, dialogue, music, ambience, SFX and intentional silence.
   Overlap across **different** tracks is normal. Overlap on a single narration
   track requires an explicit artistic reason and mixing plan.
-- Planned silence is a cue, not missing data. Narration gaps are defects only
-  where narration is expected.
-- Align script text to cue time ranges; speech-rate estimates are planning
-  assumptions, not proof of generated audio duration. Include breaths/pauses.
+- Distinguish **track-specific silence** (e.g. a deliberate narration pause while music or ambience continues) from **absolute silence** (no cues on any track). Narration gaps are defects only where narration is expected. In the optional Project Bible `audio_timeline` validator, `intentional_silence` means absolute silence and forbids all cue activity; represent narration-only pauses as gaps in `required_narration`, not as `intentional_silence`.
+- When preparing the portable cue sheet, label silence scope (`narration-only`, `dialogue-only`, or `all-tracks`) and its exact interval; do not imply that a voice pause mutes music or ambience.
+- Align each exact approved line to a cue window. Record its word count, estimated delivery rate/duration, breaths/pauses and remaining margin. Flag impossible or unverified speech timing rather than shortening approved text or shifting locked picture. Speech-rate estimates are planning assumptions, not proof of generated audio duration.
 - Check complete coverage for each **required** continuous track (e.g. music
   bed) and narration segments individually; do not demand narration at every
   second of a film.
