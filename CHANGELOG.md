@@ -8,6 +8,7 @@ remains under **Unreleased**.
 ## [Unreleased]
 
 ### Added
+- Introduce V2-01 initial Project Bible/handoff JSON Schemas, lossless v1 snapshot migration and negative Node.js tests for approvals, locks, stale proposals and provider permissions (feature PR; no v1 runtime changes).
 - Proposed V2-00 portable skill-orchestration RFC: explicit stage ownership, state/approval boundaries, skill-creator method, cross-agent fallback and migration/evaluation plan (design-only PR).
 - Proposed v2.0.0 modular Director + six specialist skills roadmap, Codex skill-creator baseline review, trigger/evaluation guidance, and compatibility/safety gates (roadmap PR #25; documentation only).
 

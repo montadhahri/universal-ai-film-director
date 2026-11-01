@@ -1,0 +1,239 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/montadhahri/universal-ai-film-director/schemas/v2/project-bible.schema.json",
+  "title": "Film Director v2 Project Bible wrapper and immutable v1 migration snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project_id",
+    "revision",
+    "gates",
+    "shots",
+    "decisions",
+    "continuity",
+    "provenance",
+    "source"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "2.0"
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "script",
+        "visual_bible",
+        "storyboard"
+      ],
+      "properties": {
+        "script": {
+          "$ref": "#/$defs/gate"
+        },
+        "visual_bible": {
+          "$ref": "#/$defs/gate"
+        },
+        "storyboard": {
+          "$ref": "#/$defs/gate"
+        }
+      }
+    },
+    "shots": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/shot"
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "continuity": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "evidence"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "MIGRATED_V1",
+            "NATIVE_V2"
+          ]
+        },
+        "evidence": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "snapshot"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "1.0"
+        },
+        "snapshot": {
+          "$ref": "../project-bible.schema.json"
+        }
+      }
+    },
+    "proposals": {
+      "type": "array",
+      "items": {
+        "$ref": "handoff.schema.json"
+      }
+    },
+    "authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "production_go",
+        "provider_job_allowed",
+        "publication_allowed"
+      ],
+      "properties": {
+        "production_go": {
+          "const": false
+        },
+        "provider_job_allowed": {
+          "const": false
+        },
+        "publication_allowed": {
+          "const": false
+        }
+      }
+    }
+  },
+  "$defs": {
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "approved"
+      ],
+      "properties": {
+        "approved": {
+          "type": "boolean"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "approved": {
+                "const": true
+              }
+            },
+            "required": [
+              "approved"
+            ]
+          },
+          "then": {
+            "required": [
+              "version",
+              "evidence"
+            ]
+          }
+        }
+      ]
+    },
+    "shot": {
+      "type": "object",
+      "required": [
+        "id",
+        "revision",
+        "state",
+        "continuity_refs",
+        "issues"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "state": {
+          "enum": [
+            "DRAFT",
+            "PROPOSED",
+            "APPROVED",
+            "LOCKED",
+            "NEEDS_FIX"
+          ]
+        },
+        "continuity_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "approved_asset": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "LOCKED"
+              }
+            },
+            "required": [
+              "state"
+            ]
+          },
+          "then": {
+            "required": [
+              "approved_asset"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

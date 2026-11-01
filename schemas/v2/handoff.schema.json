@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/montadhahri/universal-ai-film-director/schemas/v2/handoff.schema.json",
+  "title": "v2 specialist proposal, Director-only application",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "project_id",
+    "request_id",
+    "origin",
+    "stage",
+    "input_revision",
+    "status",
+    "proposed_artifact",
+    "provenance",
+    "required_authorization"
+  ],
+  "properties": {
+    "contract_version": {
+      "const": "2.0"
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "origin": {
+      "enum": [
+        "film-storytelling",
+        "film-visual-direction",
+        "film-cinematography",
+        "film-video-production",
+        "film-sound-direction",
+        "film-continuity-qa"
+      ]
+    },
+    "stage": {
+      "enum": [
+        "script",
+        "visual_bible",
+        "storyboard",
+        "sound",
+        "generator",
+        "generate",
+        "review",
+        "delivery"
+      ]
+    },
+    "input_revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "const": "PROPOSED"
+    },
+    "proposed_artifact": {
+      "type": "object",
+      "required": [
+        "id",
+        "revision",
+        "kind"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "evidence_ref"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "AGENT_DRAFT",
+            "USER_REPORT",
+            "DIRECT_INSPECTION"
+          ]
+        },
+        "evidence_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "required_authorization": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "script_user_approval",
+          "visual_bible_user_approval",
+          "storyboard_user_approval",
+          "scoped_unlock",
+          "provider_job_permission",
+          "publication_permission"
+        ]
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
