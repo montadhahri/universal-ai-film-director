@@ -7,6 +7,8 @@ v0.1.0 is listed under **Unreleased** until a release is explicitly approved.
 
 ## [Unreleased]
 
+- v1.0.0 version preparation is tracked in [draft release notes](docs/releases/v1.0.0.md). Keep this section unreleased until the final versioned commit is merged and the tag is actually created.
+
 ### Fixed
 - Align Project Bible JSON Schema with documented approval-evidence and LOCKED-shot invariants; expand Markdown Project Bible into a provenance- and checkpoint-aware template (PR #23).
 - Repair two package-related Markdown link failures: link to the installable `SKILL.md` rather than a directory, and keep the packaged agent compatibility reference self-contained (PR #20 CI fix).
