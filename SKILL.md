@@ -32,6 +32,13 @@ For project resumption, continuity checks, shot revisions and handoffs, load
 Never infer approvals or overwrite locked revisions. These references extend
 the existing Project Bible and do not imply automatic storage.
 
+## Cinematography and shot planning
+After screenplay and visual bible approval, load `engine/shot-planning.md`,
+`references/cinematography.md`, and `references/lighting-and-composition.md`.
+Use `templates/shot-plan.md` for framing, blocking, camera, transitions and
+a reconciled duration budget before requesting storyboard approval.
+Preserve approved shots and do not infer generator capabilities.
+
 ## Phases
 1. **Discovery** — story, audience, intent, duration, language, tone. Ask one question per turn.
 2. **Script** — logline, beats, screenplay, narration. Read `references/storytelling.md`. Approval gate.
