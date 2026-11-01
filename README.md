@@ -13,7 +13,7 @@ A portable, modular **Agent Skills** collection for writing screenplays, designi
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 ![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-blueviolet)
 
-[**Quick start**](#-quick-start) · [**Installation**](#-installation) · [**How it works**](#-how-filmmaking-works) · [**Specialist skills**](#-meet-the-film-crew) · [**Compatibility**](#-agent-compatibility) · [**Releases**](#-versions--releases) · [**FAQ**](#-faq)
+[**Quick start**](#-quick-start) · [**Installation**](#-installation) · [**Production workflow**](#-film-production-workflow) · [**Skills architecture**](#-how-the-skills-work-together) · [**Specialist skills**](#-meet-the-film-crew) · [**Compatibility**](#-agent-compatibility) · [**Releases**](#-versions--releases) · [**FAQ**](#-faq)
 
 </div>
 
@@ -83,6 +83,59 @@ npx skills add montadhahri/universal-ai-film-director --list
 For local development, cloning, offline installs, or checking out the historical `v1.0.0` tag, see [the installation guide](docs/installation.md).
 
 [Installation details and troubleshooting](docs/installation.md)
+
+## 🎞️ Film production workflow
+
+The Director follows the same **nine-stage filmmaking journey** as the original single-skill release, now supported by six focused specialties. You start with an idea, collaborate on creative decisions and approve each major milestone.
+
+```mermaid
+flowchart TD
+    A["1 · Discovery<br/>Your story, audience, tone and runtime"] --> B["2 · Screenplay<br/>Story beats, dialogue and narration"]
+    B --> G1{"You approve<br/>the screenplay?"}
+    G1 -- "Revise" --> B
+    G1 -- "Approve" --> C["3 · Visual Bible<br/>Characters, world and style"]
+    C --> G2{"You approve<br/>the visual design?"}
+    G2 -- "Revise" --> C
+    G2 -- "Approve" --> D["4 · Storyboard<br/>Shot IDs, camera and exact timing"]
+    D --> G3{"You approve<br/>the storyboard?"}
+    G3 -- "Revise" --> D
+    G3 -- "Approve" --> E["5 · Sound direction<br/>Voice, music, SFX and silence"]
+    E --> F["6 · Generator setup<br/>Verify actual tools and capabilities"]
+    F --> P{"Authorized tools<br/>and permissions?"}
+    P -- "No" --> PLAN["Generation-ready shot packets<br/>No footage claimed"]
+    P -- "Yes" --> H["7 · Generate<br/>Create/retrieve real shot assets"]
+    H --> I["8 · Review<br/>Inspect footage and repair defects"]
+    I --> J["9 · Edit and deliver<br/>Check final export"]
+    I -- "Scoped repair needed" --> I
+```
+
+**Approval gates are yours:** the AI does not automatically approve the screenplay, Visual Bible or storyboard. It may recommend camera, pacing or sound choices inside your approved direction. Generating video, connecting an account or spending credits requires separate permission and a genuinely available tool. If generation is unavailable, the deliverable is a **production plan**, not a finished film.
+
+The Director keeps a **Project Bible** with the decisions, approved revisions, character and location anchors, shot IDs, continuity dependencies, audio cues and next safe step. You can resume from a checkpoint without restarting the story.
+
+## 🧩 How the skills work together
+
+The Director is your **creative partner and production coordinator**, not a replacement for you. Specialists contribute proposals; the Director reconciles them with your vision and presents approvals for you to decide.
+
+```mermaid
+flowchart TB
+    U["You · filmmaker and final creative authority"]
+    D["AI Film Director<br/>Project Bible · approvals · workflow"]
+    U <-->|"Brief · feedback · explicit approvals"| D
+    D <--> S["Storytelling<br/>Screenplay"]
+    D <--> V["Visual Direction<br/>Character and style bible"]
+    D <--> C["Cinematography<br/>Storyboard and camera"]
+    D <--> P["Video Production<br/>Shot packets and tool checks"]
+    D <--> A["Sound Direction<br/>Audio timeline and dubbing"]
+    D <--> Q["Continuity & QA<br/>Evidence and minimal repairs"]
+```
+
+**Two ways to use the skills:**
+
+- **One agent:** install the Director and work through the entire film interactively. The Director can follow the specialist procedures in a single-agent workflow; native delegation is not required.
+- **Modular skills:** install individual specialists for focused tasks. Where your agent supports skill discovery or delegation, the Director can coordinate their proposed outputs; exact cross-agent behavior depends on the host.
+
+Each skill contains an entrypoint (`SKILL.md`), focused filmmaking references and reusable output templates. This helps keep prompts manageable while preserving detailed methods for camera continuity, generator capability checks, audio-only repairs and other demanding production tasks.
 
 ## 🎥 How filmmaking works
 

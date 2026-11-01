@@ -55,3 +55,11 @@ test('direct GitHub install is primary, clone is optional development workflow',
  assert(!readme.includes('| Local installation command |'));
  assert(guide.includes('npx skills add ./skills/universal-ai-film-director'),'Keep tested local developer path');
 });
+
+test('README diagrams show v1 nine-stage production workflow and modular authority',()=>{
+ const readme=read('README.md');
+ for(const phrase of ['## 🎞️ Film production workflow','## 🧩 How the skills work together','1 · Discovery','2 · Screenplay','3 · Visual Bible','4 · Storyboard','5 · Sound direction','6 · Generator setup','7 · Generate','8 · Review','9 · Edit and deliver','You approve','Authorized tools','Project Bible','final creative authority','One agent','Modular skills'])
+  assert(readme.includes(phrase),'README workflow missing: '+phrase);
+ assert((readme.match(/```mermaid/g)||[]).length===2,'Expected two working architecture diagrams');
+ assert(readme.includes('No footage claimed'),'Missing ungenerated-media transparency');
+});
