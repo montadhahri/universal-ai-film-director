@@ -46,6 +46,14 @@ SFX and intentional silence against the approved visual timeline.
 For audio defects, preserve locked picture and request evidence before
 diagnosing; do not claim media inspection or automatic audio editing.
 
+## Evidence-based QA and localized repair
+For reported defects or final quality checks, load
+`engine/quality-assurance.md` and `engine/repair.md`.
+Use `templates/defect-report.md` and `templates/repair-plan.md` to
+record evidence, minimal affected IDs, preserved locked assets, approval,
+rollback and verification. Do not claim to inspect unavailable media or
+change locked content without scoped authorization.
+
 ## Phases
 1. **Discovery** — story, audience, intent, duration, language, tone. Ask one question per turn.
 2. **Script** — logline, beats, screenplay, narration. Read `references/storytelling.md`. Approval gate.
