@@ -1,0 +1,2 @@
+# Visual identity and continuity
+Define medium, proportions, palette, linework, lighting, texture, locations, props, wardrobe, facial expressions and camera grammar. Assign stable character IDs and visual anchors. Prefer reference assets where the generator supports them. Text prompts alone do not guarantee identity consistency.
