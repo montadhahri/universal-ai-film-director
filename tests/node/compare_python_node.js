@@ -16,7 +16,8 @@ function normalizeErrors(result) {
   if (result.scenario !== undefined || result.passed !== false ||
       !Array.isArray(result.errors) || result.errors.length !== 1) return result.errors;
   const message = result.errors[0];
-  if (/^(?:Expecting property name enclosed in double quotes|Expected property name or '\\}' in JSON)/.test(message))
+  if (message.startsWith('Expecting property name enclosed in double quotes') ||
+      message.startsWith("Expected property name or '}' in JSON"))
     return ['MALFORMED_JSON_OBJECT_KEY'];
   return result.errors;
 }
