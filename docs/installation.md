@@ -5,16 +5,16 @@ supported coding agents. Requires Node.js/npm and access to the repository.
 
 ```bash
 # Global (user scope, across projects for selected agents)
-npx skills add montadhahri/universal-ai-film-director -g
+npx skills add https://github.com/montadhahri/universal-ai-film-director/tree/main/skills/universal-ai-film-director -g
 
 # Local (current project)
-npx skills add montadhahri/universal-ai-film-director
+npx skills add https://github.com/montadhahri/universal-ai-film-director/tree/main/skills/universal-ai-film-director
 
 # Choose specific agents
-npx skills add montadhahri/universal-ai-film-director -g -a claude-code -a codex
+npx skills add https://github.com/montadhahri/universal-ai-film-director/tree/main/skills/universal-ai-film-director -g -a claude-code -a codex
 
 # Preview discovered skills
-npx skills add montadhahri/universal-ai-film-director --list
+npx skills add https://github.com/montadhahri/universal-ai-film-director/tree/main/skills/universal-ai-film-director --list
 
 # Update globally installed skills
 npx skills update -g
@@ -24,7 +24,7 @@ The Skills CLI supports interactive agent selection, `-g` user scope,
 `-a` agent selection and authenticated private GitHub repositories.
 Authenticate with Git/SSH or GitHub CLI first for this **private** repository.
 Confirm discovery with `--list` and test the installed skill in your agent.
-The exact result for this repository has not been tested with the CLI here.
+The exact result for this private repository has not been tested with the CLI here; its isolated source folder has been statically validated.
 
 Global installation is **not universal installation across all LLM products**.
 It is user-scoped for compatible selected agents. ChatGPT web/app generally
@@ -48,4 +48,4 @@ or built-in video generation is implied.
 
 No Python, pip, pytest, virtual environment or runtime libraries are required to use the installed skill. Node.js/npm is needed only to invoke the optional `npx skills add` installer. The selected AI agent and video tools have independent requirements.
 
-Python scripts under `tests/` and workflows under `.github/` are for maintainers, not for film production. The exact files installed by the Skills CLI from this private repository have not yet been verified. A manual installation needs `SKILL.md` and referenced support directories, not developer tests. See [the roadmap](ROADMAP.md) for an optional Node.js-based testing investigation.
+The separate `skills/universal-ai-film-director/` folder is validated to contain only the complete runtime resources, **not tests or development docs**. The actual private Skills CLI installation has not yet been observed; inspect the installed directory. For manual installation, copy only that folder. See [package documentation](skill-package.md).

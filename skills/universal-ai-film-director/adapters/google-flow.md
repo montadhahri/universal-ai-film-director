@@ -1,0 +1,2 @@
+# Google Flow / Veo
+Verify the current model, clip-length limits, reference-image modes, audio support and interface before providing technical steps. Do not invent buttons or capabilities. Produce a copy-ready shot prompt and separate reference-image/audio/editing guidance. Split complex actions into shorter clips. Use separate narration if generated audio is unreliable.

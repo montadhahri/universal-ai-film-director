@@ -8,11 +8,13 @@ v0.1.0 is listed under **Unreleased** until a release is explicitly approved.
 ## [Unreleased]
 
 ### Fixed
+- Repair two package-related Markdown link failures: link to the installable `SKILL.md` rather than a directory, and keep the packaged agent compatibility reference self-contained (PR #20 CI fix).
 - Fix invalid `PLANNED` shot states in templates and clarify new-project versus checkpoint-resume behavior in the skill and director instructions; add contract regression checks (PR #19).
 - Normalize only known malformed-JSON parser diagnostics when comparing Python and Node parity; behavioral errors and process exit codes remain strictly compared (PR #17 CI fix).
 - Replace the obsolete Phase 8 `In review` regression assertion with checks that Phase 8 is merged and production release remains unauthorized (PR #11 CI fix).
 
 ### Added
+- Isolated installable skill folder with a strict runtime-only allowlist and byte-for-byte mirror guard; recommended direct-path Skills CLI installation (private install remains unverified; PR #20).
 - Stage 4 independent Python/Node transcript evaluator parity gate with positive, strict, negative and malformed inputs, JSON evidence and read-only CI; no Python deletion (PR #17).
 - Stage 3 additive Node.js transcript evaluator, behavior negative tests, offline pre-production runner, and CI report artifacts; Python counterparts remain in place for parity review (PR #16).
 - Stage 2 Node.js regression parity tests for audio, continuity, shot planning, repair, director, compatibility, flagship and pre-production contracts; Python behavior evaluator remains for Stage 3 (PR #15).

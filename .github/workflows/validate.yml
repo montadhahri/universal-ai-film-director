@@ -18,6 +18,8 @@ jobs:
         run: node tests/regression/check_preservation.js
       - name: Validate repository structure and links
         run: node tests/validate_repo.js
+      - name: Validate isolated skill payload
+        run: node tests/package/validate-package.js
       - name: Run complete Node.js regression suite
         run: node --test tests/node/*.test.js
       - name: Evaluate deterministic transcript fixtures

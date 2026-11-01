@@ -67,7 +67,7 @@ flowchart TD
 
 1. Install using the Skills CLI (Node.js/npm required; authenticate GitHub first for this private repository):
    ```bash
-   npx skills add montadhahri/universal-ai-film-director -g
+   npx skills add https://github.com/montadhahri/universal-ai-film-director/tree/main/skills/universal-ai-film-director -g
    ```
    Select your supported agent when prompted. For a project-local installation, omit `-g`.
    If the CLI cannot access the repository or your agent does not support native
@@ -90,16 +90,16 @@ is not a video generator.
 
 ```bash
 # Interactive installation to a user-level location (across projects)
-npx skills add montadhahri/universal-ai-film-director -g
+npx skills add https://github.com/montadhahri/universal-ai-film-director/tree/main/skills/universal-ai-film-director -g
 
 # Interactive installation in the current project (default)
-npx skills add montadhahri/universal-ai-film-director
+npx skills add https://github.com/montadhahri/universal-ai-film-director/tree/main/skills/universal-ai-film-director
 
 # Target particular agents at user scope
-npx skills add montadhahri/universal-ai-film-director -g -a claude-code -a codex
+npx skills add https://github.com/montadhahri/universal-ai-film-director/tree/main/skills/universal-ai-film-director -g -a claude-code -a codex
 
 # Inspect discovered skills before installing
-npx skills add montadhahri/universal-ai-film-director --list
+npx skills add https://github.com/montadhahri/universal-ai-film-director/tree/main/skills/universal-ai-film-director --list
 
 # Check and update installed skills
 npx skills check
@@ -114,11 +114,10 @@ and reload behavior depend on each agent and its version.
 **Private repository:** This repository currently requires GitHub access.
 Configure Git credentials, `gh auth login`, or SSH before installing. The CLI
 supports authenticated private GitHub sources; it cannot bypass access control.
-For an SSH source, use
-`npx skills add git@github.com:montadhahri/universal-ai-film-director.git -g`.
+For SSH access, authenticate your Git client first, then use the documented direct skill subdirectory URL or a local checkout with `npx skills add ./skills/universal-ai-film-director -g`. The shorthand repository command is not recommended while root and packaged copies coexist.
 
 **Compatibility:** Installation support is not a claim of end-to-end testing.
-The repository has a root `SKILL.md`; confirm discovery with `--list` and
+The repository has an isolated `skills/universal-ai-film-director/SKILL.md`; confirm discovery with `--list` and
 verify the skill appears in your agent after installation. If discovery fails,
 use the existing manual method below.
 
@@ -137,7 +136,7 @@ use the existing manual method below.
 
 After installation, the skill instructions require neither Python nor Node.js; the host agent may have its own requirements. A global `-g` install applies to selected compatible agents, not every LLM product.
 
-**Packaging caveat:** We have not verified which files the Skills CLI copies from this private repository. The installer may include maintainer files; that does not mean they execute. Check `--list` and inspect the installed directory. Keep the repository private.
+**Packaging:** Use the dedicated [runtime-only install directory](skills/universal-ai-film-director/SKILL.md) instead of the repository root. It is guarded against development files and stale copies by [package validation](docs/skill-package.md). An actual private Skills CLI installation is still **not independently verified**; inspect the installed directory.
 
 See [installation details](docs/installation.md) and the [tooling roadmap](docs/ROADMAP.md).
 
@@ -160,7 +159,7 @@ your-project/
             └── templates/
 ```
 
-Copy `SKILL.md` and its referenced supporting directories so relative paths remain available. Development-only `tests/` and `.github/` files are not needed for skill usage. Start a Claude Code session in the project and ask it to use `universal-ai-film-director`. If skill discovery does not work, reference the file explicitly and consult your installed Claude Code documentation.
+Copy the complete `skills/universal-ai-film-director/` directory, preserving the internal relative paths. Development-only `tests/` and `.github/` files are not needed for skill usage. Start a Claude Code session in the project and ask it to use `universal-ai-film-director`. If skill discovery does not work, reference the file explicitly and consult your installed Claude Code documentation.
 
 ### OpenAI Codex
 
