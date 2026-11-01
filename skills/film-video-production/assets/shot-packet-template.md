@@ -10,6 +10,7 @@
 **Duration:**
 **Reference assets (exact IDs/paths, approval and provenance; or UNAVAILABLE):**
 **Continuity from prior shot:**
+**State-changing props (stable ID; before owner/location; visible contact/transfer/release; after owner/location; downstream retained state, or UNRESOLVED):**
 **Copy-ready video prompt:**
 ```text
 [Character + environment + action + framing + camera + light + style + continuity]
