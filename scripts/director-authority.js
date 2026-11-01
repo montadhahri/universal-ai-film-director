@@ -24,6 +24,7 @@ function scopeIsApproval(e) {
 function proposeGate(p,{expected_revision,gate,version,artifact_ref,proposal_id}) {
  checkRevision(p,expected_revision);
  if(!gateNames.has(gate)||!ok(version)||!ok(artifact_ref)||!ok(proposal_id))fail('Invalid gate proposal');
+ if(p.gates[gate].approved)fail('Previously approved gate requires a separate scoped revision workflow');
  if(getLedger(p,'gate_proposals').some(x=>x.proposal_id===proposal_id))fail('Duplicate gate proposal ID');
  if(getLedger(p,'gate_proposals').some(x=>x.gate===gate&&x.status==='PENDING'))fail('Resolve existing pending gate proposal first');
  const n=clone(p);

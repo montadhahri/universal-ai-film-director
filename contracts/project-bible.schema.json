@@ -94,13 +94,13 @@
       ],
       "properties": {
         "production_go": {
-          "type": "boolean"
+          "const": false
         },
         "provider_job_allowed": {
-          "type": "boolean"
+          "const": false
         },
         "publication_allowed": {
-          "type": "boolean"
+          "const": false
         }
       }
     },

@@ -61,3 +61,14 @@ test('checkpoint roundtrip preserves exact approved/locked revisions and never c
  assert.throws(()=>restoreCheckpoint('}{'),/Invalid checkpoint/);
  assert.throws(()=>restoreCheckpoint(JSON.stringify({...p,gates:{...p.gates,script:{approved:true}}})),/evidence/);
 });
+
+test('an already approved gate cannot be silently replaced by another proposal',()=>{
+ let p=script(newProject('demo'));
+ p=approveGate(p,{expected_revision:p.revision,proposal_id:'gate-1',evidence:user('I approve screenplay V1')});
+ assert.throws(()=>proposeGate(p,{expected_revision:p.revision,gate:'script',version:'SCRIPT-V2',artifact_ref:'replacement',proposal_id:'gate-3'}),/Previously approved gate/);
+});
+test('Project Bible schema does not silently permit setting operational flags to true',()=>{
+ const schema=require('../../contracts/project-bible.schema.json');
+ for(const k of ['production_go','provider_job_allowed','publication_allowed'])
+  assert.equal(schema.properties.authorization.properties[k].const,false,k);
+});
