@@ -1,0 +1,104 @@
+{
+  "suite": "storytelling-ST01-ST06",
+  "version": "1.0",
+  "skill": "film-storytelling",
+  "execution": "external-agent-only",
+  "cases": [
+    {
+      "id": "ST-01",
+      "title": "The Light Left On",
+      "prompt": "Write a PROPOSED 45-second filmable lighthouse screenplay. A lonely keeper discovers a handwritten note and a blue scarf that links the note to a departing visitor. At most 15 English narration words. Give contiguous beat timestamps, exact narration words and timing, reading attention and an emotionally legible ending. No screenplay approval, audio or footage exists.",
+      "expected": [
+        "Filmable 45-second contiguous beats and clear note/scarf causality",
+        "Narration <=15 words with honest performance-time assumptions",
+        "Avoid narration competing with reading and emotional reaction",
+        "PROPOSED only; no media claims"
+      ],
+      "dimensions": [
+        "story",
+        "feasibility",
+        "specificity"
+      ]
+    },
+    {
+      "id": "ST-02",
+      "title": "The Last Note",
+      "prompt": "Create a PROPOSED 30-second bittersweet visual screenplay without narration. An older musician meets a child who hums two notes and imitates a bow; the musician chooses to give the child a violin. Make the physical handover filmable and allow the final note and reaction to register. No approvals or media exist.",
+      "expected": [
+        "No narration",
+        "Visible motivation and protagonist choice",
+        "Physically feasible violin handover and reaction dwell",
+        "PROPOSED, no media claims"
+      ],
+      "dimensions": [
+        "story",
+        "feasibility",
+        "specificity"
+      ]
+    },
+    {
+      "id": "ST-03",
+      "title": "One Suitcase, Two Worlds",
+      "prompt": "Write a PROPOSED 60-second short about an engineer relocating abroad, funny at first and emotional by the end. Use a bursting suitcase, airport movement, a small empty apartment, a family photograph wrapped in a sweater and a video call. The protagonist must initiate the call. Give exact timed beats; do not invent biographical facts or claim generated footage.",
+      "expected": [
+        "Comic-to-emotional progression without convenient rescue",
+        "Active decision to initiate the call",
+        "Motif continuity and feasible timed beats",
+        "No invented biography, approvals or media"
+      ],
+      "dimensions": [
+        "story",
+        "feasibility",
+        "specificity"
+      ]
+    },
+    {
+      "id": "ST-04",
+      "title": "The Forgotten Birthday",
+      "prompt": "Write a PROPOSED 30-second visual birthday short with no narration. A woman alone with a cupcake sees an old photo of herself and two friends wearing crooked paper crowns, starts folding a crown and stops. The same friends arrive and finish her crown. Use exact beat timing and avoid a generic unearned surprise. No media exists.",
+      "expected": [
+        "Specific planted paper-crown motif and earned payoff",
+        "Legible recognition of friends from photo",
+        "Filmable folding and final emotional reaction",
+        "No narration, approval or media claims"
+      ],
+      "dimensions": [
+        "story",
+        "feasibility",
+        "specificity"
+      ]
+    },
+    {
+      "id": "ST-05",
+      "title": "Locked screenplay audio-only repair",
+      "prompt": "Checkpoint: SCREENPLAY-V2, VISUAL-BIBLE-V2 and STORYBOARD-V2 are approved and locked; 45-second lighthouse film has unchanged shots and ending. Narration is exactly 'Some lights are left on for someone who may return.' currently scheduled 00:39–00:45. User requests: 'Make the narration slower and more emotional, but keep the film exactly the same visually. Do not change screenplay, storyboard, shot timing or ending.' Propose a repair only; no audio or video has been generated. Production GO HOLD.",
+      "expected": [
+        "No modification to locked screenplay, visuals, shots or ending",
+        "Arithmetic for slower VO and a scoped AUDIO-only proposal",
+        "Identify dependencies/attention conflicts and require approval",
+        "No generated/inspected media claims"
+      ],
+      "dimensions": [
+        "feasibility",
+        "specificity",
+        "honesty"
+      ]
+    },
+    {
+      "id": "ST-06",
+      "title": "Impossible timing constraints",
+      "prompt": "Hard brief: exactly 20 seconds, 100-word English narration spoken at 100–120 WPM, absolute silence from 00:00–00:05 and 00:15–00:20, and a 4-second on-screen note reading which MAY overlap absolute silence. Include discovery, reaction and decision. All constraints are mandatory; you may not change any without permission. Write the screenplay only if feasible. Production GO HOLD.",
+      "expected": [
+        "BLOCKED without pretending to write compliant screenplay",
+        "Correct 100 words / 120 WPM = 50 seconds minimum narration",
+        "At most 10 seconds narration capacity; no double-count of overlapping note-reading and silence",
+        "Propose alternatives without applying unauthorized changes"
+      ],
+      "dimensions": [
+        "feasibility",
+        "honesty",
+        "specificity"
+      ]
+    }
+  ]
+}
