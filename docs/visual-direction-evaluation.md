@@ -31,3 +31,9 @@ node --test tests/node/visual-direction-cases.test.js
 This test checks the manifest shape and isolation, **not agent behavior**.
 
 Production GO remains **HOLD**. No media generation, accounts, API keys, credits, publishing, or automatic approval.
+
+## Fixture correction: VD-04 v1.1
+
+The original VD-04 v1.0 prompt omitted the color while its first criterion required amber. The initial six-agent report therefore retains VD-04 as a **literal FAIL caused by fixture mismatch** (23/24 criteria). Version 1.1 supplies `amber` in the prompt; it is a new test input and must be independently rerun. Never retroactively relabel the original capture. A separate unspecified-color variation should leave hue UNRESOLVED rather than importing the illustrative gold spark.
+
+The Visual Direction reference refinement clarifies unresolved identity anchors and screenplay-driven prop movement; it does not establish any new agent PASS. Re-run VD-04, a missing-color variant and the unresolved-identity case with real agent captures.

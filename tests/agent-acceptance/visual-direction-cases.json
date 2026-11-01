@@ -1,6 +1,6 @@
 {
   "suite": "visual-direction-VD01-VD06",
-  "version": "1.0",
+  "version": "1.1",
   "skill": "film-visual-direction",
   "execution": "external-agent-only",
   "cases": [
@@ -55,7 +55,7 @@
     {
       "id": "VD-04",
       "title": "Intentional prop evolution",
-      "prompt": "A 30-second approved screenplay has SPARK-01 held in CHILD-01's palms in SH01, dimming in SH02, placed in TOWER-01's lantern in SH03 and illuminating the skyline in SH04. Create a PROPOSED Visual Bible showing object owner/location, motivated transfer and allowed brightness evolution per shot. Do not change the spark's identity, color or tower geometry. No media exists.",
+      "prompt": "A 30-second approved screenplay establishes SPARK-01 as an amber spark held in CHILD-01's palms in SH01, dimming in SH02, placed in TOWER-01's lantern in SH03 and illuminating the skyline in SH04. Create a PROPOSED Visual Bible showing object owner/location, motivated transfer and allowed brightness evolution per shot. Do not change the spark's identity, color or tower geometry. No media exists.",
       "expected": [
         "Stable SPARK-01 identity and amber hue despite brightness changes",
         "Explicit owner/location transfer from palms to tower lantern at SH03",
