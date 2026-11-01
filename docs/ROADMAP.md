@@ -14,7 +14,7 @@ are proposals, not delivery guarantees.
 | 5 | Audio, narration and synchronization | Merged | [PR #7](https://github.com/montadhahri/universal-ai-film-director/pull/7) |
 | 6 | Intelligent QA and localized repair | Merged | [PR #8](https://github.com/montadhahri/universal-ai-film-director/pull/8) |
 | 7 | Generator and agent compatibility | Merged | [PR #9](https://github.com/montadhahri/universal-ai-film-director/pull/9) |
-| 8 | Flagship demo and v1.0 readiness | Merged — release not approved | [PR #10](https://github.com/montadhahri/universal-ai-film-director/pull/10) |
+| 8 | Flagship demo and v1.0 readiness | Merged; v1.0.0 privately released | [PR #10](https://github.com/montadhahri/universal-ai-film-director/pull/10) |
 
 ## Phase 1 — Repository safety and regression tests (merged)
 
@@ -107,18 +107,20 @@ the now-completed migration plan without erasing its history in Git.
 | Runtime-only 34-file skill distribution | PR #20, package allowlist + byte parity | COMPLETE |
 | Real Skills CLI **local-folder** install | PR #21, CLI smoke CI | VERIFIED LOCALLY |
 | Authenticated remote install from private GitHub URL | No recorded execution | NOT TESTED |
-| Independent AI agent loading skill and respecting gates | No recorded execution | NOT TESTED |
+| Independent AI agent loading skill and respecting gates | User-provided Codex/Work checkpoint records loaded references and three approvals; independent report not yet merged | PARTIAL EVIDENCE |
 | High-quality AI-generated 30s film using the skill | No accepted output; PR #22 rejected | NOT DONE |
-| Security / privacy / release owner sign-off | v1.0.0 review pending | HOLD |
+| Versioned private GitHub v1.0.0 release | Tag and release published, 1 Nov 2026 | COMPLETE |
+| Public launch / media-generation PROD GO | Separate authorization required | HOLD |
 
 ### v2.0.0 design direction (planning only)
 
-See the dedicated [v2.0.0 modular Director and specialist-skills roadmap](V2-ROADMAP.md).
-This is planning only. No v2 implementation, migration, public release or
-production authorization is granted by adding the document.
+The private [v1.0.0 release](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0)
+is the compatibility baseline. See the [v2 modular skills roadmap](V2-ROADMAP.md)
+and its [Codex skill-creator audit](V2-SKILL-CREATOR-AUDIT.md).
+These are design proposals only, not v2 runtime changes or production authorization.
 
-**No tags, release publishing, visibility changes or PROD GO** without
-separate explicit owner authorization.
+**No new tags, public publishing, visibility changes or PROD GO** without
+separate explicit owner authorization. The existing v1.0.0 private tag is published.
 
 ## Pre-production validation (after Phase 8; NOT a release)
 

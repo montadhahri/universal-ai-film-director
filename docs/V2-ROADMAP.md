@@ -1,9 +1,9 @@
 # Universal AI Film Director — v2.0.0 roadmap (PROPOSED)
 
 **Status:** Planning only. No v2.0.0 implementation, tag, release or production authorization.
-**Source baseline:** existing v1.0.0 candidate on private `main`. The v1.0.0
-release decision, real-agent acceptance evidence, and media-generation access
-remain separate tracks; v2 planning does not imply any v1 release approval.
+**Source baseline:** published private [v1.0.0 release](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0), tagged at `a827d21887bc64f96875667360dcbf67f71eb616`.
+This version is the immutable compatibility baseline. The public launch,
+real-media acceptance and production authorization remain separate decisions.
 
 ## Product vision
 
@@ -33,8 +33,24 @@ look like an intrinsic skill capability**.
    terms. No uploads, spending, publishing or credentials without permission.
 9. Keep a **single-agent portable fallback** for hosts without skill-to-skill
    invocation. Multi-agent delegation is an optional, platform-specific adapter.
-10. Keep v1.0.0 candidate working until independently tested migration is
+10. Keep published v1.0.0 compatible until independently tested migration is
     accepted; do not rewrite or remove legacy files without owner approval.
+
+## Skill-creator methodology
+
+Review the current v1 skill and design every v2 specialist against the official
+[Codex skill-creator guidance](https://github.com/openai/skills/blob/main/skills/.system/skill-creator/SKILL.md).
+Use its sequence: concrete usage examples → reusable resources → initialize
+skill (when authoring script available) → concise SKILL.md/frontmatter and
+progressively disclosed references → validation → real-user evaluation and
+iteration. **Creation tooling is not an agent/runtime capability.**
+
+Read the [v1 skill-creator baseline audit and v2 evaluation plan](V2-SKILL-CREATOR-AUDIT.md)
+prior to V2-00. Each specialist needs explicit trigger phrases and non-trigger
+boundaries, tested input/output contracts, small entrypoint, useful references,
+negative tests and real-agent acceptance evidence. Reuse creator authoring
+scripts when available in the chosen Codex environment, but keep installed
+skills and Node.js CI free of a mandatory Python dependency.
 
 ## Proposed skill boundaries
 
@@ -113,6 +129,7 @@ until its implementation PRs merge and required acceptance evidence exists.
 
 ### Phase V2-00 — architecture decision first
 
+Use skill-creator to review the v1 generic skill **before** deciding any split.
 Write and review an RFC covering: why each specialist exists; skill naming;
 canonical source versus packaged distributions; Project Bible ownership;
 delegation boundaries; data handoff and approval invariants; agent-platform
@@ -132,10 +149,14 @@ place. Separate **content approval** from **authorization to generate/spend**.
 
 ### Phase V2-02 — portable skill modularization
 
-Implement orchestrator + six runtime-only packages as canonical files with
+Using the Codex skill-creator workflow, create and validate the orchestrator
+and six specialist SKILL.md entrypoints, trigger descriptions and on-demand
+resources (six boundaries are provisional). Implement them as canonical files with
 explicit references, no tests or development files in installed payloads.
 Keep the current v1 entrypoint usable during transition, and validate every
 skill's manifest, links, package bytes, discovery and fallback loading.
+Benchmark trigger accuracy, with/without specialist outputs, context-size,
+correctness and user review to demonstrate benefits over the v1 baseline.
 Measure instruction/context size to prove modularization is useful.
 
 ### Phase V2-03 — optional multi-agent integration

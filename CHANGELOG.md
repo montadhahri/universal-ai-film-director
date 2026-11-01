@@ -2,10 +2,17 @@
 
 Notable changes to Universal AI Film Director are documented here.
 Entries follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
-categories and use semantic versioning for releases. Work merged after
-v0.1.0 is listed under **Unreleased** until a release is explicitly approved.
+categories and semantic versioning. Work not included in a tagged release
+remains under **Unreleased**.
 
 ## [Unreleased]
+
+### Added
+- Proposed v2.0.0 modular Director + six specialist skills roadmap, Codex skill-creator baseline review, trigger/evaluation guidance, and compatibility/safety gates (roadmap PR #25; documentation only).
+
+## [1.0.0] — 2026-11-01
+
+Private release tag [v1.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) published. Original changes and release limitations are documented in [release notes](docs/releases/v1.0.0.md).
 
 ### Fixed
 - Align Project Bible JSON Schema with documented approval-evidence and LOCKED-shot invariants; expand Markdown Project Bible into a provenance- and checkpoint-aware template (PR #23).
@@ -15,7 +22,6 @@ v0.1.0 is listed under **Unreleased** until a release is explicitly approved.
 - Replace the obsolete Phase 8 `In review` regression assertion with checks that Phase 8 is merged and production release remains unauthorized (PR #11 CI fix).
 
 ### Added
-- Proposed v2.0.0 modular Director + six specialist skill roadmap, with staged contracts, backward compatibility, optional delegation, real-media evidence gates and private release hold; documentation only (v2 roadmap PR).
 - Real Skills CLI local-folder smoke-test workflow, installed-file inventory comparison, and explicit owner-operated private-remote and agent acceptance protocol (PR #21).
 - Isolated installable skill folder with a strict runtime-only allowlist and byte-for-byte mirror guard; recommended direct-path Skills CLI installation (private install remains unverified; PR #20).
 - Stage 4 independent Python/Node transcript evaluator parity gate with positive, strict, negative and malformed inputs, JSON evidence and read-only CI; no Python deletion (PR #17).
