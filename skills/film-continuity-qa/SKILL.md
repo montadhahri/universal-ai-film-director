@@ -23,3 +23,7 @@ Consult [QA and repair craft](references/guide.md).
 - For delivered film assembly and coverage: [postproduction](references/postproduction.md).
 - Produce a [defect report](assets/defect-report-template.md), [repair plan](assets/repair-plan-template.md) and [shot review](assets/shot-review-template.md); consult [QA craft](references/guide.md) for evidence ranking and reinspection.
 - Do not report an actual repair, full-export PASS or media verification without actual accessible post-repair footage/audio.
+
+## Worked example and acceptance scenario
+
+For a concrete stage-specific example, handoff output and failure case, read the [illustrative production example](references/worked-example.md) when designing or testing a comparable scene. It is not approval or real media evidence.

@@ -21,3 +21,7 @@ Never claim generated footage or imply permission for a video-generation service
 ## Detailed reference
 
 When refining premise, character motivation, beat timing, filmable action or narration, read [storytelling principles](references/storytelling.md) and [narrative craft](references/guide.md). If the user provided a personal biography, never invent missing facts or assume consent to disclose them.
+
+## Worked example and acceptance scenario
+
+For a concrete stage-specific example, handoff output and failure case, read the [illustrative production example](references/worked-example.md) when designing or testing a comparable scene. It is not approval or real media evidence.
