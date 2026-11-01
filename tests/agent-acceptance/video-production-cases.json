@@ -1,13 +1,13 @@
 {
   "suite": "video-production-VP01-VP06",
-  "version": "1.1",
+  "version": "1.2",
   "skill": "film-video-production",
   "execution": "external-agent-only",
   "cases": [
     {
       "id": "VP-01",
       "title": "Complete planning-only shot packets",
-      "prompt": "An approved 30-second screenplay V2, Visual Bible V3 and storyboard V4 define SH01 0–5s (dark town), SH02 5–11s (CHILD-01 finds amber SPARK-01), SH03 11–20s (child walks east to TOWER-01), SH04 20–26s (spark placed in lantern), SH05 26–30s (skyline brightens). All picture timing and identity anchors are LOCKED. No reference image files, provider/model, account access or video tool exists. Produce PROPOSED generator-ready shot packets for all five shots with revisions, global timing, dependencies, separate reference/video/audio/edit instructions and evidence/authorization states. Do not generate media.",
+      "prompt": "An approved 30-second screenplay V2, Visual Bible V3 and storyboard V4 define SH01 0–5s (dark town), SH02 5–11s (CHILD-01 finds and picks up the single amber SPARK-01, retaining it in their hands), SH03 11–20s (CHILD-01 carries that same SPARK-01 in their hands while walking east to TOWER-01), SH04 20–26s (CHILD-01 starts holding SPARK-01, visibly places and releases it inside TOWER-01's lantern, leaving it there), SH05 26–30s (skyline brightens while the same SPARK-01 remains inside TOWER-01's lantern). All picture timing and identity anchors are LOCKED. No reference image files, provider/model, account access or video tool exists. Produce PROPOSED generator-ready shot packets for all five shots with revisions, global timing, dependencies, separate reference/video/audio/edit instructions and evidence/authorization states. Do not generate media.",
       "expected": [
         "Five distinct shot packets cover exact 0–30s locked timeline with stable IDs and approved revision references",
         "Single amber spark, eastward travel, explicit SH04 hands-to-lantern transfer and SH05 retained location preserved across dependent packets",
