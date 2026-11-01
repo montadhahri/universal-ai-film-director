@@ -8,6 +8,7 @@ v0.1.0 is listed under **Unreleased** until a release is explicitly approved.
 ## [Unreleased]
 
 ### Added
+- Phase 4 shot planning, cinematography, lighting/composition references, timing template, illustrative timeline and regression checks ([PR #6](https://github.com/montadhahri/universal-ai-film-director/pull/6)).
 - Phase 3 continuity guidance, shot lifecycle and versioned Project Bible JSON schema, checkpoint template, illustrative snapshot and regression tests ([PR #4](https://github.com/montadhahri/universal-ai-film-director/pull/4)).
 - Development roadmap with phase status, acceptance criteria and PR links.
 - Contribution policy requiring a changelog entry for each change merged to `main`.
