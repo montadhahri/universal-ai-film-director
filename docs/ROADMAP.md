@@ -100,6 +100,23 @@ Phase 3: 1–2 weeks; Phase 4: 1–2 weeks; Phase 5: 1–2 weeks;
 Phase 6: 1–2 weeks; Phase 7: 2–3 weeks; Phase 8: 1–2 weeks.
 These are rough estimates, not a scheduled commitment.
 
+## Backlog: evaluate Python-free maintainer tooling
+
+**Status: investigation only.** Python is not a runtime requirement for this Agent Skill. The existing Python scripts are for repository validation and regression tests.
+
+Options:
+- Keep existing standard-library Python tests in CI (lowest risk).
+- Evaluate replacing them with built-in Node.js `node:test` and `node:assert` (no extra testing library required), only if equivalent coverage is demonstrated.
+- Investigate a minimal distributable skill package containing `SKILL.md` and referenced resources. Verify private Skills CLI discovery and packaging rather than assuming it excludes tests.
+
+Acceptance gates:
+- Inventory current scripts and their CI consumers.
+- Preserve equivalent or better behavior, safety, and file-preservation checks.
+- Verify authenticated installation from the private repository and correct relative references.
+- Do not remove Python files until replacements pass and the owner separately approves deletions.
+- Use a new PR with CI evidence and changelog update.
+- Keep the repository private and production release on hold.
+
 ## Pre-production validation (after Phase 8; NOT a release)
 
 All eight implementation phases have merged. Private repository validation is
