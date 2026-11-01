@@ -7,6 +7,7 @@ tags, not by duplicated skill source folders.
 ## [Unreleased]
 
 ### Added
+- Introduce deterministic, provider-free Production Pipeline Core with single-step stage transitions, user-approval dependencies, exact cut-only shot timeline validation, optimistic project revisions and blocked media execution. Include negative regression tests.
 - Add eight filmmaking quality scenarios with anchored nine-dimension v1.0.0/v2 blind-review comparison, human evidence capture format and offline reporting of regressions, ties and improvements. No agent outcomes are simulated.
 - Add V2-03 cross-agent acceptance manifest (14 cases spanning all seven skills) and offline evidence-aware reporting with PASS/FAIL/BLOCKED/NOT_RUN; missing real-agent captures remain NOT_RUN, never simulated PASS.
 - Add deterministic Director authority contract for exact user approval gates, scoped locked-shot revisions, recorded-only external permissions and honest checkpoint recovery, with synthetic negative tests; no provider execution.
