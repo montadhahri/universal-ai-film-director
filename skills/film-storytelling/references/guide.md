@@ -5,3 +5,7 @@ For short films prioritize **one protagonist, one decisive action and a visible 
 Screenplay format: logline, audience/tone/duration, characters, numbered scene beats with timing, screen-visible action, dialogue or narration and audio intent. Distinguish character dialogue from offscreen narration. Preserve previously approved wording unless revision is authorized.
 
 Check: clear cause and effect; emotional climax supported by setup; no event requiring more screen time than the budget; no contradictory locations or character motivations; no unsupported imagery or rights claims.
+
+## Deeper filmable story review
+
+When a proposed story is vague or emotionally flat, use [short-film craft](short-film-craft.md) to make the protagonist's goal, physical choice, causal change and final visual payoff explicit. Use beat IDs and global timing estimates, not invented synchronization claims. A reflective no-voice-over film can still contain music and effects; distinguish NO_VO from absolute silence.
