@@ -23,3 +23,20 @@ contracts; edge-case parity and remaining Python scripts need further review.
 evaluator and pre-production runner. No Python files may be deleted without
 separate owner approval and complete replacement evidence. The skill runtime
 remains Markdown-only; Node.js is a maintainer tool, not a runtime dependency.
+
+## Stage 2 — semantic and static regression parity
+
+The additional `tests/node/regression.test.js` ports the Python audio, continuity,
+shot-planning, repair, director, compatibility, flagship and pre-production
+regression assertions. These remain **synthetic and static checks**: they do not
+execute an agent or inspect film media. Run with:
+
+```bash
+node --test tests/node/validation.test.js tests/node/regression.test.js
+```
+
+The Python behavior-evaluator tests (`test_behavior.py`) are deliberately
+**not migrated yet**, because they depend on the Python evaluator; porting
+both together in Stage 3 prevents misleading cross-language parity claims.
+The Node pre-production tests currently check the existing Python runner's
+safety contract, not a replacement Node runner. No Python files are removed.
