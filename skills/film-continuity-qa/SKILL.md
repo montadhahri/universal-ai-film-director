@@ -15,3 +15,11 @@ Review evidence, never fabricate visual or audio inspection. The Director contro
 6. Never mark a repair VERIFIED unless the fixed media was actually inspected. Never treat a defect report as permission to unlock.
 
 Consult [QA and repair craft](references/guide.md).
+
+## Detailed QA and narrow-repair references
+
+- For a full inspection and issue taxonomy: [quality assurance](references/quality-assurance.md) and [quality-control checklist](references/quality-control.md).
+- For scope-specific fixes and preservation of approved work: [localized repair](references/localized-repair.md).
+- For delivered film assembly and coverage: [postproduction](references/postproduction.md).
+- Produce a [defect report](assets/defect-report-template.md), [repair plan](assets/repair-plan-template.md) and [shot review](assets/shot-review-template.md); consult [QA craft](references/guide.md) for evidence ranking and reinspection.
+- Do not report an actual repair, full-export PASS or media verification without actual accessible post-repair footage/audio.

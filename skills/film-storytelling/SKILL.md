@@ -17,3 +17,7 @@ Scope: premise, theme, logline, narrative arc, character motivations, scene beat
 6. Return `PROPOSED` screenplay with beats, revision, assumptions, unanswered questions and changed IDs. Director handles user approval.
 
 Never claim generated footage or imply permission for a video-generation service. Consult [narrative craft](references/guide.md) when a deeper beat or narration audit is needed.
+
+## Detailed reference
+
+When refining premise, character motivation, beat timing, filmable action or narration, read [storytelling principles](references/storytelling.md) and [narrative craft](references/guide.md). If the user provided a personal biography, never invent missing facts or assume consent to disclose them.

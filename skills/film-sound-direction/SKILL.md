@@ -15,3 +15,10 @@ Provide sound designs and repair proposals under Director approval. No actual au
 6. Report audio content as PLANNED until actual audio media is provided or generated with tools.
 
 Consult [sound craft](references/guide.md).
+
+## Detailed sound procedure and output
+
+- Use [audio direction and synchronization](references/audio-direction.md) for track coverage, cue timing, silence and audio-only defect workflows.
+- For voice/dubbing, read [dubbing and localization](references/dubbing-localization.md); preserve meaning, dialect, speaker identity and rights.
+- For brief decisions use [sound craft](references/guide.md) and [audio design](references/audio-design.md).
+- Create the cue sheet from the [audio timeline template](assets/audio-timeline-template.md). Label planned media vs real supplied or generated audio, and preserve locked visual edits on audio repair.

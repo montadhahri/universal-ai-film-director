@@ -15,3 +15,11 @@ Take approved script and visual references as inputs. Propose a shot plan; the D
 6. Flag changes affecting locked shots, screenplay or visual anchors for scoped Director authorization.
 
 Consult [shot craft](references/guide.md) for camera and timing review. Do not claim shots were generated.
+
+## Detailed procedures and reusable outputs
+
+- For shot decomposition, stable IDs, shot budgeting and cuts: [shot planning](references/shot-planning.md).
+- For shot sizes, screen direction, motivated moves and camera meanings: [camera grammar](references/camera-grammar.md).
+- For scene spatial continuity, light sources, palette and composition: [lighting and composition](references/lighting-composition.md).
+- For the production plan use the [shot plan template](assets/shot-plan-template.md) and [storyboard template](assets/storyboard-template.md). Reconcile total duration including transition overlaps.
+- Use [shot craft](references/guide.md) for decision checks; templates are proposals, not finished clips.

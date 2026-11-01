@@ -40,3 +40,10 @@ Use [director procedures](references/guide.md) for checkpoint, continuity and de
 ## New project and resume
 
 New film with no supplied story: ask only **"What story do you want this film to tell?"** and stop. If an approved checkpoint exists, begin at the next unfinished stage. Distinguish a proposed plan from a generated asset every time.
+
+## Detailed procedures — read selectively
+
+- For a new brief, missing constraints or a confusing reply: [adaptive discovery](references/discovery.md) and [decision prioritization](references/decision-procedure.md).
+- For previously approved work, resuming, shot changes or handoffs: [shot state and gates](references/project-state.md) and [continuity verification](references/continuity.md).
+- To document a new project or transfer it across agents: copy the [Project Bible template](assets/project-bible-template.md) or the [checkpoint template](assets/checkpoint-template.md). These are output resources; do not mistake a template for a persisted artifact.
+- For specialized filmmaking output, follow the applicable specialist `SKILL.md` when installed; otherwise use the same logical stage in portable single-agent mode. No skill is assumed to invoke another agent automatically.

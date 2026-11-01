@@ -15,3 +15,7 @@ Own visual concept and continuity anchors, not script approval, project gate tra
 6. Propose a versioned Visual Bible and explicitly flag conflicts. The Director requests user approval.
 
 For consistency and reference guidance consult [visual craft](references/guide.md).
+
+## Detailed reference
+
+Read [visual identity and continuity](references/visual-style.md) alongside [visual craft](references/guide.md) when defining character proportion, stable wardrobe, locations, props, linework, reference images and approved look changes. Keep a versioned, approval-ready Visual Bible without inventing image assets.

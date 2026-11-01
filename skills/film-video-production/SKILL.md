@@ -16,3 +16,11 @@ Own technical generator planning, not creative approval or spending authorizatio
 7. Do not lock, publish or claim inspection of generated footage; that belongs to authorized review.
 
 Consult [generator checklist](references/guide.md). No universal Google Flow/browser integration is bundled.
+
+## Provider evidence and execution references
+
+- Before recommending a provider: [generator selection](references/generator-selection.md) and the [capability matrix](references/capability-matrix.md). Mark each capability DOCUMENTED, TESTED, UNVERIFIED or UNSUPPORTED with evidence.
+- For Google Flow/Veo: consult the [Flow overview](references/google-flow.md) and [verification checklist](references/google-flow-checklist.md); do not infer UI buttons or model controls.
+- For other providers use [general generator guidance](references/other-generators.md) and [prompt design](references/prompt-engineering.md).
+- Prepare a copy-ready [shot packet](assets/shot-packet-template.md) with separate image reference, video, narration/audio and editing instructions. Never pretend packet preparation is successful tool execution.
+- Read [generator checklist](references/guide.md) when verifying permissions, outputs and retry risks.
