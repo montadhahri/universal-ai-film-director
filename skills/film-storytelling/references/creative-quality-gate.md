@@ -14,6 +14,12 @@ Audit whether the final choice/reversal has time to register. A 2-second emotion
 
 Does every important payoff have an earlier plant? Does the character make a visible choice? If narration states what the viewer already sees, cut or reinterpret it. Preserve the filmmaker's desired emotion and genre. Avoid generic formulas, invented biography and new unstated plot facts.
 
+## Earned payoff and scope review
+
+Beyond a causal setup, ask: What earlier specific action or relationship makes the ending personally meaningful? What meaningful choice or recognition belongs to the protagonist? Does the final image transform an established detail rather than announce an emotion? Report artistic doubts even when structural checks pass. Respect lyrical, experimental and intentionally passive-character stories; these are editorial questions, not formulaic pass/fail criteria.
+
+For revisions, declare authorized change scope, affected artifact IDs, protected approved revisions and dependencies. Never silently alter locked visuals or shot timing to accommodate audio-only edits. Escalate cross-skill conflicts to the Director.
+
 ## Safe handoff format
 
 ```text
@@ -26,6 +32,8 @@ Emotional payoff dwell: ...
 Highest-impact concerns (up to three): ...
 Proposed scoped changes and tradeoffs: ...
 Approved revisions preserved: ...
+Authorized scope / affected IDs / protected versions: ...
+Cross-artifact dependencies: ...
 User approval: NOT_GRANTED
 Media status: NOT_RENDERED
 ```
