@@ -1,4 +1,4 @@
-name: Node validation parity (stage 1)
+name: Node validation parity (stages 1-2)
 on:
   push:
   pull_request:
@@ -17,4 +17,4 @@ jobs:
       - name: Run Node.js structure and links check
         run: node tests/validate_repo.js
       - name: Run Node.js negative and repository tests
-        run: node --test tests/node/validation.test.js
+        run: node --test tests/node/validation.test.js tests/node/regression.test.js
