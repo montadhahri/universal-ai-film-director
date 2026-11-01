@@ -1,11 +1,15 @@
 # Shot review
 - Shot ID / revision:
+- Evidence class: DIRECT_INSPECTION / USER_REPORT / DOCUMENT_CHECK / UNVERIFIED
 - Actual video inspected? yes/no
+- Inspected media asset/revision and time range (or NOT_INSPECTED):
 - Expected versus observed:
 - Character continuity:
 - Camera and action:
 - Timing and audio:
 - Defects:
 - Minimal repair:
-- Decision: NEEDS_FIX / APPROVED / LOCKED
+- Shot lifecycle recommendation: NEEDS_FIX / APPROVED / LOCKED / UNVERIFIED (QA recommendation only; Director controls approval)
+- Related repair ticket ID/status (separate):
+- Post-repair verification evidence (or NOT_INSPECTED):
 - Approval date:
