@@ -16,13 +16,14 @@ PROPOSED until explicitly approved. Load
 3. Give each shot a stable ID, version, duration, camera size/angle, subject
    blocking, action, light, continuity anchors, audio cue and transition.
 4. Check eyelines, screen direction, matching action and position continuity. For each cut record the stable location/character/prop IDs, screen-side or axis assumptions, handoff state, dependent adjacent shot IDs, and any unresolved blocking. A camera reversal does not authorize mirroring the approved set.
-5. Identify what the viewer sees/hears at each cut, including intentional
+5. Preserve **required visible actions** from the approved screenplay. When a beat requires a visible object transfer, placement or release in a specified shot, show the held start state, the transfer/release action and the contained end state in that shot. If hand access, blocking or camera geometry is unknown, mark those mechanics UNRESOLVED and hold the dependent packet; do **not** replace the approved action with an edit ellipsis, an already-completed placement or a result-only reveal unless the Director obtains separate scoped authorization.
+6. Identify what the viewer sees/hears at each cut, including intentional
    pauses. A transition is an edit decision, not automatically a new shot.
-6. Fit the duration budget and generator limits. If an individual clip is longer
+7. Fit the duration budget and generator limits. If an individual clip is longer
    than verified generator capabilities, plan multiple clips or an edit; never
    claim a tool can generate it in one pass without verification.
-7. Present a complete **proposed** storyboard and obtain explicit approval.
-8. On revision, list affected shot IDs and dependencies. Locked shots remain
+8. Present a complete **proposed** storyboard and obtain explicit approval.
+9. On revision, list affected shot IDs and dependencies. Locked shots remain
    unchanged unless the user explicitly authorizes a scoped unlock.
 
 ## Camera decision rubric
