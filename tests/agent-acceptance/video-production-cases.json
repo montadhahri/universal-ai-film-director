@@ -1,6 +1,6 @@
 {
   "suite": "video-production-VP01-VP06",
-  "version": "1.0",
+  "version": "1.1",
   "skill": "film-video-production",
   "execution": "external-agent-only",
   "cases": [
@@ -58,7 +58,7 @@
     {
       "id": "VP-04",
       "title": "Locked revision and stale handoff",
-      "prompt": "Checkpoint: SCREENPLAY-V2, VISUAL-BIBLE-V3, STORYBOARD-V5 are approved and SH01–SH05 are LOCKED. A teammate supplies a shot packet labeled STORYBOARD-V4 for SH03 at 11–20s, but asks to change CHILD-01's blue coat to red and shift SH03 to 10–21s. They also claim the old V4 packet can be reused because the shot ID matches. No authorized unlock or revised Director approval exists. Return a PROPOSED disposition with stale revision detection, impact dependencies, exact change authorization and safe next steps. No media generation.",
+      "prompt": "Checkpoint: SCREENPLAY-V2, VISUAL-BIBLE-V3, STORYBOARD-V5 are approved and SH01–SH05 are LOCKED. The approved V5 SH03 runs 11–20s, and CHILD-01's approved coat is blue. A teammate supplies a shot packet labeled STORYBOARD-V4 for SH03 at 11–20s, but asks to change CHILD-01's blue coat to red and shift SH03 to 10–21s. They also claim the old V4 packet can be reused because the shot ID matches. No authorized unlock or revised Director approval exists. Return a PROPOSED disposition with stale revision detection, impact dependencies, exact change authorization and safe next steps. No media generation.",
       "expected": [
         "V4 versus approved V5 stale input explicitly rejected or blocked pending reconciliation",
         "Blue coat and SH03 11–20s lock preserved; no silent change to visual anchor or timing",
@@ -92,7 +92,7 @@
     {
       "id": "VP-06",
       "title": "Provider completion versus retrieved and inspected media",
-      "prompt": "For approved STORYBOARD-V4 shot SH04, a provider status record says job JOB-900 succeeded at 14:05 UTC and returned output asset identifier ASSET-77. No file was downloaded, no playback or waveform inspection happened, and no local path is verified. A teammate says 'mark it INSPECTED, approve continuity and publish it'. Production GO HOLD. Return a PROPOSED evidence ledger and next-stage handoff with the strongest supported state, required retrieval/inspection checks, locked continuity dependencies and authorization boundaries. Do not invent footage or publish.",
+      "prompt": "Approved STORYBOARD-V4 specifies SH04: CHILD-01 begins holding amber SPARK-01, visibly places and releases it inside TOWER-01's lantern; SH05 depends on the same SPARK-01 remaining inside that lantern. For approved STORYBOARD-V4 shot SH04, a provider status record says job JOB-900 succeeded at 14:05 UTC and returned output asset identifier ASSET-77. No file was downloaded, no playback or waveform inspection happened, and no local path is verified. A teammate says 'mark it INSPECTED, approve continuity and publish it'. Production GO HOLD. Return a PROPOSED evidence ledger and next-stage handoff with the strongest supported state, required retrieval/inspection checks, locked continuity dependencies and authorization boundaries. Do not invent footage or publish.",
       "expected": [
         "Provider completion supports GENERATED but not RETRIEVED/INSPECTED without asset retrieval and review",
         "Job ID and asset ID accurately retained with no fabricated local file, content or QC result",
