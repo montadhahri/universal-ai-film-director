@@ -15,7 +15,7 @@ default with the trade-off. Never claim that this skill invokes a video model.
 
 ## Adapter workflow
 
-1. Start from the canonical `templates/shot-prompt.md` packet.
+1. Start from the canonical [shot packet](../assets/shot-packet-template.md).
 2. Check the exact model/version and capability evidence.
 3. Translate only supported controls into generator-specific instructions.
 4. Keep reference image, visual shot, narration and edit instructions separate.
