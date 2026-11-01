@@ -1,6 +1,15 @@
 # Contributing
 Open an issue describing the problem and affected phase. Make focused changes with reproducible examples. Keep core instructions provider-neutral; put generator-specific details in adapters. Do not submit private personal data, copyrighted media or unauthorized voice clones. Update documentation and examples with behavior changes. Explain trade-offs in pull requests.
 
+## Local validation (Node.js 22)
+
+No Python or npm test libraries are required for repository maintenance.
+Run `node tests/regression/check_preservation.js`,
+`node tests/validate_repo.js`,
+`node --test tests/node/*.test.js`, and
+`node tests/preprod/run_validation.js --out build/preprod-validation.json`
+before opening a PR. These checks do not exercise real AI agents.
+
 ## Branch, review and changelog policy
 
 - Work on a dedicated branch based on the latest `main`; do not push directly

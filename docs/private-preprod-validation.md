@@ -7,15 +7,15 @@ grant production authorization. The repository owner decides when to release.
 ## 1. Automated checks on private GitHub Actions
 
 The existing `validate.yml` runs preservation, repository structure, regression
-unittests and synthetic behavior fixtures on pushes and pull requests. The
-additional pre-production workflow runs an offline, stdlib-only validation
+unit tests and synthetic behavior fixtures on pushes and pull requests. The
+additional pre-production workflow runs an offline, Node.js standard-library-only validation
 runner and uploads a machine-readable report as a private Actions artifact.
 All checks are scoped to this repository. **No third-party API keys required.**
 
 To run locally from a private checkout:
 
 ```bash
-python3 tests/preprod/run_validation.py --out build/preprod-validation.json
+node tests/preprod/run_validation.js --out build/preprod-validation.json
 ```
 
 The runner checks syntax, repository links, protected paths, regression

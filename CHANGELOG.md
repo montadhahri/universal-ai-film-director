@@ -31,6 +31,7 @@ v0.1.0 is listed under **Unreleased** until a release is explicitly approved.
   integration checks ([PR #2](https://github.com/montadhahri/universal-ai-film-director/pull/2)).
 
 ### Changed
+- Consolidate maintainer validation on Node.js built-in tooling; retire 13 Python scripts, their parity-only tool and duplicate CI workflows, update baseline and docs, and preserve the Markdown skill runtime (cleanup PR #18; deletion pending owner review).
 - Reprioritize the post-Phase-8 roadmap to begin with Python-free maintainer tooling, then repository cleanup and packaging before private installation and real-agent validation; require parallel test evidence and explicit approval before any Python file deletion (roadmap review PR).
 - Clarify Python-free skill usage, installer versus maintainer requirements, and optional Node.js test migration investigation (PR #12).
 - Document Skills CLI (`npx skills add`) as the recommended global/project installation method, with private-repository authentication, agent selection and manual fallbacks ([PR #5](https://github.com/montadhahri/universal-ai-film-director/pull/5)).

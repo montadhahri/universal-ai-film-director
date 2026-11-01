@@ -124,11 +124,11 @@ use the existing manual method below.
 
 ### Runtime requirements and development tools
 
-**Python is not required to install or use this skill.** No pip, pytest, virtual environment, or Python packages are runtime dependencies. The skill consists of `SKILL.md` and supporting Markdown/templates, interpreted by a compatible AI agent.
+**Python is not required to install or use this skill.** No pip, pytest, virtual environment, or Python packages are needed for runtime or development. Maintainer CI uses Node.js 22 built-in tools. The skill consists of `SKILL.md` and supporting Markdown/templates, interpreted by a compatible AI agent.
 
 | Tool or file | End-user requirement | Maintainer requirement |
 | --- | --- | --- |
-| Python / pip | No | Python standard library currently runs repository tests |
+| Python / pip | No | None: Node.js built-in tests run repository validation |
 | Node.js / npm / npx | Only for the Skills CLI installation command | Optional installation smoke testing |
 | SKILL.md and referenced resources | Yes | Yes |
 | tests/ and .github/workflows/ | No | Used for quality checks |
@@ -402,10 +402,10 @@ More: [Troubleshooting guide](docs/troubleshooting.md).
 ## 🧪 Automated agent behavior evaluation
 
 Phase 1 includes [eight deterministic transcript scenarios](tests/behavior/README.md) and a
-[standard-library Python evaluator](tests/behavior/evaluate.py). Run:
+[Node.js built-in evaluator](tests/behavior/evaluate.js). Run:
 
 ```bash
-python3 tests/behavior/evaluate.py --json-out build/behavior-report.json
+node tests/behavior/evaluate.js --json-out build/behavior-report.json
 ```
 
 **Important:** Included examples are synthetic fixtures, **not real agent executions**.

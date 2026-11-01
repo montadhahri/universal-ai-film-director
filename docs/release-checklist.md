@@ -12,10 +12,11 @@ Owner approval is required to tag or publish any version.
 
 ## Repository and CI
 - [ ] All existing baseline files preserved; no unauthorized deletions.
-- [ ] Run `python tests/regression/check_preservation.py`.
-- [ ] Run `python tests/validate_repo.py`.
-- [ ] Run `python -m unittest discover -s tests/regression -p 'test_*.py' -v`.
-- [ ] Run `python tests/behavior/evaluate.py --json-out build/behavior-report.json`.
+- [ ] Run `node tests/regression/check_preservation.js`.
+- [ ] Run `node tests/validate_repo.js`.
+- [ ] Run `node --test tests/node/*.test.js`.
+- [ ] Run `node tests/behavior/evaluate.js --json-out build/behavior-report.json`.
+- [ ] Run `node tests/preprod/run_validation.js --out build/preprod-validation.json`.
 - [ ] Confirm GitHub Actions checks are green on release candidate.
 - [ ] Review open issues, security/privacy guidance, LICENSE and dependencies.
 
