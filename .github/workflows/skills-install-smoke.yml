@@ -6,7 +6,6 @@ on:
       - 'skills/**'
       - 'tests/installation/**'
       - '.github/workflows/skills-install-smoke.yml'
-      - 'docs/installation.md'
 permissions:
   contents: read
 jobs:
@@ -19,17 +18,19 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Install isolated skill using real Skills CLI from local private checkout
+      - name: Install all seven modular skills with Skills CLI from local checkout
         env:
           DISABLE_TELEMETRY: '1'
         run: |
           set -euo pipefail
-          source_dir="$GITHUB_WORKSPACE/skills/universal-ai-film-director"
           scratch="$(mktemp -d)"
           cd "$scratch"
-          npx --yes skills@1.7.4 add "$source_dir" -a codex -y --copy
-          installed="$scratch/.agents/skills/universal-ai-film-director"
-          test -f "$installed/SKILL.md"
-          node "$GITHUB_WORKSPACE/tests/installation/check-installed.js" "$source_dir" "$installed"
-      - name: Record scope of test
-        run: echo "Local CLI install tested; private remote authentication and agent execution NOT tested."
+          for skill in universal-ai-film-director film-storytelling film-visual-direction film-cinematography film-video-production film-sound-direction film-continuity-qa; do
+            source_dir="$GITHUB_WORKSPACE/skills/$skill"
+            npx --yes skills@1.7.4 add "$source_dir" -a codex -y --copy
+            installed="$scratch/.agents/skills/$skill"
+            test -f "$installed/SKILL.md"
+            node "$GITHUB_WORKSPACE/tests/installation/check-installed.js" "$source_dir" "$installed"
+          done
+      - name: Scope
+        run: echo "Local install only, not authenticated remote installation or agent execution."

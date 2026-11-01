@@ -1,30 +1,25 @@
 'use strict';
-const fs=require('node:fs');
-const path=require('node:path');
-const assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const ROOT=path.resolve(__dirname,'../..');
-const PACKAGE=path.join(ROOT,'skills/universal-ai-film-director');
-const DIRS=['adapters','engine','references','schemas','templates'];
-function list(dir,base){
- return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>{
-  const absolute=path.join(dir,e.name);
-  if(e.isSymbolicLink())throw new Error('Symlinks forbidden in payload: '+absolute);
-  if(e.isDirectory())return list(absolute,base);
-  if(!e.isFile())throw new Error('Unsupported payload entry: '+absolute);
-  return [path.relative(base,absolute).split(path.sep).join('/')];
- });
-}
+const names=require('../validate_repo.js').names;
 function validate(){
- const expected=['SKILL.md','docs/agent-compatibility.md',...DIRS.flatMap(dir=>list(path.join(ROOT,dir),ROOT))].sort();
- const actual=list(PACKAGE,PACKAGE).sort();
- assert.deepEqual(actual,expected,'Installable skill must contain only canonical runtime resources');
- for(const rel of actual){
-  assert(fs.readFileSync(path.join(PACKAGE,rel)).equals(fs.readFileSync(path.join(ROOT,rel))),'Stale skill mirror: '+rel);
+ const found=fs.readdirSync(path.join(ROOT,'skills'),{withFileTypes:true}).filter(x=>x.isDirectory()).map(x=>x.name).sort();
+ assert.deepEqual(found,names.slice().sort(),'Unexpected or missing specialist');
+ for(const name of names){
+  const dir=path.join(ROOT,'skills',name),actual=[];
+  function walk(p){
+   for(const e of fs.readdirSync(p,{withFileTypes:true})){
+    const a=path.join(p,e.name);
+    assert(!e.isSymbolicLink(),'No symlinks allowed');
+    if(e.isDirectory())walk(a);else actual.push(path.relative(dir,a).split(path.sep).join('/'));
+   }
+  }
+  walk(dir);
+  assert.deepEqual(actual.sort(),['SKILL.md','references/guide.md'].sort(),'Runtime package has extra/missing content: '+name);
+  const doc=fs.readFileSync(path.join(dir,'SKILL.md'),'utf8');
+  assert(doc.startsWith('---\nname: '+name+'\n'),'Bad frontmatter: '+name);
  }
- const skill=fs.readFileSync(path.join(PACKAGE,'SKILL.md'),'utf8');
- assert(skill.startsWith('---\n'));
- assert(/^name:\s*universal-ai-film-director\s*$/m.test(skill));
- return actual;
+ return names;
 }
-if(require.main===module){try{console.log('PASS: isolated skill contains '+validate().length+' exact runtime files');}catch(e){console.error('FAIL:',e.message);process.exitCode=1;}}
+if(require.main===module){try{console.log('PASS: '+validate().length+' isolated portable skill packages');}catch(e){console.error('FAIL:',e.message);process.exitCode=1;}}
 module.exports={validate};

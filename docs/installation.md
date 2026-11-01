@@ -1,51 +1,43 @@
-# Installation
+# Installing the current filmmaking skills
 
-**Recommended:** use the [Skills CLI](https://www.skills.sh/docs/cli) for
-supported coding agents. Requires Node.js/npm and access to the repository.
+The repository is PRIVATE. Installation requires access to the private source or a user-approved copy of a skill folder; it does not authorize any personal video service or cloud account.
+
+Each package is a self-contained `skills/<name>/` directory with `SKILL.md` and `references/guide.md`. Compatible agents may support the Agent Skills convention natively; behavior and installation vary by host.
+
+## Single-agent mode
+
+Start by providing the content of
+`skills/universal-ai-film-director/SKILL.md` and
+`skills/universal-ai-film-director/references/guide.md` to your agent.
+This Director includes the full stage sequence and can operate without
+native skill-to-skill invocation.
+
+## Skills CLI (where supported)
+
+With an authenticated clone or checkout of this PRIVATE repository:
 
 ```bash
-# Global (user scope, across projects for selected agents)
-npx skills add https://github.com/montadhahri/universal-ai-film-director/tree/main/skills/universal-ai-film-director -g
-
-# Local (current project)
-npx skills add https://github.com/montadhahri/universal-ai-film-director/tree/main/skills/universal-ai-film-director
-
-# Choose specific agents
-npx skills add https://github.com/montadhahri/universal-ai-film-director/tree/main/skills/universal-ai-film-director -g -a claude-code -a codex
-
-# Preview discovered skills
-npx skills add https://github.com/montadhahri/universal-ai-film-director/tree/main/skills/universal-ai-film-director --list
-
-# Update globally installed skills
-npx skills update -g
+npx skills add ./skills/universal-ai-film-director
 ```
 
-The Skills CLI supports interactive agent selection, `-g` user scope,
-`-a` agent selection and authenticated private GitHub repositories.
-Authenticate with Git/SSH or GitHub CLI first for this **private** repository.
-Confirm discovery with `--list` and test the installed skill in your agent.
-The published Skills CLI passed a **local-folder** installation smoke test in PR #21, with exact installed-file comparison. A direct authenticated installation via this **private GitHub URL** has **not been tested**; it still needs an owner-operated check. See [installation evidence](installation-evidence.md).
+Install specialists individually when the target agent supports discovery:
 
-Global installation is **not universal installation across all LLM products**.
-It is user-scoped for compatible selected agents. ChatGPT web/app generally
-needs its own supported integration or files supplied as conversation context.
+```bash
+npx skills add ./skills/film-storytelling
+npx skills add ./skills/film-visual-direction
+npx skills add ./skills/film-cinematography
+npx skills add ./skills/film-video-production
+npx skills add ./skills/film-sound-direction
+npx skills add ./skills/film-continuity-qa
+```
 
-## Manual fallback (preserved)
+The local-folder CLI smoke workflow checks the install mechanics.
+A remote authenticated private URL or automatic multi-agent invocation
+should be treated as UNVERIFIED until directly tested on the chosen host.
 
-The skill is a portable instruction package, not an executable renderer.
-- Claude/Claude Code: install in a supported skills directory or attach `SKILL.md`.
-- Codex: use the supported Agent Skills mechanism for your environment.
-- Gemini CLI: use its supported skills mechanism, or load `SKILL.md` as context.
-- Cursor/Windsurf: supply `SKILL.md` as project rules or agent context where supported.
-- ChatGPT: upload `SKILL.md` plus stage-relevant references.
-- Custom agents: load `SKILL.md` first and resolve referenced files.
+## Tool limitations
 
-See [README.md](../README.md) for per-agent manual instructions. Check each
-platform's current documentation for exact paths. No one-click compatibility
-or built-in video generation is implied.
-
-## Python-free runtime
-
-No Python, pip, pytest, virtual environment or runtime libraries are required to use the installed skill. Node.js/npm is needed only to invoke the optional `npx skills add` installer. The selected AI agent and video tools have independent requirements.
-
-The separate `skills/universal-ai-film-director/` folder is validated to contain only the complete runtime resources, **not tests or development docs**. Local-folder Skills CLI installation has been verified in CI; remote private-GitHub authentication remains unverified. Inspect the installed directory. For manual installation, copy only that folder. See [package documentation](skill-package.md).
+No integrated video generation, narration synthesis or cloud browser is
+included. Obtain explicit user authorization before any external account
+connection, paid job, upload or publication. Without a provider, deliver plans
+and report `BLOCKED_NO_PROVIDER`; never invent clips or a final MP4.

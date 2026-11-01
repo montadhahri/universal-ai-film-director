@@ -1,30 +1,20 @@
 # Contributing
-Open an issue describing the problem and affected phase. Make focused changes with reproducible examples. Keep core instructions provider-neutral; put generator-specific details in adapters. Do not submit private personal data, copyrighted media or unauthorized voice clones. Update documentation and examples with behavior changes. Explain trade-offs in pull requests.
 
-## Local validation (Node.js 22)
+This is a **single-current-version, provider-neutral** Agent Skills repository.
+Create focused branches and PRs; do not commit directly to `main`. A change
+to current skill behavior should update its `SKILL.md`, relevant
+`references/guide.md`, tests and [Unreleased changelog](CHANGELOG.md).
+Review deletions, changed gates and provider permissions carefully.
 
-No Python or npm test libraries are required for repository maintenance.
-Run `node tests/regression/check_preservation.js`,
-`node tests/validate_repo.js`,
+Use Codex skill-creator as an **authoring and evaluation method**, not a
+runtime dependency. Keep skill packages self-contained and concise, and test
+the described trigger conditions on compatible hosts before promising
+cross-agent compatibility. No account credentials in project files.
+
+Run `node tests/validate_repo.js`, `node tests/package/validate-package.js`,
 `node --test tests/node/*.test.js`, and
-`node tests/preprod/run_validation.js --out build/preprod-validation.json`
-before opening a PR. These checks do not exercise real AI agents.
+`node tests/preprod/run_validation.js --out build/preprod-validation.json`.
 
-## Branch, review and changelog policy
-
-- Work on a dedicated branch based on the latest `main`; do not push directly
-  to `main`.
-- Open a Pull Request and wait for the repository owner's explicit approval
-  before merging.
-- Preserve existing skill files, adapters, templates, examples and behavior.
-  Any deletion or incompatible change requires explicit owner authorization.
-- Update [CHANGELOG.md](CHANGELOG.md) in the **same PR** for every change,
-  including documentation, tests, bug fixes and features. Use the
-  `[Unreleased]` section and the appropriate Added, Changed, Fixed,
-  Deprecated, Removed or Security subsection.
-- When a roadmap phase merges, update [the roadmap](docs/ROADMAP.md) status
-  and link its PR. Avoid marking planned work complete.
-- Include the affected files, verified test results, any tests not run, and
-  known limitations in the PR description.
-- Releases and version tags require explicit owner approval; use SemVer
-  for release numbering and move entries from Unreleased to the dated version.
+User approval is required for merging, spending, publishing or production
+authorization. Git tags record previous releases; never add `v2/` or
+`v3/` directories merely to preserve old implementations.

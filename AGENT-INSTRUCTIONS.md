@@ -1,2 +1,0 @@
-# Generic agent bootstrap
-Load `SKILL.md` first. It defines the authoritative phase and approval workflow. Load supporting references only for the current stage. Ask one question at a time. Record approvals in the Project Bible. Do not pretend to have video rendering or inspection capabilities. Start with story discovery.
