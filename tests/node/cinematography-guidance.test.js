@@ -26,3 +26,14 @@ test('camera reversal cannot silently mirror approved geography', () => {
   assert.match(planning, /does not authorize mirroring/);
   assert.match(planning, /dependent adjacent shot IDs/);
 });
+
+test('approved visible placement cannot be skipped as a completed-result reveal', () => {
+  const planning = read('skills/film-cinematography/references/shot-planning.md');
+  assert.match(planning, /required visible actions/);
+  assert.match(planning, /held start state/);
+  assert.match(planning, /transfer\/release action/);
+  assert.match(planning, /contained end state/);
+  assert.match(planning, /UNRESOLVED/);
+  assert.match(planning, /edit ellipsis/);
+  assert.match(planning, /scoped authorization/);
+});
