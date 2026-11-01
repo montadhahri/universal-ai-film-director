@@ -135,3 +135,23 @@ test('unverified declared word counts must not be silently accepted',()=>{
  const d=lighthouse();d.narration=[{...vo(38000,42000,'A place can hold a promise.',110),declared_word_count:-1}];
  assert.throws(()=>reviewDraft(d),/Invalid declared narration word count/);
 });
+
+
+test('ST-01 scarf cannot jump from ferry visitor to indoor chair',()=>{
+ const d=lighthouse();
+ d.beats[0].prop_states=[{id:'blue-scarf',owner:'visitor',location:'ferry-landing'}];
+ d.beats[2].prop_states=[{id:'blue-scarf',owner:'keeper',location:'lighthouse-chair'}];
+ const r=reviewDraft(d);
+ assert.equal(r.status,'REVISION_REQUIRED');
+ assert(r.issues.some(x=>x.includes('Unexplained prop transfer blue-scarf from LH01 to LH03')));
+});
+test('ST-01 explicit scarf handoff resolves the structured continuity defect',()=>{
+ const d=lighthouse();
+ d.beats[0].prop_states=[{id:'blue-scarf',owner:'visitor',location:'ferry-landing'}];
+ d.beats[1].prop_states=[{id:'blue-scarf',owner:'keeper',location:'lighthouse-chair',transfer_from_previous:'Visitor hands scarf to keeper before boarding'}];
+ d.beats[2].prop_states=[{id:'blue-scarf',owner:'keeper',location:'lighthouse-chair'}];
+ assert(!reviewDraft(d).issues.some(x=>x.includes('Unexplained prop transfer')));
+});
+test('no prop annotations preserve backwards-compatible draft review',()=>{
+ assert.equal(reviewDraft(musician()).status,'READY_FOR_DIRECTOR_REVIEW');
+});
