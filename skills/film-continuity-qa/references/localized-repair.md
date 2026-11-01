@@ -36,6 +36,5 @@ explain why and request one focused decision from the user.
 ## Status discipline
 
 `REPORTED -> TRIAGED -> PROPOSED -> AUTHORIZED -> APPLIED -> VERIFIED`
-is the **repair ticket** lifecycle, separate from the shot lifecycle in
-**project-state.md**. Tickets may be `BLOCKED` or `REJECTED`.
+is the **repair ticket** lifecycle, separate from shot states (`PLANNED`, `GENERATED`, `NEEDS_FIX`, `APPROVED`, `LOCKED`) described in [quality-control](quality-control.md). Tickets may be `BLOCKED` or `REJECTED`. Do not treat an approved/locked shot as proof that a repair ticket was verified, or a proposed ticket as permission to change a locked shot.
 `VERIFIED` requires evidence from the repaired artifact; no simulated pass.

@@ -3,6 +3,7 @@
 - Ticket ID / affected film version:
 - Proposed change scope (shot, cue, transition or subtitle):
 - Exact time range and IDs:
+- Evidence class: DIRECT_INSPECTION / USER_REPORT / DOCUMENT_CHECK / UNVERIFIED
 - Evidence / confidence:
 - Prior approved asset and revision to preserve:
 - Immutable locked shot/cue IDs:
@@ -16,4 +17,6 @@
 - Whole-film regression checks:
 - Rollback/fallback:
 - Explicit user approval evidence:
-- Status: PROPOSED
+- Repair ticket status: PROPOSED (not AUTHORIZED / APPLIED / VERIFIED)
+- Post-repair inspection evidence / verification status: NOT_INSPECTED until actual repaired media is reviewed
+- Shot lifecycle state (separate; if known):
