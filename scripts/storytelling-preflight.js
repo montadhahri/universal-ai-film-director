@@ -25,6 +25,25 @@ function reviewDraft(d){
   cursor=b.end_ms;ordered.push(b);
  }
  if(cursor!==d.duration_ms)issues.push('Beat plan does not cover requested duration');
+ // Optional structured prop trace: explicit state changes need a transfer annotation.
+ // This validates supplied annotations, not unstructured prose or rendered media.
+ const previousProps=new Map();
+ for(const b of ordered){
+  if(b.prop_states===undefined)continue;
+  if(!Array.isArray(b.prop_states))throw Error('Invalid prop states at '+b.id);
+  const seenProps=new Set();
+  for(const p of b.prop_states){
+   if(!p||!validText(p.id)||!validText(p.location)||!validText(p.owner))
+    throw Error('Invalid prop state at '+b.id);
+   if(seenProps.has(p.id))issues.push('Duplicate prop state '+p.id+' at '+b.id);
+   seenProps.add(p.id);
+   const previous=previousProps.get(p.id);
+   if(previous&&(previous.location!==p.location||previous.owner!==p.owner)&&
+      !validText(p.transfer_from_previous))
+    issues.push('Unexplained prop transfer '+p.id+' from '+previous.beat+' to '+b.id);
+   previousProps.set(p.id,{beat:b.id,location:p.location,owner:p.owner});
+  }
+ }
  const narration=d.narration.slice().sort((a,b)=>a.start_ms-b.start_ms);
  for(const [i,n] of narration.entries()){
   if(!n||!validText(n.text)||!nonnegative(n.start_ms)||!positive(n.end_ms)||n.end_ms<=n.start_ms||n.end_ms>d.duration_ms)
