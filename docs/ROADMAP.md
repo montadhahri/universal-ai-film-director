@@ -19,6 +19,7 @@
 | Storytelling targeted reliability hardening | Merged PR #42; critical prop-state continuity and exact narration word counting; independent ST-01 post-fix rerun NOT_RUN |
 | Visual Direction six-scenario evaluation baseline | User reports PR #43 merged; six clean-context agent executions: VD-01/02/03/05/06 PASS, VD-04 literal FAIL, 23/24 criteria; VD-04 omitted the amber color required by its criterion |
 | Visual Direction fixture and anchor refinements | User reports PR #44 merged; corrected VD-04 prompt, unresolved identity anchors and stateful prop guidance; independent post-fix rerun NOT_RUN |
+| Visual Direction post-merge textual regression | Three clean-context agent executions: VD-04 v1.1, VD-04B and VD-06 all PASS; 22/22 criteria; no generated-media or cross-host verification |
 
 ## Repeatable quality methodology for every skill
 
@@ -58,9 +59,9 @@
 
 | Order | Milestone | Current status / dependency |
 | --- | --- | --- |
-| 1 | Visual Direction post-merge regressions (VD-04 v1.1, VD-04B, VD-06) | NEXT; real-agent reruns NOT_RUN |
+| 1 | Visual Direction post-merge regressions (VD-04 v1.1, VD-04B, VD-06) | COMPLETE for textual acceptance: 3/3, 22/22; media NOT_RUN |
 | 2 | Storytelling ST-01 independent post-fix rerun | Pending |
-| 3 | Cinematography audit → conditional improvement → real-agent evaluation → hardening | Pending |
+| 3 | Cinematography audit → conditional improvement → real-agent evaluation → hardening | Audit completed; foundational timing/continuity/handoff refinements in review; independent evaluation NOT_RUN |
 | 4 | Sound Direction audit → conditional improvement → evaluation → hardening | Pending |
 | 5 | Video Production planning/authorization audit → evaluation → hardening | Pending; no generation |
 | 6 | Continuity QA audit → evaluation → hardening | Pending; no media inspection |

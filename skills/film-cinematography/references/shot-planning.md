@@ -15,7 +15,7 @@ PROPOSED until explicitly approved. Load
    gratuitous camera movement; note establishing, action and reaction coverage.
 3. Give each shot a stable ID, version, duration, camera size/angle, subject
    blocking, action, light, continuity anchors, audio cue and transition.
-4. Check eyelines, screen direction, matching action and position continuity.
+4. Check eyelines, screen direction, matching action and position continuity. For each cut record the stable location/character/prop IDs, screen-side or axis assumptions, handoff state, dependent adjacent shot IDs, and any unresolved blocking. A camera reversal does not authorize mirroring the approved set.
 5. Identify what the viewer sees/hears at each cut, including intentional
    pauses. A transition is an edit decision, not automatically a new shot.
 6. Fit the duration budget and generator limits. If an individual clip is longer
@@ -41,11 +41,7 @@ during the shot, and what motivates the next cut?
 
 ## Timing accounting
 
-Use **one continuous film timeline**. Each shot has an explicit start and end,
-with duration `end - start`. Overlaps are allowed only when explicitly
-declared as transitions (e.g. dissolves). Avoid double-counting transition
-duration: if a dissolve overlaps two clips by 1s, total timeline duration is
-`sum(clip durations) - sum(overlap durations)`. Audio may cross shot boundaries
+Use **one continuous global edit timeline**. Each on-screen shot interval has an explicit start and end; the union of visible coverage must reach the target duration without unintended gaps. Separately track source-clip in/out durations and each transition's overlap with incoming/outgoing shot IDs. For sequential clips, edit duration is `sum(source clip durations) - sum(transition overlaps)`, but **never subtract overlaps again from global edit timestamps**. If a dissolve occupies 1s of global edit time, label that same second as both clips visible; do not add a phantom second or conceal a gap. Flag any conflict between the two accounting methods as BLOCKED/UNRESOLVED for Director review. Audio may cross shot boundaries
 without creating a new visual shot. Reserve planned silence and title cards.
 
 ## Output contract
