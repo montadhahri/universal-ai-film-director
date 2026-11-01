@@ -16,7 +16,7 @@ for the authoritative phase and approval gates in [SKILL.md](../SKILL.md).
    consent, generator capabilities and whether assets were actually provided.
 5. **Detect conflicts.** Compare new requests with approved constraints, duration,
    identity/style locks, language and shot dependencies.
-6. **Select smallest safe action.** Answer directly if sufficient information exists;
+6. **Select smallest safe action.** For an existing project, resume at the current gate instead of replaying the initial story question. Answer directly if sufficient information exists;
    otherwise ask exactly one focused question. During discovery/decision turns,
    do not combine multiple questions into a form or numbered interrogation.
 7. **State consequences.** For revisions, identify affected assets, what stays

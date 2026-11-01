@@ -1,6 +1,6 @@
 # Shot packet
 **Shot ID:**
-**State:** PLANNED
+**State:** PROPOSED (not approved; first draft may be DRAFT)
 **Narrative objective:**
 **Duration:**
 **Reference assets:**
