@@ -11,7 +11,7 @@ Own visual concept and continuity anchors, not script approval, project gate tra
 2. Specify a consistent art direction: medium, texture, palette, light sources, period, geography and visual motifs.
 3. Give stable identifiers for each character, location, prop and look; include physical, wardrobe and mood details that can be checked shot by shot.
 4. Separate reference assets with actual provenance from text descriptions. Do not invent image assets, hashes or usage rights.
-5. Define immutable visual anchors and permitted changes. Document which planned shots depend on each anchor.
+5. Define immutable visual anchors and permitted changes. Document which planned shots depend on each anchor. Check physical prop grips/free lengths, route and camera-axis geometry, and shot-to-shot light direction against character orientation and occlusion; explicitly resolve contradictions or mark them UNRESOLVED before seeking approval.
 6. Propose a versioned Visual Bible and explicitly flag conflicts. The Director requests user approval.
 
 For consistency and reference guidance consult [visual craft](references/guide.md).
