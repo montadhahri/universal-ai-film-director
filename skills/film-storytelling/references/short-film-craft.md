@@ -99,7 +99,7 @@ Never write `APPROVED`, `LOCKED` or `GENERATED` based on the specialist's opinio
 
 **Proposed beat economy:** 0–7s keeper closes a guest log; 7–18s distant ferry disappears into fog; 18–29s a page flutters under a cup; 29–38s keeper reads a note (show only an approved legible fragment if needed); 38–45s keeper opens the door and leaves the light on. The note reveals someone cared without claiming an unseen character is physically present.
 
-**Proposed narration:** "Some lights are left on for someone who may return." (11 words). At an illustrative 120 WPM this is about 5.5 seconds, without emotional pauses. Let the rest of the story play visually and preserve room to read the note.
+**Proposed narration:** "Some lights are left on for someone who may return." (10 words). At an illustrative 120 WPM this is about 5 seconds, without emotional pauses. Let the rest of the story play visually and preserve room to read the note.
 
 **Trade-off:** The implied visitor remains mysterious; revealing exactly who wrote the note would require more setup. Mark script `PROPOSED`, not approved. These beats are examples, not generated shots.
 
