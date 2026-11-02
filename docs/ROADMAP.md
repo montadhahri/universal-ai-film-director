@@ -1,83 +1,91 @@
-# Development roadmap — V2 skill quality and production readiness
+# Development roadmap — V2 creative direction and production reliability
 
-**Architecture:** one portable Universal AI Film Director orchestrator and six independently installable specialist skills. Major releases use Git tags and changelog entries, not versioned folders. [v1.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) remains the historical private release.
+**Product direction:** a portable, creative **end-to-end AI filmmaking production system**, not just a higher-scoring screenplay or prompt generator. The Director remains a creative collaborator; the differentiator to prove is consistent assets, safe changes, recoverable state, evidence-backed QA and trustworthy delivery.
 
-**Current boundary:** Production GO **HOLD**. No media generation, external account connections, paid jobs, publishing or implied film delivery. Planning-only and textual agent tests do not establish real-media readiness.
+**Architecture:** one Director and six independently installable specialists. Historical [v1.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) is preserved. V2 remains in development.
 
-## Completed foundations
+**Production GO: HOLD.** A plan, an approved creative artifact, permission to use a provider, and verified generated media are distinct states. No generation, paid job, account connection, private upload, publication or delivery is authorized by this roadmap.
 
-| Milestone | Evidence / status |
-| --- | --- |
-| V2-00 architecture RFC | Merged PR #27 |
-| V2-01 Project Bible, proposal contracts, Director authority and checkpoint rules | Merged PRs #28 and #32; real-host approval/recovery verification remains incomplete |
-| V2-02 portable Director + six specialists | Merged PRs #29–31; cross-host installation/behavior not fully established |
-| V2-03 acceptance and creative benchmark fixtures | Merged PRs #33–34; fixture tests are not independent agent results |
-| Planning-only production pipeline, timeline, audio continuity and dependency impact preview | Merged PRs #35–36; no provider execution |
-| Director creative direction and collaboration guidance | Merged PR #37; blind v1/v2 creative comparison remains NOT_RUN |
-| Storytelling craft and Creative Quality Gate | Merged PRs #38–40 |
-| Storytelling independent-agent scenario fixtures and runner | Merged PR #41; six clean-context executions: ST-01 FAIL, ST-02–ST-06 PASS; 22/24 criteria passed |
-| Storytelling targeted reliability hardening | Merged PR #42; critical prop-state continuity and exact narration word counting; independent ST-01 post-fix rerun NOT_RUN |
-| Visual Direction six-scenario evaluation baseline | User reports PR #43 merged; six clean-context agent executions: VD-01/02/03/05/06 PASS, VD-04 literal FAIL, 23/24 criteria; VD-04 omitted the amber color required by its criterion |
-| Visual Direction fixture and anchor refinements | User reports PR #44 merged; corrected VD-04 prompt, unresolved identity anchors and stateful prop guidance; independent post-fix rerun NOT_RUN |
-| Visual Direction post-merge textual regression | Three clean-context agent executions: VD-04 v1.1, VD-04B and VD-06 all PASS; 22/22 criteria; no generated-media or cross-host verification |
+## Evidence baseline — as of 2026-11-02
 
-## Repeatable quality methodology for every skill
-
-1. **Audit:** inspect actual SKILL.md, referenced instructions, artifact contracts, Director handoffs, permissions and failure cases.
-2. **Foundational refinement (only when warranted):** address concrete structural gaps with minimal changes; no speculative quality gates or duplicate runners.
-3. **Behavioral evaluation:** use exact, versioned scenarios in clean agent contexts; retain complete responses, revision hashes and available provenance; do not expose grading criteria to the executing agent.
-4. **Evidence-based hardening:** classify demonstrated skill failures separately from fixture mistakes and untested risks; add targeted regressions and rerun affected cases.
-5. **Acceptance:** record PASS / FAIL / BLOCKED / NOT_RUN, residual risks and handoff readiness. Textual acceptance does not imply real-media acceptance.
-
-## Skill-specific quality backlog
-
-| Skill | Already improved / verified | Next quality work | Exit evidence |
-| --- | --- | --- | --- |
-| **Universal AI Film Director** | Portable orchestration, one-question discovery, explicit approvals, revision locks, Project Bible/checkpoint contracts, creative directing guidance, optional planning pipeline | Audit specialist handoff contracts against current skill revisions; test stale/duplicate proposals, stage gates, locked changes and checkpoint recovery; run blind v1/v2 creative comparison and cross-host checks where feasible | Real-agent Director authority/recovery tests and Director–Specialist integration acceptance |
-| **Film Storytelling** | Filmable drama, protagonist agency, earned payoff, narration/timing Creative Quality Gate, approved-scope preservation, prop-state checks and exact narration counts; ST-01–ST-06 evaluated | Independently rerun ST-01 against PR #42 changes; preserve historical failure; address only any remaining evidenced defects | ST-01 post-fix result with evidence; other five original scenario results retained |
-| **Film Visual Direction** | Stable IDs, identity/wardrobe/location/lighting anchors, reference provenance, proposed approval boundary; six real-agent scenarios; unresolved anchors and intentional prop-state guidance in PR #44 | Rerun corrected VD-04 v1.1; unspecified-color VD-04B; VD-06 unresolved identity and downstream dependencies; verify fixture integrity and no illustrative gold leakage | New independent captures and criterion verdicts; original VD-04 failure retained as historical fixture mismatch |
-| **Film Cinematography** | Shot IDs, framing/blocking, geography/axis, exact storyboard timing and transition guidance; existing templates | Audit visual-to-shot handoff and Director approval semantics; evaluate coverage gaps/overlaps, reverse angles, impossible camera moves, shot dependencies, transition timing and locked revisions; refine only observed failures | Versioned clean-context cases, timed storyboard and evidence-backed regressions |
-| **Film Sound Direction** | Audio cue planning, narration/dubbing, silence, audio-only repair boundaries, optional audio-continuity checks | Audit picture-to-audio handoff; evaluate overlapping cues, speech feasibility, intentional silence, localization consistency, missing audio and locked-picture protection; refine only observed failures | Agent cases plus deterministic cue coverage where applicable; no invented generated audio |
-| **Film Video Production** | Generator-ready shot packets, explicit provider capability/authorization checks, evidence honesty and BLOCKED_NO_PROVIDER behavior | Audit shot-packet completeness and provider-neutral handoffs; test unknown capability, absent tools, permission separation, stale revisions, failed jobs and no fabricated outputs; only then consider adapters | Planning-only acceptance and truthful BLOCKED/NOT_RUN results; actual generation remains gated |
-| **Film Continuity QA** | Evidence classes, timestamped defect reports, localized repair proposals, locked-asset preservation, dependency previews | Audit input/output defect contract; test user-report vs direct-inspection boundaries, repeated/missing frames, audio dropout, cross-shot identity drift, downstream impact, repair rollback and verification honesty | Independent scenario results; actual-media verification NOT_RUN until authorized footage exists |
-
-## Director–Specialist Integration Acceptance — new milestone
-
-**Goal:** demonstrate that the improved Director and all six specialists interoperate on one versioned planning-only film without losing authority, revisions or continuity.
-
-- **End-to-end handoffs:** Director → Storytelling → Visual Direction → Cinematography → Sound Direction → Video Production → Continuity QA → Director.
-- **Artifact compatibility:** consistent project/shot/character/prop/cue IDs, revision IDs, input references, PROPOSED status, dependency links and provenance.
-- **Approval authority:** user explicitly approves screenplay, Visual Bible and storyboard separately; specialists cannot self-approve or bypass gates.
-- **Negative paths:** reject stale or duplicate specialist replies; block unauthorized changes to locked screenplay, look, shot or audio; reject implicit generation consent.
-- **Checkpoint recovery:** resume at the next unfinished stage, preserve approvals and locked versions, and retain unresolved defects.
-- **No-provider path:** produce useful shot/audio plans while reporting BLOCKED_NO_PROVIDER or NOT_RENDERED; do not invent footage or inspection.
-- **Evaluation:** use a single canonical integration suite and real-agent captures where possible; avoid another standalone runner. Record evidence and limitations, including cross-host and actual-media NOT_RUN.
-
-**Exit criterion:** complete one planning-only multi-skill run and at least one locked-artifact repair/recovery path with criterion-level evidence. Passing this milestone does **not** change Production GO.
-
-## Ordered next milestones
-
-| Order | Milestone | Current status / dependency |
+| Area | Evidence | What it does *not* prove |
 | --- | --- | --- |
-| 1 | Visual Direction post-merge regressions (VD-04 v1.1, VD-04B, VD-06) | COMPLETE for textual acceptance: 3/3, 22/22; media NOT_RUN |
-| 2 | Storytelling ST-01 independent post-fix rerun | Pending |
-| 3 | Cinematography audit → conditional improvement → real-agent evaluation → hardening | Audit completed; foundational timing/continuity/handoff refinements in review; independent evaluation NOT_RUN |
-| 4 | Sound Direction audit → conditional improvement → evaluation → hardening | Pending |
-| 5 | Video Production planning/authorization audit → evaluation → hardening | Pending; no generation |
-| 6 | Continuity QA audit → evaluation → hardening | Pending; no media inspection |
-| 7 | Director–Specialist Integration Acceptance | New required milestone before V2 release review |
-| 8 | Director blind v1/v2 creative-quality evaluation and portable/cross-host checks | Pending; can run alongside skill work |
-| 9 | Production Pipeline Core integration: stage, timeline, continuity and dependency safeguards | Core merged; integration and remaining edge-case verification pending |
-| 10 | Provider-neutral generation adapters and capability verification | Not started; requires separate explicit authorization for any external operation |
-| 11 | Real-media generation, inspection and localized repair | BLOCKED until tools and user permissions exist |
-| 12 | Independent end-to-end 30-second film demonstration | BLOCKED; requires real media |
-| 13 | Security, documentation, installation, marketing/readme examples, release QA and v2.0.0 decision | Not started; no public release authorized |
+| Architecture and contracts | Merged V2 Director, six specialists, Project Bible, stage gates, planning pipeline and validation fixtures | Correct behavior in every host or actual media production |
+| Specialist and integration acceptance | Historical independent scenario evaluations and targeted post-fix regressions; Director–Specialist integration evaluated | Full cross-host execution or an end-to-end film |
+| Creative benchmark | Eight scenarios, 16 original V1/V2 creative responses, separate blind reviews and versioned CREATIVE-06/07 adjudication; adjudicated offline validator **8 PASS, 0 FAIL** | Validator PASS does not certify creative superiority or real-media reliability |
+| Creative score baseline | Unweighted scenario mean **V1 4.50/5, V2 4.83/5**; V2 higher in four, V1 higher in one, three ties | Statistical significance, independent human preference or finished-film quality |
+| Focused improvements | PR #62 published [benchmark results](quality-benchmark-results.md); PR #63 merged Visual Direction prop/lighting-geometry guidance | CREATIVE-04 post-fix behavioral regression PASS; it remains NOT_RUN |
+| Latest roadmap baseline | Merged PR #63 at `6092f6d10ae82158da5f8c8c443ac43ddc63b85e` | Any subsequent main-branch state |
 
-## Evidence and release rules
+Read the [benchmark results and limitations](quality-benchmark-results.md) and [benchmark procedure](quality-benchmark.md). Preserve historical reviews and safety flags; do not retroactively replace them with adjudicated scores.
 
-- A merged PR proves code landed, **not** independent-agent behavior or production quality.
-- Fixture-shape/unit tests, in-chat editorial checks, genuine agent executions and inspected media are different evidence classes.
-- Preserve historical FAIL captures; fix fixtures in a new version and rerun rather than rewriting history.
-- Never assert a cross-host result, provider capability, model ID, generated asset or rights clearance without evidence.
-- Make all improvements in reviewable PRs; do not merge automatically.
-- Production GO remains **HOLD** until a separate explicit authorization and the relevant real-media gates.
+## Prioritization principles
+
+1. **Measure real production outcomes next.** Prefer continuity, repairability, resumability and actual media evidence over raising already-ceilinged isolated rubric scores.
+2. **Keep creative quality central.** Strong stories, filmable shots, emotional pacing and artistic choices remain essential; improve them when a concrete regression or rendered-film failure demonstrates a gap.
+3. **Do not add more agents by default.** Keep seven skills until integration tests establish a need for new boundaries.
+4. **Small reviewable PRs.** Separate benchmark documentation, behavioral skill changes, deterministic validators and real-media experiments.
+5. **Approval gates are non-negotiable.** Separate screenplay, Visual Bible, storyboard and external execution authorization; protect locked revisions.
+6. **Evidence classes stay separate.** A merged PR, unit test, blind text review, real-agent regression, inspected image, verified video and delivered export are not interchangeable.
+
+## Ordered roadmap and exit gates
+
+| Phase | Milestone | Status | Evidence required to exit |
+| --- | --- | --- | --- |
+| 1 | V2 architecture, seven skills and project contracts | **COMPLETE** as repository implementation | Merged code and documented contracts; portability remains separately unverified |
+| 2 | Specialist behavioral tests and Director integration | **COMPLETE** for documented planning-only acceptance | Preserve original reports and scoped regressions; no media claim |
+| 3 | V1/V2 creative benchmark | **COMPLETE** for adjudicated structural comparison | 8/8 adjudicated validator PASS with documented limitations and historical reviews retained |
+| 4A | Publish benchmark transparently | **COMPLETE** — PR #62 merged | README summary and detailed report, scores, caveats and provenance |
+| 4B | Correct Visual Direction CREATIVE-04 continuity | **IMPLEMENTED, NOT VALIDATED** — PR #63 merged | Independent post-fix fresh-context run; explicit scarf grip/free-length, light-source/occlusion, route/axis and approval verdicts; preserve old result |
+| 4C | Director discovery and narration arithmetic | **PENDING** | Small corrective PR, explicit word-count/rate checks, one-question discovery and distinct stage gates; fresh targeted regression |
+| 5 | **The Last Light** five-keyframe image-first integration | **PLANNING NEXT; MEDIA HOLD** | Verify existing fixtures, approved screenplay/Visual Bible/storyboard, reference assets and authorizations; then five actually inspected images with shot-by-shot identity, wardrobe, spark-state, tower, geography, lighting and camera checks |
+| 6 | Safe localized revision and continuity repair | **PENDING** | Deliberately change one proposed shot, demonstrate minimal downstream impact, preserve locked unaffected shots, inspect before/after artifacts and record user approvals |
+| 7 | Checkpoint recovery and long-session continuity | **PENDING** | Resume across fresh sessions/hosts from a versioned Project Bible; verify approvals, IDs, missing assets, unresolved defects and next safe action without drift |
+| 8 | Real video, sound, edit and export pilot | **FUTURE; AUTHORIZATION REQUIRED** | Authorized provider capability checks, real clips, exact shot timing, narration/sound sync, QA/repair, verified export; no unobserved success claims |
+| 9 | Portability, documentation, security and v2.0.0 release decision | **PENDING** | Reproducible installation/behavior in at least two supported hosts, clean tests, license/rights/privacy review, examples, changelog and release checklist; separate publication decision |
+
+Phases 6 and 7 may use controlled fixtures before any real-media execution, but **do not label them complete** until the specified behavioral evidence exists. Phase 9 preparation may proceed in parallel; public release is a separate decision.
+
+## Phase 5 — The Last Light: first real-media proof
+
+**Scenario:** existing 30-second, five-shot fictional project. Reuse existing fixture IDs and approved revisions; do not invent missing approvals or reference media.
+
+- **SH01:** Establish the world, character and geography from the existing storyboard.
+- **SH02:** `CHILD-01` picks up amber `SPARK-01`.
+- **SH03:** `CHILD-01` carries the same `SPARK-01` east toward `TOWER-01`.
+- **SH04:** The child visibly places and releases `SPARK-01` inside the tower lantern.
+- **SH05:** The same spark remains inside that lantern.
+
+**Planning gate:** verify current main revision, Director/specialist skills, Project Bible schema, original five-shot fixtures, locked assets, permissions and missing reference images. Prepare five proposed keyframes and a continuity matrix; **do not generate media during planning**.
+
+**Execution gate:** explicit creative approvals and separate authorization for the actual image tool/provider, account/credits and assets. Generate one controlled keyframe per shot, record inputs, provider limitations and actual files. Review outputs for character/coat, prop identity/state, landmarks, world-space light direction, camera axis and approved changes. Any failure becomes a scoped repair proposal, not an automatic regeneration.
+
+**Success:** five inspectable images with traceable shot IDs and an evidence-backed QA report, with failures and corrections disclosed. This proves an image-first pilot, **not** finished-film reliability.
+
+## Phase 6–8 production reliability acceptance
+
+| Capability | Minimum test | Failure to detect |
+| --- | --- | --- |
+| Identity and prop continuity | Compare actual five keyframes with a state ledger | Face/wardrobe drift, spark duplication, missing transfer |
+| Locked-asset protection | Revise one shot and check unaffected locked shots | Silent change to approved assets |
+| Dependency awareness | Change a prop state and inspect downstream impact preview | Inconsistent subsequent shots |
+| Recovery | Resume from saved checkpoint in fresh context | Lost approvals, invented references, stale revisions |
+| Evidence honesty | Compare claimed media inspection to available assets | Claiming generated or inspected output without evidence |
+| Video/audio execution | Inspect actual rendered clips and export | Wrong timing, missing narration, unverified delivery |
+
+## Benchmark follow-ups and quality backlog
+
+- **CREATIVE-04:** PR #63 addresses physical prop and lighting-geometry instructions; independent post-fix run is still **NOT_RUN**. This is the immediate next action.
+- **CREATIVE-01:** Director sometimes drafted a full screenplay too early; narration was described as approximately 70 words despite a 59-word count. Fix discovery behavior and arithmetic with focused tests.
+- **CREATIVE-05:** Historical V1 bundled screenplay/Visual Bible/storyboard approvals; retain separate-gate tests even though the original blind reviewer did not flag it.
+- **CREATIVE-06/07:** Adjudication removed unsupported safety findings in new reviews; original flagged reviews remain unchanged. No broad rebenchmark is necessary.
+- **Specialists:** Preserve existing Storytelling, Cinematography, Sound, Video Production and Continuity QA strengths. Improve only when cross-stage or real-media evidence shows a defect.
+
+## Release and evidence rules
+
+- A merged PR proves changes landed, not that a new agent behavior passed.
+- Preserve exact prompts, full responses, version hashes, reviewer provenance, failure reports and any explicit metadata gaps.
+- Report `PASS`, `FAIL`, `BLOCKED` and `NOT_RUN` without silently converting them to completion.
+- Do not claim a generated image, clip, soundtrack or export until it exists and has been inspected.
+- Do not publish private captures, user assets or personal project data in a public repository without authorization.
+- **Production GO remains HOLD** until explicitly changed for a scoped operation.
