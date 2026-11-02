@@ -34,6 +34,12 @@ Bring your own story, or start with a single sentence. Universal AI Film Directo
 
 > **Important:** This is a filmmaking **direction and production-planning skill**, not a bundled video-rendering service. Actual images, voice, video clips or final MP4s require external tools that are genuinely available and authorized. The assistant must distinguish plans from generated or inspected media.
 
+## 📊 Creative-quality benchmark (V1 vs V2)
+
+An eight-scenario, blind model-reviewed comparison of original **textual filmmaking plans** is structurally complete after versioned adjudication: **8/8 offline-validator PASS**. V2's descriptive mean was **4.83/5** versus **4.50/5** for historical V1 (four V2 wins, one V1 win, three ties). These small-sample reviewer scores are **not** proof of better rendered films, and validator PASS does not authenticate reviewer conduct. The evaluation also identified a Visual Direction continuity regression targeted for correction.
+
+Read the [full results, methodology, caveats and follow-up findings](docs/quality-benchmark-results.md). Production GO remains **HOLD**.
+
 ## 🚀 Quick start
 
 **1. Install the Film Director.** With a [Skills CLI](https://skills.sh/)-compatible agent, install directly from GitHub — no clone needed:
