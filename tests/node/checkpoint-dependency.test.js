@@ -33,3 +33,17 @@ test('checkpoint inspection never changes project state or grants permissions',(
  assert.equal(JSON.stringify(p),before);
  assert.deepEqual(p.authorization,{production_go:false,provider_job_allowed:false,publication_allowed:false});
 });
+
+test('approved gates with graph defects recommend dependency repair',()=>{
+ const p=project([{kind:'shot',id:'SH01'}],[{from:'SH01',to:'MISSING'}]);
+ for(const gate of ['script','visual_bible','storyboard'])p.gates[gate]={approved:true,version:'v1',evidence:'source'};
+ assert.match(inspectCheckpoint(p).next_safe_action,/Resolve dependency graph issues/);
+});
+test('valid graph with approved gates permits planning-only continuation',()=>{
+ const p=project([{kind:'shot',id:'SH01'}],[]);
+ for(const gate of ['script','visual_bible','storyboard'])p.gates[gate]={approved:true,version:'v1',evidence:'source'};
+ assert.match(inspectCheckpoint(p).next_safe_action,/Continue planned production/);
+});
+test('missing gate approval remains first recovery action',()=>{
+ assert.equal(inspectCheckpoint(project([{kind:'shot',id:'SH01'}],[{from:'SH01',to:'MISSING'}])).next_safe_action,'Resolve script approval');
+});
