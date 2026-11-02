@@ -33,3 +33,24 @@ test('checkpoint inspection never changes project state or grants permissions',(
  assert.equal(JSON.stringify(p),before);
  assert.deepEqual(p.authorization,{production_go:false,provider_job_allowed:false,publication_allowed:false});
 });
+
+test('resume advice blocks progression when approved gates coexist with unresolved dependencies',()=>{
+ const p=project([{kind:'shot',id:'SH01'}],[{from:'SH01',to:'MISSING'}]);
+ for(const gate of ['script','visual_bible','storyboard'])p.gates[gate]={approved:true,version:'v1',evidence:'user-message'};
+ const before=JSON.stringify(p);
+ const report=inspectCheckpoint(p);
+ assert.match(report.next_safe_action,/Resolve dependency graph issues/);
+ assert.equal(JSON.stringify(p),before);
+ assert.equal(report.provider_execution_performed,false);
+});
+test('resume advice allows planning only when gates approved and graph is valid',()=>{
+ const p=project([{kind:'shot',id:'SH01'}],[]);
+ for(const gate of ['script','visual_bible','storyboard'])p.gates[gate]={approved:true,version:'v1',evidence:'user-message'};
+ const report=inspectCheckpoint(p);
+ assert.deepEqual(report.unresolved_issues,[]);
+ assert.match(report.next_safe_action,/Continue planned production/);
+});
+test('missing creative approval remains first recovery action even with graph defects',()=>{
+ const report=inspectCheckpoint(project([{kind:'shot',id:'SH01'}],[{from:'SH01',to:'MISSING'}]));
+ assert.equal(report.next_safe_action,'Resolve script approval');
+});
