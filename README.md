@@ -40,6 +40,14 @@ An eight-scenario, blind model-reviewed comparison of original **textual filmmak
 
 Read the [full results, methodology, caveats and follow-up findings](docs/quality-benchmark-results.md). Production GO remains **HOLD**.
 
+## 🎞️ The Last Light — image-first case study
+
+A 30-second, five-shot fictional pilot explores whether a consistent child, amber spark, town and tower can be directed across image keyframes. Five standalone creative image candidates were approved **as visual references only**; the later four SH02/SH04 motion-boundary PNGs were cropped from one composite, not independently generated.
+
+**Evidence status:** image-first creative experiment documented; seven-skill end-to-end execution NOT_VERIFIED; video tests NOT_RUN; G2B/G2C BLOCKED; Production GO **HOLD**. No media or provider jobs are authorized by this case study.
+
+[Read the case study, approval ledger, evidence gaps and motion-test roadmap](docs/case-studies/the-last-light/README.md).
+
 ## 🚀 Quick start
 
 **1. Install the Film Director.** With a [Skills CLI](https://skills.sh/)-compatible agent, install directly from GitHub — no clone needed:
