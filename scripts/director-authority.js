@@ -101,6 +101,29 @@ function inspectDependencyGraph(p) {
  }
  return issues;
 }
+function inspectApprovalLedger(p) {
+ const issues=[];
+ const ledger=getLedger(p,'approval_ledger');
+ const proposals=getLedger(p,'gate_proposals');
+ for(const gate of ['script','visual_bible','storyboard']) {
+  const state=p.gates[gate];
+  if(!state.approved)continue;
+  const entries=ledger.filter(x=>x&&x.kind==='GATE'&&x.gate===gate);
+  if(entries.length!==1) {
+   issues.push({code:entries.length?'AMBIGUOUS_GATE_APPROVAL':'MISSING_GATE_APPROVAL_LEDGER',gate});
+   continue;
+  }
+  const item=entries[0];
+  if(item.version!==state.version||!item.evidence||item.evidence.source_ref!==state.evidence)
+   issues.push({code:'GATE_APPROVAL_MISMATCH',gate});
+  if(!item.evidence||item.evidence.actor!=='USER'||!ok(item.evidence.source_ref)||!ok(item.evidence.quote))
+   issues.push({code:'INVALID_GATE_EVIDENCE',gate});
+  const proposal=proposals.find(x=>x&&x.proposal_id===item.proposal_id&&x.gate===gate);
+  if(!proposal||proposal.status!=='APPROVED'||proposal.version!==item.version||proposal.artifact_ref!==item.artifact_ref)
+   issues.push({code:'GATE_PROPOSAL_MISMATCH',gate});
+ }
+ return issues;
+}
 function inspectCheckpoint(p) {
  validateProject(p);
  const issues=[],g=['script','visual_bible','storyboard'];
@@ -109,8 +132,9 @@ function inspectCheckpoint(p) {
  const locked=p.shots.filter(s=>s.state==='LOCKED').map(s=>({id:s.id,revision:s.revision,asset_ref:s.approved_asset}));
  const pending=getLedger(p,'gate_proposals').filter(x=>x.status==='PENDING').map(x=>({proposal_id:x.proposal_id,gate:x.gate,version:x.version}));
  const unresolved_issues=inspectDependencyGraph(p);
+ const approval_integrity_issues=inspectApprovalLedger(p);
  if(unresolved_issues.length)issues.push('Unresolved dependency graph issues: '+unresolved_issues.length);
- return {project_id:p.project_id,revision:p.revision,phase:p.phase,locked,pending,issues,unresolved_issues,
+ return {project_id:p.project_id,revision:p.revision,phase:p.phase,locked,pending,issues,unresolved_issues,approval_integrity_issues,
  next_safe_action:next?'Resolve '+next+' approval':unresolved_issues.length?'Resolve dependency graph issues before continuing planned production':'Continue planned production while verifying separate permissions',
  provider_execution_performed:false,media_inspected:false,persisted:false};
 }
