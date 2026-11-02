@@ -48,6 +48,14 @@ A 30-second, five-shot fictional pilot explores whether a consistent child, ambe
 
 [Read the case study, approval ledger, evidence gaps and motion-test roadmap](docs/case-studies/the-last-light/README.md).
 
+### Five-shot visual experiment
+
+| SH01 · The dark town | SH03 · Carrying the spark | SH05 · The light returns |
+| :---: | :---: | :---: |
+| [![SH01 — Dark town](docs/case-studies/the-last-light/images/keyframes/SH01.png)](docs/case-studies/the-last-light/images/keyframes/SH01.png) | [![SH03 — Journey toward the tower](docs/case-studies/the-last-light/images/keyframes/SH03.png)](docs/case-studies/the-last-light/images/keyframes/SH03.png) | [![SH05 — Town illuminated](docs/case-studies/the-last-light/images/keyframes/SH05.png)](docs/case-studies/the-last-light/images/keyframes/SH05.png) |
+
+*Actual creative-reference keyframes from The Last Light, not a finished film or independently verified seven-skill generation result. [View all five shots and the visual QA evidence](docs/case-studies/the-last-light/README.md).*
+
 ## 🚀 Quick start
 
 **1. Install the Film Director.** With a [Skills CLI](https://skills.sh/)-compatible agent, install directly from GitHub — no clone needed:
