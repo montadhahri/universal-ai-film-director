@@ -111,7 +111,7 @@ function inspectCheckpoint(p) {
  const unresolved_issues=inspectDependencyGraph(p);
  if(unresolved_issues.length)issues.push('Unresolved dependency graph issues: '+unresolved_issues.length);
  return {project_id:p.project_id,revision:p.revision,phase:p.phase,locked,pending,issues,unresolved_issues,
- next_safe_action:next?'Resolve '+next+' approval':'Continue planned production while verifying separate permissions',
+ next_safe_action:next?'Resolve '+next+' approval':unresolved_issues.length?'Resolve dependency graph issues before continuing planned production':'Continue planned production while verifying separate permissions',
  provider_execution_performed:false,media_inspected:false,persisted:false};
 }
 function restoreCheckpoint(json) {
