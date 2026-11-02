@@ -4,6 +4,22 @@
 const fs=require('node:fs'),path=require('node:path');
 const suite=require('./cases.json'),valid=new Set([1,2,3,4,5]);
 const filled=x=>typeof x==='string'&&x.trim().length>0;
+const executionFields=['host','model','timestamp'];
+function checkExecutionMetadata(a,which,problems,limitations){
+ const unavailable=a.metadata_unavailable??{};
+ if(typeof unavailable!=='object'||Array.isArray(unavailable)){
+  problems.push(which+' metadata_unavailable must be an object');return;
+ }
+ for(const field of Object.keys(unavailable))
+  if(!executionFields.includes(field))problems.push(which+' unsupported unavailable metadata '+field);
+ for(const field of executionFields){
+  if(a[field]===null&&filled(unavailable[field])){
+   limitations.push({capture:which,field,reason:unavailable[field]});
+  }else if(!filled(a[field]))problems.push(which+' missing '+field+' (use null with metadata_unavailable reason if unavailable)');
+  else if(Object.hasOwn(unavailable,field))problems.push(which+' '+field+' is both supplied and marked unavailable');
+ }
+ if(filled(a.timestamp)&&!Number.isFinite(Date.parse(a.timestamp)))problems.push(which+' timestamp invalid');
+}
 function evaluate(data={comparisons:[]}){
  if(!data||!Array.isArray(data.comparisons))throw Error('Expected comparisons array');
  const known=new Set(suite.cases.map(c=>c.id)),map=new Map();
@@ -17,24 +33,25 @@ function evaluate(data={comparisons:[]}){
   if(!p||p.status==='NOT_RUN')return {case_id:c.id,status:'NOT_RUN',reason:'No real reviewed agent captures'};
   if(p.status==='BLOCKED')return filled(p.reason)?{case_id:c.id,status:'BLOCKED',reason:p.reason}:{case_id:c.id,status:'FAIL',issues:['Block reason required']};
   if(p.status!=='REVIEWED')return {case_id:c.id,status:'FAIL',issues:['Unknown status']};
-  const problems=[];
+  const problems=[],metadataLimitations=[];
   if(!filled(p.reviewer)||!filled(p.review_ref))problems.push('Missing reviewer/provenance');
   if(!['AB','BA'].includes(p.blind_order))problems.push('Missing blind order');
   if(p.safety_violation===true)problems.push('Safety violation prohibits scoring success');
   for(const [which,version] of [['baseline','v1.0.0'],['candidate','v2-development']]){
    const a=p[which];
    if(!a||typeof a!=='object'){problems.push('Missing '+which+' agent capture');continue}
-   for(const f of ['host','model','timestamp','prompt','response','skill','evidence_ref','loaded_skill_file'])
+   for(const f of ['prompt','response','skill','evidence_ref','loaded_skill_file'])
     if(!filled(a[f]))problems.push(which+' missing '+f);
-   if(a.prompt!==c.prompt||a.skill!==c.skill||a.version!==version)problems.push(which+' prompt/skill/version mismatch');
-   if(filled(a.timestamp)&&!Number.isFinite(Date.parse(a.timestamp)))problems.push(which+' timestamp invalid');
+   const expectedSkill=which==='baseline'?'universal-ai-film-director':c.skill;
+   if(a.prompt!==c.prompt||a.skill!==expectedSkill||a.version!==version)problems.push(which+' prompt/skill/version mismatch');
+   checkExecutionMetadata(a,which,problems,metadataLimitations);
    if(!filled(p.rationale?.[which]))problems.push(which+' rationale missing');
    for(const dim of c.dimensions)if(!valid.has(p.scores?.[which]?.[dim]))problems.push(which+' invalid score '+dim);
   }
   if(problems.length)return {case_id:c.id,status:'FAIL',issues:problems};
   const avg=role=>c.dimensions.reduce((sum,dim)=>sum+p.scores[role][dim],0)/c.dimensions.length;
   const delta=Number((avg('candidate')-avg('baseline')).toFixed(3));
-  return {case_id:c.id,status:'PASS',reviewer_reported:true,delta,
+  return {case_id:c.id,status:'PASS',reviewer_reported:true,metadata_limitations:metadataLimitations,delta,
    outcome:delta>0?'V2_HIGHER':delta<0?'V1_HIGHER':'TIE',review_ref:p.review_ref};
  });
  const counts=Object.fromEntries(['PASS','FAIL','BLOCKED','NOT_RUN'].map(status=>[status,results.filter(x=>x.status===status).length]));
@@ -58,3 +75,4 @@ function main(argv=process.argv.slice(2)){
 }
 if(require.main===module)try{process.exitCode=main()}catch(e){console.error(e.message);process.exitCode=2}
 module.exports={evaluate,main};
+

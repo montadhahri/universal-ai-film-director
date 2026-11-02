@@ -12,6 +12,54 @@ The existing [agent acceptance matrix](agent-acceptance.md) covers behavioral sa
 6. Record regressions, ties and improvements. **No quality victory claim** until real reviews cover all cases with clear limitations.
 7. Improve the weakest skill in a focused follow-up PR and rerun the same scenarios.
 
+## Version-specific skill identity
+
+The historical v1.0.0 baseline is the monolithic
+`universal-ai-film-director` for **all eight scenarios**, including
+CREATIVE-02 through CREATIVE-08. Load its actual tagged skill and the
+stage-relevant historical references; do not reconstruct nonexistent V1
+specialists. Record the baseline's actual `skill` and `loaded_skill_file`
+(for example, `SKILL.md` or `skills/universal-ai-film-director/SKILL.md`).
+The V2 candidate must retain the scenario's exact `skill` from the manifest:
+Director for CREATIVE-01, Storytelling for CREATIVE-02/03, then Visual
+Direction, Cinematography, Sound Direction, Video Production and Continuity
+QA respectively. A V2 Director cannot stand in for those specialists.
+Capture `version` remains `v1.0.0` or `v2-development`, respectively.
+
+## Unavailable execution metadata
+
+Record actual `host`, `model` and execution `timestamp` when known. If the
+host genuinely did not expose or retain one, set that field explicitly to
+`null` and explain why in the capture's `metadata_unavailable` object:
+
+```json
+{
+  "host": "actual-known-host",
+  "model": null,
+  "timestamp": null,
+  "metadata_unavailable": {
+    "model": "The host did not expose its backend model identifier",
+    "timestamp": "Per-execution timestamps were not retained"
+  }
+}
+```
+
+This is a metadata fragment, not a complete capture. Omission, empty strings,
+unexplained nulls, invalid timestamps, or simultaneously supplying a value
+and marking it unavailable fail validation. Only these three execution
+fields may use this mechanism. Do not invent identifiers, use placeholder
+timestamps or substitute report assembly/upload times for execution times.
+Successful result rows expose each explanation in `metadata_limitations`;
+retain these limitations in any summary and reproducibility claims.
+
+Unavailable metadata does **not** waive exact prompts, full responses,
+version/skill identity, `evidence_ref`, `loaded_skill_file`, separate score
+rationales, reviewer identity, `review_ref` or an actual `AB`/`BA` blind
+order. Non-blind analysis must not invent that order to obtain a PASS.
+The runner validates the submitted declarations, not whether an explanation
+or claimed blinding is true. A PASS with metadata limitations is still only
+structural completeness, not full reproducibility or a quality victory.
+
 ## Private capture JSON format
 
 ```json
@@ -52,3 +100,4 @@ node --test tests/node/quality-benchmark.test.js
 ```
 
 With no captures, the only accurate report is **8 NOT_RUN, zero improvement claims**. Structural CI PASS is not film quality evidence. Report v1 wins, ties, v2 wins, all safety exceptions, and remaining uncertainty.
+
