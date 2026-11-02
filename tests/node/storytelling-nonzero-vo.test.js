@@ -11,10 +11,10 @@ test('nonzero VO regression is isolated from original ST-01',()=>{
 });
 test('specified spoken words and time budget are arithmetically consistent',()=>{
  const c=pack.cases[0],vo='Some lights are left on for someone who may return.';
- const words=vo.trim().split(/\\s+/).length;
+ const words=vo.trim().split(/\s+/).length;
  assert.equal(words,10);
  assert.equal(words/120*60,5);
  assert.ok(c.prompt.includes(vo));
  assert.match(c.prompt,/120 words per minute/);
- assert.match(c.expected[0],/10 whitespace-separated words; 10\\/120\\*60 = 5 seconds/);
+ assert.ok(c.expected[0].includes('10 whitespace-separated words; 10/120*60 = 5 seconds'));
 });
