@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "project": "The Last Light",
+  "recorded_on": "2026-11-02",
+  "source": "User-uploaded PNG files in repository main at commit d8ce4fcfd3a8c5723185b963649f389643469685",
+  "reorganization": "Git blob objects reused unchanged; moved from images/ to images/keyframes/",
+  "sha_kind": "git_blob_sha1_not_sha256",
+  "keyframes": [
+    {
+      "shot": "SH01",
+      "path": "images/keyframes/SH01.png",
+      "git_blob_sha1": "e13e5bf3f35d21e769423861f18e3cdaa2f97462",
+      "bytes": 2067099,
+      "sha256": null,
+      "approval": "creative reference only"
+    },
+    {
+      "shot": "SH02",
+      "path": "images/keyframes/SH02.png",
+      "git_blob_sha1": "6c9ba033c4edc3546ed0c0b20fa77fcfcdd7dfdf",
+      "bytes": 1989700,
+      "sha256": null,
+      "approval": "creative reference only"
+    },
+    {
+      "shot": "SH03",
+      "path": "images/keyframes/SH03.png",
+      "git_blob_sha1": "2c0ad7452d37d298c218f29c9dad2ff6e4e42cf8",
+      "bytes": 2170907,
+      "sha256": null,
+      "approval": "creative reference only"
+    },
+    {
+      "shot": "SH04",
+      "path": "images/keyframes/SH04.png",
+      "git_blob_sha1": "f16c7becaea26ad9c2b39a88ca3f005aec7e681e",
+      "bytes": 2393263,
+      "sha256": null,
+      "approval": "creative reference only"
+    },
+    {
+      "shot": "SH05",
+      "path": "images/keyframes/SH05.png",
+      "git_blob_sha1": "bbf257f769018d27de549ac4a5cfdb9d58b3caa7",
+      "bytes": 2202827,
+      "sha256": null,
+      "approval": "creative reference only"
+    }
+  ],
+  "boundary_candidates": {
+    "status": "NOT_UPLOADED",
+    "source": "four crops from one composite",
+    "independent_generations": false
+  },
+  "seven_skill_execution_verified": false,
+  "production_go": "HOLD"
+}
