@@ -4,6 +4,8 @@ This example contains **five user-uploaded standalone image candidates** for the
 
 ## Keyframe gallery
 
+**Phase 5F correction:** The original user-uploaded filenames were shifted by one narrative shot. These five files are now associated with the visually correct shot IDs, without changing any image bytes.
+
 | Shot | Time | Narrative action | Image |
 | --- | --- | --- | --- |
 | SH01 | 0–5s | Dark town | [SH01](images/keyframes/SH01.png) |

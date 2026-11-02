@@ -54,7 +54,7 @@ A 30-second, five-shot fictional pilot explores whether a consistent child, ambe
 | :---: | :---: | :---: |
 | [![SH01 — Dark town](docs/case-studies/the-last-light/images/keyframes/SH01.png)](docs/case-studies/the-last-light/images/keyframes/SH01.png) | [![SH03 — Journey toward the tower](docs/case-studies/the-last-light/images/keyframes/SH03.png)](docs/case-studies/the-last-light/images/keyframes/SH03.png) | [![SH05 — Town illuminated](docs/case-studies/the-last-light/images/keyframes/SH05.png)](docs/case-studies/the-last-light/images/keyframes/SH05.png) |
 
-*Actual creative-reference keyframes from The Last Light, not a finished film or independently verified seven-skill generation result. [View all five shots and the visual QA evidence](docs/case-studies/the-last-light/README.md).*
+*Shot filenames corrected following the Phase 5F visual identity audit; original PNG bytes preserved. Actual creative-reference keyframes from The Last Light, not a finished film or independently verified seven-skill generation result. [View all five shots and the visual QA evidence](docs/case-studies/the-last-light/README.md).*
 
 ## 🚀 Quick start
 

@@ -1,6 +1,6 @@
 # Visual QA — evidence-limited review
 
-**Status:** PROPOSED / NOT_VERIFIED for technical continuity. No motion footage has been inspected.
+**Status:** PROPOSED / NOT_VERIFIED for technical continuity. Phase 5F found a five-file shot-identity rotation; a separate corrective change restores the intended image-to-shot mapping without altering PNG bytes. No motion footage has been inspected.
 
 | Check | Status | Evidence gap |
 | --- | --- | --- |
