@@ -81,6 +81,26 @@ function recordPermission(p,{expected_revision,permission,scope,grant_id,evidenc
  // operational flags, invokes providers, connects accounts or publishes media.
  n.revision++;return n;
 }
+function inspectDependencyGraph(p) {
+ const issues=[];
+ if(!p.dependency_graph)return issues;
+ const ids=new Set();
+ for(const [i,node] of p.dependency_graph.nodes.entries()) {
+  if(!node||!['shot','audio','anchor'].includes(node.kind)||!ok(node.id)) {
+   issues.push({code:'INVALID_DEPENDENCY_NODE',index:i});continue;
+  }
+  if(ids.has(node.id))issues.push({code:'DUPLICATE_DEPENDENCY_NODE',node_id:node.id});
+  ids.add(node.id);
+ }
+ for(const [i,edge] of p.dependency_graph.edges.entries()) {
+  if(!edge||!ok(edge.from)||!ok(edge.to)) {
+   issues.push({code:'INVALID_DEPENDENCY_EDGE',index:i});continue;
+  }
+  if(!ids.has(edge.from))issues.push({code:'MISSING_DEPENDENCY_ENDPOINT',index:i,endpoint:edge.from,side:'from'});
+  if(!ids.has(edge.to))issues.push({code:'MISSING_DEPENDENCY_ENDPOINT',index:i,endpoint:edge.to,side:'to'});
+ }
+ return issues;
+}
 function inspectCheckpoint(p) {
  validateProject(p);
  const issues=[],g=['script','visual_bible','storyboard'];
@@ -88,7 +108,9 @@ function inspectCheckpoint(p) {
  if(next)issues.push('Missing approval: '+next);
  const locked=p.shots.filter(s=>s.state==='LOCKED').map(s=>({id:s.id,revision:s.revision,asset_ref:s.approved_asset}));
  const pending=getLedger(p,'gate_proposals').filter(x=>x.status==='PENDING').map(x=>({proposal_id:x.proposal_id,gate:x.gate,version:x.version}));
- return {project_id:p.project_id,revision:p.revision,phase:p.phase,locked,pending,issues,
+ const unresolved_issues=inspectDependencyGraph(p);
+ if(unresolved_issues.length)issues.push('Unresolved dependency graph issues: '+unresolved_issues.length);
+ return {project_id:p.project_id,revision:p.revision,phase:p.phase,locked,pending,issues,unresolved_issues,
  next_safe_action:next?'Resolve '+next+' approval':'Continue planned production while verifying separate permissions',
  provider_execution_performed:false,media_inspected:false,persisted:false};
 }
