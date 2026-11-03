@@ -1,6 +1,6 @@
 # V2 public release preflight
 
-**Status: RELEASE CANDIDATE PREPARATION — NOT A RELEASE AUTHORIZATION.**
+**Status: REPOSITORY PUBLIC — V2.0.0 NOT RELEASED OR AUTHORIZED.** Public visibility was confirmed on 2026-11-03. The owner supplied a screenshot of a successful manually triggered Gitleaks workflow on `main`; this does not independently establish complete privacy or media-rights clearance.
 
 ## V2.0.0 scope (already implemented, subject to verification)
 
@@ -12,12 +12,12 @@
 
 ## V2.0.0 release blockers
 
-- [ ] **Public history and secret review:** inspect all branches/tags/history and historical files for tokens, credentials, private data and proprietary material. GitHub visibility change exposes history; do not assume deleted files are safe.
+- [ ] **Public history and secret review (partially evidenced: Gitleaks PASS):** inspect all branches/tags/history and historical files for tokens, credentials, private data and proprietary material. GitHub visibility change exposes history; do not assume deleted files are safe.
 - [ ] **Rights review:** confirm redistribution rights for film, soundtrack, images, voices, third-party assets, prompts and referenced trademarks. Keep unverified media unpublished until cleared.
 - [ ] **Public installation:** from a clean environment without private credentials, install the public repository via the documented Skills CLI command; preserve actual output and version.
 - [ ] **Docs consistency:** update README version badges, installation private-repo notice, changelog and release notes after choosing the exact RC commit.
 - [ ] **Release checks:** CI green on the intended tag commit, license/attribution/security review, documented limitations, no unsupported claims of autonomous execution.
-- [ ] **Owner approval:** explicitly approve public visibility, RC publication and stable promotion separately. Production GO for provider jobs and film publication remains HOLD.
+- [ ] **Owner approval:** public repository visibility is approved and completed; RC publication and stable promotion still require separate explicit approval. Production GO for provider jobs and film publication remains HOLD.
 
 ## V2.1.0 candidates (not blockers for a labeled V2.0 RC)
 
