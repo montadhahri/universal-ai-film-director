@@ -9,7 +9,7 @@ const patterns = [
   ['Google API key', /AIza[0-9A-Za-z_-]{30,}/g],
   ['Private key', /-----BEGIN (?:RSA |OPENSSH |EC |DSA )?PRIVATE KEY-----/g],
   ['AWS access key ID', /(?:AKIA|ASIA)[A-Z0-9]{16}/g],
-  ['Credential assignment', /(?:api[_-]?key|access[_-]?token|client[_-]?secret|password)\\s*[:=]\\s*["'][^"'\\r\\n]{12,}["']/gi],
+  ['Credential assignment', /(?:api[_-]?key|access[_-]?token|client[_-]?secret|password)\s*[:=]\s*["'][^"'\r\n]{12,}["']/gi],
 ];
 const objects = execFileSync('git',['rev-list','--objects','--all'],{encoding:'utf8',maxBuffer:64*1024*1024})
   .split('\n').filter(Boolean).map(x=>x.split(' ')[0]);
@@ -35,5 +35,16 @@ for(const oid of unique){
     }
   }
 }
-console.log(JSON.stringify({scanned_text_blobs:inspected,skipped_large_or_binary_blobs:skipped,findings,limitations:'reachable refs only; pattern based; no media privacy, licensing or author metadata checks'}));
+// Commit messages and historical path names can also leak information even when
+// the corresponding file contents are removed from the current checkout.
+const log = execFileSync('git',['log','--all','--format=%H%x00%B%x00'],{encoding:'utf8',maxBuffer:64*1024*1024});
+const paths = execFileSync('git',['log','--all','--name-only','--pretty=format:'],{encoding:'utf8',maxBuffer:64*1024*1024});
+let metadataMatches=0;
+for(const [scope,value] of [['commit metadata',log],['historical paths',paths]]) {
+  for(const [name,re] of patterns) {
+    re.lastIndex=0;
+    if(re.test(value)) { metadataMatches++; findings++; console.log('Potential credential pattern: '+name+' in '+scope+' (value redacted)'); }
+  }
+}
+console.log(JSON.stringify({metadata_pattern_categories:metadataMatches,scanned_text_blobs:inspected,skipped_large_or_binary_blobs:skipped,findings,limitations:'reachable refs only; pattern based; no media privacy, licensing or author metadata checks'}));
 if(findings)process.exitCode=1;
