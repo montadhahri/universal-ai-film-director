@@ -2,7 +2,7 @@
 
 Universal AI Film Director is a collection of seven portable Agent Skills. The primary installation path is the [Skills CLI](https://skills.sh/), which supports GitHub sources without cloning.
 
-> **Availability:** Repository visibility may change during V2 release preparation. While private, remote installation requires authorized repository access. After publication, the commands below must still be verified from a clean, unauthenticated environment. GitHub remote installation from this repository has not yet been independently tested.
+> **Availability:** This repository is currently private during V2 release preparation. While private, remote installation requires authorized repository access. After publication, the commands below must still be verified from a clean, unauthenticated environment. GitHub remote installation from this repository has not yet been independently tested.
 
 ## Quick install — Film Director
 
