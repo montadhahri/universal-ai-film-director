@@ -4,7 +4,7 @@
 
 ## Immediate operating decision
 
-- **V2.0.0 release postponed** by the owner; repository remains **private**. Do not create tags, publish GitHub releases, change repository visibility, or approve film publication without a new, explicit owner instruction.
+- Repository visibility is now **public** (owner-authorized, 2026-11-03); **V2.0.0 remains unreleased**. Do not create tags, publish GitHub releases or approve film publication without a new, explicit owner instruction.
 - Release-preparation PRs **#101, #102 and #103 closed without merging**. Their historical drafts may be reused but are **not active release approvals**.
 - **Production GO: HOLD** for external accounts, paid generation, provider jobs, media uploads and autonomous publication. Existing human-operated V9 evidence may be inspected without new jobs.
 - This is a personal learning/creative project. Do not assume employer affiliation or reuse employer code/data.
@@ -24,14 +24,17 @@
 
 ## Next work queue (no paid generation)
 
-1. **SECURITY — read-only public-exposure audit.** Audit all reachable refs and history using a pinned secret scanner; review historical metadata and confidential/personal content; inspect skipped binaries, five PNGs, V9 MP4/audio; inventory licenses, dependencies and provider/account distribution rights; check GitHub alerts where permissions allow. Preserve redacted evidence, report NOT_VERIFIED rather than assuming PASS. No public switch before separate owner approval.
+1. **SECURITY — read-only public-exposure audit.** Audit all reachable refs and history using a pinned secret scanner; review historical metadata and confidential/personal content; inspect skipped binaries, five PNGs, V9 MP4/audio; inventory licenses, dependencies and provider/account distribution rights; check GitHub alerts where permissions allow. Preserve redacted evidence, report NOT_VERIFIED rather than assuming PASS. Public visibility is already enabled; complete the remaining exposure audit and remediate any findings.
 2. **PHASE 5/6 — independent continuity QA.** Review existing SH01–SH05 reference PNGs and V9 film: stable CHILD-01/coat, SPARK-01 transfer/retention, TOWER-01 geography, SH01 early light, SH04 hold, SH04→SH05 boundary, SH05 fade and scoped repair invariants. Do not claim independent inspection without actual asset access.
 3. **PHASE 7 — recovery.** Test fresh-context and cross-host checkpoint transfer, exact approval sources, locked revisions, asset integrity and missing-data behavior. Distinguish offline fixture PASS from live-agent evidence.
 4. **PHASE 8 — final pilot QA.** Verify visual and listening results against actual V9 MP4, archive provenance/evidence, retain separate owner media publication decision.
-5. **PHASE 9 — portability.** Test pinned install and actual invocation of Director + two specialists on two supported hosts, preserve exact logs and a complete independent text-only workflow. Public unauthenticated installation requires future public authorization.
+5. **PHASE 9 — portability.** Test pinned install and actual invocation of Director + two specialists on two supported hosts, preserve exact logs and a complete independent text-only workflow. Public unauthenticated installation can now be tested without private credentials; preserve actual evidence.
 6. **RELEASE — only when owner reopens decision.** Reconcile release notes/changelog, final tagged SHA, CI and governance; do not treat closed #101–#103 as pending merges.
 
 ## Security evidence baseline and limits
+
+- On 2026-11-03, the owner provided a screenshot of a successful manual Gitleaks run on `main` (25 seconds). This supports an automated secret-scan PASS, not comprehensive privacy, proprietary-material, binary, or media-rights clearance.
+- PR #106 introduced `.gitignore`, `SECURITY.md`, and the Git-history secret-scan workflow and was merged before public visibility.
 
 - Recorded historical credential-pattern scan: **569 text blobs, 0 matches, 7 binary/large blobs skipped**; later regex/metadata improvements were merged. This is **not** full privacy or secret clearance.
 - Media inventory includes **five ChatGPT-generated keyframe PNGs and one human-guided Google Flow/Veo V9 MP4**. General provider-terms review exists; account-specific terms, actual media/privacy inspection and original audio implementation are still unresolved.
@@ -39,7 +42,7 @@
 
 ## For a new ChatGPT/Codex conversation
 
-> Continue `montadhahri/universal-ai-film-director` V2 from `docs/PROJECT_STATUS.md` and `docs/ROADMAP.md`. Verify latest `main`, current PRs/issues, real CI and relevant evidence before acting. V2 release is postponed; repo stays private; production GO HOLD. Work on the next unverified roadmap gate with small branch/PR changes; do not merge, publish, spend credits, or invent acceptance evidence. Explain what is verified and what is pending.
+> Continue `montadhahri/universal-ai-film-director` V2 from `docs/PROJECT_STATUS.md` and `docs/ROADMAP.md`. Verify latest `main`, current PRs/issues, real CI and relevant evidence before acting. Repository is public; V2.0.0 is unreleased and release gates remain open; production GO HOLD. Work on the next unverified roadmap gate with small branch/PR changes; do not merge, publish, spend credits, or invent acceptance evidence. Explain what is verified and what is pending.
 
 ### Working protocol
 

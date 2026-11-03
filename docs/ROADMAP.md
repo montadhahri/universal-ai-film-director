@@ -4,11 +4,11 @@
 
 > **Resume point (2026-11-03):** Start with [PROJECT_STATUS.md](PROJECT_STATUS.md) for the current execution queue, known limitations, and a prompt usable in another discussion. This roadmap is design/acceptance rationale; live PRs/issues and CI are checked separately.
 >
-> **Release decision:** The owner postponed v2.0.0. The repository remains private. Release-draft PRs #101, #102 and #103 were closed without merging. No tag, release, public visibility change or media-publication permission is granted. Security/privacy work can proceed as read-only audit while Phases 5–9 continue. **Do not equate postponed release with completed Phase 9.**
+> **Release decision:** The repository is now public (owner-authorized, 2026-11-03), while v2.0.0 remains unreleased. Release-draft PRs #101, #102 and #103 were closed without merging. Public visibility is not permission to tag/release V2, publish media, or run provider jobs. The owner reported a successful manually dispatched Gitleaks workflow on main; independent privacy, history completeness and media-rights review remain open. **Do not equate postponed release with completed Phase 9.**
 >
 > **Next priorities:** (1) comprehensive history/secret/privacy/media-rights audit; (2) Phase 5/6 actual-media continuity and localized repair acceptance; (3) Phase 7 cross-host recovery/approval integrity; (4) Phase 8 final V9 QA; (5) Phase 9 skills installation/invocation and text-only orchestration. All remain evidence-gated and must not trigger paid/provider jobs.
 
-**Architecture:** one Director and six independently installable specialists. Historical [v1.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) is preserved. V2.0 release preparation is postponed by the owner; unresolved improvements are tracked as V2 and potential V2.1 work, without authorizing publication. See [V2 release preflight](v2-release-preflight.md) for release blockers and deferrals.
+**Architecture:** one Director and six independently installable specialists. Historical [v1.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) is preserved. The repository is public, but V2.0 release preparation remains evidence-gated; unresolved improvements are tracked as V2 and potential V2.1 work, without authorizing a V2 release or media publication. See [V2 release preflight](v2-release-preflight.md) for release blockers and deferrals.
 
 **Production GO: HOLD.** A plan, an approved creative artifact, permission to use a provider, and verified generated media are distinct states. No generation, paid job, account connection, private upload, publication or delivery is authorized by this roadmap.
 
@@ -54,13 +54,13 @@ V2.0 targets the implemented seven-skill library, deterministic planning/recover
 | 6 | Safe localized revision and continuity repair | **PARTIAL; human-guided V9 repair documented** | Show scoped change, preserved locked assets and independently verified before/after continuity |
 | 7 | Checkpoint recovery and long-session continuity | **DETERMINISTIC OFFLINE RECOVERY COMPLETE; FULL EXIT PARTIAL** | PRs #76/#78–#82, fresh-process acceptance; trusted approval provenance, asset checks and cross-host recovery open |
 | 8 | Real video, sound, edit and export pilot | **V9 SCREENING CANDIDATE; FINAL ACCEPTANCE OPEN** | Five generated-video shots, local edit and soundtrack; outstanding visual/listening QA, archived binary and release authorization |
-| 9 | Portability, documentation, security and v2.0.0 release decision | **PREPARATION OPEN; RELEASE POSTPONED** | Slash invocation in two hosts, clean installation, independent text-only pipeline, security/rights and release checklist |
+| 9 | Portability, documentation, security and v2.0.0 release decision | **PUBLIC REPOSITORY; V2 RELEASE GATES OPEN** | Slash invocation in two hosts, clean installation, independent text-only pipeline, security/rights and release checklist |
 
 Phases 6 and 7 may use controlled fixtures before any real-media execution, but **do not label them complete** until the specified behavioral evidence exists. Phase 9 preparation may proceed in parallel; public release is a separate decision.
 
 ## Phase 9 — reproducible release-readiness gates
 
-1. **Installation:** install all seven skills from a pinned revision in two independently supported hosts; record host versions, exact commands, private-repository access constraints and complete output. Do not equate file presence with slash-command invocation.
+1. **Installation:** install all seven skills from a pinned revision in two independently supported hosts; record host versions, exact commands, public-repository installation results and complete output. Do not equate file presence with slash-command invocation.
 2. **Invocation:** execute `/universal-ai-film-director` and at least two individual specialists where slash invocation is supported. Record the exact host syntax and whether the command was actually recognized.
 3. **Orchestration:** run a fresh-context, text-only discovery → script → Visual Bible → storyboard → production plan → Continuity QA scenario; preserve handoffs, stage gates, approvals and full transcripts. No fictional approvals.
 4. **Recovery:** export/import a versioned checkpoint across the two hosts, inspect revision IDs, locked assets, pending work and unresolved issues. Record whether asset bytes and approval sources can be verified; report unsupported cases as NOT_RUN.
