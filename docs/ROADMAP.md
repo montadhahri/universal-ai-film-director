@@ -2,7 +2,7 @@
 
 **Product direction:** a portable, creative **end-to-end AI filmmaking production system**, not just a higher-scoring screenplay or prompt generator. The Director remains a creative collaborator; the differentiator to prove is consistent assets, safe changes, recoverable state, evidence-backed QA and trustworthy delivery.
 
-**Architecture:** one Director and six independently installable specialists. Historical [v1.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) is preserved. V2 remains in development.
+**Architecture:** one Director and six independently installable specialists. Historical [v1.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) is preserved. V2.0 is being prepared for a public release candidate; unresolved improvements are scoped to V2.1. See [V2 release preflight](v2-release-preflight.md) for release blockers and deferrals.
 
 **Production GO: HOLD.** A plan, an approved creative artifact, permission to use a provider, and verified generated media are distinct states. No generation, paid job, account connection, private upload, publication or delivery is authorized by this roadmap.
 
@@ -20,6 +20,10 @@ The V2 roadmap now has both deterministic offline recovery evidence and a **huma
 | Latest baseline | Main as of roadmap reconciliation: `43850b26e836dc618ecbfae18e448a1aee3644a8` | Subsequent commits require separate verification |
 
 Read the [Phase 7 recovery exit assessment](phase7-recovery-exit.md), [V9 case study](case-studies/the-last-light/production-v9-case-study.md), [benchmark results](quality-benchmark-results.md) and [benchmark procedure](quality-benchmark.md). Preserve historical statuses and original review records.
+
+## Version planning — V2.0 and V2.1
+
+V2.0 targets the implemented seven-skill library, deterministic planning/recovery contracts, test suite and human-guided V9 case study. **The V2.0 release gate is public safety, licensing, reproducible public installation, accurate docs and explicit release approval.** Cross-host agent invocation, trusted approval provenance, independent multi-agent orchestration and deeper real-media continuity repair are **V2.1 candidates**, not claims of V2.0 completion. See [release preflight](v2-release-preflight.md).
 
 ## Prioritization principles
 
