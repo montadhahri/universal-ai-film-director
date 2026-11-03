@@ -11,9 +11,15 @@
 | `images/keyframes/SH03.png` | User-uploaded reference | Same | HOLD |
 | `images/keyframes/SH04.png` | User-uploaded reference | Same | HOLD |
 | `images/keyframes/SH05.png` | User-uploaded reference | Same | HOLD |
-| `videos/the-last-light-v9.mp4` | Five user-operated Veo 3.1 Fast generations, locally assembled | Provider terms, source clips, any soundtrack and audio-element rights require verification | HOLD |
+| `videos/the-last-light-v9.mp4` | Five user-operated Veo 3.1 Fast generations, locally assembled | Provider terms and source clips require verification; V8 production record says original locally created ambient soundtrack, but source implementation and all audio elements remain independently unverified | HOLD |
 
 All paths above are relative to `docs/case-studies/the-last-light/`.
+
+## Audio provenance reconciliation (2026-11-03)
+
+The existing [V9 production report](case-studies/the-last-light/production-v9-case-study.md) records **V8: original local ambient soundtrack added** and **V9: picture unchanged, audio gain +7 dB and 0.8-second end fade**. The [case-study README](case-studies/the-last-light/README.md) also describes original ambient sound. The user does not recall adding third-party copyrighted music. These are useful provenance statements, **not independent proof of the original audio-generation implementation or a complete component-level license audit**.
+
+**Audio status: LOCALLY CREATED ACCORDING TO PRODUCTION RECORD; SOURCE IMPLEMENTATION NOT INDEPENDENTLY VERIFIED.** Do not label it confirmed royalty-free or licensed commercial music without evidence. Retain release HOLD for the media until rights and privacy decisions are completed.
 
 ## Owner verification checklist
 
