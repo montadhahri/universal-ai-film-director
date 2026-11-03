@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "status": "SOURCE_PREFLIGHT_ONLY",
+  "production_go": "HOLD",
+  "repository": "montadhahri/universal-ai-film-director",
+  "source_ref": "main",
+  "source_commit": "b47c56c0c510301beb4823833185eb95896e0856",
+  "note": "Git blob hashes verified by authenticated fetch on main. SHA-256 and transitive reference closure not yet audited. Pin source_commit when executing; branch may have moved.",
+  "files": [
+    {
+      "path": "skills/universal-ai-film-director/SKILL.md",
+      "git_blob_sha": "f31992a4958c8e27f0e51d4fb17527a79d8cb3e8"
+    },
+    {
+      "path": "skills/film-storytelling/SKILL.md",
+      "git_blob_sha": "fb97d19247880098009d860034af27b88e025e3f"
+    },
+    {
+      "path": "skills/film-visual-direction/SKILL.md",
+      "git_blob_sha": "016c60cb8bb7fe078981617cf3e90dad13eb65b2"
+    },
+    {
+      "path": "skills/film-cinematography/SKILL.md",
+      "git_blob_sha": "26a2c701b7d19e630492fe368f0536609048005e"
+    },
+    {
+      "path": "skills/film-sound-direction/SKILL.md",
+      "git_blob_sha": "b67bf8914936ca5939b04193d9e6de52a8020985"
+    },
+    {
+      "path": "skills/film-video-production/SKILL.md",
+      "git_blob_sha": "faf9cac94a04baa0c3528999961f665738f82bc0"
+    },
+    {
+      "path": "skills/film-continuity-qa/SKILL.md",
+      "git_blob_sha": "3d02465cff2f1563bae53e13e98e0fea1990e851"
+    },
+    {
+      "path": "contracts/project-bible.schema.json",
+      "git_blob_sha": "de35c86951adf20d21a0481142be266cdf9224ee"
+    },
+    {
+      "path": "contracts/handoff.schema.json",
+      "git_blob_sha": "23513f6c7d750393a3894f2ea0a47a467232b8dc"
+    },
+    {
+      "path": "docs/production-pipeline.md",
+      "git_blob_sha": "d4c28e56044289912c4b63e6e16e43424082e73b"
+    },
+    {
+      "path": "docs/director-authority.md",
+      "git_blob_sha": "485a051fa0d8f2c546dd375394e5a7427dfd2484"
+    },
+    {
+      "path": "tests/phase6/phase6-seven-skill-acceptance-plan.md",
+      "git_blob_sha": "a2a6dabe6ed2fa0fd5f6938801cdd39f091593e9"
+    },
+    {
+      "path": "tests/phase6/historical-int-qa-reconciliation.md",
+      "git_blob_sha": "fc839d14e4cc9cfa25baf5fa00aedc8e533b6414"
+    }
+  ],
+  "checks": {
+    "source_paths": "VERIFIED",
+    "git_blob_hashes": "VERIFIED",
+    "sha256": "NOT_RUN",
+    "transitive_skill_references": "NOT_RUN",
+    "isolated_seven_role_execution": "BLOCKED_HOST_CAPABILITY",
+    "media_inspection": "NOT_RUN",
+    "independent_scoring": "NOT_RUN"
+  }
+}
