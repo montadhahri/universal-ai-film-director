@@ -4,6 +4,8 @@
 
 **From a story idea to a professionally directed AI film — one creative partner, six specialized filmmaking skills.**
 
+> **V2 status:** Public release-candidate preparation. See the [V2.0 release blockers and V2.1 roadmap](docs/v2-release-preflight.md). The Last Light V9 is a human-guided screening candidate, not proof of autonomous seven-agent production. Production GO remains HOLD for new provider jobs and final film release.
+
 A portable, modular **Agent Skills** collection for writing screenplays, designing visual worlds, planning cinematic shots, directing sound, preparing generation prompts and reviewing film continuity.
 
 [![Version](https://img.shields.io/badge/latest%20release-v1.0.0-blue)](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0)
