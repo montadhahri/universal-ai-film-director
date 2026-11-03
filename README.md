@@ -74,7 +74,7 @@ For agents without native skills support, provide the content of `skills/univers
 
 ## 📦 Installation
 
-The repository is currently private and undergoing public-release review. The commands below are written for the public version; until publication, repository access is required.
+The repository is public. The installation commands below use the public GitHub source and should not require private repository credentials. Remote installation from this repository still needs independent verification.
 
 The repository contains **seven individually installable skill folders**. Install the Director for the complete guided experience; install specialists separately when your agent supports skill discovery.
 
@@ -100,7 +100,7 @@ npx skills add montadhahri/universal-ai-film-director --skill '*'
 npx skills add montadhahri/universal-ai-film-director --list
 ```
 
-**Installation note:** These GitHub commands are the supported Skills CLI syntax, but remote installation from this specific repository has not yet been independently tested. The repository is currently private; public visitors can use these commands once it is published. Until then, repository access is required. Installing a skill does not connect a video generator or spend credits.
+**Installation note:** These GitHub commands are the supported Skills CLI syntax, but remote installation from this specific repository has not yet been independently tested. The repository is public, but a clean unauthenticated remote installation has not yet been independently verified. Installing a skill does not connect a video generator or spend credits.
 
 For local development, cloning, offline installs, or checking out the historical `v1.0.0` tag, see [the installation guide](docs/installation.md).
 
