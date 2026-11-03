@@ -10,11 +10,15 @@
 - Targeted inspection of `LICENSE`, `docs/case-studies/the-last-light/provenance.json`, `approval-ledger.md`, and `production-v9-case-study.md` found no obvious credential-like strings or email-address patterns. Other current files and historical blobs have **not** been exhaustively inspected.
 - `LICENSE` declares MIT for software/documentation. This does not independently prove rights to third-party music, model outputs, voices, images or provider-generated video.
 
+## Historical credential-pattern scan update (PR #94)
+
+GitHub Actions historical secret scan on PR #94 reported **569 text blobs scanned, 0 credential-pattern matches and 7 binary/large blobs skipped**. The workflow passed. This narrows credential-pattern risk in the scanned reachable objects but **does not establish complete history/privacy clearance**, inspect skipped binary media, or confirm licenses. The exact checkout/ref scope and broader scanner coverage still need independent review.
+
 ## Unverified exposure surfaces — must resolve before public
 
 | Surface | Status | Required evidence |
 | --- | --- | --- |
-| All reachable Git history, tags and branches | **NOT_VERIFIED** | Run a complete history secret scan and inspect historical filenames, deleted blobs, commit messages, tags and branches; retain tool version, commands and redacted results |
+| All reachable Git history, tags and branches | **PARTIAL — 569 text blobs pattern-scanned, 0 matches; full privacy review NOT_VERIFIED** | Run a complete history secret scan and inspect historical filenames, deleted blobs, commit messages, tags and branches; retain tool version, commands and redacted results |
 | Personal or confidential information in all historical text and binary media | **NOT_VERIFIED** | Review text, author/commit metadata, images, video frames, audio, embedded metadata and provenance |
 | Public license and dependency/asset attribution | **PARTIAL** | Confirm all included source and media licenses and any attribution obligations |
 | Five AI keyframe PNGs | **RIGHTS_UNVERIFIED** | Record generator/provider, account entitlement, source provenance, allowed redistribution and recognizable third-party content review |
