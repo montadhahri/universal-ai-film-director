@@ -9,7 +9,7 @@ const patterns = [
   ['Google API key', /AIza[0-9A-Za-z_-]{30,}/g],
   ['Private key', /-----BEGIN (?:RSA |OPENSSH |EC |DSA )?PRIVATE KEY-----/g],
   ['AWS access key ID', /(?:AKIA|ASIA)[A-Z0-9]{16}/g],
-  ['Credential assignment', /(?:api[_-]?key|access[_-]?token|client[_-]?secret|password)\\s*[:=]\\s*["'][^"'\\r\\n]{12,}["']/gi],
+  ['Credential assignment', /(?:api[_-]?key|access[_-]?token|client[_-]?secret|password)\s*[:=]\s*["'][^"'\r\n]{12,}["']/gi],
 ];
 const objects = execFileSync('git',['rev-list','--objects','--all'],{encoding:'utf8',maxBuffer:64*1024*1024})
   .split('\n').filter(Boolean).map(x=>x.split(' ')[0]);
