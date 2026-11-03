@@ -32,5 +32,25 @@ jobs:
             test -f "$installed/SKILL.md"
             node "$GITHUB_WORKSPACE/tests/installation/check-installed.js" "$source_dir" "$installed"
           done
+      - name: Install seven skills from public GitHub without credentials
+        env:
+          DISABLE_TELEMETRY: '1'
+          GIT_TERMINAL_PROMPT: '0'
+          GIT_CONFIG_NOSYSTEM: '1'
+        run: |
+          set -euo pipefail
+          scratch="$(mktemp -d)"
+          cd "$scratch"
+          # Explicitly remove inherited auth configuration from this test's environment.
+          unset GH_TOKEN GITHUB_TOKEN GIT_ASKPASS SSH_ASKPASS
+          export HOME="$scratch/home"
+          mkdir -p "$HOME"
+          npx --yes skills@1.7.4 add montadhahri/universal-ai-film-director --skill '*' -a codex -y --copy
+          for skill in universal-ai-film-director film-storytelling film-visual-direction film-cinematography film-video-production film-sound-direction film-continuity-qa; do
+            source_dir="$GITHUB_WORKSPACE/skills/$skill"
+            installed="$scratch/.agents/skills/$skill"
+            test -f "$installed/SKILL.md"
+            node "$GITHUB_WORKSPACE/tests/installation/check-installed.js" "$source_dir" "$installed"
+          done
       - name: Scope
-        run: echo "Local install only, not authenticated remote installation or agent execution."
+        run: echo "Local and public GitHub CLI installation only; no live agent invocation or provider jobs."
