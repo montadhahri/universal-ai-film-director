@@ -42,13 +42,11 @@ An eight-scenario, blind model-reviewed comparison of original **textual filmmak
 
 Read the [full results, methodology, caveats and follow-up findings](docs/quality-benchmark-results.md). Production GO remains **HOLD**.
 
-## 🎞️ The Last Light — image-first case study
+## 🎞️ The Last Light — human-guided film case study
 
-A 30-second, five-shot fictional pilot explores whether a consistent child, amber spark, town and tower can be directed across image keyframes. Five standalone creative image candidates were approved **as visual references only**; the later four SH02/SH04 motion-boundary PNGs were cropped from one composite, not independently generated.
+A **30-second, five-shot V9 screening candidate** documents an image-first filmmaking experiment taken through owner-operated Google Flow / Veo 3.1 Fast video generation, local assembly and an ambient soundtrack. The five reference keyframes were generated with ChatGPT. The film is a **human-guided case study**, not a verified autonomous seven-agent execution or final creative/publication approval.
 
-**Evidence status:** image-first creative experiment documented; seven-skill end-to-end execution NOT_VERIFIED; video tests NOT_RUN; G2B/G2C BLOCKED; Production GO **HOLD**. No media or provider jobs are authorized by this case study.
-
-[Read the case study, approval ledger, evidence gaps and motion-test roadmap](docs/case-studies/the-last-light/README.md).
+[Read the production case study, V9 technical evidence, approvals and remaining QA](docs/case-studies/the-last-light/README.md). See also the [AI media provider-terms review](docs/v2-ai-media-terms-review.md) and [media release-rights checklist](docs/v2-media-release-rights.md).
 
 ### Five-shot visual experiment
 
@@ -56,7 +54,7 @@ A 30-second, five-shot fictional pilot explores whether a consistent child, ambe
 | :---: | :---: | :---: |
 | [![SH01 — Dark town](docs/case-studies/the-last-light/images/keyframes/SH01.png)](docs/case-studies/the-last-light/images/keyframes/SH01.png) | [![SH03 — Journey toward the tower](docs/case-studies/the-last-light/images/keyframes/SH03.png)](docs/case-studies/the-last-light/images/keyframes/SH03.png) | [![SH05 — Town illuminated](docs/case-studies/the-last-light/images/keyframes/SH05.png)](docs/case-studies/the-last-light/images/keyframes/SH05.png) |
 
-*Shot filenames corrected following the Phase 5F visual identity audit; original PNG bytes preserved. Actual creative-reference keyframes from The Last Light, not a finished film or independently verified seven-skill generation result. [View all five shots and the visual QA evidence](docs/case-studies/the-last-light/README.md).*
+*AI-assisted media disclosure: ChatGPT reference images, owner-operated Google Flow / Veo 3.1 Fast video shots and a locally assembled V9 cut. The production record describes locally created ambient audio; the original audio implementation has not been independently reconstructed.*
 
 ## 🚀 Quick start
 
@@ -76,7 +74,7 @@ For agents without native skills support, provide the content of `skills/univers
 
 ## 📦 Installation
 
-The repository is currently private and planned for public release. The commands below are written for the public version; until publication, repository access is required.
+The repository is currently private and undergoing public-release review. The commands below are written for the public version; until publication, repository access is required.
 
 The repository contains **seven individually installable skill folders**. Install the Director for the complete guided experience; install specialists separately when your agent supports skill discovery.
 
