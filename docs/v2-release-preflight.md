@@ -13,9 +13,9 @@
 ## V2.0.0 release blockers
 
 - [ ] **Public history and secret review (partially evidenced: Gitleaks PASS):** inspect all branches/tags/history and historical files for tokens, credentials, private data and proprietary material. GitHub visibility change exposes history; do not assume deleted files are safe.
-- [ ] **Rights review:** confirm redistribution rights for film, soundtrack, images, voices, third-party assets, prompts and referenced trademarks. Keep unverified media unpublished until cleared.
+- [ ] **Rights review:** confirm redistribution rights for film, soundtrack, images, voices, third-party assets, prompts and referenced trademarks. The V9 soundtrack source is UNKNOWN / NOT_VERIFIED. Existing film files are already public in the repository; do not claim rights clearance or authorize further publication.
 - [x] **Public installation (CI scope):** PR #110 workflow run #38 passed a clean-HOME, noninteractive GitHub-source install of all seven skills using pinned `skills@1.7.4` on GitHub Actions; step verified installed payloads against source. This is not a separate-host interactive invocation test.
-- [ ] **Docs consistency:** update README version badges, installation private-repo notice, changelog and release notes after choosing the exact RC commit.
+- [ ] **Docs consistency:** README badges and public installation guide reflect current status; changelog wording reconciled in this PR. Final release notes and exact RC commit still require a separate review.
 - [ ] **Release checks:** CI green on the intended tag commit, license/attribution/security review, documented limitations, no unsupported claims of autonomous execution.
 - [ ] **Owner approval:** public repository visibility is approved and completed; RC publication and stable promotion still require separate explicit approval. Production GO for provider jobs and film publication remains HOLD.
 
