@@ -6,18 +6,20 @@
 
 **Production GO: HOLD.** A plan, an approved creative artifact, permission to use a provider, and verified generated media are distinct states. No generation, paid job, account connection, private upload, publication or delivery is authorized by this roadmap.
 
-## Evidence baseline — as of 2026-11-02
+## Evidence baseline — updated 2026-11-03
 
-| Area | Evidence | What it does *not* prove |
+The V2 roadmap now has both deterministic offline recovery evidence and a **human-operated, skill-guided** five-shot film case study. These are distinct from autonomous multi-agent execution or final film acceptance.
+
+| Area | Verified evidence | Limitations |
 | --- | --- | --- |
-| Architecture and contracts | Merged V2 Director, six specialists, Project Bible, stage gates, planning pipeline and validation fixtures | Correct behavior in every host or actual media production |
-| Specialist and integration acceptance | Historical independent scenario evaluations and targeted post-fix regressions; Director–Specialist integration evaluated | Full cross-host execution or an end-to-end film |
-| Creative benchmark | Eight scenarios, 16 original V1/V2 creative responses, separate blind reviews and versioned CREATIVE-06/07 adjudication; adjudicated offline validator **8 PASS, 0 FAIL** | Validator PASS does not certify creative superiority or real-media reliability |
-| Creative score baseline | Unweighted scenario mean **V1 4.50/5, V2 4.83/5**; V2 higher in four, V1 higher in one, three ties | Statistical significance, independent human preference or finished-film quality |
-| Focused improvements | PR #62 published [benchmark results](quality-benchmark-results.md); PR #63 merged Visual Direction prop/lighting-geometry guidance | CREATIVE-04 post-fix behavioral regression PASS; it remains NOT_RUN |
-| Latest roadmap baseline | Merged PR #63 at `6092f6d10ae82158da5f8c8c443ac43ddc63b85e` | Any subsequent main-branch state |
+| Architecture and contracts | Seven skills, Project Bible and stage-gate contracts | Cross-host `/skill-name` invocation not independently verified |
+| Specialist and integration acceptance | Planning-only agent acceptance, focused regressions and historical benchmark | No independent seven-agent real-media end-to-end acceptance |
+| Creative benchmark | Eight adjudicated comparisons; reported V1 4.50/5 vs V2 4.83/5 | Structural benchmark, not proof of finished-film superiority |
+| Offline recovery | Merged PRs #76, #78–#82; versioned checksum, local file recovery, fresh-process synthetic acceptance; CI success | No authenticated approval provenance, asset-file verification, cross-host recovery or comprehensive crash guarantees |
+| Actual video case study | Merged PR #83, [The Last Light V9](case-studies/the-last-light/production-v9-case-study.md): 30-second five-shot H.264/AAC screening candidate, human-operated Google Flow generation and local assembly | MP4 binary not uploaded in PR; outstanding continuity, listening and final-release acceptance |
+| Latest baseline | Main as of roadmap reconciliation: `43850b26e836dc618ecbfae18e448a1aee3644a8` | Subsequent commits require separate verification |
 
-Read the [benchmark results and limitations](quality-benchmark-results.md) and [benchmark procedure](quality-benchmark.md). Preserve historical reviews and safety flags; do not retroactively replace them with adjudicated scores.
+Read the [Phase 7 recovery exit assessment](phase7-recovery-exit.md), [V9 case study](case-studies/the-last-light/production-v9-case-study.md), [benchmark results](quality-benchmark-results.md) and [benchmark procedure](quality-benchmark.md). Preserve historical statuses and original review records.
 
 ## Prioritization principles
 
@@ -36,15 +38,26 @@ Read the [benchmark results and limitations](quality-benchmark-results.md) and [
 | 2 | Specialist behavioral tests and Director integration | **COMPLETE** for documented planning-only acceptance | Preserve original reports and scoped regressions; no media claim |
 | 3 | V1/V2 creative benchmark | **COMPLETE** for adjudicated structural comparison | 8/8 adjudicated validator PASS with documented limitations and historical reviews retained |
 | 4A | Publish benchmark transparently | **COMPLETE** — PR #62 merged | README summary and detailed report, scores, caveats and provenance |
-| 4B | Correct Visual Direction CREATIVE-04 continuity | **IMPLEMENTED, NOT VALIDATED** — PR #63 merged | Independent post-fix fresh-context run; explicit scarf grip/free-length, light-source/occlusion, route/axis and approval verdicts; preserve old result |
-| 4C | Director discovery and narration arithmetic | **PENDING** | Small corrective PR, explicit word-count/rate checks, one-question discovery and distinct stage gates; fresh targeted regression |
-| 5 | **The Last Light** five-keyframe image-first integration | **PLANNING NEXT; MEDIA HOLD** | Verify existing fixtures, approved screenplay/Visual Bible/storyboard, reference assets and authorizations; then five actually inspected images with shot-by-shot identity, wardrobe, spark-state, tower, geography, lighting and camera checks |
-| 6 | Safe localized revision and continuity repair | **PENDING** | Deliberately change one proposed shot, demonstrate minimal downstream impact, preserve locked unaffected shots, inspect before/after artifacts and record user approvals |
-| 7 | Checkpoint recovery and long-session continuity | **PENDING** | Resume across fresh sessions/hosts from a versioned Project Bible; verify approvals, IDs, missing assets, unresolved defects and next safe action without drift |
-| 8 | Real video, sound, edit and export pilot | **FUTURE; AUTHORIZATION REQUIRED** | Authorized provider capability checks, real clips, exact shot timing, narration/sound sync, QA/repair, verified export; no unobserved success claims |
-| 9 | Portability, documentation, security and v2.0.0 release decision | **PENDING** | Reproducible installation/behavior in at least two supported hosts, clean tests, license/rights/privacy review, examples, changelog and release checklist; separate publication decision |
+| 4B | Visual Direction CREATIVE-04 continuity | **IMPLEMENTED; behavioral evidence tracked separately** — PR #63 merged | Preserve fresh-context regression provenance; do not infer pass from code merge |
+| 4C | Director discovery and narration arithmetic | **TARGETED REGRESSION WORK RECORDED; roadmap acceptance requires evidence audit** | Verify actual post-fix outcomes and unresolved cases before closure |
+| 5 | **The Last Light** five-keyframe image-first integration | **MEDIA EVIDENCE AVAILABLE; formal acceptance OPEN** | Existing reference images and V9 five-shot production case study; verify image provenance and continuity verdicts |
+| 6 | Safe localized revision and continuity repair | **PARTIAL; human-guided V9 repair documented** | Show scoped change, preserved locked assets and independently verified before/after continuity |
+| 7 | Checkpoint recovery and long-session continuity | **DETERMINISTIC OFFLINE RECOVERY COMPLETE; FULL EXIT PARTIAL** | PRs #76/#78–#82, fresh-process acceptance; trusted approval provenance, asset checks and cross-host recovery open |
+| 8 | Real video, sound, edit and export pilot | **V9 SCREENING CANDIDATE; FINAL ACCEPTANCE OPEN** | Five generated-video shots, local edit and soundtrack; outstanding visual/listening QA, archived binary and release authorization |
+| 9 | Portability, documentation, security and v2.0.0 release decision | **PREPARATION NEXT; RELEASE NOT AUTHORIZED** | Slash invocation in two hosts, clean installation, independent text-only pipeline, security/rights and release checklist |
 
 Phases 6 and 7 may use controlled fixtures before any real-media execution, but **do not label them complete** until the specified behavioral evidence exists. Phase 9 preparation may proceed in parallel; public release is a separate decision.
+
+## Phase 9 — reproducible release-readiness gates
+
+1. **Installation:** install all seven skills from a pinned revision in two independently supported hosts; record host versions, exact commands, private-repository access constraints and complete output. Do not equate file presence with slash-command invocation.
+2. **Invocation:** execute `/universal-ai-film-director` and at least two individual specialists where slash invocation is supported. Record the exact host syntax and whether the command was actually recognized.
+3. **Orchestration:** run a fresh-context, text-only discovery → script → Visual Bible → storyboard → production plan → Continuity QA scenario; preserve handoffs, stage gates, approvals and full transcripts. No fictional approvals.
+4. **Recovery:** export/import a versioned checkpoint across the two hosts, inspect revision IDs, locked assets, pending work and unresolved issues. Record whether asset bytes and approval sources can be verified; report unsupported cases as NOT_RUN.
+5. **V9 acceptance:** inspect remaining SH01 early lantern light, SH04 held ending, SH04→SH05 and other shot boundaries, SH05 fade and final audio. Preserve actual verdicts; keep final release HOLD until explicit acceptance.
+6. **Release governance:** validate rights/privacy/license, repository documentation, examples, changelog and a reproducible test report. Release decision is separate from production GO.
+
+**Evidence rule:** PASS requires observed outputs; repository CI, a documented case study, successful media render, slash-command invocation and autonomous pipeline acceptance are separate evidence classes.
 
 ## Phase 5 — The Last Light: first real-media proof
 
