@@ -21,7 +21,7 @@ const timeline={duration_ms:30000,shots:[
 function approveSynthetic(p,gate,index){
  const proposal_id='PH9-'+index;
  p=proposeGate(p,{expected_revision:p.revision,gate,version:'v1',artifact_ref:gate+'-fixture',proposal_id});
- return approveGate(p,{expected_revision:p.revision,proposal_id,evidence:{actor:'USER',source_ref:'synthetic-test-'+index,quote:'Synthetic approval for deterministic test only'}});
+ return approveGate(p,{expected_revision:p.revision,proposal_id,evidence:{actor:'USER',source_ref:'synthetic-test-'+index,quote:'I approve this synthetic test proposal'}});
 }
 test('PH9-01: sequential planning gates, checkpoint handoff, and provider HOLD',t=>{
  let p=newProject('phase9-offline');
