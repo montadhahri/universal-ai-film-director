@@ -56,7 +56,7 @@ A **30-second, five-shot V9 screening candidate** documents an image-first filmm
 
 *AI-assisted media disclosure: ChatGPT reference images, owner-operated Google Flow / Veo 3.1 Fast video shots and a locally assembled V9 cut. The production record describes locally created ambient audio; the original audio implementation has not been independently reconstructed.*
 
-## 🚀 Quick start
+> **Independent personal project:** This repository is a personal, non-commercial learning and filmmaking experiment. It is not affiliated with, sponsored by or endorsed by the author's employer or any AI service provider. No employer source code, internal materials or resources were used, according to the project owner.\n\n## 🚀 Quick start
 
 **1. Install the Film Director.** With a [Skills CLI](https://skills.sh/)-compatible agent, install directly from GitHub — no clone needed:
 
