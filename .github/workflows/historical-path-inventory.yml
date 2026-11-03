@@ -1,0 +1,21 @@
+name: Historical path inventory
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Inventory all fetched history paths
+        run: bash scripts/security/historical-path-inventory.sh
+      - name: Upload private review inventory
+        uses: actions/upload-artifact@v4
+        with:
+          name: historical-path-inventory
+          path: audit-output/
+          retention-days: 7
