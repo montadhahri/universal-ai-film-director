@@ -61,6 +61,9 @@ Phases 6 and 7 may use controlled fixtures before any real-media execution, but 
 
 ## Phase 5 — The Last Light: first real-media proof
 
+**Historical planning protocol below:** the V9 case study now documents subsequent human-operated production. Treat the steps below as acceptance criteria for an independently evidenced image-first integration test, not as a claim that no video exists. The V9 screening candidate does not automatically close the independent five-keyframe acceptance gate.
+
+
 **Scenario:** existing 30-second, five-shot fictional project. Reuse existing fixture IDs and approved revisions; do not invent missing approvals or reference media.
 
 - **SH01:** Establish the world, character and geography from the existing storyboard.
@@ -88,7 +91,7 @@ Phases 6 and 7 may use controlled fixtures before any real-media execution, but 
 
 ## Benchmark follow-ups and quality backlog
 
-- **CREATIVE-04:** PR #63 addresses physical prop and lighting-geometry instructions; independent post-fix run is still **NOT_RUN**. This is the immediate next action.
+- **CREATIVE-04:** PR #63 addresses physical prop and lighting-geometry instructions; consult the preserved independent post-fix regression evidence before assigning PASS/FAIL. Do not infer success from the merge.
 - **CREATIVE-01:** Director sometimes drafted a full screenplay too early; narration was described as approximately 70 words despite a 59-word count. Fix discovery behavior and arithmetic with focused tests.
 - **CREATIVE-05:** Historical V1 bundled screenplay/Visual Bible/storyboard approvals; retain separate-gate tests even though the original blind reviewer did not flag it.
 - **CREATIVE-06/07:** Adjudication removed unsupported safety findings in new reviews; original flagged reviews remain unchanged. No broad rebenchmark is necessary.
@@ -101,4 +104,4 @@ Phases 6 and 7 may use controlled fixtures before any real-media execution, but 
 - Report `PASS`, `FAIL`, `BLOCKED` and `NOT_RUN` without silently converting them to completion.
 - Do not claim a generated image, clip, soundtrack or export until it exists and has been inspected.
 - Do not publish private captures, user assets or personal project data in a public repository without authorization.
-- **Production GO remains HOLD** until explicitly changed for a scoped operation.
+- **Production GO remains HOLD** for new provider work and release until explicitly changed for a scoped operation. Historical human-operated V9 generation is documented separately.
