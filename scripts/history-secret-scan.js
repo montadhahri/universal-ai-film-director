@@ -12,7 +12,7 @@ const patterns = [
   ['Credential assignment', /(?:api[_-]?key|access[_-]?token|client[_-]?secret|password)\\s*[:=]\\s*["'][^"'\\r\\n]{12,}["']/gi],
 ];
 const objects = execFileSync('git',['rev-list','--objects','--all'],{encoding:'utf8',maxBuffer:64*1024*1024})
-  .split('\\n').filter(Boolean).map(x=>x.split(' ')[0]);
+  .split('\n').filter(Boolean).map(x=>x.split(' ')[0]);
 const unique=[...new Set(objects)];
 let inspected=0, skipped=0, findings=0;
 for(const oid of unique){
