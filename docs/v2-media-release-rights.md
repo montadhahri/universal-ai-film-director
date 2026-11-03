@@ -6,12 +6,12 @@
 
 | Asset | Known provenance | Redistribution evidence | Decision |
 | --- | --- | --- | --- |
-| `images/keyframes/SH01.png` | User-uploaded reference, see `provenance.json` | Provider, original source and applicable usage terms not recorded | HOLD |
-| `images/keyframes/SH02.png` | User-uploaded reference | Same | HOLD |
-| `images/keyframes/SH03.png` | User-uploaded reference | Same | HOLD |
-| `images/keyframes/SH04.png` | User-uploaded reference | Same | HOLD |
-| `images/keyframes/SH05.png` | User-uploaded reference | Same | HOLD |
-| `videos/the-last-light-v9.mp4` | Five user-operated Veo 3.1 Fast generations, locally assembled | Provider terms and source clips require verification; V8 production record says original locally created ambient soundtrack, but source implementation and all audio elements remain independently unverified | HOLD |
+| `images/keyframes/SH01.png` | ChatGPT-generated image, confirmed by project owner; subsequently uploaded as reference | OpenAI EU output terms reviewed in [provider terms review](v2-ai-media-terms-review.md); embedded privacy/content inspection outstanding | PENDING MEDIA QA |
+| `images/keyframes/SH02.png` | ChatGPT-generated image, confirmed by project owner; subsequently uploaded as reference | OpenAI EU output terms reviewed in [provider terms review](v2-ai-media-terms-review.md); embedded privacy/content inspection outstanding | PENDING MEDIA QA |
+| `images/keyframes/SH03.png` | ChatGPT-generated image, confirmed by project owner; subsequently uploaded as reference | OpenAI EU output terms reviewed in [provider terms review](v2-ai-media-terms-review.md); embedded privacy/content inspection outstanding | PENDING MEDIA QA |
+| `images/keyframes/SH04.png` | ChatGPT-generated image, confirmed by project owner; subsequently uploaded as reference | OpenAI EU output terms reviewed in [provider terms review](v2-ai-media-terms-review.md); embedded privacy/content inspection outstanding | PENDING MEDIA QA |
+| `images/keyframes/SH05.png` | ChatGPT-generated image, confirmed by project owner; subsequently uploaded as reference | OpenAI EU output terms reviewed in [provider terms review](v2-ai-media-terms-review.md); embedded privacy/content inspection outstanding | PENDING MEDIA QA |
+| `videos/the-last-light-v9.mp4` | Five owner-operated Google Flow / Veo 3.1 Fast shots, locally assembled; V8 ambient audio and V9 mix adjustments documented | General Google terms reviewed in [provider terms review](v2-ai-media-terms-review.md); service-specific terms, media inspection and audio source implementation outstanding | PENDING MEDIA QA |
 
 All paths above are relative to `docs/case-studies/the-last-light/`.
 
@@ -23,7 +23,7 @@ The existing [V9 production report](case-studies/the-last-light/production-v9-ca
 
 ## Owner verification checklist
 
-- [ ] Identify the actual image-generation service/model and account used for each of the five PNGs. Record original creation date, entitlement and any required attribution.
+- [x] Identify the image-generation service for the five PNGs: ChatGPT (owner attestation). The precise model, original creation date and account entitlement were not independently verified; review any applicable restrictions before publishing.
 - [ ] Verify the applicable **Google Flow/Veo terms for the account and date of creation**, including public GitHub distribution of generated video and any restrictions on included audio.
 - [ ] Record each soundtrack, ambience, narration, voice, sound effect, stock or third-party element in the final MP4. If fully original, record who created it and how; if licensed, retain a rights/attribution reference.
 - [ ] Inspect each image and the MP4 for recognizable copyrighted characters, trademarks, private faces, identifying details, watermarks, incidental copyrighted music or embedded personal metadata.
@@ -43,4 +43,4 @@ The existing [V9 production report](case-studies/the-last-light/production-v9-ca
 
 The historical credential-pattern workflow reported 569 scanned text blobs, zero matches and seven skipped binary/large blobs on PR #94. That is useful security evidence, **not** personal-data clearance, media licensing, comprehensive secret scanning or proof of legal redistribution.
 
-**Current recommendation: HOLD public visibility** until both the history/privacy review and the rights decision are completed. Production GO remains HOLD for new provider jobs.
+**Current recommendation: HOLD public visibility pending media/privacy inspection and explicit owner authorization** until both the history/privacy review and the rights decision are completed. Production GO remains HOLD for new provider jobs.
