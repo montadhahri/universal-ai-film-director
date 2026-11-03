@@ -9,7 +9,7 @@ const names=['universal-ai-film-director','film-storytelling','film-visual-direc
 
 test('README introduces product, real install commands and versioned releases',()=>{
  const readme=read('README.md');
- for(const term of ['## 🚀 Quick start','## 📦 Installation','## 🎥 How filmmaking works','## 🎬 Meet the film crew','## 🤖 Agent compatibility','## 🏷️ Versions & releases','## ❓ FAQ','npx skills add montadhahri/universal-ai-film-director --skill universal-ai-film-director','v1.0.0','v2.0.0','private','not a bundled video-rendering service'])
+ for(const term of ['## 🚀 Quick start','## 📦 Installation','## 🎥 How filmmaking works','## 🎬 Meet the film crew','## 🤖 Agent compatibility','## 🏷️ Versions & releases','## ❓ FAQ','npx skills add montadhahri/universal-ai-film-director --skill universal-ai-film-director','v1.0.0','v2.0.0','not a bundled video-rendering service'])
   assert(readme.toLowerCase().includes(term.toLowerCase()),'README missing '+term);
  for(const name of names)assert(readme.includes('npx skills add montadhahri/universal-ai-film-director --skill '+name),'Missing installation for '+name);
 });
@@ -40,8 +40,11 @@ test('public-ready Quick Start is usable without private-repository instructions
  assert(install.includes('git clone https://github.com/montadhahri/universal-ai-film-director.git'));
  assert(!readme.includes('Clone the repository using GitHub credentials'));
  assert(!readme.includes('authenticated local checkout'));
- assert(readme.includes('until publication') || readme.includes('until it becomes public') || readme.includes('until publication, repository access is required'));
- assert(install.includes('currently private'));
+ assert(readme.includes('The repository is public'), 'README must accurately state public visibility');
+ assert(!readme.includes('The repository is currently private'), 'README must not claim private visibility');
+ assert(install.includes('repository is public'), 'Installation guide must accurately state public visibility');
+ assert(!install.includes('currently private'), 'Installation guide must not claim private visibility');
+ assert(/not yet been independently (verified|tested)/i.test(install), 'Remote install must not be claimed as verified without evidence');
  assert(!install.includes('With an authenticated clone'));
 });
 
