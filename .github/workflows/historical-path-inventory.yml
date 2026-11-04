@@ -11,11 +11,15 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - name: Inventory all fetched history paths
+      - name: Inventory fetched history paths (counts only in logs)
         run: bash scripts/security/historical-path-inventory.sh
-      - name: Upload private review inventory
-        uses: actions/upload-artifact@v4
-        with:
-          name: historical-path-inventory
-          path: audit-output/
-          retention-days: 7
+      - name: Publish sanitized counts to workflow summary
+        shell: bash
+        run: |
+          # The script emits only aggregate counts in summary.md.
+          # Never upload raw path lists: public-repository artifacts may expose sensitive filenames.
+          cat audit-output/summary.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Remove raw local inventory
+        if: always()
+        shell: bash
+        run: rm -rf audit-output
