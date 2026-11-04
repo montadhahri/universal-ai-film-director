@@ -5,10 +5,10 @@
 ## Result
 
 - **Film:** 30 seconds; five shots; H.264/AAC MP4, 960×540, 24 fps.
-- **Preferred cut:** [\`the-last-light-v9.mp4\`](videos/the-last-light-v9.mp4) (committed repository example).
+- **Preferred historical cut:** `the-last-light-v9.mp4`, a 30-second V9 example. The MP4 is excluded from the current V2 source distribution; earlier Git commits may still contain it.
 - **V9 SHA-256:** `64b1b593ab9d1534baf39940f067a9839fa7de34e703cae15377894d123d5235` (locally verified).
 - **Budget:** 5 user-operated Veo 3.1 Fast generations × user-reported 20 credits = **100/100 credits**.
-- **Media archive:** the V9 MP4 is committed at [videos/the-last-light-v9.mp4](videos/the-last-light-v9.mp4). Original provider source clips and job metadata have not been verified as archived in GitHub.
+- **Media archive:** the V9 MP4 was previously tracked in Git but is intentionally excluded from the current V2 source tree. Historical Git objects may retain it. Original provider clips and job metadata have not been verified as archived.
 
 ## Skill responsibilities and human execution
 
