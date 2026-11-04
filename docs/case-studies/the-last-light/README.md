@@ -4,6 +4,8 @@
 
 **[Watch The Last Light V9 (MP4)](videos/the-last-light-v9.mp4)**
 
+**Media terms:** The V9 MP4 and five keyframe PNGs are public case-study assets, **not licensed under the repository's MIT software license**. Public access does not grant unrestricted reuse. Read [The Last Light media terms](MEDIA-TERMS.md).
+
 See the [V9 production case study](production-v9-case-study.md) for the skill workflow diagram, generation sequence, local editing, sound design, credit ledger, and open QA findings. See the [evidence-based roadmap](roadmap.md) for what is complete versus still blocked.
 
 ## Keyframe gallery
