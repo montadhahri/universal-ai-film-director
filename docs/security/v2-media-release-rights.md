@@ -17,7 +17,7 @@ All paths above are relative to `docs/case-studies/the-last-light/`.
 
 ## Audio provenance reconciliation (2026-11-03)
 
-The existing [V9 production report](../case-studies/the-last-light/production-v9-case-study.md) records **V8: original local ambient soundtrack added** and **V9: picture unchanged, audio gain +7 dB and 0.8-second end fade**. The [case-study README](../case-studies/the-last-light/README.md) also describes original ambient sound. The user does not recall adding third-party copyrighted music. These are useful provenance statements, **not independent proof of the original audio-generation implementation or a complete component-level license audit**.
+The existing [V9 production report](../case-studies/the-last-light/production-v9-case-study.md) records **V8: original local ambient soundtrack added** and **V9: picture unchanged, audio gain +7 dB and 0.8-second end fade**. The [case-study README](../case-studies/the-last-light/README.md) also describes original ambient sound. The owner additionally confirmed on 2026-11-04 that the audio was created entirely through the local editing process, with no external music, downloaded audio, loops or samples. This is **owner attestation**, not independent proof of the original audio-generation implementation or a component-level license audit.
 
 **Audio status: LOCALLY CREATED ACCORDING TO PRODUCTION RECORD; SOURCE IMPLEMENTATION NOT INDEPENDENTLY VERIFIED.** Do not label it confirmed royalty-free or licensed commercial music without evidence. Retain release HOLD for the media until rights and privacy decisions are completed.
 
@@ -25,7 +25,7 @@ The existing [V9 production report](../case-studies/the-last-light/production-v9
 
 - [x] Identify the image-generation service for the five PNGs: ChatGPT (owner attestation). The precise model, original creation date and account entitlement were not independently verified; review any applicable restrictions before publishing.
 - [ ] Verify the applicable **Google Flow/Veo terms for the account and date of creation**, including public GitHub distribution of generated video and any restrictions on included audio.
-- [ ] Record each soundtrack, ambience, narration, voice, sound effect, stock or third-party element in the final MP4. If fully original, record who created it and how; if licensed, retain a rights/attribution reference.
+- [x] Record owner-provided origin of V9 ambient soundtrack: locally created during editing, without any external music, downloaded audio, loops or samples. Independent reproduction of the source implementation remains unverified; verify any other sound/narration components before broader media reuse.
 - [ ] Inspect each image and the MP4 for recognizable copyrighted characters, trademarks, private faces, identifying details, watermarks, incidental copyrighted music or embedded personal metadata.
 - [ ] Confirm that all contributors have authorized publication, and that any necessary attribution or notices are included. The repository's MIT software license alone is **not evidence of third-party media rights**.
 - [ ] Explicitly decide whether the film and images should be published with the code, published under separate media terms, or kept in a private/media-free release.
