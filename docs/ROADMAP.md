@@ -1,6 +1,6 @@
 # Product roadmap — Universal AI Film Director
 
-**Canonical version and milestone roadmap · reconciled 2026-11-04.** This document is the single source for planned scope, priority, phase exit gates and release readiness. GitHub issues/PRs/CI provide live execution evidence. [Development governance](DEVELOPMENT.md) covers GitFlow and release operations; [release preflight](v2-release-preflight.md) contains the detailed V2 release checklist. Historical operational context and release evidence remain in Git history and the linked supporting reports.
+**Canonical version and milestone roadmap · reconciled 2026-11-04.** This document is the single source for planned scope, priority, phase exit gates and release readiness. GitHub issues/PRs/CI provide live execution evidence. [Development governance](DEVELOPMENT.md) covers GitFlow and release operations; [release preflight](releases/v2.0.0-checklist.md) contains the detailed V2 release checklist. Historical operational context and release evidence remain in Git history and the linked supporting reports.
 
 > **Current decision:** V1.0.0 is the last published release. V2.0.0 is **unreleased**, despite public repository visibility and substantial implemented V2 work. **Production GO: HOLD**. No release, provider job, credit spend, account connection, media publication, or branch deletion is authorized by this roadmap. Statements below distinguish repository implementation, observed evidence and unverified acceptance.
 
@@ -26,8 +26,8 @@
 | Creative benchmark | [Eight adjudicated V1/V2 textual comparisons](quality-benchmark-results.md), descriptive means 4.50 vs 4.83 / 5 | Small model-reviewed sample; not proof of better rendered films |
 | Recovery | [Phase 7 exit assessment](phase7-recovery-exit.md), offline deterministic and fresh-process tests | Trusted approval provenance, asset integrity and cross-host recovery open |
 | Real-media pilot | [The Last Light V9](case-studies/the-last-light/README.md): human-guided five-shot screening candidate | Independent visual/audio QA, rights and final publication approval open |
-| Public install | [V2 release preflight](v2-release-preflight.md) records clean GitHub-source CI install | Two-host interactive skill invocation remains unverified |
-| Security and rights | [Public-exposure audit](v2-public-exposure-audit.md), [rights checklist](v2-media-release-rights.md), [terms review](v2-ai-media-terms-review.md) | Full reachable-history/privacy/binary audit not independently complete; soundtrack origin UNKNOWN / NOT_VERIFIED |
+| Public install | [V2 release preflight](releases/v2.0.0-checklist.md) records clean GitHub-source CI install | Two-host interactive skill invocation remains unverified |
+| Security and rights | [Public-exposure audit](security/v2-public-exposure-audit.md), [rights checklist](security/v2-media-release-rights.md), [terms review](archive/v2/v2-ai-media-terms-review.md) | Full reachable-history/privacy/binary audit not independently complete; soundtrack origin UNKNOWN / NOT_VERIFIED |
 
 ## V2.0.0 — release-critical track
 
@@ -44,7 +44,7 @@
 | V2-R7 | Media rights and attribution | **BLOCKED / INCOMPLETE** | Establish soundtrack provenance and rights for every distributed asset; unknown stays unknown |
 | V2-R8 | Release documentation, CI and owner approval | **OPEN** | Align README, notes, changelog, exact SHA, checks; explicit release authorization |
 
-**V2.0 release gate:** V2-R6, R7 and R8 must be resolved or explicitly scoped with documented lawful/safe exclusions; final CI and packaging checks must apply to the actual release SHA. A repository being public, an earlier green scan or a merged PR is not a release approval. Detailed checklist: [V2 release preflight](v2-release-preflight.md).
+**V2.0 release gate:** V2-R6, R7 and R8 must be resolved or explicitly scoped with documented lawful/safe exclusions; final CI and packaging checks must apply to the actual release SHA. A repository being public, an earlier green scan or a merged PR is not a release approval. Detailed checklist: [V2 release preflight](releases/v2.0.0-checklist.md).
 
 ## V2.1.0 — candidate capability milestones
 
