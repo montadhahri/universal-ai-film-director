@@ -44,7 +44,8 @@ test('public-ready Quick Start is usable without private-repository instructions
  assert(!readme.includes('The repository is currently private'), 'README must not claim private visibility');
  assert(install.includes('repository is public'), 'Installation guide must accurately state public visibility');
  assert(!install.includes('currently private'), 'Installation guide must not claim private visibility');
- assert(/not yet been independently (verified|tested)/i.test(install), 'Remote install must not be claimed as verified without evidence');
+ assert(install.includes('41921930247'), 'Public GitHub install claim must link to an actual successful CI run');
+ assert(/not live host invocation/i.test(install), 'CI installation must not imply native agent invocation');
  assert(!install.includes('With an authenticated clone'));
 });
 
