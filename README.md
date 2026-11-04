@@ -74,7 +74,7 @@ For agents without native skills support, provide the content of `skills/univers
 
 ## 📦 Installation
 
-The repository is public. A clean unauthenticated Skills CLI installation of all seven skills passed in [GitHub Actions on the v2.0.0 source commit](https://github.com/montadhahri/universal-ai-film-director/actions/runs/41921930247). This verifies CLI installation on the runner, **not** native skill invocation or delegation in two independent agent hosts.
+The repository is public. A clean unauthenticated Skills CLI installation of all seven skills passed in [GitHub Actions before v2.0.0's final media-removal commit](https://github.com/montadhahri/universal-ai-film-director/actions/runs/41921930247). No skill payloads changed between the tested revision and the release tag. This verifies CLI installation on the runner, **not** native skill invocation or delegation in two independent agent hosts.
 
 The repository contains **seven individually installable skill folders**. Install the Director for the complete guided experience; install specialists separately when your agent supports skill discovery.
 
