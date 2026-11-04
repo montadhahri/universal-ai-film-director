@@ -27,7 +27,7 @@
 | Recovery | [Phase 7 exit assessment](phase7-recovery-exit.md), offline deterministic and fresh-process tests | Trusted approval provenance, asset integrity and cross-host recovery open |
 | Real-media pilot | [The Last Light V9](case-studies/the-last-light/README.md): human-guided five-shot screening candidate | Independent visual/audio QA, rights and final publication approval open |
 | Public install | [V2 release preflight](releases/v2.0.0-checklist.md) records clean GitHub-source CI install | Two-host interactive skill invocation remains unverified |
-| Security and rights | [Public-exposure audit](security/v2-public-exposure-audit.md), [rights checklist](security/v2-media-release-rights.md), [terms review](archive/v2/v2-ai-media-terms-review.md) | Full reachable-history/privacy/binary audit not independently complete; soundtrack origin UNKNOWN / NOT_VERIFIED |
+| Security and rights | [Public-exposure audit](security/v2-public-exposure-audit.md), [rights checklist](security/v2-media-release-rights.md), [terms review](archive/v2/v2-ai-media-terms-review.md) | Full history/binary clearance not independently complete; soundtrack locally created per owner, without independent implementation verification |
 
 ## V2.0.0 — release-critical track
 
@@ -40,9 +40,9 @@
 | V2-R3 | Offline recovery and checkpoint format | **EVIDENCED, scoped** | Document limits; cross-host/trusted approvals deferred to V2.1 |
 | V2-R4 | Human-guided The Last Light V9 example | **SCREENING CANDIDATE** | Preserve actual media provenance and unresolved QA; no final film acceptance claim |
 | V2-R5 | Public install and packaging | **CI EVIDENCE EXISTS** | Verify intended release commit and public install reproducibility |
-| V2-R6 | Public history, privacy, secrets, dependencies | **BLOCKED / INCOMPLETE** | Audit reachable refs/history, binary omissions, alerts and licenses; redact findings |
-| V2-R7 | Media rights and attribution | **BLOCKED / INCOMPLETE** | Establish soundtrack provenance and rights for every distributed asset; unknown stays unknown |
-| V2-R8 | Release documentation, CI and owner approval | **OPEN** | Align README, notes, changelog, exact SHA, checks; explicit release authorization |
+| V2-R6 | Public history, privacy, secrets, dependencies | **PARTIAL / RESIDUAL RISK** | Prior inventories and scans recorded; owner skips historical ZIP inspection, other unverified binary/history scope remains documented in exposure audit |
+| V2-R7 | Media rights and attribution | **PARTIAL / RIGHTS NOT CLEARED** | Owner-confirmed local soundtrack, hash-verified V9 and sampled QA evidenced; service-specific Flow/Veo distribution, complete media QA and separate media terms undecided |
+| V2-R8 | Release documentation, CI and owner approval | **IN PROGRESS** | `main` 827cbc57be9b validation/secret-scan/CodeQL PASS on 2026-11-04; still select exact RC SHA, verify its tests/packaging, notes and obtain explicit release authorization |
 
 **V2.0 release gate:** V2-R6, R7 and R8 must be resolved or explicitly scoped with documented lawful/safe exclusions; final CI and packaging checks must apply to the actual release SHA. A repository being public, an earlier green scan or a merged PR is not a release approval. Detailed checklist: [V2 release preflight](releases/v2.0.0-checklist.md).
 
@@ -90,8 +90,8 @@ flowchart LR
 
 ## Cross-version execution order
 
-1. **Now — documentation and audit:** review this canonical roadmap, [development governance](DEVELOPMENT.md) and historical evidence; close documentation inconsistencies by PR. No release or branch migration implied.
-2. **V2 release safety:** investigate privacy/history/binaries and media rights first. Do not run the historical-path inventory workflow until its raw artifact-upload exposure is reviewed.
+1. **Now — release-readiness reconciliation:** reuse existing security/media audit evidence; do not repeat completed investigations or proliferate administrative reports. No release authorization implied.
+2. **V2 release safety:** retain explicitly accepted ZIP uncertainty and other unverified historical/media limits; resolve remaining distribution terms and choose a legally supportable code/media publication scope. Historical inventory workflow was retired; do not reintroduce it merely to repeat scans.
 3. **V2 acceptance:** validate remaining package/CI and honest release documentation; obtain explicit owner decision before publishing a V2 tag or release.
 4. **V2.1 evidence:** execute independent host invocation, trusted recovery, continuity and scoped repair tests without assuming external paid generation.
 5. **V3 feasibility:** perform research and local/mock prototypes before requesting provider integrations.
