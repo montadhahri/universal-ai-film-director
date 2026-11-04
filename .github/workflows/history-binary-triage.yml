@@ -1,0 +1,24 @@
+name: Historical binary format triage
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  binary-triage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch reachable remote branches and tags
+        run: |
+          git fetch --no-tags --prune origin '+refs/heads/*:refs/remotes/origin/*'
+          git fetch --tags --force origin
+      - name: Validate script syntax
+        run: node --check scripts/security/history-binary-triage.js
+      - name: Classify binary and oversized blob formats (aggregate only)
+        run: node scripts/security/history-binary-triage.js
