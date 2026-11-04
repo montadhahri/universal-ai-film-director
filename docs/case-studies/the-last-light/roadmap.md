@@ -8,7 +8,7 @@ This page distinguishes **historical Phase 5D–5G test results** from the **lat
 | Phase 5E boundary planning | Four composite-derived crops; historical status PROPOSED | Independent boundary assets and scoped approvals if pursued |
 | Historical Phase 5E SH02/SH04 pilots | Original test status NOT_RUN / NOT_AUTHORIZED | Keep historical result unchanged; see later V9 production below |
 | Human-operated five-shot video demonstration | **COMPLETED:** five Veo 3.1 Fast clips from five references | Review residual continuity defects and source provenance |
-| V9 assembly and sound | **COMPLETED TECHNICALLY:** 30-second screening candidate with audio, [video](videos/the-last-light-v9.mp4) | Final creative and listening acceptance |
+| V9 assembly and sound | **COMPLETED TECHNICALLY:** 30-second screening candidate with audio; MP4 excluded from current V2 source tree, while historical Git commits may retain it | Final creative and listening acceptance |
 | V9 case study and skill workflow | **DOCUMENTED:** [production report](production-v9-case-study.md) and Mermaid workflow | Final approval ledger and source/job metadata where available |
 | Phase 5G G2B/G2C independent geometry/camera gates | Historical status BLOCKED | Independently verified physical geometry and deterministic camera evidence |
 | Independent seven-skill end-to-end execution | NOT VERIFIED | Clean-context specialist handoffs, actual evidence, and independent acceptance |
