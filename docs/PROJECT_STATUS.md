@@ -1,53 +1,24 @@
-# V2 project status — resume here
+# Historical V2 project-status snapshot
 
-**Last reconciled:** 2026-11-03. **Source of truth:** this file + [ROADMAP](ROADMAP.md), live GitHub PRs/issues and CI evidence. Re-verify current `main` before drawing conclusions; the historical snapshot was `6fc9881e4a3914a88e44cab4ca5a1ce05756b619`.
+**Snapshot date: 2026-11-03.** This file preserves the prior operational context; it is **not** a second live roadmap or current task queue. For current version milestones and execution order, use [the canonical roadmap](ROADMAP.md). For branch, PR and release policy, use [development governance](DEVELOPMENT.md). Verify live GitHub PRs, CI and commits before acting.
 
-## Immediate operating decision
+## Decisions and evidence recorded at this snapshot
 
-- Repository visibility is now **public** (owner-authorized, 2026-11-03); **V2.0.0 remains unreleased**. Do not create tags, publish GitHub releases or approve film publication without a new, explicit owner instruction.
-- Release-preparation PRs **#101, #102 and #103 closed without merging**. Their historical drafts may be reused but are **not active release approvals**.
-- **Production GO: HOLD** for external accounts, paid generation, provider jobs, media uploads and autonomous publication. Existing human-operated V9 evidence may be inspected without new jobs.
-- This is a personal learning/creative project. Do not assume employer affiliation or reuse employer code/data.
+- Repository was public; V2.0.0 was **not released**. Historical release-draft PRs #101, #102 and #103 had been closed without merging.
+- Production GO was **HOLD** for provider jobs, credit spend, account connections and media publication. Public repository visibility did not grant release or media permission.
+- Director plus six specialist skills, Project Bible contracts, planning-only acceptance and adjudicated textual benchmarks existed.
+- Offline deterministic recovery and fresh-process tests existed, but trusted approval provenance, asset-byte verification and cross-host recovery were unproven.
+- Human-guided The Last Light V9 was a 30-second five-shot screening candidate, not independent seven-agent autonomous execution or final film acceptance.
+- Public-source Skills CLI installation had CI evidence; actual native invocation on two distinct hosts remained unverified.
+- Historical secret-scanning evidence included a successful owner-reported Gitleaks run and a scan of 569 text blobs with zero credential-pattern matches and seven binary/large blobs skipped. Neither establishes complete history, privacy or rights clearance.
+- Soundtrack source was UNKNOWN / NOT_VERIFIED; media distribution rights and final video/audio inspection remained open.
 
-## What is implemented and what is proven
+## Supporting evidence
 
-| Phase | Status | Precise caveat |
-| --- | --- | --- |
-| 1 Architecture | Implemented | Director + six specialist skills; cross-host invocation not proven |
-| 2 Specialist and Director acceptance | Planning-only baseline complete | Not autonomous real-media acceptance |
-| 3–4 Creative benchmark/improvements | Adjudicated structural benchmark complete; specific regressions have tracked evidence | Scores and merged fixes are not film-production proof |
-| 5 Five-keyframe image integration | Existing image and V9 evidence; **formal independent acceptance open** | Inspect actual assets, provenance and continuity |
-| 6 Localized continuity repair | Partial, human-guided repair documented | Independently verify locked-shot preservation and before/after results |
-| 7 Checkpoints and recovery | Deterministic offline recovery complete; **full exit partial** | Trusted approvals, asset bytes and cross-host tests open |
-| 8 Video/sound/export | **V9 30-second five-shot screening candidate exists** | Final video/audio QA and publication approval open |
-| 9 Portability/security/release | Preparation started; public-release gates **open** | Clean public install, two-host tests, complete security/privacy/media review remain |
+Consult [public-exposure audit](v2-public-exposure-audit.md), [media rights](v2-media-release-rights.md), [provider terms](v2-ai-media-terms-review.md), [release preflight](v2-release-preflight.md), [Phase 7 recovery](phase7-recovery-exit.md), [quality benchmark](quality-benchmark-results.md) and [The Last Light case study](case-studies/the-last-light/README.md).
 
-## Next work queue (no paid generation)
+## How to resume safely
 
-1. **SECURITY — read-only public-exposure audit.** Audit all reachable refs and history using a pinned secret scanner; review historical metadata and confidential/personal content; inspect skipped binaries, five PNGs, V9 MP4/audio; inventory licenses, dependencies and provider/account distribution rights; check GitHub alerts where permissions allow. Preserve redacted evidence, report NOT_VERIFIED rather than assuming PASS. Public visibility is already enabled; complete the remaining exposure audit and remediate any findings.
-2. **PHASE 5/6 — independent continuity QA.** Review existing SH01–SH05 reference PNGs and V9 film: stable CHILD-01/coat, SPARK-01 transfer/retention, TOWER-01 geography, SH01 early light, SH04 hold, SH04→SH05 boundary, SH05 fade and scoped repair invariants. Do not claim independent inspection without actual asset access.
-3. **PHASE 7 — recovery.** Test fresh-context and cross-host checkpoint transfer, exact approval sources, locked revisions, asset integrity and missing-data behavior. Distinguish offline fixture PASS from live-agent evidence.
-4. **PHASE 8 — final pilot QA.** Verify visual and listening results against actual V9 MP4, archive provenance/evidence, retain separate owner media publication decision.
-5. **PHASE 9 — portability.** Test pinned install and actual invocation of Director + two specialists on two supported hosts, preserve exact logs and a complete independent text-only workflow. Public unauthenticated installation can now be tested without private credentials; preserve actual evidence.
-6. **RELEASE — only when owner reopens decision.** Reconcile release notes/changelog, final tagged SHA, CI and governance; do not treat closed #101–#103 as pending merges.
+> Continue the Universal AI Film Director project by reading `docs/ROADMAP.md` and `docs/DEVELOPMENT.md`, then verify current main, open PRs, CI and evidence. Treat this file as a 2026-11-03 historical snapshot. Do not assume V2 is released, invent approvals, execute provider jobs, publish media, merge PRs or delete branches without separate authorization.
 
-## Security evidence baseline and limits
-
-- On 2026-11-03, the owner provided a screenshot of a successful manual Gitleaks run on `main` (25 seconds). This supports an automated secret-scan PASS, not comprehensive privacy, proprietary-material, binary, or media-rights clearance.
-- PR #106 introduced `.gitignore`, `SECURITY.md`, and the Git-history secret-scan workflow and was merged before public visibility.
-
-- Recorded historical credential-pattern scan: **569 text blobs, 0 matches, 7 binary/large blobs skipped**; later regex/metadata improvements were merged. This is **not** full privacy or secret clearance.
-- Media inventory includes **five ChatGPT-generated keyframe PNGs and one human-guided Google Flow/Veo V9 MP4**. General provider-terms review exists; account-specific terms, actual media/privacy inspection and original audio implementation are still unresolved.
-- Consult [public-exposure audit](v2-public-exposure-audit.md), [media release rights](v2-media-release-rights.md), [provider terms](v2-ai-media-terms-review.md), and [V2 release preflight](v2-release-preflight.md). A passing CI check is not legal assurance or permission to publish.
-
-## For a new ChatGPT/Codex conversation
-
-> Continue `montadhahri/universal-ai-film-director` V2 from `docs/PROJECT_STATUS.md` and `docs/ROADMAP.md`. Verify latest `main`, current PRs/issues, real CI and relevant evidence before acting. Repository is public; V2.0.0 is unreleased and release gates remain open; production GO HOLD. Work on the next unverified roadmap gate with small branch/PR changes; do not merge, publish, spend credits, or invent acceptance evidence. Explain what is verified and what is pending.
-
-### Working protocol
-
-- Review this document, the roadmap, and the relevant source/fixtures before choosing a task.
-- Prefer **one narrowly scoped branch and PR** per fix or evidence packet. Keep clear reproduction steps, source SHA, test commands and results.
-- No claims of PASS without preserved evidence. Status vocabulary: PASS, FAIL, BLOCKED, NOT_RUN, NOT_VERIFIED.
-- Update this guide and roadmap when material gates close. Link a canonical issue/PR rather than allowing copied status documents to drift.
-- Human approvals of screenplay, visual bible, storyboard, provider execution, repository visibility, film distribution and version release are **separate**.
+Historical evidence and prior PR records are retained in their original locations. The canonical roadmap owns current milestone status; release preflight owns the detailed V2 release checklist.
