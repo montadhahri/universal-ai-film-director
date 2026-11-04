@@ -122,3 +122,16 @@ The owner supplied the aggregate JSON result from the manually dispatched `histo
 **Cleanup proposal:** Remove the three manually dispatched, one-time inventory workflows and their companion scripts after owner-supplied counts were recorded above. Retain recurring CodeQL and secret scanning checks. Removing audit utilities from current main does not erase their historical commits, published logs or Git history, and does not close remaining privacy gates.
 
 **Release gates:** (1) plan and, if appropriate, authorize remediation for historic commit email exposure; (2) privately inspect ZIP contents/provenance and assess binary media metadata; (3) inspect historical Actions artifacts/logs; (4) separately clear V2-R7 media redistribution rights. V2 release and Production GO remain **HOLD**. This change makes **no** claim of V2-R6 PASS.
+
+## V2-R6 owner decision superseding prior email-remediation request — 2026-11-04
+
+The repository owner explicitly **accepts the existing non-`noreply` Git commit email addresses as public** and has withdrawn the request to rewrite the Git history. The prior "private / NOT_REMEDIATED" entry above is a historical snapshot and is superseded for release planning. **Historical email privacy is now an ACCEPTED OWNER DECISION, not a V2-R6 release blocker.** This is not a finding that the email addresses were independently inspected or made private. No Git refs, branches, tags, commit metadata, or existing history have been modified.
+
+### Reconciled remaining checks
+
+- Historical binary triage (owner-supplied output): **5 PNG, 1 MP4/ISO BMFF, 1 ZIP; 0 unreadable**. This establishes formats, not safe contents, identity or licenses. The ZIP payload and embedded metadata remain **NOT_VERIFIED**. Do not publicly extract or print ZIP member names or embedded content.
+- Historical Actions artifacts: two individually checked run IDs (**41896412864**, **41901190091**) returned zero artifacts. This is **not** an exhaustive review of older Actions artifacts or logs, nor does it prove that expired/deleted public artifacts were never exposed.
+- The historical secret scan passed on PR #126, and the owner reports a green manual run on `main`; exact main-run aggregate counts are not independently preserved in this update. The scan skips binary/oversized content and is pattern-limited.
+- One-time inventory tooling was removed in PR #130 after aggregation. Existing security CI and evidence remain.
+- **V2-R6 disposition: PARTIAL / HOLD.** Before PASS, review the ZIP in a trusted environment without leaking members/contents, evaluate potential media metadata and confidential content, and assess the available older Actions artifact/log history with explicit scope and limitations. Do not add audit tooling solely to increase apparent coverage.
+- **V2-R7 remains separate:** media provenance, soundtrack and public redistribution rights of PNG/MP4 remain unverified. V2 release and Production GO remain HOLD.
