@@ -24,4 +24,4 @@
 
 This document inventories gaps, **not** approval to redistribute additional media. Existing repository media is already public; treat unresolved rights as a prompt to review and, if necessary, remove or restrict distribution through a separate owner-approved action. V2.0 software release remains HOLD until its own gates are satisfied. Production GO remains HOLD.
 
-Sources: `docs/case-studies/the-last-light/provenance.json`, `docs/case-studies/the-last-light/production-v9-case-study.md`, `docs/case-studies/the-last-light/README.md`, root `LICENSE`, and `docs/v2-release-evidence-audit.md`.
+Sources: `docs/case-studies/the-last-light/provenance.json`, `docs/case-studies/the-last-light/production-v9-case-study.md`, `docs/case-studies/the-last-light/README.md`, root `LICENSE`, and `docs/releases/v2.0.0-checklist.md` (current release gates). Historical audit details remain recoverable in Git history.
