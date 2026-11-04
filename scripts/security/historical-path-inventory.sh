@@ -20,7 +20,7 @@ grep -Ei '(^|/)(\.env($|\.)|\.npmrc$|\.pypirc$|id_(rsa|ed25519)$|.*\.(pem|p12|pf
  echo "- Historical paths not currently tracked: $(wc -l < audit-output/historical-not-current.txt)"
  echo "- Path-pattern review candidates: $(wc -l < audit-output/review-candidates.txt)"
  echo
- echo 'Inspect the downloadable path lists privately. Some filenames may themselves reveal sensitive information; do not publish the artifact.'
+ echo 'Raw path lists are temporary runner-local files and are not uploaded. To inspect candidates, run this script in a trusted local clone; do not publish filenames or findings.'
  echo 'Unreachable/deleted Git objects and external forks are outside this inventory.'
 } > audit-output/summary.md
 cat audit-output/summary.md
