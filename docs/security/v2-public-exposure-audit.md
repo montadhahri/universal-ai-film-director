@@ -62,3 +62,13 @@ Merged PR #120 removed `actions/upload-artifact` from `.github/workflows/histori
 On a trusted local clone, fetch all relevant remote branches and tags and run `bash scripts/security/historical-path-inventory.sh`. **Do not publish** `audit-output/` or paste its filenames, blob contents, credentials, or personal information into issues or chat. Inspect the six `audit-output/review-candidates.txt` entries privately, including whether any are old media, harmless test fixtures, or potentially sensitive material. Record only counts by classification and whether remediation is needed. Delete the local `audit-output/` directory afterward. This check covers fetched reachable refs, not deleted/unreachable objects or forks.
 
 If a credential is identified, revoke/rotate it immediately; public Git history rewriting requires a separate risk assessment. Existing public Actions artifacts and media metadata remain separately unverified. **No full security clearance is claimed.**
+
+## V2-R6 owner attestation update — 2026-11-04
+
+The repository owner reports that GitHub secret scanning currently shows **zero open alerts** and that **all six** historical filename-pattern candidates were reviewed with **no sensitive findings identified**. These are **owner-reported results**, not independent reproduction or an exhaustive scan. The previous pending statements above are retained as historical snapshots and superseded only for these two checks.
+
+The owner previously reported zero open CodeQL and Dependabot alerts. The older historical credential-pattern scan covered 569 text blobs and skipped 7 binary/large blobs. A filename review does not establish that all historical blob contents, commit metadata, binary media, or previously published Actions artifacts are free of sensitive material.
+
+**Remaining V2-R6 evidence gates:** (1) history-aware scan across fetched reachable refs with documented scope and redacted findings; (2) review of the 7 previously skipped binary/large blobs and relevant media metadata; (3) review of commit author/message metadata and prior public Actions artifacts; (4) verify CodeQL v4 run and current alert state at the release candidate commit. These should be performed with privacy-preserving, aggregate reporting and no raw sensitive paths or values in public logs or artifacts. If evidence is unavailable, mark the gate NOT_VERIFIED rather than PASS.
+
+**Status: PARTIAL / HOLD.** V2 release and Production GO remain HOLD. Media redistribution rights are tracked separately under V2-R7.
