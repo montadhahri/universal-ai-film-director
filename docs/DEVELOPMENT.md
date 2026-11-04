@@ -13,7 +13,7 @@
 
 ## Important release-state distinction
 
-`main` contains unreleased V2 development. It is the **integration/default branch**, not a claim that its HEAD is a published stable V2 release. The latest published release remains `v1.0.0`. Never rewrite `main` history or move existing tags to make branch labels appear consistent.
+`main` is the **integration/default branch** for ongoing V2.1 work; the latest published stable release is `v2.0.0`, preserved at immutable tag commit `93c34e2e41351bf3411a330a8515481756f83ebd`. Do not rewrite `main` history or move published tags for later documentation changes.
 
 ## Branch safety and repository settings
 
