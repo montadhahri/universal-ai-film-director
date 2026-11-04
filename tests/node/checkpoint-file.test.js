@@ -43,3 +43,15 @@ test('missing checkpoint file fails explicitly',t=>{
  const file=temp(t);
  assert.throws(()=>loadCheckpointFile(file),/ENOENT/);
 });
+
+test('directory checkpoint is rejected after opening',t=>{
+ const file=temp(t),dir=path.dirname(file);
+ assert.throws(()=>loadCheckpointFile(dir),/Checkpoint path must be a regular file|EISDIR/);
+});
+test('symlink checkpoint is not followed where O_NOFOLLOW is supported',t=>{
+ if(!fs.constants.O_NOFOLLOW){t.skip('O_NOFOLLOW unavailable');return;}
+ const file=temp(t),link=path.join(path.dirname(file),'linked.json');
+ saveCheckpointFile(file,fixture());
+ fs.symlinkSync(file,link);
+ assert.throws(()=>loadCheckpointFile(link),/ELOOP|symlink/i);
+});
