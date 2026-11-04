@@ -28,12 +28,12 @@ The existing [V9 production report](../case-studies/the-last-light/production-v9
 - [x] Record owner-provided origin of V9 ambient soundtrack: locally created during editing, without any external music, downloaded audio, loops or samples. Independent reproduction of the source implementation remains unverified; verify any other sound/narration components before broader media reuse.
 - [ ] Inspect each image and the MP4 for recognizable copyrighted characters, trademarks, private faces, identifying details, watermarks, incidental copyrighted music or embedded personal metadata.
 - [ ] Confirm that all contributors have authorized publication, and that any necessary attribution or notices are included. The repository's MIT software license alone is **not evidence of third-party media rights**.
-- [ ] Explicitly decide whether the film and images should be published with the code, published under separate media terms, or kept in a private/media-free release.
+- [x] **Owner decision, 2026-11-04:** retain the film and five PNG keyframes in the public repository, under [separate media terms](../case-studies/the-last-light/MEDIA-TERMS.md) rather than the MIT software license. This is a licensing-scope decision, **not a blanket third-party or provider rights clearance**.
 - [ ] Obtain an explicit separate owner decision for **public repository visibility**, and (if desired) a separate film publication/QA decision.
 
 ## Release choices
 
-**Option A — publish with media:** only after the rights and privacy checklist is documented and cleared.
+**Selected scope — keep existing media in the repository with separate terms:** [media terms](../case-studies/the-last-light/MEDIA-TERMS.md) clarify no additional reuse license for the MP4/PNGs. This does not authorize broader film publication or certify all provider/third-party rights.
 
 **Option B — public code without media:** prepare a separate public-safe repository history that never exposes restricted media. Removing current media files from `main` alone is **insufficient** if historical commits still contain them; public visibility exposes reachable history.
 
@@ -64,3 +64,9 @@ The owner uploaded `the-last-light-v9.mp4` for this review. The file's independe
 - **Container metadata:** No obvious personal-name, email or geolocation fields were found in the ffprobe-exposed container and stream tags; the metadata check is limited to parsed fields and is not a forensic metadata audit.
 - **Audio:** A playable AAC audio track exists. Signal/volume analysis does **not** verify the absence of sampled music, copyrighted motifs, narration or other source rights; owner reports soundtrack was entirely locally created without external music, loops or samples. This provenance remains owner-confirmed, not independently proven.
 - **Disposition:** Authentic V9 file identity and technical characteristics verified; partial visual/metadata review completed. **Media copyright/privacy QA and distribution rights remain PARTIAL / NOT CLEARED.** Service-specific Google Flow/Veo terms and explicit final publication/license choices remain open. V2 release and Production GO stay HOLD.
+
+## Official provider terms review — 2026-11-04
+
+- [OpenAI EU Terms of Use](https://openai.com/pt-PT/policies/eu-terms-of-use/) (updated 2026-01-16): as between the user and OpenAI, applicable ownership/assignment provisions support the user's use of output to the extent permitted by law; input rights, output disclosure rules and third-party rights remain relevant.
+- [Google Flow official help](https://support.google.com/flow/answer/16353333) and [Google Labs FAQ](https://labs.google/fx/faq) explicitly state that Google's general terms govern output use and Google does not claim ownership of original generated content. The [Flow project help](https://support.google.com/flow/answer/16935308) describes uploading generated clips to YouTube, with generated-video SynthID watermarking. This supports ordinary sharing workflows, but is **not proof of any exclusive copyright, a blanket redistribution license, or specific account/date entitlements**.
+- **Status:** owner selected separate, conservative media terms and continued public repository inclusion. Provider account-specific and creation-date notices, third-party content/privacy QA, and independent audio source reconstruction remain unverified. Media terms do not erase these outstanding issues.

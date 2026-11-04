@@ -41,7 +41,7 @@
 | V2-R4 | Human-guided The Last Light V9 example | **SCREENING CANDIDATE** | Preserve actual media provenance and unresolved QA; no final film acceptance claim |
 | V2-R5 | Public install and packaging | **CI EVIDENCE EXISTS** | Verify intended release commit and public install reproducibility |
 | V2-R6 | Public history, privacy, secrets, dependencies | **PARTIAL / RESIDUAL RISK** | Prior inventories and scans recorded; owner skips historical ZIP inspection, other unverified binary/history scope remains documented in exposure audit |
-| V2-R7 | Media rights and attribution | **PARTIAL / RIGHTS NOT CLEARED** | Owner-confirmed local soundtrack, hash-verified V9 and sampled QA evidenced; service-specific Flow/Veo distribution, complete media QA and separate media terms undecided |
+| V2-R7 | Media rights and attribution | **PARTIAL / RIGHTS NOT CLEARED** | Owner-confirmed local soundtrack, hash-verified V9 and sampled QA evidenced; separate non-MIT media terms selected; account/date-specific Flow/Veo notices and complete media QA remain unresolved |
 | V2-R8 | Release documentation, CI and owner approval | **IN PROGRESS** | `main` 827cbc57be9b validation/secret-scan/CodeQL PASS on 2026-11-04; still select exact RC SHA, verify its tests/packaging, notes and obtain explicit release authorization |
 
 **V2.0 release gate:** V2-R6, R7 and R8 must be resolved or explicitly scoped with documented lawful/safe exclusions; final CI and packaging checks must apply to the actual release SHA. A repository being public, an earlier green scan or a merged PR is not a release approval. Detailed checklist: [V2 release preflight](releases/v2.0.0-checklist.md).
