@@ -36,7 +36,7 @@ Inventory existing branches and open PRs before any cleanup. Categorize: merged 
 
 ## Release evidence and approvals
 
-`docs/ROADMAP.md` is the single canonical product/version roadmap. `docs/v2-release-preflight.md`, case studies, CI, PRs and issue milestones are supporting release evidence, **not parallel roadmaps**. The former `docs/PROJECT_STATUS.md` snapshot is preserved in Git history; do not recreate a second live milestone queue.
+`docs/ROADMAP.md` is the single canonical product/version roadmap. `docs/releases/v2.0.0-checklist.md`, case studies, CI, PRs and issue milestones are supporting release evidence, **not parallel roadmaps**. The former `docs/PROJECT_STATUS.md` snapshot is preserved in Git history; do not recreate a second live milestone queue.
 
 Keep separate approvals for code release, creative assets, provider/account access, paid execution and media publication. **Production GO: HOLD** remains in force until independently changed by the owner.
 
