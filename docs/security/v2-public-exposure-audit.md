@@ -110,3 +110,15 @@ The owner supplied the aggregate JSON result from the manually dispatched `histo
 4. **Coverage:** Scan covered fetched reachable refs, not unreachable objects, external forks or all possible sensitive data patterns. Formal history-wide privacy clearance remains NOT_VERIFIED.
 
 **Disposition: V2-R6 remains PARTIAL / HOLD. No evidence supports claiming a complete security PASS, V2 release approval or Production GO.**
+
+## V2-R6 privacy decision and audit-tool cleanup — 2026-11-04
+
+**Owner decision:** Non-noreply commit email addresses should be treated as **private**. The aggregate audit reported five commits with non-noreply author emails and five commits with non-noreply committer emails (possibly overlapping). The exact addresses and identities have **not** been verified independently. Historic metadata remains publicly visible; enabling GitHub email privacy and push protection only protects future activity. **Do not interpret these settings as historical remediation.** History rewriting or replacing the repository requires an impact assessment of tags, signatures, public forks/clones, PR references and published history. No rewrite is authorized or performed here. Historical email privacy is **OPEN / NOT_REMEDIATED**.
+
+**Binary triage (owner-supplied workflow result):** Of seven historical binary/oversized blobs, five were PNG, one ISO-BMFF/MP4, and one ZIP. All were readable and signature-classified, but the ZIP contents and all media privacy/provenance remain **NOT_VERIFIED**. File format does not establish clearance.
+
+**Actions artifacts:** No artifacts were found on two individually inspected previous workflow runs. This does **not** represent a comprehensive historical artifact audit; older artifacts and logs may remain accessible and have not been cleared.
+
+**Cleanup proposal:** Remove the three manually dispatched, one-time inventory workflows and their companion scripts after owner-supplied counts were recorded above. Retain recurring CodeQL and secret scanning checks. Removing audit utilities from current main does not erase their historical commits, published logs or Git history, and does not close remaining privacy gates.
+
+**Release gates:** (1) plan and, if appropriate, authorize remediation for historic commit email exposure; (2) privately inspect ZIP contents/provenance and assess binary media metadata; (3) inspect historical Actions artifacts/logs; (4) separately clear V2-R7 media redistribution rights. V2 release and Production GO remain **HOLD**. This change makes **no** claim of V2-R6 PASS.
