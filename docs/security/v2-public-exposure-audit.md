@@ -80,3 +80,33 @@ The repository owner reports the updated Historical secret scan completed **gree
 A follow-up aggregate-only metadata/binary workflow is proposed to quantify remaining reachable binary/large blobs and commit metadata surfaces without emitting paths, authors, object IDs or contents. Its result is inventory-only, not an automated PASS. Prior Actions artifacts must still be evaluated separately through GitHub settings or API.
 
 **Status remains PARTIAL / HOLD.**
+
+## V2-R6 metadata/binary workflow results — owner-supplied, 2026-11-04
+
+The owner supplied the aggregate JSON result from the manually dispatched `history-metadata-inventory.yml` job on `main` (the job was also shown green). **Source: owner-supplied output; not independently reproduced against the GitHub run log.**
+
+| Inventory metric | Value |
+| --- | ---: |
+| Git objects examined | 2,142 |
+| Unique blobs | 634 |
+| Text blobs | 627 |
+| Binary or oversized blobs | **7** |
+| Oversized blobs (>2 MiB) | 5 |
+| NUL-containing blobs | 2 |
+| Unreadable blobs | **0** |
+| Total binary or oversized bytes | 27,381,953 |
+| Commits | 427 |
+| Commits with non-noreply author email | **5** |
+| Commits with non-noreply committer email | **5** |
+| Commit-message credential-pattern hits | **0** |
+
+**Interpretation:** The seven binary/large blobs were *counted*, not inspected or cleared. The counts for commits containing author and committer emails may overlap; they do not establish ten unique commits or ten unique addresses. Public Git commit metadata is inherently visible; the owner must privately confirm whether those email addresses are intended for public attribution. Zero pattern hits is not proof of clean content, and text blobs were classified, not necessarily comprehensively screened by this inventory job.
+
+### Outstanding owner verification / release gates
+
+1. **Seven binary or large historical blobs:** Inspect file format, privacy-sensitive metadata and potentially confidential content using privacy-preserving methods; record only counts and redacted conclusions. Media redistribution and soundtrack licensing remain V2-R7, not implied by this check.
+2. **Git commit identity metadata:** Privately verify that author and committer emails exposed in the five flagged commits are acceptable for this public repository. Do not print actual addresses in public Actions output or PRs. If unacceptable, plan remediation carefully; rewriting history cannot erase forks/clones and is not automatically warranted.
+3. **Actions history/artifacts:** Confirm no earlier published artifacts, logs or attachments contained unintended confidential filenames, credentials or private files, including artifacts published before PR #120 removed uploads. Check retention and accessibility rather than inferring safety from current workflow code.
+4. **Coverage:** Scan covered fetched reachable refs, not unreachable objects, external forks or all possible sensitive data patterns. Formal history-wide privacy clearance remains NOT_VERIFIED.
+
+**Disposition: V2-R6 remains PARTIAL / HOLD. No evidence supports claiming a complete security PASS, V2 release approval or Production GO.**
