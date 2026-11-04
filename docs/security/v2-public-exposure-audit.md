@@ -40,3 +40,11 @@ Use a trusted environment with repository access and do **not** paste secrets in
 ## Evidence limitations
 
 The GitHub connector permitted current-tree inspection and targeted file reads but did **not** provide a complete mirror clone, full reachable-object enumeration, full-history secret scanning or rights contracts. Therefore no history-wide clearance is asserted. No media was generated or published, and Production GO remains HOLD.
+
+## V2-R6 follow-up — sanitized inventory workflow proposal (2026-11-04)
+
+A proposed change removes `actions/upload-artifact` from `.github/workflows/historical-path-inventory.yml`. The workflow still calculates historical filename inventories on an ephemeral runner, but exposes **only aggregate counts** in the job log and GitHub Step Summary; raw historical paths are deleted from the runner after the job. The workflow is manually dispatched and is **not run by this PR**.
+
+**Limitations:** Aggregate counts cannot establish that historical filenames or blobs are safe. The repository is already public; removing future artifact uploads does not revoke any previously published artifact or Git object. Previously published workflow artifacts, if any, require a separate review. The script scans reachable fetched refs, not unreachable objects, and neither it nor the earlier regex scanner constitutes a full secrets/privacy review. No Gitleaks result, rights clearance, or release gate is upgraded to PASS by this documentation change.
+
+**Next private checks (not executed):** Review Actions artifacts and their retention, GitHub secret scanning/Dependabot alerts, all reachable historical text/binary objects with a pinned history-aware scanner, commit metadata and embedded media metadata; preserve redacted evidence only. If an actual credential is discovered, rotate/revoke it rather than relying on deleting a branch or file. Do not publish raw sensitive findings.
