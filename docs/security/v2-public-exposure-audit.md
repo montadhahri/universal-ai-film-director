@@ -72,3 +72,11 @@ The owner previously reported zero open CodeQL and Dependabot alerts. The older 
 **Remaining V2-R6 evidence gates:** (1) history-aware scan across fetched reachable refs with documented scope and redacted findings; (2) review of the 7 previously skipped binary/large blobs and relevant media metadata; (3) review of commit author/message metadata and prior public Actions artifacts; (4) verify CodeQL v4 run and current alert state at the release candidate commit. These should be performed with privacy-preserving, aggregate reporting and no raw sensitive paths or values in public logs or artifacts. If evidence is unavailable, mark the gate NOT_VERIFIED rather than PASS.
 
 **Status: PARTIAL / HOLD.** V2 release and Production GO remain HOLD. Media redistribution rights are tracked separately under V2-R7.
+
+## V2-R6 manually dispatched history scan — owner attestation (2026-11-04)
+
+The repository owner reports the updated Historical secret scan completed **green on main** after PR #126. This is owner-reported run outcome, not independently retrieved job evidence. The script performs pattern-based scanning of fetched reachable refs; binary or oversized blobs are skipped. This does **not** prove exhaustive secret, privacy, or media-rights clearance.
+
+A follow-up aggregate-only metadata/binary workflow is proposed to quantify remaining reachable binary/large blobs and commit metadata surfaces without emitting paths, authors, object IDs or contents. Its result is inventory-only, not an automated PASS. Prior Actions artifacts must still be evaluated separately through GitHub settings or API.
+
+**Status remains PARTIAL / HOLD.**
