@@ -6,7 +6,7 @@
 
 1. [OpenAI European Terms of Use](https://openai.com/pt-PT/policies/eu-terms-of-use/): As between user and OpenAI, to the extent permitted by law, the user owns generated Output. User remains responsible for rights in Inputs and must not present AI output as human-generated. This supports sharing the five ChatGPT-generated reference images, provided no third-party rights are violated.
 2. [Google Terms of Service](https://policies.google.com/terms): Google says it does not claim ownership of original content generated in its services; users remain responsible for legality and rights in content shared. This supports, but does not alone conclusively clear, public distribution of the five Google Flow / Veo-generated video shots. Applicable service-specific terms and creation-date terms may also apply.
-3. The repository [V9 production case study](case-studies/the-last-light/production-v9-case-study.md) records original local ambient audio added in V8, with +7 dB gain and a 0.8-second fade in V9. The audio source implementation is not archived; user reports no intentional addition of third-party copyrighted music. Do not represent it as independently source-verified.
+3. The repository [V9 production case study](../../case-studies/the-last-light/production-v9-case-study.md) records original local ambient audio added in V8, with +7 dB gain and a 0.8-second fade in V9. The audio source implementation is not archived; user reports no intentional addition of third-party copyrighted music. Do not represent it as independently source-verified.
 
 ## Accurate disclosure for public README or release notes
 

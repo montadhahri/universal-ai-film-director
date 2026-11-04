@@ -4,7 +4,7 @@
 
 **From a story idea to a professionally directed AI film — one creative partner, six specialized filmmaking skills.**
 
-> **V2 status:** Public release-candidate preparation. See the [V2.0 release blockers and V2.1 roadmap](docs/v2-release-preflight.md). The Last Light V9 is a human-guided screening candidate, not proof of autonomous seven-agent production. Production GO remains HOLD for new provider jobs and final film release.
+> **V2 status:** Public release-candidate preparation. See the [canonical V1–V3 roadmap](docs/ROADMAP.md), [V2 release preflight](docs/releases/v2.0.0-checklist.md), and [development governance](docs/DEVELOPMENT.md). The Last Light V9 is a human-guided screening candidate, not proof of autonomous seven-agent production. Production GO remains HOLD for new provider jobs and final film release.
 
 A portable, modular **Agent Skills** collection for writing screenplays, designing visual worlds, planning cinematic shots, directing sound, preparing generation prompts and reviewing film continuity.
 
@@ -15,7 +15,7 @@ A portable, modular **Agent Skills** collection for writing screenplays, designi
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 ![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-blueviolet)
 
-[**Quick start**](#-quick-start) · [**Installation**](#-installation) · [**Production workflow**](#-film-production-workflow) · [**Skills architecture**](#-how-the-skills-work-together) · [**Specialist skills**](#-meet-the-film-crew) · [**Compatibility**](#-agent-compatibility) · [**Releases**](#-versions--releases) · [**FAQ**](#-faq)
+[**Roadmap**](docs/ROADMAP.md) · [**Development**](docs/DEVELOPMENT.md) · [**Quick start**](#-quick-start) · [**Installation**](#-installation) · [**Production workflow**](#-film-production-workflow) · [**Skills architecture**](#-how-the-skills-work-together) · [**Specialist skills**](#-meet-the-film-crew) · [**Compatibility**](#-agent-compatibility) · [**Releases**](#-versions--releases) · [**FAQ**](#-faq)
 
 </div>
 
@@ -46,7 +46,7 @@ Read the [full results, methodology, caveats and follow-up findings](docs/qualit
 
 A **30-second, five-shot V9 screening candidate** documents an image-first filmmaking experiment taken through owner-operated Google Flow / Veo 3.1 Fast video generation, local assembly and an ambient soundtrack. The five reference keyframes were generated with ChatGPT. The film is a **human-guided case study**, not a verified autonomous seven-agent execution or final creative/publication approval.
 
-[Read the production case study, V9 technical evidence, approvals and remaining QA](docs/case-studies/the-last-light/README.md). See also the [AI media provider-terms review](docs/v2-ai-media-terms-review.md) and [media release-rights checklist](docs/v2-media-release-rights.md).
+[Read the production case study, V9 technical evidence, approvals and remaining QA](docs/case-studies/the-last-light/README.md). See also the [AI media provider-terms review](docs/archive/v2/v2-ai-media-terms-review.md) and [media release-rights checklist](docs/security/v2-media-release-rights.md).
 
 ### Five-shot visual experiment
 

@@ -1,117 +1,137 @@
-# Development roadmap — V2 creative direction and production reliability
+# Product roadmap — Universal AI Film Director
 
-**Product direction:** a portable, creative **end-to-end AI filmmaking production system**, not just a higher-scoring screenplay or prompt generator. The Director remains a creative collaborator; the differentiator to prove is consistent assets, safe changes, recoverable state, evidence-backed QA and trustworthy delivery.
+**Canonical version and milestone roadmap · reconciled 2026-11-04.** This document is the single source for planned scope, priority, phase exit gates and release readiness. GitHub issues/PRs/CI provide live execution evidence. [Development governance](DEVELOPMENT.md) covers GitFlow and release operations; [release preflight](releases/v2.0.0-checklist.md) contains the detailed V2 release checklist. Historical operational context and release evidence remain in Git history and the linked supporting reports.
 
-> **Resume point (2026-11-03):** Start with [PROJECT_STATUS.md](PROJECT_STATUS.md) for the current execution queue, known limitations, and a prompt usable in another discussion. This roadmap is design/acceptance rationale; live PRs/issues and CI are checked separately.
->
-> **Release decision:** The repository is now public (owner-authorized, 2026-11-03), while v2.0.0 remains unreleased. Release-draft PRs #101, #102 and #103 were closed without merging. Public visibility is not permission to tag/release V2, publish media, or run provider jobs. The owner reported a successful manually dispatched Gitleaks workflow on main; independent privacy, history completeness and media-rights review remain open. **Do not equate postponed release with completed Phase 9.**
->
-> **Next priorities:** (1) comprehensive history/secret/privacy/media-rights audit; (2) Phase 5/6 actual-media continuity and localized repair acceptance; (3) Phase 7 cross-host recovery/approval integrity; (4) Phase 8 final V9 QA; (5) Phase 9 skills installation/invocation and text-only orchestration. All remain evidence-gated and must not trigger paid/provider jobs.
+> **Current decision:** V1.0.0 is the last published release. V2.0.0 is **unreleased**, despite public repository visibility and substantial implemented V2 work. **Production GO: HOLD**. No release, provider job, credit spend, account connection, media publication, or branch deletion is authorized by this roadmap. Statements below distinguish repository implementation, observed evidence and unverified acceptance.
 
-**Architecture:** one Director and six independently installable specialists. Historical [v1.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) is preserved. The repository is public, but V2.0 release preparation remains evidence-gated; unresolved improvements are tracked as V2 and potential V2.1 work, without authorizing a V2 release or media publication. See [V2 release preflight](v2-release-preflight.md) for release blockers and deferrals.
+## At a glance
 
-**Production GO: HOLD.** A plan, an approved creative artifact, permission to use a provider, and verified generated media are distinct states. No generation, paid job, account connection, private upload, publication or delivery is authorized by this roadmap.
-
-## Evidence baseline — updated 2026-11-03
-
-The V2 roadmap now has both deterministic offline recovery evidence and a **human-operated, skill-guided** five-shot film case study. These are distinct from autonomous multi-agent execution or final film acceptance.
-
-| Area | Verified evidence | Limitations |
-| --- | --- | --- |
-| Architecture and contracts | Seven skills, Project Bible and stage-gate contracts | Cross-host `/skill-name` invocation not independently verified |
-| Specialist and integration acceptance | Planning-only agent acceptance, focused regressions and historical benchmark | No independent seven-agent real-media end-to-end acceptance |
-| Creative benchmark | Eight adjudicated comparisons; reported V1 4.50/5 vs V2 4.83/5 | Structural benchmark, not proof of finished-film superiority |
-| Offline recovery | Merged PRs #76, #78–#82; versioned checksum, local file recovery, fresh-process synthetic acceptance; CI success | No authenticated approval provenance, asset-file verification, cross-host recovery or comprehensive crash guarantees |
-| Actual video case study | Merged PR #83, [The Last Light V9](case-studies/the-last-light/production-v9-case-study.md): 30-second five-shot H.264/AAC screening candidate, human-operated Google Flow generation and local assembly | MP4 binary not uploaded in PR; outstanding continuity, listening and final-release acceptance |
-| Latest baseline | Main as of roadmap reconciliation: `43850b26e836dc618ecbfae18e448a1aee3644a8` | Subsequent commits require separate verification |
-
-Read the [Phase 7 recovery exit assessment](phase7-recovery-exit.md), [V9 case study](case-studies/the-last-light/production-v9-case-study.md), [benchmark results](quality-benchmark-results.md) and [benchmark procedure](quality-benchmark.md). Preserve historical statuses and original review records.
-
-## Version planning — V2.0 and V2.1
-
-V2.0 targets the implemented seven-skill library, deterministic planning/recovery contracts, test suite and human-guided V9 case study. **The V2.0 release gate is public safety, licensing, reproducible public installation, accurate docs and explicit release approval.** Cross-host agent invocation, trusted approval provenance, independent multi-agent orchestration and deeper real-media continuity repair are **V2.1 candidates**, not claims of V2.0 completion. See [release preflight](v2-release-preflight.md).
-
-## Prioritization principles
-
-1. **Measure real production outcomes next.** Prefer continuity, repairability, resumability and actual media evidence over raising already-ceilinged isolated rubric scores.
-2. **Keep creative quality central.** Strong stories, filmable shots, emotional pacing and artistic choices remain essential; improve them when a concrete regression or rendered-film failure demonstrates a gap.
-3. **Do not add more agents by default.** Keep seven skills until integration tests establish a need for new boundaries.
-4. **Small reviewable PRs.** Separate benchmark documentation, behavioral skill changes, deterministic validators and real-media experiments.
-5. **Approval gates are non-negotiable.** Separate screenplay, Visual Bible, storyboard and external execution authorization; protect locked revisions.
-6. **Evidence classes stay separate.** A merged PR, unit test, blind text review, real-agent regression, inspected image, verified video and delivered export are not interchangeable.
-
-## Ordered roadmap and exit gates
-
-| Phase | Milestone | Status | Evidence required to exit |
+| Version | Outcome | Status | Next decision |
 | --- | --- | --- | --- |
-| 1 | V2 architecture, seven skills and project contracts | **COMPLETE** as repository implementation | Merged code and documented contracts; portability remains separately unverified |
-| 2 | Specialist behavioral tests and Director integration | **COMPLETE** for documented planning-only acceptance | Preserve original reports and scoped regressions; no media claim |
-| 3 | V1/V2 creative benchmark | **COMPLETE** for adjudicated structural comparison | 8/8 adjudicated validator PASS with documented limitations and historical reviews retained |
-| 4A | Publish benchmark transparently | **COMPLETE** — PR #62 merged | README summary and detailed report, scores, caveats and provenance |
-| 4B | Visual Direction CREATIVE-04 continuity | **IMPLEMENTED; behavioral evidence tracked separately** — PR #63 merged | Preserve fresh-context regression provenance; do not infer pass from code merge |
-| 4C | Director discovery and narration arithmetic | **TARGETED REGRESSION WORK RECORDED; roadmap acceptance requires evidence audit** | Verify actual post-fix outcomes and unresolved cases before closure |
-| 5 | **The Last Light** five-keyframe image-first integration | **MEDIA EVIDENCE AVAILABLE; formal acceptance OPEN** | Existing reference images and V9 five-shot production case study; verify image provenance and continuity verdicts |
-| 6 | Safe localized revision and continuity repair | **PARTIAL; human-guided V9 repair documented** | Show scoped change, preserved locked assets and independently verified before/after continuity |
-| 7 | Checkpoint recovery and long-session continuity | **DETERMINISTIC OFFLINE RECOVERY COMPLETE; FULL EXIT PARTIAL** | PRs #76/#78–#82, fresh-process acceptance; trusted approval provenance, asset checks and cross-host recovery open |
-| 8 | Real video, sound, edit and export pilot | **V9 SCREENING CANDIDATE; FINAL ACCEPTANCE OPEN** | Five generated-video shots, local edit and soundtrack; outstanding visual/listening QA, archived binary and release authorization |
-| 9 | Portability, documentation, security and v2.0.0 release decision | **PUBLIC REPOSITORY; V2 RELEASE GATES OPEN** | Slash invocation in two hosts, clean installation, independent text-only pipeline, security/rights and release checklist |
+| **V1.0.0** | Original Film Director skill | **RELEASED** — [historical tag](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) | Preserve history |
+| **V2.0.0** | Director + six specialist skills, contracts, tests, deterministic recovery and human-guided film case study | **IMPLEMENTED / RELEASE BLOCKED** | Close release-critical privacy, rights and reproducibility gates; explicit owner release decision |
+| **V2.1.0** | Verified portability, independent agent handoffs, stronger approval provenance and media QA | **PROPOSED** — scope not frozen | Validate V2.0 baseline, prioritize measurable gaps |
+| **V3.x** | Provider-neutral agentic filmmaking execution | **RESEARCH ONLY** | Feasibility, terms, budget, security and no-cost prototype before implementation |
 
-Phases 6 and 7 may use controlled fixtures before any real-media execution, but **do not label them complete** until the specified behavioral evidence exists. Phase 9 preparation may proceed in parallel; public release is a separate decision.
+### Status vocabulary
 
-## Phase 9 — reproducible release-readiness gates
+**RELEASED** means a published tagged version. **IMPLEMENTED** means code or documentation exists; it is not acceptance proof. **EVIDENCED** means a documented test/case study supports a limited claim. **PARTIAL** means a gate is incomplete. **BLOCKED** means a required condition is unresolved. **PROPOSED** and **RESEARCH** are not commitments. Use PASS/FAIL/BLOCKED/NOT_RUN/NOT_VERIFIED for individual test results.
 
-1. **Installation:** install all seven skills from a pinned revision in two independently supported hosts; record host versions, exact commands, public-repository installation results and complete output. Do not equate file presence with slash-command invocation.
-2. **Invocation:** execute `/universal-ai-film-director` and at least two individual specialists where slash invocation is supported. Record the exact host syntax and whether the command was actually recognized.
-3. **Orchestration:** run a fresh-context, text-only discovery → script → Visual Bible → storyboard → production plan → Continuity QA scenario; preserve handoffs, stage gates, approvals and full transcripts. No fictional approvals.
-4. **Recovery:** export/import a versioned checkpoint across the two hosts, inspect revision IDs, locked assets, pending work and unresolved issues. Record whether asset bytes and approval sources can be verified; report unsupported cases as NOT_RUN.
-5. **V9 acceptance:** inspect remaining SH01 early lantern light, SH04 held ending, SH04→SH05 and other shot boundaries, SH05 fade and final audio. Preserve actual verdicts; keep final release HOLD until explicit acceptance.
-6. **Release governance:** validate rights/privacy/license, repository documentation, examples, changelog and a reproducible test report. Release decision is separate from production GO.
+## Current evidence and limitations
 
-**Evidence rule:** PASS requires observed outputs; repository CI, a documented case study, successful media render, slash-command invocation and autonomous pipeline acceptance are separate evidence classes.
-
-## Phase 5 — The Last Light: first real-media proof
-
-**Historical planning protocol below:** the V9 case study now documents subsequent human-operated production. Treat the steps below as acceptance criteria for an independently evidenced image-first integration test, not as a claim that no video exists. The V9 screening candidate does not automatically close the independent five-keyframe acceptance gate.
-
-
-**Scenario:** existing 30-second, five-shot fictional project. Reuse existing fixture IDs and approved revisions; do not invent missing approvals or reference media.
-
-- **SH01:** Establish the world, character and geography from the existing storyboard.
-- **SH02:** `CHILD-01` picks up amber `SPARK-01`.
-- **SH03:** `CHILD-01` carries the same `SPARK-01` east toward `TOWER-01`.
-- **SH04:** The child visibly places and releases `SPARK-01` inside the tower lantern.
-- **SH05:** The same spark remains inside that lantern.
-
-**Planning gate:** verify current main revision, Director/specialist skills, Project Bible schema, original five-shot fixtures, locked assets, permissions and missing reference images. Prepare five proposed keyframes and a continuity matrix; **do not generate media during planning**.
-
-**Execution gate:** explicit creative approvals and separate authorization for the actual image tool/provider, account/credits and assets. Generate one controlled keyframe per shot, record inputs, provider limitations and actual files. Review outputs for character/coat, prop identity/state, landmarks, world-space light direction, camera axis and approved changes. Any failure becomes a scoped repair proposal, not an automatic regeneration.
-
-**Success:** five inspectable images with traceable shot IDs and an evidence-backed QA report, with failures and corrections disclosed. This proves an image-first pilot, **not** finished-film reliability.
-
-## Phase 6–8 production reliability acceptance
-
-| Capability | Minimum test | Failure to detect |
+| Capability | Evidence | Unresolved limitation |
 | --- | --- | --- |
-| Identity and prop continuity | Compare actual five keyframes with a state ledger | Face/wardrobe drift, spark duplication, missing transfer |
-| Locked-asset protection | Revise one shot and check unaffected locked shots | Silent change to approved assets |
-| Dependency awareness | Change a prop state and inspect downstream impact preview | Inconsistent subsequent shots |
-| Recovery | Resume from saved checkpoint in fresh context | Lost approvals, invented references, stale revisions |
-| Evidence honesty | Compare claimed media inspection to available assets | Claiming generated or inspected output without evidence |
-| Video/audio execution | Inspect actual rendered clips and export | Wrong timing, missing narration, unverified delivery |
+| Seven-skill architecture and Project Bible | Repository skill files and stage-gate contracts | Native cross-host invocation and autonomous delegation not proven |
+| Specialist and Director acceptance | Planning-only tests and targeted regressions | No independent seven-agent real-media end-to-end acceptance |
+| Creative benchmark | [Eight adjudicated V1/V2 textual comparisons](quality-benchmark-results.md), descriptive means 4.50 vs 4.83 / 5 | Small model-reviewed sample; not proof of better rendered films |
+| Recovery | [Phase 7 exit assessment](phase7-recovery-exit.md), offline deterministic and fresh-process tests | Trusted approval provenance, asset integrity and cross-host recovery open |
+| Real-media pilot | [The Last Light V9](case-studies/the-last-light/README.md): human-guided five-shot screening candidate | Independent visual/audio QA, rights and final publication approval open |
+| Public install | [V2 release preflight](releases/v2.0.0-checklist.md) records clean GitHub-source CI install | Two-host interactive skill invocation remains unverified |
+| Security and rights | [Public-exposure audit](security/v2-public-exposure-audit.md), [rights checklist](security/v2-media-release-rights.md), [terms review](archive/v2/v2-ai-media-terms-review.md) | Full reachable-history/privacy/binary audit not independently complete; soundtrack origin UNKNOWN / NOT_VERIFIED |
 
-## Benchmark follow-ups and quality backlog
+## V2.0.0 — release-critical track
 
-- **CREATIVE-04:** PR #63 addresses physical prop and lighting-geometry instructions; consult the preserved independent post-fix regression evidence before assigning PASS/FAIL. Do not infer success from the merge.
-- **CREATIVE-01:** Director sometimes drafted a full screenplay too early; narration was described as approximately 70 words despite a 59-word count. Fix discovery behavior and arithmetic with focused tests.
-- **CREATIVE-05:** Historical V1 bundled screenplay/Visual Bible/storyboard approvals; retain separate-gate tests even though the original blind reviewer did not flag it.
-- **CREATIVE-06/07:** Adjudication removed unsupported safety findings in new reviews; original flagged reviews remain unchanged. No broad rebenchmark is necessary.
-- **Specialists:** Preserve existing Storytelling, Cinematography, Sound, Video Production and Continuity QA strengths. Improve only when cross-stage or real-media evidence shows a defect.
+**Scope:** seven portable skills; Director-specialist planning contracts; separate creative and execution approval gates; deterministic checkpoint/recovery tooling; reproducible tests; accurate, clearly labeled human-operated V9 case study. Do not broaden V2.0 to autonomous provider execution.
 
-## Release and evidence rules
+| ID | Workstream | Current state | Exit evidence / next action |
+| --- | --- | --- | --- |
+| V2-R1 | Seven-skill architecture and stage gates | **IMPLEMENTED** | Preserve contract and test provenance; no autonomous claim |
+| V2-R2 | Benchmark and targeted regressions | **EVIDENCED, scoped** | Retain historical reviews and unresolved regression findings |
+| V2-R3 | Offline recovery and checkpoint format | **EVIDENCED, scoped** | Document limits; cross-host/trusted approvals deferred to V2.1 |
+| V2-R4 | Human-guided The Last Light V9 example | **SCREENING CANDIDATE** | Preserve actual media provenance and unresolved QA; no final film acceptance claim |
+| V2-R5 | Public install and packaging | **CI EVIDENCE EXISTS** | Verify intended release commit and public install reproducibility |
+| V2-R6 | Public history, privacy, secrets, dependencies | **BLOCKED / INCOMPLETE** | Audit reachable refs/history, binary omissions, alerts and licenses; redact findings |
+| V2-R7 | Media rights and attribution | **BLOCKED / INCOMPLETE** | Establish soundtrack provenance and rights for every distributed asset; unknown stays unknown |
+| V2-R8 | Release documentation, CI and owner approval | **OPEN** | Align README, notes, changelog, exact SHA, checks; explicit release authorization |
 
-- A merged PR proves changes landed, not that a new agent behavior passed.
-- Preserve exact prompts, full responses, version hashes, reviewer provenance, failure reports and any explicit metadata gaps.
-- Report `PASS`, `FAIL`, `BLOCKED` and `NOT_RUN` without silently converting them to completion.
-- Do not claim a generated image, clip, soundtrack or export until it exists and has been inspected.
-- Do not publish private captures, user assets or personal project data in a public repository without authorization.
-- **Production GO remains HOLD** for new provider work and release until explicitly changed for a scoped operation. Historical human-operated V9 generation is documented separately.
+**V2.0 release gate:** V2-R6, R7 and R8 must be resolved or explicitly scoped with documented lawful/safe exclusions; final CI and packaging checks must apply to the actual release SHA. A repository being public, an earlier green scan or a merged PR is not a release approval. Detailed checklist: [V2 release preflight](releases/v2.0.0-checklist.md).
+
+## V2.1.0 — candidate capability milestones
+
+These are **not automatically V2.0 blockers**. Prioritize after a V2.0 release decision and evidence review.
+
+| ID | Milestone | Acceptance target | Dependency |
+| --- | --- | --- | --- |
+| V21-1 | Two-host skill portability | Clean pinned install and actual Director + two specialist invocation logs in two supported hosts; distinguish native invocation from pasted instructions | V2 packaging |
+| V21-2 | Director/specialist orchestration | Independent text-only end-to-end scenario with preserved handoffs, real approval gates and no fabricated media | V21-1 |
+| V21-3 | Trusted recovery | Cross-host checkpoint transfer with revision, approval-source, locked-asset and missing-data checks | V21-1, existing recovery |
+| V21-4 | Image/prop continuity | Independent SH01–SH05 keyframe comparison for CHILD-01, SPARK-01, TOWER-01, wardrobe, lighting and geography | Existing case-study assets |
+| V21-5 | Localized video repair | Demonstrate before/after scoped repair without changing locked shots; preserve exact artifact evidence | V21-4 |
+| V21-6 | Sound/export QA | Inspect V9 shot transitions, fade, timing and actual soundtrack/listening result; report unresolved defects | Rights review, existing V9 |
+| V21-7 | Quality and portability regressions | Evidence-backed cross-stage tests, stable compatibility and truthful PASS/FAIL/NOT_RUN reports | V21-2–6 |
+
+**Candidate scope is subject to revision**; no automatic generation or new provider integration is authorized.
+
+## V3 — connected agentic filmmaking research
+
+**Product hypothesis:** the Director remains the creative orchestrator and six specialist skills remain the decision layer, while an execution layer connects authorized providers and local tools. The aim is traceable, recoverable, approval-gated production rather than simply generating more prompts.
+
+```mermaid
+flowchart LR
+  U[Human creative owner] --> D[Director + Project Bible]
+  D <--> S[Six specialist skills]
+  D --> G{Explicit approvals and budget gates}
+  G --> C[Typed execution contracts]
+  C --> A[Provider-neutral adapters]
+  A --> M[Verified assets and provenance]
+  M --> Q[Continuity and media QA]
+  Q --> D
+```
+
+| Research stage | Proposed outcome | Go/no-go evidence |
+| --- | --- | --- |
+| V3-R1 — Feasibility | Provider/API/terms matrix; identify supported image, video, speech, music and editing integrations | Documented legitimate API availability, licensing, privacy and cost model; never assume website automation is permitted |
+| V3-R2 — Architecture | Typed job, artifact, checkpoint, retry, budget and approval contracts | Threat model, state machine, provider-neutral design review |
+| V3-R3 — Local no-cost prototype | Mock provider jobs + optional FFmpeg assembly on existing authorized assets | Deterministic test results; no paid calls or external account connection |
+| V3-R4 — First authorized adapter | One real integration only after explicit permission | Scoped account/credit authorization, cost ceiling, provenance and rollback |
+| V3-R5 — Coordinated production pilot | Multi-agent orchestration with evidence-based visual/audio QA and resumability | Actual inspected output and honest failure metrics, not simulated PASS |
+
+**Not committed:** provider choices, availability of Google Flow APIs, autonomous generation, additional agents, dates, spend or release versions. Any provider call, credit spend, account connection or media publication requires its own explicit approval.
+
+## Cross-version execution order
+
+1. **Now — documentation and audit:** review this canonical roadmap, [development governance](DEVELOPMENT.md) and historical evidence; close documentation inconsistencies by PR. No release or branch migration implied.
+2. **V2 release safety:** investigate privacy/history/binaries and media rights first. Do not run the historical-path inventory workflow until its raw artifact-upload exposure is reviewed.
+3. **V2 acceptance:** validate remaining package/CI and honest release documentation; obtain explicit owner decision before publishing a V2 tag or release.
+4. **V2.1 evidence:** execute independent host invocation, trusted recovery, continuity and scoped repair tests without assuming external paid generation.
+5. **V3 feasibility:** perform research and local/mock prototypes before requesting provider integrations.
+
+## Repository governance migration — separate approval track
+
+Target [simplified GitFlow](DEVELOPMENT.md): permanent `main` (released stable) and `develop` (next version); PR-only short-lived work branches; `release/x.y.z` stabilization and `hotfix/*` backports; immutable version tags.
+
+**Important:** `main` currently contains unreleased V2 work. Do **not** reset/force-push history, pretend `main` is V1, or create a V2 tag as a shortcut.
+
+| Step | State | Safety condition |
+| --- | --- | --- |
+| G1. Document workflow and inspect current refs/PRs | **DOCUMENTATION PROPOSED** | Preserve historical PRs, V1 tag and unique commits |
+| G2. Decide V2-in-main migration path | **NOT STARTED** | Owner approves migration after comparison and impact analysis |
+| G3. Create `develop`; protect it and `main` from deletion | **NOT STARTED** | Verify rulesets/plan actually enforce deletion protection |
+| G4. Enable auto-delete of merged PR heads | **OFF / NOT VERIFIED** | Only after G3; source branch `develop` must be protected |
+| G5. Inventory ~117 reported legacy branches | **NOT AUDITED** | Review merged/open-PR/unique commits; never bulk-delete blindly |
+| G6. Clean obsolete branches | **NOT AUTHORIZED** | Separate owner approval and verified recoverability |
+
+See [DEVELOPMENT.md](DEVELOPMENT.md) for detailed release/hotfix/branch rules. The number of branches is a previously reported estimate, not a verified live count.
+
+## Historical phase-to-milestone mapping
+
+The original numbered V2 phases are preserved here as a traceability index, not a second active plan.
+
+| Historical phase | Current milestone | Evidence/remaining gap |
+| --- | --- | --- |
+| 1 — Architecture | V2-R1 | Seven skills implemented |
+| 2 — Specialist/Director tests | V2-R2 | Planning-only acceptance |
+| 3–4 — Creative benchmark and fixes | V2-R2, V21-7 | [Benchmark](quality-benchmark-results.md), PR #62/#63 and follow-up regressions |
+| 5 — Five-keyframe pilot | V2-R4, V21-4 | [V9 case study](case-studies/the-last-light/README.md); independent acceptance open |
+| 6 — Localized repair | V21-5 | Human-guided repair exists; independent locked-asset verdict open |
+| 7 — Recovery | V2-R3, V21-3 | [Offline recovery](phase7-recovery-exit.md) evidenced; trusted/cross-host partial |
+| 8 — Video/sound/export | V2-R4, V21-6 | V9 screening candidate; final QA/rights open |
+| 9 — Portability/security/release | V2-R5–R8, V21-1–2 | Public install CI evidenced; release gates open |
+
+## Evidence and change-control rules
+
+- Every milestone closure links an exact PR/commit, test output or inspectable media result; historical reports stay intact.
+- No invented approvals, generated footage, independent reviewer actions, media inspection or host invocation.
+- A merged PR, a CI PASS, a model-reviewed text benchmark, a rendered MP4 and a release authorization are distinct evidence classes.
+- For new work, use scoped branches and PRs; no direct protected-branch changes. The GitFlow migration itself requires separate review.
+- Update **this roadmap** when version scope or milestone state changes; keep Git history for former operational snapshots and release preflight as a gate checklist, not parallel progress plans.
