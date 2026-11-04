@@ -21,4 +21,4 @@ For permission beyond any applicable legal exception, contact the repository mai
 
 See the [canonical media-rights checklist](../../security/v2-media-release-rights.md) and [production case study](production-v9-case-study.md) for attribution, provider evidence and outstanding inspection limits. This notice is a **scope clarification**, not a final film publication approval or a legal clearance certificate.
 
-V2.0.0 remains **unreleased**. Production GO and authorization for new provider jobs remain **HOLD**.
+V2.0.0 was released on 2026-11-04 without the V9 MP4 in its source tree; historical Git commits may still contain the video. Production GO and authorization for new provider jobs remain **HOLD**.
