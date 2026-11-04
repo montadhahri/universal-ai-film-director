@@ -1,10 +1,8 @@
 # The Last Light — image and video case study
 
-**A 30-second, five-shot film demonstrating a human-operated, seven-skill-guided filmmaking workflow.** The finished V9 screening candidate is committed to this repository:
+**A documented 30-second, five-shot, human-operated filmmaking experiment.** The V9 MP4 is **not included in the V2.0.0 source tree or release** because the owner chose to exclude Google Flow/Veo video from the versioned distribution. Historical commits may still contain the previous MP4; removing it from the current tree does not erase that history.
 
-**[Watch The Last Light V9 (MP4)](videos/the-last-light-v9.mp4)**
-
-**Media terms:** The V9 MP4 and five keyframe PNGs are public case-study assets, **not licensed under the repository's MIT software license**. Public access does not grant unrestricted reuse. Read [The Last Light media terms](MEDIA-TERMS.md).
+**Media terms:** The five ChatGPT-generated keyframes remain in the source tree, under [separate non-MIT media terms](MEDIA-TERMS.md). The V9 MP4 is excluded from the V2 source tree. Historical copies are not newly licensed for reuse.
 
 See the [V9 production case study](production-v9-case-study.md) for the skill workflow diagram, generation sequence, local editing, sound design, credit ledger, and open QA findings. See the [evidence-based roadmap](roadmap.md) for what is complete versus still blocked.
 

@@ -20,7 +20,7 @@ tags, not by duplicated skill source folders.
 ### Changed
 - Publish the repository and verify public GitHub installation of all seven skills using the pinned Skills CLI in CI; this does not verify live host invocation.
 - Record V2 release safety, rights and provenance review gaps, keeping the V9 film a proposed screening candidate and production authorization on HOLD.
-- Clarify MIT licensing of code and seven skills separately from the five ChatGPT keyframes and Google Flow/Veo V9 case-study MP4; public media availability does not grant unrestricted reuse.
+- Separate MIT-licensed code and seven skills from five ChatGPT reference keyframes under non-MIT media terms; remove the Google Flow/Veo V9 MP4 from the current V2 source tree while acknowledging it may remain reachable through Git history.
 - Add a user-facing nine-stage production workflow and modular Director/specialist architecture diagrams to README, with explicit user approvals, generation permission boundaries and single-agent fallback.
 - Make direct GitHub Skills CLI installation the primary public Quick Start, with one-command Director, all-skills, list and specialist examples; retain Git clone as optional development path and document public GitHub access without claiming unverified host invocation.
 - Add task-specific worked filmmaking examples for all seven skills and validate README installation/release discoverability, user approval boundaries and negative media-claim scenarios.
