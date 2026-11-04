@@ -25,9 +25,17 @@ function saveCheckpointFile(filePath,project) {
 }
 function loadCheckpointFile(filePath) {
  if(typeof filePath!=='string'||!filePath.trim())fail('Checkpoint file path required');
- const stat=fs.statSync(filePath);
- if(!stat.isFile())fail('Checkpoint path must be a regular file');
- const result=importCheckpoint(fs.readFileSync(filePath,'utf8'));
- return {...result,persisted:true};
+ // Open once, then validate and read through the same file descriptor.
+ // O_NOFOLLOW prevents final-component symlink traversal where supported.
+ const flags=fs.constants.O_RDONLY|(fs.constants.O_NOFOLLOW||0);
+ const fd=fs.openSync(filePath,flags);
+ try {
+  const stat=fs.fstatSync(fd);
+  if(!stat.isFile())fail('Checkpoint path must be a regular file');
+  const result=importCheckpoint(fs.readFileSync(fd,'utf8'));
+  return {...result,persisted:true};
+ }finally {
+  fs.closeSync(fd);
+ }
 }
 module.exports={saveCheckpointFile,loadCheckpointFile};
