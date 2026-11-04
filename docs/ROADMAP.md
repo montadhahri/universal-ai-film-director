@@ -1,6 +1,6 @@
 # Product roadmap — Universal AI Film Director
 
-**Canonical version and milestone roadmap · reconciled 2026-11-04.** This document is the single source for planned scope, priority, phase exit gates and release readiness. GitHub issues/PRs/CI provide live execution evidence. [Development governance](DEVELOPMENT.md) covers GitFlow and release operations; [release preflight](releases/v2.0.0-checklist.md) contains the detailed V2 release checklist. Historical operational context and release evidence remain in Git history and the linked supporting reports.
+**Canonical version and milestone roadmap · reconciled 2026-11-04.** This document is the single source for planned scope, priority, phase exit gates and release readiness. GitHub issues/PRs/CI provide live execution evidence. [Development governance](DEVELOPMENT.md) covers the main-only PR workflow and release operations; [release preflight](releases/v2.0.0-checklist.md) contains the detailed V2 release checklist. Historical operational context and release evidence remain in Git history and the linked supporting reports.
 
 > **Current decision:** V1.0.0 is the last published release. V2.0.0 is **unreleased**, despite public repository visibility and substantial implemented V2 work. **Production GO: HOLD**. No release, provider job, credit spend, account connection, media publication, or branch deletion is authorized by this roadmap. Statements below distinguish repository implementation, observed evidence and unverified acceptance.
 
@@ -96,22 +96,18 @@ flowchart LR
 4. **V2.1 evidence:** execute independent host invocation, trusted recovery, continuity and scoped repair tests without assuming external paid generation.
 5. **V3 feasibility:** perform research and local/mock prototypes before requesting provider integrations.
 
-## Repository governance migration — separate approval track
+## Repository workflow — main-only (adopted 2026-11-04)
 
-Target [simplified GitFlow](DEVELOPMENT.md): permanent `main` (released stable) and `develop` (next version); PR-only short-lived work branches; `release/x.y.z` stabilization and `hotfix/*` backports; immutable version tags.
+The owner retired all legacy branches and canceled the permanent `develop`/GitFlow migration. **`main` is the only permanent branch.** Each new change uses a temporary branch and PR into `main`, with deletion of the temporary branch after its merge is verified. The current `main` includes unreleased V2 work; the last published version remains V1.0.0. Do not reset history or publish V2 without the separate release gates.
 
-**Important:** `main` currently contains unreleased V2 work. Do **not** reset/force-push history, pretend `main` is V1, or create a V2 tag as a shortcut.
-
-| Step | State | Safety condition |
+| Step | State | Next action |
 | --- | --- | --- |
-| G1. Document workflow and inspect current refs/PRs | **DOCUMENTATION PROPOSED** | Preserve historical PRs, V1 tag and unique commits |
-| G2. Decide V2-in-main migration path | **NOT STARTED** | Owner approves migration after comparison and impact analysis |
-| G3. Create `develop`; protect it and `main` from deletion | **NOT STARTED** | Verify rulesets/plan actually enforce deletion protection |
-| G4. Enable auto-delete of merged PR heads | **OFF / NOT VERIFIED** | Only after G3; source branch `develop` must be protected |
-| G5. Inventory ~117 reported legacy branches | **NOT AUDITED** | Review merged/open-PR/unique commits; never bulk-delete blindly |
-| G6. Clean obsolete branches | **NOT AUTHORIZED** | Separate owner approval and verified recoverability |
-
-See [DEVELOPMENT.md](DEVELOPMENT.md) for detailed release/hotfix/branch rules. The number of branches is a previously reported estimate, not a verified live count.
+| G1. Consolidate roadmap and development documentation | **MERGED** — PR #117 | Maintain one canonical roadmap |
+| G2. Document legacy branch audit | **MERGED** — PR #118; historical snapshot | Retain as historical evidence only |
+| G3. Owner cleanup of legacy branches | **COMPLETED / VERIFIED** — one `main` branch observed 2026-11-04 | No further legacy cleanup required |
+| G4. Retire permanent `develop` plan | **OWNER DECISION CONFIRMED** | Follow [DEVELOPMENT.md](DEVELOPMENT.md) |
+| G5. Verify `main` protection and CI rules | **NOT VERIFIED** | Inspect settings; no claims of enforcement |
+| G6. Enable optional automatic merged-head cleanup | **NOT VERIFIED / NOT AUTHORIZED** | Consider only after protection review |
 
 ## Historical phase-to-milestone mapping
 
@@ -133,5 +129,5 @@ The original numbered V2 phases are preserved here as a traceability index, not 
 - Every milestone closure links an exact PR/commit, test output or inspectable media result; historical reports stay intact.
 - No invented approvals, generated footage, independent reviewer actions, media inspection or host invocation.
 - A merged PR, a CI PASS, a model-reviewed text benchmark, a rendered MP4 and a release authorization are distinct evidence classes.
-- For new work, use scoped branches and PRs; no direct protected-branch changes. The GitFlow migration itself requires separate review.
+- For new work, use scoped branches and PRs; no direct protected-branch changes. Follow the main-only PR workflow; changes to repository protection settings require separate review.
 - Update **this roadmap** when version scope or milestone state changes; keep Git history for former operational snapshots and release preflight as a gate checklist, not parallel progress plans.
