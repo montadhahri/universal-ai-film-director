@@ -28,3 +28,15 @@
 [ROADMAP.md](ROADMAP.md) is the canonical product/version roadmap. [V2 release checklist](releases/v2.0.0-checklist.md), CI, case studies and historical audits provide supporting evidence, not competing roadmaps.
 
 Keep distinct approvals for code merges, version releases, creative decisions, account/provider access, paid execution and media publication. **Production GO remains HOLD** until separately authorized.
+
+## Documentation scope and anti-proliferation rule
+
+**Apply this rule only to operational/administrative documentation** (security and privacy audits, release readiness notes, one-off investigations, CI summaries, maintenance and process reports). **It does not restrict Agent Skills, `SKILL.md` files or their references, core architecture/design and technical specifications, schemas, tests, benchmark evidence, creative bibles, storyboards, or film case-study/source evidence.** Preserve the completeness and traceability those core assets require.
+
+- **Update an existing canonical document first.** For version direction use `docs/ROADMAP.md`; for active V2 release gates use `docs/releases/v2.0.0-checklist.md`; for security audit findings use `docs/security/v2-public-exposure-audit.md`; for media rights use `docs/security/v2-media-release-rights.md`. Avoid parallel living status reports.
+- **New administrative docs require a demonstrated need:** legally/operationally distinct audience, a required handoff or independent lasting reference that cannot fit clearly in an existing document. Default to a concise section in the canonical file, or a PR description for temporary results.
+- **Do not create one report per PR, scan, check, incident step or conversation.** Consolidate results by topic and replace superseded live summaries rather than appending repeating chronological narratives indefinitely. Keep important evidence references (PR/run links, scope, outcomes, unresolved gates) and retain Git history for change provenance.
+- **Prefer actionable brevity:** current decision, evidence/source, unresolved risk, owner/next action. Archive or delete redundant administrative files only after checking inbound links and preserving required evidence; never delete core skill, test or creative artifacts under this rule.
+- **No new permanent audit workflow or script solely to generate more documentation.** Use existing CI and GitHub evidence where practical; justify any lasting tooling independently.
+
+During PR review, ask: *Can this administrative change update an existing canonical source instead of creating another document?* If yes, do that.
