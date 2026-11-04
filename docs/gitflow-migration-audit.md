@@ -20,7 +20,7 @@
 | Branch | Ahead | Behind | Implication |
 | --- | ---: | ---: | --- |
 | `docs/unified-roadmap-gitflow-v3-proposal` | 0 | 1 | Merged documentation head; potential cleanup candidate only after review |
-| `release/v2-rc-notes` | **1** | 54 | **DIVERGED; do not delete** until unique commit is reviewed |
+| `release/v2-rc-notes` | **1** | 54 | **ABANDONED / OUT OF SCOPE** — owner canceled the V2 beta/release-candidate attempt. Do not carry its unique commit into the active roadmap; retain branch for now, with any eventual deletion handled in separately approved cleanup |
 | `security/historical-path-inventory-20261103` | 0 | 23 | No unique commits in sampled comparison |
 | `feat/v2-production-pipeline-core` | 0 | 293 | No unique commits in sampled comparison |
 | `test/phase9-public-remote-install-20261103` | 0 | 38 | No unique commits in sampled comparison |
