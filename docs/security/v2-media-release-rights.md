@@ -54,3 +54,13 @@ The historical credential-pattern workflow reported 569 scanned text blobs, zero
 - **Next action:** Owner to confirm the soundtrack source implementation and any externally sourced loops/samples, then inspect playable V9 and PNGs and record a concise decision here. Do not create another rights report. No provider job, paid credit spend or media generation authorized.
 
 **Disposition: V2-R7 PARTIAL/HOLD, not a rights certification.**
+
+## Uploaded V9 MP4 inspection — 2026-11-04
+
+The owner uploaded `the-last-light-v9.mp4` for this review. The file's independently calculated SHA-256 was `64b1b593ab9d1534baf39940f067a9839fa7de34e703cae15377894d123d5235`, matching the repository's documented V9 hash. Technical inspection confirmed 30.000 s, 960×540, 24 fps H.264 and 48 kHz mono AAC audio; audio volume analysis measured approximately −26.4 dB mean and −10.3 dB peak, consistent with the V9 production record.
+
+- **Sampled visual QA:** Fictional stylized child, glowing amber spark, town and tower. No obvious live-action private persons or clearly recognizable third-party characters were observed in sampled frames. **Not an exhaustive frame-by-frame copyright, logo, face or personal-data review.**
+- **Creative defect detected:** At least one sampled discovery-shot frame visibly contains production-interface/shot labels and a bottom information strip (including `Keyframe: PROPOSED`), which should be treated as a presentation QA issue before promoting V9 to a final public showcase. The review did not edit the source MP4.
+- **Container metadata:** No obvious personal-name, email or geolocation fields were found in the ffprobe-exposed container and stream tags; the metadata check is limited to parsed fields and is not a forensic metadata audit.
+- **Audio:** A playable AAC audio track exists. Signal/volume analysis does **not** verify the absence of sampled music, copyrighted motifs, narration or other source rights; owner reports soundtrack was entirely locally created without external music, loops or samples. This provenance remains owner-confirmed, not independently proven.
+- **Disposition:** Authentic V9 file identity and technical characteristics verified; partial visual/metadata review completed. **Media copyright/privacy QA and distribution rights remain PARTIAL / NOT CLEARED.** Service-specific Google Flow/Veo terms and explicit final publication/license choices remain open. V2 release and Production GO stay HOLD.
