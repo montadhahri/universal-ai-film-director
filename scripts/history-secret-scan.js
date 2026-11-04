@@ -31,7 +31,7 @@ for(const oid of unique){
     if(re.test(s)){
       findings++;
       // Object IDs and pattern categories only; never print matching secret text.
-      console.log('Potential credential: '+name+' in Git blob '+oid);
+      // Keep historical object IDs out of public workflow logs.
     }
   }
 }
@@ -43,7 +43,11 @@ let metadataMatches=0;
 for(const [scope,value] of [['commit metadata',log],['historical paths',paths]]) {
   for(const [name,re] of patterns) {
     re.lastIndex=0;
-    if(re.test(value)) { metadataMatches++; findings++; console.log('Potential credential pattern: '+name+' in '+scope+' (value redacted)'); }
+    if(re.test(value)) {
+      metadataMatches++;
+      findings++;
+      // Details deliberately omitted from public logs.
+    }
   }
 }
 console.log(JSON.stringify({metadata_pattern_categories:metadataMatches,scanned_text_blobs:inspected,skipped_large_or_binary_blobs:skipped,findings,limitations:'reachable refs only; pattern based; no media privacy, licensing or author metadata checks'}));
