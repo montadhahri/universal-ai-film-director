@@ -44,7 +44,7 @@ Read the [full results, methodology, caveats and follow-up findings](docs/qualit
 
 ## 🎞️ The Last Light — human-guided film case study
 
-A **30-second, five-shot V9 screening candidate** documents an image-first filmmaking experiment taken through owner-operated Google Flow / Veo 3.1 Fast video generation, local assembly and an ambient soundtrack. The five reference keyframes were generated with ChatGPT. The film is a **human-guided case study**, not a verified autonomous seven-agent execution or final creative/publication approval.
+A **30-second, five-shot V9 screening candidate** documents a human-operated experiment with Google Flow / Veo 3.1 Fast and local assembly. **The V9 MP4 is excluded from V2.0.0's current source tree and release archive** pending separate video rights clearance; previous Git commits may still contain it. Five ChatGPT-generated keyframes remain as reference images. The historical film is not evidence of autonomous seven-agent execution or final film publication approval.
 
 [Read the production case study, V9 technical evidence, approvals and remaining QA](docs/case-studies/the-last-light/README.md), and the [separate media terms](docs/case-studies/the-last-light/MEDIA-TERMS.md). See also the [AI media provider-terms review](docs/archive/v2/v2-ai-media-terms-review.md) and [media release-rights checklist](docs/security/v2-media-release-rights.md).
 
@@ -257,7 +257,7 @@ Not by itself. Any provider account connection, asset upload, paid operation or 
 
 ## 📜 License
 
-[MIT License](LICENSE) for software, Agent Skills, templates and supporting written documentation. **The Last Light keyframes and V9 film are not MIT-licensed**; see the [separate media terms](docs/case-studies/the-last-light/MEDIA-TERMS.md). Public access to media is not an unrestricted reuse license. Ensure any other assets, recordings, voices and music used in your own productions are properly licensed or authorized.
+[MIT License](LICENSE) for software, Agent Skills, templates and supporting written documentation. **The Last Light keyframes and historical V9 film are not MIT-licensed**; see the [separate media terms](docs/case-studies/the-last-light/MEDIA-TERMS.md). The V9 MP4 is excluded from the current V2 release tree; historical Git availability does not grant unrestricted reuse rights. Ensure any other assets, recordings, voices and music used in your own productions are properly licensed or authorized.
 
 ---
 
