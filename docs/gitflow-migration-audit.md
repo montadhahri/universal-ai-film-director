@@ -1,3 +1,5 @@
+> **HISTORICAL SNAPSHOT — SUPERSEDED (2026-11-04).** This audit describes the repository *before* the owner removed legacy branches and canceled the permanent `develop` migration. It is retained solely as evidence. The current policy is [DEVELOPMENT.md](DEVELOPMENT.md) and [ROADMAP.md](ROADMAP.md); do not execute the old migration steps below.
+
 # GitFlow migration — baseline audit (2026-11-04)
 
 **Status: READ-ONLY FINDINGS; migration NOT EXECUTED.** The branch containing this report is documentation-only. No `develop` branch, protection rule, auto-delete setting, release or historical branch was changed.
