@@ -1,6 +1,6 @@
 # V2 public-media rights and privacy release gate
 
-**Status: PENDING OWNER VERIFICATION.** This document is an inventory and decision checklist, **not** a legal opinion or a declaration that media may be redistributed.
+**Status: PARTIAL — owner verification and audiovisual QA pending. Repository already public; V2 release and Production GO remain HOLD.** This document is an inventory and decision checklist, **not** a legal opinion or a declaration that media may be redistributed.
 
 ## Included assets
 
@@ -43,4 +43,14 @@ The existing [V9 production report](../case-studies/the-last-light/production-v9
 
 The historical credential-pattern workflow reported 569 scanned text blobs, zero matches and seven skipped binary/large blobs on PR #94. That is useful security evidence, **not** personal-data clearance, media licensing, comprehensive secret scanning or proof of legal redistribution.
 
-**Current recommendation: HOLD public visibility pending media/privacy inspection and explicit owner authorization** until both the history/privacy review and the rights decision are completed. Production GO remains HOLD for new provider jobs.
+**Current recommendation: HOLD V2 release and additional media publication pending verification.** Repository visibility is already public. Production GO remains HOLD for new provider jobs.
+
+## V2-R7 focused review — 2026-11-04
+
+- **Evidence available:** The owner identifies the five PNG keyframes as generated in ChatGPT, the five constituent video shots as owner-operated Google Flow/Veo 3.1 Fast output, and V9 as locally assembled; see `provenance.json` and `production-v9-case-study.md`. The V9 record describes original local ambient sound added in V8 and gain/fade changes in V9.
+- **General provider terms:** OpenAI European terms describe assignment of OpenAI's rights in output to the user to the extent legally permitted; Google general terms state Google does not claim ownership of original user-generated content. Neither replaces verification of applicable service-specific terms, source input rights or third-party rights. Consult [existing provider-terms review](../archive/v2/v2-ai-media-terms-review.md); this section does not assert new legal clearance.
+- **Media inspection:** Actual PNG pixels, MP4 frames, audible soundtrack and embedded metadata have **not been independently inspected in this review**. Do not infer absence of logos, copyrighted material, private likenesses or incidental music.
+- **Unresolved rights questions:** Google Flow/Veo creation-date/account-specific distribution conditions; complete original soundtrack source and any samples; finished media content/metadata QA; and explicit separate decision on distribution/license terms for the media versus MIT-covered software and skill files.
+- **Next action:** Owner to confirm the soundtrack source implementation and any externally sourced loops/samples, then inspect playable V9 and PNGs and record a concise decision here. Do not create another rights report. No provider job, paid credit spend or media generation authorized.
+
+**Disposition: V2-R7 PARTIAL/HOLD, not a rights certification.**
