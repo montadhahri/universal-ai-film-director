@@ -1,6 +1,6 @@
 # V2 public-media rights and privacy release gate
 
-**Status: PARTIAL — owner verification and audiovisual QA pending. Repository already public; V2 release and Production GO remain HOLD.** This document is an inventory and decision checklist, **not** a legal opinion or a declaration that media may be redistributed.
+**Status: PARTIAL — owner selected V9 MP4 exclusion from V2 source tree, keyframe QA and historical exposure still partial; Production GO remains HOLD.** This document is an inventory and decision checklist, **not** a legal opinion or a declaration that media may be redistributed.
 
 ## Included assets
 
@@ -28,12 +28,12 @@ The existing [V9 production report](../case-studies/the-last-light/production-v9
 - [x] Record owner-provided origin of V9 ambient soundtrack: locally created during editing, without any external music, downloaded audio, loops or samples. Independent reproduction of the source implementation remains unverified; verify any other sound/narration components before broader media reuse.
 - [ ] Inspect each image and the MP4 for recognizable copyrighted characters, trademarks, private faces, identifying details, watermarks, incidental copyrighted music or embedded personal metadata.
 - [ ] Confirm that all contributors have authorized publication, and that any necessary attribution or notices are included. The repository's MIT software license alone is **not evidence of third-party media rights**.
-- [x] **Owner decision, 2026-11-04:** retain the film and five PNG keyframes in the public repository, under [separate media terms](../case-studies/the-last-light/MEDIA-TERMS.md) rather than the MIT software license. This is a licensing-scope decision, **not a blanket third-party or provider rights clearance**.
+- [x] **Updated owner decision, 2026-11-04:** remove the V9 MP4 from the active V2 source tree; retain the five ChatGPT-generated PNGs under [separate media terms](../case-studies/the-last-light/MEDIA-TERMS.md), outside MIT. Historical commits may still expose the MP4. This is not blanket third-party or provider-rights clearance.
 - [ ] Obtain an explicit separate owner decision for **public repository visibility**, and (if desired) a separate film publication/QA decision.
 
 ## Release choices
 
-**Selected scope — keep existing media in the repository with separate terms:** [media terms](../case-studies/the-last-light/MEDIA-TERMS.md) clarify no additional reuse license for the MP4/PNGs. This does not authorize broader film publication or certify all provider/third-party rights.
+**Selected scope — keep five keyframes only in current V2 source tree:** [media terms](../case-studies/the-last-light/MEDIA-TERMS.md) distinguish PNGs and historical MP4 from MIT. **V9 video removed from current tree**; old Git commits may retain it. This does not certify provider or third-party rights.
 
 **Option B — public code without media:** prepare a separate public-safe repository history that never exposes restricted media. Removing current media files from `main` alone is **insufficient** if historical commits still contain them; public visibility exposes reachable history.
 
@@ -69,4 +69,4 @@ The owner uploaded `the-last-light-v9.mp4` for this review. The file's independe
 
 - [OpenAI EU Terms of Use](https://openai.com/pt-PT/policies/eu-terms-of-use/) (updated 2026-01-16): as between the user and OpenAI, applicable ownership/assignment provisions support the user's use of output to the extent permitted by law; input rights, output disclosure rules and third-party rights remain relevant.
 - [Google Flow official help](https://support.google.com/flow/answer/16353333) and [Google Labs FAQ](https://labs.google/fx/faq) explicitly state that Google's general terms govern output use and Google does not claim ownership of original generated content. The [Flow project help](https://support.google.com/flow/answer/16935308) describes uploading generated clips to YouTube, with generated-video SynthID watermarking. This supports ordinary sharing workflows, but is **not proof of any exclusive copyright, a blanket redistribution license, or specific account/date entitlements**.
-- **Status:** owner selected separate, conservative media terms and continued public repository inclusion. Provider account-specific and creation-date notices, third-party content/privacy QA, and independent audio source reconstruction remain unverified. Media terms do not erase these outstanding issues.
+- **Status:** owner selected separate, conservative terms for remaining PNGs and exclusion of V9 MP4 from current V2 source tree. Historical video can remain Git-reachable; provider account/date notices, third-party content/privacy QA and independent audio-source reconstruction remain unverified, particularly for past video publication. Media terms and file deletion do not erase those issues.
