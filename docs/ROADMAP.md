@@ -2,7 +2,7 @@
 
 **Product direction:** a portable, creative **end-to-end AI filmmaking production system**, not just a higher-scoring screenplay or prompt generator. The Director remains a creative collaborator; the differentiator to prove is consistent assets, safe changes, recoverable state, evidence-backed QA and trustworthy delivery.
 
-> **Resume point (2026-11-03):** Start with [PROJECT_STATUS.md](PROJECT_STATUS.md) for the current execution queue, known limitations, and a prompt usable in another discussion. This roadmap is design/acceptance rationale; live PRs/issues and CI are checked separately.
+> **Canonical roadmap:** This file owns version scope, milestones, and proposed future directions. [Development and release governance](DEVELOPMENT.md) owns GitFlow, branching, release procedure, and cleanup policy. [PROJECT_STATUS.md](PROJECT_STATUS.md) is a dated historical operating snapshot; recheck live PRs, CI, and release evidence before acting.
 >
 > **Release decision:** The repository is now public (owner-authorized, 2026-11-03), while v2.0.0 remains unreleased. Release-draft PRs #101, #102 and #103 were closed without merging. Public visibility is not permission to tag/release V2, publish media, or run provider jobs. The owner reported a successful manually dispatched Gitleaks workflow on main; independent privacy, history completeness and media-rights review remain open. **Do not equate postponed release with completed Phase 9.**
 >
@@ -11,6 +11,36 @@
 **Architecture:** one Director and six independently installable specialists. Historical [v1.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) is preserved. The repository is public, but V2.0 release preparation remains evidence-gated; unresolved improvements are tracked as V2 and potential V2.1 work, without authorizing a V2 release or media publication. See [V2 release preflight](v2-release-preflight.md) for release blockers and deferrals.
 
 **Production GO: HOLD.** A plan, an approved creative artifact, permission to use a provider, and verified generated media are distinct states. No generation, paid job, account connection, private upload, publication or delivery is authorized by this roadmap.
+
+## Version overview and governance (proposal — 2026-11-04)
+
+| Version | Goal | State |
+| --- | --- | --- |
+| V1.0.0 | Historical initial Film Director release | **RELEASED**; immutable historical tag |
+| V2.0.0 | Seven-skill library, planning/recovery contracts, benchmark and human-guided V9 evidence | **UNRELEASED**; security, rights, QA and release gates open |
+| V2.1.0 | Portability, independent host invocation, trusted recovery and deeper media QA | **CANDIDATE**; scope not frozen |
+| V3.0+ | Agentic filmmaking orchestration and connected production tools | **RESEARCH PROPOSAL**; no implementation authorization |
+
+**One roadmap rule:** This is the only canonical version roadmap. Release preflight, historical status snapshots, test reports and case studies remain supporting evidence and must link here rather than maintain competing milestone plans. Work tracking can live in GitHub issues/milestones without duplicating status in Markdown.
+
+**Simplified GitFlow target:** `main` = latest published stable version, `develop` = next-version integration, short-lived `feature/*` / `fix/*` / `docs/*` PR branches, temporary `release/x.y.z`, and `hotfix/*` from released `main`. Published `vX.Y.Z` tags are immutable. **Current main already includes unreleased V2 work; this policy is not yet implemented.** See [DEVELOPMENT.md](DEVELOPMENT.md) for migration safeguards, protection, auto-delete, release approvals and branch inventory.
+
+### V3 research — agent-connected filmmaking (not approved)
+
+**Hypothesis:** Preserve the Director and six specialist skills as the creative decision layer while adding a provider-neutral execution/orchestration layer: Director → specialist skill/agent → typed job/approval contract → provider adapter → verified asset/QA result. Investigate local FFmpeg assembly first, then authorized image/video/voice/audio APIs and bounded multi-agent workflows.
+
+**Study questions:** Which providers expose stable, permitted APIs (do not assume Google Flow website automation is an API)? How are budgets, credits, retries, asynchronous jobs, checkpoints, creative locks, provenance, rights, security and human approvals enforced? What can be demonstrated with mocks and existing The Last Light assets without new paid generations?
+
+**Decision gates:** Feasibility and terms review → architecture proposal → no-cost prototype → measured reliability/continuity QA → separate owner authorization for any provider connection or spend. Do not promise autonomous delivery or move V3 into V2 release scope.
+
+### Governance migration work (planned, not executed)
+
+1. Audit the existing roadmap/status files and all Git refs/PRs; reconcile duplicated status without destroying evidence.
+2. Review one documentation PR establishing this canonical roadmap and [development governance](DEVELOPMENT.md).
+3. Plan the V2-in-main transition without rewriting history or creating a release/tag.
+4. Create/protect permanent `develop` and protect `main` against deletion; validate rules before enabling automatic merged-head deletion.
+5. Audit the reported ~117 branches for merged status, open PRs and unique commits; clean up only after separate owner approval.
+6. Keep V2 release, paid provider execution and media publication on independent approval gates.
 
 ## Evidence baseline — updated 2026-11-03
 
