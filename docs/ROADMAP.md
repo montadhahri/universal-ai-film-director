@@ -2,14 +2,14 @@
 
 **Canonical version and milestone roadmap · reconciled 2026-11-04.** This document is the single source for planned scope, priority, phase exit gates and release readiness. GitHub issues/PRs/CI provide live execution evidence. [Development governance](DEVELOPMENT.md) covers the main-only PR workflow and release operations; [release preflight](releases/v2.0.0-checklist.md) contains the detailed V2 release checklist. Historical operational context and release evidence remain in Git history and the linked supporting reports.
 
-> **Current decision:** V1.0.0 is the last published release. V2.0.0 is **unreleased**, despite public repository visibility and substantial implemented V2 work. **Production GO: HOLD**. No release, provider job, credit spend, account connection, media publication, or branch deletion is authorized by this roadmap. Statements below distinguish repository implementation, observed evidence and unverified acceptance.
+> **Current status:** [V2.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0) was published as a stable release on 2026-11-04 from commit `93c34e2e41351bf3411a330a8515481756f83ebd`. V2.1 work is planned. **Production GO remains HOLD:** releasing the software does not authorize provider jobs, credits, account connections, or film publication.
 
 ## At a glance
 
 | Version | Outcome | Status | Next decision |
 | --- | --- | --- | --- |
 | **V1.0.0** | Original Film Director skill | **RELEASED** — [historical tag](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) | Preserve history |
-| **V2.0.0** | Director + six specialist skills, contracts, tests, deterministic recovery and human-guided film case study | **IMPLEMENTED / RELEASE BLOCKED** | Close release-critical privacy, rights and reproducibility gates; explicit owner release decision |
+| **V2.0.0** | Director + six specialists, contracts, offline tests and human-guided film documentation (V9 MP4 excluded) | **RELEASED** — [v2.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0) | Preserve immutable tag and documented limitations |
 | **V2.1.0** | Verified portability, independent agent handoffs, stronger approval provenance and media QA | **PROPOSED** — scope not frozen | Validate V2.0 baseline, prioritize measurable gaps |
 | **V3.x** | Provider-neutral agentic filmmaking execution | **RESEARCH ONLY** | Feasibility, terms, budget, security and no-cost prototype before implementation |
 
@@ -42,7 +42,7 @@
 | V2-R5 | Public install and packaging | **CI EVIDENCE EXISTS** | Verify intended release commit and public install reproducibility |
 | V2-R6 | Public history, privacy, secrets, dependencies | **PARTIAL / RESIDUAL RISK** | Prior inventories and scans recorded; owner skips historical ZIP inspection, other unverified binary/history scope remains documented in exposure audit |
 | V2-R7 | Media rights and attribution | **PARTIAL / VIDEO EXCLUDED FROM CURRENT RELEASE TREE** | Owner elected to remove the Veo V9 MP4 from V2.0.0; five ChatGPT-generated reference PNGs remain under separate non-MIT terms. Historical Git video exposure and residual PNG rights/QA limitations remain disclosed |
-| V2-R8 | Release documentation, CI and owner approval | **IN PROGRESS** | `main` 827cbc57be9b validation/secret-scan/CodeQL PASS on 2026-11-04; still select exact RC SHA, verify its tests/packaging, notes and obtain explicit release authorization |
+| V2-R8 | Release documentation, CI and owner approval | **RELEASED / EVIDENCED** | `v2.0.0` tag at `93c34e2e4135`; final commit validation, secret scan and CodeQL PASS; public Skills CLI install previously verified for the same seven skills; owner published stable release |
 
 **V2.0 release gate:** V2-R6, R7 and R8 must be resolved or explicitly scoped with documented lawful/safe exclusions; final CI and packaging checks must apply to the actual release SHA. A repository being public, an earlier green scan or a merged PR is not a release approval. Detailed checklist: [V2 release preflight](releases/v2.0.0-checklist.md).
 
@@ -90,15 +90,15 @@ flowchart LR
 
 ## Cross-version execution order
 
-1. **Now — release-readiness reconciliation:** reuse existing security/media audit evidence; do not repeat completed investigations or proliferate administrative reports. No release authorization implied.
-2. **V2 release safety:** retain explicitly accepted ZIP uncertainty and other unverified historical/media limits; resolve remaining distribution terms and choose a legally supportable code/media publication scope. Historical inventory workflow was retired; do not reintroduce it merely to repeat scans.
-3. **V2 acceptance:** validate remaining package/CI and honest release documentation; obtain explicit owner decision before publishing a V2 tag or release.
+1. **Now — V2.1 evidence:** prioritize two-host real skill discovery/invocation and traceable specialist handoffs, without paid provider execution.
+2. **Preserve V2 baseline:** retain the stable tag and documented residual history/media limitations; V9 MP4 is absent from release source but historical Git commits may still contain it.
+3. **V2.1 acceptance:** verify real-host and independent specialist responses with honest PASS/FAIL/NOT_RUN evidence; existing CI installation does not establish native invocation.
 4. **V2.1 evidence:** execute independent host invocation, trusted recovery, continuity and scoped repair tests without assuming external paid generation.
 5. **V3 feasibility:** perform research and local/mock prototypes before requesting provider integrations.
 
 ## Repository workflow — main-only (adopted 2026-11-04)
 
-The owner retired all legacy branches and canceled the permanent `develop`/GitFlow migration. **`main` is the only permanent branch.** Each new change uses a temporary branch and PR into `main`, with deletion of the temporary branch after its merge is verified. The current `main` includes unreleased V2 work; the last published version remains V1.0.0. Do not reset history or publish V2 without the separate release gates.
+The owner retired permanent `develop`/GitFlow. **`main` is the only permanent branch.** Changes use temporary branches and owner-reviewed PRs. The immutable `v2.0.0` tag preserves the stable release while V2.1 development continues on `main`. Do not rewrite history or move release tags.
 
 | Step | State | Next action |
 | --- | --- | --- |

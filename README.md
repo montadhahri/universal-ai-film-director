@@ -4,12 +4,12 @@
 
 **From a story idea to a professionally directed AI film — one creative partner, six specialized filmmaking skills.**
 
-> **V2 status:** Public release-candidate preparation. See the [canonical V1–V3 roadmap](docs/ROADMAP.md), [V2 release preflight](docs/releases/v2.0.0-checklist.md), and [development governance](docs/DEVELOPMENT.md). The Last Light V9 is a human-guided screening candidate, not proof of autonomous seven-agent production. Production GO remains HOLD for new provider jobs and final film release.
+> **Latest stable release: [v2.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0).** V2.1 is in development; see the [roadmap](docs/ROADMAP.md) and [development governance](docs/DEVELOPMENT.md). *The Last Light* V9 remains a documented human-guided experiment, not autonomous seven-agent production; its MP4 is excluded from the v2.0.0 source archive. Production GO remains HOLD.
 
 A portable, modular **Agent Skills** collection for writing screenplays, designing visual worlds, planning cinematic shots, directing sound, preparing generation prompts and reviewing film continuity.
 
-[![Version](https://img.shields.io/badge/latest%20release-v1.0.0-blue)](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0)
-![Next version](https://img.shields.io/badge/next-v2.0.0%20in%20development-orange)
+[![Version](https://img.shields.io/badge/latest%20release-v2.0.0-blue)](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0)
+![Next version](https://img.shields.io/badge/next-v2.1.0%20planned-orange)
 [![Validate skills](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml/badge.svg)](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml)
 [![Local install smoke](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/skills-install-smoke.yml/badge.svg)](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/skills-install-smoke.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
@@ -74,7 +74,7 @@ For agents without native skills support, provide the content of `skills/univers
 
 ## 📦 Installation
 
-The repository is public. The installation commands below use the public GitHub source and should not require private repository credentials. Remote installation from this repository still needs independent verification.
+The repository is public. A clean unauthenticated Skills CLI installation of all seven skills passed in [GitHub Actions before v2.0.0's final media-removal commit](https://github.com/montadhahri/universal-ai-film-director/actions/runs/41921930247). No skill payloads changed between the tested revision and the release tag. This verifies CLI installation on the runner, **not** native skill invocation or delegation in two independent agent hosts.
 
 The repository contains **seven individually installable skill folders**. Install the Director for the complete guided experience; install specialists separately when your agent supports skill discovery.
 
@@ -100,7 +100,7 @@ npx skills add montadhahri/universal-ai-film-director --skill '*'
 npx skills add montadhahri/universal-ai-film-director --list
 ```
 
-**Installation note:** These GitHub commands are the supported Skills CLI syntax, but remote installation from this specific repository has not yet been independently tested. The repository is public, but a clean unauthenticated remote installation has not yet been independently verified. Installing a skill does not connect a video generator or spend credits.
+**Installation note:** Public GitHub Skills CLI installation was verified in CI for all seven skills using pinned `skills@1.7.4`; native host discovery/invocation remains a V2.1 validation target. Installing a skill does not connect a video generator or spend credits.
 
 For local development, cloning, offline installs, or checking out the historical `v1.0.0` tag, see [the installation guide](docs/installation.md).
 
@@ -206,7 +206,7 @@ The core is **plain Markdown Agent Skills instructions**, with no mandatory Code
 
 | Environment | Intended approach | Verified scope |
 | --- | --- | --- |
-| Codex and compatible Skills CLI hosts | Install Director and optionally specialists | Local-folder CLI smoke install only; real-agent behavior not independently verified |
+| Codex and compatible Skills CLI hosts | Install Director and optionally specialists | Local-folder and unauthenticated public-GitHub CLI installation passed in CI; real-agent invocation not independently verified |
 | Claude Code, Gemini CLI, Cursor and other compatible agents | Native skills if supported, or load Markdown manually | Compatibility depends on host/version; not certified |
 | Custom agent workflows | Read skill files and references; optionally use shared contracts | Integration required; not independently tested |
 
@@ -217,9 +217,9 @@ Skills can guide a production on any compatible agent, but they **cannot guarant
 | Version | Meaning | Link |
 | --- | --- | --- |
 | **v1.0.0** | First tagged release; original single-skill system | [Release notes and source](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) |
-| **v2.0.0** | Modular Director and six specialists, in development | [Roadmap](docs/ROADMAP.md) · [Unreleased changes](CHANGELOG.md) |
+| **v2.0.0** | Latest stable release: Director plus six specialists | [Release notes and source](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0) |
 
-Git tags preserve released versions. The working tree contains **one current source of truth**, not multiple runtime copies for each version. No v2 release tag is implied by its development status.
+Git tags preserve released versions. The working tree contains **one current source of truth**, not multiple runtime copies per version. **v2.1.0 is planned, not released**; see the [roadmap](docs/ROADMAP.md).
 
 ## ❓ FAQ
 

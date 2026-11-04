@@ -6,6 +6,10 @@ tags, not by duplicated skill source folders.
 
 ## [Unreleased]
 
+No unreleased changes recorded yet; V2.1 development is planned.
+
+## [2.0.0] — 2026-11-04
+
 ### Added
 - Add a Storytelling Creative Quality Gate to review audience attention, narration-versus-reading, payoff pacing, beat feasibility and redundancy before Director handoff, with an optional planning-only preflight checker and regression scenarios. No screenplay auto-approval or real-media claim.
 - Deepen the Storytelling specialist with filmable short-form dramatic construction, visible choices, emotional motifs, genre adaptation, narrator timing assumptions, constructive story editing and two new worked stories, while preserving user approvals.
