@@ -1,6 +1,6 @@
 # Product roadmap — Universal AI Film Director
 
-**Canonical version and milestone roadmap · reconciled 2026-11-04.** This document is the single source for planned scope, priority, phase exit gates and release readiness. GitHub issues/PRs/CI provide live execution evidence. [Development governance](DEVELOPMENT.md) covers GitFlow and release operations; [release preflight](v2-release-preflight.md) contains the detailed V2 release checklist. [Historical project snapshot](PROJECT_STATUS.md) preserves previous operational context, not a competing roadmap.
+**Canonical version and milestone roadmap · reconciled 2026-11-04.** This document is the single source for planned scope, priority, phase exit gates and release readiness. GitHub issues/PRs/CI provide live execution evidence. [Development governance](DEVELOPMENT.md) covers GitFlow and release operations; [release preflight](v2-release-preflight.md) contains the detailed V2 release checklist. Historical operational context and release evidence remain in Git history and the linked supporting reports.
 
 > **Current decision:** V1.0.0 is the last published release. V2.0.0 is **unreleased**, despite public repository visibility and substantial implemented V2 work. **Production GO: HOLD**. No release, provider job, credit spend, account connection, media publication, or branch deletion is authorized by this roadmap. Statements below distinguish repository implementation, observed evidence and unverified acceptance.
 
@@ -134,4 +134,4 @@ The original numbered V2 phases are preserved here as a traceability index, not 
 - No invented approvals, generated footage, independent reviewer actions, media inspection or host invocation.
 - A merged PR, a CI PASS, a model-reviewed text benchmark, a rendered MP4 and a release authorization are distinct evidence classes.
 - For new work, use scoped branches and PRs; no direct protected-branch changes. The GitFlow migration itself requires separate review.
-- Update **this roadmap** when version scope or milestone state changes; keep [PROJECT_STATUS.md](PROJECT_STATUS.md) as a dated archive/snapshot and release preflight as a gate checklist, not parallel progress plans.
+- Update **this roadmap** when version scope or milestone state changes; keep Git history for former operational snapshots and release preflight as a gate checklist, not parallel progress plans.
