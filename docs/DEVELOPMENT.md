@@ -1,52 +1,30 @@
 # Development and release governance
 
-**Status: PROPOSED migration policy.** This document describes the target workflow; it does not claim GitHub rulesets, branches, or settings are already configured. Until migration is approved and verified, existing PR and release safeguards apply.
+**Active workflow (owner decision, 2026-11-04):** `main` is the **only permanent branch**. Changes are made on short-lived branches and proposed to `main` through pull requests. The former `develop`/GitFlow migration plan was canceled. GitHub ruleset enforcement has **not** been independently verified.
 
-## Branch model — simplified GitFlow
+## Branch and PR workflow
 
-| Branch | Purpose | Lifecycle |
-| --- | --- | --- |
-| `main` | Latest **published stable release** after migration | Permanent, deletion restricted |
-| `develop` | Integration for the next planned release | Permanent, deletion restricted |
-| `feature/*`, `fix/*`, `docs/*`, `security/*`, `test/*` | One scoped change, PR into `develop` after migration | Delete after verified merge |
-| `release/x.y.z` | Stabilize an exact release candidate from `develop` | Temporary; restrict changes to QA, documentation and release fixes |
-| `hotfix/*` | Urgent correction to a released version, branched from `main` | Merge to `main` and backport to `develop`; delete when reconciled |
-| `vX.Y.Z` tag | Immutable published release reference | Never move or reuse |
+1. Start a scoped temporary branch from current `main`, using `feature/*`, `fix/*`, `docs/*`, `security/*`, `test/*` or `chore/*`.
+2. Make focused changes and open a PR targeting **`main`**. Include motivation, affected files, reproducible tests and any evidence limitations.
+3. Review CI, security/privacy implications, compatibility and approvals before merging. Never claim a green check that was not observed.
+4. Merge only after explicit owner approval. Delete the temporary head branch **after verifying the merge**. Do not delete `main`.
+5. For a release, select an exact reviewed `main` commit, verify the release checklist and all gates, then create an immutable `vX.Y.Z` tag and GitHub release **only with separate explicit owner authorization**.
+6. For a hotfix, create `fix/*` from `main`, review and merge by PR; approve any patch release separately. No permanent release/hotfix branches are required.
 
-**Migration caveat:** Current `main` contains unreleased V2 development. Do not rewrite, reset, force-push, or represent it as V1. Preserve historical `v1.0.0` and all merged PR evidence. Before establishing stable-only `main`, audit refs and pending work, choose and validate a release candidate, and obtain owner approval. No release is authorized by this document.
+## Important release-state distinction
 
-## PR and release lifecycle
+`main` contains unreleased V2 development. It is the **integration/default branch**, not a claim that its HEAD is a published stable V2 release. The latest published release remains `v1.0.0`. Never rewrite `main` history or move existing tags to make branch labels appear consistent.
 
-1. Open a short-lived work branch from `develop` once migration is complete. Require a scoped PR, CI, review and clear evidence; never push directly to protected branches.
-2. For a release, cut `release/x.y.z` **from** `develop` (do not use a PR with `develop` as the head just to create the release branch). Freeze new features; resolve fixes on the release branch and reconcile them into `develop`.
-3. Verify security/privacy, media rights, documentation, compatibility, test evidence and exact release SHA. A passing CI run alone is not release approval.
-4. After explicit owner approval, merge the release branch into `main`, create immutable `vX.Y.Z` tag on the approved commit, and publish the GitHub release. Reconcile release fixes into `develop`.
-5. Delete temporary release branches only when merges/backports and tags are verified. Preserve historical evidence and the tag.
-6. For a hotfix, branch from released `main`, test, merge to `main`, tag a patch release with approval, and backport to `develop` (and active release branches as needed).
+## Branch safety and repository settings
 
-Use semantic versioning (MAJOR.MINOR.PATCH). Document compatibility expectations for skill interfaces, schemas, scripts and workflows. Do not silently change published tags.
+- Keep `main` as the default branch. Prefer PR-based changes, no force-pushes, and deletion protection for `main`.
+- Verify the actual GitHub rulesets/branch protections and required checks before claiming enforcement; plan limitations may apply.
+- GitHub's **Automatically delete head branches** setting is optional. Enable it only after checking protection and confirming it suits the one-permanent-branch workflow; this document does not enable it.
+- As of the owner's cleanup on 2026-11-04, only `main` remained. Creating a temporary branch for a PR is expected; delete it after merge.
+- Deleted historical branch refs must not be recreated as active plans. Merged PRs and existing tags remain separate historical references; do not assume unique unmerged commits were preserved.
 
-## Protection and automatic branch cleanup
+## Evidence and approvals
 
-**Order matters:** first create and protect `develop`, restrict deletion of `main` and `develop`, validate PR/CI rules, **then** consider GitHub Settings → General → Pull Requests → Automatically delete head branches.
+[ROADMAP.md](ROADMAP.md) is the canonical product/version roadmap. [V2 release checklist](releases/v2.0.0-checklist.md), CI, case studies and historical audits provide supporting evidence, not competing roadmaps.
 
-GitHub's automatic head-branch deletion is not limited to `feature/*`; it can target the head of a merged PR. Do not rely on naming conventions alone to protect `develop`. Verify rulesets actually enforce deletion restrictions with the available repository plan and permissions before enabling auto-delete.
-
-Inventory existing branches and open PRs before any cleanup. Categorize: merged and disposable; active; unmerged with unique commits; release/maintenance; unknown. Preserve any branch with unique or uncertain work until reviewed. Deletion is a separate, explicitly approved action. Deleting a fully merged head branch does not remove its merged PR or published tags.
-
-## Release evidence and approvals
-
-`docs/ROADMAP.md` is the single canonical product/version roadmap. `docs/releases/v2.0.0-checklist.md`, case studies, CI, PRs and issue milestones are supporting release evidence, **not parallel roadmaps**. The former `docs/PROJECT_STATUS.md` snapshot is preserved in Git history; do not recreate a second live milestone queue.
-
-Keep separate approvals for code release, creative assets, provider/account access, paid execution and media publication. **Production GO: HOLD** remains in force until independently changed by the owner.
-
-## Governance migration checklist (not executed)
-
-- [ ] Audit all roadmap/status files and branch refs; preserve historical evidence.
-- [ ] Approve the canonical roadmap and development policy PR.
-- [ ] Plan and approve safe migration from V2-containing `main` to stable-only `main` and permanent `develop`.
-- [ ] Create `develop` and verify deletion protection for both permanent branches.
-- [ ] Verify required CI and PR review rules on protected branches.
-- [ ] Enable auto-delete of merged head branches only after protection is tested.
-- [ ] Audit legacy branches for unique commits and open PRs; separately approve cleanup.
-- [ ] Verify release and hotfix procedures on a non-production dry run.
+Keep distinct approvals for code merges, version releases, creative decisions, account/provider access, paid execution and media publication. **Production GO remains HOLD** until separately authorized.
