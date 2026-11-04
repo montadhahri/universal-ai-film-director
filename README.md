@@ -4,7 +4,7 @@
 
 **From a story idea to a professionally directed AI film — one creative partner, six specialized filmmaking skills.**
 
-> **V2 status:** Public release-candidate preparation. See the [V2.0 release blockers and V2.1 roadmap](docs/v2-release-preflight.md). The Last Light V9 is a human-guided screening candidate, not proof of autonomous seven-agent production. Production GO remains HOLD for new provider jobs and final film release.
+> **V2 status:** Public release-candidate preparation. See the [canonical V1–V3 roadmap](docs/ROADMAP.md), [V2 release preflight](docs/v2-release-preflight.md), and [development governance](docs/DEVELOPMENT.md). The Last Light V9 is a human-guided screening candidate, not proof of autonomous seven-agent production. Production GO remains HOLD for new provider jobs and final film release.
 
 A portable, modular **Agent Skills** collection for writing screenplays, designing visual worlds, planning cinematic shots, directing sound, preparing generation prompts and reviewing film continuity.
 
@@ -15,7 +15,7 @@ A portable, modular **Agent Skills** collection for writing screenplays, designi
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 ![Agent Skills](https://img.shields.io/badge/format-Agent%20Skills-blueviolet)
 
-[**Quick start**](#-quick-start) · [**Installation**](#-installation) · [**Production workflow**](#-film-production-workflow) · [**Skills architecture**](#-how-the-skills-work-together) · [**Specialist skills**](#-meet-the-film-crew) · [**Compatibility**](#-agent-compatibility) · [**Releases**](#-versions--releases) · [**FAQ**](#-faq)
+[**Roadmap**](docs/ROADMAP.md) · [**Development**](docs/DEVELOPMENT.md) · [**Quick start**](#-quick-start) · [**Installation**](#-installation) · [**Production workflow**](#-film-production-workflow) · [**Skills architecture**](#-how-the-skills-work-together) · [**Specialist skills**](#-meet-the-film-crew) · [**Compatibility**](#-agent-compatibility) · [**Releases**](#-versions--releases) · [**FAQ**](#-faq)
 
 </div>
 
