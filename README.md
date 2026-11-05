@@ -56,7 +56,9 @@ A **30-second, five-shot V9 screening candidate** documents a human-operated exp
 
 *AI-assisted media disclosure: ChatGPT reference images, owner-operated Google Flow / Veo 3.1 Fast video shots and a locally assembled V9 cut. The production record describes locally created ambient audio; the original audio implementation has not been independently reconstructed.*
 
-> **Independent personal project:** This repository is a personal, non-commercial learning and filmmaking experiment. It is not affiliated with, sponsored by or endorsed by the author's employer or any AI service provider. No employer source code, internal materials or resources were used, according to the project owner.\n\n## 🚀 Quick start
+> **Independent personal project:** This repository is a personal, non-commercial learning and filmmaking experiment. It is not affiliated with, sponsored by or endorsed by the author's employer or any AI service provider. No employer source code, internal materials or resources were used, according to the project owner.
+
+## 🚀 Quick start
 
 **1. Install the Film Director.** With a [Skills CLI](https://skills.sh/)-compatible agent, install directly from GitHub — no clone needed:
 
@@ -209,6 +211,8 @@ The core is **plain Markdown Agent Skills instructions**, with no mandatory Code
 | Codex and compatible Skills CLI hosts | Install Director and optionally specialists | Local-folder and unauthenticated public-GitHub CLI installation passed in CI; real-agent invocation not independently verified |
 | Claude Code, Gemini CLI, Cursor and other compatible agents | Native skills if supported, or load Markdown manually | Compatibility depends on host/version; not certified |
 | Custom agent workflows | Read skill files and references; optionally use shared contracts | Integration required; not independently tested |
+
+For a host-by-host first-use checklist and a reproducible planning-only invocation test, see [installation and host verification](docs/installation.md). **Native host invocation remains NOT_RUN until complete real-host transcripts are reviewed.**
 
 Skills can guide a production on any compatible agent, but they **cannot guarantee identical automatic skill discovery**, external tool access or cross-agent delegation.
 
