@@ -1,0 +1,39 @@
+name: Propose main to develop sync
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  propose:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Propose review-only synchronization
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const compare = await github.rest.repos.compareCommits({
+              owner, repo, base: 'develop', head: 'main'
+            });
+            if (compare.data.ahead_by === 0) {
+              core.info('Nothing to synchronize.');
+              return;
+            }
+            const prs = await github.paginate(github.rest.pulls.list, {
+              owner, repo, base: 'develop', state: 'open', per_page: 100
+            });
+            const existing = prs.find(pr => pr.head.ref === 'main' && pr.head.repo.full_name === owner + '/' + repo);
+            if (existing) {
+              core.info('Existing sync PR: ' + existing.html_url);
+              return;
+            }
+            const result = await github.rest.pulls.create({
+              owner, repo, base: 'develop', head: 'main', draft: true,
+              title: 'sync: main into develop (review required)',
+              body: 'Automatically proposed after a main merge. Owner review and explicit merge approval required. Never auto-merge.'
+            });
+            core.info('Opened: ' + result.data.html_url);
