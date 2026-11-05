@@ -18,6 +18,12 @@ Start a film by giving your compatible AI agent a story idea and requested runti
 npx skills add montadhahri/universal-ai-film-director --skill '*'
 ```
 
+On **Windows CMD**, use double quotes instead; single quotes are passed literally and the wildcard selection can fail:
+
+```cmd
+npx skills add montadhahri/universal-ai-film-director --skill "*"
+```
+
 ## List available skills
 
 ```bash
@@ -61,11 +67,25 @@ The following are **test targets, not certified integrations**. Skills CLI host 
 
 | Host | Installation approach to check | Native invocation evidence |
 | --- | --- | --- |
-| Codex | Skills CLI with Codex selected; the pinned CI smoke test installs into a Codex-compatible directory | **NOT_RUN** — CI did not launch Codex |
+| Codex | Skills CLI, Codex selected, global installation on Windows CMD | **PARTIAL PASS (owner-operated, 2026-11-05)** — Director, Storytelling and Visual Direction were invoked separately; installed `SKILL.md` reads confirmed |
 | Claude Code | Select Claude Code in Skills CLI if listed by the installed CLI version, or follow that host's current native skill instructions | **NOT_RUN** |
-| Gemini CLI | Select Gemini CLI if listed, or follow its current skill-loading instructions | **NOT_RUN** |
+| Gemini CLI | Check current authentication support before installing; Google-account sign-in failed in the owner's environment | **BLOCKED** — personal sign-in returned “This client is no longer supported for Gemini Code Assist for individuals”; no skill invocation |
 | Cursor | Select Cursor if listed, or use its supported project/agent instruction mechanism | **NOT_RUN** |
+| OpenCode | OpenCode CLI launched using `opencode/beam-free`; Skills CLI target selection not completed | **PARTIAL** — free-model response succeeded; skill installation **SKIPPED**, native skill invocation **NOT_RUN** |
 | Other agents | Check actual Agent Skills support; otherwise manually load Director and relevant references | **NOT_VERIFIED** |
+
+### Owner-operated Windows host observations (2026-11-05)
+
+These are user-reported local test observations, **not independently archived complete host transcripts**. Do not treat them as CI verification or proof of portability across two hosts.
+
+- **Environment:** Windows CMD; Node.js `v26.13.0`, npm/npx `11.20.0`, Skills CLI `1.7.6`, Codex CLI `0.166.0`. Skills CLI discovered all seven repository skills. Codex global installs were reported under `C:\\Users\\nouni\\.agents\\skills\\`.
+- **Codex Director:** Native `$universal-ai-film-director` discovery and read-only access to installed `SKILL.md` were observed after restarting Codex with `codex --sandbox read-only --ask-for-approval on-request`. Initial execution was blocked by a local approval-policy configuration; this was resolved by restarting. A fictional 30-second film proposal asked a focused question and preserved screenplay/Visual Bible/storyboard as **PROPOSED**, with no media generation or implied approval.
+- **Codex specialists:** `$film-storytelling` produced a proposed timed screenplay and read its installed `SKILL.md`; `$film-visual-direction` produced a proposed visual-continuity assessment and read its installed `SKILL.md`. A screenshot confirmed Visual Direction approval boundaries, but full reference dependency loading and complete specialist outputs were not independently captured. **Director-to-specialist delegation was NOT_RUN.**
+- **Gemini CLI:** Google-account authentication returned the unsupported-client error quoted in the table. No native skill test was run; this is an authentication blocker, not a demonstrated defect in the repository skills.
+- **OpenCode:** `opencode models` listed free-labelled options and a user-reported `opencode/beam-free` session returned the requested connection phrase. The Skills CLI agent selection did not visibly offer OpenCode to the user; installation verification was **SKIPPED** by owner decision. A model response alone is **not** Agent Skills support evidence.
+- **Security/cost:** All film prompts were fictional and planning-only. No provider rendering or paid job was authorized. A third-party installer script considered during troubleshooting was **not executed** and is not an endorsed installation method.
+
+**Current V2.1 verdict: PARTIAL.** One host has scoped, owner-operated native invocation evidence; the required second-host native Director + two-specialist invocation and independent clean-run evidence remain **NOT_RUN**. Reproduce and retain complete prompts, outputs, host/model versions and installed reference reads before certifying portability.
 
 ### Repeatable planning-only test
 
