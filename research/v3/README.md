@@ -21,3 +21,17 @@ The tests cover four unlocked SH02–SH05 jobs blocked while Production GO is HO
 - Do not merge into `main` as production functionality or connect real adapters without separate design review and authorization.
 
 The next research gate is to review contract boundaries, immutable approval evidence, persistence, crash recovery and actual file validation before any non-mock implementation.
+
+## Experimental local checkpoints
+
+`mock-checkpoint.js` provides `checkpoint(project, file)` and `restore(file)` for a local JSON checkpoint. A temporary file is renamed into place, and a SHA-256 checksum detects accidental changes. This is **not** authenticated storage, an audit-proof signature, an encrypted store, or a power-loss durability guarantee.
+
+Restoring always sets `production_go: false`. Jobs saved in AUTHORIZED, RUNNING or VALIDATING are marked BLOCKED and cannot resume automatically. Completed simulated evidence is retained, but no actual provider output is implied. The current prototype has no authorized recovery path for these blocked jobs; new work requires a new scoped request and approval. Never store credentials or real approval tokens in these research checkpoints.
+
+Run both research suites:
+
+```bash
+node --test tests/node/v3-mock-executor.test.js tests/node/v3-mock-checkpoint.test.js
+```
+
+Do not use this checkpoint for concurrent writers, multi-process execution, untrusted input, or real provider jobs.
