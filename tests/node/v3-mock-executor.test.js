@@ -7,8 +7,9 @@ const request=(shot_id)=>({project_id:'the-last-light-research',shot_id,approved
 const approval=(shot_id)=>({granted:true,project_id:'the-last-light-research',shot_id,approved_revision:'storyboard-v1',
  operation:'mock-render',adapter:'mock',max_cost:0,evidence_ref:'fictional-test-approval'});
 test('five requests are blocked while Production GO is HOLD',()=>{
- const p=createProject();for(const s of SHOTS){const j=submit(p,request(s),approval(s));assert.equal(j.status,'BLOCKED');assert.throws(()=>runMock(p,j),/JOB_NOT_AUTHORIZED/)}
- assert.equal(p.jobs.length,5);assert.equal(p.spent,0);
+ const p=createProject();for(const s of SHOTS.filter(s=>s!=='SH01')){const j=submit(p,request(s),approval(s));assert.equal(j.status,'BLOCKED');assert.throws(()=>runMock(p,j),/JOB_NOT_AUTHORIZED/)}
+ assert.throws(()=>submit(p,request('SH01'),approval('SH01')),/LOCKED_SHOT/);
+ assert.equal(p.jobs.length,4);assert.equal(p.spent,0);
 });
 test('only explicitly scoped mock authorization can run',()=>{
  const p=createProject();p.production_go=true;const r=request('SH02');
