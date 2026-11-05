@@ -1,133 +1,113 @@
 # Product roadmap — Universal AI Film Director
 
-**Canonical version and milestone roadmap · reconciled 2026-11-04.** This document is the single source for planned scope, priority, phase exit gates and release readiness. GitHub issues/PRs/CI provide live execution evidence. [Development governance](DEVELOPMENT.md) covers the main-only PR workflow and release operations; [release preflight](releases/v2.0.0-checklist.md) contains the detailed V2 release checklist. Historical operational context and release evidence remain in Git history and the linked supporting reports.
+**Canonical roadmap · updated 2026-11-05.** This is the single source of truth for version outcomes and acceptance gates. [Development governance](DEVELOPMENT.md) defines the main-only PR workflow. Historical V2.0 release evidence remains in [the release checklist](releases/v2.0.0-checklist.md) and Git history.
 
-> **Current status:** [V2.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0) was published as a stable release on 2026-11-04 from commit `93c34e2e41351bf3411a330a8515481756f83ebd`. V2.1 work is planned. **Production GO remains HOLD:** releasing the software does not authorize provider jobs, credits, account connections, or film publication.
+> **Current state:** [v2.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0) is released (2026-11-04; tag commit `93c34e2e41351bf3411a330a8515481756f83ebd`). V2.1–V2.6 are **proposed, not approved release commitments**. **Production GO remains HOLD.** No paid provider jobs, account connections, credits, film publication, or release/tag creation are authorized by this roadmap.
 
-## At a glance
+## Release direction
 
-| Version | Outcome | Status | Next decision |
+| Version | Outcome | Status | Release evidence required |
 | --- | --- | --- | --- |
-| **V1.0.0** | Original Film Director skill | **RELEASED** — [historical tag](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) | Preserve history |
-| **V2.0.0** | Director + six specialists, contracts, offline tests and human-guided film documentation (V9 MP4 excluded) | **RELEASED** — [v2.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0) | Preserve immutable tag and documented limitations |
-| **V2.1.0** | Verified portability, independent agent handoffs, stronger approval provenance and media QA | **PROPOSED** — scope not frozen | Validate V2.0 baseline, prioritize measurable gaps |
-| **V3.x** | Provider-neutral agentic filmmaking execution | **RESEARCH ONLY** | Feasibility, terms, budget, security and no-cost prototype before implementation |
+| [V1.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) | Original Film Director | RELEASED | Preserve immutable history |
+| [V2.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0) | Director + six specialists, approval contracts, offline tests and human-guided film evidence | RELEASED | Preserve tag, caveats and historical evidence |
+| **V2.1.0** | Usable installation and real host invocation | PROPOSED — next | Independent clean install, real skill discovery/invocation and beginner quickstart |
+| **V2.2.0** | Reproducible idea-to-production-plan workflow | PROPOSED | Independent text-only full workflow, traceable handoffs and approval-safe recovery |
+| **V2.3.0** | Independent user validation | PROPOSED | Unfamiliar users complete realistic tasks; report completion, friction and failures |
+| **V2.4.0** | Evidence-driven creative and continuity quality | PROPOSED | Regressions, independent keyframe checks and locked-asset repair evidence |
+| **V2.5.0** | Optional production tooling and integration readiness | PROPOSED | No-cost local/mock workflows, sound/export QA, cost/permission contracts; real provider adapters separately authorized |
+| **V2.6.0** | Community and ecosystem readiness | PROPOSED | Clear examples, compatibility matrix, contributor onboarding and repeatable outside-user adoption |
+| **V3.x** | Connected agentic production research | RESEARCH ONLY | Demonstrated feasibility, lawful access, budget, security and explicit go/no-go |
 
-### Status vocabulary
+**Principle:** each minor version must deliver an independently measurable user outcome, not merely additional documentation or tests. Scope is adjustable after evidence review; do not promise dates or automatic provider integrations. No new specialist is required by this plan.
 
-**RELEASED** means a published tagged version. **IMPLEMENTED** means code or documentation exists; it is not acceptance proof. **EVIDENCED** means a documented test/case study supports a limited claim. **PARTIAL** means a gate is incomplete. **BLOCKED** means a required condition is unresolved. **PROPOSED** and **RESEARCH** are not commitments. Use PASS/FAIL/BLOCKED/NOT_RUN/NOT_VERIFIED for individual test results.
+## Baseline: what V2.0 actually established
 
-## Current evidence and limitations
+- **Implemented:** seven portable Agent Skills, Director/specialist planning contracts, Project Bible, stage approvals, deterministic pipeline and recovery utilities.
+- **Evidenced within limits:** specialist planning tests, targeted regressions, eight model-reviewed textual creative comparisons (V2 mean 4.83/5 versus historical V1 4.50/5; not proof of rendered film quality), public Skills CLI installation in CI, and a human-guided five-shot *The Last Light* V9 screening candidate.
+- **Not established:** two independent hosts successfully invoking skills, autonomous seven-agent execution, independent real-media end-to-end acceptance, trusted cross-host approvals, final V9 sound/visual QA or film publication approval.
+- **Security and rights:** the V9 MP4 was removed from current release source, but may remain in Git history; five reference PNGs use separate non-MIT media terms. Historical ZIP and other history/binary review limitations remain disclosed in [public exposure audit](security/v2-public-exposure-audit.md) and [media rights checklist](security/v2-media-release-rights.md).
 
-| Capability | Evidence | Unresolved limitation |
+**Evidence labels:** RELEASED = tagged release; IMPLEMENTED = feature exists; EVIDENCED = scoped reproducible evidence; PARTIAL = incomplete; BLOCKED = prerequisite unresolved; PROPOSED/RESEARCH = future ideas. Tests use PASS/FAIL/BLOCKED/NOT_RUN/NOT_VERIFIED. Never equate CI install with native invocation, textual plans with generated footage, or a screening candidate with approved publication.
+
+## V2.1 — First-use experience and host portability
+
+**User outcome:** someone unfamiliar with the project can install and actually invoke the Director, follow a concise quickstart and understand how to use specialists.
+
+- Verify pinned public GitHub installation and real Director + at least two specialist invocations in **two supported hosts**, distinguishing native discovery from manually pasted instructions.
+- Test the README quickstart from a clean environment; document only reproducible compatibility claims and actionable failure cases.
+- Provide one short example with expected outputs, approvals and honest limits. Prefer updating existing README/installation docs rather than creating new reports.
+- **Exit:** independently captured host invocation logs, repeatable instructions and CI regression coverage. If two hosts cannot be verified, report PARTIAL; do not certify portability.
+
+## V2.2 — End-to-end planning and recovery
+
+**User outcome:** start from one film idea and reach a coherent, generation-ready plan without losing decisions.
+
+- Independently run discovery → screenplay → Visual Bible → timed storyboard → sound → generator-ready shot packets → planning-only QA.
+- Verify Director/specialist handoff contracts, explicit screenplay/visual/storyboard approvals, revision lineage, locked assets and no fabricated generated media.
+- Demonstrate checkpoint transfer and recovery across available contexts/hosts, with approval provenance and missing-data checks. Cross-host claims require actual host evidence.
+- **Exit:** preserved full text-only scenario, handoff trace, recovery evidence and negative tests; no paid media generation required.
+
+## V2.3 — Independent user validation
+
+**User outcome:** people other than the project author can use the workflow without handholding.
+
+- Recruit a small set of unfamiliar volunteer users or independent evaluators; test installation, task completion, comprehension of approvals and recovery.
+- Record reproducible completion/failure outcomes, confusion points, time/steps and honest limitations; obtain consent for any published examples.
+- Prioritize usability fixes demonstrated by evidence; avoid adding process solely to improve apparent test counts.
+- **Exit:** an evidence-backed usability summary with actionable fixes and retests, not invented user feedback or adoption claims.
+
+## V2.4 — Creative quality, visual continuity and scoped repair
+
+**User outcome:** more consistent creative outputs with explainable improvements and no damage to approved work.
+
+- Expand representative creative regressions using stable comparison criteria; distinguish model-reviewed textual plans from visual film results.
+- Independently compare existing SH01–SH05 keyframes for CHILD-01, SPARK-01, TOWER-01, wardrobe, lighting, geography and camera continuity.
+- Validate before/after localized repairs, proving locked shots/assets are unchanged with inspectable evidence.
+- **Exit:** repeatable acceptance results and concrete before/after evidence, including explicit FAIL/NOT_RUN when media or reviewers are unavailable.
+
+## V2.5 — Optional production tools and media QA
+
+**User outcome:** safely bridge planning to locally verifiable production steps, without making paid integrations mandatory.
+
+- Build or validate optional provider-neutral job/artifact/budget/approval contracts and no-cost mock execution; use local tools only where available and justified.
+- Inspect authorized existing V9 assets for transitions, timing, soundtrack and export quality; publication and rights remain separate gates.
+- Research provider APIs, licensing, privacy, costs and reliability before proposing any adapter. A real provider call requires separate explicit authorization and a cost ceiling.
+- **Exit:** reproducible no-cost prototype and truthful media QA where legally accessible; provider adapter delivery is **not** a release prerequisite.
+
+## V2.6 — Ecosystem and contributor readiness
+
+**User outcome:** outside users can understand, adopt, extend and troubleshoot the library.
+
+- Publish concise maintained examples and a tested compatibility matrix, with limitations prominently stated.
+- Verify contribution guidance, skill validation and reproducible acceptance entry points; preserve modular architecture.
+- Incorporate independent-user feedback; measure successful onboarding rather than GitHub popularity alone.
+- **Exit:** documented independent onboarding and contributor path; no unsupported compatibility or autonomous-production claims.
+
+## V3 — research only
+
+The existing Director and six specialists remain the creative decision layer. Research a separate approval-gated execution layer with typed jobs, artifact provenance, recoverability, local/mock tests and optional lawful provider adapters. No automatic provider choice, Google Flow API assumption, account connection, spending, autonomous generation or release date is authorized. Feasibility and security review precede implementation.
+
+## Existing V2.1 milestone traceability
+
+The previous V2.1 candidate scope is **redistributed, not deleted**:
+
+| Previous milestone | New target | Rationale |
 | --- | --- | --- |
-| Seven-skill architecture and Project Bible | Repository skill files and stage-gate contracts | Native cross-host invocation and autonomous delegation not proven |
-| Specialist and Director acceptance | Planning-only tests and targeted regressions | No independent seven-agent real-media end-to-end acceptance |
-| Creative benchmark | [Eight adjudicated V1/V2 textual comparisons](quality-benchmark-results.md), descriptive means 4.50 vs 4.83 / 5 | Small model-reviewed sample; not proof of better rendered films |
-| Recovery | [Phase 7 exit assessment](phase7-recovery-exit.md), offline deterministic and fresh-process tests | Trusted approval provenance, asset integrity and cross-host recovery open |
-| Real-media pilot | [The Last Light V9](case-studies/the-last-light/README.md): human-guided five-shot screening candidate | Independent visual/audio QA, rights and final publication approval open |
-| Public install | [V2 release preflight](releases/v2.0.0-checklist.md) records clean GitHub-source CI install | Two-host interactive skill invocation remains unverified |
-| Security and rights | [Public-exposure audit](security/v2-public-exposure-audit.md), [rights checklist](security/v2-media-release-rights.md), [terms review](archive/v2/v2-ai-media-terms-review.md) | Full history/binary clearance not independently complete; soundtrack locally created per owner, without independent implementation verification |
+| V21-1 Two-host skill portability | **V2.1** | First-use credibility |
+| V21-2 Director/specialist orchestration | **V2.2** | Full workflow correctness |
+| V21-3 Trusted recovery | **V2.2** | Approval-safe continuity |
+| V21-4 Image/prop continuity | **V2.4** | Evidence-driven visual quality |
+| V21-5 Localized video repair | **V2.4** | Preserve locked assets |
+| V21-6 Sound/export QA | **V2.5** | Actual media inspection and rights dependencies |
+| V21-7 Quality and portability regressions | **V2.1–V2.5** | Tests follow the capabilities they verify |
 
-## V2.0.0 — release-critical track
+Historical phase mapping: architecture and planning tests → V2.0 baseline; five-keyframe pilot → V2.4; localized repair → V2.4; recovery → V2.2; video/sound/export → V2.5; portability → V2.1; user validation and community adoption → V2.3/V2.6.
 
-**Scope:** seven portable skills; Director-specialist planning contracts; separate creative and execution approval gates; deterministic checkpoint/recovery tooling; reproducible tests; accurate, clearly labeled human-operated V9 case study. Do not broaden V2.0 to autonomous provider execution.
+## Delivery and change control
 
-| ID | Workstream | Current state | Exit evidence / next action |
-| --- | --- | --- | --- |
-| V2-R1 | Seven-skill architecture and stage gates | **IMPLEMENTED** | Preserve contract and test provenance; no autonomous claim |
-| V2-R2 | Benchmark and targeted regressions | **EVIDENCED, scoped** | Retain historical reviews and unresolved regression findings |
-| V2-R3 | Offline recovery and checkpoint format | **EVIDENCED, scoped** | Document limits; cross-host/trusted approvals deferred to V2.1 |
-| V2-R4 | Human-guided The Last Light V9 example | **SCREENING CANDIDATE** | Preserve actual media provenance and unresolved QA; no final film acceptance claim |
-| V2-R5 | Public install and packaging | **CI EVIDENCE EXISTS** | Verify intended release commit and public install reproducibility |
-| V2-R6 | Public history, privacy, secrets, dependencies | **PARTIAL / RESIDUAL RISK** | Prior inventories and scans recorded; owner skips historical ZIP inspection, other unverified binary/history scope remains documented in exposure audit |
-| V2-R7 | Media rights and attribution | **PARTIAL / VIDEO EXCLUDED FROM CURRENT RELEASE TREE** | Owner elected to remove the Veo V9 MP4 from V2.0.0; five ChatGPT-generated reference PNGs remain under separate non-MIT terms. Historical Git video exposure and residual PNG rights/QA limitations remain disclosed |
-| V2-R8 | Release documentation, CI and owner approval | **RELEASED / EVIDENCED** | `v2.0.0` tag at `93c34e2e4135`; final commit validation, secret scan and CodeQL PASS; public Skills CLI install previously verified for the same seven skills; owner published stable release |
-
-**V2.0 release gate:** V2-R6, R7 and R8 must be resolved or explicitly scoped with documented lawful/safe exclusions; final CI and packaging checks must apply to the actual release SHA. A repository being public, an earlier green scan or a merged PR is not a release approval. Detailed checklist: [V2 release preflight](releases/v2.0.0-checklist.md).
-
-## V2.1.0 — candidate capability milestones
-
-These are **not automatically V2.0 blockers**. Prioritize after a V2.0 release decision and evidence review.
-
-| ID | Milestone | Acceptance target | Dependency |
-| --- | --- | --- | --- |
-| V21-1 | Two-host skill portability | Clean pinned install and actual Director + two specialist invocation logs in two supported hosts; distinguish native invocation from pasted instructions | V2 packaging |
-| V21-2 | Director/specialist orchestration | Independent text-only end-to-end scenario with preserved handoffs, real approval gates and no fabricated media | V21-1 |
-| V21-3 | Trusted recovery | Cross-host checkpoint transfer with revision, approval-source, locked-asset and missing-data checks | V21-1, existing recovery |
-| V21-4 | Image/prop continuity | Independent SH01–SH05 keyframe comparison for CHILD-01, SPARK-01, TOWER-01, wardrobe, lighting and geography | Existing case-study assets |
-| V21-5 | Localized video repair | Demonstrate before/after scoped repair without changing locked shots; preserve exact artifact evidence | V21-4 |
-| V21-6 | Sound/export QA | Inspect V9 shot transitions, fade, timing and actual soundtrack/listening result; report unresolved defects | Rights review, existing V9 |
-| V21-7 | Quality and portability regressions | Evidence-backed cross-stage tests, stable compatibility and truthful PASS/FAIL/NOT_RUN reports | V21-2–6 |
-
-**Candidate scope is subject to revision**; no automatic generation or new provider integration is authorized.
-
-## V3 — connected agentic filmmaking research
-
-**Product hypothesis:** the Director remains the creative orchestrator and six specialist skills remain the decision layer, while an execution layer connects authorized providers and local tools. The aim is traceable, recoverable, approval-gated production rather than simply generating more prompts.
-
-```mermaid
-flowchart LR
-  U[Human creative owner] --> D[Director + Project Bible]
-  D <--> S[Six specialist skills]
-  D --> G{Explicit approvals and budget gates}
-  G --> C[Typed execution contracts]
-  C --> A[Provider-neutral adapters]
-  A --> M[Verified assets and provenance]
-  M --> Q[Continuity and media QA]
-  Q --> D
-```
-
-| Research stage | Proposed outcome | Go/no-go evidence |
-| --- | --- | --- |
-| V3-R1 — Feasibility | Provider/API/terms matrix; identify supported image, video, speech, music and editing integrations | Documented legitimate API availability, licensing, privacy and cost model; never assume website automation is permitted |
-| V3-R2 — Architecture | Typed job, artifact, checkpoint, retry, budget and approval contracts | Threat model, state machine, provider-neutral design review |
-| V3-R3 — Local no-cost prototype | Mock provider jobs + optional FFmpeg assembly on existing authorized assets | Deterministic test results; no paid calls or external account connection |
-| V3-R4 — First authorized adapter | One real integration only after explicit permission | Scoped account/credit authorization, cost ceiling, provenance and rollback |
-| V3-R5 — Coordinated production pilot | Multi-agent orchestration with evidence-based visual/audio QA and resumability | Actual inspected output and honest failure metrics, not simulated PASS |
-
-**Not committed:** provider choices, availability of Google Flow APIs, autonomous generation, additional agents, dates, spend or release versions. Any provider call, credit spend, account connection or media publication requires its own explicit approval.
-
-## Cross-version execution order
-
-1. **Now — V2.1 evidence:** prioritize two-host real skill discovery/invocation and traceable specialist handoffs, without paid provider execution.
-2. **Preserve V2 baseline:** retain the stable tag and documented residual history/media limitations; V9 MP4 is absent from release source but historical Git commits may still contain it.
-3. **V2.1 acceptance:** verify real-host and independent specialist responses with honest PASS/FAIL/NOT_RUN evidence; existing CI installation does not establish native invocation.
-4. **V2.1 evidence:** execute independent host invocation, trusted recovery, continuity and scoped repair tests without assuming external paid generation.
-5. **V3 feasibility:** perform research and local/mock prototypes before requesting provider integrations.
-
-## Repository workflow — main-only (adopted 2026-11-04)
-
-The owner retired permanent `develop`/GitFlow. **`main` is the only permanent branch.** Changes use temporary branches and owner-reviewed PRs. The immutable `v2.0.0` tag preserves the stable release while V2.1 development continues on `main`. Do not rewrite history or move release tags.
-
-| Step | State | Next action |
-| --- | --- | --- |
-| G1. Consolidate roadmap and development documentation | **MERGED** — PR #117 | Maintain one canonical roadmap |
-| G2. Document legacy branch audit | **MERGED** — PR #118; historical snapshot | Retain as historical evidence only |
-| G3. Owner cleanup of legacy branches | **COMPLETED / VERIFIED** — one `main` branch observed 2026-11-04 | No further legacy cleanup required |
-| G4. Retire permanent `develop` plan | **OWNER DECISION CONFIRMED** | Follow [DEVELOPMENT.md](DEVELOPMENT.md) |
-| G5. Verify `main` protection and CI rules | **NOT VERIFIED** | Inspect settings; no claims of enforcement |
-| G6. Enable optional automatic merged-head cleanup | **NOT VERIFIED / NOT AUTHORIZED** | Consider only after protection review |
-
-## Historical phase-to-milestone mapping
-
-The original numbered V2 phases are preserved here as a traceability index, not a second active plan.
-
-| Historical phase | Current milestone | Evidence/remaining gap |
-| --- | --- | --- |
-| 1 — Architecture | V2-R1 | Seven skills implemented |
-| 2 — Specialist/Director tests | V2-R2 | Planning-only acceptance |
-| 3–4 — Creative benchmark and fixes | V2-R2, V21-7 | [Benchmark](quality-benchmark-results.md), PR #62/#63 and follow-up regressions |
-| 5 — Five-keyframe pilot | V2-R4, V21-4 | [V9 case study](case-studies/the-last-light/README.md); independent acceptance open |
-| 6 — Localized repair | V21-5 | Human-guided repair exists; independent locked-asset verdict open |
-| 7 — Recovery | V2-R3, V21-3 | [Offline recovery](phase7-recovery-exit.md) evidenced; trusted/cross-host partial |
-| 8 — Video/sound/export | V2-R4, V21-6 | V9 screening candidate; final QA/rights open |
-| 9 — Portability/security/release | V2-R5–R8, V21-1–2 | Public install CI evidenced; release gates open |
-
-## Evidence and change-control rules
-
-- Every milestone closure links an exact PR/commit, test output or inspectable media result; historical reports stay intact.
-- No invented approvals, generated footage, independent reviewer actions, media inspection or host invocation.
-- A merged PR, a CI PASS, a model-reviewed text benchmark, a rendered MP4 and a release authorization are distinct evidence classes.
-- For new work, use scoped branches and PRs; no direct protected-branch changes. Follow the main-only PR workflow; changes to repository protection settings require separate review.
-- Update **this roadmap** when version scope or milestone state changes; keep Git history for former operational snapshots and release preflight as a gate checklist, not parallel progress plans.
+1. **One permanent branch:** `main`. Use short-lived scoped branches and owner-reviewed PRs; do not merge without explicit owner approval. Release tags remain immutable.
+2. **No documentation proliferation:** update this canonical roadmap and existing README/installation/architecture/test evidence; preserve core skills, schemas, benchmarks and case-study evidence. Do not create per-PR administrative reports.
+3. **No simulated evidence:** distinguish implementation, CI checks, independent host runs, human-reviewed footage, external-user trials and authorization. Record exact PR/commit and relevant logs for milestone closure.
+4. **Separate approvals:** PR merge, software release, creative decisions, provider access, paid execution and film publication are different gates. **Production GO remains HOLD**.
+5. **Release gate:** only create a tag or GitHub release after exact-SHA validation, applicable security/rights review and separate owner authorization. No permanent release branch required.
+6. **Next practical step:** execute V2.1 clean install and native host invocation tests before broadening architecture. Revisit later minor-version scope after evidence.
