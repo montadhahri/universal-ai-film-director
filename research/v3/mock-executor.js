@@ -41,7 +41,8 @@ function submit(project, request, approval) {
   return job;
 }
 function runMock(project, job, options={}) {
-  if (job.status!=='AUTHORIZED') throw Error('JOB_NOT_AUTHORIZED');
+  if (!project.jobs.includes(job) || !project.production_go || project.locked[job.shot_id] ||
+      job.request.approved_revision!==project.approved_revision || job.status!=='AUTHORIZED') throw Error('JOB_NOT_AUTHORIZED');
   job.status='RUNNING';job.attempts++;
   if (options.fail) { job.status='FAILED';job.reason='SIMULATED_FAILURE';return job; }
   job.status='VALIDATING';
@@ -51,6 +52,15 @@ function runMock(project, job, options={}) {
   project.events.push({event:'COMPLETED',shot_id:job.shot_id,checksum:artifact.checksum});
   return job;
 }
+function cancel(project,job,reason='USER_CANCELLED') {
+  if (!project.jobs.includes(job)) throw Error('UNKNOWN_JOB');
+  if (job.status==='CANCELLED') return job;
+  if (TERMINAL.has(job.status)) throw Error('CANNOT_CANCEL_TERMINAL_JOB');
+  if (typeof reason!=='string' || !reason.trim()) throw Error('INVALID_CANCEL_REASON');
+  job.status='CANCELLED';job.reason=reason;
+  project.events.push({event:'CANCELLED',shot_id:job.shot_id,reason});
+  return job;
+}
 function retry(project,job,approval) {
   if (job.status!=='FAILED') throw Error('RETRY_REQUIRES_FAILURE');
   if (!project.jobs.includes(job) || project.locked[job.shot_id] ||
@@ -58,4 +68,4 @@ function retry(project,job,approval) {
   job.status='AUTHORIZED';job.reason=null;project.events.push({event:'RETRY_AUTHORIZED',shot_id:job.shot_id});
   return job;
 }
-module.exports={SHOTS,TERMINAL,createProject,submit,runMock,retry,digest};
+module.exports={SHOTS,TERMINAL,createProject,submit,runMock,retry,cancel,digest};

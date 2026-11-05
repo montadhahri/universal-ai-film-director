@@ -1,7 +1,7 @@
 'use strict';
 const test=require('node:test');
 const assert=require('node:assert/strict');
-const {SHOTS,createProject,submit,runMock,retry}=require('../../research/v3/mock-executor.js');
+const {SHOTS,createProject,submit,runMock,retry,cancel}=require('../../research/v3/mock-executor.js');
 const request=(shot_id)=>({project_id:'the-last-light-research',shot_id,approved_revision:'storyboard-v1',
  operation:'mock-render',adapter:'mock',cost:0,idempotency_key:'mock-'+shot_id,output_requirements:{kind:'simulated'}});
 const approval=(shot_id)=>({granted:true,project_id:'the-last-light-research',shot_id,approved_revision:'storyboard-v1',
@@ -67,4 +67,37 @@ test('retry cannot run when shot becomes locked or Production GO is revoked',()=
  assert.throws(()=>retry(p,j,{...approval('SH03'),retry:true}),/RETRY_NOT_AUTHORIZED/);
  p.production_go=true;p.locked.SH03='approved-asset';
  assert.throws(()=>retry(p,j,{...approval('SH03'),retry:true}),/RETRY_NOT_AUTHORIZED/);
+});
+
+test('cancelled mock jobs cannot execute or retry',()=>{
+ const p=createProject();p.production_go=true;
+ const j=submit(p,request('SH02'),approval('SH02'));
+ assert.equal(cancel(p,j).status,'CANCELLED');
+ assert.equal(cancel(p,j),j);
+ assert.throws(()=>runMock(p,j),/JOB_NOT_AUTHORIZED/);
+ assert.throws(()=>retry(p,j,{...approval('SH02'),retry:true}),/RETRY_REQUIRES_FAILURE/);
+ assert.equal(p.events.filter(e=>e.event==='CANCELLED').length,1);
+});
+test('completed and failed jobs cannot be cancelled retroactively',()=>{
+ const p=createProject();p.production_go=true;
+ const completed=submit(p,request('SH02'),approval('SH02'));
+ runMock(p,completed);
+ assert.throws(()=>cancel(p,completed),/CANNOT_CANCEL_TERMINAL_JOB/);
+ const failed=submit(p,request('SH03'),approval('SH03'));
+ runMock(p,failed,{fail:true});
+ assert.throws(()=>cancel(p,failed),/CANNOT_CANCEL_TERMINAL_JOB/);
+});
+test('execution rejects revoked GO, locked shots, stale revisions and foreign jobs',()=>{
+ const p=createProject();p.production_go=true;
+ const j=submit(p,request('SH04'),approval('SH04'));
+ p.production_go=false;
+ assert.throws(()=>runMock(p,j),/JOB_NOT_AUTHORIZED/);
+ p.production_go=true;p.locked.SH04='locked';
+ assert.throws(()=>runMock(p,j),/JOB_NOT_AUTHORIZED/);
+ delete p.locked.SH04;p.approved_revision='storyboard-v2';
+ assert.throws(()=>runMock(p,j),/JOB_NOT_AUTHORIZED/);
+ p.approved_revision='storyboard-v1';
+ const other=createProject();other.production_go=true;
+ assert.throws(()=>runMock(other,j),/JOB_NOT_AUTHORIZED/);
+ assert.equal(runMock(p,j).status,'COMPLETED');
 });
