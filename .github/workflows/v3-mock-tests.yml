@@ -1,0 +1,30 @@
+name: V3 mock executor regression tests
+on:
+  pull_request:
+    branches: [develop]
+    paths:
+      - 'research/v3/**'
+      - 'tests/node/v3-mock-*.test.js'
+      - '.github/workflows/v3-mock-tests.yml'
+  push:
+    branches: [develop]
+    paths:
+      - 'research/v3/**'
+      - 'tests/node/v3-mock-*.test.js'
+      - '.github/workflows/v3-mock-tests.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  mock-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run offline V3 mock tests
+        run: node --test tests/node/v3-mock-executor.test.js tests/node/v3-mock-checkpoint.test.js
