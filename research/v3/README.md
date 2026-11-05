@@ -10,7 +10,7 @@ Run with Node.js (no third-party packages):
 node --test tests/node/v3-mock-executor.test.js
 ```
 
-The tests cover five planned SH01–SH05 jobs blocked while Production GO is HOLD; explicit mock-only authorization; idempotency and request conflicts; stale revisions; zero budget; locked-shot protection; and retry after simulated failure. A test enables `production_go` **only inside its isolated in-memory fixture** to exercise the authorization logic. This is not owner approval or a persistent setting.
+The tests cover four unlocked SH02–SH05 jobs blocked while Production GO is HOLD, plus SH01 rejected as locked; explicit mock-only authorization; idempotency and request conflicts; stale revisions; zero budget; locked-shot protection; and retry after simulated failure. A test enables `production_go` **only inside its isolated in-memory fixture** to exercise the authorization logic. This is not owner approval or a persistent setting.
 
 ## Explicit limitations
 
