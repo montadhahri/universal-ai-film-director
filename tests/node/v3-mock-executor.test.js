@@ -37,3 +37,34 @@ test('failed job requires separately authorized retry',()=>{
  retry(p,j,{...approval('SH05'),retry:true});runMock(p,j);
  assert.equal(j.status,'COMPLETED');assert.equal(j.attempts,2);
 });
+
+test('blocked request cannot be upgraded by later approval',()=>{
+ const p=createProject();const r=request('SH02');
+ const blocked=submit(p,r,null);p.production_go=true;
+ assert.equal(submit(p,r,approval('SH02')),blocked);
+ assert.equal(blocked.status,'BLOCKED');
+ assert.throws(()=>runMock(p,blocked),/JOB_NOT_AUTHORIZED/);
+});
+test('retry rejects wrong project, revision, operation, adapter, budget and missing evidence',()=>{
+ const p=createProject();p.production_go=true;
+ const j=submit(p,request('SH05'),approval('SH05'));
+ runMock(p,j,{fail:true});
+ const valid={...approval('SH05'),retry:true};
+ for(const altered of [
+   {project_id:'other'}, {approved_revision:'other'}, {operation:'other'},
+   {adapter:'other'}, {max_cost:-1}, {evidence_ref:''}, {shot_id:'SH03'}
+ ]) {
+   assert.throws(()=>retry(p,j,{...valid,...altered}),/RETRY_NOT_AUTHORIZED/);
+   assert.equal(j.status,'FAILED');
+ }
+ retry(p,j,valid);assert.equal(runMock(p,j).status,'COMPLETED');
+});
+test('retry cannot run when shot becomes locked or Production GO is revoked',()=>{
+ const p=createProject();p.production_go=true;
+ const j=submit(p,request('SH03'),approval('SH03'));
+ runMock(p,j,{fail:true});
+ p.production_go=false;
+ assert.throws(()=>retry(p,j,{...approval('SH03'),retry:true}),/RETRY_NOT_AUTHORIZED/);
+ p.production_go=true;p.locked.SH03='approved-asset';
+ assert.throws(()=>retry(p,j,{...approval('SH03'),retry:true}),/RETRY_NOT_AUTHORIZED/);
+});

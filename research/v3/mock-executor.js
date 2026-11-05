@@ -9,6 +9,15 @@ function createProject() {
   return {project_id:'the-last-light-research', approved_revision:'storyboard-v1', production_go:false,
     budget_limit:0, spent:0, locked:{SH01:'original-locked-asset'}, jobs:[], events:[]};
 }
+function validApproval(project, request, approval, retryRequired=false) {
+  return Boolean(project.production_go && approval && approval.granted === true &&
+    approval.project_id === request.project_id && approval.shot_id === request.shot_id &&
+    approval.approved_revision === request.approved_revision &&
+    approval.operation === request.operation && approval.adapter === request.adapter &&
+    Number.isFinite(approval.max_cost) && approval.max_cost >= request.cost &&
+    typeof approval.evidence_ref === 'string' && approval.evidence_ref.trim() &&
+    (!retryRequired || approval.retry === true));
+}
 function submit(project, request, approval) {
   if (!SHOTS.includes(request.shot_id)) throw Error('UNKNOWN_SHOT');
   if (request.project_id !== project.project_id || request.approved_revision !== project.approved_revision) throw Error('STALE_OR_WRONG_REVISION');
@@ -21,14 +30,12 @@ function submit(project, request, approval) {
   const existing = project.jobs.find(j=>j.idempotency_key===request.idempotency_key);
   if (existing) {
     if (existing.fingerprint!==fingerprint) throw Error('IDEMPOTENCY_CONFLICT');
+    // A blocked request cannot be upgraded by resubmission; require a new reviewed request.
     return existing;
   }
-  const authorized = Boolean(project.production_go && approval && approval.granted===true &&
-    approval.project_id===request.project_id && approval.shot_id===request.shot_id &&
-    approval.approved_revision===request.approved_revision && approval.operation===request.operation &&
-    approval.adapter==='mock' && approval.max_cost>=request.cost && approval.evidence_ref);
+  const authorized = validApproval(project, request, approval);
   const job={idempotency_key:request.idempotency_key,shot_id:request.shot_id,
-    fingerprint,status:authorized?'AUTHORIZED':'BLOCKED',attempts:0,
+    fingerprint,request:Object.freeze({...request,output_requirements:Object.freeze({...request.output_requirements})}),status:authorized?'AUTHORIZED':'BLOCKED',attempts:0,
     result_evidence:null,reason:authorized?null:'MISSING_EXPLICIT_EXECUTION_AUTHORIZATION'};
   project.jobs.push(job);project.events.push({event:'SUBMITTED',shot_id:job.shot_id,status:job.status});
   return job;
@@ -46,8 +53,8 @@ function runMock(project, job, options={}) {
 }
 function retry(project,job,approval) {
   if (job.status!=='FAILED') throw Error('RETRY_REQUIRES_FAILURE');
-  if (!project.production_go || !approval || approval.granted!==true ||
-      approval.shot_id!==job.shot_id || !approval.evidence_ref || approval.retry!==true) throw Error('RETRY_NOT_AUTHORIZED');
+  if (!project.jobs.includes(job) || project.locked[job.shot_id] ||
+      !validApproval(project, job.request, approval, true)) throw Error('RETRY_NOT_AUTHORIZED');
   job.status='AUTHORIZED';job.reason=null;project.events.push({event:'RETRY_AUTHORIZED',shot_id:job.shot_id});
   return job;
 }
