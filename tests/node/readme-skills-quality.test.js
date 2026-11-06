@@ -69,9 +69,19 @@ test('GitHub installation remains primary and cloning remains optional',()=>{
 
 test('README shows a single coherent workflow with approvals and evidence limits',()=>{
  const content=readme();
- for(const phrase of ['Your idea','Screenplay','Visual Bible','Storyboard','Sound and shot plans','Generate and review assets','Production-ready plan','Project Bible','You approve','Tools available and authorized?'])
+ for(const phrase of ['1 · Discovery','2 · Screenplay','3 · Visual Bible','4 · Storyboard','5 · Sound direction','6 · Generator setup','7 · Generate','8 · Review','9 · Edit and deliver','Production-ready plan','Project Bible','You approve','Tools available and authorized?'])
   assert(content.includes(phrase),'README workflow missing: '+phrase);
  assert.equal((content.match(/```mermaid/g)||[]).length,1,'Keep one user-facing workflow diagram');
  assert(content.includes('not independently archived complete transcripts'),'Codex evidence limits must remain visible');
  assert(content.includes('not yet certified'),'Cross-host claims must remain bounded');
+});
+
+test('README preserves distinct architecture, development, releases and FAQ content',()=>{
+ const content=readme();
+ for(const heading of ['## 🎞️ Film production workflow','## 🧩 Skills architecture','## 🛠️ Real-world use cases','## 📊 Quality and validation','## 🏷️ Releases and roadmap','## 🤝 Development and contributing','## ❓ FAQ'])
+  assert(content.includes(heading),'Missing public-facing section: '+heading);
+ for(const term of ['v1.0.0','v2.0.0','v2.1.0','V3','docs/architecture.md','CONTRIBUTING.md','docs/DEVELOPMENT.md','main','develop','does not auto-merge','audio-only repair','not live host invocation','not evidence of better rendered films'])
+  assert(content.toLowerCase().includes(term.toLowerCase()),'Missing user-relevant information: '+term);
+ assert.equal((content.match(/^## 🧩 Skills architecture$/gm)||[]).length,1);
+ assert.equal((content.match(/^## ❓ FAQ$/gm)||[]).length,1);
 });
