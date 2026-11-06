@@ -11,6 +11,21 @@
 5. Review CI, security/privacy implications, compatibility, tests and approval gates before merging. Never claim a check passed without observed evidence. Merge only after explicit owner approval. Delete short-lived branches after verified merge; preserve both permanent branches.
 6. Releases require exact reviewed commits, all release gates and separate explicit authorization for tags and GitHub releases. No production or provider spending is authorized by a code merge.
 
+## Pre-PR planning and change review
+
+Before implementing a nontrivial change, inspect the current code, relevant documentation, tests and branch rules. Prepare a concise plan identifying the objective and user benefit, expected files, behavior and documentation to preserve, risks, validation approach, and correct base/target branches.
+
+For substantial, architectural, destructive or scope-changing work, present the plan to the owner and obtain approval before implementation. For small changes already explicitly authorized, keep planning proportionate and avoid another unnecessary approval round.
+
+**Before opening a PR**, review the complete diff against the intended target branch and verify:
+
+- Only changes relevant to the approved scope are present; no unrelated V3 work enters V2.x PRs.
+- Existing useful behavior, skills, documentation, links and approvals are preserved or deliberately replaced with an explained equivalent.
+- Relevant tests and documentation are updated, and compatibility, rights and security implications are considered.
+- Actual validation results are reported accurately as passed, failed, blocked or not run; do not claim success before observing evidence.
+
+Correct unexpected files, branch ancestry or accidental removals before creating the PR. In its description, summarize the objective, actual changed files, preservation decisions, test evidence, and outstanding limitations. If the scope changes materially during implementation, seek fresh approval. **Opening a PR never authorizes merging; the owner retains final merge approval.**
+
 ## Important release-state distinction
 
 `main` is the **integration/default branch** for ongoing V2.1 work; the latest published stable release is `v2.0.0`, preserved at immutable tag commit `93c34e2e41351bf3411a330a8515481756f83ebd`. Do not rewrite `main` history or move published tags for later documentation changes. The V3 prototype is preserved on `develop` and must not be promoted into V2.x by synchronization.
