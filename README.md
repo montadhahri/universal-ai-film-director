@@ -12,7 +12,7 @@ An open-source AI filmmaking crew: one Director, six specialist skills, and **yo
 [![Install smoke](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/skills-install-smoke.yml/badge.svg)](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/skills-install-smoke.yml)
 [![MIT](https://img.shields.io/badge/code%20license-MIT-green)](LICENSE)
 
-[Get started](#-get-started) · [Example](#-see-it-in-action) · [Skills](#-meet-your-ai-film-crew) · [Compatibility](#-agent-compatibility) · [Documentation](#-learn-more)
+[Quick start](#-get-started) · [Example](#-see-it-in-action) · [Workflow](#-film-production-workflow) · [Skills](#-meet-your-ai-film-crew) · [Architecture](#-skills-architecture) · [Compatibility](#-agent-compatibility) · [Releases](#-releases-and-roadmap) · [FAQ](#-faq)
 
 </div>
 
@@ -73,22 +73,46 @@ On **Windows CMD**, use `--skill "*"` instead. For individual skills, local inst
 | [**Sound Direction**](skills/film-sound-direction/SKILL.md) | Plan voice-over, music, effects, and synchronization |
 | [**Continuity & QA**](skills/film-continuity-qa/SKILL.md) | Identify defects and propose focused repairs |
 
-**Use one agent or individual specialists.** The Director can guide the full process in a single agent; native multi-agent delegation is optional and depends on the host.
+## 🎞️ Film production workflow
 
-### The filmmaking journey
+The Director follows a **nine-stage filmmaking journey**. The milestones are creative decisions, not automatic permission to generate media. You approve the screenplay, Visual Bible and storyboard before dependent work advances.
 
 ```mermaid
-flowchart LR
-    A[Your idea] --> B[Screenplay]
-    B --> C[Visual Bible]
-    C --> D[Storyboard]
-    D --> E[Sound and shot plans]
-    E --> F{Tools available and authorized?}
-    F -->|No| G[Production-ready plan]
-    F -->|Yes| H[Generate and review assets]
+flowchart TD
+    A["1 · Discovery"] --> B["2 · Screenplay"]
+    B --> C{"You approve screenplay?"}
+    C -->|Revise| B
+    C -->|Approve| D["3 · Visual Bible"]
+    D --> E{"You approve visual design?"}
+    E -->|Revise| D
+    E -->|Approve| F["4 · Storyboard"]
+    F --> G{"You approve storyboard?"}
+    G -->|Revise| F
+    G -->|Approve| H["5 · Sound direction"]
+    H --> I["6 · Generator setup"]
+    I --> J{"Tools available and authorized?"}
+    J -->|No| K["Production-ready plan; no footage claimed"]
+    J -->|Yes| L["7 · Generate"]
+    L --> M["8 · Review"]
+    M --> N["9 · Edit and deliver"]
 ```
 
-You approve the screenplay, Visual Bible, and storyboard. A **Project Bible** records approved decisions, character references, and shot IDs so work can continue consistently. Generation, account connections, and spending require separate authorization.
+**The Project Bible** tracks approved revisions, character and location anchors, shot IDs, continuity decisions, unresolved issues and the next safe step. A copyable checkpoint helps resume a project in another chat or agent; it is not automatic cloud storage. External generation, account connections, spending and publication **require separate authorization**.
+
+## 🧩 Skills architecture
+
+**You remain the final creative authority.** The Director coordinates the six specialist disciplines, checks their proposals against approved work, and presents decisions for your review. Specialists do not independently approve or override locked shots.
+
+- **One-agent mode:** install the Director and work through the whole process in one compatible agent. Native multi-agent delegation is not required.
+- **Modular mode:** install individual specialists for focused work. Agent-native discovery and delegation depend on the host and are not universally verified.
+
+Each skill has a `SKILL.md` entrypoint and task-specific references. The [architecture guide](docs/architecture.md) explains the contracts, handoffs and project state in detail.
+
+## 🛠️ Real-world use cases
+
+**Start from an idea:** “Make a 30-second animated short about a child carrying light to a tower.” The Director helps shape the story, style, timed shots and sound plan, requesting approval before progressing.
+
+**Repair without breaking approved work:** “The narration disappears at second 18, but the picture is good. Don't change the video.” Sound Direction and Continuity & QA should propose a scoped **audio-only repair**, preserving locked picture. They must not claim a successful fix without inspecting the repaired output.
 
 ## 🤖 Agent compatibility
 
@@ -105,13 +129,40 @@ Public GitHub installation of all seven skills also [passed a pinned CI smoke te
 
 [See exact host-test evidence and reproduce the checks](docs/installation.md)
 
-## 📊 Quality and development
+## 📊 Quality and validation
 
-In an eight-scenario comparison of **textual film plans**, V2 scored a descriptive mean of **4.83/5**, versus **4.50/5** for historical V1. The offline validator passed 8/8 scenarios. This small evaluation **does not establish better rendered films** or independent agent performance.
+An eight-scenario comparison of **textual film plans** reported a descriptive mean of **4.83/5 for V2**, versus **4.50/5 for historical V1**, with 8/8 offline-validator passes. This small evaluation is **not evidence of better rendered films**, independent host execution, or autonomous seven-agent production. [Read the methodology and caveats](docs/quality-benchmark-results.md).
 
-[Benchmark methodology and caveats](docs/quality-benchmark-results.md) · [V2.1 roadmap](docs/ROADMAP.md)
+CI validates repository structure and skills, while a [pinned public-GitHub installation smoke test](https://github.com/montadhahri/universal-ai-film-director/actions/runs/41921930247) verified CLI installation, **not live host invocation**. See [host-test evidence](docs/installation.md) for current limits.
 
-**Releases:** [v2.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0) is the latest stable version. **V2.1.0 is actively in development**, with partial owner-operated Codex testing completed and broader host verification still pending. It has not been released; production GO remains **HOLD**.
+## 🏷️ Releases and roadmap
+
+| Version | Status | Focus |
+| --- | --- | --- |
+| [v1.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) | Released | Original single-skill Director |
+| [v2.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0) | **Latest stable release** | Director and six specialist skills |
+| **v2.1.0** | **In development, not released** | Beginner installation and real-agent invocation evidence |
+| **V3** | Research only on `develop` | Experimental connected-agent production ideas; not part of the V2.x release |
+
+The [canonical roadmap](docs/ROADMAP.md) defines proposed milestones and acceptance gates; it does not authorize release or provider spending. **Production GO remains HOLD.** Published releases remain identifiable by their tags; `main` is the V2.x integration branch, not a guarantee that every commit is a tagged release. See [CHANGELOG](CHANGELOG.md).
+
+## 🤝 Development and contributing
+
+Contributions, issue reports and reproducible host-testing results are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md) and the [development guidelines](docs/DEVELOPMENT.md).
+
+V2.x work is proposed by PR to `main`; V3 research is proposed to `develop`. A `main` → `develop` synchronization PR requires review and **does not auto-merge**. Keep changes focused, preserve approvals and evidence, and run applicable checks. The repository's documentation favors a small number of canonical guides over duplicate reports.
+
+## ❓ FAQ
+
+**Does this create a finished video automatically?** No. It directs and plans filmmaking; actual image, audio and video generation needs genuinely available tools and separate permission.
+
+**Do I need a paid AI video subscription or an API key?** No for planning or installation. Rendering may require other tools, which the Director must check before proposing execution.
+
+**Can I use only one AI agent?** Yes. The Director can follow the specialist methods within one agent. Native multi-agent delegation is optional and host-dependent.
+
+**Can I install only a specialist?** Yes. See the [installation guide](docs/installation.md) for each skill's command and supported installation options.
+
+**Can I continue a film later or fix only one shot?** The Project Bible and copyable checkpoints help resume work; locked decisions remain protected. A repair is proposed and reviewed before any approved asset changes.
 
 ## 📚 Learn more
 
