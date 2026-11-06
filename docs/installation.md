@@ -71,7 +71,7 @@ The following are **test targets, not certified integrations**. Skills CLI host 
 | Claude Code | Select Claude Code in Skills CLI if listed by the installed CLI version, or follow that host's current native skill instructions | **NOT_RUN** |
 | Gemini CLI | Check current authentication support before installing; Google-account sign-in failed in the owner's environment | **BLOCKED** — personal sign-in returned “This client is no longer supported for Gemini Code Assist for individuals”; no skill invocation |
 | Cursor | Select Cursor if listed, or use its supported project/agent instruction mechanism | **NOT_RUN** |
-| OpenCode | OpenCode CLI launched using `opencode/beam-free`; Skills CLI target selection not completed | **PARTIAL** — free-model response succeeded; skill installation **SKIPPED**, native skill invocation **NOT_RUN** |
+| OpenCode | Owner-operated Windows session using `opencode/beam-free`; pre-existing global `.agents/skills` installation | **PARTIAL PASS (2026-11-06)** — Director file read and planning behavior observed; native `film-storytelling` and `film-visual-direction` skill-tool invocations observed |
 | Other agents | Check actual Agent Skills support; otherwise manually load Director and relevant references | **NOT_VERIFIED** |
 
 ### Owner-operated Windows host observations (2026-11-05)
@@ -85,7 +85,19 @@ These are user-reported local test observations, **not independently archived co
 - **OpenCode:** `opencode models` listed free-labelled options and a user-reported `opencode/beam-free` session returned the requested connection phrase. The Skills CLI agent selection did not visibly offer OpenCode to the user; installation verification was **SKIPPED** by owner decision. A model response alone is **not** Agent Skills support evidence.
 - **Security/cost:** All film prompts were fictional and planning-only. No provider rendering or paid job was authorized. A third-party installer script considered during troubleshooting was **not executed** and is not an endorsed installation method.
 
-**Current V2.1 verdict: PARTIAL.** One host has scoped, owner-operated native invocation evidence; the required second-host native Director + two-specialist invocation and independent clean-run evidence remain **NOT_RUN**. Reproduce and retain complete prompts, outputs, host/model versions and installed reference reads before certifying portability.
+**V2.1 verdict as of 2026-11-05: PARTIAL.** At that date only Codex had scoped owner-operated native invocation evidence. See the 2026-11-06 OpenCode follow-up below for the updated status; independent clean-run evidence is still missing.
+
+### OpenCode follow-up — owner-operated Windows evidence (2026-11-06)
+
+The owner provided screenshots from an OpenCode **Build / Beam Free** session in a local Windows test directory. This was a continuation of the existing environment, **not** an independent clean installation. No complete transcript, host version, skill source revision, dependency/reference loading trace, or independent evaluator capture was provided.
+
+- **Director:** OpenCode visibly read `C:\\Users\\nouni\\.agents\\skills\\universal-ai-film-director\\SKILL.md`. Given a fictional 30-second robot-and-flower idea, it returned a **PROPOSED** creative direction, trade-offs, separate screenplay/Visual Bible/storyboard approval gates, and one focused ending-tone question. This demonstrates useful behavior and file access, **not verified native Director skill-tool invocation**.
+- **Discovery:** It directly read `film-storytelling/SKILL.md` and `film-visual-direction/SKILL.md` from the same global skill root and stated both appeared in its native `available_skills` list. Native listing is self-reported; direct reads are visible.
+- **Storytelling:** Screenshot explicitly shows `Skill "film-storytelling"` and the model reporting native invocation. It kept creative direction **PROPOSED**, identified the next owner decision, and declined to finalize a screenplay or imply approvals.
+- **Visual direction:** Screenshot explicitly shows `Skill "film-visual-direction"` and the model reporting native invocation. It proposed a stylized look and three continuity anchors, identified required upstream approvals, and did not claim images, files or approvals.
+- **Limits:** These are scoped owner-operated screenshot observations, not complete independent logs. Skills CLI installation for OpenCode, clean first-use reproducibility, Director native invocation, complete reference loading, and native Director-to-specialist delegation remain **NOT_VERIFIED / NOT_RUN**. No media generation or paid provider work was requested.
+
+**Updated V2.1 verdict: PARTIAL.** Two hosts now have owner-operated skill-use evidence, with OpenCode's two specialists visibly invoked through its skill tool. Independent clean installation and full native Director-plus-two-specialist verification in two hosts are still required before claiming the milestone complete.
 
 ### Repeatable planning-only test
 
