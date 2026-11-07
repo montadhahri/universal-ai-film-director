@@ -2,7 +2,15 @@
 const test=require('node:test');
 const assert=require('node:assert/strict');
 const {newProject}=require('../../scripts/project-contracts.js');
-const {inspectCheckpoint,restoreCheckpoint}=require('../../scripts/director-authority.js');
+const {inspectCheckpoint,restoreCheckpoint,proposeGate,approveGate}=require('../../scripts/director-authority.js');
+function fullyApproved(p){
+ for(const [i,gate] of ['script','visual_bible','storyboard'].entries()){
+  const proposal_id='GP-'+i;
+  p=proposeGate(p,{expected_revision:p.revision,gate,version:'v1',artifact_ref:gate+'-v1',proposal_id});
+  p=approveGate(p,{expected_revision:p.revision,proposal_id,evidence:{actor:'USER',source_ref:'fixture-'+i,quote:'I approve'}});
+ }
+ return p;
+}
 function project(nodes,edges){const p=newProject('dependency-regression');p.dependency_graph={nodes,edges};return p;}
 test('REC-10 missing dependency endpoint is explicitly reported',()=>{
  const p=project([{kind:'shot',id:'SH01'}],[{from:'SH01',to:'MISSING_ASSET'}]);
@@ -35,14 +43,12 @@ test('checkpoint inspection never changes project state or grants permissions',(
 });
 
 test('approved gates with graph defects recommend dependency repair',()=>{
- const p=project([{kind:'shot',id:'SH01'}],[{from:'SH01',to:'MISSING'}]);
- for(const gate of ['script','visual_bible','storyboard'])p.gates[gate]={approved:true,version:'v1',evidence:'source'};
+ const p=fullyApproved(project([{kind:'shot',id:'SH01'}],[{from:'SH01',to:'MISSING'}]));
  assert.match(inspectCheckpoint(p).next_safe_action,/Resolve dependency graph issues/);
 });
 test('valid graph with approved gates permits planning-only continuation',()=>{
- const p=project([{kind:'shot',id:'SH01'}],[]);
- for(const gate of ['script','visual_bible','storyboard'])p.gates[gate]={approved:true,version:'v1',evidence:'source'};
- assert.match(inspectCheckpoint(p).next_safe_action,/Continue planned production/);
+ const p=fullyApproved(project([{kind:'shot',id:'SH01'}],[]));
+ assert.match(inspectCheckpoint(p).next_safe_action,/Continue planning only/);
 });
 test('missing gate approval remains first recovery action',()=>{
  assert.equal(inspectCheckpoint(project([{kind:'shot',id:'SH01'}],[{from:'SH01',to:'MISSING'}])).next_safe_action,'Resolve script approval');
