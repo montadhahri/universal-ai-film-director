@@ -7,7 +7,7 @@
 An open-source AI filmmaking crew: one Director, six specialist skills, and **you in creative control**.
 
 [![Stable release](https://img.shields.io/badge/stable-v2.0.0-blue)](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0)
-[![In development](https://img.shields.io/badge/in%20development-v2.1.0-orange)](docs/ROADMAP.md)
+[![Release candidate](https://img.shields.io/badge/release%20candidate-v2.1.0-orange)](docs/ROADMAP.md)
 [![Validate skills](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml/badge.svg)](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml)
 [![Install smoke](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/skills-install-smoke.yml/badge.svg)](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/skills-install-smoke.yml)
 [![MIT](https://img.shields.io/badge/code%20license-MIT-green)](LICENSE)
@@ -60,6 +60,16 @@ npx skills add montadhahri/universal-ai-film-director --skill '*'
 ```
 
 On **Windows CMD**, use `--skill "*"` instead. For individual skills, local installation, and troubleshooting, see the [installation guide](docs/installation.md).
+
+## 🆕 V2.1.0 release candidate
+
+**Install and start directing with more confidence.** V2.1.0 improves first-use instructions and documents verified, owner-operated skill loading in **Codex and OpenCode**. All seven skills passed the pinned public Skills CLI installation smoke test; a scoped 30-second film-planning scenario loaded the Director and two specialists in each tested host, producing approval-safe proposals.
+
+- **Codex:** successful `SKILL.md` and reference file reads; no separate native skill-tool invocation was shown in the reviewed session.
+- **OpenCode:** three native `skill` calls plus reference reads in the reviewed session.
+- **Evidence boundary:** sessions were owner-operated and independently reviewed, not independently executed. Exact installed Git revisions, unfamiliar-user onboarding, and native Director-to-specialist delegation remain unverified.
+
+**Release status:** V2.1.0 is approved for release preparation but is **not published until its Git tag and GitHub release exist**. The stable badge above remains on v2.0.0 until then. [Full compatibility evidence](docs/installation.md#complete-targeted-host-transcript-review-2026-11-07).
 
 ## 🎬 Meet your AI film crew
 
@@ -141,7 +151,7 @@ CI validates repository structure and skills, while a [pinned public-GitHub inst
 | --- | --- | --- |
 | [v1.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) | Released | Original single-skill Director |
 | [v2.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0) | **Latest stable release** | Director and six specialist skills |
-| **v2.1.0** | **In development, not released** | Beginner installation and real-agent invocation evidence |
+| **v2.1.0** | **Release-ready; publication pending** | Public Skills CLI installation, targeted Codex/OpenCode skill-use evidence, and beginner guidance; independent-user and delegation limits disclosed |
 | **V3** | Research only on `develop` | Experimental connected-agent production ideas; not part of the V2.x release |
 
 The [canonical roadmap](docs/ROADMAP.md) defines proposed milestones and acceptance gates; it does not authorize release or provider spending. **Production GO remains HOLD.** Published releases remain identifiable by their tags; `main` is the V2.x integration branch, not a guarantee that every commit is a tagged release. See [CHANGELOG](CHANGELOG.md).
