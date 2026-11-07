@@ -110,6 +110,14 @@ The owner used Skills CLI `1.7.6` from Windows CMD in `C:\Users\nouni\OneDrive\D
 
 **V2.1 remains PARTIAL.** This adds successful project-local installation and two useful OpenCode coordination scenarios, but independent clean-user acceptance and full pinned two-host capture remain outstanding.
 
+### Additional local completeness and beginner check (2026-11-07)
+
+Owner-provided Windows CMD screenshots from the same project-local OpenCode test environment showed **seven PASS and zero FAIL** when checking for `SKILL.md` in each installed skill directory. The Director's local `references/` directory contained seven Markdown files: `continuity.md`, `creative-direction.md`, `decision-procedure.md`, `discovery.md`, `guide.md`, `project-state.md`, and `worked-example.md`. These are **file-presence checks**, not validation of every dependency or proof of isolation from global skills.
+
+A fresh OpenCode session received a short beginner-style prompt for a 30-second lonely-robot-and-flower film, asking to use the Universal AI Film Director without giving an explicit skill path. The screenshot visibly showed a project-local `references/discovery.md` read and a **Draft (Discovery)** Project Bible, a planning-only/no-paid-tools constraint, unapproved creative proposals and one focused question. **Beginner discovery behavior: PASS (owner-operated).** The screenshot does not show a native Director skill-tool invocation line; **native invocation for this particular run: NOT_VERIFIED**. The environment was not independent or globally skill-free, and full host transcripts and exact source revisions were not captured.
+
+**V2.1 remains PARTIAL** pending independently reproducible clean-environment and two-host evidence; no release authorization.
+
 ### Repeatable planning-only test
 
 1. In a **clean test project**, list the available skills using the CLI and install the Director plus at least two specialists. Record the actual CLI version, selected host, installed skill paths and host/model versions. No clone or Python is required for the public CLI installation path.
