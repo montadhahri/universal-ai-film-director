@@ -67,7 +67,12 @@ test('approval integrity takes priority over dependency issues and missing gates
  assert.equal(report.provider_execution_performed,false);
 });
 test('dependency problems block planning when approval ledger is intact',()=>{
- const p=approved();
+ let p=approved();
+ for(const [i,gate] of ['visual_bible','storyboard'].entries()){
+  const proposal_id='ADDITIONAL-'+i;
+  p=proposeGate(p,{expected_revision:p.revision,gate,version:'v1',artifact_ref:gate+'-v1',proposal_id});
+  p=approveGate(p,{expected_revision:p.revision,proposal_id,evidence:{actor:'USER',source_ref:'extra-fixture-'+i,quote:'I approve'}});
+ }
  p.dependency_graph={nodes:[{kind:'shot',id:'SH01'}],edges:[{from:'SH01',to:'MISSING'}]};
  const report=inspectCheckpoint(p);
  assert.deepEqual(report.approval_integrity_issues,[]);
