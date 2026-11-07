@@ -99,6 +99,17 @@ The owner provided screenshots from an OpenCode **Build / Beam Free** session in
 
 **Updated V2.1 verdict: PARTIAL.** Two hosts now have owner-operated skill-use evidence, with OpenCode's two specialists visibly invoked through its skill tool. Independent clean installation and full native Director-plus-two-specialist verification in two hosts are still required before claiming the milestone complete.
 
+### Project-local OpenCode follow-up — owner-operated Windows screenshots (2026-11-07)
+
+The owner used Skills CLI `1.7.6` from Windows CMD in `C:\Users\nouni\OneDrive\Desktop\sdsdsdsd` (an existing owner environment, **not** a clean independent user or host). `npx skills add montadhahri/universal-ai-film-director --skill "*"` completed project-local installation. A directory listing visibly contained all seven skill folders under `.agents\skills\`; the initial Director-only installation and subsequent seven-skill installation were both observed. The CLI displayed third-party security indicators (Gen Safe, Socket 0 alerts, Snyk Low Risk) for the Director; these are **not** a full security audit.
+
+- **Director discovery:** OpenCode Build / Beam Free visibly read the project-local `.agents\skills\universal-ai-film-director\SKILL.md` and `references\discovery.md`. For a fictional 30-second robot/flower concept it asked one focused discovery question and did not advance approvals.
+- **Director + Storytelling:** OpenCode visibly displayed native `Skill "universal-ai-film-director"` and `Skill "film-storytelling"` calls, and reported both project-local Windows paths. It produced a five-beat, 30-second **PROPOSED** story, left screenplay approval to the user, and did not claim media generation or spending.
+- **Director + Visual Direction:** OpenCode reported both project-local `SKILL.md` paths and proposed a hand-painted 2D look, three continuity anchors and reference-image requirements. It kept the screenplay, Visual Bible and storyboard unapproved. The supplied screenshot **did not show the native skill-tool invocation lines** for this pair, so native invocation remains NOT_VERIFIED for this specific run.
+- **Limits:** Screenshot excerpts rather than complete transcripts; source revision, host version and full reference-loading trace not pinned; the environment already had global skills installed. Path displays and response behavior are scoped evidence, not proof of fully independent clean-user onboarding, all-host compatibility or autonomous multi-agent delegation. No provider calls, media jobs or repository changes were authorized in these tests.
+
+**V2.1 remains PARTIAL.** This adds successful project-local installation and two useful OpenCode coordination scenarios, but independent clean-user acceptance and full pinned two-host capture remain outstanding.
+
 ### Repeatable planning-only test
 
 1. In a **clean test project**, list the available skills using the CLI and install the Director plus at least two specialists. Record the actual CLI version, selected host, installed skill paths and host/model versions. No clone or Python is required for the public CLI installation path.
