@@ -37,3 +37,44 @@ test('duplicate gate approval records are flagged',()=>{
  const p=approved();p.approval_ledger.push(structuredClone(p.approval_ledger[0]));
  assert.ok(inspectCheckpoint(p).approval_integrity_issues.some(x=>x.code==='AMBIGUOUS_GATE_APPROVAL'));
 });
+
+test('missing approval ledger blocks planning continuation even when all gates are approved',()=>{
+ let p=newProject('all-approved-integrity');
+ for(const [i,gate] of ['script','visual_bible','storyboard'].entries()){
+  const proposal_id='GP-'+i;
+  p=proposeGate(p,{expected_revision:p.revision,gate,version:'v1',artifact_ref:gate+'-v1',proposal_id});
+  p=approveGate(p,{expected_revision:p.revision,proposal_id,evidence:{actor:'USER',source_ref:'fixture-'+i,quote:'I approve'}});
+ }
+ const clean=inspectCheckpoint(p);
+ assert.deepEqual(clean.approval_integrity_issues,[]);
+ assert.match(clean.next_safe_action,/Continue planning only/);
+ assert.doesNotMatch(clean.next_safe_action,/Continue planned production/);
+ p.approval_ledger=[];
+ const broken=inspectCheckpoint(p);
+ assert.equal(broken.approval_integrity_issues.length,3);
+ assert.ok(broken.issues.some(x=>/Approval integrity issues/.test(x)));
+ assert.match(broken.next_safe_action,/Resolve approval integrity issues/);
+ assert.equal(p.authorization.production_go,false);
+ assert.equal(p.authorization.provider_job_allowed,false);
+});
+test('approval integrity takes priority over dependency issues and missing gates',()=>{
+ const p=approved();
+ p.approval_ledger=[];
+ p.dependency_graph={nodes:[{kind:'shot',id:'SH01'}],edges:[{from:'SH01',to:'MISSING'}]};
+ const report=inspectCheckpoint(p);
+ assert.ok(report.unresolved_issues.length>0);
+ assert.match(report.next_safe_action,/Resolve approval integrity issues/);
+ assert.equal(report.provider_execution_performed,false);
+});
+test('dependency problems block planning when approval ledger is intact',()=>{
+ let p=approved();
+ for(const [i,gate] of ['visual_bible','storyboard'].entries()){
+  const proposal_id='ADDITIONAL-'+i;
+  p=proposeGate(p,{expected_revision:p.revision,gate,version:'v1',artifact_ref:gate+'-v1',proposal_id});
+  p=approveGate(p,{expected_revision:p.revision,proposal_id,evidence:{actor:'USER',source_ref:'extra-fixture-'+i,quote:'I approve'}});
+ }
+ p.dependency_graph={nodes:[{kind:'shot',id:'SH01'}],edges:[{from:'SH01',to:'MISSING'}]};
+ const report=inspectCheckpoint(p);
+ assert.deepEqual(report.approval_integrity_issues,[]);
+ assert.match(report.next_safe_action,/Resolve dependency graph issues before continuing planning/);
+});
