@@ -134,8 +134,9 @@ function inspectCheckpoint(p) {
  const unresolved_issues=inspectDependencyGraph(p);
  const approval_integrity_issues=inspectApprovalLedger(p);
  if(unresolved_issues.length)issues.push('Unresolved dependency graph issues: '+unresolved_issues.length);
+ if(approval_integrity_issues.length)issues.push('Approval integrity issues: '+approval_integrity_issues.length);
  return {project_id:p.project_id,revision:p.revision,phase:p.phase,locked,pending,issues,unresolved_issues,approval_integrity_issues,
- next_safe_action:next?'Resolve '+next+' approval':unresolved_issues.length?'Resolve dependency graph issues before continuing planned production':'Continue planned production while verifying separate permissions',
+ next_safe_action:approval_integrity_issues.length?'Resolve approval integrity issues before continuing planning':next?'Resolve '+next+' approval':unresolved_issues.length?'Resolve dependency graph issues before continuing planning':'Continue planning only; verify separate permissions before any production or provider execution',
  provider_execution_performed:false,media_inspected:false,persisted:false};
 }
 function restoreCheckpoint(json) {
