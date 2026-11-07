@@ -39,16 +39,6 @@ These are AI-generated reference images, **not proof of autonomous end-to-end pr
 
 [Explore the full case study](docs/case-studies/the-last-light/README.md) · [Media terms](docs/case-studies/the-last-light/MEDIA-TERMS.md)
 
-## 🆕 V2.1.0 release candidate
-
-**Install and start directing with more confidence.** V2.1.0 improves first-use instructions and documents verified, owner-operated skill loading in **Codex and OpenCode**. All seven skills passed the pinned public Skills CLI installation smoke test; a scoped 30-second film-planning scenario loaded the Director and two specialists in each tested host, producing approval-safe proposals.
-
-- **Codex:** successful `SKILL.md` and reference file reads; no separate native skill-tool invocation was shown in the reviewed session.
-- **OpenCode:** three native `skill` calls plus reference reads in the reviewed session.
-- **Evidence boundary:** sessions were owner-operated and independently reviewed, not independently executed. Exact installed Git revisions, unfamiliar-user onboarding, and native Director-to-specialist delegation remain unverified.
-
-**Release status:** V2.1.0 is approved for release preparation but is **not published until its Git tag and GitHub release exist**. The stable badge above remains on v2.0.0 until then. [Full compatibility evidence](docs/installation.md#complete-targeted-host-transcript-review-2026-11-07).
-
 ## 🚀 Get started
 
 **1. Install the Director** using the [Skills CLI](https://skills.sh/) in a compatible agent environment:
@@ -70,6 +60,16 @@ npx skills add montadhahri/universal-ai-film-director --skill '*'
 ```
 
 On **Windows CMD**, use `--skill "*"` instead. For individual skills, local installation, and troubleshooting, see the [installation guide](docs/installation.md).
+
+## 🆕 V2.1.0 release candidate
+
+**Install and start directing with more confidence.** V2.1.0 improves first-use instructions and documents verified, owner-operated skill loading in **Codex and OpenCode**. All seven skills passed the pinned public Skills CLI installation smoke test; a scoped 30-second film-planning scenario loaded the Director and two specialists in each tested host, producing approval-safe proposals.
+
+- **Codex:** successful `SKILL.md` and reference file reads; no separate native skill-tool invocation was shown in the reviewed session.
+- **OpenCode:** three native `skill` calls plus reference reads in the reviewed session.
+- **Evidence boundary:** sessions were owner-operated and independently reviewed, not independently executed. Exact installed Git revisions, unfamiliar-user onboarding, and native Director-to-specialist delegation remain unverified.
+
+**Release status:** V2.1.0 is approved for release preparation but is **not published until its Git tag and GitHub release exist**. The stable badge above remains on v2.0.0 until then. [Full compatibility evidence](docs/installation.md#complete-targeted-host-transcript-review-2026-11-07).
 
 ## 🎬 Meet your AI film crew
 
