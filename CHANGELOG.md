@@ -6,12 +6,16 @@ tags, not by duplicated skill source folders.
 
 ## [Unreleased]
 
+No changes recorded after the V2.1.0 release candidate.
+
+## [2.1.0] — pending publication
+
 ### Changed
 - Improve beginner-facing installation guidance and collect owner-operated Codex and OpenCode skill-use evidence, including complete exported session records independently reviewed for a scoped 30-second planning test.
 - Confirm real loading of Director, Storytelling and Visual Direction on two Windows hosts: Codex via successful file reads and OpenCode via native `skill` tool calls, with approval-safe proposals and no media generation.
 - Document limits: installed Git revision not pinned in host exports; independent unfamiliar-user onboarding and native Director-to-specialist delegation not established. No raw private session logs are published.
 
-V2.1.0 is a release candidate, **not released**. Release/tag creation requires separate owner authorization.
+V2.1.0 release preparation is approved. The release remains **unpublished** until its tag and GitHub release are created from the final reviewed `main` commit.
 
 ## [2.0.0] — 2026-11-04
 
