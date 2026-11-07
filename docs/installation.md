@@ -132,6 +132,10 @@ A fresh OpenCode session received a short beginner-style prompt for a 30-second 
 
 Use the existing [agent acceptance capture and evaluation instructions](agent-acceptance.md) rather than creating new administrative reports. Store private logs outside the public repository; do not commit personal conversations, credentials or private media. Native delegation is optional and must be assessed separately from single-agent mode.
 
+### Existing installation CI execution evidence (verified 2026-11-07)
+
+The owner supplied a GitHub Actions runs screenshot showing green `Local Skills CLI install smoke test` results: **#39** (manual `main`, 2026-11-04), **#38** (PR #110, 2026-11-03), and **#37** (PR #88, 2026-11-03). The [workflow](../.github/workflows/skills-install-smoke.yml) tests local and public GitHub seven-skill installation with pinned Skills CLI `1.7.4` and file checks. These are successful **installation** executions, not proof of live Codex/OpenCode invocation, independently reviewed complete host transcripts, or unfamiliar-user acceptance. Existing owner-operated host evidence remains scoped as recorded above. Do not repeat installation merely to fill the distinct host-evidence gap.
+
 ## Compatible agents without Skills CLI
 
 If your environment cannot install Agent Skills through the CLI, load `skills/universal-ai-film-director/SKILL.md` and the linked `references/` documents in your agent, using its supported instructions mechanism. The Director can carry out the workflow using one agent, without native specialist delegation.
