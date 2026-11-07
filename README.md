@@ -120,12 +120,12 @@ The skills use portable Markdown instructions; **no Python runtime or generator 
 
 | Environment | Current evidence |
 | --- | --- |
-| **Codex (Windows CMD)** | **Partial pass:** owner-operated native invocation of Director, Storytelling, and Visual Direction, with installed `SKILL.md` reads (November 5, 2026) |
-| **OpenCode** | Model connection tested; skill installation and invocation **not tested** |
+| **Codex (Windows)** | **Targeted PASS (2026-11-07):** exported session independently reviewed; Director, Storytelling and Visual Direction `SKILL.md` files loaded via filesystem reads, references consulted and approval-safe 30-second proposal produced. No separate skill-tool call in this host trace. |
+| **OpenCode (Windows)** | **Targeted PASS (2026-11-07):** exported session independently reviewed; native `skill` tool loaded Director, Storytelling and Visual Direction, two references read and approval-safe 30-second proposal produced. |
 | **Gemini CLI** | Authentication blocked in owner's test; skill invocation **not tested** |
 | **Claude Code, Cursor, other agents** | Intended for compatible skills hosts; native invocation **not independently verified** |
 
-Public GitHub installation of all seven skills also [passed a pinned CI smoke test](https://github.com/montadhahri/universal-ai-film-director/actions/runs/41921930247). Codex observations are owner-reported, not independently archived complete transcripts; cross-host portability and Director-to-specialist delegation are **not yet certified**.
+Public GitHub installation of all seven skills also [passed a pinned CI smoke test](https://github.com/montadhahri/universal-ai-film-director/actions/runs/41921930247). The 2026-11-07 Codex and OpenCode owner-operated session exports were independently reviewed for the targeted planning task. Exact installed Git source revision, independent clean-user onboarding and native Director-to-specialist delegation remain **not verified**; do not generalize these scoped results to every agent.
 
 [See exact host-test evidence and reproduce the checks](docs/installation.md)
 

@@ -136,6 +136,25 @@ Use the existing [agent acceptance capture and evaluation instructions](agent-ac
 
 The owner supplied a GitHub Actions runs screenshot showing green `Local Skills CLI install smoke test` results: **#39** (manual `main`, 2026-11-04), **#38** (PR #110, 2026-11-03), and **#37** (PR #88, 2026-11-03). The [workflow](../.github/workflows/skills-install-smoke.yml) tests local and public GitHub seven-skill installation with pinned Skills CLI `1.7.4` and file checks. These are successful **installation** executions, not proof of live Codex/OpenCode invocation, independently reviewed complete host transcripts, or unfamiliar-user acceptance. Existing owner-operated host evidence remains scoped as recorded above. Do not repeat installation merely to fill the distinct host-evidence gap.
 
+### Complete targeted host transcript review (2026-11-07)
+
+The owner exported the original **Codex JSONL** and **OpenCode JSON** sessions for the fictional 30-second robot-and-flower planning test. A separate reviewer inspected the recorded prompts, tool calls, results and final responses rather than relying on screenshots or the agent's self-report. Raw exports remain private because they include local paths and execution metadata.
+
+| Criterion | Codex | OpenCode |
+| --- | --- | --- |
+| Prompt, tool trace and final answer available | PASS | PASS |
+| Director + Storytelling + Visual Direction skill content loaded | PASS — successful `SKILL.md` file reads | PASS — three completed native `skill` tool calls |
+| Relevant reference files read | PASS — four references | PASS — two references |
+| 30-second five-beat proposal and continuity considerations | PASS | PASS |
+| Unapproved choices marked PROPOSED; one focused question | PASS | PASS |
+| Rendered media or paid provider use | None observed in supplied test trace | None observed in supplied test trace |
+| Exact installed skill Git revision | NOT_VERIFIED | NOT_VERIFIED |
+| Native Director-to-specialist agent delegation | NOT_RUN | NOT_RUN |
+
+OpenCode export identifies host version `1.19.5`, Build mode and `opencode/beam-free`. Codex trace shows filesystem-based skill loading rather than a distinct `skill` tool; this is a host-mechanism difference, not evidence of native delegation. The sessions were **owner-operated but independently reviewed**: independent evaluation is not independent execution. No independent unfamiliar-user test or proof of globally isolated installations is claimed.
+
+**Scoped result: two-host targeted skill loading and planning PASS.** This replaces the earlier screenshot-only evidence gap for this specific task, but does not certify all-agent compatibility. Existing CI installation PASS is a separate evidence category. The remaining exact-source and clean-user limits should be disclosed at release review; V2.1.0 is not released or authorized by this observation.
+
 ## Compatible agents without Skills CLI
 
 If your environment cannot install Agent Skills through the CLI, load `skills/universal-ai-film-director/SKILL.md` and the linked `references/` documents in your agent, using its supported instructions mechanism. The Director can carry out the workflow using one agent, without native specialist delegation.

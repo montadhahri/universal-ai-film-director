@@ -72,8 +72,10 @@ test('README shows a single coherent workflow with approvals and evidence limits
  for(const phrase of ['1 · Discovery','2 · Screenplay','3 · Visual Bible','4 · Storyboard','5 · Sound direction','6 · Generator setup','7 · Generate','8 · Review','9 · Edit and deliver','Production-ready plan','Project Bible','You approve','Tools available and authorized?'])
   assert(content.includes(phrase),'README workflow missing: '+phrase);
  assert.equal((content.match(/```mermaid/g)||[]).length,1,'Keep one user-facing workflow diagram');
- assert(content.includes('not independently archived complete transcripts'),'Codex evidence limits must remain visible');
- assert(content.includes('not yet certified'),'Cross-host claims must remain bounded');
+ assert(content.includes('owner-operated session exports were independently reviewed'),'Reviewed two-host transcript evidence must remain visible');
+ assert(content.includes('Exact installed Git source revision'),'Unpinned installed source limitation must remain visible');
+ assert(content.includes('independent clean-user onboarding'),'Independent onboarding limitation must remain visible');
+ assert(content.includes('native Director-to-specialist delegation remain **not verified**'),'Delegation claims must remain bounded');
 });
 
 test('README preserves distinct architecture, development, releases and FAQ content',()=>{
