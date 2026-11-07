@@ -8,14 +8,14 @@ tags, not by duplicated skill source folders.
 
 No changes recorded after the V2.1.0 release candidate.
 
-## [2.1.0] — pending publication
+## [2.1.0] — 2026-11-07
 
 ### Changed
 - Improve beginner-facing installation guidance and collect owner-operated Codex and OpenCode skill-use evidence, including complete exported session records independently reviewed for a scoped 30-second planning test.
 - Confirm real loading of Director, Storytelling and Visual Direction on two Windows hosts: Codex via successful file reads and OpenCode via native `skill` tool calls, with approval-safe proposals and no media generation.
 - Document limits: installed Git revision not pinned in host exports; independent unfamiliar-user onboarding and native Director-to-specialist delegation not established. No raw private session logs are published.
 
-V2.1.0 release preparation is approved. The release remains **unpublished** until its tag and GitHub release are created from the final reviewed `main` commit.
+V2.1.0 was published on 2026-11-07 from commit `7e7c264ff3496f28962e402b2bf795d181a15daa`. [GitHub release](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.1.0).
 
 ## [2.0.0] — 2026-11-04
 
