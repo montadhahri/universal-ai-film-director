@@ -104,7 +104,9 @@ function previewRepairImpact(p,{expected_revision,target}){
  if(!p.dependency_graph)fail('Dependency graph missing');
  validateDependencyGraph(p.dependency_graph);
  if(!ok(target))fail('Unknown repair target');
- const normalizedTarget=resolveDependencyRef(target,p.dependency_graph.nodes);
+ let normalizedTarget;
+ try{normalizedTarget=resolveDependencyRef(target,p.dependency_graph.nodes)}
+ catch(err){if(err.message.startsWith('Dangling dependency reference'))fail('Unknown repair target');throw err;}
  if(p.shot_timeline)validateTimeline(p.shot_timeline);
  if(p.audio_timeline)validateAudioTimeline(p.audio_timeline,p.shot_timeline);
  const adj=new Map(p.dependency_graph.nodes.map(n=>[n.kind+':'+n.id,[]]));
