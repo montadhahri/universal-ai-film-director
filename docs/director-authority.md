@@ -38,3 +38,9 @@ node --test tests/node/*.test.js
 ```
 
 These tests use synthetic approval messages as negative/positive fixtures. Live-agent invocation and provider-backed media remain untested. All approval and checkpoint changes must still be reviewed against the actual user transcript in the chosen host.
+
+## V2.2 scoped revision recovery inspection
+
+`inspectCheckpoint` reports `pending_shot_revisions` for proposed revisions with a `parent_revision`. Each entry identifies the original locked revision (if still present), its recorded approved asset reference, and neighboring dependency-graph node IDs. Neighbors are conservatively reported in **both** edge directions: the graph does not currently define a reliable change-propagation direction. These are review candidates, **not** automatic invalidations or permission to change assets.
+
+When all earlier approval and dependency-integrity gates are clear, pending scoped revisions cause the next safe action to request human reconciliation. Preserve the locked source and approval ledger, check whether each related shot, audio cue or anchor actually needs a new proposal, and obtain any required user authorization separately. Checkpoint inspection neither verifies asset files nor grants production or publication permissions.
