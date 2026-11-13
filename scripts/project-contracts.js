@@ -18,6 +18,7 @@ function validateProject(p) {
  if (!isObject(p)||p.schema_version!=='2.0'||!nonempty(p.project_id)||!Number.isInteger(p.revision)||p.revision<1) reject('Invalid project identity/revision');
  if (!isObject(p.gates)||!gates.every(k=>isObject(p.gates[k])&&typeof p.gates[k].approved==='boolean')) reject('Missing gates');
  for (const k of gates) if(p.gates[k].approved&&(!nonempty(p.gates[k].version)||!nonempty(p.gates[k].evidence))) reject('Approval missing evidence: '+k);
+ if (!['discovery','script','visual_bible','storyboard','sound','generator','generate','review','delivery'].includes(p.phase))reject('Invalid project phase');
  if (!Array.isArray(p.shots)||!Array.isArray(p.decisions)||!Array.isArray(p.continuity)||!Array.isArray(p.proposals)) reject('Missing project collections');
  const keys=new Set();
  for (const s of p.shots) {
@@ -42,6 +43,22 @@ function validateProject(p) {
  for(const key of ['gate_proposals','approval_ledger','unlock_ledger','permission_ledger'])if(p[key]!==undefined&&!Array.isArray(p[key]))reject('Invalid authority ledger: '+key);
  return true;
 }
+const stages = new Set(['script','visual_bible','storyboard','sound','generator','generate','review','delivery']);
+const permissions = new Set(['script_user_approval','visual_bible_user_approval','storyboard_user_approval','scoped_unlock','provider_job_permission','publication_permission']);
+const handoffKeys = new Set(['contract_version','project_id','request_id','origin','stage','input_revision','status','proposed_artifact','provenance','required_authorization','dependencies','assumptions']);
+function validOptionalStrings(values) {return values===undefined||(Array.isArray(values)&&values.every(nonempty)&&new Set(values).size===values.length);}
+function validateHandoffShape(q) {
+ if(!stages.has(q.stage))reject('Invalid specialist stage');
+ if(Object.keys(q).some(k=>!handoffKeys.has(k)))reject('Unknown specialist proposal field');
+ if(!Object.prototype.hasOwnProperty.call(q.provenance,'evidence_ref')||
+   !(q.provenance.evidence_ref===null||typeof q.provenance.evidence_ref==='string'))
+  reject('Invalid provenance evidence_ref');
+ if(Object.keys(q.provenance).some(k=>!['kind','evidence_ref'].includes(k)))reject('Unknown provenance field');
+ if(q.required_authorization.some(k=>!permissions.has(k))||
+   new Set(q.required_authorization).size!==q.required_authorization.length)reject('Invalid required authorization');
+ if(!validOptionalStrings(q.dependencies)||!validOptionalStrings(q.assumptions))reject('Invalid handoff dependencies or assumptions');
+ if(Object.prototype.hasOwnProperty.call(q.proposed_artifact,'id')===false)reject('Missing proposed artifact ID');
+}
 function validateProposal(p,q) {
  validateProject(p);
  if(!isObject(q)||q.contract_version!=='2.0'||q.status!=='PROPOSED'||!nonempty(q.request_id)||!origins.has(q.origin))reject('Invalid specialist proposal');
@@ -50,6 +67,7 @@ function validateProposal(p,q) {
  if(!isObject(q.proposed_artifact)||!nonempty(q.proposed_artifact.id)||!nonempty(q.proposed_artifact.kind)||!Number.isInteger(q.proposed_artifact.revision)||q.proposed_artifact.revision<1)reject('Invalid proposed artifact');
  if(!isObject(q.provenance)||q.provenance.kind!=='AGENT_DRAFT')reject('Specialist cannot claim inspection or user approval');
  if(!Array.isArray(q.required_authorization))reject('Required authorization list missing');
+ validateHandoffShape(q);
  if(p.proposals.some(prev=>prev.request_id===q.request_id))reject('Duplicate request ID');
  return true;
 }
