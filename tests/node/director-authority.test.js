@@ -84,7 +84,7 @@ test('checkpoint exposes scoped revision and adjacent dependencies without chang
  const snapshot=JSON.stringify(p);
  const result=inspectCheckpoint(restoreCheckpoint(snapshot));
  assert.deepEqual(result.pending_shot_revisions,[{shot_id:'SH08',proposed_revision:3,source_revision:2,
- source_locked:true,source_asset_ref:'asset://shot8',related_node_ids:['CHAR01','CUE08'],requires_review:true}]);
+ source_locked:true,source_asset_ref:'asset://shot8',related_node_ids:['anchor:CHAR01','audio:CUE08'],requires_review:true}]);
  assert.deepEqual(p.shots[0],source);
  assert.match(result.issues.join(' '),/Pending scoped shot revisions/);
  assert.equal(JSON.stringify(p),snapshot);
