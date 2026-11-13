@@ -90,3 +90,15 @@ test('dependency preview rejects unknown target and stale project revision',()=>
  assert.throws(()=>previewRepairImpact(p,{expected_revision:p.revision,target:'audio:UNKNOWN'}),/Unknown/);
  assert.throws(()=>previewRepairImpact(p,{expected_revision:99,target:'audio:VO2'}),/Stale/);
 });
+
+test('legacy bare dependency edges resolve when unambiguous and reject ambiguous IDs',()=>{
+ const legacy=structuredClone(graph);
+ legacy.edges=[{from:'CHAR1',to:'S01'},{from:'S01',to:'VO1'}];
+ assert.equal(validateDependencyGraph(legacy).valid,true);
+ const p=project();p.dependency_graph=legacy;
+ const report=previewRepairImpact(p,{expected_revision:p.revision,target:'anchor:CHAR1'});
+ assert(report.affected.includes('audio:VO1'));
+ const ambiguous=structuredClone(legacy);
+ ambiguous.nodes.push({kind:'audio',id:'S01'});
+ assert.throws(()=>validateDependencyGraph(ambiguous),/Ambiguous dependency reference/);
+});
