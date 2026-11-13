@@ -72,3 +72,28 @@ test('Project Bible schema does not silently permit setting operational flags to
  for(const k of ['production_go','provider_job_allowed','publication_allowed'])
   assert.equal(schema.properties.authorization.properties[k].const,false,k);
 });
+
+test('checkpoint exposes scoped revision and adjacent dependencies without changing locked source',()=>{
+ let p=newProject('impact');
+ p.shots.push({id:'SH08',revision:2,state:'LOCKED',approved_asset:'asset://shot8',continuity_refs:[],issues:[]});
+ p.dependency_graph={nodes:[{kind:'shot',id:'SH08'},{kind:'audio',id:'CUE08'},{kind:'anchor',id:'CHAR01'}],
+ edges:[{from:'SH08',to:'CUE08'},{from:'CHAR01',to:'SH08'}]};
+ const source=structuredClone(p.shots[0]);
+ p=proposeLockedShotRevision(p,{expected_revision:p.revision,shot_id:'SH08',source_revision:2,new_revision:3,
+ authorization_ref:'unlock-8',evidence:user('I allow repair of SH08 only'),reason:'transition mismatch'});
+ const snapshot=JSON.stringify(p);
+ const result=inspectCheckpoint(restoreCheckpoint(snapshot));
+ assert.deepEqual(result.pending_shot_revisions,[{shot_id:'SH08',proposed_revision:3,source_revision:2,
+ source_locked:true,source_asset_ref:'asset://shot8',related_node_ids:['CHAR01','CUE08'],requires_review:true}]);
+ assert.deepEqual(p.shots[0],source);
+ assert.match(result.issues.join(' '),/Pending scoped shot revisions/);
+ assert.equal(JSON.stringify(p),snapshot);
+ assert.equal(p.authorization.provider_job_allowed,false);
+});
+test('pending revision is not presented as approved when source lock is missing',()=>{
+ const p=newProject('orphan');
+ p.shots.push({id:'SH01',revision:2,parent_revision:1,state:'PROPOSED',continuity_refs:[],issues:['repair']});
+ const report=inspectCheckpoint(p);
+ assert.equal(report.pending_shot_revisions[0].source_locked,false);
+ assert.equal(report.pending_shot_revisions[0].source_asset_ref,null);
+});

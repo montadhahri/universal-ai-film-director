@@ -124,6 +124,23 @@ function inspectApprovalLedger(p) {
  }
  return issues;
 }
+// Read-only conservative impact report: graph edges are not assumed to encode
+// propagation direction. Both endpoints are flagged for human reconciliation.
+function inspectPendingShotRevisions(p) {
+ const graph=p.dependency_graph;
+ return p.shots.filter(s=>s.state==='PROPOSED'&&Number.isInteger(s.parent_revision)).map(s=>{
+  const source=p.shots.find(x=>x.id===s.id&&x.revision===s.parent_revision&&x.state==='LOCKED');
+  const neighbors=new Set();
+  if(graph&&Array.isArray(graph.edges))for(const edge of graph.edges){
+   if(edge&&edge.from===s.id&&typeof edge.to==='string')neighbors.add(edge.to);
+   if(edge&&edge.to===s.id&&typeof edge.from==='string')neighbors.add(edge.from);
+  }
+  neighbors.delete(s.id);
+  return {shot_id:s.id,proposed_revision:s.revision,source_revision:s.parent_revision,
+   source_locked:!!source,source_asset_ref:source?.approved_asset||null,
+   related_node_ids:[...neighbors].sort(),requires_review:true};
+ });
+}
 function inspectCheckpoint(p) {
  validateProject(p);
  const issues=[],g=['script','visual_bible','storyboard'];
@@ -133,10 +150,12 @@ function inspectCheckpoint(p) {
  const pending=getLedger(p,'gate_proposals').filter(x=>x.status==='PENDING').map(x=>({proposal_id:x.proposal_id,gate:x.gate,version:x.version}));
  const unresolved_issues=inspectDependencyGraph(p);
  const approval_integrity_issues=inspectApprovalLedger(p);
+ const pending_shot_revisions=inspectPendingShotRevisions(p);
+ if(pending_shot_revisions.length)issues.push('Pending scoped shot revisions require review: '+pending_shot_revisions.length);
  if(unresolved_issues.length)issues.push('Unresolved dependency graph issues: '+unresolved_issues.length);
  if(approval_integrity_issues.length)issues.push('Approval integrity issues: '+approval_integrity_issues.length);
- return {project_id:p.project_id,revision:p.revision,phase:p.phase,locked,pending,issues,unresolved_issues,approval_integrity_issues,
- next_safe_action:approval_integrity_issues.length?'Resolve approval integrity issues before continuing planning':next?'Resolve '+next+' approval':unresolved_issues.length?'Resolve dependency graph issues before continuing planning':'Continue planning only; verify separate permissions before any production or provider execution',
+ return {project_id:p.project_id,revision:p.revision,phase:p.phase,locked,pending,issues,unresolved_issues,approval_integrity_issues,pending_shot_revisions,
+ next_safe_action:approval_integrity_issues.length?'Resolve approval integrity issues before continuing planning':next?'Resolve '+next+' approval':unresolved_issues.length?'Resolve dependency graph issues before continuing planning':pending_shot_revisions.length?'Review pending scoped shot revisions and related dependencies before continuing planning':'Continue planning only; verify separate permissions before any production or provider execution',
  provider_execution_performed:false,media_inspected:false,persisted:false};
 }
 function restoreCheckpoint(json) {
