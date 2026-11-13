@@ -134,3 +134,24 @@ Historical phase mapping: architecture and planning tests → V2.0 baseline; fiv
 4. **Separate approvals:** PR merge, software release, creative decisions, provider access, paid execution and film publication are different gates. **Production GO remains HOLD**.
 5. **Release gate:** only create a tag or GitHub release after exact-SHA validation, applicable security/rights review and separate owner authorization. No permanent release branch required.
 6. **Next practical step:** begin the proposed V2.2 planning milestone. Independent unfamiliar-user validation remains a later milestone. Revisit later minor-version scope after evidence.
+
+
+## Product vision and feature opportunities (proposals only; 2026-11-13)
+
+**North star:** evolve from a portable filmmaking skill library into an optional, creator-controlled filmmaking workspace that preserves approved decisions across agents, tools, and sessions. Keep the Director and six specialists as the foundation. This section is exploratory and does not change V2.2–V2.6 acceptance gates, authorize implementation, or promise a V4 release.
+
+| Opportunity | Earliest sensible validation | Proposed user value and evidence gate |
+| --- | --- | --- |
+| **Character and World Memory** | V2.4 research / continuity QA | Structured reusable character, wardrobe, prop, location and visual-style anchors; compare actual frames to approved references, report mismatches and false positives; do not claim identity consistency without visual tests |
+| **Smart Film Repair** | V2.4 scoped repair, V2.5 media QA | Given a narration, transition or visual defect, identify affected artifacts and propose the smallest repair; prove approved unaffected assets remain unchanged using before/after evidence |
+| **Visual Film Studio** | V2.6 usability prototype; larger workspace only after user validation | Optional local-first storyboard, screenplay, asset and approval viewer; start read-only, validate with unfamiliar creators before building editing or hosted services; keep CLI and agent-only use fully supported |
+| **Provider-neutral Production Engine** | V3 research, after V2.5 mock contracts | Optional adapters for lawful/local/manual image, video, audio and editing workflows; typed jobs, artifact provenance, explicit per-action approval, budget limits, recovery and mock-first testing; never assume a provider API exists |
+| **Intelligent Budget Director** | V2.5 mock cost estimates, V3 optional execution | Per-shot estimates and low-cost alternatives with source, currency, uncertainty and user-defined spending ceiling; zero-cost/manual path; no automatic purchases or provider calls |
+| **Templates and Community Gallery** | V2.6 | Reproducible examples for shorts, ads, educational films and trailers; documented permissions for contributed media, clear expected outputs, and onboarding completion measures |
+| **Persistent AI Director** | V2.2 checkpoint foundations, V3 research | Resume a film with explicit state provenance, approval integrity and conflict handling across sessions/hosts; test recovery before considering automatic synchronization or agent delegation |
+
+**Sequencing:** (1) finish V2.2 reproducible text-only planning; (2) validate independent users in V2.3; (3) strengthen continuity and minimal repair in V2.4; (4) test no-cost budget and artifact contracts in V2.5; (5) trial a small visual viewer and examples in V2.6; (6) decide whether optional execution and persistent workspace belong in V3 after feasibility and user evidence. A possible **V4 Open AI Filmmaking Studio** is a vision, not an approved milestone.
+
+**Product and adoption measurements:** independent clean installs, first successful Director invocation, end-to-end plan completion, time-to-first-storyboard, user-reported friction, returning creators, completed authorized film projects and external contributions. GitHub stars/forks are discovery signals, not proof of usage. Do not infer unique users from downloads.
+
+**Design constraints:** preserve all seven skills and existing core documentation; do not create a parallel roadmap; keep provider neutrality, local/manual and no-paid-service paths, creator approval gates, media rights and privacy safeguards. Add functionality only after an explicit scoped PR review and owner approval. Research and implementation for future V3 features target `develop` according to branch policy; this roadmap-only proposal is intended for review on `main`.
