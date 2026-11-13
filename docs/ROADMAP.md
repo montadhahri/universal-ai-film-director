@@ -1,24 +1,27 @@
 # Product roadmap — Universal AI Film Director
 
-**Canonical roadmap · updated 2026-11-07.** This is the single source of truth for version outcomes and acceptance gates. [Development governance](DEVELOPMENT.md) defines the main-only PR workflow. Historical V2.0 release evidence remains in [the release checklist](releases/v2.0.0-checklist.md) and Git history.
+**Canonical roadmap · updated 2026-11-13.** This is the single source of truth for version outcomes and acceptance gates. [Development governance](DEVELOPMENT.md) defines the main-only PR workflow. Historical V2.0 release evidence remains in [the release checklist](releases/v2.0.0-checklist.md) and Git history.
 
-> **Current state:** [v2.1.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.1.0) is released (2026-11-07; tag commit `7e7c264ff3496f28962e402b2bf795d181a15daa`). V2.2–V2.6 remain proposed milestones. **Production GO remains HOLD.** No paid provider jobs, account connections, credits, or film publication are authorized by this roadmap. V2.1.0 release approval is a separate owner decision.
+> **Current state:** [v2.1.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.1.0) is released (2026-11-07; tag commit `7e7c264ff3496f28962e402b2bf795d181a15daa`). V2.2–V2.6 are planned delivery milestones, with V2.2 next; V3 implementation remains feasibility-gated. **Production GO remains HOLD.** No paid provider jobs, account connections, credits, or film publication are authorized by this roadmap. Future release approval is a separate owner decision.
 
 ## Release direction
 
-| Version | Outcome | Status | Release evidence required |
-| --- | --- | --- | --- |
-| [V1.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) | Original Film Director | RELEASED | Preserve immutable history |
-| [V2.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0) | Director + six specialists, approval contracts, offline tests and human-guided film evidence | RELEASED | Preserve tag, caveats and historical evidence |
-| [V2.1.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.1.0) | Usable installation and real host invocation | RELEASED — scoped two-host evidence | Independent clean install, real skill discovery/invocation and beginner quickstart |
-| **V2.2.0** | Reproducible idea-to-production-plan workflow | PROPOSED | Independent text-only full workflow, traceable handoffs and approval-safe recovery |
-| **V2.3.0** | Independent user validation | PROPOSED | Unfamiliar users complete realistic tasks; report completion, friction and failures |
-| **V2.4.0** | Evidence-driven creative and continuity quality | PROPOSED | Regressions, independent keyframe checks and locked-asset repair evidence |
-| **V2.5.0** | Optional production tooling and integration readiness | PROPOSED | No-cost local/mock workflows, sound/export QA, cost/permission contracts; real provider adapters separately authorized |
-| **V2.6.0** | Community and ecosystem readiness | PROPOSED | Clear examples, compatibility matrix, contributor onboarding and repeatable outside-user adoption |
-| **V3.x** | Connected agentic production research | RESEARCH ONLY | Demonstrated feasibility, lawful access, budget, security and explicit go/no-go |
+The table below is the **official delivery sequence** for the next two years. **PLANNED** means a committed product objective, not a completed feature or an authorized release. Scope and dates are targets subject to evidence-backed, owner-reviewed changes. Release GO remains a separate decision.
 
-**Principle:** each minor version must deliver an independently measurable user outcome, not merely additional documentation or tests. Scope is adjustable after evidence review; do not promise dates or automatic provider integrations. No new specialist is required by this plan.
+| Version | Target window | Product outcome | Status | Required acceptance evidence |
+| --- | --- | --- | --- | --- |
+| [V1.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) | Historical | Original Film Director | RELEASED | Preserve immutable history |
+| [V2.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0) | Historical | Director + six specialists and planning contracts | RELEASED | Preserve evidence and rights caveats |
+| [V2.1.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.1.0) | Nov 2026 | First-use installation and scoped Codex/OpenCode validation | RELEASED | Preserve verified limits; independent onboarding still pending |
+| **V2.2.0** | 2026 Q4–2027 Q1 | End-to-end film planning, Project Bible and approval-safe recovery; **Persistent Director foundations** | NEXT — PLANNED | Full traceable text-only workflow, recovery and negative approval tests |
+| **V2.3.0** | 2027 Q1 | Independent creator onboarding and workflow usability | PLANNED | >=5 unfamiliar-user tests, completion and friction evidence |
+| **V2.4.0** | 2027 Q1–Q2 | **Character and World Memory** + **Smart Film Repair** | PLANNED | Visual continuity evidence, scoped before/after repair, unchanged locked assets |
+| **V2.5.0** | 2027 Q2–Q3 | **Intelligent Budget Director** + provider-neutral local/manual/mock job foundations and media QA | PLANNED | Cost uncertainty and ceilings, no-cost path, permission and export QA |
+| **V2.6.0** | 2027 Q3–Q4 | **Templates and Community Gallery** + first local-first **Visual Film Studio** viewer | PLANNED | Reproducible templates, rights checks, independent non-developer usability tests |
+| **V3.x** | 2028 Q1–Q2 | **Provider-Neutral Production Engine** + **Persistent AI Director** across sessions/hosts | PLANNED — FEASIBILITY-GATED | Local/mock execution first; typed jobs, provenance, recovery, explicit authorization and security review |
+| **Future integrated studio (possible V4)** | 2028 Q2–Q4 | Expanded **Visual Film Studio**, integrated QA, editing/export and creator ecosystem | LONG-TERM TARGET | Independent complete-film use cases, accessibility, retention and release readiness |
+
+**Product principle:** deliver measurable creator outcomes, not more documentation or more skill names. Preserve all seven skills and the existing V2.2–V2.6 stage gates. V3 implementation requires successful research and explicit owner authorization; V4 numbering is not yet approved. The 500,000-star goal by November 2028 is an extreme aspirational growth target, **not** a guaranteed outcome or release gate.
 
 ## Baseline: what V2.0 actually established
 
@@ -79,7 +82,7 @@
 - Prioritize usability fixes demonstrated by evidence; avoid adding process solely to improve apparent test counts.
 - **Exit:** an evidence-backed usability summary with actionable fixes and retests, not invented user feedback or adoption claims.
 
-## V2.4 — Creative quality, visual continuity and scoped repair
+## V2.4 — Character and World Memory, continuity and Smart Film Repair
 
 **User outcome:** more consistent creative outputs with explainable improvements and no damage to approved work.
 
@@ -88,7 +91,7 @@
 - Validate before/after localized repairs, proving locked shots/assets are unchanged with inspectable evidence.
 - **Exit:** repeatable acceptance results and concrete before/after evidence, including explicit FAIL/NOT_RUN when media or reviewers are unavailable.
 
-## V2.5 — Optional production tools and media QA
+## V2.5 — Intelligent Budget Director, production foundations and media QA
 
 **User outcome:** safely bridge planning to locally verifiable production steps, without making paid integrations mandatory.
 
@@ -97,7 +100,7 @@
 - Research provider APIs, licensing, privacy, costs and reliability before proposing any adapter. A real provider call requires separate explicit authorization and a cost ceiling.
 - **Exit:** reproducible no-cost prototype and truthful media QA where legally accessible; provider adapter delivery is **not** a release prerequisite.
 
-## V2.6 — Ecosystem and contributor readiness
+## V2.6 — Visual Film Studio, templates and community readiness
 
 **User outcome:** outside users can understand, adopt, extend and troubleshoot the library.
 
@@ -106,9 +109,9 @@
 - Incorporate independent-user feedback; measure successful onboarding rather than GitHub popularity alone.
 - **Exit:** documented independent onboarding and contributor path; no unsupported compatibility or autonomous-production claims.
 
-## V3 — research only
+## V3 — feasibility-gated research and planned implementation
 
-The existing Director and six specialists remain the creative decision layer. Research a separate approval-gated execution layer with typed jobs, artifact provenance, recoverability, local/mock tests and optional lawful provider adapters. No automatic provider choice, Google Flow API assumption, account connection, spending, autonomous generation or release date is authorized. Feasibility and security review precede implementation.
+The existing Director and six specialists remain the creative decision layer. **V3 targets implementation** of a provider-neutral production engine and Persistent AI Director, after feasibility and security gates. Begin with typed jobs, artifact provenance, recoverability and local/mock execution; add lawful provider adapters only after explicit approval. No automatic provider choice, Google Flow API assumption, account connection, spending or autonomous generation is authorized by this roadmap. Research on `develop` precedes any implementation GO.
 
 ## Existing V2.1 milestone traceability
 
@@ -134,3 +137,44 @@ Historical phase mapping: architecture and planning tests → V2.0 baseline; fiv
 4. **Separate approvals:** PR merge, software release, creative decisions, provider access, paid execution and film publication are different gates. **Production GO remains HOLD**.
 5. **Release gate:** only create a tag or GitHub release after exact-SHA validation, applicable security/rights review and separate owner authorization. No permanent release branch required.
 6. **Next practical step:** begin the proposed V2.2 planning milestone. Independent unfamiliar-user validation remains a later milestone. Revisit later minor-version scope after evidence.
+
+
+## Two-year product roadmap — November 2026 to November 2028
+
+**Product mission:** make Universal AI Film Director a creator-controlled, agent-agnostic, provider-neutral filmmaking system that helps people move from an idea to a consistent finished film, including low-budget and manual production. **All seven product capabilities below are committed roadmap objectives**, subject to engineering feasibility, user evidence, legal rights and explicit owner-approved PRs. The exact release boundaries and implementation designs may change; this roadmap does not authorize provider spending, deployment, account connections or film publication.
+
+**North-star outcome:** independent creators repeatedly finish and improve films using the system. **Aspirational visibility target: 500,000 GitHub stars by November 2028.** This is an extreme stretch target, not a forecast or release acceptance criterion. Never substitute stars for active use, film completion or retention.
+
+### Delivery coordination
+
+The **Release direction** table above is the single authoritative version/date/feature schedule. The detailed V2.x sections below define existing acceptance gates; the capability descriptions here add product requirements. Do not maintain a second schedule table.
+
+### Seven product capabilities — required outcomes
+
+1. **Character and World Memory:** versioned character, wardrobe, prop, location and visual-style anchors linked to Project Bible decisions; visual mismatch reporting, reviewable confidence and human correction. No unsupported promise of perfect cross-model identity.
+2. **Smart Film Repair:** identify the smallest affected asset/dependency set, propose targeted audio/video/transition repairs, preserve approved unaffected assets and verify before/after outputs.
+3. **Intelligent Budget Director:** per-shot cost estimates, source/date/currency/uncertainty, user-configurable ceilings, manual/free alternatives and explicit authorization for every external job.
+4. **Templates and Community Gallery:** runnable example workflows for shorts, ads, education and trailers; reproducible outputs, contributor instructions and clear media permissions.
+5. **Visual Film Studio:** optional accessible, local-first screenplay/storyboard/asset/approval viewer, later editable project workspace; no forced account, cloud hosting or replacement of CLI/skills.
+6. **Provider-Neutral Production Engine:** adapter interfaces for image, video, audio and editing; start with local/manual/mock, then opt-in lawful provider integrations after feasibility, permissions and cost review.
+7. **Persistent AI Director:** portable, versioned, recoverable project state with approval provenance, safe conflict handling, cross-session resume and host-independent handoffs; never silently approve or override locked work.
+
+### Growth and distribution plan (workstream alongside development)
+
+| Period | Actions | Evidence to track |
+| --- | --- | --- |
+| **First 90 days** | Improve one-minute quickstart, release one short reproducible demo, recruit 5–10 outside testers, publish clear compatibility evidence | Install-to-first-plan conversion, task completion, failures, user interviews |
+| **Months 4–9** | Publish 3–5 permission-cleared example films/workflows; demonstrate continuity and repair before/after; invite creators and agent-host maintainers to test | Independent completed projects, weekly active creators, return usage, issues and contributions |
+| **Months 10–18** | Launch accessible local-first viewer and template gallery; collaborate with small filmmaking communities; publish honest comparison benchmarks | Activation, retention, completed films, external contributors, documentation-to-use conversion |
+| **Months 19–24** | Share end-to-end studio demos, integrations and real user case studies; organize community contributions and release showcases | Monthly active creators, repeat projects, successful production/export, contributor retention, organic referrals |
+
+**Measurement discipline:** GitHub stars/forks are public awareness indicators only. Do not equate clone/download counts with unique users. Collect privacy-respecting opt-in telemetry or voluntary anonymous feedback only; publish metric definitions and evidence. Review adoption quarterly and adjust distribution tactics without inventing growth.
+
+### Engineering and governance guardrails
+
+- Retain all seven existing skill entrypoints, contracts and production methodology; evolve rather than rewrite. Keep one canonical roadmap and update existing documentation instead of proliferating status files.
+- Preserve human approval for screenplay, visual direction, storyboard, external generation, spending and publication. Unknown or conflicting approval is HOLD.
+- Keep a usable no-cost/manual/local path, avoid mandatory API keys, and support multiple agent hosts with tested compatibility claims only.
+- All code changes use scoped branches and owner-reviewed PRs. V2.x delivery targets `main`; V3 research targets `develop`, with explicit reviewed synchronization and no automatic merge assumptions.
+- Validate accessibility, privacy, security, media rights, project migration, deterministic regressions and honest provider limitations before each major release.
+- The 500,000-star ambition is **not** a basis for claiming guaranteed adoption, cutting safety checks or promising an autonomous film-generation capability that does not exist.
