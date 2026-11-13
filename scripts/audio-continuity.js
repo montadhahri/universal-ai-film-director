@@ -53,6 +53,15 @@ function validateAudioTimeline(t,picture){
  return {valid:true,duration_ms:t.duration_ms,cue_count:t.cues.length,required_narration_windows:required.length,
   intentional_silence_windows:silence.length,mixing_rule:'CROSS_TRACK_ALLOWED; SAME_TRACK_DISALLOWED'};
 }
+// Canonical references are kind:id. Legacy bare IDs are accepted only
+// when exactly one node has that ID; ambiguous legacy references fail closed.
+function resolveDependencyRef(ref,nodes) {
+ const keys=nodes.map(n=>n.kind+':'+n.id);
+ if(keys.includes(ref))return ref;
+ const matches=nodes.filter(n=>n.id===ref);
+ if(matches.length===1)return matches[0].kind+':'+matches[0].id;
+ fail(matches.length>1?'Ambiguous dependency reference '+ref:'Dangling dependency reference '+ref);
+}
 function validateDependencyGraph(g){
  if(!g||!Array.isArray(g.nodes)||!Array.isArray(g.edges))fail('Dependency graph needs nodes and edges');
  const keys=new Set(),adj=new Map();
@@ -64,10 +73,11 @@ function validateDependencyGraph(g){
  }
  const edges=new Set();
  for(const e of g.edges){
-  if(!e||!ok(e.from)||!ok(e.to)||!keys.has(e.from)||!keys.has(e.to))fail('Dangling dependency reference');
-  const k=e.from+'->'+e.to;
+  if(!e||!ok(e.from)||!ok(e.to))fail('Dangling dependency reference');
+  const from=resolveDependencyRef(e.from,g.nodes),to=resolveDependencyRef(e.to,g.nodes);
+  const k=from+'->'+to;
   if(edges.has(k))fail('Duplicate dependency edge');
-  edges.add(k);adj.get(e.from).push(e.to);
+  edges.add(k);adj.get(from).push(to);
  }
  const states=new Map();
  const visit=k=>{
@@ -93,17 +103,18 @@ function previewRepairImpact(p,{expected_revision,target}){
  if(expected_revision!==p.revision)fail('Stale project revision');
  if(!p.dependency_graph)fail('Dependency graph missing');
  validateDependencyGraph(p.dependency_graph);
- if(!ok(target)||!p.dependency_graph.nodes.some(n=>n.kind+':'+n.id===target))fail('Unknown repair target');
+ if(!ok(target))fail('Unknown repair target');
+ const normalizedTarget=resolveDependencyRef(target,p.dependency_graph.nodes);
  if(p.shot_timeline)validateTimeline(p.shot_timeline);
  if(p.audio_timeline)validateAudioTimeline(p.audio_timeline,p.shot_timeline);
  const adj=new Map(p.dependency_graph.nodes.map(n=>[n.kind+':'+n.id,[]]));
- for(const e of p.dependency_graph.edges)adj.get(e.from).push(e.to);
- const affected=new Set([target]),queue=[target];
+ for(const e of p.dependency_graph.edges)adj.get(resolveDependencyRef(e.from,p.dependency_graph.nodes)).push(resolveDependencyRef(e.to,p.dependency_graph.nodes));
+ const affected=new Set([normalizedTarget]),queue=[normalizedTarget];
  for(let i=0;i<queue.length;i++)for(const next of adj.get(queue[i]))
   if(!affected.has(next)){affected.add(next);queue.push(next)}
  const locked=p.shots.filter(s=>s.state==='LOCKED').map(s=>'shot:'+s.id);
  const candidateLocked=locked.filter(k=>affected.has(k));
- return {target,affected:[...affected].sort(),unaffected:p.dependency_graph.nodes.map(n=>n.kind+':'+n.id)
+ return {target:normalizedTarget,affected:[...affected].sort(),unaffected:p.dependency_graph.nodes.map(n=>n.kind+':'+n.id)
    .filter(k=>!affected.has(k)).sort(),affected_locked_shots:[...new Set(candidateLocked)].sort(),
    requires_scoped_unlock:candidateLocked.length>0,changed_assets:[],media_inspected:false,
    status:'IMPACT_PREVIEW_ONLY'};
