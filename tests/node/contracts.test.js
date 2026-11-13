@@ -31,3 +31,23 @@ test('cross-project, fabricated inspection and self-approval rejected',()=>{
  q.provenance.kind='AGENT_DRAFT';q.status='APPROVED';assert.throws(()=>validateProposal(p,q),/Invalid/);
 });
 test('explicit flags do not grant provider access to specialist',()=>{const p=sample();const q=make(p);q.required_authorization.push('provider_job_permission');const next=recordProposal(p,q);assert.equal(next.authorization.provider_job_allowed,false);});
+
+test('handoff schema requirements reject invalid stage, provenance and authorization',()=>{
+ const p=sample(),base=make(p);
+ for(const mutate of [
+  q=>{delete q.stage;},
+  q=>{q.stage='discovery';},
+  q=>{delete q.provenance.evidence_ref;},
+  q=>{q.provenance.evidence_ref=42;},
+  q=>{q.required_authorization=['not_a_permission'];},
+  q=>{q.required_authorization=['storyboard_user_approval','storyboard_user_approval'];},
+  q=>{q.unexpected=true;},
+  q=>{q.provenance.unexpected=true;},
+  q=>{q.dependencies=['SH01','SH01'];},
+  q=>{q.assumptions='not an array';}
+ ]){const q=structuredClone(base);mutate(q);assert.throws(()=>validateProposal(p,q));}
+ assert.equal(validateProposal(p,base),true);
+});
+test('invalid Project Bible phase is rejected',()=>{
+ const p=sample();p.phase='published';assert.throws(()=>validateProject(p),/phase/);
+});
