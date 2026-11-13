@@ -81,6 +81,13 @@ function recordPermission(p,{expected_revision,permission,scope,grant_id,evidenc
  // operational flags, invokes providers, connects accounts or publishes media.
  n.revision++;return n;
 }
+function resolveGraphRef(ref,nodes) {
+ if(!ok(ref))return null;
+ const canonical=nodes.filter(n=>n&&['shot','audio','anchor'].includes(n.kind)&&ok(n.id)).map(n=>({key:n.kind+':'+n.id,id:n.id}));
+ if(canonical.some(n=>n.key===ref))return ref;
+ const matches=canonical.filter(n=>n.id===ref);
+ return matches.length===1?matches[0].key:null;
+}
 function inspectDependencyGraph(p) {
  const issues=[];
  if(!p.dependency_graph)return issues;
@@ -89,15 +96,16 @@ function inspectDependencyGraph(p) {
   if(!node||!['shot','audio','anchor'].includes(node.kind)||!ok(node.id)) {
    issues.push({code:'INVALID_DEPENDENCY_NODE',index:i});continue;
   }
-  if(ids.has(node.id))issues.push({code:'DUPLICATE_DEPENDENCY_NODE',node_id:node.id});
-  ids.add(node.id);
+  const key=node.kind+':'+node.id;
+  if(ids.has(key))issues.push({code:'DUPLICATE_DEPENDENCY_NODE',node_id:key});
+  ids.add(key);
  }
  for(const [i,edge] of p.dependency_graph.edges.entries()) {
   if(!edge||!ok(edge.from)||!ok(edge.to)) {
    issues.push({code:'INVALID_DEPENDENCY_EDGE',index:i});continue;
   }
-  if(!ids.has(edge.from))issues.push({code:'MISSING_DEPENDENCY_ENDPOINT',index:i,endpoint:edge.from,side:'from'});
-  if(!ids.has(edge.to))issues.push({code:'MISSING_DEPENDENCY_ENDPOINT',index:i,endpoint:edge.to,side:'to'});
+  if(!resolveGraphRef(edge.from,p.dependency_graph.nodes))issues.push({code:'MISSING_DEPENDENCY_ENDPOINT',index:i,endpoint:edge.from,side:'from'});
+  if(!resolveGraphRef(edge.to,p.dependency_graph.nodes))issues.push({code:'MISSING_DEPENDENCY_ENDPOINT',index:i,endpoint:edge.to,side:'to'});
  }
  return issues;
 }
@@ -132,10 +140,12 @@ function inspectPendingShotRevisions(p) {
   const source=p.shots.find(x=>x.id===s.id&&x.revision===s.parent_revision&&x.state==='LOCKED');
   const neighbors=new Set();
   if(graph&&Array.isArray(graph.edges))for(const edge of graph.edges){
-   if(edge&&edge.from===s.id&&typeof edge.to==='string')neighbors.add(edge.to);
-   if(edge&&edge.to===s.id&&typeof edge.from==='string')neighbors.add(edge.from);
+   if(!edge)continue;
+   const from=resolveGraphRef(edge.from,graph.nodes),to=resolveGraphRef(edge.to,graph.nodes);
+   if(from==='shot:'+s.id&&to)neighbors.add(to);
+   if(to==='shot:'+s.id&&from)neighbors.add(from);
   }
-  neighbors.delete(s.id);
+  neighbors.delete('shot:'+s.id);
   return {shot_id:s.id,proposed_revision:s.revision,source_revision:s.parent_revision,
    source_locked:!!source,source_asset_ref:source?.approved_asset||null,
    related_node_ids:[...neighbors].sort(),requires_review:true};
