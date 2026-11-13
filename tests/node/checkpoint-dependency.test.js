@@ -53,3 +53,10 @@ test('valid graph with approved gates permits planning-only continuation',()=>{
 test('missing gate approval remains first recovery action',()=>{
  assert.equal(inspectCheckpoint(project([{kind:'shot',id:'SH01'}],[{from:'SH01',to:'MISSING'}])).next_safe_action,'Resolve script approval');
 });
+
+test('canonical graph IDs distinguish nodes sharing a bare ID',()=>{
+ const p=project([{kind:'shot',id:'X'},{kind:'audio',id:'X'}],[{from:'shot:X',to:'audio:X'}]);
+ assert.deepEqual(inspectCheckpoint(p).unresolved_issues,[]);
+ const ambiguous=project([{kind:'shot',id:'X'},{kind:'audio',id:'X'}],[{from:'X',to:'audio:X'}]);
+ assert.ok(inspectCheckpoint(ambiguous).unresolved_issues.some(x=>x.code==='MISSING_DEPENDENCY_ENDPOINT'));
+});
