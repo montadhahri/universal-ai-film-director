@@ -82,7 +82,7 @@ The table below is the **official delivery sequence** for the next two years. **
 - Prioritize usability fixes demonstrated by evidence; avoid adding process solely to improve apparent test counts.
 - **Exit:** an evidence-backed usability summary with actionable fixes and retests, not invented user feedback or adoption claims.
 
-## V2.4 — Creative quality, visual continuity and scoped repair
+## V2.4 — Character and World Memory, continuity and Smart Film Repair
 
 **User outcome:** more consistent creative outputs with explainable improvements and no damage to approved work.
 
@@ -91,7 +91,7 @@ The table below is the **official delivery sequence** for the next two years. **
 - Validate before/after localized repairs, proving locked shots/assets are unchanged with inspectable evidence.
 - **Exit:** repeatable acceptance results and concrete before/after evidence, including explicit FAIL/NOT_RUN when media or reviewers are unavailable.
 
-## V2.5 — Optional production tools and media QA
+## V2.5 — Intelligent Budget Director, production foundations and media QA
 
 **User outcome:** safely bridge planning to locally verifiable production steps, without making paid integrations mandatory.
 
@@ -100,7 +100,7 @@ The table below is the **official delivery sequence** for the next two years. **
 - Research provider APIs, licensing, privacy, costs and reliability before proposing any adapter. A real provider call requires separate explicit authorization and a cost ceiling.
 - **Exit:** reproducible no-cost prototype and truthful media QA where legally accessible; provider adapter delivery is **not** a release prerequisite.
 
-## V2.6 — Ecosystem and contributor readiness
+## V2.6 — Visual Film Studio, templates and community readiness
 
 **User outcome:** outside users can understand, adopt, extend and troubleshoot the library.
 
@@ -109,9 +109,9 @@ The table below is the **official delivery sequence** for the next two years. **
 - Incorporate independent-user feedback; measure successful onboarding rather than GitHub popularity alone.
 - **Exit:** documented independent onboarding and contributor path; no unsupported compatibility or autonomous-production claims.
 
-## V3 — research only
+## V3 — feasibility-gated research and planned implementation
 
-The existing Director and six specialists remain the creative decision layer. Research a separate approval-gated execution layer with typed jobs, artifact provenance, recoverability, local/mock tests and optional lawful provider adapters. No automatic provider choice, Google Flow API assumption, account connection, spending, autonomous generation or release date is authorized. Feasibility and security review precede implementation.
+The existing Director and six specialists remain the creative decision layer. **V3 targets implementation** of a provider-neutral production engine and Persistent AI Director, after feasibility and security gates. Begin with typed jobs, artifact provenance, recoverability and local/mock execution; add lawful provider adapters only after explicit approval. No automatic provider choice, Google Flow API assumption, account connection, spending or autonomous generation is authorized by this roadmap. Research on `develop` precedes any implementation GO.
 
 ## Existing V2.1 milestone traceability
 
@@ -145,18 +145,9 @@ Historical phase mapping: architecture and planning tests → V2.0 baseline; fiv
 
 **North-star outcome:** independent creators repeatedly finish and improve films using the system. **Aspirational visibility target: 500,000 GitHub stars by November 2028.** This is an extreme stretch target, not a forecast or release acceptance criterion. Never substitute stars for active use, film completion or retention.
 
-### Delivery strategy and sequencing
+### Delivery coordination
 
-| Window | Delivery focus | Planned user-facing outcome | Acceptance evidence |
-| --- | --- | --- | --- |
-| **2026 Q4–2027 Q1: Foundation** | Complete V2.2 full planning and recovery; V2.3 unfamiliar-user onboarding | New user can install, complete a generator-ready film plan, resume safely and understand approval boundaries | Reproducible full workflow; >=5 independent testers, recorded completion/friction, regression coverage |
-| **2027 Q1–Q2: Creative reliability** | V2.4 **Character and World Memory** + **Smart Film Repair** | Reuse canonical characters/world anchors; diagnose and repair an affected shot or sound segment without altering locked assets | Independent visual comparison, false-positive review, before/after asset integrity checks, repeatable real-media tests when authorized |
-| **2027 Q2–Q3: Practical production** | V2.5 **Intelligent Budget Director** + provider-neutral job/artifact foundations | Compare per-shot costs and no-cost alternatives; safely prepare mock/local/manual production and inspect sound/export | Auditable estimates with uncertainty; zero-cost scenario; approval and cost-limit negative tests; no mandatory paid provider |
-| **2027 Q3–Q4: Creator experience** | V2.6 **Templates and Community Gallery** + first **Visual Film Studio** release | Creators can browse examples and view screenplay, storyboard, assets and approval state in a local-first interface | Usability tests with non-developers; reproducible templates, media rights checks, working read-only workspace |
-| **2028 Q1–Q2: Connected production** | V3 **Provider-Neutral Production Engine** + **Persistent AI Director** | Resume projects across sessions and use approved local/manual adapters; optional external providers only where legally and technically feasible | Typed job contracts, artifact provenance, failure/retry recovery, explicit approval and budget enforcement, supported-host integration tests |
-| **2028 Q2–Q4: Integrated studio** | Expand **Visual Film Studio**, repair workflow, export and community ecosystem (possible V4 milestone) | End-to-end project workspace with stateful creative direction, QA and delivery, without requiring a paid generator | Independent complete-film case studies, accessibility/usability checks, repeat usage, stable migration and security review |
-
-**Scope rule:** These are intended deliverables, not optional backlog suggestions. A milestone may be re-scoped only with documented evidence and an owner-reviewed roadmap PR. Preserve the existing V2.2–V2.6 phase gates; do not skip them for a UI launch. V3 implementation remains gated by research feasibility and separate owner authorization, with research work on `develop`. No fixed V4 version is promised.
+The **Release direction** table above is the single authoritative version/date/feature schedule. The detailed V2.x sections below define existing acceptance gates; the capability descriptions here add product requirements. Do not maintain a second schedule table.
 
 ### Seven product capabilities — required outcomes
 
