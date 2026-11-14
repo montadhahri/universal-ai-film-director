@@ -4,7 +4,7 @@ This repository follows Keep a Changelog and semantic versioning. The working
 tree contains one current implementation; past versions are preserved by Git
 tags, not by duplicated skill source folders.
 
-## [Unreleased]
+## [Unreleased]\n\nNo changes recorded after v2.3.0.\n\n## [2.3.0] — 2026-11-14
 
 ### Added
 - V2.3 beginner first-film walkthrough and README handoff: no-cost text-only planning, one-question discovery, distinct screenplay/Visual Bible/storyboard approvals and checkpoint-based resumption (#185).
@@ -14,10 +14,10 @@ tags, not by duplicated skill source folders.
 - Director first-turn guidance: propose a concise screenplay for a usable non-sensitive brief; otherwise ask one pivotal question, preserve disclosure safeguards and state one next action (#189).
 - Public Skills CLI smoke test now compares public installations with public `main`, while local checkout verification checks PR changes (#189).
 
-### Evidence and limitations
+### Release evidence and limitations
 - Hosted Validate skill, Secret scan, CodeQL and private pre-production checks passed at development SHA `c977b2834dd5f62626473623988fa67f64a4cc35`. Public Skills CLI smoke passed on preceding merge `d67d6dcba0d09222d5432321335901159b13b318`. See [V2.3 evidence and acceptance](docs/ROADMAP.md#v23--development-evidence-and-outstanding-acceptance).
 - These checks are deterministic or installation checks, **not** independent unfamiliar-user acceptance or live end-to-end agent execution. The planned >=5 unfamiliar-user tests remain **NOT_RUN / deferred**.
-- No V2.3 release or exception to its acceptance gate has been approved. The Last Light Production GO remains HOLD; no media, provider jobs or publication are authorized.
+- Owner approved a limited software release despite the unmet independent-user gate, then separately authorized publication. Stable [v2.3.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.3.0) was published on 2026-11-14 at `4988f0c1b656691ea9368538a12ce6ca4a8134a1`. Independent five-user acceptance remains **NOT_RUN**, not PASS. The Last Light Production GO remains HOLD; no media, provider jobs or film publication are authorized.
 
 ## [2.2.0] — 2026-11-14
 
