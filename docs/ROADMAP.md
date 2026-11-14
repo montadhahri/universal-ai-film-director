@@ -84,6 +84,19 @@ The owner explicitly approved the focused Phase 5 recovery/scoped revision and P
 
 The [existing V2 release checklist](releases/v2.0.0-checklist.md#v220-release-preparation--owner-accepted-focused-evidence) records exact source/evidence hashes, owner decision, baseline CI and proposed notes. Original acceptance criteria and historical results remain unchanged. The owner subsequently merged PR #181 and published v2.2.0 on 2026-11-14. At release SHA `5047ac031770c576978eba30d19178b893127438`, hosted Validate skill, Secret scan, CodeQL and pre-production workflows completed successfully. Previously blocked local tests remain BLOCKED, not PASS. V2.3 independent creator onboarding is next.
 
+## V2.3 — Development evidence and outstanding acceptance
+
+**Implementation status (2026-11-14):** Four owner-reviewed PRs merged to `main` through commit `c977b2834dd5f62626473623988fa67f64a4cc35`. This records completed development, **not** V2.3 release or independent creator acceptance.
+
+- [#185](https://github.com/montadhahri/universal-ai-film-director/pull/185): beginner first-film walkthrough and documentation regression checks.
+- [#187](https://github.com/montadhahri/universal-ai-film-director/pull/187): deterministic discovery, approval, checkpoint and media-claim safeguards.
+- [#189](https://github.com/montadhahri/universal-ai-film-director/pull/189): Director first-turn usability guidance and corrected public-vs-PR Skills CLI smoke comparison.
+- [#191](https://github.com/montadhahri/universal-ai-film-director/pull/191): deterministic 30-second screenplay → Visual Bible → storyboard → sound → checkpoint integration and negative-path tests.
+
+**Hosted evidence at final development SHA:** [Validate skill](https://github.com/montadhahri/universal-ai-film-director/actions/runs/43601865587), [Secret scan](https://github.com/montadhahri/universal-ai-film-director/actions/runs/43601865594), [CodeQL](https://github.com/montadhahri/universal-ai-film-director/actions/runs/43601851776) and [private pre-production](https://github.com/montadhahri/universal-ai-film-director/actions/runs/43601865639) succeeded. [Skills CLI install smoke](https://github.com/montadhahri/universal-ai-film-director/actions/runs/43601578378) succeeded at the preceding merge SHA `d67d6dcba0d09222d5432321335901159b13b318`; it was not rerun on the final development SHA because the later PR did not change the installation paths. These tests do **not** demonstrate live-agent behavior or real creator success.
+
+**Acceptance still open:** the planned >=5 unfamiliar-user trials, completion/friction observations and independent retests are **NOT_RUN / deferred**. Owner-operated and synthetic testing must not be relabeled independent. Release GO remains a separate explicit owner decision; without an owner-approved exception, the published V2.3 acceptance gate remains unmet. No tag or release is authorized by this update. The Last Light Production GO stays HOLD.
+
 ## V2.3 — Independent user validation
 
 **User outcome:** people other than the project author can use the workflow without handholding.
@@ -147,7 +160,7 @@ Historical phase mapping: architecture and planning tests → V2.0 baseline; fiv
 3. **No simulated evidence:** distinguish implementation, CI checks, independent host runs, human-reviewed footage, external-user trials and authorization. Record exact PR/commit and relevant logs for milestone closure.
 4. **Separate approvals:** PR merge, software release, creative decisions, provider access, paid execution and film publication are different gates. **Production GO remains HOLD**.
 5. **Release gate:** only create a tag or GitHub release after exact-SHA validation, applicable security/rights review and separate owner authorization. No permanent release branch required.
-6. **Next practical step:** begin the proposed V2.2 planning milestone. Independent unfamiliar-user validation remains a later milestone. Revisit later minor-version scope after evidence.
+6. **Next practical step:** complete V2.3 independent-user acceptance when feasible, or request an explicit owner decision on a clearly limited release. V2.3 development evidence is documented above; V2.4 remains planned, not started by this roadmap update. Revisit later minor-version scope after evidence.
 
 
 ## Two-year product roadmap — November 2026 to November 2028
