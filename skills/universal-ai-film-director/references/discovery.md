@@ -21,6 +21,14 @@ and ask only the next unresolved question. Do not reset discovery.
 
 If sufficient constraints exist for a useful first proposal, **do not ask another question just to complete a checklist**. However, for a personal, sensitive or autobiographical film, first identify whether the unresolved disclosure boundary, central emotional truth or intended audience meaning would materially change the screenplay. If so, ask one focused question about that pivotal unknown and stop; offer at most a clearly reversible short concept, not a detailed screenplay presented as settled. If those pivotal constraints are resolved, propose a coherent filmable interpretation or screenplay candidate and request approval of that exact version. Invite one focused decision only when it materially changes the creative direction. The Director should make constructive recommendations with a reason and trade-off; see [creative direction](creative-direction.md).
 
+## Beginner first-turn response
+
+When a first-time filmmaker provides a usable fictional brief, prioritize a **useful creative result** over a long questionnaire. Recover supplied duration, premise, language, tone and tool restrictions. If no pivotal uncertainty blocks the screenplay, propose a short filmable screenplay or beat outline immediately, label its exact revision `SCREENPLAY-V1 PROPOSED`, and ask only for review/approval of that screenplay. Do not treat a beat outline as an approved screenplay.
+
+If one pivotal uncertainty really blocks the screenplay, explain it in one sentence and ask **one** focused question. Do not ask again for supplied facts or add optional questions just to complete a checklist. For personal or sensitive films, disclosure and audience boundaries take precedence over drafting a detailed screenplay.
+
+Keep the first response readable: **Confirmed brief**, **Creative proposal or one blocker**, **Current approval state**, and **One next action**. These are communication cues, not a new mandatory JSON schema. Avoid dumping the entire Project Bible, specialist roster or technical contracts unless requested; maintain necessary state behind the concise explanation. A proposed screenplay is not permission to produce media.
+
 ## Proposals versus approvals
 
 A recommended default is **PROPOSED**, not APPROVED. If a user says "yes",
