@@ -6,8 +6,8 @@
 
 An open-source AI filmmaking crew: one Director, six specialist skills, and **you in creative control**.
 
-[![Stable release](https://img.shields.io/badge/stable-v2.1.0-blue)](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.1.0)
-[![Next milestone](https://img.shields.io/badge/next-v2.2.0-orange)](docs/ROADMAP.md)
+[![Stable release](https://img.shields.io/badge/stable-v2.2.0-blue)](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.2.0)
+[![Next milestone](https://img.shields.io/badge/next-v2.3.0-orange)](docs/ROADMAP.md)
 [![Validate skills](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml/badge.svg)](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml)
 [![Install smoke](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/skills-install-smoke.yml/badge.svg)](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/skills-install-smoke.yml)
 [![MIT](https://img.shields.io/badge/code%20license-MIT-green)](LICENSE)
@@ -61,15 +61,15 @@ npx skills add montadhahri/universal-ai-film-director --skill '*'
 
 On **Windows CMD**, use `--skill "*"` instead. For individual skills, local installation, and troubleshooting, see the [installation guide](docs/installation.md).
 
-## V2.2.0 release preparation
+## 🆕 What's new in V2.2.0
 
 The owner has accepted focused text-only checkpoint recovery, scoped revision, continuity QA defect injection and Director reconciliation evidence for V2.2.0. Three SH01/SH04/SH05 planning defects have minimal proposed repairs; approved plans and production permissions remain protected.
 
 **Limits:** standard local Node.js regressions were host-blocked by EPERM; full independent Phase 6 acceptance is incomplete; no rendered-media verification performed. SH05 readability remains deferred and unverified. The Last Light Production GO remains HOLD.
 
-V2.1.0 remains the latest published stable release. V2.2.0 is **in release preparation**; merge, final release-SHA checks, tagging and publication remain pending. See the [release checklist and proposed notes](docs/releases/v2.0.0-checklist.md#v220-release-preparation--owner-accepted-focused-evidence) and [changelog](CHANGELOG.md).
+**[V2.2.0 was published on 2026-11-14](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.2.0)** from verified commit `5047ac031770c576978eba30d19178b893127438`. It is the latest stable software release. **V2.3.0 is next:** independent creator onboarding and usability testing with at least five unfamiliar users, measured completion and friction evidence. See the [roadmap](docs/ROADMAP.md) and [changelog](CHANGELOG.md).
 
-## 🆕 What's new in V2.1.0
+## V2.1.0 — previous release
 
 **Install and start directing with more confidence.** V2.1.0 improves first-use instructions and documents verified, owner-operated skill loading in **Codex and OpenCode**. All seven skills passed the pinned public Skills CLI installation smoke test; a scoped 30-second film-planning scenario loaded the Director and two specialists in each tested host, producing approval-safe proposals.
 
@@ -77,7 +77,7 @@ V2.1.0 remains the latest published stable release. V2.2.0 is **in release prepa
 - **OpenCode:** three native `skill` calls plus reference reads in the reviewed session.
 - **Evidence boundary:** sessions were owner-operated and independently reviewed, not independently executed. Exact installed Git revisions, unfamiliar-user onboarding, and native Director-to-specialist delegation remain unverified.
 
-**Release status:** [V2.1.0 was published on 2026-11-07](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.1.0). The stable badge above points to this published release. [Full compatibility evidence](docs/installation.md#complete-targeted-host-transcript-review-2026-11-07).
+**Release status:** [V2.1.0 was published on 2026-11-07](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.1.0). The historical release remains available at its immutable tag. [Full compatibility evidence](docs/installation.md#complete-targeted-host-transcript-review-2026-11-07).
 
 ## 🎬 Meet your AI film crew
 
@@ -159,8 +159,9 @@ CI validates repository structure and skills, while a [pinned public-GitHub inst
 | --- | --- | --- |
 | [v1.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) | Released | Original single-skill Director |
 | [v2.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0) | Released | Director and six specialist skills |
-| **v2.1.0** | **Latest stable; released 2026-11-07** | Public Skills CLI installation, targeted Codex/OpenCode skill-use evidence, and beginner guidance; independent-user and delegation limits disclosed |
-| **v2.2.0** | **Release preparation; not published** | Owner-accepted focused text recovery and QA; incomplete independent acceptance and local EPERM disclosed |
+| [v2.1.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.1.0) | Released 2026-11-07 | Public Skills CLI installation, targeted Codex/OpenCode skill-use evidence, and beginner guidance; independent-user and delegation limits disclosed |
+| [v2.2.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.2.0) | **Latest stable; released 2026-11-14** | Checkpoint recovery, approval-safe scoped revisions and focused text QA; independent Phase 6 and local EPERM limitations disclosed |
+| **v2.3.0** | **Next — planned** | Independent creator onboarding, usability and friction evidence from at least five unfamiliar users |
 | **V3** | Research only on `develop` | Experimental connected-agent production ideas; not part of the V2.x release |
 
 The [canonical roadmap](docs/ROADMAP.md) defines proposed milestones and acceptance gates; it does not authorize release or provider spending. **Production GO remains HOLD.** Published releases remain identifiable by their tags; `main` is the V2.x integration branch, not a guarantee that every commit is a tagged release. See [CHANGELOG](CHANGELOG.md).
