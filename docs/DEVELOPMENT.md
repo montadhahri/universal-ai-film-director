@@ -28,7 +28,7 @@ Correct unexpected files, branch ancestry or accidental removals before creating
 
 ## Important release-state distinction
 
-`main` is the **integration/default branch** for V2.x; latest published stable is [`v2.2.0`](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.2.0), preserved at tag commit `5047ac031770c576978eba30d19178b893127438` (published 2026-11-14). V2.3.0 is the next planned V2.x milestone; its implementation requires reviewed PRs and evidence, not automatic release authorization. V2.2's accepted validation limitations remain documented. Do not rewrite `main` history or move published tags for later documentation changes. The V3 prototype is preserved on `develop` and must not be promoted into V2.x by synchronization.
+`main` is the **integration/default branch** for V2.x; latest published stable is [`v2.3.0`](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.3.0), preserved at tag commit `4988f0c1b656691ea9368538a12ce6ca4a8134a1` (published 2026-11-14). The five unfamiliar-user acceptance tests remain **NOT_RUN / deferred** under the explicitly approved limited-release exception; this does not make them PASS. V2.4.0 is the next planned V2.x milestone, not an authorized release. Do not rewrite `main` history or move published tags for later documentation changes. The V3 prototype is preserved on `develop` and must not be promoted into V2.x by synchronization.
 
 ## Branch safety and repository settings
 
