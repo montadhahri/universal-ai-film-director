@@ -11,6 +11,8 @@ tags, not by duplicated skill source folders.
 - Deterministic documentation regression checks for walkthrough discoverability and permission boundaries. These do not constitute independent user testing.
 - Focused beginner safety regressions for one-question discovery, explicit gate approval, ambiguous consent, checkpoint roundtrips and fabricated media claims. These execute existing contracts without invoking an agent.
 
+- Improve Director first-turn guidance for usable beginner briefs: immediate concise PROPOSED screenplay when safe, one blocking question otherwise, explicit current gate and next action; retain sensitive-story exceptions and permissions.
+
 V2.3 unfamiliar-user acceptance remains NOT_RUN; no V2.3 release is authorized.
 
 ## [2.2.0] — 2026-11-14

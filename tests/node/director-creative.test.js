@@ -35,3 +35,11 @@ test('two examples are credible prompts, not synthetic agent performance claims'
  assert(craft.includes('thirty-second hope film'));
  assert(craft.includes('No examples here were rendered'));
 });
+
+test('V2.3 beginner first turn is useful without bypassing approvals',()=>{
+ for(const phrase of ['First-time creator experience','SCREENPLAY-V1 PROPOSED','one next action','separate screenplay'])
+  assert(skill.toLowerCase().includes(phrase.toLowerCase()),phrase);
+ for(const phrase of ['Beginner first-turn response','Confirmed brief','Current approval state','One next action','pivotal uncertainty','personal or sensitive','not permission to produce media'])
+  assert(discovery.toLowerCase().includes(phrase.toLowerCase()),phrase);
+ assert(skill.length<9000,'Director entrypoint remains concise');
+});
