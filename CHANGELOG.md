@@ -6,6 +6,14 @@ tags, not by duplicated skill source folders.
 
 ## [Unreleased]
 
+No changes recorded after the v2.3.0 release.
+
+## [2.3.0] — 2026-11-14
+
+Stable software release: [v2.3.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.3.0), tagged at `4988f0c1b656691ea9368538a12ce6ca4a8134a1`.
+
+
+
 ### Added
 - V2.3 beginner first-film walkthrough and README handoff: no-cost text-only planning, one-question discovery, distinct screenplay/Visual Bible/storyboard approvals and checkpoint-based resumption (#185).
 - Deterministic documentation, beginner-safety and 30-second text-only journey regressions for approval integrity, timing, sound continuity, checkpoint recovery and refusal of unsupported media claims (#185, #187, #191).
@@ -17,7 +25,7 @@ tags, not by duplicated skill source folders.
 ### Evidence and limitations
 - Hosted Validate skill, Secret scan, CodeQL and private pre-production checks passed at development SHA `c977b2834dd5f62626473623988fa67f64a4cc35`. Public Skills CLI smoke passed on preceding merge `d67d6dcba0d09222d5432321335901159b13b318`. See [V2.3 evidence and acceptance](docs/ROADMAP.md#v23--development-evidence-and-outstanding-acceptance).
 - These checks are deterministic or installation checks, **not** independent unfamiliar-user acceptance or live end-to-end agent execution. The planned >=5 unfamiliar-user tests remain **NOT_RUN / deferred**.
-- No V2.3 release or exception to its acceptance gate has been approved. The Last Light Production GO remains HOLD; no media, provider jobs or publication are authorized.
+- Owner approved and published a **limited v2.3.0 software release** with the independent-user acceptance gate explicitly deferred, **not passed**. The Last Light Production GO remains HOLD; no media, provider jobs or film publication are authorized.
 
 ## [2.2.0] — 2026-11-14
 
