@@ -6,7 +6,11 @@ tags, not by duplicated skill source folders.
 
 ## [Unreleased]
 
-No changes recorded after the V2.2.0 release.
+### Added
+- V2.3 beginner first-film walkthrough and README handoff, covering one-question discovery, separate screenplay/Visual Bible/storyboard approvals, checkpoint-based resumption and no-cost planning.
+- Deterministic documentation regression checks for walkthrough discoverability and permission boundaries. These do not constitute independent user testing.
+
+V2.3 unfamiliar-user acceptance remains NOT_RUN; no V2.3 release is authorized.
 
 ## [2.2.0] — 2026-11-14
 

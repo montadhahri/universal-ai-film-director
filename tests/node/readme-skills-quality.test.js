@@ -87,3 +87,16 @@ test('README preserves distinct architecture, development, releases and FAQ cont
  assert.equal((content.match(/^## 🧩 Skills architecture$/gm)||[]).length,1);
  assert.equal((content.match(/^## ❓ FAQ$/gm)||[]).length,1);
 });
+
+test('V2.3 first-film walkthrough stays discoverable and approval-safe',()=>{
+ const home=readme(),guide=read('docs/installation.md');
+ assert(home.includes('docs/installation.md#your-first-film--guided-text-only-walkthrough'),'README must link to first-film walkthrough');
+ assert(guide.includes('## Your first film — guided text-only walkthrough'));
+ assert(guide.indexOf('## Your first film')<guide.indexOf('## Host-by-host first-use verification'),'First-film steps must precede historical host evidence');
+ for(const phrase of ['30-second animated film','one focused question','PROPOSED','SCREENPLAY-V1','Visual Bible','storyboard','Project Bible/checkpoint','Do not generate media','NOT_RUN'])
+  assert(guide.toLowerCase().includes(phrase.toLowerCase()),'Missing first-film safeguard: '+phrase);
+ assert(guide.includes('not automatic cloud persistence'),'Resume must not promise automatic persistence');
+ assert(guide.includes('does **not** authorize generating'),'Planning approval must not authorize production');
+ assert(guide.includes('not an independently observed unfamiliar-user success'),'Documentation cannot claim independent onboarding');
+ assert(home.includes('no paid generator is required'),'README must explain no-cost planning');
+});

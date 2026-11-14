@@ -53,6 +53,10 @@ npx skills add montadhahri/universal-ai-film-director --skill universal-ai-film-
 
 **3. Shape the film together.** The Director asks focused questions, proposes a creative direction, and requests your approval at important milestones. Your first result is a **plan**, not an automatically rendered video.
 
+**What happens next?** Expect one focused question if an essential detail is missing, or a clearly labeled `SCREENPLAY-V1 PROPOSED` when enough details are supplied. Review that specific screenplay before approving it. A Visual Bible and storyboard each need their **own separate approval**; do not approve all three at once. You can stop after the text-only plan—no paid generator is required.
+
+For a step-by-step first-film walkthrough, expected results, and a safe way to resume later, see [Your first film](docs/installation.md#your-first-film--guided-text-only-walkthrough).
+
 Want to install every specialist? Run:
 
 ```bash
