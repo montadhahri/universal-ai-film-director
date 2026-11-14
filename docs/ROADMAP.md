@@ -2,8 +2,7 @@
 
 **Canonical roadmap · updated 2026-11-14.** This is the single source of truth for version outcomes and acceptance gates. [Development governance](DEVELOPMENT.md) defines the main/develop PR workflow. Historical V2.0 release evidence remains in [the release checklist](releases/v2.0.0-checklist.md) and Git history.
 
-> **Current state:** [v2.1.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.1.0) is released (2026-11-07; tag commit `7e7c264ff3496f28962e402b2bf795d181a15daa`). [v2.2.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.2.0) was released on 2026-11-14 at commit `5047ac031770c576978eba30d19178b893127438`, with focused evidence and accepted limitations; V2.3.0 is next and V2.4–V2.6 remain planned; V3 implementation remains feasibility-gated. **Production GO remains HOLD.** No paid provider jobs, account connections, credits, or film publication are authorized by this roadmap. Future release approval is a separate owner decision.
-
+> **Current state:** [v2.3.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.3.0) is the latest stable software release, published 2026-11-14 at `4988f0c1b656691ea9368538a12ce6ca4a8134a1` under an explicit limited-release exception. The planned five unfamiliar-user tests remain **NOT_RUN / deferred**, not PASS. V2.4–V2.6 remain planned and V3 implementation remains feasibility-gated. **Production GO remains HOLD.** No paid provider jobs, account connections, credits or film publication are authorized by this roadmap.\n
 ## Release direction
 
 The table below is the **official delivery sequence** for the next two years. **PLANNED** means a committed product objective, not a completed feature or an authorized release. Scope and dates are targets subject to evidence-backed, owner-reviewed changes. Release GO remains a separate decision.
@@ -14,7 +13,7 @@ The table below is the **official delivery sequence** for the next two years. **
 | [V2.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0) | Historical | Director + six specialists and planning contracts | RELEASED | Preserve evidence and rights caveats |
 | [V2.1.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.1.0) | Nov 2026 | First-use installation and scoped Codex/OpenCode validation | RELEASED | Preserve verified limits; independent onboarding still pending |
 | [V2.2.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.2.0) | Nov 2026 | End-to-end film planning, Project Bible and approval-safe recovery; **Persistent Director foundations** | RELEASED — 2026-11-14 | Focused recovery/revision and QA/reconciliation accepted; full independent Phase 6 incomplete and local EPERM disclosed; final release-SHA CI passed |
-| **V2.3.0** | 2027 Q1 | Independent creator onboarding and workflow usability | NEXT — PLANNED | >=5 unfamiliar-user tests, completion and friction evidence |
+| [V2.3.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.3.0) | Released 2026-11-14 (ahead of target) | Beginner onboarding and workflow usability improvements | RELEASED — LIMITED ACCEPTANCE | Deterministic development checks passed; >=5 unfamiliar-user tests **NOT_RUN / deferred** under explicit owner exception |
 | **V2.4.0** | 2027 Q1–Q2 | **Character and World Memory** + **Smart Film Repair** | PLANNED | Visual continuity evidence, scoped before/after repair, unchanged locked assets |
 | **V2.5.0** | 2027 Q2–Q3 | **Intelligent Budget Director** + provider-neutral local/manual/mock job foundations and media QA | PLANNED | Cost uncertainty and ceilings, no-cost path, permission and export QA |
 | **V2.6.0** | 2027 Q3–Q4 | **Templates and Community Gallery** + first local-first **Visual Film Studio** viewer | PLANNED | Reproducible templates, rights checks, independent non-developer usability tests |
@@ -86,7 +85,7 @@ The [existing V2 release checklist](releases/v2.0.0-checklist.md#v220-release-pr
 
 ## V2.3 — Development evidence and outstanding acceptance
 
-**Implementation status (2026-11-14):** Four owner-reviewed PRs merged to `main` through commit `c977b2834dd5f62626473623988fa67f64a4cc35`. This records completed development, **not** V2.3 release or independent creator acceptance.
+**Release status (2026-11-14):** Four owner-reviewed development PRs merged through `c977b2834dd5f62626473623988fa67f64a4cc35`; the stable [v2.3.0 software release](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.3.0) was subsequently published at `4988f0c1b656691ea9368538a12ce6ca4a8134a1`. This is a **limited release**, not independent creator acceptance.
 
 - [#185](https://github.com/montadhahri/universal-ai-film-director/pull/185): beginner first-film walkthrough and documentation regression checks.
 - [#187](https://github.com/montadhahri/universal-ai-film-director/pull/187): deterministic discovery, approval, checkpoint and media-claim safeguards.
@@ -95,7 +94,7 @@ The [existing V2 release checklist](releases/v2.0.0-checklist.md#v220-release-pr
 
 **Hosted evidence at final development SHA:** [Validate skill](https://github.com/montadhahri/universal-ai-film-director/actions/runs/43601865587), [Secret scan](https://github.com/montadhahri/universal-ai-film-director/actions/runs/43601865594), [CodeQL](https://github.com/montadhahri/universal-ai-film-director/actions/runs/43601851776) and [private pre-production](https://github.com/montadhahri/universal-ai-film-director/actions/runs/43601865639) succeeded. [Skills CLI install smoke](https://github.com/montadhahri/universal-ai-film-director/actions/runs/43601578378) succeeded at the preceding merge SHA `d67d6dcba0d09222d5432321335901159b13b318`; it was not rerun on the final development SHA because the later PR did not change the installation paths. These tests do **not** demonstrate live-agent behavior or real creator success.
 
-**Acceptance still open:** the planned >=5 unfamiliar-user trials, completion/friction observations and independent retests are **NOT_RUN / deferred**. Owner-operated and synthetic testing must not be relabeled independent. **Owner decision (2026-11-14):** the owner explicitly approved preparing a limited V2.3.0 release with this acceptance exception disclosed; this is an exception to the release timing gate, **not** a PASS or removal of the independent-testing outcome. Final tag/release publication requires another explicit owner approval. No tag or release is authorized by this update. The Last Light Production GO stays HOLD.
+**Acceptance still open:** the planned >=5 unfamiliar-user trials, completion/friction observations and independent retests are **NOT_RUN / deferred**. Owner-operated and synthetic testing must not be relabeled independent. **Owner decision (2026-11-14):** the owner explicitly approved preparing a limited V2.3.0 release with this acceptance exception disclosed; this is an exception to the release timing gate, **not** a PASS or removal of the independent-testing outcome. The owner subsequently granted separate final tag/release authorization and published v2.3.0. The Last Light Production GO stays HOLD.
 
 ## V2.3 — Independent user validation
 
