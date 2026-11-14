@@ -1,8 +1,8 @@
 # Product roadmap — Universal AI Film Director
 
-**Canonical roadmap · updated 2026-11-13.** This is the single source of truth for version outcomes and acceptance gates. [Development governance](DEVELOPMENT.md) defines the main-only PR workflow. Historical V2.0 release evidence remains in [the release checklist](releases/v2.0.0-checklist.md) and Git history.
+**Canonical roadmap · updated 2026-11-14.** This is the single source of truth for version outcomes and acceptance gates. [Development governance](DEVELOPMENT.md) defines the main/develop PR workflow. Historical V2.0 release evidence remains in [the release checklist](releases/v2.0.0-checklist.md) and Git history.
 
-> **Current state:** [v2.1.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.1.0) is released (2026-11-07; tag commit `7e7c264ff3496f28962e402b2bf795d181a15daa`). V2.2–V2.6 are planned delivery milestones, with V2.2 next; V3 implementation remains feasibility-gated. **Production GO remains HOLD.** No paid provider jobs, account connections, credits, or film publication are authorized by this roadmap. Future release approval is a separate owner decision.
+> **Current state:** [v2.1.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.1.0) is released (2026-11-07; tag commit `7e7c264ff3496f28962e402b2bf795d181a15daa`). V2.2.0 is in owner-authorized release preparation with focused evidence and accepted limitations; V2.3–V2.6 remain planned; V3 implementation remains feasibility-gated. **Production GO remains HOLD.** No paid provider jobs, account connections, credits, or film publication are authorized by this roadmap. Future release approval is a separate owner decision.
 
 ## Release direction
 
@@ -13,7 +13,7 @@ The table below is the **official delivery sequence** for the next two years. **
 | [V1.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) | Historical | Original Film Director | RELEASED | Preserve immutable history |
 | [V2.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0) | Historical | Director + six specialists and planning contracts | RELEASED | Preserve evidence and rights caveats |
 | [V2.1.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.1.0) | Nov 2026 | First-use installation and scoped Codex/OpenCode validation | RELEASED | Preserve verified limits; independent onboarding still pending |
-| **V2.2.0** | 2026 Q4–2027 Q1 | End-to-end film planning, Project Bible and approval-safe recovery; **Persistent Director foundations** | NEXT — PLANNED | Full traceable text-only workflow, recovery and negative approval tests |
+| **V2.2.0** | 2026 Q4–2027 Q1 | End-to-end film planning, Project Bible and approval-safe recovery; **Persistent Director foundations** | RELEASE PREPARATION — focused evidence accepted | Recovery/revision and QA/reconciliation accepted within scope; full independent Phase 6 incomplete; final candidate CI and separate merge/tag/publication decisions pending |
 | **V2.3.0** | 2027 Q1 | Independent creator onboarding and workflow usability | PLANNED | >=5 unfamiliar-user tests, completion and friction evidence |
 | **V2.4.0** | 2027 Q1–Q2 | **Character and World Memory** + **Smart Film Repair** | PLANNED | Visual continuity evidence, scoped before/after repair, unchanged locked assets |
 | **V2.5.0** | 2027 Q2–Q3 | **Intelligent Budget Director** + provider-neutral local/manual/mock job foundations and media QA | PLANNED | Cost uncertainty and ceilings, no-cost path, permission and export QA |
@@ -72,6 +72,17 @@ The table below is the **official delivery sequence** for the next two years. **
 - V2.x PRs branch from and target `main`. V3 research stays on `develop`; main-to-develop synchronization remains review-only.
 
 **Exit criteria:** one reproducible complete text-only scenario; traceable Director/specialist handoffs; consistent Project Bible; demonstrated checkpoint recovery and scoped revision; negative approval/continuity tests; documented remaining limitations; passing required CI. If independent execution cannot be obtained, record NOT_RUN and hold any claim of independent end-to-end validation. The release itself remains a separate owner decision.
+
+### V2.2.0 owner decision and evidence status — 2026-11-14
+
+The owner explicitly approved the focused Phase 5 recovery/scoped revision and Phase 6 continuity QA/Director reconciliation evidence for V2.2.0, accepting the limitations below. This authorizes release preparation, not blanket independent-acceptance PASS, PR merge, tagging or publication.
+
+- **Phase 5 focused behavior: PASS.** Genuine TLL-V22-01a1d700 revision 9 restored; rejected proposal not applied; separately labeled synthetic scoped authorization preserves locked-source lineage and downstream review boundaries. No real locked media or owner-authorized media replacement is inferred.
+- **Phase 6 focused QA/reconciliation: PASS; full independent acceptance: PARTIAL.** Separate clean same-host/model QA, evaluator and Director contexts detected three injected textual defects, zero misses/false positives, and proposed three minimal repairs. This does not establish all P6-01–P6-14 criteria or independent human/host execution.
+- **Local standard regressions: BLOCKED (EPERM), not PASS.** Isolation-disabled authority 12/12 and dependency 9/9 passed; recovery 1/2 passed with the fresh-child case blocked. A separate shell-launched restore passed without making that original regression green. Hosted CI successes are separate evidence.
+- **Media verification: NOT_RUN.** SH05 readability remains deferred / NOT_VERIFIED / NOT_WAIVED / NOT_PASS; SH04 physical checks remain unverified and LAYOUT-P1 provisional. The Last Light stays revision 9, all operational flags false and Production GO HOLD.
+
+The [existing V2 release checklist](releases/v2.0.0-checklist.md#v220-release-preparation--owner-accepted-focused-evidence) records exact source/evidence hashes, owner decision, baseline CI and proposed notes. Original acceptance criteria and historical results remain unchanged. Final candidate CI and separate merge/tag/publication decisions remain required.
 
 ## V2.3 — Independent user validation
 
