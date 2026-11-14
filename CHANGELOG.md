@@ -13,6 +13,8 @@ tags, not by duplicated skill source folders.
 
 - Improve Director first-turn guidance for usable beginner briefs: immediate concise PROPOSED screenplay when safe, one blocking question otherwise, explicit current gate and next action; retain sensitive-story exceptions and permissions.
 
+- Add a deterministic first-film integration test covering three separately evidenced approvals, 30-second picture and sound planning, checkpoint recovery, negative paths, and Production GO HOLD. This does not run a live agent or generate media.
+
 V2.3 unfamiliar-user acceptance remains NOT_RUN; no V2.3 release is authorized.
 
 ## [2.2.0] — 2026-11-14
