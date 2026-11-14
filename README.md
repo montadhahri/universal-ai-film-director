@@ -61,6 +61,14 @@ npx skills add montadhahri/universal-ai-film-director --skill '*'
 
 On **Windows CMD**, use `--skill "*"` instead. For individual skills, local installation, and troubleshooting, see the [installation guide](docs/installation.md).
 
+## V2.2.0 release preparation
+
+The owner has accepted focused text-only checkpoint recovery, scoped revision, continuity QA defect injection and Director reconciliation evidence for V2.2.0. Three SH01/SH04/SH05 planning defects have minimal proposed repairs; approved plans and production permissions remain protected.
+
+**Limits:** standard local Node.js regressions were host-blocked by EPERM; full independent Phase 6 acceptance is incomplete; no rendered-media verification performed. SH05 readability remains deferred and unverified. The Last Light Production GO remains HOLD.
+
+V2.1.0 remains the latest published stable release. V2.2.0 is **in release preparation**; merge, final release-SHA checks, tagging and publication remain pending. See the [release checklist and proposed notes](docs/releases/v2.0.0-checklist.md#v220-release-preparation--owner-accepted-focused-evidence) and [changelog](CHANGELOG.md).
+
 ## 🆕 What's new in V2.1.0
 
 **Install and start directing with more confidence.** V2.1.0 improves first-use instructions and documents verified, owner-operated skill loading in **Codex and OpenCode**. All seven skills passed the pinned public Skills CLI installation smoke test; a scoped 30-second film-planning scenario loaded the Director and two specialists in each tested host, producing approval-safe proposals.
@@ -150,8 +158,9 @@ CI validates repository structure and skills, while a [pinned public-GitHub inst
 | Version | Status | Focus |
 | --- | --- | --- |
 | [v1.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) | Released | Original single-skill Director |
-| [v2.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0) | **Latest stable release** | Director and six specialist skills |
-| **v2.1.0** | **Released 2026-11-07** | Public Skills CLI installation, targeted Codex/OpenCode skill-use evidence, and beginner guidance; independent-user and delegation limits disclosed |
+| [v2.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0) | Released | Director and six specialist skills |
+| **v2.1.0** | **Latest stable; released 2026-11-07** | Public Skills CLI installation, targeted Codex/OpenCode skill-use evidence, and beginner guidance; independent-user and delegation limits disclosed |
+| **v2.2.0** | **Release preparation; not published** | Owner-accepted focused text recovery and QA; incomplete independent acceptance and local EPERM disclosed |
 | **V3** | Research only on `develop` | Experimental connected-agent production ideas; not part of the V2.x release |
 
 The [canonical roadmap](docs/ROADMAP.md) defines proposed milestones and acceptance gates; it does not authorize release or provider spending. **Production GO remains HOLD.** Published releases remain identifiable by their tags; `main` is the V2.x integration branch, not a guarantee that every commit is a tagged release. See [CHANGELOG](CHANGELOG.md).
