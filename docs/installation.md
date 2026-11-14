@@ -12,6 +12,24 @@ npx skills add montadhahri/universal-ai-film-director --skill universal-ai-film-
 
 Start a film by giving your compatible AI agent a story idea and requested runtime. The Director asks at most one focused discovery question at a time, proposes professional creative choices, and requests your approval of the screenplay, Visual Bible and storyboard.
 
+## Your first film — guided text-only walkthrough
+
+This beginner exercise uses the Director only. You do not need a paid generator, media account, Python, or all six specialists. The Skills CLI requires Node.js/npm and a compatible agent host; installation alone does **not** prove the host has discovered the skill.
+
+1. **Install** the Director with the command above. Select a compatible agent in the CLI if prompted. Open a **new session** in that host so it can discover the installed skill.
+2. **Start** with this fictional, planning-only prompt:
+
+   > Use the universal-ai-film-director skill. Help me plan a 30-second animated film about a child who finds a glowing seed and brings it to a dark garden. English, gentle tone. Guide me one decision at a time. Do not generate media, connect accounts, or spend credits.
+
+3. **Inspect the first response.** It should acknowledge the supplied idea, duration, language and tone without asking for them again. It may ask **one focused question** if something important is missing, or offer a screenplay marked **PROPOSED**. The exact wording varies by host; no film or media should be claimed as rendered.
+4. **Review the proposed screenplay.** If satisfied, approve the **specific version** (for example, `I approve SCREENPLAY-V1`) only after that version has actually been presented. If you want changes, ask for a revision instead. Do **not** approve a screenplay, Visual Bible and storyboard together.
+5. **Continue one gate at a time.** After screenplay approval, expect a **PROPOSED Visual Bible** with stable character/world details. Review and approve that exact version separately. Then review and approve a timed **PROPOSED storyboard** separately. Approval of a text plan does **not** authorize generating images, video, audio or publishing anything.
+6. **Resume later.** Ask the Director to summarize the **Project Bible/checkpoint** including confirmed constraints, approved revision IDs, outstanding proposals, unresolved questions and the next safe action. Copy that text into a fresh conversation and say: `Resume from this checkpoint. Preserve approved decisions. Ask only the next necessary question. Do not generate media.` A copied checkpoint is a user-supplied record, not automatic cloud persistence or authenticated consent.
+
+**If it doesn't work:** Confirm the skill is installed in the intended host/project, restart the host session, and check its supported skill-discovery mechanism. If the host does not load the skill, report **NOT_VERIFIED**, not PASS. If the agent claims a finished film without media evidence, or skips an approval gate, stop and report the issue. See [host evidence and repeatable checks](#host-by-host-first-use-verification-v21).
+
+This walkthrough describes **expected behavior**, not an independently observed unfamiliar-user success. The V2.3 five-user usability gate remains **NOT_RUN** until actual external testing occurs.
+
 ## Install all skills
 
 ```bash
