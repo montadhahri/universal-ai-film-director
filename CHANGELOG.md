@@ -6,7 +6,9 @@ tags, not by duplicated skill source folders.
 
 ## [Unreleased]
 
-### V2.2.0 — release preparation (not tagged or published)
+No changes recorded after the V2.2.0 release.
+
+## [2.2.0] — 2026-11-14
 
 ### Added
 - Strengthen checkpoint approval-integrity diagnostics and pending scoped-revision dependency review using the existing recovery and persistence helpers.
@@ -17,11 +19,11 @@ tags, not by duplicated skill source folders.
 - Align checkpoint/audio repair dependency references with typed kind:id identifiers; reject ambiguous legacy references.
 
 ### Release decision and limitations
-- Owner accepted focused Phase 5–6 evidence and limitations on 2026-11-14. This prepares V2.2.0; merge, tag and publication remain pending.
+- Owner accepted focused Phase 5–6 evidence and limitations on 2026-11-14. Stable V2.2.0 was published from commit `5047ac031770c576978eba30d19178b893127438`; the release does not upgrade incomplete acceptance evidence to PASS.
 - Standard local Node.js entrypoints remain host-blocked by EPERM; full independent Phase 6 acceptance is incomplete; no rendered-media verification claimed. Passing hosted CI is separate evidence, not retroactive local PASS.
 - Preserve all seven skills, contracts, approved project state, SH05 production-validation deferral and false operational flags. The Last Light Production GO remains HOLD.
 
-See the [existing V2 release checklist](docs/releases/v2.0.0-checklist.md#v220-release-preparation--owner-accepted-focused-evidence) for evidence hashes, observed validation, remaining gates and proposed notes.
+[GitHub release](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.2.0). See the [existing V2 release checklist](docs/releases/v2.0.0-checklist.md#v220-release-preparation--owner-accepted-focused-evidence) for evidence hashes and observed validation. V2.3.0 independent onboarding is the next planned milestone.
 
 ## [2.1.0] — 2026-11-07
 
