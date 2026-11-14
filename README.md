@@ -77,8 +77,6 @@ On **Windows CMD**, use `--skill "*"` instead. For individual skills, local inst
 
 ### V2.2.0 — previous release
 
-
-
 The owner has accepted focused text-only checkpoint recovery, scoped revision, continuity QA defect injection and Director reconciliation evidence for V2.2.0. Three SH01/SH04/SH05 planning defects have minimal proposed repairs; approved plans and production permissions remain protected.
 
 **Limits:** standard local Node.js regressions were host-blocked by EPERM; full independent Phase 6 acceptance is incomplete; no rendered-media verification performed. SH05 readability remains deferred and unverified. The Last Light Production GO remains HOLD.
