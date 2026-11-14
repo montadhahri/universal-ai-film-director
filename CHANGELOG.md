@@ -7,15 +7,17 @@ tags, not by duplicated skill source folders.
 ## [Unreleased]
 
 ### Added
-- V2.3 beginner first-film walkthrough and README handoff, covering one-question discovery, separate screenplay/Visual Bible/storyboard approvals, checkpoint-based resumption and no-cost planning.
-- Deterministic documentation regression checks for walkthrough discoverability and permission boundaries. These do not constitute independent user testing.
-- Focused beginner safety regressions for one-question discovery, explicit gate approval, ambiguous consent, checkpoint roundtrips and fabricated media claims. These execute existing contracts without invoking an agent.
+- V2.3 beginner first-film walkthrough and README handoff: no-cost text-only planning, one-question discovery, distinct screenplay/Visual Bible/storyboard approvals and checkpoint-based resumption (#185).
+- Deterministic documentation, beginner-safety and 30-second text-only journey regressions for approval integrity, timing, sound continuity, checkpoint recovery and refusal of unsupported media claims (#185, #187, #191).
 
-- Improve Director first-turn guidance for usable beginner briefs: immediate concise PROPOSED screenplay when safe, one blocking question otherwise, explicit current gate and next action; retain sensitive-story exceptions and permissions.
+### Changed
+- Director first-turn guidance: propose a concise screenplay for a usable non-sensitive brief; otherwise ask one pivotal question, preserve disclosure safeguards and state one next action (#189).
+- Public Skills CLI smoke test now compares public installations with public `main`, while local checkout verification checks PR changes (#189).
 
-- Add a deterministic first-film integration test covering three separately evidenced approvals, 30-second picture and sound planning, checkpoint recovery, negative paths, and Production GO HOLD. This does not run a live agent or generate media.
-
-V2.3 unfamiliar-user acceptance remains NOT_RUN; no V2.3 release is authorized.
+### Evidence and limitations
+- Hosted Validate skill, Secret scan, CodeQL and private pre-production checks passed at development SHA `c977b2834dd5f62626473623988fa67f64a4cc35`. Public Skills CLI smoke passed on preceding merge `d67d6dcba0d09222d5432321335901159b13b318`. See [V2.3 evidence and acceptance](docs/ROADMAP.md#v23--development-evidence-and-outstanding-acceptance).
+- These checks are deterministic or installation checks, **not** independent unfamiliar-user acceptance or live end-to-end agent execution. The planned >=5 unfamiliar-user tests remain **NOT_RUN / deferred**.
+- No V2.3 release or exception to its acceptance gate has been approved. The Last Light Production GO remains HOLD; no media, provider jobs or publication are authorized.
 
 ## [2.2.0] — 2026-11-14
 
