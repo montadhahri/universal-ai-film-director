@@ -28,7 +28,7 @@ Correct unexpected files, branch ancestry or accidental removals before creating
 
 ## Important release-state distinction
 
-`main` is the **integration/default branch** for ongoing V2.1 work; the latest published stable release is `v2.0.0`, preserved at immutable tag commit `93c34e2e41351bf3411a330a8515481756f83ebd`. Do not rewrite `main` history or move published tags for later documentation changes. The V3 prototype is preserved on `develop` and must not be promoted into V2.x by synchronization.
+`main` is the **integration/default branch** for V2.x; latest published stable is `v2.1.0`, preserved at tag commit `7e7c264ff3496f28962e402b2bf795d181a15daa`. V2.2.0 is in release preparation with owner-accepted focused evidence and disclosed limitations, not tagged or published. Do not rewrite `main` history or move published tags for later documentation changes. The V3 prototype is preserved on `develop` and must not be promoted into V2.x by synchronization.
 
 ## Branch safety and repository settings
 
