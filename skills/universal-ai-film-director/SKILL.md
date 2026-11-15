@@ -62,10 +62,10 @@ For a concrete stage-specific example, handoff output and failure case, read the
 
 ## Structured authority and recovery
 
-For environments with filesystem access and Node.js, optional repository helpers `scripts/director-authority.js` and `scripts/project-contracts.js` can validate exact pending approvals, shot-scoped revision requests and JSON checkpoints. They are **not bundled runtime dependencies**, do not verify user identity, and cannot persist a checkpoint or authorize provider execution on their own. Always bind recorded evidence to a real user message. On other platforms, maintain the same approval ledger manually in the Project Bible.
+For environments with filesystem access and Node.js, optional installed `scripts/runtime.js` helpers (Director authority and project contracts) can validate exact pending approvals, shot-scoped revision requests and JSON checkpoints. They are **bundled as optional runtime helpers**, do not verify user identity, and cannot persist a checkpoint or authorize provider execution on their own. Always bind recorded evidence to a real user message. On other platforms, maintain the same approval ledger manually in the Project Bible.
 
 ## Planning-only production pipeline
 
-If a compatible Node.js project checkout exists, use the optional `scripts/production-pipeline.js` to check stage progression, exact timed storyboard coverage and gate prerequisites. It does not run providers or approve decisions. If the project has no executable script support, apply the same checks manually before proposing the next step. Do not treat a valid timeline as rendered media or an automatic production authorization. Read [production stage and cut-timeline guidance](references/project-state.md) when resuming or moving between stages.
+If Node.js execution is available, use the optional installed `scripts/runtime.js` production-pipeline helpers to check stage progression, exact timed storyboard coverage and gate prerequisites. It does not run providers or approve decisions. If the project has no executable script support, apply the same checks manually before proposing the next step. Do not treat a valid timeline as rendered media or an automatic production authorization. Read [production stage and cut-timeline guidance](references/project-state.md) when resuming or moving between stages.
 
 For optional installed Node.js helpers, see [runtime guidance](references/project-state.md). Without execution, report checks as NOT_RUN.
