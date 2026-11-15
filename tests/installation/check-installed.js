@@ -24,6 +24,10 @@ function check(source,dest){
   assert(!actual.some(x=>x===forbidden||x.startsWith(forbidden)),'Forbidden installed entry: '+forbidden);
  }
  assert(actual.includes('SKILL.md'));
+ assert(actual.includes('scripts/runtime.js'),'Installed runtime missing');
+ const runtime=require(path.resolve(dest,'scripts/runtime.js'));
+ assert(Object.keys(runtime).length>0,'Installed runtime has no exported helpers');
+ assert(!actual.some(x=>x.startsWith('tests/')||x.startsWith('docs/')),'Developer files leaked into skill');
  const report={kind:'local-skills-cli-smoke',source_files:expected.length,installed_files:actual.length,installed_exact_match:true,development_files_installed:false,authenticated_private_remote_tested:false,agent_executed:false,video_generated:false,production_go:false};
  console.log(JSON.stringify(report,null,2));
  return report;
