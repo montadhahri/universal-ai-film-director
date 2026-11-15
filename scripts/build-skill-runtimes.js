@@ -12,7 +12,9 @@ const mapping={
     "audio-continuity",
     "budget-planner",
     "production-jobs",
-    "media-export-qa"
+    "media-export-qa",
+    "budget-reconciliation",
+    "recovery-bundle"
   ],
   "film-storytelling": [
     "project-contracts",
@@ -32,7 +34,8 @@ const mapping={
     "production-pipeline",
     "budget-planner",
     "production-jobs",
-    "media-export-qa"
+    "media-export-qa",
+    "budget-reconciliation"
   ],
   "film-sound-direction": [
     "project-contracts",
