@@ -2,7 +2,7 @@
 
 **Canonical roadmap · updated 2026-11-15.** This is the single source of truth for version outcomes and acceptance gates. [Development governance](DEVELOPMENT.md) defines the main/develop PR workflow. Historical V2.0 release evidence remains in [the release checklist](releases/v2.0.0-checklist.md) and Git history.
 
-> **Current state:** [v2.4.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.4.0) is the latest stable software release (**publication confirmed by owner on 2026-11-15; tag/asset metadata not independently retrieved in this review**), under an explicit limited software-release decision. V2.4 real-media continuity, actual before/after repair quality and independent complete agent-host acceptance remain **NOT_VERIFIED / NOT_RUN**; these were not converted to PASS by release. V2.3's >=5 unfamiliar-user acceptance also remains **NOT_RUN / deferred**. V2.5 implementation is merged and release preparation is on HOLD; V2.6 remains planned and V3.0–V3.4 live-action expansion proposed and feasibility-gated. **The Last Light Production GO remains HOLD.** No provider jobs, spending, account connections or film publication are authorized by this roadmap. Future releases require separate owner approval.
+> **Current state:** [v2.5.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.5.0) is the latest stable software release (**owner-confirmed limited publication on 2026-11-15; published tag and asset metadata not independently retrieved**). V2.5 deterministic CI passed; complete independent agent-host execution, decoded-media inspection and human film-quality acceptance remain **NOT_VERIFIED**. Earlier V2.4 real-media and V2.3 unfamiliar-user acceptance limitations also remain open. V2.6 remains planned; V3.0–V3.4 expansion is proposed and feasibility-gated. **The Last Light Production GO remains HOLD.** No provider jobs, spending, account connections or film publication are authorized by this software release. Future releases require separate owner approval.
 
 ## Release direction
 
@@ -16,7 +16,7 @@ The table below records released versions, the planned V2 delivery sequence and 
 | [V2.2.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.2.0) | Nov 2026 | End-to-end film planning, Project Bible and approval-safe recovery; **Persistent Director foundations** | RELEASED — 2026-11-14 | Focused recovery/revision and QA/reconciliation accepted; full independent Phase 6 incomplete and local EPERM disclosed; final release-SHA CI passed |
 | [V2.3.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.3.0) | Nov 2026 (original target 2027 Q1) | Beginner onboarding and workflow usability improvements | RELEASED — 2026-11-14 (limited) | Deterministic checks passed; >=5 unfamiliar-user trials and friction metrics **NOT_RUN / deferred** by explicit release exception |
 | [V2.4.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.4.0) | 2027 Q1–Q2 (delivered early 2026-11-15) | **Character and World Memory** + **Smart Film Repair** | RELEASED — 2026-11-15 (limited; owner-confirmed) | Deterministic software checks and scoped planning; real-media visual continuity, before/after repair quality and unchanged locked-media inspection **NOT_VERIFIED** |
-| **V2.5.0** | 2027 Q2–Q3 (implementation delivered early, 2026-11-15) | **Intelligent Budget Director** + provider-neutral local/manual/mock job foundations and media QA | IMPLEMENTED — RELEASE HOLD | Post-merge deterministic CI passed; independent agent-host and real-media QA NOT_VERIFIED; release GO requires owner approval |
+| [V2.5.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.5.0) | Delivered early 2026-11-15 | **Intelligent Budget Director** + provider-neutral manual/local/mock production, media QA and recovery | RELEASED — 2026-11-15 (limited; owner-confirmed) | Deterministic CI passed; independent agent-host and real-media quality NOT_VERIFIED; production authorization HOLD |
 | **V2.6.0** | 2027 Q3–Q4 | **Templates and Community Gallery** + local-first **Visual Film Studio foundations** with mode-extensible architecture | PLANNED | Reproducible templates, rights checks, independent non-developer usability tests, and mode-neutral project/asset/approval/workflow interfaces; live-action implementation deferred |
 | **V2.7.0** | 2027 Q4–2028 Q1 (proposed) | **Complete End-to-End Workflow Validation** across the existing seven skills, budget-controlled production, continuity, repair and final QA | PROPOSED | Independent reproducible full-workflow runs, approval/cost safety, cross-host evidence, and separately evaluated real-media quality; missing evidence remains BLOCKED/NOT_RUN |
 | **V3.0 (proposed)** | After V2.7; date TBD | Shared provider-neutral production engine, Persistent Director and mode-aware contracts | PROPOSED — FEASIBILITY-GATED | Local/mock execution, provenance, recovery, permissions and security review |
@@ -191,6 +191,8 @@ The [existing V2 release checklist](releases/v2.0.0-checklist.md#v220-release-pr
 
 ## V2.5 — Intelligent Budget Director, production foundations and media QA
 
+**Status: RELEASED (limited software scope, owner-confirmed).** The budget planner, read-only reconciliation, manual/local/mock job records, deterministic mock lifecycle, evidence-aware media metadata QA, optional recovery bundles and five-shot acceptance fixture are implemented. Automated deterministic CI passed; independent agent-host runs, decoded-media inspection and human creative acceptance remain NOT_VERIFIED. This release does not grant Production GO, provider access, spending or film publication.
+
 **User outcome:** safely bridge planning to locally verifiable production steps, without making paid integrations mandatory.
 
 - Build or validate optional provider-neutral job/artifact/budget/approval contracts and no-cost mock execution; use local tools only where available and justified.
@@ -199,6 +201,8 @@ The [existing V2 release checklist](releases/v2.0.0-checklist.md#v220-release-pr
 - **Exit:** reproducible no-cost prototype and truthful media QA where legally accessible; provider adapter delivery is **not** a release prerequisite.
 
 ## V2.6 — Visual Film Studio, templates and community readiness
+
+**Status: NEXT MILESTONE — PLANNED, NOT STARTED.** Begin with read-only scope and architecture assessment before any implementation PR. Preserve all seven skills and existing approval, budget and recovery contracts.
 
 **User outcome:** outside users can understand, adopt, extend and troubleshoot the library.
 
@@ -264,7 +268,7 @@ Historical phase mapping: architecture and planning tests → V2.0 baseline; fiv
 3. **No simulated evidence:** distinguish implementation, CI checks, independent host runs, human-reviewed footage, external-user trials and authorization. Record exact PR/commit and relevant logs for milestone closure.
 4. **Separate approvals:** PR merge, software release, creative decisions, provider access, paid execution and film publication are different gates. **Production GO remains HOLD**.
 5. **Release gate:** only create a tag or GitHub release after exact-SHA validation, applicable security/rights review and separate owner authorization. No permanent release branch required.
-6. **Next practical step:** begin V2.5 Intelligent Budget Director with cost uncertainty, user-defined ceilings and no-cost local/manual/mock workflows, while separately collecting deferred V2.3 unfamiliar-user evidence and V2.4 real-media QA. V3.0–V3.4 remain proposals, not implementation GO.
+6. **Next practical step (current):** start V2.6 Phase 1 read-only assessment for templates, community readiness and local-first Visual Film Studio foundations. V2.5 is released in limited software scope; separately collect deferred V2.3 unfamiliar-user and V2.4/V2.5 real-media evidence. V3.0–V3.4 remain proposals, not implementation GO.
 
 
 ## Two-year product roadmap — November 2026 to November 2028

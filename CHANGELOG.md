@@ -6,19 +6,25 @@ tags, not by duplicated skill source folders.
 
 ## [Unreleased]
 
-### V2.5.0 release candidate — NOT RELEASED
+
+
+### Documentation (unreleased)
+- Align the canonical release table and public README with the owner-approved **proposed** V3.0–V3.4 dual-mode/live-action roadmap and future V4 candidate. These are planning milestones, not shipped capabilities.
+- Correct the V2.4 release badge target and stale V2.4 next-step wording; preserve all deferred acceptance gates.
+
+## [2.5.0] — 2026-11-15 (owner-confirmed limited release)
+
+Owner approved and reported publishing [v2.5.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.5.0). Published tag/asset metadata has not been independently retrieved. This software release does not authorize media production, provider execution or publication.
+
+### Added
 - Added read-only Intelligent Budget Director estimates, explicit cost provenance, unknown-cost and ceiling safeguards, and budget-to-job reconciliation.
 - Added provider-neutral manual/local/mock job records, deterministic mock retry/idempotency, and synthetic-only mock artifact manifests.
 - Added declared duration, resolution, frame-rate, audio-track, provenance and export QA classification. Metadata checks do not inspect actual media bytes.
 - Added optional integrity-checked Project Bible plus job-ledger recovery bundles while preserving legacy checkpoints and operational HOLD.
 - Added five-shot 30-second The Last Light deterministic acceptance fixtures, with no media generation or provider execution.
 - Verified post-merge `main` CI on `a730c58cc678c74fb402892fd65c3d3eab140a7e`: Validate skill, private pre-production, secret scan and CLI install passed. CodeQL passed on Phase 5 PR head, but a separate post-merge CodeQL run was not established.
-- **Deferred:** independent complete agent-host transcripts, actual decoded-media inspection, human film quality acceptance, and any production/provider authorization. V2.5.0 publication remains HOLD pending separate owner approval.
+- **Deferred:** independent complete agent-host transcripts, actual decoded-media inspection, human film quality acceptance, and any production/provider authorization. The owner approved and reported publishing the limited V2.5.0 software release on 2026-11-15; film production and provider authorization remain HOLD.
 
-
-### Documentation (unreleased)
-- Align the canonical release table and public README with the owner-approved **proposed** V3.0–V3.4 dual-mode/live-action roadmap and future V4 candidate. These are planning milestones, not shipped capabilities.
-- Correct the V2.4 release badge target and stale V2.4 next-step wording; preserve all deferred acceptance gates.
 
 ## [2.4.0] — 2026-11-15 (owner-confirmed limited release)
 

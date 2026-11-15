@@ -6,8 +6,8 @@
 
 An open-source AI filmmaking crew: one Director, six specialist skills, and **you in creative control**.
 
-[![Stable release](https://img.shields.io/badge/stable-v2.4.0-blue)](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.4.0)
-[![Release candidate](https://img.shields.io/badge/v2.5.0-candidate-orange)](docs/ROADMAP.md)
+[![Stable release](https://img.shields.io/badge/stable-v2.5.0-blue)](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.5.0)
+[![Next milestone](https://img.shields.io/badge/next-v2.6.0-orange)](docs/ROADMAP.md)
 [![Validate skills](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml/badge.svg)](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml)
 [![Install smoke](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/skills-install-smoke.yml/badge.svg)](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/skills-install-smoke.yml)
 [![MIT](https://img.shields.io/badge/code%20license-MIT-green)](LICENSE)
@@ -17,7 +17,7 @@ An open-source AI filmmaking crew: one Director, six specialist skills, and **yo
 </div>
 
 
-> **V2.5.0 candidate (not released):** The Intelligent Budget Director, read-only budget reconciliation, provider-neutral manual/local/mock job records, deterministic retry and recovery, and evidence-aware export QA are implemented. The Last Light five-shot fixture is a simulation, not generated film. Independent agent-host acceptance and actual media quality remain unverified; provider execution and publication remain subject to separate authorization. See [release candidate notes](docs/releases/v2.5.0-candidate.md).
+> **V2.5.0 released (owner-confirmed, limited software scope):** The Intelligent Budget Director, read-only budget reconciliation, provider-neutral manual/local/mock job records, deterministic retry and recovery, and evidence-aware export QA are implemented. The Last Light five-shot fixture is a simulation, not generated film. Independent agent-host acceptance and actual media quality remain unverified; provider execution and publication remain subject to separate authorization. See [V2.5.0 release history and evidence](docs/releases/v2.5.0-candidate.md).
 
 ## ✨ What can you create?
 
@@ -179,13 +179,13 @@ CI validates repository structure and skills, while a [pinned public-GitHub inst
 | [v2.1.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.1.0) | Released 2026-11-07 | Public Skills CLI installation, targeted Codex/OpenCode skill-use evidence, and beginner guidance; independent-user and delegation limits disclosed |
 | [v2.2.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.2.0) | Previous stable; released 2026-11-14 | Checkpoint recovery, approval-safe scoped revisions and focused text QA; independent Phase 6 and local EPERM limitations disclosed |
 | [v2.3.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.3.0) | Released 2026-11-14 (limited) | Beginner onboarding and Director first-turn improvements, deterministic planning regressions; >=5 unfamiliar-user tests NOT_RUN under limited-release exception |
-| [v2.4.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.4.0) | **Latest stable; owner-confirmed released 2026-11-15 (limited)** | Character & World Memory, scoped Smart Film Repair planning, byte-integrity checks and portable runtimes; real-media quality and independent end-to-end acceptance NOT_VERIFIED |
-| **v2.5.0** | **Next — planned** | Intelligent Budget Director and provider-neutral production foundations; see roadmap |
+| [v2.4.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.4.0) | Previous stable; owner-confirmed released 2026-11-15 (limited) | Character & World Memory, scoped Smart Film Repair planning, byte-integrity checks and portable runtimes; real-media quality and independent end-to-end acceptance NOT_VERIFIED |
+| [v2.5.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.5.0) | **Latest stable; owner-confirmed limited release 2026-11-15** | Intelligent Budget Director, mock production jobs, metadata/export QA, recovery bundles and deterministic five-shot acceptance; independent agent-host and actual media inspection NOT_VERIFIED |
 | **v2.6.0** | Planned | Templates, Community Gallery and local-first Visual Film Studio foundations designed for future production modes; live-action workflows are **not** part of V2.6 |
 | **V3.0–V3.4 (proposed)** | Feasibility-gated research on `develop` | Shared production engine, then live-action pre-production (V3.1), on-set assistance (V3.2), post-production (V3.3) and independent full-workflow validation (V3.4) |
 | **V4 (future candidate)** | Not scheduled | Unified AI/live-action Visual Film Studio; hybrid production remains a separate research idea |
 
-**Two-mode direction (proposal, not current capability):** AI Filmmaking remains the existing workflow. Future Live-Action Filmmaking assistance would support real crews, actors, cameras and locations while sharing the Director, six specialist skills, Project Bible, approvals, budget and continuity contracts. Physical set safety, consent, permissions and final decisions remain human responsibilities. V2.5–V2.7 remain focused on their existing scope; V3.1–V3.4 require separate implementation and validation approvals.
+**Two-mode direction (proposal, not current capability):** AI Filmmaking remains the existing workflow. Future Live-Action Filmmaking assistance would support real crews, actors, cameras and locations while sharing the Director, six specialist skills, Project Bible, approvals, budget and continuity contracts. Physical set safety, consent, permissions and final decisions remain human responsibilities. V2.5 is released with documented limitations; V2.6–V2.7 remain focused on their existing scope; V3.1–V3.4 require separate implementation and validation approvals.
 
 The [canonical roadmap](docs/ROADMAP.md) defines proposed milestones and acceptance gates; it does not authorize release or provider spending. **Production GO remains HOLD.** Published releases remain identifiable by their tags; `main` is the V2.x integration branch, not a guarantee that every commit is a tagged release. See [CHANGELOG](CHANGELOG.md).
 
