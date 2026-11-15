@@ -3,7 +3,7 @@
 const {validateProject}=require('./project-contracts.js');
 const clone=x=>structuredClone(x);
 const fail=message=>{throw new Error(message);};
-function createStudioSnapshot(project){
+function createProjectSnapshot(project){
  validateProject(project);
  // Fail closed on unknown top-level fields; never silently discard future authority-bearing data.
  const schema=require('../contracts/project-bible.schema.json');
@@ -23,4 +23,4 @@ function createStudioSnapshot(project){
    locked_shot_count:shots.filter(s=>s.state==='LOCKED').length}};
  return snapshot;
 }
-module.exports={createStudioSnapshot};
+module.exports={createProjectSnapshot};

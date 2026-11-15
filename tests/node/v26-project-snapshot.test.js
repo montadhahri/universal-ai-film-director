@@ -2,11 +2,11 @@
 const test=require('node:test');
 const assert=require('node:assert/strict');
 const {newProject}=require('../../scripts/project-contracts.js');
-const {createStudioSnapshot}=require('../../scripts/studio-snapshot.js');
-const schema=require('../../contracts/studio-snapshot.schema.json');
+const {createProjectSnapshot}=require('../../scripts/project-snapshot.js');
+const schema=require('../../contracts/project-snapshot.schema.json');
 test('snapshot uses versioned public schema and preserves read-only identity',()=>{
- const p=newProject('studio-demo');
- const s=createStudioSnapshot(p);
+ const p=newProject('consumer-demo');
+ const s=createProjectSnapshot(p);
  assert.equal(schema.properties.contract_version.const,'1.0');
  assert.equal(s.contract_version,'1.0');
  assert.equal(s.source_schema_version,'2.0');
@@ -22,7 +22,7 @@ test('snapshot exposes scoped shot and memory references without leaking user ev
   provenance:{kind:'AGENT_DRAFT',reference:null},shot_refs:['SH01']}];
  p.gates.script={approved:true,version:'v1',evidence:'user reference'};
  const before=structuredClone(p);
- const s=createStudioSnapshot(p);
+ const s=createProjectSnapshot(p);
  assert.equal(s.workflow.locked_shot_count,1);
  assert.equal(s.shots[0].approved_asset,'asset-01');
  assert.equal(s.memory_anchors[0].id,'CH01');
@@ -35,6 +35,6 @@ test('snapshot rejects invalid authority, unknown version and unexpected fields'
  const p=newProject('demo');
  for(const mutate of [x=>{x.authorization.production_go=true;},x=>{x.schema_version='3.0';},
   x=>{x.unrecognized='unsafe';},x=>{x.gates.storyboard={approved:true};},x=>{x.shots=[{id:'X',revision:1,state:'LOCKED',issues:[],continuity_refs:[]}];}]){
-  const q=structuredClone(p);mutate(q);assert.throws(()=>createStudioSnapshot(q));
+  const q=structuredClone(p);mutate(q);assert.throws(()=>createProjectSnapshot(q));
  }
 });
