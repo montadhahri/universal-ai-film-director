@@ -13,6 +13,8 @@ The **seven installable Agent Skills** live in [`../skills/`](../skills/universa
 | Security disclosure | [Security policy](../SECURITY.md) |
 | Contribute | [Contributing](../CONTRIBUTING.md) |
 
+For external tools, see the [portable read-only project snapshot contract](project-snapshot-integration.md). This contract does not grant production authority.
+
 The [root README](../README.md) is the public product entry point. [CHANGELOG](../CHANGELOG.md) records releases. **Do not maintain another live version roadmap or status document.**
 
 ## Supporting evidence — not additional active roadmaps
