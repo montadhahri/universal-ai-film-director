@@ -418,50 +418,6 @@ function importCheckpoint(json) {
 module.exports={exportCheckpoint,importCheckpoint};
 
 },
-'checkpoint-file':function(module,exports,require){
-'use strict';
-// Offline, local-only checkpoint persistence. Not encrypted, authenticated,
-// uploaded, backed up or suitable for storing secrets.
-const fs=require('node:fs');
-const path=require('node:path');
-const {exportCheckpoint,importCheckpoint}=require('./checkpoint-envelope.js');
-const fail=message=>{throw new Error(message)};
-function saveCheckpointFile(filePath,project) {
- if(typeof filePath!=='string'||!filePath.trim())fail('Checkpoint file path required');
- const payload=exportCheckpoint(project);
- // Exclusive creation prevents silently overwriting an existing checkpoint.
- // Caller owns parent directory and must ensure its access controls.
- const fd=fs.openSync(filePath,'wx',0o600);
- try {
-  fs.writeFileSync(fd,payload,{encoding:'utf8'});
-  fs.fsyncSync(fd);
- }catch(error) {
-  try{fs.closeSync(fd)}catch{}
-  try{fs.unlinkSync(filePath)}catch{}
-  throw error;
- }
- fs.closeSync(fd);
- return {path:path.resolve(filePath),bytes:Buffer.byteLength(payload),persisted:true,
-  approval_authenticated:false,asset_files_verified:false};
-}
-function loadCheckpointFile(filePath) {
- if(typeof filePath!=='string'||!filePath.trim())fail('Checkpoint file path required');
- // Open once, then validate and read through the same file descriptor.
- // O_NOFOLLOW prevents final-component symlink traversal where supported.
- const flags=fs.constants.O_RDONLY|(fs.constants.O_NOFOLLOW||0);
- const fd=fs.openSync(filePath,flags);
- try {
-  const stat=fs.fstatSync(fd);
-  if(!stat.isFile())fail('Checkpoint path must be a regular file');
-  const result=importCheckpoint(fs.readFileSync(fd,'utf8'));
-  return {...result,persisted:true};
- }finally {
-  fs.closeSync(fd);
- }
-}
-module.exports={saveCheckpointFile,loadCheckpointFile};
-
-},
 'audio-continuity':function(module,exports,require){
 'use strict';
 // Pure planning validation and impact reports, no asset writes, approval, media or provider actions.
@@ -596,9 +552,10 @@ function load(id){
  if(!Object.prototype.hasOwnProperty.call(factories,id))throw Error('Unknown bundled module: '+id);
  const module={exports:{}};cache.set(id,module);
  try{factories[id](module,module.exports,ref=>{
+  if(ref==='node:crypto')return require('node:crypto');
   if(!/^\.\/[-a-z]+\.js$/.test(ref))throw Error('External module forbidden: '+ref);
   return load(ref.slice(2,-3));
  });}catch(e){cache.delete(id);throw e;}
  return module.exports;
 }
-module.exports={...load('project-contracts'),...load('director-authority'),...load('production-pipeline'),...load('checkpoint-envelope'),...load('checkpoint-file'),...load('audio-continuity')};
+module.exports={...load('project-contracts'),...load('director-authority'),...load('production-pipeline'),...load('checkpoint-envelope'),...load('audio-continuity')};
