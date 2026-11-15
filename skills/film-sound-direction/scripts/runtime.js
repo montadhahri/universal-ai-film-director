@@ -335,6 +335,7 @@ function load(id){
  if(!Object.prototype.hasOwnProperty.call(factories,id))throw Error('Unknown bundled module: '+id);
  const module={exports:{}};cache.set(id,module);
  try{factories[id](module,module.exports,ref=>{
+  if(ref==='node:crypto')return require('node:crypto');
   if(!/^\.\/[-a-z]+\.js$/.test(ref))throw Error('External module forbidden: '+ref);
   return load(ref.slice(2,-3));
  });}catch(e){cache.delete(id);throw e;}
