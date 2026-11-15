@@ -67,3 +67,5 @@ For environments with filesystem access and Node.js, optional repository helpers
 ## Planning-only production pipeline
 
 If a compatible Node.js project checkout exists, use the optional `scripts/production-pipeline.js` to check stage progression, exact timed storyboard coverage and gate prerequisites. It does not run providers or approve decisions. If the project has no executable script support, apply the same checks manually before proposing the next step. Do not treat a valid timeline as rendered media or an automatic production authorization. Read [production stage and cut-timeline guidance](references/project-state.md) when resuming or moving between stages.
+
+For optional installed Node.js helpers, see [runtime guidance](references/project-state.md). Without execution, report checks as NOT_RUN.

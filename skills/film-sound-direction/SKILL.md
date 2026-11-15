@@ -30,3 +30,7 @@ For a concrete stage-specific example, handoff output and failure case, read the
 ## Optional deterministic audio timing checks
 
 For Node.js-compatible projects, validate an audio plan using `scripts/audio-continuity.js` and the Project Bible `audio_timeline` contract. Required narration windows must be filled explicitly, while silence and cross-track mixing use deliberate timing rules. Audio cue plans are **not generated assets**. For a reported dropout propose a scoped repair and preserve picture; never overwrite the existing approved cue sheet automatically. See `docs/audio-continuity.md` when repository files are available.
+
+## Optional installed Node.js runtime
+
+This skill includes `scripts/runtime.js` **inside its installed skill directory**, generated from the repository's canonical JavaScript helpers. If the agent has filesystem access and Node.js execution permission, it may load the file relative to this SKILL.md using `require('./scripts/runtime.js')` from that directory and invoke only relevant exported validators or read-only planning helpers. Do not assume a full repository checkout, another specialist's installation, or automatic execution. If execution is unavailable, follow the portable Markdown workflow and report executable validation as NOT_RUN. These helpers do not inspect pixels, authenticate user approvals, generate media, authorize spending, unlock shots or publish films. Preserve explicit user approval and evidence boundaries.

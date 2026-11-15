@@ -31,6 +31,9 @@ jobs:
             installed="$scratch/.agents/skills/$skill"
             test -f "$installed/SKILL.md"
             node "$GITHUB_WORKSPACE/tests/installation/check-installed.js" "$source_dir" "$installed"
+            if [ "$skill" = "film-continuity-qa" ]; then
+              node "$GITHUB_WORKSPACE/tests/installation/check-qa-runtime.js" "$installed"
+            fi
           done
       - name: Install seven skills from public GitHub without credentials
         env:
