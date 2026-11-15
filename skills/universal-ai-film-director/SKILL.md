@@ -71,9 +71,9 @@ If Node.js execution is available, use the optional installed `scripts/runtime.j
 For optional installed Node.js helpers, see [runtime guidance](references/project-state.md). Without execution, report checks as NOT_RUN.
 
 
-## V2.5 mock jobs
+## V2.5 jobs
 
-See [job guidance](references/production-jobs.md); mock output is not media or approval.
+See [job guidance](references/production-jobs.md).
 
 ## V2.5 budget planning
 
