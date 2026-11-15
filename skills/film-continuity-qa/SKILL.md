@@ -51,3 +51,7 @@ Use `prepareScopedRepair(project, {expected_revision, observations, shot_id, sou
 ## Optional local/manual repair handoff (V2.4 Phase 4C)
 
 After scoped authorization and a PROPOSED revision, use `prepareRepairHandoff` from the installed `scripts/runtime.js` to produce a copy-only, provider-neutral contract with immutable source, expected result, explicit checks and rollback. After a separately authorized manual/local repair, `inspectRepairHandoffEvidence` records reviewer-reported outcomes; it does not inspect media bytes or accept the revision. Missing checks remain NOT_RUN. Never execute providers, overwrite locked assets or declare independent visual verification from these helpers. See [localized repair](references/localized-repair.md).
+
+## Independent byte verification (V2.4 Phase 4D)
+
+Use `verifyRepairBytes` from the installed `scripts/runtime.js` only with real source and candidate bytes and the exact scoped repair handoff. It verifies SHA-256 integrity and distinct byte content, not pixels, audio, transitions or full-film quality. It never modifies locked work or grants approval. Treat unknown file provenance or unavailable bytes as NOT_RUN; require separate human media inspection and explicit acceptance. See [localized repair](references/localized-repair.md).
