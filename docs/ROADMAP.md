@@ -29,6 +29,77 @@ The table below records released versions, the planned V2 delivery sequence and 
 **Product principle:** deliver measurable creator outcomes, not more documentation or more skill names. Preserve all seven skills and the existing V2.2–V2.6 stage gates. V3 implementation requires successful research and explicit owner authorization; V4 numbering is not yet approved. The 500,000-star goal by November 2028 is an extreme aspirational growth target, **not** a guaranteed outcome or release gate.
 
 ## Baseline: what V2.0 actually established
+## Current delivery priorities — after V2.6 release
+
+| Priority | Workstream | Immediate outcome | Gate |
+| --- | --- | --- | --- |
+| **1** | **V2.7 full acceptance** | Reproduce all seven-skill workflows, cross-host installation/invocation, approval/budget/recovery/QA failures and real-media limitations | Evidence separated by source and modality; no false independent claims |
+| **2** | **Studio S0 and E1** | Review Studio architecture and pin V2.6 read-only schema fixtures for its S2 consumer | Studio owner approval and contract negative tests before integration claim |
+| **3** | **V3.0 research on develop** | Feasibility for provider-neutral jobs, Persistent Director, provenance and mode-aware state | Explicit implementation GO after research; no paid execution |
+| **4** | **V3.1–V3.4** | Live-action pre-production, on-set, post-production and independent full-workflow acceptance | Separate human/rights/safety and real-world evidence |
+| **5** | **V4 research** | Hybrid AI/live-action and cross-product intelligence | Evidence of creator demand and practical low-cost feasibility |
+
+**Delivery rule:** Director and Studio have independent release trains. A Studio read-only viewer may progress with explicitly accepted unrelated V2.7 gaps, but no Studio compatibility claim without E1. Focus on a complete usable vertical slice, not speculative provider count or calendar dates.
+
+## V2.7 — Comprehensive end-to-end acceptance
+
+**Purpose:** validate existing V2.0–V2.6 capabilities, not add unrelated product features. The intended creator journey runs from idea, screenplay, Visual Bible, shot planning, budget and human-approved production handoff to continuity QA, localized repair, checkpoint recovery and final delivery review. Preserve the seven skill entrypoints.
+
+| Test track | Scenarios | Acceptance evidence |
+| --- | --- | --- |
+| **T1 — Install and portability** | Clean packaged install, reference resolution, Codex/OpenCode and another compatible host when feasible | Exact revision, host/version, native vs file-based invocation and reproducible logs |
+| **T2 — Seven-skill orchestration** | Full planning handoffs, stage dependencies, Project Bible, timed sound/shot contracts | Actual complete transcript, stage outputs and separately approved checkpoints |
+| **T3 — Integrity and recovery** | Reject/revise approvals, conflicting anchors, locked assets, stale changes, checkpoint restore, scoped rollback | Before/after project state, negative tests and untouched original verification |
+| **T4 — Budget and permissions** | Zero-cost first, uncertain costs, rejected jobs, unavailable provider, safe fallback | No unauthorized spend, uploads, provider execution or fabricated output |
+| **T5 — Continuity and repair** | Character/world anchors, impact analysis, smallest affected scope, byte and visual distinctions | Deterministic evidence separate from reviewer-inspected media |
+| **T6 — Real-media production and QA** | Rights-cleared image/video/audio/timing/transitions/export, when feasible | Inspected real files; explicitly BLOCKED/NOT_RUN if no safe affordable tool |
+| **T7 — Independent usability** | Target at least five unfamiliar creators, repeated scenario and host diversity | Independent runs, task completion, friction, failures and reproducible fixes |
+| **T8 — Regression/security** | Schema and packaging, permission boundaries, secrets, dependency/rights review, release candidate | Exact-SHA applicable checks and unresolved issues documented |
+
+**Evidence matrix:** report PASS / FAIL / GAP / BLOCKED / NOT_RUN / NOT_VERIFIED per track. Owner-operated or deterministic tests are not independent agent runs; a film plan is not a rendered film; byte integrity is not visual quality. V2.7 can only claim what its evidence establishes. Any release, provider operation, media publication or *The Last Light* Production GO requires separate approval; its existing HOLD remains unchanged.
+
+## V3.0–V3.4 — Shared production engine and live-action filmmaking
+
+**Existing approved roadmap direction, feasibility-gated; not implementation GO.** Keep the same Director plus six specialists and evolve contracts rather than create a duplicate live-action skill tree. Human crews retain responsibility for on-set safety, permits, consent and final creative decisions.
+
+| Version | Core outcome | Implementation priorities | Independent acceptance |
+| --- | --- | --- | --- |
+| **V3.0** | Provider-neutral production engine + Persistent Director | Typed jobs, local/manual/mock adapters, artifact provenance, retry/checkpoint, approval and budget control, mode-aware Project Bible; optional Studio contract handoff | Permission/security/recovery and cost-boundary tests before any real provider |
+| **V3.1** | Live-action pre-production | Shooting script, casting/location requirements, shot lists, equipment, scheduling and call sheets | Human-reviewed real pre-production case |
+| **V3.2** | Live-action on-set assistance | Offline take logs, coverage, camera/continuity notes, daily records and crew-confirmed corrections | Realistic offline tests, safe human confirmation and on-set constraints |
+| **V3.3** | Live-action post-production assistance | Footage/asset organization, editing and sound guidance, captions, export and QA | Rights-cleared footage tests, no unverified automated analysis |
+| **V3.4** | Full live-action workflow validation | Idea-to-delivery case study and regression of AI mode | Independent real production evidence, safety/rights/media quality review |
+
+**V4 (future research):** advanced cross-modal continuity, production-aware localized repair, AI/live-action hybrid assets, Studio mode-aware experiences and community extensions. These are hypotheses, not approved features or a guaranteed V4 release.
+
+## Cross-product integration — E1 to E6
+
+The [Studio roadmap](https://github.com/universal-ai-film/universal-ai-film-studio/blob/main/docs/ROADMAP.md) owns its own S0–S6 and post-MVP delivery. The [organization profile](https://github.com/universal-ai-film) explains the shared public vision. This roadmap remains Director's authoritative release plan; no third mandatory product or duplicated skill runtime.
+
+| Gate | Director responsibility | Studio counterpart | Evidence |
+| --- | --- | --- | --- |
+| **E1 — Read-only contracts** | Publish immutable versioned Project Bible, snapshots, handoffs and positive/negative fixtures | S2 validates and renders pinned V2.6 contracts | Unsupported versions rejected; approvals and locks preserved |
+| **E2 — Portable film package** | Research identity, revisions, checkpoints, asset manifests, provenance and optional media references | S3 import/export, backup and recovery | Defined supported-field round trip, corruption/migration tests; no secret bundling |
+| **E3 — Human-approved revisions** | Scoped diff/revision proposals, lock and stale-state validation, safe rollback | S5 review/accept/reject UX | Real round trip, rejection and recovery tests; no inferred permission |
+| **E4 — Controlled production** | Provider-neutral job and permission contracts, manual/local/mock first | Post-S6 production queue and budget UX | Explicit authorization, zero unauthorized execution/spend |
+| **E5 — Assembly and QA** | Evidence-aware sound/video/export QA and repair impact | Post-S6 timeline and local rendering | Rights-cleared playable files, independent quality inspection |
+| **E6 — Hybrid workflows** | Mode-aware AI/live-action contracts and safety/consent rules | Future mode-aware creator workspace | Separate independent workflow validation before hybrid claims |
+
+**Compatibility policy:** Director owns canonical versioned schemas; Studio pins released immutable revisions and maintains consumer fixtures. Never silently drop unknown fields from a purported lossless export. Breaking contract changes require coordinated reviewed PRs, not assumed automatic upgrades. Studio S0 may proceed in parallel with V2.7; S1/S2 may be authorized with unrelated gaps explicitly documented.
+
+## Delivery, adoption and governance
+
+**North star:** independent creators repeatedly complete and improve films. Track first-plan completion, cross-host usability, successful project recovery, real finished films, repeat creators and external contributions. Downloads and stars do not equal unique users. The historical 500,000-star ambition by November 2028 remains an extreme aspirational target, never a release gate or forecast.
+
+**Budget and solo scope:** no mandatory provider, account or backend; local/manual workflows first. Favor one testable slice and coherent PR over broad unvalidated feature sets. Optional Studio production, timeline and hybrid capabilities depend on demonstrated demand and separate implementation decisions.
+
+**Branch/release control:** V2.x work on `main`, V3 research on `develop` following existing [governance](DEVELOPMENT.md); short-lived branches and owner-reviewed PRs. Preserve released history and all seven skills. No automatic merge, tag, release, spend, provider job or media publication from this roadmap. Update this canonical file and existing relevant docs rather than creating duplicate status documents.
+
+## Historical implementation and decision record (preserved)
+
+The following earlier phase notes and acceptance decisions are retained for traceability. Historical “pending” or “not authorized” language describes its original point in time and must not override the current released-version status in the table above.
+
+## Baseline: what V2.0 actually established
 
 - **Implemented:** seven portable Agent Skills, Director/specialist planning contracts, Project Bible, stage approvals, deterministic pipeline and recovery utilities.
 - **Evidenced within limits:** specialist planning tests, targeted regressions, eight model-reviewed textual creative comparisons (V2 mean 4.83/5 versus historical V1 4.50/5; not proof of rendered film quality), public Skills CLI installation in CI, and a human-guided five-shot *The Last Light* V9 screening candidate.
@@ -218,40 +289,6 @@ The [existing V2 release checklist](archive/releases/v2.0.0-checklist.md#v220-re
 
 **Release exit (owner-approved limited scope):** reproducible maintained templates/examples, documented contributor and onboarding paths, tested portable contracts, and passing candidate-level technical/security gates. Clearly disclose deferred external acceptance and compatibility limitations in release notes; critical technical failures block release. Studio milestones and releases remain separate.
 
-## V2.7 — Complete end-to-end workflow validation (proposed)
-
-**User outcome:** independently demonstrate a complete, reproducible creator-controlled workflow from idea and Project Bible through screenplay, visual direction, shot planning, budget choice, authorized production handoff, continuity QA, scoped repair, and final review/delivery.
-
-- Integrate the existing Director and six specialist skills; retain all seven entrypoints, their approval contracts and portable project state.
-- Test the V2.5 Intelligent Budget Director with a strict zero-cost scenario first, documented cost estimates/uncertainty, feasible alternatives and explicit permission boundaries. If the quality target cannot be met at the ceiling, report BLOCKED rather than fabricate a success or silently spend.
-- Run positive, negative and recovery scenarios: rejected approvals, conflicting memory anchors, unchanged locked assets, failed generation, revision lineage, scoped repair and rollback.
-- Capture independent complete transcripts and actual invocation evidence across supported agent hosts; distinguish native skill use, manual instruction loading and mocked execution.
-- Repeat unfamiliar-user onboarding and real-world agent-host trials across multiple participants, hosts and scenarios where available; record success rates, failures, feedback and reproducible remediation. This is V2.7 acceptance, not evidence retroactively claimed for V2.6.
-- Assess real-media continuity, motion, sound, transitions and export independently where rights-cleared assets and suitable tools exist. A text plan, synthetic fixture or manual cutout pilot cannot prove professional-quality film output.
-- Record exact source versions, input/output artifacts, reviewer observations, per-criterion PASS/FAIL/BLOCKED/NOT_RUN and outstanding limitations in existing evidence locations, without creating duplicate administrative reports.
-- **Exit:** software workflow acceptance and media-quality acceptance reported separately; unresolved critical failures block corresponding readiness claims. V3 feasibility research may continue on `develop`, but V3 implementation GO and any V2.7 tag/release require separate owner authorization.
-
-**Version policy:** V2.4–V2.6 retain their own feature-specific tests, installation, security, permission and release gates. V2.7 consolidates full integrated acceptance; it does not retroactively convert deferred evidence into PASS or automatically authorize earlier releases. *The Last Light* Production GO remains HOLD.
-
-## Proposed V3 live-action expansion — staged and feasibility-gated
-
-**Owner-approved roadmap direction (2026-11-15), not implementation or release GO.** Extend the existing seven-skill system to support two modes: AI Filmmaking and full Live-Action Filmmaking assistance, from pre-production through shooting, post-production and delivery. Share the Director, six specialists, Project Bible, approvals and creative planning; keep production-specific workflows separate. Human crews remain responsible for on-set safety, permissions, consent and final creative decisions.
-
-| Proposed milestone | Scope | Evidence and limits |
-| --- | --- | --- |
-| **V3.0** | Shared production engine, Persistent Director and mode-aware contracts | Local/manual/mock first; provider-neutral jobs, artifact provenance, explicit cost/permission controls |
-| **V3.1** | Live-action pre-production | Shooting scripts, casting/location requirements, shot lists, equipment, scheduling and call sheets; test with a real production scenario |
-| **V3.2** | On-set production assistance | Take logs, camera setups, coverage, continuity and daily progress; human-confirmed records and offline operation |
-| **V3.3** | Live-action post-production assistance | Footage organization, editing/sound guidance, captions, export and QA; no automated footage-analysis claims without validated tools |
-| **V3.4** | Complete live-action workflow validation | Independently evaluate idea-to-delivery assistance, permissions, safety, continuity and media quality |
-| **V4 (future candidate)** | Cross-product AI/live-action integration with the separate Visual Film Studio | Mode-aware creator UX; hybrid productions remain a separately scoped possible future extension |
-
-**V2.5–V2.7 compatibility:** design budget, artifact, approval and QA contracts to be extensible to both modes without delaying existing AI-filmmaking work. Preserve all seven skills and current release gates. Each V3.x milestone needs its own design, tests, reviewed PR and explicit release authorization; no provider spending, media generation or film publication is approved by this proposal.
-
-## V3 — feasibility-gated research and planned implementation
-
-The existing Director and six specialists remain the creative decision layer. **V3.0 proposes implementation** of a shared provider-neutral production engine and Persistent Director, after feasibility and security gates. V3.1–V3.4 propose separately gated live-action workflows. Begin with typed jobs, artifact provenance, recoverability and local/mock execution; add lawful provider adapters only after explicit approval. No automatic provider choice, Google Flow API assumption, account connection, spending or autonomous generation is authorized by this roadmap. Research on `develop` precedes any implementation GO.
-
 ## Existing V2.1 milestone traceability
 
 The previous V2.1 candidate scope is **redistributed, not deleted**:
@@ -275,7 +312,7 @@ Historical phase mapping: architecture and planning tests → V2.0 baseline; fiv
 3. **No simulated evidence:** distinguish implementation, CI checks, independent host runs, human-reviewed footage, external-user trials and authorization. Record exact PR/commit and relevant logs for milestone closure.
 4. **Separate approvals:** PR merge, software release, creative decisions, provider access, paid execution and film publication are different gates. **Production GO remains HOLD**.
 5. **Release gate:** only create a tag or GitHub release after exact-SHA validation, applicable security/rights review and separate owner authorization. No permanent release branch required.
-6. **Next practical step (current):** start V2.6 Phase 1 read-only assessment for templates, community readiness and local-first Visual Film Studio foundations. V2.5 is released in limited software scope; separately collect deferred V2.3 unfamiliar-user and V2.4/V2.5 real-media evidence. V3.0–V3.4 remain proposals, not implementation GO.
+6. **Next practical step (current):** execute V2.7 comprehensive testing against released V2.6 and reconcile deferred V2.3–V2.6 independent-user, cross-host and real-media evidence; Studio S0 proceeds independently. V3.0–V3.4 remain proposals, not implementation GO.
 
 
 ## Two-year product roadmap — November 2026 to November 2028
@@ -319,6 +356,7 @@ The **Release direction** table above is the single authoritative version/date/f
 - The 500,000-star ambition is **not** a basis for claiming guaranteed adoption, cutting safety checks or promising an autonomous film-generation capability that does not exist.
 
 ### V2.4 Phase 4C — manual/local repair handoff (implementation PR)
+### V2.4 Phase 4C — manual/local repair handoff (implementation PR)
 
 **Status: PROPOSED / NOT_MERGED.** The QA runtime can prepare a provider-neutral, copy-only repair contract for an explicitly authorized proposed shot revision. It names immutable assets, output, rollback and acceptance checks; a separate helper records reviewer-reported outcomes. No provider jobs, media editing, actual checksum verification, image inspection, automatic acceptance or production permission are implemented. Independent repaired-media validation remains an explicit gate. The Last Light Production GO stays HOLD.
 
@@ -326,23 +364,3 @@ The **Release direction** table above is the single authoritative version/date/f
 
 **Status: PROPOSED / NOT_MERGED.** Installed QA can hash supplied real original and candidate bytes, verify expected SHA-256 values and detect unchanged content for an exact scoped repair handoff. This is **byte-level integrity only**: no filesystem-origin authentication, visual/audio interpretation, edit-boundary inspection, full-film validation, repair execution or automatic acceptance. Human media inspection and separate user acceptance remain required; The Last Light Production GO remains HOLD.
 
-## Ecosystem coordination — Director responsibilities (proposed, 2026-11-15)
-
-**Shared vision:** two independently usable products: this seven-skill Director for creative reasoning, project contracts, planning, approval-safe revisions and QA; [Visual Film Studio](https://github.com/universal-ai-film/universal-ai-film-studio) for the optional local-first Angular workspace. A provider-neutral execution layer is a future optional integration, not a third mandatory product. Budget assumption: solo developer with AI assistance; free/manual/local paths first. No mandatory accounts or provider spend.
-
-**Release boundaries remain authoritative above:** V2.6 is released; **V2.7 prioritizes comprehensive independent validation**, not an unrelated feature expansion. V3.0 retains the shared production engine, Persistent Director and mode-aware contracts; V3.1–V3.4 retain the already proposed live-action pre-production, on-set, post-production and acceptance sequence. V4 remains feasibility-gated cross-product/hybrid research. Do not rename or silently re-scope these releases.
-
-| Ecosystem gate | Director ownership | Studio counterpart | Evidence to close |
-| --- | --- | --- | --- |
-| E1 — Read-only contract compatibility | Publish versioned, UI-independent Project Bible/snapshot/handoff schemas and fixtures; preserve approval/lock semantics | S2 imports and validates pinned schemas | Positive/negative cross-repo fixtures, unsupported-version rejection, no inferred approval |
-| E2 — Portable project package (research) | Specify project identity, revision lineage, checkpoint, asset manifest, provenance and optional media references; no credentials | S3 import/export, backup and recovery | Lossless supported-field round trip, corruption/migration tests, documented unsupported fields |
-| E3 — Human-approved creative handoff | Propose scoped changes, preserve locked originals, validate revision and explicit approval evidence | S5 review/accept/reject interface | Rejection, stale-version and recovery tests; no silent approval |
-| E4 — Controlled production (future) | Typed provider-neutral jobs, budget and permission gates, provenance, local/manual/mock adapters first | Post-S6 production workspace | Zero unauthorized jobs/spend, deterministic retries and explicit user authorization |
-| E5 — Assembly and QA (future) | Evidence-aware media/export QA and repair impact assessment | Post-S6 timeline and local rendering | Actual rights-cleared audio/video inspection separate from synthetic test results |
-| E6 — AI/live-action interoperability (research) | Mode-aware shared contracts and human safety/consent boundaries | Future mode-aware workspace | Independent AI and live-action workflows validated before hybrid claims |
-
-**V2.7 acceptance tracks:** (1) isolated install/packaging/schema/security regressions, (2) complete seven-skill idea-to-QA workflow with approvals, budget, recovery and negative paths, (3) independent host invocation and unfamiliar-user testing (target at least five where feasible), and (4) actual rights-cleared media quality/repair/export review. Report PASS, FAIL, GAP, BLOCKED or NOT_RUN separately. Synthetic/owner-operated evidence must not be labeled independent. *The Last Light* Production GO remains HOLD unless separately authorized.
-
-**Delivery coordination:** Studio S0 architecture review can proceed alongside V2.7; S1/S2 may proceed with explicitly accepted unrelated V2.7 gaps, but pin immutable released V2.6 contracts and test E1 before claiming integration. Studio S3–S6 and Director V3 are independent release trains. No need to create a third repository or duplicate the authoritative schema. Each repository owns one canonical roadmap; the organization profile should carry only a short public vision and links. Preserve all seven skills, case-study evidence and release history. Any implementation, PR merge, tag, account connection, provider execution, spend or publication requires its own approval.
-
-**Adoption measures:** independent install-to-first-plan completion, real finished projects, repeat creators, recoverability, external contributors and accessibility; downloads/stars are not unique users. Growth goals are aspirational, not release gates.
