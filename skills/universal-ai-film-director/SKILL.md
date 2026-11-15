@@ -67,3 +67,7 @@ For environments with filesystem access and Node.js, optional repository helpers
 ## Planning-only production pipeline
 
 If a compatible Node.js project checkout exists, use the optional `scripts/production-pipeline.js` to check stage progression, exact timed storyboard coverage and gate prerequisites. It does not run providers or approve decisions. If the project has no executable script support, apply the same checks manually before proposing the next step. Do not treat a valid timeline as rendered media or an automatic production authorization. Read [production stage and cut-timeline guidance](references/project-state.md) when resuming or moving between stages.
+
+## Optional installed Node.js runtime
+
+This skill includes `scripts/runtime.js` **inside its installed skill directory**, generated from the repository's canonical JavaScript helpers. If the agent has filesystem access and Node.js execution permission, it may load the file relative to this SKILL.md using `require('./scripts/runtime.js')` from that directory and invoke only relevant exported validators or read-only planning helpers. Do not assume a full repository checkout, another specialist's installation, or automatic execution. If execution is unavailable, follow the portable Markdown workflow and report executable validation as NOT_RUN. These helpers do not inspect pixels, authenticate user approvals, generate media, authorize spending, unlock shots or publish films. Preserve explicit user approval and evidence boundaries.
