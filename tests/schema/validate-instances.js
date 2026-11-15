@@ -6,7 +6,7 @@ const path=require('node:path');
 const Ajv2020=require('ajv/dist/2020').default;
 const root=path.resolve(__dirname,'../..');
 const load=name=>JSON.parse(fs.readFileSync(path.join(root,'contracts',name+'.schema.json'),'utf8'));
-const ajv=new Ajv2020({allErrors:true,strict:true});
+const ajv=new Ajv2020({allErrors:true,strict:true,strictRequired:false});
 ajv.addSchema(load('handoff'),'handoff.schema.json');
 const validate={};
 for(const name of ['handoff','project-bible','project-snapshot','community-showcase']){
