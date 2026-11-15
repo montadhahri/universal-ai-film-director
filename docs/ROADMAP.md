@@ -108,6 +108,10 @@ The [existing V2 release checklist](releases/v2.0.0-checklist.md#v220-release-pr
 
 ## V2.4 — Character and World Memory, continuity and Smart Film Repair
 
+### V2.4 Phase 3A — deterministic memory consistency checks (implementation PR, pending review)
+
+**Status: PROPOSED / NOT_MERGED.** Adds a read-only `inspectMemoryConsistency(project)` helper and Node regressions for typed character/world anchor identity, conflicting kinds, divergent approved revisions, explicit stale/missing `anchor:ID@revision` references and missing reciprocal shot links. Legacy unversioned continuity references remain supported and are not silently reinterpreted. Reports are advisory, never auto-repair, and cannot authenticate approval, inspect image content or verify asset files. No additional specialist or memory store. Existing SH01–SH05 visual continuity comparison is **NOT_RUN** and requires a separate evidence-backed step; no new media generation. The Last Light Production GO remains HOLD.
+
 ### V2.4 Phase 2 — optional Character & World Memory contract (implementation PR, pending review)
 
 **Status: PROPOSED / NOT_MERGED.** Introduces an optional `memory_anchors` array to the existing Project Bible v2.0 schema, runtime shape validation, checkpoint round-trip and negative tests. Anchor records have stable IDs, positive revisions, kind, status, description, explicit provenance, shot references and optional reference-asset identifiers. `APPROVED` requires recorded USER evidence; references are not visual inspection or proof of file existence. Existing projects without memory records remain valid; no extra skill or authoritative store is created. CI and independent visual validation are pending; no media generation or repair execution. The Last Light Production GO stays HOLD.
