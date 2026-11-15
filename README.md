@@ -17,7 +17,7 @@ An open-source AI filmmaking crew: one Director, six specialist skills, and **yo
 </div>
 
 
-> **V2.5.0 released (owner-confirmed, limited software scope):** The Intelligent Budget Director, read-only budget reconciliation, provider-neutral manual/local/mock job records, deterministic retry and recovery, and evidence-aware export QA are implemented. The Last Light five-shot fixture is a simulation, not generated film. Independent agent-host acceptance and actual media quality remain unverified; provider execution and publication remain subject to separate authorization. See [V2.5.0 release history and evidence](docs/releases/v2.5.0-candidate.md).
+> **V2.5.0 released (owner-confirmed, limited software scope):** The Intelligent Budget Director, read-only budget reconciliation, provider-neutral manual/local/mock job records, deterministic retry and recovery, and evidence-aware export QA are implemented. The Last Light five-shot fixture is a simulation, not generated film. Independent agent-host acceptance and actual media quality remain unverified; provider execution and publication remain subject to separate authorization. See [V2.5.0 release history and evidence](docs/archive/releases/v2.5.0-candidate.md).
 
 ## ✨ What can you create?
 
