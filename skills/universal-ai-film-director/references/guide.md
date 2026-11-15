@@ -12,3 +12,7 @@ A **Project Bible** should contain project ID, current stage, revision, user-app
 - When resuming, validate phase, shot IDs and approvals, enumerate locked work, and continue the next safe task.
 - A 30-second timeline needs the last shot's end to equal 30 and no undeclared overlaps or gaps.
 - A finished film is verified only after playback/inspection of the real export; planned shots are not film evidence.
+
+## Installed machine-readable contracts
+
+The Director skill package includes `assets/project-bible.schema.json`, `assets/handoff.schema.json`, and `assets/project-snapshot.schema.json` as local, versioned JSON Schema references. The Project Bible schema's relative `handoff.schema.json` reference resolves within this same assets folder. These files are synchronized from the canonical repository `contracts/` sources by the packaging parity test; do not edit copies independently. When a host can read installed skill files, prefer these local paths rather than assuming the repository root is accessible. JSON Schema validation requires a compatible validator; merely reading a schema or using optional runtime helpers does not prove full schema validation. The community showcase contract is for external submissions and is not needed for normal Director operation.
