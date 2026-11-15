@@ -4,7 +4,7 @@
 const assert=require('node:assert/strict');
 const path=require('node:path');
 const dir=process.argv[2];if(!dir)throw Error('Installed QA skill path required');
-const {planSmartRepair,assessVisualContinuity}=require(path.resolve(dir,'scripts/continuity-runtime.js'));
+const {planSmartRepair,assessVisualContinuity}=require(path.resolve(dir,'scripts/runtime.js'));
 const p={schema_version:'2.0',project_id:'installed-qa-smoke',revision:1,phase:'discovery',
  gates:{script:{approved:false},visual_bible:{approved:false},storyboard:{approved:false}},
  decisions:[],continuity:[],shots:[],proposals:[],authorization:{production_go:false,provider_job_allowed:false,publication_allowed:false},
