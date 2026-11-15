@@ -28,3 +28,13 @@ test('all installed skill instructions and references prefer installed runtime.j
   assert.ok(fs.existsSync(path.join(dir,'scripts/runtime.js')),'Missing runtime payload: '+skill);
  }
 });
+
+test('QA exposes one installed runtime and no legacy parallel bundle',()=>{
+ const qa=path.join(skills,'film-continuity-qa','scripts');
+ assert.deepEqual(fs.readdirSync(qa).sort(),['runtime.js']);
+ assert.equal(fs.existsSync(path.join(root,'scripts/build-qa-runtime.js')),false);
+ const runtime=require(path.join(qa,'runtime.js'));
+ for(const name of ['planSmartRepair','assessVisualContinuity','prepareScopedRepair','reviewRepairEvidence','prepareRepairHandoff','inspectRepairHandoffEvidence','verifyRepairBytes']){
+  assert.equal(typeof runtime[name],'function','Missing installed QA helper: '+name);
+ }
+});
