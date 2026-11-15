@@ -6,8 +6,8 @@
 
 An open-source AI filmmaking crew: one Director, six specialist skills, and **you in creative control**.
 
-[![Stable release](https://img.shields.io/badge/stable-v2.3.0-blue)](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.3.0)
-[![Next milestone](https://img.shields.io/badge/next-v2.4.0-orange)](docs/ROADMAP.md)
+[![Stable release](https://img.shields.io/badge/stable-v2.4.0-blue)](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.3.0)
+[![Next milestone](https://img.shields.io/badge/next-v2.5.0-orange)](docs/ROADMAP.md)
 [![Validate skills](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml/badge.svg)](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml)
 [![Install smoke](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/skills-install-smoke.yml/badge.svg)](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/skills-install-smoke.yml)
 [![MIT](https://img.shields.io/badge/code%20license-MIT-green)](LICENSE)
@@ -175,8 +175,9 @@ CI validates repository structure and skills, while a [pinned public-GitHub inst
 | [v2.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0) | Released | Director and six specialist skills |
 | [v2.1.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.1.0) | Released 2026-11-07 | Public Skills CLI installation, targeted Codex/OpenCode skill-use evidence, and beginner guidance; independent-user and delegation limits disclosed |
 | [v2.2.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.2.0) | Previous stable; released 2026-11-14 | Checkpoint recovery, approval-safe scoped revisions and focused text QA; independent Phase 6 and local EPERM limitations disclosed |
-| [v2.3.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.3.0) | **Latest stable; released 2026-11-14** | Beginner onboarding and Director first-turn improvements, deterministic planning regressions; >=5 unfamiliar-user tests NOT_RUN under limited-release exception |
-| **v2.4.0** | **Next — planned** | Character and World Memory plus Smart Film Repair; scope and evidence gates in roadmap |
+| [v2.3.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.3.0) | Released 2026-11-14 (limited) | Beginner onboarding and Director first-turn improvements, deterministic planning regressions; >=5 unfamiliar-user tests NOT_RUN under limited-release exception |
+| [v2.4.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.4.0) | **Latest stable; owner-confirmed released 2026-11-15 (limited)** | Character & World Memory, scoped Smart Film Repair planning, byte-integrity checks and portable runtimes; real-media quality and independent end-to-end acceptance NOT_VERIFIED |
+| **v2.5.0** | **Next — planned** | Intelligent Budget Director and provider-neutral production foundations; see roadmap |
 | **V3** | Research only on `develop` | Experimental connected-agent production ideas; not part of the V2.x release |
 
 The [canonical roadmap](docs/ROADMAP.md) defines proposed milestones and acceptance gates; it does not authorize release or provider spending. **Production GO remains HOLD.** Published releases remain identifiable by their tags; `main` is the V2.x integration branch, not a guarantee that every commit is a tagged release. See [CHANGELOG](CHANGELOG.md).
