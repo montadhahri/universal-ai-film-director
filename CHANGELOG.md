@@ -6,17 +6,20 @@ tags, not by duplicated skill source folders.
 
 ## [Unreleased]
 
-### V2.6 — Studio integration (proposed)
-- Introduce a versioned, read-only portable project snapshot projection and JSON Schema, preserving source Project Bible authority and operational HOLD. Angular consumption, full asset manifests and write-back remain unimplemented.
+### V2.6 release candidate — templates, portable contracts and community readiness
 
-### V2.6 — reusable templates (proposed)
-- Add a synthetic, zero-cost first-film starter that reuses existing Project Bible, storyboard, shot-plan, audio, shot-packet and checkpoint templates, with deterministic timing and approval-safety tests. This is a planning example, not independent user or real-media acceptance.
+#### Added
+- Maintained 15-second first-film and 30-second documentary planning starters with deterministic timeline, handoff and approval-boundary checks.
+- Versioned read-only Project Bible snapshot projection and schema for optional external consumers; no Studio application integration or write-back is shipped.
+- Canonical Project Bible, handoff, snapshot and community-showcase JSON Schemas, including generated copies of the three operational contracts inside the installed Director skill.
+- Community showcase metadata/provenance and rights-validation contracts, without a hosted gallery.
+- Isolated seven-skill payload and standalone snapshot-consumer regression tests, plus CI-only Draft 2020-12 positive/negative schema-instance validation.
 
-
-
-### Documentation (unreleased)
-- Align the canonical release table and public README with the owner-approved **proposed** V3.0–V3.4 dual-mode/live-action roadmap and future V4 candidate. These are planning milestones, not shipped capabilities.
-- Correct the V2.4 release badge target and stale V2.4 next-step wording; preserve all deferred acceptance gates.
+#### Verification and limitations
+- At review commit `90258aa`, Validate skill, Secret scan, CodeQL and Private pre-production validation were green. The last observed Skills CLI installation smoke success was on earlier commit `01e5696`; **candidate-level installation smoke remains NOT_VERIFIED** until run on the final release candidate.
+- The portable installation test checks file parity, not live native skill invocation. Independent unfamiliar-user onboarding is **NOT_RUN**; actual Studio consumer integration, universal host compatibility and real-media quality are **NOT_VERIFIED**. Repeated external-user and multi-host workflow validation is V2.7 scope.
+- This is software/planning functionality only. No media generation, provider spending, autonomous production approval or publishing permission is implied.
+- **Release status: HOLD pending final candidate verification and explicit owner approval.** No v2.6.0 tag or release is created by this changelog update.
 
 ## [2.5.0] — 2026-11-15 (owner-confirmed limited release)
 
