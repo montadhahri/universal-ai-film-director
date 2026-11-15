@@ -202,7 +202,7 @@ The [existing V2 release checklist](archive/releases/v2.0.0-checklist.md#v220-re
 
 ## V2.6 — Templates, community readiness and Studio integration contracts
 
-**Status: NEXT MILESTONE — PLANNED, NOT STARTED.** Visual Film Studio is a separate application and repository in the same GitHub organization. This release remains skills-focused. Preserve all seven skills and existing approval, budget and recovery contracts.
+**Status: IMPLEMENTED IN PART — ACCEPTANCE PENDING (2026-11-15).** Visual Film Studio is a separate application and repository in the same GitHub organization. This release remains skills-focused. Preserve all seven skills and existing approval, budget and recovery contracts.
 
 **User outcome:** outside users can understand, adopt, extend and troubleshoot the skills library; external tools can consume its validated project state without coupling the library to a UI.
 
@@ -212,7 +212,9 @@ The [existing V2 release checklist](archive/releases/v2.0.0-checklist.md#v220-re
 - Verify contribution guidance, skill validation and reproducible acceptance entry points; preserve modular architecture.
 - Incorporate independent-user feedback and measure successful onboarding rather than GitHub popularity alone.
 - **Out of scope:** static HTML viewer, Angular application, Studio interface, live-action workflow implementation, provider spending and unauthorized media generation.
-- **Exit:** reproducible templates and community examples, documented independent onboarding and contributor path, and tested integration contracts. No unsupported compatibility or autonomous-production claims. Studio application milestones and releases are managed separately.
+- **Acceptance evidence (2026-11-15, current `main`):** The 15-second first-film and 30-second documentary starter examples have deterministic timeline, template-link and approval-boundary tests (`tests/node/v26-starter-example.test.js`, `tests/node/v26-documentary-starter.test.js`). The read-only, versioned Project Bible snapshot projection and its privacy/authorization invariants have focused tests (`tests/node/v26-project-snapshot.test.js`); its Studio consumer integration is **NOT_VERIFIED**. The community showcase schema and provenance/rights metadata invariants have tests (`tests/node/v26-community-showcase.test.js`), but no gallery UI or independently reviewed submission is claimed. The Director's three installed schemas are checked against canonical root contracts (`tests/node/v26-installed-contracts.test.js`, `scripts/build-skill-contracts.js --check`). PR #259's Validate skill, Secret scan and CodeQL checks passed; the owner reports the separate main-to-develop synchronization permissions issue subsequently resolved, but no independent post-change verification is recorded here. These are **deterministic/CI** checks, not independent unfamiliar-user trials, full schema-instance validation across external consumers, or real-agent execution. Compatibility matrix and measured independent onboarding remain **NOT_VERIFIED / NOT_RUN**. No media production, Studio UI or release is authorized.
+
+**Exit (OPEN):** reproducible templates and community examples, documented independent onboarding and contributor path, and tested integration contracts. No unsupported compatibility or autonomous-production claims. Studio application milestones and releases are managed separately.
 
 ## V2.7 — Complete end-to-end workflow validation (proposed)
 
