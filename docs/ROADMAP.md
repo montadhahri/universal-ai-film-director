@@ -17,7 +17,7 @@ The table below records released versions, the planned V2 delivery sequence and 
 | [V2.3.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.3.0) | Nov 2026 (original target 2027 Q1) | Beginner onboarding and workflow usability improvements | RELEASED — 2026-11-14 (limited) | Deterministic checks passed; >=5 unfamiliar-user trials and friction metrics **NOT_RUN / deferred** by explicit release exception |
 | [V2.4.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.4.0) | 2027 Q1–Q2 (delivered early 2026-11-15) | **Character and World Memory** + **Smart Film Repair** | RELEASED — 2026-11-15 (limited; owner-confirmed) | Deterministic software checks and scoped planning; real-media visual continuity, before/after repair quality and unchanged locked-media inspection **NOT_VERIFIED** |
 | **V2.5.0** | 2027 Q2–Q3 | **Intelligent Budget Director** + provider-neutral local/manual/mock job foundations and media QA | PLANNED | Cost uncertainty and ceilings, no-cost path, permission and export QA |
-| **V2.6.0** | 2027 Q3–Q4 | **Templates and Community Gallery** + first local-first **Visual Film Studio** viewer | PLANNED | Reproducible templates, rights checks, independent non-developer usability tests |
+| **V2.6.0** | 2027 Q3–Q4 | **Templates and Community Gallery** + local-first **Visual Film Studio foundations** with mode-extensible architecture | PLANNED | Reproducible templates, rights checks, independent non-developer usability tests, and mode-neutral project/asset/approval/workflow interfaces; live-action implementation deferred |
 | **V2.7.0** | 2027 Q4–2028 Q1 (proposed) | **Complete End-to-End Workflow Validation** across the existing seven skills, budget-controlled production, continuity, repair and final QA | PROPOSED | Independent reproducible full-workflow runs, approval/cost safety, cross-host evidence, and separately evaluated real-media quality; missing evidence remains BLOCKED/NOT_RUN |
 | **V3.0 (proposed)** | After V2.7; date TBD | Shared provider-neutral production engine, Persistent Director and mode-aware contracts | PROPOSED — FEASIBILITY-GATED | Local/mock execution, provenance, recovery, permissions and security review |
 | **V3.1 (proposed)** | TBD | **Live-action pre-production**: scripts, casting/location requirements, shot lists and schedules | PROPOSED — FEASIBILITY-GATED | Validate with a real pre-production scenario and human review |
@@ -202,6 +202,7 @@ The [existing V2 release checklist](releases/v2.0.0-checklist.md#v220-release-pr
 
 **User outcome:** outside users can understand, adopt, extend and troubleshoot the library.
 
+- Establish the initial accessible, local-first Visual Film Studio viewer with a **mode-extensible architecture**: shared project, asset, approval and workflow interfaces must not assume AI-generated media only; allow separately scoped production-mode extensions for future live-action assistance. **V2.6 does not implement live-action workflows.**
 - Publish concise maintained examples and a tested compatibility matrix, with limitations prominently stated.
 - Verify contribution guidance, skill validation and reproducible acceptance entry points; preserve modular architecture.
 - Incorporate independent-user feedback; measure successful onboarding rather than GitHub popularity alone.
