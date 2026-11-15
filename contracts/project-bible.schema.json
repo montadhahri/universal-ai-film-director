@@ -450,6 +450,13 @@
           }
         }
       }
+    },
+    "memory_anchors": {
+      "type": "array",
+      "description": "Optional V2.4 planning-only character/world memory records; legacy v2.0 projects remain valid.",
+      "items": {
+        "$ref": "#/$defs/memoryAnchor"
+      }
     }
   },
   "$defs": {
@@ -602,6 +609,111 @@
           "minimum": 1
         }
       }
+    },
+    "memoryAnchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "revision",
+        "status",
+        "description",
+        "provenance",
+        "shot_refs"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "character",
+            "wardrobe",
+            "prop",
+            "location",
+            "look"
+          ]
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "status": {
+          "enum": [
+            "PROPOSED",
+            "APPROVED",
+            "UNKNOWN"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "reference"
+          ],
+          "properties": {
+            "kind": {
+              "enum": [
+                "USER_SUPPLIED",
+                "DOCUMENTED",
+                "AGENT_DRAFT",
+                "UNKNOWN"
+              ]
+            },
+            "reference": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "shot_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "reference_assets": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "approved_evidence": {
+          "$ref": "#/$defs/userEvidence"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "APPROVED"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "approved_evidence"
+            ]
+          }
+        }
+      ]
     }
   }
 }
