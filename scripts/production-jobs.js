@@ -42,4 +42,4 @@ function recordExternalArtifact(p,l,{job_id,artifact_ref}){
  if(!j||j.method==='MOCK'||j.status!=='PLANNED')fail('Manual/local planned job required');
  j.status='RECORDED_EXTERNAL';j.external_artifact={ref:artifact_ref,verified:false,origin:'USER_REPORTED'};return n;
 }
-module.exports={newJobLedger,planProductionJob,advanceMockJob,recordExternalArtifact};
+module.exports={newJobLedger,planProductionJob,advanceMockJob,recordExternalArtifact,validateJobLedger:check};
