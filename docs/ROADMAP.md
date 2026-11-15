@@ -191,6 +191,8 @@ The [existing V2 release checklist](releases/v2.0.0-checklist.md#v220-release-pr
 
 ## V2.5 — Intelligent Budget Director, production foundations and media QA
 
+**Status: RELEASED (limited software scope, owner-confirmed).** The budget planner, read-only reconciliation, manual/local/mock job records, deterministic mock lifecycle, evidence-aware media metadata QA, optional recovery bundles and five-shot acceptance fixture are implemented. Automated deterministic CI passed; independent agent-host runs, decoded-media inspection and human creative acceptance remain NOT_VERIFIED. This release does not grant Production GO, provider access, spending or film publication.
+
 **User outcome:** safely bridge planning to locally verifiable production steps, without making paid integrations mandatory.
 
 - Build or validate optional provider-neutral job/artifact/budget/approval contracts and no-cost mock execution; use local tools only where available and justified.
@@ -199,6 +201,8 @@ The [existing V2 release checklist](releases/v2.0.0-checklist.md#v220-release-pr
 - **Exit:** reproducible no-cost prototype and truthful media QA where legally accessible; provider adapter delivery is **not** a release prerequisite.
 
 ## V2.6 — Visual Film Studio, templates and community readiness
+
+**Status: NEXT MILESTONE — PLANNED, NOT STARTED.** Begin with read-only scope and architecture assessment before any implementation PR. Preserve all seven skills and existing approval, budget and recovery contracts.
 
 **User outcome:** outside users can understand, adopt, extend and troubleshoot the library.
 
@@ -264,7 +268,7 @@ Historical phase mapping: architecture and planning tests → V2.0 baseline; fiv
 3. **No simulated evidence:** distinguish implementation, CI checks, independent host runs, human-reviewed footage, external-user trials and authorization. Record exact PR/commit and relevant logs for milestone closure.
 4. **Separate approvals:** PR merge, software release, creative decisions, provider access, paid execution and film publication are different gates. **Production GO remains HOLD**.
 5. **Release gate:** only create a tag or GitHub release after exact-SHA validation, applicable security/rights review and separate owner authorization. No permanent release branch required.
-6. **Next practical step:** begin V2.5 Intelligent Budget Director with cost uncertainty, user-defined ceilings and no-cost local/manual/mock workflows, while separately collecting deferred V2.3 unfamiliar-user evidence and V2.4 real-media QA. V3.0–V3.4 remain proposals, not implementation GO.
+6. **Next practical step (current):** start V2.6 Phase 1 read-only assessment for templates, community readiness and local-first Visual Film Studio foundations. V2.5 is released in limited software scope; separately collect deferred V2.3 unfamiliar-user and V2.4/V2.5 real-media evidence. V3.0–V3.4 remain proposals, not implementation GO.
 
 
 ## Two-year product roadmap — November 2026 to November 2028

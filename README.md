@@ -17,7 +17,7 @@ An open-source AI filmmaking crew: one Director, six specialist skills, and **yo
 </div>
 
 
-> **V2.5.0 released (owner-confirmed, limited software scope):** The Intelligent Budget Director, read-only budget reconciliation, provider-neutral manual/local/mock job records, deterministic retry and recovery, and evidence-aware export QA are implemented. The Last Light five-shot fixture is a simulation, not generated film. Independent agent-host acceptance and actual media quality remain unverified; provider execution and publication remain subject to separate authorization. See [release candidate notes](docs/releases/v2.5.0-candidate.md).
+> **V2.5.0 released (owner-confirmed, limited software scope):** The Intelligent Budget Director, read-only budget reconciliation, provider-neutral manual/local/mock job records, deterministic retry and recovery, and evidence-aware export QA are implemented. The Last Light five-shot fixture is a simulation, not generated film. Independent agent-host acceptance and actual media quality remain unverified; provider execution and publication remain subject to separate authorization. See [V2.5.0 release history and evidence](docs/releases/v2.5.0-candidate.md).
 
 ## ✨ What can you create?
 
@@ -185,7 +185,7 @@ CI validates repository structure and skills, while a [pinned public-GitHub inst
 | **V3.0–V3.4 (proposed)** | Feasibility-gated research on `develop` | Shared production engine, then live-action pre-production (V3.1), on-set assistance (V3.2), post-production (V3.3) and independent full-workflow validation (V3.4) |
 | **V4 (future candidate)** | Not scheduled | Unified AI/live-action Visual Film Studio; hybrid production remains a separate research idea |
 
-**Two-mode direction (proposal, not current capability):** AI Filmmaking remains the existing workflow. Future Live-Action Filmmaking assistance would support real crews, actors, cameras and locations while sharing the Director, six specialist skills, Project Bible, approvals, budget and continuity contracts. Physical set safety, consent, permissions and final decisions remain human responsibilities. V2.5–V2.7 remain focused on their existing scope; V3.1–V3.4 require separate implementation and validation approvals.
+**Two-mode direction (proposal, not current capability):** AI Filmmaking remains the existing workflow. Future Live-Action Filmmaking assistance would support real crews, actors, cameras and locations while sharing the Director, six specialist skills, Project Bible, approvals, budget and continuity contracts. Physical set safety, consent, permissions and final decisions remain human responsibilities. V2.5 is released with documented limitations; V2.6–V2.7 remain focused on their existing scope; V3.1–V3.4 require separate implementation and validation approvals.
 
 The [canonical roadmap](docs/ROADMAP.md) defines proposed milestones and acceptance gates; it does not authorize release or provider spending. **Production GO remains HOLD.** Published releases remain identifiable by their tags; `main` is the V2.x integration branch, not a guarantee that every commit is a tagged release. See [CHANGELOG](CHANGELOG.md).
 
