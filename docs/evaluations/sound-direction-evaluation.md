@@ -1,6 +1,6 @@
 # SND-01–SND-06 — Sound Direction independent-agent evaluation
 
-Exact versioned prompts and **private reviewer criteria**: [sound-direction-cases.json](../tests/agent-acceptance/sound-direction-cases.json). Separate from the canonical 14-case V2-03 suite; no additional runner.
+Exact versioned prompts and **private reviewer criteria**: [sound-direction-cases.json](../../tests/agent-acceptance/sound-direction-cases.json). Separate from the canonical 14-case V2-03 suite; no additional runner.
 
 ## Coverage
 

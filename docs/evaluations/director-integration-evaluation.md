@@ -1,6 +1,6 @@
 # INT-01–INT-06 — Director–Specialist integration acceptance
 
-Versioned exact prompts and **private evaluator criteria**: [director-integration-cases.json](../tests/agent-acceptance/director-integration-cases.json). Integration tests are additive; the canonical V2-03 suite and specialist packs are unchanged.
+Versioned exact prompts and **private evaluator criteria**: [director-integration-cases.json](../../tests/agent-acceptance/director-integration-cases.json). Integration tests are additive; the canonical V2-03 suite and specialist packs are unchanged.
 
 ## Coverage
 

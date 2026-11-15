@@ -1,6 +1,6 @@
 # CIN-01–CIN-06 — Cinematography independent-agent evaluation
 
-Exact versioned prompts and **private reviewer criteria**: [cinematography-cases.json](../tests/agent-acceptance/cinematography-cases.json). These extend the existing acceptance conventions without altering the canonical 14-case V2-03 suite or introducing another runner.
+Exact versioned prompts and **private reviewer criteria**: [cinematography-cases.json](../../tests/agent-acceptance/cinematography-cases.json). These extend the existing acceptance conventions without altering the canonical 14-case V2-03 suite or introducing another runner.
 
 ## Coverage
 
