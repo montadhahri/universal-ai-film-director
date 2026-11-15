@@ -6,7 +6,20 @@ tags, not by duplicated skill source folders.
 
 ## [Unreleased]
 
-No changes recorded after the v2.3.0 release.
+### Added
+- V2.4 Character & World Memory and conservative visual continuity assessment, with deterministic contracts and regression coverage (Phases 1–3).
+- Smart Film Repair planning and scoped authorization, provider-neutral manual repair handoff, and caller-supplied candidate-byte SHA-256 verification (Phases 4A–4D; PRs #214, #216 and #218).
+- Generated optional Node.js runtimes for the Director and all six specialist skill packages, based on canonical root implementations (PR #212).
+
+### Changed
+- Installed skill guidance now uses the self-contained `scripts/runtime.js` entry point rather than root-only scripts (PR #214).
+- Consolidated QA runtime packaging to one `scripts/runtime.js` and retired its redundant generated `continuity-runtime.js` and dedicated builder (PR #220). Consumers directly importing the legacy path must migrate.
+
+### Evidence and limitations
+- GitHub `main` push checks at `f089a44639ca4a7581f671e07fafa23ed1648547` reported success for Validate skill, Gitleaks and CodeQL. The local Skills CLI installation and pre-production workflows were **not independently confirmed for that main push**.
+- Four failed pull-request workflow runs on that SHA belonged to the automatic `main` → `develop` synchronization PR #221; GitHub reported zero jobs for those runs. They are **not evidence of failed V2.4 tests**, but their failure status remains unexplained.
+- Independent end-to-end agent acceptance, real-media before/after repair, unchanged locked-asset inspection and release-specific clean-host compatibility remain **NOT_VERIFIED / NOT_RUN**. Byte integrity is not visual/audio quality or provenance verification.
+- V2.4.0 release and *The Last Light* Production GO remain **HOLD**. No release, provider jobs or publication are authorized by these changes.
 
 ## [2.3.0] — 2026-11-14
 
