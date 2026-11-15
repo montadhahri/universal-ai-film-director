@@ -217,6 +217,21 @@ The [existing V2 release checklist](releases/v2.0.0-checklist.md#v220-release-pr
 
 **Version policy:** V2.4–V2.6 retain their own feature-specific tests, installation, security, permission and release gates. V2.7 consolidates full integrated acceptance; it does not retroactively convert deferred evidence into PASS or automatically authorize earlier releases. *The Last Light* Production GO remains HOLD.
 
+## Proposed V3 live-action expansion — staged and feasibility-gated
+
+**Owner-approved roadmap direction (2026-11-15), not implementation or release GO.** Extend the existing seven-skill system to support two modes: AI Filmmaking and full Live-Action Filmmaking assistance, from pre-production through shooting, post-production and delivery. Share the Director, six specialists, Project Bible, approvals and creative planning; keep production-specific workflows separate. Human crews remain responsible for on-set safety, permissions, consent and final creative decisions.
+
+| Proposed milestone | Scope | Evidence and limits |
+| --- | --- | --- |
+| **V3.0** | Shared production engine, Persistent Director and mode-aware contracts | Local/manual/mock first; provider-neutral jobs, artifact provenance, explicit cost/permission controls |
+| **V3.1** | Live-action pre-production | Shooting scripts, casting/location requirements, shot lists, equipment, scheduling and call sheets; test with a real production scenario |
+| **V3.2** | On-set production assistance | Take logs, camera setups, coverage, continuity and daily progress; human-confirmed records and offline operation |
+| **V3.3** | Live-action post-production assistance | Footage organization, editing/sound guidance, captions, export and QA; no automated footage-analysis claims without validated tools |
+| **V3.4** | Complete live-action workflow validation | Independently evaluate idea-to-delivery assistance, permissions, safety, continuity and media quality |
+| **V4 (future candidate)** | Unified AI/live-action Visual Film Studio | Mode-aware creator UX; hybrid productions remain a separately scoped possible future extension |
+
+**V2.5–V2.7 compatibility:** design budget, artifact, approval and QA contracts to be extensible to both modes without delaying existing AI-filmmaking work. Preserve all seven skills and current release gates. Each V3.x milestone needs its own design, tests, reviewed PR and explicit release authorization; no provider spending, media generation or film publication is approved by this proposal.
+
 ## V3 — feasibility-gated research and planned implementation
 
 The existing Director and six specialists remain the creative decision layer. **V3 targets implementation** of a provider-neutral production engine and Persistent AI Director, after feasibility and security gates. Begin with typed jobs, artifact provenance, recoverability and local/mock execution; add lawful provider adapters only after explicit approval. No automatic provider choice, Google Flow API assumption, account connection, spending or autonomous generation is authorized by this roadmap. Research on `develop` precedes any implementation GO.
