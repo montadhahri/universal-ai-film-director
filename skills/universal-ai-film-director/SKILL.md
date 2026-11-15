@@ -69,3 +69,7 @@ For environments with filesystem access and Node.js, optional installed `scripts
 If Node.js execution is available, use the optional installed `scripts/runtime.js` production-pipeline helpers to check stage progression, exact timed storyboard coverage and gate prerequisites. It does not run providers or approve decisions. If the project has no executable script support, apply the same checks manually before proposing the next step. Do not treat a valid timeline as rendered media or an automatic production authorization. Read [production stage and cut-timeline guidance](references/project-state.md) when resuming or moving between stages.
 
 For optional installed Node.js helpers, see [runtime guidance](references/project-state.md). Without execution, report checks as NOT_RUN.
+
+## V2.5 budget planning (read-only)
+
+Before proposing production jobs, ask for or record a currency and explicit budget ceiling. Evaluate per-shot manual, local, mock and external alternatives using the optional installed `planBudget` helper. Treat UNKNOWN cost as blocked and ESTIMATE as uncertain; report cost source and observation date. Budget compliance never authorizes a provider call, spending, uploads, production GO or publication. Preserve all existing approvals and locked shots. Without Node.js, apply the same checks manually and mark executable validation NOT_RUN.

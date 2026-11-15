@@ -457,6 +457,122 @@
       "items": {
         "$ref": "#/$defs/memoryAnchor"
       }
+    },
+    "budget_plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "currency",
+        "ceiling_minor",
+        "shots"
+      ],
+      "properties": {
+        "currency": {
+          "type": "string",
+          "enum": [
+            "EUR",
+            "USD",
+            "GBP",
+            "TND",
+            "CAD",
+            "AUD",
+            "JPY",
+            "CHF"
+          ]
+        },
+        "ceiling_minor": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "shots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "shot_id",
+              "selected_option_id",
+              "options"
+            ],
+            "properties": {
+              "shot_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "selected_option_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "options": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "method",
+                    "currency",
+                    "cost_minor",
+                    "confidence",
+                    "source",
+                    "observed_on"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "method": {
+                      "enum": [
+                        "MANUAL",
+                        "LOCAL",
+                        "MOCK",
+                        "EXTERNAL"
+                      ]
+                    },
+                    "currency": {
+                      "type": "string",
+                      "enum": [
+                        "EUR",
+                        "USD",
+                        "GBP",
+                        "TND",
+                        "CAD",
+                        "AUD",
+                        "JPY",
+                        "CHF"
+                      ]
+                    },
+                    "cost_minor": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0
+                    },
+                    "confidence": {
+                      "enum": [
+                        "KNOWN",
+                        "ESTIMATE",
+                        "UNKNOWN"
+                      ]
+                    },
+                    "source": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "observed_on": {
+                      "type": "string",
+                      "format": "date"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "$defs": {
