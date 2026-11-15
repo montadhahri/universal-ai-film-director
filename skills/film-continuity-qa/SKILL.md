@@ -55,3 +55,7 @@ After scoped authorization and a PROPOSED revision, use `prepareRepairHandoff` f
 ## Independent byte verification (V2.4 Phase 4D)
 
 Use `verifyRepairBytes` from the installed `scripts/runtime.js` only with real source and candidate bytes and the exact scoped repair handoff. It verifies SHA-256 integrity and distinct byte content, not pixels, audio, transitions or full-film quality. It never modifies locked work or grants approval. Treat unknown file provenance or unavailable bytes as NOT_RUN; require separate human media inspection and explicit acceptance. See [localized repair](references/localized-repair.md).
+
+## V2.5 media export evidence
+
+Use optional installed `scripts/runtime.js` `assessMediaExport` to report per-check PASS/GAP/NOT_VERIFIED. A declared metadata match alone is NOT_VERIFIED for final export until independent byte inspection and human visual/audio review evidence exist. Synthetic mock manifests always have a GAP for real-media QA. This helper does not decode media or grant release permission.
