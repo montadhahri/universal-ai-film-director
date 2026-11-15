@@ -40,3 +40,7 @@ Provide distinct costed shot options (MANUAL, LOCAL, MOCK, EXTERNAL) with curren
 ## V2.5 provider-neutral job records
 
 Optional installed `scripts/runtime.js` exposes `newJobLedger`, `planProductionJob`, `advanceMockJob` and `recordExternalArtifact`. Only mock jobs advance through simulated states. Manual/local references are user-reported and unverified. No provider, media or approval execution occurs.
+
+## V2.5 media export QA
+
+The optional installed `scripts/runtime.js` exposes `assessMediaExport` for evidence classification. Supply declared duration, dimensions, rational frame rate, audio presence and provenance. Do not confuse metadata PASS with decoded media inspection, actual export or creative approval. Synthetic mock manifests cannot pass real-media QA.

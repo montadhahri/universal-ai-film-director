@@ -11,7 +11,8 @@ const mapping={
     "checkpoint-envelope",
     "audio-continuity",
     "budget-planner",
-    "production-jobs"
+    "production-jobs",
+    "media-export-qa"
   ],
   "film-storytelling": [
     "project-contracts",
@@ -30,7 +31,8 @@ const mapping={
     "project-contracts",
     "production-pipeline",
     "budget-planner",
-    "production-jobs"
+    "production-jobs",
+    "media-export-qa"
   ],
   "film-sound-direction": [
     "project-contracts",
@@ -46,7 +48,8 @@ const mapping={
     "director-authority",
     "smart-repair",
     "repair-handoff",
-    "repair-integrity"
+    "repair-integrity",
+    "media-export-qa"
   ]
 };
 function render(names){
