@@ -108,6 +108,26 @@ The [existing V2 release checklist](releases/v2.0.0-checklist.md#v220-release-pr
 
 ## V2.4 — Character and World Memory, continuity and Smart Film Repair
 
+### V2.4 Phase 3B — visual evidence reconciliation (2026-11-15; review PR)
+
+**Status: DOCUMENT_REVIEW COMPLETE / FRESH DIRECT IMAGE INSPECTION NOT_RUN.** The five correctly mapped SH01–SH05 repository PNGs and their Git blob identifiers were inventoried from GitHub metadata, but their image pixels could **not** be directly retrieved and inspected in this session. The historical [Phase 5F independent visual audit](case-studies/the-last-light/phase5f-independent-visual-audit.md) documents an earlier actual-image inspection **before** filename remapping; its findings are historical, not a new V2.4 inspection. The [Phase 5H evidence readiness report](case-studies/the-last-light/phase5h-continuity-evidence-readiness.md), [current keyframe provenance](case-studies/the-last-light/provenance.json) and [visual QA](case-studies/the-last-light/visual-qa.md) constrain all claims.
+
+| Criterion | Historical evidence / current limit | V2.4 Phase 3B disposition |
+| --- | --- | --- |
+| SH01–SH05 inventory and identity | Five files exist with current SHA-1 Git blob IDs in provenance; Phase 5F documented historical shot-label rotation, subsequently corrected without modifying bytes | **PASS — metadata inventory only**; no fresh visual assessment |
+| CHILD-01 identity and wardrobe, SH02–SH04 | Phase 5F qualitative similarity and repeated clothing/bag; exact identity, strap, fold and accessory alignment not locked | **PARTIAL — historical qualitative evidence**; fresh image inspection NOT_RUN |
+| SPARK-01 uniqueness and custody | Single prominent spark in historical stills; no uninterrupted handoff or independent boundary frames | **NOT_VERIFIED** for physical/motion continuity |
+| SH04 release before town activation | Historical close-up cannot establish hand separation before first major light; Phase 5H requires R2 strictly before R3 | **BLOCKED** pending attributable timecoded evidence |
+| SH01/SH05 landmarks and camera geometry | Broad arch/tower/night similarity documented historically; pixel-exact geometry and approved axis absent | **PARTIAL / BLOCKED** for exact camera match |
+| Town lighting | Phase 5G lighting rule permits faint practicals before release, major amber activation only after release | **RULE DOCUMENTED**; compliance across motion NOT_VERIFIED |
+| SH03 eastward route and SH04 tower link | Geography/camera proposal is not approved as physical truth | **BLOCKED** pending approved map and spatial evidence |
+| Visual asset hashes and provenance | Current Git blob SHA-1 recorded; current raw PNG SHA-256 absent in provenance | **PARTIAL**; do not equate Git blob SHA-1 with SHA-256 |
+| Seven-skill execution and film acceptance | No complete independent trace or V2.4 visual execution | **NOT_VERIFIED**; no end-to-end PASS |
+
+**Minimum next evidence to complete Phase 3B:** obtain accessible copies of the **existing** five repository PNGs, confirm their byte hashes, independently inspect and annotate character/wardrobe, spark, geography and lighting by shot, preserve reviewer/time/evidence references, and request separate owner approval for any revised geometry or media operation. Motion-dependent SH02/SH04 causality remains BLOCKED without independently attributable timecoded evidence; still frames cannot resolve it. Record PASS/FAIL/INDETERMINATE/BLOCKED/NOT_RUN individually, never infer a PASS from an earlier creative approval.
+
+**Smart Film Repair handoff:** existing memory-consistency reports and historical visual findings may produce **repair proposals only**; do not change locked assets, auto-regenerate, spend credits or assert verified repairs. The Last Light Production GO remains **HOLD**. This documentation reconciliation changes no image, license, runtime, schema, tests, approval or release state.
+
 ### V2.4 Phase 3A — deterministic memory consistency checks (implementation PR, pending review)
 
 **Status: PROPOSED / NOT_MERGED.** Adds a read-only `inspectMemoryConsistency(project)` helper and Node regressions for typed character/world anchor identity, conflicting kinds, divergent approved revisions, explicit stale/missing `anchor:ID@revision` references and missing reciprocal shot links. Legacy unversioned continuity references remain supported and are not silently reinterpreted. Reports are advisory, never auto-repair, and cannot authenticate approval, inspect image content or verify asset files. No additional specialist or memory store. Existing SH01–SH05 visual continuity comparison is **NOT_RUN** and requires a separate evidence-backed step; no new media generation. The Last Light Production GO remains HOLD.
