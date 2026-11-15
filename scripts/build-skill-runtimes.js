@@ -30,6 +30,7 @@ const mapping={
   ],
   "film-sound-direction": [
     "project-contracts",
+    "production-pipeline",
     "audio-continuity"
   ],
   "film-continuity-qa": [
