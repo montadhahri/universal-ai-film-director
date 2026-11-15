@@ -70,6 +70,7 @@ If Node.js execution is available, use the optional installed `scripts/runtime.j
 
 For optional installed Node.js helpers, see [runtime guidance](references/project-state.md). Without execution, report checks as NOT_RUN.
 
-## V2.5 budget planning (read-only)
 
-Before proposing production jobs, ask for or record a currency and explicit budget ceiling. Evaluate per-shot manual, local, mock and external alternatives using the optional installed `planBudget` helper. Treat UNKNOWN cost as blocked and ESTIMATE as uncertain; report cost source and observation date. Budget compliance never authorizes a provider call, spending, uploads, production GO or publication. Preserve all existing approvals and locked shots. Without Node.js, apply the same checks manually and mark executable validation NOT_RUN.
+## V2.5 budget planning
+
+Before production proposals, apply the [read-only budget planning guidance](references/budget-planning.md). Budget checks never authorize execution, spending or approval.
