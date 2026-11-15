@@ -6,6 +6,10 @@ tags, not by duplicated skill source folders.
 
 ## [Unreleased]
 
+### V2.6 foundation (proposed; not released)
+- Add an optional, read-only local HTML projection of validated Project Bible state, with escaping, semantic tables and offline regression tests; no media inspection, production permission or skill-package change.
+- Correct stale release-status documentation and record the scoped Studio foundation in the existing architecture and roadmap.
+
 
 
 ### Documentation (unreleased)

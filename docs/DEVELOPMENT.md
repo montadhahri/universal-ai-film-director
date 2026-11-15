@@ -28,7 +28,7 @@ Correct unexpected files, branch ancestry or accidental removals before creating
 
 ## Important release-state distinction
 
- `main` is the **integration/default branch** for V2.x. The latest published stable software release is [`v2.3.0`](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.3.0), tagged at `4988f0c1b656691ea9368538a12ce6ca4a8134a1` on 2026-11-14. This was an owner-authorized **limited release**: independent >=5 unfamiliar-user acceptance is **NOT_RUN / deferred**, not PASS. V2.4 is the next planned V2.x milestone, not automatically approved for implementation or release. Earlier V2.2 evidence limitations remain recorded. Do not rewrite `main` history or move published tags for documentation changes. V3 research remains on `develop` and must not be promoted into V2.x by synchronization.
+ `main` is the **integration/default branch** for V2.x. The latest stable software release is [`v2.5.0`](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.5.0), owner-confirmed published on 2026-11-15 with limited software scope. V2.6 is the next planned milestone. Earlier independent-host, unfamiliar-user and real-media acceptance limitations remain deferred and must not be described as PASS. Do not rewrite `main` history or move published tags for documentation changes. V3 research remains on `develop` and must not be promoted into V2.x by synchronization.
 
 ## Branch safety and repository settings
 

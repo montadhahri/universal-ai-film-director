@@ -202,7 +202,7 @@ The [existing V2 release checklist](releases/v2.0.0-checklist.md#v220-release-pr
 
 ## V2.6 — Visual Film Studio, templates and community readiness
 
-**Status: NEXT MILESTONE — PLANNED, NOT STARTED.** Begin with read-only scope and architecture assessment before any implementation PR. Preserve all seven skills and existing approval, budget and recovery contracts.
+**Status: NEXT MILESTONE — IN PROGRESS (Phase 2 foundation proposed by PR, not merged).** Phase 1 read-only audit identified an existing Project Bible contract, reusable Node.js modules and testing foundations, but no dedicated Studio application. Phase 2 proposes an optional read-only local HTML projection with escaping, semantic tables and no side effects. It is not an interactive Studio or real-media inspection. Preserve all seven skills and existing approval, budget and recovery contracts.
 
 **User outcome:** outside users can understand, adopt, extend and troubleshoot the library.
 
