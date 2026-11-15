@@ -108,6 +108,10 @@ The [existing V2 release checklist](releases/v2.0.0-checklist.md#v220-release-pr
 
 ## V2.4 — Character and World Memory, continuity and Smart Film Repair
 
+### V2.4 Phase 4A — Smart Film Repair diagnosis and conservative scope (implementation PR, pending review)
+
+**Status: PROPOSED / NOT_MERGED.** The new read-only `planSmartRepair(project, {expected_revision, observations})` composes existing memory-consistency findings, reviewer-reported visual mismatches and `previewRepairImpact` dependency closure. It reports candidate affected and unaffected nodes, locked-shot impact, blockers and a next safe action. **It does not execute a repair or authorize an unlock.** A missing, invalid or incomplete target mapping blocks scoping; a syntactically valid graph is **not** proof that all real dependencies are recorded, so even `unaffected_candidates` are advisory only. No image pixels, asset SHA-256, reviewer identity or repair outcome are verified. Tests cover graph failures, version mismatch, protected locked assets and no mutation. Phase 4B still needs scoped authorization, actual repair execution adapters and before/after evidence, all separately gated. *The Last Light* Production GO remains HOLD.
+
 ### V2.4 Phase 3B — structured reviewer-evidence workflow (implementation PR, pending review)
 
 **Status: PROPOSED / NOT_MERGED.** Adds `assessVisualContinuity(project, observations)` with deterministic tests. A human reviewer or independently authorized inspection adapter can submit a shot ID, versioned anchor ID, criterion, outcome and attributable source asset SHA-256, reviewer and review reference. The tool validates these records, links them to existing Project Bible anchors and returns structured mismatch candidates for future Smart Film Repair. `NOT_RUN` observations cannot masquerade as inspected evidence. **This helper does not load images, verify raw hashes, recognize characters or authenticate the reviewer**; reported matches are labeled `REVIEWER_MATCHES_REPORTED`, not visual PASS. Fresh SH01–SH05 direct image inspection remains **NOT_RUN**; motion and production remain **HOLD**. No automatic repair or provider use.
