@@ -11,7 +11,8 @@ function markdownFiles(dir){return fs.readdirSync(dir,{withFileTypes:true}).flat
 test('all installed skill instructions and references prefer installed runtime.js, not inaccessible root paths',()=>{
  const files=markdownFiles(skills).filter(p=>p.endsWith('/SKILL.md')||p.includes('/references/'));
  assert.equal(files.filter(p=>p.endsWith('/SKILL.md')).length,7);
- assert.equal(files.filter(p=>p.includes('/references/')).length,39);
+ assert.equal(files.filter(p=>p.includes('/references/')).length,40);
+ assert.ok(files.some(p=>p.endsWith('/universal-ai-film-director/references/budget-planning.md')),'Missing V2.5 budget reference');
  for(const file of files){
   const content=fs.readFileSync(file,'utf8');
   for(const [index,line] of content.split('\n').entries()){
