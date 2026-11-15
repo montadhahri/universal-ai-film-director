@@ -6,7 +6,7 @@ const path=require('node:path');
 const root=path.resolve(__dirname,'../..');
 const read=p=>fs.readFileSync(path.join(root,p),'utf8');
 const names=['universal-ai-film-director','film-storytelling','film-visual-direction','film-cinematography','film-video-production','film-sound-direction','film-continuity-qa'];
-const command=name=>'npx skills add montadhahri/universal-ai-film-director --skill '+name;
+const command=name=>'npx skills add universal-ai-film/universal-ai-film-director --skill '+name;
 const readme=()=>read('README.md');
 
 test('README introduces the product, one quick start, seven skills and release status',()=>{
@@ -46,9 +46,9 @@ test('README and examples do not fabricate completed rendering or approvals',()=
 test('public quick start is direct and complete, with detailed options in the installation guide',()=>{
  const content=readme(),install=read('docs/installation.md');
  assert(content.includes(command(names[0])));
- assert(content.includes("npx skills add montadhahri/universal-ai-film-director --skill '*'"));
- assert(install.includes('npx skills add montadhahri/universal-ai-film-director --list'),'List command should be available in guide');
- assert(install.includes('git clone https://github.com/montadhahri/universal-ai-film-director.git'));
+ assert(content.includes("npx skills add universal-ai-film/universal-ai-film-director --skill '*'"));
+ assert(install.includes('npx skills add universal-ai-film/universal-ai-film-director --list'),'List command should be available in guide');
+ assert(install.includes('git clone https://github.com/universal-ai-film/universal-ai-film-director.git'));
  assert(!content.includes('Clone the repository using GitHub credentials'));
  assert(!content.includes('authenticated local checkout'));
  assert(!content.includes('The repository is currently private'));

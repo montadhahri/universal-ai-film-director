@@ -6,10 +6,10 @@
 
 An open-source AI filmmaking crew: one Director, six specialist skills, and **you in creative control**.
 
-[![Stable release](https://img.shields.io/badge/stable-v2.5.0-blue)](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.5.0)
+[![Stable release](https://img.shields.io/badge/stable-v2.5.0-blue)](https://github.com/universal-ai-film/universal-ai-film-director/releases/tag/v2.5.0)
 [![Next milestone](https://img.shields.io/badge/next-v2.6.0-orange)](docs/ROADMAP.md)
-[![Validate skills](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml/badge.svg)](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml)
-[![Install smoke](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/skills-install-smoke.yml/badge.svg)](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/skills-install-smoke.yml)
+[![Validate skills](https://github.com/universal-ai-film/universal-ai-film-director/actions/workflows/validate.yml/badge.svg)](https://github.com/universal-ai-film/universal-ai-film-director/actions/workflows/validate.yml)
+[![Install smoke](https://github.com/universal-ai-film/universal-ai-film-director/actions/workflows/skills-install-smoke.yml/badge.svg)](https://github.com/universal-ai-film/universal-ai-film-director/actions/workflows/skills-install-smoke.yml)
 [![MIT](https://img.shields.io/badge/code%20license-MIT-green)](LICENSE)
 
 [Quick start](#-get-started) · [Example](#-see-it-in-action) · [Workflow](#-film-production-workflow) · [Skills](#-meet-your-ai-film-crew) · [Architecture](#-skills-architecture) · [Compatibility](#-agent-compatibility) · [Releases](#-releases-and-roadmap) · [FAQ](#-faq)
@@ -47,7 +47,7 @@ These are AI-generated reference images, **not proof of autonomous end-to-end pr
 **1. Install the Director** using the [Skills CLI](https://skills.sh/) in a compatible agent environment:
 
 ```bash
-npx skills add montadhahri/universal-ai-film-director --skill universal-ai-film-director
+npx skills add universal-ai-film/universal-ai-film-director --skill universal-ai-film-director
 ```
 
 **2. Open your agent and try this prompt:**
@@ -63,14 +63,14 @@ For a step-by-step first-film walkthrough, expected results, and a safe way to r
 Want to install every specialist? Run:
 
 ```bash
-npx skills add montadhahri/universal-ai-film-director --skill '*'
+npx skills add universal-ai-film/universal-ai-film-director --skill '*'
 ```
 
 On **Windows CMD**, use `--skill "*"` instead. For individual skills, local installation, and troubleshooting, see the [installation guide](docs/installation.md).
 
-## 🆕 What's new in V2.3.0
+## 📦 Previous releases — V2.3.0 and earlier
 
-**[Stable v2.3.0 was published on 2026-11-14](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.3.0)** at commit `4988f0c1b656691ea9368538a12ce6ca4a8134a1`. This release improves the beginner first-film experience across the Director and six specialists:
+**[V2.3.0 was published on 2026-11-14](https://github.com/universal-ai-film/universal-ai-film-director/releases/tag/v2.3.0)** at commit `4988f0c1b656691ea9368538a12ce6ca4a8134a1`. This release improves the beginner first-film experience across the Director and six specialists:
 
 - Guided, no-cost text-only first-film walkthrough from idea through separately approved screenplay, Visual Bible, storyboard, sound planning and checkpoint.
 - Clearer Director first-turn behavior: use known constraints and offer a proposed screenplay when safe, or ask one pivotal question.
@@ -84,7 +84,7 @@ The owner has accepted focused text-only checkpoint recovery, scoped revision, c
 
 **Limits:** standard local Node.js regressions were host-blocked by EPERM; full independent Phase 6 acceptance is incomplete; no rendered-media verification performed. SH05 readability remains deferred and unverified. The Last Light Production GO remains HOLD.
 
-**[V2.2.0 was published on 2026-11-14](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.2.0)** from verified commit `5047ac031770c576978eba30d19178b893127438`. It remains available as a previous stable release; its evidence limitations are unchanged. See the [roadmap](docs/ROADMAP.md) and [changelog](CHANGELOG.md).
+**[V2.2.0 was published on 2026-11-14](https://github.com/universal-ai-film/universal-ai-film-director/releases/tag/v2.2.0)** from verified commit `5047ac031770c576978eba30d19178b893127438`. It remains available as a previous stable release; its evidence limitations are unchanged. See the [roadmap](docs/ROADMAP.md) and [changelog](CHANGELOG.md).
 
 ## V2.1.0 — previous release
 
@@ -94,7 +94,7 @@ The owner has accepted focused text-only checkpoint recovery, scoped revision, c
 - **OpenCode:** three native `skill` calls plus reference reads in the reviewed session.
 - **Evidence boundary:** sessions were owner-operated and independently reviewed, not independently executed. Exact installed Git revisions, unfamiliar-user onboarding, and native Director-to-specialist delegation remain unverified.
 
-**Release status:** [V2.1.0 was published on 2026-11-07](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.1.0). The historical release remains available at its immutable tag. [Full compatibility evidence](docs/installation.md#complete-targeted-host-transcript-review-2026-11-07).
+**Release status:** [V2.1.0 was published on 2026-11-07](https://github.com/universal-ai-film/universal-ai-film-director/releases/tag/v2.1.0). The historical release remains available at its immutable tag. [Full compatibility evidence](docs/installation.md#complete-targeted-host-transcript-review-2026-11-07).
 
 ## 🎬 Meet your AI film crew
 
@@ -160,7 +160,7 @@ The skills use portable Markdown instructions; **no Python runtime or generator 
 | **Gemini CLI** | Authentication blocked in owner's test; skill invocation **not tested** |
 | **Claude Code, Cursor, other agents** | Intended for compatible skills hosts; native invocation **not independently verified** |
 
-Public GitHub installation of all seven skills also [passed a pinned CI smoke test](https://github.com/montadhahri/universal-ai-film-director/actions/runs/41921930247). The 2026-11-07 Codex and OpenCode owner-operated session exports were independently reviewed for the targeted planning task. Exact installed Git source revision, independent clean-user onboarding and native Director-to-specialist delegation remain **not verified**; do not generalize these scoped results to every agent.
+Public GitHub installation of all seven skills also [passed a pinned CI smoke test](https://github.com/universal-ai-film/universal-ai-film-director/actions/runs/41921930247). The 2026-11-07 Codex and OpenCode owner-operated session exports were independently reviewed for the targeted planning task. Exact installed Git source revision, independent clean-user onboarding and native Director-to-specialist delegation remain **not verified**; do not generalize these scoped results to every agent.
 
 [See exact host-test evidence and reproduce the checks](docs/installation.md)
 
@@ -168,19 +168,19 @@ Public GitHub installation of all seven skills also [passed a pinned CI smoke te
 
 An eight-scenario comparison of **textual film plans** reported a descriptive mean of **4.83/5 for V2**, versus **4.50/5 for historical V1**, with 8/8 offline-validator passes. This small evaluation is **not evidence of better rendered films**, independent host execution, or autonomous seven-agent production. [Read the methodology and caveats](docs/quality-benchmark-results.md).
 
-CI validates repository structure and skills, while a [pinned public-GitHub installation smoke test](https://github.com/montadhahri/universal-ai-film-director/actions/runs/41921930247) verified CLI installation, **not live host invocation**. See [host-test evidence](docs/installation.md) for current limits.
+CI validates repository structure and skills, while a [pinned public-GitHub installation smoke test](https://github.com/universal-ai-film/universal-ai-film-director/actions/runs/41921930247) verified CLI installation, **not live host invocation**. See [host-test evidence](docs/installation.md) for current limits.
 
 ## 🏷️ Releases and roadmap
 
 | Version | Status | Focus |
 | --- | --- | --- |
-| [v1.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v1.0.0) | Released | Original single-skill Director |
-| [v2.0.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.0.0) | Released | Director and six specialist skills |
-| [v2.1.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.1.0) | Released 2026-11-07 | Public Skills CLI installation, targeted Codex/OpenCode skill-use evidence, and beginner guidance; independent-user and delegation limits disclosed |
-| [v2.2.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.2.0) | Previous stable; released 2026-11-14 | Checkpoint recovery, approval-safe scoped revisions and focused text QA; independent Phase 6 and local EPERM limitations disclosed |
-| [v2.3.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.3.0) | Released 2026-11-14 (limited) | Beginner onboarding and Director first-turn improvements, deterministic planning regressions; >=5 unfamiliar-user tests NOT_RUN under limited-release exception |
-| [v2.4.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.4.0) | Previous stable; owner-confirmed released 2026-11-15 (limited) | Character & World Memory, scoped Smart Film Repair planning, byte-integrity checks and portable runtimes; real-media quality and independent end-to-end acceptance NOT_VERIFIED |
-| [v2.5.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.5.0) | **Latest stable; owner-confirmed limited release 2026-11-15** | Intelligent Budget Director, mock production jobs, metadata/export QA, recovery bundles and deterministic five-shot acceptance; independent agent-host and actual media inspection NOT_VERIFIED |
+| [v1.0.0](https://github.com/universal-ai-film/universal-ai-film-director/releases/tag/v1.0.0) | Released | Original single-skill Director |
+| [v2.0.0](https://github.com/universal-ai-film/universal-ai-film-director/releases/tag/v2.0.0) | Released | Director and six specialist skills |
+| [v2.1.0](https://github.com/universal-ai-film/universal-ai-film-director/releases/tag/v2.1.0) | Released 2026-11-07 | Public Skills CLI installation, targeted Codex/OpenCode skill-use evidence, and beginner guidance; independent-user and delegation limits disclosed |
+| [v2.2.0](https://github.com/universal-ai-film/universal-ai-film-director/releases/tag/v2.2.0) | Previous stable; released 2026-11-14 | Checkpoint recovery, approval-safe scoped revisions and focused text QA; independent Phase 6 and local EPERM limitations disclosed |
+| [v2.3.0](https://github.com/universal-ai-film/universal-ai-film-director/releases/tag/v2.3.0) | Released 2026-11-14 (limited) | Beginner onboarding and Director first-turn improvements, deterministic planning regressions; >=5 unfamiliar-user tests NOT_RUN under limited-release exception |
+| [v2.4.0](https://github.com/universal-ai-film/universal-ai-film-director/releases/tag/v2.4.0) | Previous stable; owner-confirmed released 2026-11-15 (limited) | Character & World Memory, scoped Smart Film Repair planning, byte-integrity checks and portable runtimes; real-media quality and independent end-to-end acceptance NOT_VERIFIED |
+| [v2.5.0](https://github.com/universal-ai-film/universal-ai-film-director/releases/tag/v2.5.0) | **Latest stable; owner-confirmed limited release 2026-11-15** | Intelligent Budget Director, mock production jobs, metadata/export QA, recovery bundles and deterministic five-shot acceptance; independent agent-host and actual media inspection NOT_VERIFIED |
 | **v2.6.0** | Planned | Templates, Community Gallery and local-first Visual Film Studio foundations designed for future production modes; live-action workflows are **not** part of V2.6 |
 | **V3.0–V3.4 (proposed)** | Feasibility-gated research on `develop` | Shared production engine, then live-action pre-production (V3.1), on-set assistance (V3.2), post-production (V3.3) and independent full-workflow validation (V3.4) |
 | **V4 (future candidate)** | Not scheduled | Unified AI/live-action Visual Film Studio; hybrid production remains a separate research idea |
