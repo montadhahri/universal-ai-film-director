@@ -4,7 +4,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'../..'),skills=path.join(root,'skills');
 const oldNames='director-authority|project-contracts|production-pipeline|audio-continuity|storytelling-preflight|memory-consistency|visual-continuity-assessment|smart-repair|checkpoint-envelope|checkpoint-file';
-const oldPath=new RegExp('scripts/('+oldNames+')\.js','g');
+const oldPath=new RegExp('scripts/('+oldNames+')\\.js','g');
 function markdownFiles(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>{
  const p=path.join(dir,e.name);return e.isDirectory()?markdownFiles(p):e.isFile()&&p.endsWith('.md')?[p]:[];
  });}
