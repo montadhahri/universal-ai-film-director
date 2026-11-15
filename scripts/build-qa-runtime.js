@@ -3,7 +3,7 @@
 // Deterministic source-of-truth packaging: regenerate or check the installable QA bundle.
 const fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'..');
-const names=["project-contracts","memory-consistency","visual-continuity-assessment","production-pipeline","audio-continuity","smart-repair"];
+const names=["project-contracts","memory-consistency","visual-continuity-assessment","production-pipeline","audio-continuity","director-authority","smart-repair"];
 const factories=names.map(name=>{
  const source=fs.readFileSync(path.join(root,'scripts',name+'.js'),'utf8');
  return "'"+name+"':function(module,exports,require){\\n".replace('\\n','\n')+source+"\\n}".replace('\\n','\n');
