@@ -6,7 +6,11 @@ tags, not by duplicated skill source folders.
 
 ## [Unreleased]
 
-### V2.6 release candidate — templates, portable contracts and community readiness
+## [2.6.0] — 2026-11-15
+
+Stable software/planning release: [v2.6.0](https://github.com/universal-ai-film/universal-ai-film-director/releases/tag/v2.6.0), published at commit `7c455692dc564894bf2cb6e951b8909e8b753acb`. Independent onboarding and broad real-world workflow validation are deferred to V2.7 without being marked PASS.
+
+### Templates, portable contracts and community readiness
 
 #### Added
 - Maintained 15-second first-film and 30-second documentary planning starters with deterministic timeline, handoff and approval-boundary checks.
@@ -19,7 +23,7 @@ tags, not by duplicated skill source folders.
 - At review commit `90258aa`, Validate skill, Secret scan, CodeQL and Private pre-production validation were green. The last observed Skills CLI installation smoke success was on earlier commit `01e5696`; **candidate-level installation smoke remains NOT_VERIFIED** until run on the final release candidate.
 - The portable installation test checks file parity, not live native skill invocation. Independent unfamiliar-user onboarding is **NOT_RUN**; actual Studio consumer integration, universal host compatibility and real-media quality are **NOT_VERIFIED**. Repeated external-user and multi-host workflow validation is V2.7 scope.
 - This is software/planning functionality only. No media generation, provider spending, autonomous production approval or publishing permission is implied.
-- **Release status: HOLD pending final candidate verification and explicit owner approval.** No v2.6.0 tag or release is created by this changelog update.
+- **Release status: PUBLISHED with disclosed limitations.** The owner approved and published v2.6.0 on 2026-11-15; the GitHub tag and release were independently verified. No media-production or provider-operation approval is implied.
 
 ## [2.5.0] — 2026-11-15 (owner-confirmed limited release)
 
