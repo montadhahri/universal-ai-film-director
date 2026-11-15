@@ -41,7 +41,8 @@ const mapping={
     "audio-continuity",
     "director-authority",
     "smart-repair",
-    "repair-handoff"
+    "repair-handoff",
+    "repair-integrity"
   ]
 };
 function render(names){
