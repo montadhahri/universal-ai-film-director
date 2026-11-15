@@ -217,6 +217,21 @@ The [existing V2 release checklist](releases/v2.0.0-checklist.md#v220-release-pr
 
 **Version policy:** V2.4–V2.6 retain their own feature-specific tests, installation, security, permission and release gates. V2.7 consolidates full integrated acceptance; it does not retroactively convert deferred evidence into PASS or automatically authorize earlier releases. *The Last Light* Production GO remains HOLD.
 
+## Proposed staged live-action filmmaking — V3.1–V3.4
+
+**Owner-approved roadmap direction (2026-11-15), not implementation or release authorization.** Evolve Universal AI Film Director into two production modes using the existing Director, six specialist skills, shared Project Bible and explicit approvals: **AI Filmmaking** (AI-generated production assets) and **Live-Action Filmmaking** (real actors, crews, cameras and locations, assisted from planning through delivery). Keep the modes' production-specific workflows separate while reusing creative planning, continuity, budget and QA contracts. Physical set safety, casting consent, permissions and creative sign-off remain human responsibilities.
+
+| Proposed milestone | Outcome | Initial scope and evidence gate |
+| --- | --- | --- |
+| **V3.0** | Shared production foundation | Provider-neutral jobs/artifacts, persistent Director and mode-aware contracts; local/manual/mock first, no automatic paid execution |
+| **V3.1** | Live-action pre-production | Shooting scripts, casting/location requirements, shot lists, equipment plans, schedules and call sheets; validate on a real production scenario |
+| **V3.2** | On-set production assistance | Take and coverage logs, camera setup notes, continuity and daily progress; offline-capable, human-confirmed records |
+| **V3.3** | Live-action post-production assistance | Footage organization, edit/sound plans, captions, technical export and review; no unverified automated footage-inspection claims |
+| **V3.4** | Full live-action integration validation | Reproducible idea-to-delivery assistance, independent filmmaker feedback, safety/rights checks and separately assessed media quality |
+| **V4 (future candidate)** | Unified studio expansion | Integrated AI and live-action UX; hybrid real/AI footage remains an optional separately evaluated idea |
+
+**V2.5–V2.7 compatibility:** design budget, artifact, approval and QA contracts to accommodate AI and live-action cost types without delaying the existing AI-focused delivery or prematurely implementing live-action workflows. Preserve all seven skills. The V3.x sequence is **proposed** and feasibility-gated; each increment requires its own owner-reviewed PR, testing, security/safety review and release decision. No provider access, spending, media generation or *The Last Light* Production GO is authorized.
+
 ## V3 — feasibility-gated research and planned implementation
 
 The existing Director and six specialists remain the creative decision layer. **V3 targets implementation** of a provider-neutral production engine and Persistent AI Director, after feasibility and security gates. Begin with typed jobs, artifact provenance, recoverability and local/mock execution; add lawful provider adapters only after explicit approval. No automatic provider choice, Google Flow API assumption, account connection, spending or autonomous generation is authorized by this roadmap. Research on `develop` precedes any implementation GO.
