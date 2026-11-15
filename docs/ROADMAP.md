@@ -17,14 +17,14 @@ The table below records released versions, the planned V2 delivery sequence and 
 | [V2.3.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.3.0) | Nov 2026 (original target 2027 Q1) | Beginner onboarding and workflow usability improvements | RELEASED — 2026-11-14 (limited) | Deterministic checks passed; >=5 unfamiliar-user trials and friction metrics **NOT_RUN / deferred** by explicit release exception |
 | [V2.4.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.4.0) | 2027 Q1–Q2 (delivered early 2026-11-15) | **Character and World Memory** + **Smart Film Repair** | RELEASED — 2026-11-15 (limited; owner-confirmed) | Deterministic software checks and scoped planning; real-media visual continuity, before/after repair quality and unchanged locked-media inspection **NOT_VERIFIED** |
 | [V2.5.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.5.0) | Delivered early 2026-11-15 | **Intelligent Budget Director** + provider-neutral manual/local/mock production, media QA and recovery | RELEASED — 2026-11-15 (limited; owner-confirmed) | Deterministic CI passed; independent agent-host and real-media quality NOT_VERIFIED; production authorization HOLD |
-| **V2.6.0** | 2027 Q3–Q4 | **Templates and Community Gallery** + local-first **Visual Film Studio foundations** with mode-extensible architecture | PLANNED | Reproducible templates, rights checks, independent non-developer usability tests, and mode-neutral project/asset/approval/workflow interfaces; live-action implementation deferred |
+| **V2.6.0** | 2027 Q3–Q4 | **Templates, Community Gallery and Studio integration contracts** (no Studio UI in this repository) | PLANNED | Reproducible templates, rights checks, independent usability tests and versioned external project/asset/approval/workflow contracts; Studio UI and live-action implementation excluded |
 | **V2.7.0** | 2027 Q4–2028 Q1 (proposed) | **Complete End-to-End Workflow Validation** across the existing seven skills, budget-controlled production, continuity, repair and final QA | PROPOSED | Independent reproducible full-workflow runs, approval/cost safety, cross-host evidence, and separately evaluated real-media quality; missing evidence remains BLOCKED/NOT_RUN |
 | **V3.0 (proposed)** | After V2.7; date TBD | Shared provider-neutral production engine, Persistent Director and mode-aware contracts | PROPOSED — FEASIBILITY-GATED | Local/mock execution, provenance, recovery, permissions and security review |
 | **V3.1 (proposed)** | TBD | **Live-action pre-production**: scripts, casting/location requirements, shot lists and schedules | PROPOSED — FEASIBILITY-GATED | Validate with a real pre-production scenario and human review |
 | **V3.2 (proposed)** | TBD | **Live-action on-set assistance**: take logs, coverage, camera and continuity notes | PROPOSED — FEASIBILITY-GATED | Offline-capable, human-confirmed production records and safety boundaries |
 | **V3.3 (proposed)** | TBD | **Live-action post-production assistance**: footage organization, editing, sound, captions and export QA | PROPOSED — FEASIBILITY-GATED | Real-footage workflow evaluation; no unverified automated analysis |
 | **V3.4 (proposed)** | TBD | **Complete live-action workflow validation** | PROPOSED — FEASIBILITY-GATED | Independent idea-to-delivery tests, rights, safety and media-quality review |
-| **V4 (future candidate)** | TBD | Unified **AI + live-action Visual Film Studio**; hybrid production to be studied separately | LONG-TERM CANDIDATE | Accessible mode-aware UX and separately approved end-to-end evidence |
+| **V4 (future candidate)** | TBD | Cross-product AI + live-action integration with the separately developed Visual Film Studio; hybrid production to be studied separately | LONG-TERM CANDIDATE | Accessible mode-aware UX and separately approved end-to-end evidence |
 
 **Product principle:** deliver measurable creator outcomes, not more documentation or more skill names. Preserve all seven skills and the existing V2.2–V2.6 stage gates. V3 implementation requires successful research and explicit owner authorization; V4 numbering is not yet approved. The 500,000-star goal by November 2028 is an extreme aspirational growth target, **not** a guaranteed outcome or release gate.
 
@@ -200,17 +200,19 @@ The [existing V2 release checklist](releases/v2.0.0-checklist.md#v220-release-pr
 - Research provider APIs, licensing, privacy, costs and reliability before proposing any adapter. A real provider call requires separate explicit authorization and a cost ceiling.
 - **Exit:** reproducible no-cost prototype and truthful media QA where legally accessible; provider adapter delivery is **not** a release prerequisite.
 
-## V2.6 — Visual Film Studio, templates and community readiness
+## V2.6 — Templates, community readiness and Studio integration contracts
 
-**Status: NEXT MILESTONE — PLANNED, NOT STARTED.** Begin with read-only scope and architecture assessment before any implementation PR. Preserve all seven skills and existing approval, budget and recovery contracts.
+**Status: NEXT MILESTONE — PLANNED, NOT STARTED.** Visual Film Studio is a separate application and repository in the same GitHub organization. This release remains skills-focused. Preserve all seven skills and existing approval, budget and recovery contracts.
 
-**User outcome:** outside users can understand, adopt, extend and troubleshoot the library.
+**User outcome:** outside users can understand, adopt, extend and troubleshoot the skills library; external tools can consume its validated project state without coupling the library to a UI.
 
-- Establish the initial accessible, local-first Visual Film Studio viewer with a **mode-extensible architecture**: shared project, asset, approval and workflow interfaces must not assume AI-generated media only; allow separately scoped production-mode extensions for future live-action assistance. **V2.6 does not implement live-action workflows.**
-- Publish concise maintained examples and a tested compatibility matrix, with limitations prominently stated.
+- Publish reusable filmmaking templates, concise maintained examples and a tested compatibility matrix, with limitations prominently stated.
+- Define and test **versioned, UI-independent, mode-extensible integration contracts** for Project Bible, assets, approvals and workflow handoffs. Studio is a potential consumer, not part of this repository. Preserve explicit human approval and production permission boundaries.
+- Define community gallery submission metadata, provenance and media-rights checks; do not build or host the gallery UI in this repository.
 - Verify contribution guidance, skill validation and reproducible acceptance entry points; preserve modular architecture.
-- Incorporate independent-user feedback; measure successful onboarding rather than GitHub popularity alone.
-- **Exit:** documented independent onboarding and contributor path; no unsupported compatibility or autonomous-production claims.
+- Incorporate independent-user feedback and measure successful onboarding rather than GitHub popularity alone.
+- **Out of scope:** static HTML viewer, Angular application, Studio interface, live-action workflow implementation, provider spending and unauthorized media generation.
+- **Exit:** reproducible templates and community examples, documented independent onboarding and contributor path, and tested integration contracts. No unsupported compatibility or autonomous-production claims. Studio application milestones and releases are managed separately.
 
 ## V2.7 — Complete end-to-end workflow validation (proposed)
 
@@ -237,7 +239,7 @@ The [existing V2 release checklist](releases/v2.0.0-checklist.md#v220-release-pr
 | **V3.2** | On-set production assistance | Take logs, camera setups, coverage, continuity and daily progress; human-confirmed records and offline operation |
 | **V3.3** | Live-action post-production assistance | Footage organization, editing/sound guidance, captions, export and QA; no automated footage-analysis claims without validated tools |
 | **V3.4** | Complete live-action workflow validation | Independently evaluate idea-to-delivery assistance, permissions, safety, continuity and media quality |
-| **V4 (future candidate)** | Unified AI/live-action Visual Film Studio | Mode-aware creator UX; hybrid productions remain a separately scoped possible future extension |
+| **V4 (future candidate)** | Cross-product AI/live-action integration with the separate Visual Film Studio | Mode-aware creator UX; hybrid productions remain a separately scoped possible future extension |
 
 **V2.5–V2.7 compatibility:** design budget, artifact, approval and QA contracts to be extensible to both modes without delaying existing AI-filmmaking work. Preserve all seven skills and current release gates. Each V3.x milestone needs its own design, tests, reviewed PR and explicit release authorization; no provider spending, media generation or film publication is approved by this proposal.
 
