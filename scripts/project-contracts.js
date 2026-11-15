@@ -26,6 +26,35 @@ function validateProject(p) {
   const key=s.id+':'+s.revision;if(keys.has(key))reject('Duplicate shot revision');keys.add(key);
   if(s.state==='LOCKED'&&!nonempty(s.approved_asset))reject('LOCKED shot requires approved asset');
  }
+ if(p.memory_anchors!==undefined){
+  if(!Array.isArray(p.memory_anchors))reject('Invalid memory anchors collection');
+  const revisions=new Set(),kinds=new Set(['character','wardrobe','prop','location','look']);
+  const statuses=new Set(['PROPOSED','APPROVED','UNKNOWN']);
+  const origins=new Set(['USER_SUPPLIED','DOCUMENTED','AGENT_DRAFT','UNKNOWN']);
+  const shotIds=new Set(p.shots.map(s=>s.id));
+  const allowed=new Set(['id','kind','revision','status','description','provenance','shot_refs','reference_assets','approved_evidence']);
+  for(const a of p.memory_anchors){
+   if(!isObject(a)||Object.keys(a).some(k=>!allowed.has(k))||!nonempty(a.id)||!kinds.has(a.kind)||
+      !Number.isInteger(a.revision)||a.revision<1||!statuses.has(a.status)||!nonempty(a.description))
+    reject('Invalid memory anchor');
+   const key=a.id+':'+a.revision;
+   if(revisions.has(key))reject('Duplicate memory anchor revision');
+   revisions.add(key);
+   if(!isObject(a.provenance)||Object.keys(a.provenance).some(k=>!['kind','reference'].includes(k))||
+      !origins.has(a.provenance.kind)||!(a.provenance.reference===null||nonempty(a.provenance.reference)))
+    reject('Invalid memory provenance');
+   if(!Array.isArray(a.shot_refs)||!a.shot_refs.every(nonempty)||new Set(a.shot_refs).size!==a.shot_refs.length||
+      a.shot_refs.some(id=>!shotIds.has(id)))reject('Invalid memory shot references');
+   if(a.reference_assets!==undefined&&(!Array.isArray(a.reference_assets)||!a.reference_assets.every(nonempty)||
+      new Set(a.reference_assets).size!==a.reference_assets.length))reject('Invalid memory asset references');
+   if(a.status==='APPROVED'&&(!isObject(a.approved_evidence)||a.approved_evidence.actor!=='USER'||
+      !nonempty(a.approved_evidence.source_ref)||!nonempty(a.approved_evidence.quote)))
+    reject('Approved memory anchor requires user evidence');
+   if(a.approved_evidence!==undefined&&(!isObject(a.approved_evidence)||a.approved_evidence.actor!=='USER'||
+      !nonempty(a.approved_evidence.source_ref)||!nonempty(a.approved_evidence.quote)))
+    reject('Invalid memory approval evidence');
+  }
+ }
  if(p.shot_timeline!==undefined){
   const t=p.shot_timeline;
   if(!isObject(t)||!Number.isSafeInteger(t.duration_ms)||t.duration_ms<1||!Array.isArray(t.shots))reject('Invalid shot timeline shape');
