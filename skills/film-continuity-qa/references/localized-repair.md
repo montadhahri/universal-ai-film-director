@@ -38,3 +38,7 @@ explain why and request one focused decision from the user.
 `REPORTED -> TRIAGED -> PROPOSED -> AUTHORIZED -> APPLIED -> VERIFIED`
 is the **repair ticket** lifecycle, separate from shot states (`PLANNED`, `GENERATED`, `NEEDS_FIX`, `APPROVED`, `LOCKED`) described in [quality-control](quality-control.md). Tickets may be `BLOCKED` or `REJECTED`. Do not treat an approved/locked shot as proof that a repair ticket was verified, or a proposed ticket as permission to change a locked shot.
 `VERIFIED` requires evidence from the repaired artifact; no simulated pass.
+
+## V2.4 Phase 4C — local/manual execution handoff
+
+The installed QA `scripts/runtime.js` exports `prepareRepairHandoff` and `inspectRepairHandoffEvidence`. These prepare a copy-only repair contract for an already scoped, user-authorized PROPOSED shot revision. Record the exact original asset reference, claimed source SHA-256, separate proposed output, immutable asset references (including the locked original), expected result, review criteria and rollback reference. The helper does not verify the claimed checksum or execute the repair. A local editor or other tool must be separately selected and authorized; do not imply a provider job or paid API call. The reviewer records outcomes for each check, including edit boundaries and full-film continuity, but even all reported PASS values do not independently verify bytes or media and do not approve the proposed shot. Keep original LOCKED; request independent inspection and explicit acceptance.
