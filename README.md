@@ -7,7 +7,7 @@
 An open-source AI filmmaking crew: one Director, six specialist skills, and **you in creative control**.
 
 [![Stable release](https://img.shields.io/badge/stable-v2.4.0-blue)](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.4.0)
-[![Next milestone](https://img.shields.io/badge/next-v2.5.0-orange)](docs/ROADMAP.md)
+[![Release candidate](https://img.shields.io/badge/v2.5.0-candidate-orange)](docs/ROADMAP.md)
 [![Validate skills](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml/badge.svg)](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml)
 [![Install smoke](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/skills-install-smoke.yml/badge.svg)](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/skills-install-smoke.yml)
 [![MIT](https://img.shields.io/badge/code%20license-MIT-green)](LICENSE)
@@ -15,6 +15,9 @@ An open-source AI filmmaking crew: one Director, six specialist skills, and **yo
 [Quick start](#-get-started) · [Example](#-see-it-in-action) · [Workflow](#-film-production-workflow) · [Skills](#-meet-your-ai-film-crew) · [Architecture](#-skills-architecture) · [Compatibility](#-agent-compatibility) · [Releases](#-releases-and-roadmap) · [FAQ](#-faq)
 
 </div>
+
+
+> **V2.5.0 candidate (not released):** The Intelligent Budget Director, read-only budget reconciliation, provider-neutral manual/local/mock job records, deterministic retry and recovery, and evidence-aware export QA are implemented. The Last Light five-shot fixture is a simulation, not generated film. Independent agent-host acceptance and actual media quality remain unverified; provider execution and publication remain subject to separate authorization. See [release candidate notes](docs/releases/v2.5.0-candidate.md).
 
 ## ✨ What can you create?
 
