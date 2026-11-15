@@ -325,3 +325,24 @@ The **Release direction** table above is the single authoritative version/date/f
 ### V2.4 Phase 4D — actual byte integrity (implementation PR)
 
 **Status: PROPOSED / NOT_MERGED.** Installed QA can hash supplied real original and candidate bytes, verify expected SHA-256 values and detect unchanged content for an exact scoped repair handoff. This is **byte-level integrity only**: no filesystem-origin authentication, visual/audio interpretation, edit-boundary inspection, full-film validation, repair execution or automatic acceptance. Human media inspection and separate user acceptance remain required; The Last Light Production GO remains HOLD.
+
+## Ecosystem coordination — Director responsibilities (proposed, 2026-11-15)
+
+**Shared vision:** two independently usable products: this seven-skill Director for creative reasoning, project contracts, planning, approval-safe revisions and QA; [Visual Film Studio](https://github.com/universal-ai-film/universal-ai-film-studio) for the optional local-first Angular workspace. A provider-neutral execution layer is a future optional integration, not a third mandatory product. Budget assumption: solo developer with AI assistance; free/manual/local paths first. No mandatory accounts or provider spend.
+
+**Release boundaries remain authoritative above:** V2.6 is released; **V2.7 prioritizes comprehensive independent validation**, not an unrelated feature expansion. V3.0 retains the shared production engine, Persistent Director and mode-aware contracts; V3.1–V3.4 retain the already proposed live-action pre-production, on-set, post-production and acceptance sequence. V4 remains feasibility-gated cross-product/hybrid research. Do not rename or silently re-scope these releases.
+
+| Ecosystem gate | Director ownership | Studio counterpart | Evidence to close |
+| --- | --- | --- | --- |
+| E1 — Read-only contract compatibility | Publish versioned, UI-independent Project Bible/snapshot/handoff schemas and fixtures; preserve approval/lock semantics | S2 imports and validates pinned schemas | Positive/negative cross-repo fixtures, unsupported-version rejection, no inferred approval |
+| E2 — Portable project package (research) | Specify project identity, revision lineage, checkpoint, asset manifest, provenance and optional media references; no credentials | S3 import/export, backup and recovery | Lossless supported-field round trip, corruption/migration tests, documented unsupported fields |
+| E3 — Human-approved creative handoff | Propose scoped changes, preserve locked originals, validate revision and explicit approval evidence | S5 review/accept/reject interface | Rejection, stale-version and recovery tests; no silent approval |
+| E4 — Controlled production (future) | Typed provider-neutral jobs, budget and permission gates, provenance, local/manual/mock adapters first | Post-S6 production workspace | Zero unauthorized jobs/spend, deterministic retries and explicit user authorization |
+| E5 — Assembly and QA (future) | Evidence-aware media/export QA and repair impact assessment | Post-S6 timeline and local rendering | Actual rights-cleared audio/video inspection separate from synthetic test results |
+| E6 — AI/live-action interoperability (research) | Mode-aware shared contracts and human safety/consent boundaries | Future mode-aware workspace | Independent AI and live-action workflows validated before hybrid claims |
+
+**V2.7 acceptance tracks:** (1) isolated install/packaging/schema/security regressions, (2) complete seven-skill idea-to-QA workflow with approvals, budget, recovery and negative paths, (3) independent host invocation and unfamiliar-user testing (target at least five where feasible), and (4) actual rights-cleared media quality/repair/export review. Report PASS, FAIL, GAP, BLOCKED or NOT_RUN separately. Synthetic/owner-operated evidence must not be labeled independent. *The Last Light* Production GO remains HOLD unless separately authorized.
+
+**Delivery coordination:** Studio S0 architecture review can proceed alongside V2.7; S1/S2 may proceed with explicitly accepted unrelated V2.7 gaps, but pin immutable released V2.6 contracts and test E1 before claiming integration. Studio S3–S6 and Director V3 are independent release trains. No need to create a third repository or duplicate the authoritative schema. Each repository owns one canonical roadmap; the organization profile should carry only a short public vision and links. Preserve all seven skills, case-study evidence and release history. Any implementation, PR merge, tag, account connection, provider execution, spend or publication requires its own approval.
+
+**Adoption measures:** independent install-to-first-plan completion, real finished projects, repeat creators, recoverability, external contributors and accessibility; downloads/stars are not unique users. Growth goals are aspirational, not release gates.
