@@ -6,6 +6,9 @@ tags, not by duplicated skill source folders.
 
 ## [Unreleased]
 
+### V2.6 — Studio integration (proposed)
+- Introduce a versioned, read-only Studio snapshot projection and JSON Schema, preserving source Project Bible authority and operational HOLD. Angular consumption, full asset manifests and write-back remain unimplemented.
+
 ### V2.6 — reusable templates (proposed)
 - Add a synthetic, zero-cost first-film starter that reuses existing Project Bible, storyboard, shot-plan, audio, shot-packet and checkpoint templates, with deterministic timing and approval-safety tests. This is a planning example, not independent user or real-media acceptance.
 
