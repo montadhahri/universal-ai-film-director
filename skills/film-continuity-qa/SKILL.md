@@ -31,3 +31,7 @@ For a concrete stage-specific example, handoff output and failure case, read the
 ## Dependency-aware change previews
 
 If a dependency graph exists in the Project Bible, optionally use `previewRepairImpact` in `scripts/audio-continuity.js` to identify downstream shot/audio/anchor IDs and locked shots requiring specific permission. This returns an **impact preview only**: it does not diagnose footage without evidence, authorize unlocking or modify a file. Missing or inaccurate dependency edges must be reported rather than assumed correct. See `docs/audio-continuity.md` for the graph convention.
+
+## V2.4 structured visual review handoff (optional)
+
+When a user supplies an actual reviewed image and its verified SHA-256, the QA specialist may propose a reviewer observation with `shot_id`, `anchor_id`, `anchor_revision`, `criterion`, `outcome` (MATCH/MISMATCH/INDETERMINATE/NOT_RUN), `source_asset`, `source_sha256`, `reviewer` and `review_ref`. The optional Node helper `scripts/visual-continuity-assessment.js` validates and reports these records; it does not read image pixels, validate the checksum against bytes or authenticate the reviewer. Do not invent image hashes, reviewer identity, observations or inspection claims. Use NOT_RUN without evidence when no inspection occurred. Report any mismatch as a repair **candidate** only; request scoped approval and preserve locked work. No media or provider action is authorized by this handoff.
