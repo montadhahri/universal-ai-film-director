@@ -1,6 +1,6 @@
 # Product roadmap — Universal AI Film Director
 
-**Canonical roadmap · updated 2026-11-14.** This is the single source of truth for version outcomes and acceptance gates. [Development governance](DEVELOPMENT.md) defines the main/develop PR workflow. Historical V2.0 release evidence remains in [the release checklist](releases/v2.0.0-checklist.md) and Git history.
+**Canonical roadmap · updated 2026-11-15.** This is the single source of truth for version outcomes and acceptance gates. [Development governance](DEVELOPMENT.md) defines the main/develop PR workflow. Historical V2.0 release evidence remains in [the release checklist](releases/v2.0.0-checklist.md) and Git history.
 
 > **Current state:** [v2.3.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.3.0) is the latest stable software release, published on 2026-11-14 at `4988f0c1b656691ea9368538a12ce6ca4a8134a1` under an explicit limited-release exception. Its planned >=5 unfamiliar-user acceptance remains **NOT_RUN / deferred**, not PASS. V2.4–V2.6 remain planned and V3 implementation feasibility-gated. **The Last Light Production GO remains HOLD.** No provider jobs, spending, account connections or film publication are authorized by this roadmap. Future releases require separate owner approval.
 
@@ -18,6 +18,7 @@ The table below is the **official delivery sequence** for the next two years. **
 | **V2.4.0** | 2027 Q1–Q2 | **Character and World Memory** + **Smart Film Repair** | PLANNED | Visual continuity evidence, scoped before/after repair, unchanged locked assets |
 | **V2.5.0** | 2027 Q2–Q3 | **Intelligent Budget Director** + provider-neutral local/manual/mock job foundations and media QA | PLANNED | Cost uncertainty and ceilings, no-cost path, permission and export QA |
 | **V2.6.0** | 2027 Q3–Q4 | **Templates and Community Gallery** + first local-first **Visual Film Studio** viewer | PLANNED | Reproducible templates, rights checks, independent non-developer usability tests |
+| **V2.7.0** | 2027 Q4–2028 Q1 (proposed) | **Complete End-to-End Workflow Validation** across the existing seven skills, budget-controlled production, continuity, repair and final QA | PROPOSED | Independent reproducible full-workflow runs, approval/cost safety, cross-host evidence, and separately evaluated real-media quality; missing evidence remains BLOCKED/NOT_RUN |
 | **V3.x** | 2028 Q1–Q2 | **Provider-Neutral Production Engine** + **Persistent AI Director** across sessions/hosts | PLANNED — FEASIBILITY-GATED | Local/mock execution first; typed jobs, provenance, recovery, explicit authorization and security review |
 | **Future integrated studio (possible V4)** | 2028 Q2–Q4 | Expanded **Visual Film Studio**, integrated QA, editing/export and creator ecosystem | LONG-TERM TARGET | Independent complete-film use cases, accessibility, retention and release readiness |
 
@@ -201,6 +202,20 @@ The [existing V2 release checklist](releases/v2.0.0-checklist.md#v220-release-pr
 - Verify contribution guidance, skill validation and reproducible acceptance entry points; preserve modular architecture.
 - Incorporate independent-user feedback; measure successful onboarding rather than GitHub popularity alone.
 - **Exit:** documented independent onboarding and contributor path; no unsupported compatibility or autonomous-production claims.
+
+## V2.7 — Complete end-to-end workflow validation (proposed)
+
+**User outcome:** independently demonstrate a complete, reproducible creator-controlled workflow from idea and Project Bible through screenplay, visual direction, shot planning, budget choice, authorized production handoff, continuity QA, scoped repair, and final review/delivery.
+
+- Integrate the existing Director and six specialist skills; retain all seven entrypoints, their approval contracts and portable project state.
+- Test the V2.5 Intelligent Budget Director with a strict zero-cost scenario first, documented cost estimates/uncertainty, feasible alternatives and explicit permission boundaries. If the quality target cannot be met at the ceiling, report BLOCKED rather than fabricate a success or silently spend.
+- Run positive, negative and recovery scenarios: rejected approvals, conflicting memory anchors, unchanged locked assets, failed generation, revision lineage, scoped repair and rollback.
+- Capture independent complete transcripts and actual invocation evidence across supported agent hosts; distinguish native skill use, manual instruction loading and mocked execution.
+- Assess real-media continuity, motion, sound, transitions and export independently where rights-cleared assets and suitable tools exist. A text plan, synthetic fixture or manual cutout pilot cannot prove professional-quality film output.
+- Record exact source versions, input/output artifacts, reviewer observations, per-criterion PASS/FAIL/BLOCKED/NOT_RUN and outstanding limitations in existing evidence locations, without creating duplicate administrative reports.
+- **Exit:** software workflow acceptance and media-quality acceptance reported separately; unresolved critical failures block corresponding readiness claims. V3 feasibility research may continue on `develop`, but V3 implementation GO and any V2.7 tag/release require separate owner authorization.
+
+**Version policy:** V2.4–V2.6 retain their own feature-specific tests, installation, security, permission and release gates. V2.7 consolidates full integrated acceptance; it does not retroactively convert deferred evidence into PASS or automatically authorize earlier releases. *The Last Light* Production GO remains HOLD.
 
 ## V3 — feasibility-gated research and planned implementation
 
