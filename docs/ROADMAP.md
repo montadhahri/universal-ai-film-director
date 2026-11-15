@@ -108,6 +108,10 @@ The [existing V2 release checklist](releases/v2.0.0-checklist.md#v220-release-pr
 
 ## V2.4 — Character and World Memory, continuity and Smart Film Repair
 
+### V2.4 Phase 2 — optional Character & World Memory contract (implementation PR, pending review)
+
+**Status: PROPOSED / NOT_MERGED.** Introduces an optional `memory_anchors` array to the existing Project Bible v2.0 schema, runtime shape validation, checkpoint round-trip and negative tests. Anchor records have stable IDs, positive revisions, kind, status, description, explicit provenance, shot references and optional reference-asset identifiers. `APPROVED` requires recorded USER evidence; references are not visual inspection or proof of file existence. Existing projects without memory records remain valid; no extra skill or authoritative store is created. CI and independent visual validation are pending; no media generation or repair execution. The Last Light Production GO stays HOLD.
+
 ### V2.4 Phase 1 — source-backed baseline and gap assessment (2026-11-14)
 
 **Status: INVESTIGATED / PROPOSED; implementation NOT_STARTED.** Baseline: `main` at `cecc686af3aa4e032eb34db6bb29100adc086209`. This is a read-only architecture assessment, not evidence of visual inspection, live-agent acceptance, media repair or release readiness. Phase 2+ requires separately reviewed implementation PRs. Preserve the existing Director, six specialists, Project Bible, authority contracts and no-provider path.
