@@ -39,6 +39,7 @@ const mapping={
     "visual-continuity-assessment",
     "production-pipeline",
     "audio-continuity",
+    "director-authority",
     "smart-repair"
   ]
 };

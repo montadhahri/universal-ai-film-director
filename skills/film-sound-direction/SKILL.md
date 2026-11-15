@@ -29,7 +29,7 @@ For a concrete stage-specific example, handoff output and failure case, read the
 
 ## Optional deterministic audio timing checks
 
-For Node.js-compatible projects, validate an audio plan using `scripts/audio-continuity.js` and the Project Bible `audio_timeline` contract. Required narration windows must be filled explicitly, while silence and cross-track mixing use deliberate timing rules. Audio cue plans are **not generated assets**. For a reported dropout propose a scoped repair and preserve picture; never overwrite the existing approved cue sheet automatically. See `docs/audio-continuity.md` when repository files are available.
+For Node.js-compatible projects, validate an audio plan using the installed `scripts/runtime.js` audio-continuity helpers and the Project Bible `audio_timeline` contract. Required narration windows must be filled explicitly, while silence and cross-track mixing use deliberate timing rules. Audio cue plans are **not generated assets**. For a reported dropout propose a scoped repair and preserve picture; never overwrite the existing approved cue sheet automatically. See `docs/audio-continuity.md` when repository files are available.
 
 ## Optional installed Node.js runtime
 

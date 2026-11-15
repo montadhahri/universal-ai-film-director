@@ -48,6 +48,6 @@ If a structural check passes but artistic quality remains doubtful, report the c
 
 ## Optional Node.js preflight
 
-The repository includes `scripts/storytelling-preflight.js` to flag timing/annotation conflicts in an optional machine-readable draft. It can inspect labeled screenplay data, not real film, actual voice performance, or authentic user authorization. Without Node.js, perform the same human-readable checks manually. For example, a 45-second lighthouse reveal should not casually place explanatory narration over reading a note; a 30-second gift story should check whether its final musical exchange has time to register.
+The installed Storytelling `scripts/runtime.js` exposes the storytelling preflight helper (canonical repository source: `scripts/storytelling-preflight.js`) to flag timing/annotation conflicts in an optional machine-readable draft. It can inspect labeled screenplay data, not real film, actual voice performance, or authentic user authorization. Without Node.js, perform the same human-readable checks manually. For example, a 45-second lighthouse reveal should not casually place explanatory narration over reading a note; a 30-second gift story should check whether its final musical exchange has time to register.
 
 These are **teaching examples only** and do not constitute actual agent evaluation.
