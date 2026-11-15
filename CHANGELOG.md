@@ -21,6 +21,14 @@ tags, not by duplicated skill source folders.
 - Independent end-to-end agent acceptance, real-media before/after repair, unchanged locked-asset inspection and release-specific clean-host compatibility remain **NOT_VERIFIED / NOT_RUN**. Byte integrity is not visual/audio quality or provenance verification.
 - V2.4.0 release and *The Last Light* Production GO remain **HOLD**. No release, provider jobs or publication are authorized by these changes.
 
+### V2.4 release-candidate readiness (preparation only; 2026-11-15)
+- **Candidate scope:** Character & World Memory, conservative visual-continuity reporting, Smart Film Repair planning/scoped authorization, manual repair handoff and caller-supplied byte-integrity verification, plus portable skill runtimes. These are software/planning capabilities, **not** automatic video repair or professional animation generation.
+- **Previously verified technical baseline:** `83e7324294f7436df381603a341030d5a501aeb2` — hosted Validate skill, secret scan, CodeQL, Skills CLI installation smoke and private pre-production validation reported PASS. The checks are scoped to that commit and cannot be silently transferred to a newer release candidate.
+- **Current roadmap merge:** PR #224 added V2.7 as the complete integrated workflow acceptance milestone; V2.4–V2.6 retain feature-specific safety, CI, compatibility and release gates. V2.7 does **not** mark missing V2.4 evidence PASS.
+- **Deferred / not verified:** independent real-media visual continuity; convincing before/after repaired animation; independent complete agent-host workflow; human-verified unchanged locked media; any claim of autonomous film production. The unsuccessful SH04 manual cutout pilot must not be counted as successful visual repair evidence.
+- **Required before owner release decision:** confirm exact intended release commit and its full required GitHub Actions results; verify packaged skill installation at that commit; review security, compatibility, changelog and media-rights scope; explicitly accept or resolve the remaining V2.4 feature-specific visual acceptance limitations. A limited software release may only be considered with clear public disclosure and a separate owner GO.
+- **Decision:** RELEASE HOLD. No tag, GitHub release, media generation, provider job, paid execution, account connection or *The Last Light* Production GO is authorized by this preparation.
+
 ## [2.3.0] — 2026-11-14
 
 Stable software release: [v2.3.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.3.0), tagged at `4988f0c1b656691ea9368538a12ce6ca4a8134a1`.
