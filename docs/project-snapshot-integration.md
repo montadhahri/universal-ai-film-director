@@ -20,3 +20,14 @@ The snapshot includes project identity/revision/phase, gate status, shot IDs and
 ## Acceptance boundaries
 
 Deterministic tests check projection isolation, source immutability, explicit versioning and fail-closed authority handling. They do not prove integration with any specific host, independent user acceptance, runtime schema-validator execution or complete real-media workflow compatibility.
+
+## V2.6 compatibility evidence (2026-11-15)
+
+| Consumer path | Verified scope | Remaining limitation |
+| --- | --- | --- |
+| Skills CLI local/public installation | Existing seven-skill copy and byte-parity smoke workflow | Does not prove native invocation on every agent host |
+| Copied seven-skill payload | Node.js isolated-runtime and Director schema-presence regression | Not a Skills CLI or agent-host invocation |
+| Standalone Node.js snapshot consumer | Copied source modules and schema; read-only projection, version checks and fail-closed unknown fields | Not a Studio integration or standards-compliant full JSON Schema instance validation |
+| Community showcase metadata | Structural/provenance regression on repository contract | No hosted gallery, external submission or independent rights verification |
+
+The standalone snapshot test copies the **repository integration modules**; they are not part of the Skills CLI-installed payload. External consumers must deliberately integrate those modules or implement the documented schema contract. No network, provider, account, production or publishing permission is required.
