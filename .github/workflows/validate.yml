@@ -26,6 +26,11 @@ jobs:
         run: node tests/package/validate-package.js
       - name: Run complete Node.js regression suite
         run: node --test tests/node/*.test.js
+      - name: Validate Draft 2020-12 schema instances (CI-only Ajv)
+        run: |
+          set -euo pipefail
+          npm install --prefix "$RUNNER_TEMP/schema-validator" --no-save --ignore-scripts --no-audit --no-fund ajv@8.17.1 ajv-formats@3.0.1
+          NODE_PATH="$RUNNER_TEMP/schema-validator/node_modules" node tests/schema/validate-instances.js
       - name: Evaluate deterministic transcript fixtures
         run: node tests/behavior/evaluate.js --json-out build/behavior-report.json
       - name: Upload evaluation report
