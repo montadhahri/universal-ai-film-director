@@ -108,6 +108,10 @@ The [existing V2 release checklist](releases/v2.0.0-checklist.md#v220-release-pr
 
 ## V2.4 — Character and World Memory, continuity and Smart Film Repair
 
+### V2.4 Phase 3B — structured reviewer-evidence workflow (implementation PR, pending review)
+
+**Status: PROPOSED / NOT_MERGED.** Adds `assessVisualContinuity(project, observations)` with deterministic tests. A human reviewer or independently authorized inspection adapter can submit a shot ID, versioned anchor ID, criterion, outcome and attributable source asset SHA-256, reviewer and review reference. The tool validates these records, links them to existing Project Bible anchors and returns structured mismatch candidates for future Smart Film Repair. `NOT_RUN` observations cannot masquerade as inspected evidence. **This helper does not load images, verify raw hashes, recognize characters or authenticate the reviewer**; reported matches are labeled `REVIEWER_MATCHES_REPORTED`, not visual PASS. Fresh SH01–SH05 direct image inspection remains **NOT_RUN**; motion and production remain **HOLD**. No automatic repair or provider use.
+
 ### V2.4 Phase 3B — visual evidence reconciliation (2026-11-15; review PR)
 
 **Status: DOCUMENT_REVIEW COMPLETE / FRESH DIRECT IMAGE INSPECTION NOT_RUN.** The five correctly mapped SH01–SH05 repository PNGs and their Git blob identifiers were inventoried from GitHub metadata, but their image pixels could **not** be directly retrieved and inspected in this session. The historical [Phase 5F independent visual audit](case-studies/the-last-light/phase5f-independent-visual-audit.md) documents an earlier actual-image inspection **before** filename remapping; its findings are historical, not a new V2.4 inspection. The [Phase 5H evidence readiness report](case-studies/the-last-light/phase5h-continuity-evidence-readiness.md), [current keyframe provenance](case-studies/the-last-light/provenance.json) and [visual QA](case-studies/the-last-light/visual-qa.md) constrain all claims.
