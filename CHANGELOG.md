@@ -6,7 +6,9 @@ tags, not by duplicated skill source folders.
 
 ## [Unreleased]
 
-No unreleased changes documented yet.
+### Documentation (unreleased)
+- Align the canonical release table and public README with the owner-approved **proposed** V3.0–V3.4 dual-mode/live-action roadmap and future V4 candidate. These are planning milestones, not shipped capabilities.
+- Correct the V2.4 release badge target and stale V2.4 next-step wording; preserve all deferred acceptance gates.
 
 ## [2.4.0] — 2026-11-15 (owner-confirmed limited release)
 
