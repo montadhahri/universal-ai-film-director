@@ -24,3 +24,4 @@ test('Director guide tells isolated hosts where to find schemas',()=>{
  for(const file of files)assert.ok(guide.includes('assets/'+file));
  assert.ok(guide.includes('does not prove full schema validation'));
 });
+
