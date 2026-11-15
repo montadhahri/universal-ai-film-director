@@ -9,7 +9,6 @@ const mapping={
     "director-authority",
     "production-pipeline",
     "checkpoint-envelope",
-    "checkpoint-file",
     "audio-continuity"
   ],
   "film-storytelling": [
@@ -44,7 +43,7 @@ const mapping={
 };
 function render(names){
  const factories=names.map(name=>"'"+name+"':function(module,exports,require){\\n".replace('\\n','\n')+fs.readFileSync(path.join(root,'scripts',name+'.js'),'utf8')+"\\n}".replace('\\n','\n')).join(',\\n'.replace('\\n','\n'));
- return `'use strict';\n// GENERATED from canonical root scripts by scripts/build-skill-runtimes.js. Do not edit.\n// Optional Node.js helpers; no external modules or provider execution.\nconst factories={\n${factories}\n};\nconst cache=new Map();\nfunction load(id){\n if(cache.has(id))return cache.get(id).exports;\n if(!Object.prototype.hasOwnProperty.call(factories,id))throw Error('Unknown bundled module: '+id);\n const module={exports:{}};cache.set(id,module);\n try{factories[id](module,module.exports,ref=>{\n  if(!/^\\.\\/[-a-z]+\\.js$/.test(ref))throw Error('External module forbidden: '+ref);\n  return load(ref.slice(2,-3));\n });}catch(e){cache.delete(id);throw e;}\n return module.exports;\n}\nmodule.exports={${names.map(name=>"...load('"+name+"')").join(',')}};\n`;
+ return `'use strict';\n// GENERATED from canonical root scripts by scripts/build-skill-runtimes.js. Do not edit.\n// Optional Node.js helpers; no external modules or provider execution.\nconst factories={\n${factories}\n};\nconst cache=new Map();\nfunction load(id){\n if(cache.has(id))return cache.get(id).exports;\n if(!Object.prototype.hasOwnProperty.call(factories,id))throw Error('Unknown bundled module: '+id);\n const module={exports:{}};cache.set(id,module);\n try{factories[id](module,module.exports,ref=>{\n  if(ref==='node:crypto')return require('node:crypto');\n  if(!/^\\.\\/[-a-z]+\\.js$/.test(ref))throw Error('External module forbidden: '+ref);\n  return load(ref.slice(2,-3));\n });}catch(e){cache.delete(id);throw e;}\n return module.exports;\n}\nmodule.exports={${names.map(name=>"...load('"+name+"')").join(',')}};\n`;
 }
 let failures=0;
 for(const [skill,names] of Object.entries(mapping)){
