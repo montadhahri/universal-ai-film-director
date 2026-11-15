@@ -7,6 +7,7 @@
 An open-source AI filmmaking crew: one Director, six specialist skills, and **you in creative control**.
 
 [![Stable release](https://img.shields.io/badge/stable-v2.5.0-blue)](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.5.0)
+[![Next milestone](https://img.shields.io/badge/next-v2.6.0-orange)](docs/ROADMAP.md)
 [![Validate skills](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml/badge.svg)](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/validate.yml)
 [![Install smoke](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/skills-install-smoke.yml/badge.svg)](https://github.com/montadhahri/universal-ai-film-director/actions/workflows/skills-install-smoke.yml)
 [![MIT](https://img.shields.io/badge/code%20license-MIT-green)](LICENSE)
