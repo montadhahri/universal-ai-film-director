@@ -1,6 +1,6 @@
 # QA-01–QA-06 — Continuity QA independent-agent evaluation
 
-Exact scenario prompts and **private reviewer criteria**: [continuity-qa-cases.json](../tests/agent-acceptance/continuity-qa-cases.json). This pack supplements, but does not replace, canonical acceptance tests.
+Exact scenario prompts and **private reviewer criteria**: [continuity-qa-cases.json](../../tests/agent-acceptance/continuity-qa-cases.json). This pack supplements, but does not replace, canonical acceptance tests.
 
 ## Coverage
 

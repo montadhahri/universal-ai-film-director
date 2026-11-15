@@ -1,6 +1,6 @@
 # VD-01–VD-06 — Visual Direction evaluation plan
 
-Six exact-prompt cases live in [tests/agent-acceptance/visual-direction-cases.json](../tests/agent-acceptance/visual-direction-cases.json). This extends the existing agent acceptance conventions without changing the canonical 14-case V2-03 suite or creating another evaluation runner.
+Six exact-prompt cases live in [tests/agent-acceptance/visual-direction-cases.json](../../tests/agent-acceptance/visual-direction-cases.json). This extends the existing agent acceptance conventions without changing the canonical 14-case V2-03 suite or creating another evaluation runner.
 
 ## Scope
 
@@ -18,7 +18,7 @@ Six exact-prompt cases live in [tests/agent-acceptance/visual-direction-cases.js
 3. Privately preserve complete response, host, exact model identifier if exposed, timestamp, skill revision, loaded files, execution evidence, and reviewer identity.
 4. Review each expected criterion with PASS/FAIL and specific evidence (quote, anchor ID or shot ID). A scenario passes only when all criteria pass.
 5. If execution is unavailable mark NOT_RUN or BLOCKED with the reason. If model metadata is unavailable, disclose the provenance limitation; do not invent it.
-6. Compare with the existing [agent acceptance practices](agent-acceptance.md) and [quality benchmark rubric](quality-benchmark.md). The canonical runner is fixed to its own V2-03 manifest, so **do not claim it has evaluated these six cases**. Criterion review for this pack is manual until a reusable manifest interface is justified.
+6. Compare with the existing [agent acceptance practices](../agent-acceptance.md) and [quality benchmark rubric](../quality-benchmark.md). The canonical runner is fixed to its own V2-03 manifest, so **do not claim it has evaluated these six cases**. Criterion review for this pack is manual until a reusable manifest interface is justified.
 
 These are test fixtures, not actual executions. No output quality, identity consistency in generated images, licensing or cross-host portability has been proven.
 
