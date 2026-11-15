@@ -27,3 +27,7 @@ Five user-operated Veo 3.1 Fast generations (SH04, SH02, SH03, SH05, SH01), repo
 SH02-A/B and SH04-A/B boundary images were four crops from one composite, **not four independent generations**. Those boundary PNGs were not added to this repository. The later Google Flow video production does not retroactively change their provenance.
 
 See [image provenance](provenance.json) and [visual QA](visual-qa.md). **Production GO remains HOLD** for new provider jobs and final release.
+
+## Historical phase evidence
+
+The eight Phase 5F–5J decision and readiness records are preserved in [historical phase evidence](history/README.md). These records document historical proposals, checks and unresolved limitations; they do **not** grant production approval.

@@ -6,7 +6,7 @@
 
 ## Purpose and evidence boundaries
 
-Assess the three unresolved continuity risks from the [Phase 5F audit](phase5f-independent-visual-audit.md) **after** the five PNGs were reassigned to their correct SH01–SH05 filenames in merged PR #70. This is a **documentary follow-up** to the earlier visual inspection, not a new independent motion or physical-geometry test. Evidence: the five image candidates, the corrected [case-study gallery](README.md), [provenance](provenance.json), and recorded Phase 5F observations. No video, motion boundaries, camera model, approved geography diagram, generator logs or original shot-level approval ledger was independently established here.
+Assess the three unresolved continuity risks from the [Phase 5F audit](phase5f-independent-visual-audit.md) **after** the five PNGs were reassigned to their correct SH01–SH05 filenames in merged PR #70. This is a **documentary follow-up** to the earlier visual inspection, not a new independent motion or physical-geometry test. Evidence: the five image candidates, the corrected [case-study gallery](../README.md), [provenance](../provenance.json), and recorded Phase 5F observations. No video, motion boundaries, camera model, approved geography diagram, generator logs or original shot-level approval ledger was independently established here.
 
 **Source of truth:** Current filenames refer to intended shots. The historical Phase 5F report deliberately describes the *old* filenames and remains unchanged for audit provenance; do not use its old filename links as current shot labels.
 

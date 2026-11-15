@@ -6,7 +6,7 @@
 
 ## Evidence inspected
 
-- [Five correctly mapped standalone keyframes](README.md) and [blob provenance](provenance.json).
+- [Five correctly mapped standalone keyframes](../README.md) and [blob provenance](../provenance.json).
 - [Phase 5F independent visual audit](phase5f-independent-visual-audit.md), which records **historical pre-remapping filenames**.
 - [Phase 5G continuity gates](phase5g-narrative-physical-continuity.md).
 - [Approved lighting rule](phase5g-lighting-approval.md): faint practicals before release allowed; **major amber activation only after release**.
