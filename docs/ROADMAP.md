@@ -272,3 +272,7 @@ The **Release direction** table above is the single authoritative version/date/f
 ### V2.4 Phase 4C — manual/local repair handoff (implementation PR)
 
 **Status: PROPOSED / NOT_MERGED.** The QA runtime can prepare a provider-neutral, copy-only repair contract for an explicitly authorized proposed shot revision. It names immutable assets, output, rollback and acceptance checks; a separate helper records reviewer-reported outcomes. No provider jobs, media editing, actual checksum verification, image inspection, automatic acceptance or production permission are implemented. Independent repaired-media validation remains an explicit gate. The Last Light Production GO stays HOLD.
+
+### V2.4 Phase 4D — actual byte integrity (implementation PR)
+
+**Status: PROPOSED / NOT_MERGED.** Installed QA can hash supplied real original and candidate bytes, verify expected SHA-256 values and detect unchanged content for an exact scoped repair handoff. This is **byte-level integrity only**: no filesystem-origin authentication, visual/audio interpretation, edit-boundary inspection, full-film validation, repair execution or automatic acceptance. Human media inspection and separate user acceptance remain required; The Last Light Production GO remains HOLD.
