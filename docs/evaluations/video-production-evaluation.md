@@ -1,6 +1,6 @@
 # VP-01–VP-06 — Video Production independent-agent evaluation
 
-Versioned exact prompts and **private reviewer criteria**: [video-production-cases.json](../tests/agent-acceptance/video-production-cases.json). This pack does not modify the canonical V2-03 acceptance suite or add another runner.
+Versioned exact prompts and **private reviewer criteria**: [video-production-cases.json](../../tests/agent-acceptance/video-production-cases.json). This pack does not modify the canonical V2-03 acceptance suite or add another runner.
 
 ## Coverage
 

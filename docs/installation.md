@@ -1,13 +1,13 @@
 # Installation
 
-Universal AI Film Director is a collection of seven portable Agent Skills. The primary installation path is the [Skills CLI](https://skills.sh/), which supports GitHub sources without cloning.
+Universal AI Film Director is a collection of seven portable Agent Skills. The canonical GitHub source is `universal-ai-film/universal-ai-film-director` (formerly `montadhahri/universal-ai-film-director`). The primary installation path is the [Skills CLI](https://skills.sh/), which supports GitHub sources without cloning.
 
-> **Availability:** This repository is public. A clean unauthenticated public-GitHub installation of all seven skills passed the pinned Skills CLI test on the [v2.0.0 skill revision](https://github.com/montadhahri/universal-ai-film-director/actions/runs/41921930247). This proves noninteractive installation in CI, not live host invocation.
+> **Availability:** This repository is public. A clean unauthenticated public-GitHub installation of all seven skills passed the pinned Skills CLI test on the [v2.0.0 skill revision](https://github.com/universal-ai-film/universal-ai-film-director/actions/runs/41921930247). This proves noninteractive installation in CI, not live host invocation.
 
 ## Quick install — Film Director
 
 ```bash
-npx skills add montadhahri/universal-ai-film-director --skill universal-ai-film-director
+npx skills add universal-ai-film/universal-ai-film-director --skill universal-ai-film-director
 ```
 
 Start a film by giving your compatible AI agent a story idea and requested runtime. The Director asks at most one focused discovery question at a time, proposes professional creative choices, and requests your approval of the screenplay, Visual Bible and storyboard.
@@ -33,30 +33,30 @@ This walkthrough describes **expected behavior**, not an independently observed 
 ## Install all skills
 
 ```bash
-npx skills add montadhahri/universal-ai-film-director --skill '*'
+npx skills add universal-ai-film/universal-ai-film-director --skill '*'
 ```
 
 On **Windows CMD**, use double quotes instead; single quotes are passed literally and the wildcard selection can fail:
 
 ```cmd
-npx skills add montadhahri/universal-ai-film-director --skill "*"
+npx skills add universal-ai-film/universal-ai-film-director --skill "*"
 ```
 
 ## List available skills
 
 ```bash
-npx skills add montadhahri/universal-ai-film-director --list
+npx skills add universal-ai-film/universal-ai-film-director --list
 ```
 
 ## Install individual specialists
 
 ```bash
-npx skills add montadhahri/universal-ai-film-director --skill film-storytelling
-npx skills add montadhahri/universal-ai-film-director --skill film-visual-direction
-npx skills add montadhahri/universal-ai-film-director --skill film-cinematography
-npx skills add montadhahri/universal-ai-film-director --skill film-video-production
-npx skills add montadhahri/universal-ai-film-director --skill film-sound-direction
-npx skills add montadhahri/universal-ai-film-director --skill film-continuity-qa
+npx skills add universal-ai-film/universal-ai-film-director --skill film-storytelling
+npx skills add universal-ai-film/universal-ai-film-director --skill film-visual-direction
+npx skills add universal-ai-film/universal-ai-film-director --skill film-cinematography
+npx skills add universal-ai-film/universal-ai-film-director --skill film-video-production
+npx skills add universal-ai-film/universal-ai-film-director --skill film-sound-direction
+npx skills add universal-ai-film/universal-ai-film-director --skill film-continuity-qa
 ```
 
 The CLI installs skills for the agents it supports and asks for installation preferences. A target agent's native discovery and skill-to-skill delegation may vary.
@@ -66,7 +66,7 @@ The CLI installs skills for the agents it supports and asks for installation pre
 If you want to inspect, modify or test the source:
 
 ```bash
-git clone https://github.com/montadhahri/universal-ai-film-director.git
+git clone https://github.com/universal-ai-film/universal-ai-film-director.git
 cd universal-ai-film-director
 npx skills add ./skills/universal-ai-film-director
 ```
@@ -119,7 +119,7 @@ The owner provided screenshots from an OpenCode **Build / Beam Free** session in
 
 ### Project-local OpenCode follow-up — owner-operated Windows screenshots (2026-11-07)
 
-The owner used Skills CLI `1.7.6` from Windows CMD in `C:\Users\nouni\OneDrive\Desktop\sdsdsdsd` (an existing owner environment, **not** a clean independent user or host). `npx skills add montadhahri/universal-ai-film-director --skill "*"` completed project-local installation. A directory listing visibly contained all seven skill folders under `.agents\skills\`; the initial Director-only installation and subsequent seven-skill installation were both observed. The CLI displayed third-party security indicators (Gen Safe, Socket 0 alerts, Snyk Low Risk) for the Director; these are **not** a full security audit.
+The owner used Skills CLI `1.7.6` from Windows CMD in `C:\Users\nouni\OneDrive\Desktop\sdsdsdsd` (an existing owner environment, **not** a clean independent user or host). `npx skills add universal-ai-film/universal-ai-film-director --skill "*"` completed project-local installation. A directory listing visibly contained all seven skill folders under `.agents\skills\`; the initial Director-only installation and subsequent seven-skill installation were both observed. The CLI displayed third-party security indicators (Gen Safe, Socket 0 alerts, Snyk Low Risk) for the Director; these are **not** a full security audit.
 
 - **Director discovery:** OpenCode Build / Beam Free visibly read the project-local `.agents\skills\universal-ai-film-director\SKILL.md` and `references\discovery.md`. For a fictional 30-second robot/flower concept it asked one focused discovery question and did not advance approvals.
 - **Director + Storytelling:** OpenCode visibly displayed native `Skill "universal-ai-film-director"` and `Skill "film-storytelling"` calls, and reported both project-local Windows paths. It produced a five-beat, 30-second **PROPOSED** story, left screenplay approval to the user, and did not claim media generation or spending.

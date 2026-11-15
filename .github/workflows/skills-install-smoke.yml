@@ -48,11 +48,11 @@ jobs:
           unset GH_TOKEN GITHUB_TOKEN GIT_ASKPASS SSH_ASKPASS
           export HOME="$scratch/home"
           mkdir -p "$HOME"
-          npx --yes skills@1.7.4 add montadhahri/universal-ai-film-director --skill '*' -a codex -y --copy
+          npx --yes skills@1.7.4 add universal-ai-film/universal-ai-film-director --skill '*' -a codex -y --copy
           # This command installs public main, not the pull request checkout.
           # Compare public installation against public main, and keep the
           # separate local-checkout step responsible for validating PR changes.
-          git clone --quiet --depth 1 --branch main https://github.com/montadhahri/universal-ai-film-director.git "$scratch/public-main"
+          git clone --quiet --depth 1 --branch main https://github.com/universal-ai-film/universal-ai-film-director.git "$scratch/public-main"
           echo "Public reference revision: $(git -C "$scratch/public-main" rev-parse HEAD)"
           for skill in universal-ai-film-director film-storytelling film-visual-direction film-cinematography film-video-production film-sound-direction film-continuity-qa; do
             source_dir="$scratch/public-main/skills/$skill"

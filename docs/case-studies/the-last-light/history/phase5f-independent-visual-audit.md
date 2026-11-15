@@ -20,11 +20,11 @@ All five images exist and their bytes match the cited repository blobs (**PASS**
 
 ## Correct narrative viewing order (do not rename assets in this audit)
 
-1. **SH01:** [current `SH05.png`](images/keyframes/SH05.png) — unlit town, blue night, central arch and distant tower.
-2. **SH02:** [current `SH01.png`](images/keyframes/SH01.png) — child crouches and handles an amber spark on the street.
-3. **SH03:** [current `SH02.png`](images/keyframes/SH02.png) — child carries amber light toward the tower.
-4. **SH04:** [current `SH03.png`](images/keyframes/SH03.png) — child positions the spark above a lantern cradle.
-5. **SH05:** [current `SH04.png`](images/keyframes/SH04.png) — warm lights throughout the town and tower.
+1. **SH01:** [current `SH05.png`](../images/keyframes/SH05.png) — unlit town, blue night, central arch and distant tower.
+2. **SH02:** [current `SH01.png`](../images/keyframes/SH01.png) — child crouches and handles an amber spark on the street.
+3. **SH03:** [current `SH02.png`](../images/keyframes/SH02.png) — child carries amber light toward the tower.
+4. **SH04:** [current `SH03.png`](../images/keyframes/SH03.png) — child positions the spark above a lantern cradle.
+5. **SH05:** [current `SH04.png`](../images/keyframes/SH04.png) — warm lights throughout the town and tower.
 
 ## Visual and narrative continuity findings
 

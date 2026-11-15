@@ -6,6 +6,12 @@ tags, not by duplicated skill source folders.
 
 ## [Unreleased]
 
+### V2.6 — Studio integration (proposed)
+- Introduce a versioned, read-only portable project snapshot projection and JSON Schema, preserving source Project Bible authority and operational HOLD. Angular consumption, full asset manifests and write-back remain unimplemented.
+
+### V2.6 — reusable templates (proposed)
+- Add a synthetic, zero-cost first-film starter that reuses existing Project Bible, storyboard, shot-plan, audio, shot-packet and checkpoint templates, with deterministic timing and approval-safety tests. This is a planning example, not independent user or real-media acceptance.
+
 
 
 ### Documentation (unreleased)
@@ -87,7 +93,7 @@ Stable software release: [v2.3.0](https://github.com/montadhahri/universal-ai-fi
 - Standard local Node.js entrypoints remain host-blocked by EPERM; full independent Phase 6 acceptance is incomplete; no rendered-media verification claimed. Passing hosted CI is separate evidence, not retroactive local PASS.
 - Preserve all seven skills, contracts, approved project state, SH05 production-validation deferral and false operational flags. The Last Light Production GO remains HOLD.
 
-[GitHub release](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.2.0). See the [existing V2 release checklist](docs/releases/v2.0.0-checklist.md#v220-release-preparation--owner-accepted-focused-evidence) for evidence hashes and observed validation. V2.3.0 independent onboarding is the next planned milestone.
+[GitHub release](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.2.0). See the [existing V2 release checklist](docs/archive/releases/v2.0.0-checklist.md#v220-release-preparation--owner-accepted-focused-evidence) for evidence hashes and observed validation. V2.3.0 independent onboarding is the next planned milestone.
 
 ## [2.1.0] — 2026-11-07
 
