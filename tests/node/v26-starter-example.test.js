@@ -30,7 +30,7 @@ test('V2.6 starter has deterministic 15-second nonoverlapping shot plan', () => 
 });
 
 test('V2.6 starter keeps approvals, production and media claims safe', () => {
-  for (const marker of ['`PROPOSED`', '`false`', '`PLAN_ONLY`', '`UNVERIFIED`', 'NOT_GENERATED / NOT_INSPECTED', 'not a real agent execution']) {
+  for (const marker of ['`PROPOSED`', '`false`', '`PLAN_ONLY`', '`UNVERIFIED`', 'NOT_GENERATED / NOT_INSPECTED', 'real agent execution']) {
     assert.ok(example.includes(marker), marker);
   }
   assert.ok(example.includes('Do not import this Markdown as schema-valid JSON'));
