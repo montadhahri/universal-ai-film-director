@@ -15,6 +15,8 @@ The **seven installable Agent Skills** live in [`../skills/`](../skills/universa
 
 For external tools, see the [portable read-only project snapshot contract](project-snapshot-integration.md). This contract does not grant production authority.
 
+For planning-only onboarding, see the [fictional short-film starter](examples/first-film-starter.md) and [documentary interview starter](examples/documentary-interview-starter.md). Both reuse installed skill templates and require separate approvals for real production.
+
 The [root README](../README.md) is the public product entry point. [CHANGELOG](../CHANGELOG.md) records releases. **Do not maintain another live version roadmap or status document.**
 
 ## Supporting evidence — not additional active roadmaps
