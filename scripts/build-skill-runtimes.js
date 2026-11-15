@@ -10,7 +10,8 @@ const mapping={
     "production-pipeline",
     "checkpoint-envelope",
     "audio-continuity",
-    "budget-planner"
+    "budget-planner",
+    "production-jobs"
   ],
   "film-storytelling": [
     "project-contracts",
@@ -28,7 +29,8 @@ const mapping={
   "film-video-production": [
     "project-contracts",
     "production-pipeline",
-    "budget-planner"
+    "budget-planner",
+    "production-jobs"
   ],
   "film-sound-direction": [
     "project-contracts",
