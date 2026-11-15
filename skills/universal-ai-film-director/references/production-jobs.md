@@ -1,0 +1,3 @@
+# V2.5 provider-neutral job records
+
+Use optional installed `scripts/runtime.js` helpers to plan manual/local/mock jobs in a separate immutable ledger bound to the Project Bible ID and revision. MOCK jobs can START, FAIL, retry or COMPLETE into a synthetic MOCK_MANIFEST; this is never generated media. MANUAL/LOCAL jobs may record user-reported artifact references, never verified. Repeated idempotency keys are no-ops only for matching requests; conflicts and stale revisions fail closed. External provider methods, production GO, spending, uploads and publication remain unavailable. Preserve all approvals and locked shots.

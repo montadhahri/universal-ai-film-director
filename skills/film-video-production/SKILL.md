@@ -36,3 +36,7 @@ This skill includes `scripts/runtime.js` **inside its installed skill directory*
 ## V2.5 shot cost alternatives (planning only)
 
 Provide distinct costed shot options (MANUAL, LOCAL, MOCK, EXTERNAL) with currency, minor-unit cost or null for unknown, source, observed date and KNOWN/ESTIMATE/UNKNOWN confidence. Never infer that a zero-credit option has zero compute or labor cost. The Director owns the ceiling and selection; `planBudget` is a pure read-only helper, not a job executor or approval gate. Unknown costs or over-budget choices remain blocked, and all external operations require separate explicit permission.
+
+## V2.5 provider-neutral job records
+
+Optional installed `scripts/runtime.js` exposes `newJobLedger`, `planProductionJob`, `advanceMockJob` and `recordExternalArtifact`. Only mock jobs advance through simulated states. Manual/local references are user-reported and unverified. No provider, media or approval execution occurs.
