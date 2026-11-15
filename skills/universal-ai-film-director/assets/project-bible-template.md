@@ -64,3 +64,7 @@ For machine-readable checkpoints see
 **the JSON schema** and the
 **handoff template**. Do not infer approval or
 claim a video was inspected from an illustrative entry.
+
+## Optional V2.4 Character & World Memory (planning only)
+
+The machine-readable Project Bible may include `memory_anchors` without changing `schema_version: "2.0"`. Each record has a stable `id`, `kind` (`character`, `wardrobe`, `prop`, `location`, `look`), positive `revision`, `status` (`PROPOSED`, `APPROVED`, `UNKNOWN`), description, `provenance` (`kind` and nullable `reference`), and `shot_refs` pointing to existing shot IDs. Optional `reference_assets` are identifiers, **not** proof that files exist or were visually inspected. An `APPROVED` record requires direct user evidence (`actor: USER`, `source_ref`, `quote`). Keep earlier revisions and record new revisions rather than silently changing approved identities. Legacy Project Bibles can omit the collection. No anchor grants production, provider or publication authorization.
