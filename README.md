@@ -178,6 +178,7 @@ CI validates repository structure and skills, while a [pinned public-GitHub inst
 | [v2.3.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.3.0) | Released 2026-11-14 (limited) | Beginner onboarding and Director first-turn improvements, deterministic planning regressions; >=5 unfamiliar-user tests NOT_RUN under limited-release exception |
 | [v2.4.0](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.4.0) | **Latest stable; owner-confirmed released 2026-11-15 (limited)** | Character & World Memory, scoped Smart Film Repair planning, byte-integrity checks and portable runtimes; real-media quality and independent end-to-end acceptance NOT_VERIFIED |
 | **v2.5.0** | **Next — planned** | Intelligent Budget Director and provider-neutral production foundations; see roadmap |
+| **v2.6.0** | Planned | Templates, Community Gallery and local-first Visual Film Studio foundations designed for future production modes; live-action workflows are **not** part of V2.6 |
 | **V3.0–V3.4 (proposed)** | Feasibility-gated research on `develop` | Shared production engine, then live-action pre-production (V3.1), on-set assistance (V3.2), post-production (V3.3) and independent full-workflow validation (V3.4) |
 | **V4 (future candidate)** | Not scheduled | Unified AI/live-action Visual Film Studio; hybrid production remains a separate research idea |
 
