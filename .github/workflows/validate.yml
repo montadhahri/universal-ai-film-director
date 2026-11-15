@@ -20,6 +20,8 @@ jobs:
         run: node tests/validate_repo.js
       - name: Verify all seven skill runtimes match canonical scripts
         run: node scripts/build-skill-runtimes.js --check
+      - name: Verify installed contracts match canonical schemas
+        run: node scripts/build-skill-contracts.js --check
       - name: Validate isolated skill payload
         run: node tests/package/validate-package.js
       - name: Run complete Node.js regression suite
