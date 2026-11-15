@@ -30,4 +30,4 @@ The counts above come from owner-supplied GitHub Actions output unless otherwise
 
 One-time inventory workflows/scripts were removed by PR #130; regular security checks remain. The owner explicitly withdrew an earlier email privacy/remediation request and accepts public historical email metadata. No Git history rewrite is planned.
 
-Maintain this single summary rather than appending dated reports for each audit step. Preserve significant PR/run references and use Git history for earlier investigations. See [V2 release checklist](../releases/v2.0.0-checklist.md) for release decisions and [ROADMAP](../ROADMAP.md) for product priorities.
+Maintain this single summary rather than appending dated reports for each audit step. Preserve significant PR/run references and use Git history for earlier investigations. See [V2 release checklist](../archive/releases/v2.0.0-checklist.md) for release decisions and [ROADMAP](../ROADMAP.md) for product priorities.

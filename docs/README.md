@@ -1,6 +1,6 @@
 # Documentation index
 
-The **seven installable Agent Skills** live in [`../skills/`](../skills/). Repository-level `docs/`, `tests/`, `contracts/` and root `scripts/` are development resources, **not installed as part of an individual skill**. Each skill includes only its own `SKILL.md`, references, assets and optional bundled runtime.
+The **seven installable Agent Skills** live in [`../skills/`](../skills/universal-ai-film-director/SKILL.md). Repository-level `docs/`, `tests/`, `contracts/` and root `scripts/` are development resources, **not installed as part of an individual skill**. Each skill includes only its own `SKILL.md`, references, assets and optional bundled runtime.
 
 ## Current product documentation
 

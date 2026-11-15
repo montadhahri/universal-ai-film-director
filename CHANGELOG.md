@@ -90,7 +90,7 @@ Stable software release: [v2.3.0](https://github.com/montadhahri/universal-ai-fi
 - Standard local Node.js entrypoints remain host-blocked by EPERM; full independent Phase 6 acceptance is incomplete; no rendered-media verification claimed. Passing hosted CI is separate evidence, not retroactive local PASS.
 - Preserve all seven skills, contracts, approved project state, SH05 production-validation deferral and false operational flags. The Last Light Production GO remains HOLD.
 
-[GitHub release](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.2.0). See the [existing V2 release checklist](docs/releases/v2.0.0-checklist.md#v220-release-preparation--owner-accepted-focused-evidence) for evidence hashes and observed validation. V2.3.0 independent onboarding is the next planned milestone.
+[GitHub release](https://github.com/montadhahri/universal-ai-film-director/releases/tag/v2.2.0). See the [existing V2 release checklist](docs/archive/releases/v2.0.0-checklist.md#v220-release-preparation--owner-accepted-focused-evidence) for evidence hashes and observed validation. V2.3.0 independent onboarding is the next planned milestone.
 
 ## [2.1.0] — 2026-11-07
 
