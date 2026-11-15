@@ -728,9 +728,6 @@ function reviewRepairEvidence(project,{shot_id,source_revision,new_revision,befo
 module.exports={planSmartRepair,prepareScopedRepair,reviewRepairEvidence};
 
 }
-module.exports={planSmartRepair};
-
-}
 };
 const cache=new Map();
 function load(id){
