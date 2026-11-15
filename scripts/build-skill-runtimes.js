@@ -40,7 +40,8 @@ const mapping={
     "production-pipeline",
     "audio-continuity",
     "director-authority",
-    "smart-repair"
+    "smart-repair",
+    "repair-handoff"
   ]
 };
 function render(names){
