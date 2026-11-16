@@ -2,9 +2,11 @@
 
 # 🎬 Universal AI Film Director
 
-**Turn a film idea into a screenplay, visual direction, timed storyboard, and production-ready plan—with you in creative control.**
+**Your AI Filmmaking Crew. One Vision. Your Direction.**
 
-An open-source AI filmmaking crew: one Director and six specialist skills working together.
+Turn your film idea into a cinematic production plan with an AI Director and six specialist skills—from storytelling and visual direction to storyboarding, sound, and continuity.
+
+**Open source · AI Agent Skills · No paid tools required for planning**
 
 [![Stable release](https://img.shields.io/badge/stable-v2.6.0-blue)](https://github.com/universal-ai-film/universal-ai-film-director/releases/tag/v2.6.0)
 [![Next milestone](https://img.shields.io/badge/next-v2.7.0-orange)](docs/ROADMAP.md)
@@ -17,7 +19,7 @@ An open-source AI filmmaking crew: one Director and six specialist skills workin
 </div>
 
 
-> **[V2.6.0 released on 2026-11-15](https://github.com/universal-ai-film/universal-ai-film-director/releases/tag/v2.6.0):** Reusable 15-second and documentary planning starters, portable Project Bible/handoff/snapshot contracts, community showcase metadata and expanded schema/isolated-skill tests are available. This is a software/planning release: independent unfamiliar-user onboarding is **NOT_RUN**; universal host compatibility, live Studio integration and actual media quality remain **NOT_VERIFIED**. Repeated real-world testing is planned for V2.7. Production and paid provider operations still require separate approval.
+> **Latest stable: [v2.6.0](https://github.com/universal-ai-film/universal-ai-film-director/releases/tag/v2.6.0).** Planning skills are available now; independent new-user testing and media-generation quality remain unverified. [Release details and limitations](#-releases-and-roadmap).
 
 ## ✨ What can you create?
 
@@ -184,6 +186,9 @@ The owner has accepted focused text-only checkpoint recovery, scoped revision, c
 
 
 ## 🏷️ Releases and roadmap
+
+> **[V2.6.0 released on 2026-11-15](https://github.com/universal-ai-film/universal-ai-film-director/releases/tag/v2.6.0):** Reusable 15-second and documentary planning starters, portable Project Bible/handoff/snapshot contracts, community showcase metadata and expanded schema/isolated-skill tests are available. This is a software/planning release: independent unfamiliar-user onboarding is **NOT_RUN**; universal host compatibility, live Studio integration and actual media quality remain **NOT_VERIFIED**. Repeated real-world testing is planned for V2.7. Production and paid provider operations still require separate approval.
+
 
 | Version | Status | Focus |
 | --- | --- | --- |
