@@ -4,7 +4,7 @@
 
 **Turn a film idea into a screenplay, visual direction, timed storyboard, and production-ready plan—with you in creative control.**
 
-An open-source AI filmmaking crew: one Director, six specialist skills, and **you in creative control**.
+An open-source AI filmmaking crew: one Director and six specialist skills working together.
 
 [![Stable release](https://img.shields.io/badge/stable-v2.6.0-blue)](https://github.com/universal-ai-film/universal-ai-film-director/releases/tag/v2.6.0)
 [![Next milestone](https://img.shields.io/badge/next-v2.7.0-orange)](docs/ROADMAP.md)
