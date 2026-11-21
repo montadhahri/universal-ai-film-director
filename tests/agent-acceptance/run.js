@@ -34,17 +34,18 @@ function evaluate(input={captures:[]}){
   limitation:'Reviewer-provided results; offline structural checks do not verify agent identity, semantics, media or host.'};
 }
 function main(args=process.argv.slice(2)){
- let input={captures:[]},out=null;
+ let input={captures:[]},out=null,strict=false;
  for(let i=0;i<args.length;i++){
   if(args[i]==='--captures'&&args[i+1])input=JSON.parse(fs.readFileSync(args[++i],'utf8'));
+  else if(args[i]==='--strict')strict=true;
   else if(args[i]==='--json-out'&&args[i+1])out=args[++i];
-  else throw Error('Usage: run.js [--captures file.json] [--json-out file.json]');
+  else throw Error('Usage: run.js [--captures file.json] [--json-out file.json] [--strict]');
  }
  const r=evaluate(input);
  if(out){fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,JSON.stringify(r,null,2)+'\n')}
  for(const x of r.results)console.log(x.status+' '+x.case_id);
  console.log('Observed cases:',r.counts.PASS+r.counts.FAIL+r.counts.BLOCKED,'of',r.total,'; runner did not invoke agents');
- return r.counts.FAIL?1:0;
+ return r.counts.FAIL||(strict&&!r.complete)?1:0;
 }
 if(require.main===module)try{process.exitCode=main()}catch(e){console.error(e.message);process.exitCode=2}
 module.exports={evaluate,main};
