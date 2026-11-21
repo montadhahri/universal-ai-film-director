@@ -34,7 +34,7 @@ function run(out=path.join(ROOT,'build/preprod-validation.json')) {
   external_acceptance:{agent:'NOT_RUN',creative_quality:'NOT_RUN',media:'NOT_RUN'},
   report_schema:'preprod-validation-v1',
   timestamp_utc:new Date().toISOString(),
-  repository:'montadhahri/universal-ai-film-director',
+  repository:'universal-ai-film/universal-ai-film-director',
   release_authorized:false,production_go:false,repository_visibility_change:false,
   agent_executed:false,video_generated:false,checks,
   passed:checks.every(x=>x.passed),
