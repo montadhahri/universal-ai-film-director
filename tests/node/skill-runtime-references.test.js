@@ -3,7 +3,7 @@ const test=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'../..'),skills=path.join(root,'skills');
-const canonicalScripts=fs.readdirSync(path.join(root,'scripts')).filter(name=>name.endsWith('.js'));
+const canonicalScripts=fs.readdirSync(path.join(root,'scripts')).filter(name=>name.endsWith('.js')&&!name.startsWith('build-'));
 function validateRuntimeReferences(content,file,names=canonicalScripts){
  const inventory=new Set(names);
  for(const [index,line] of content.split('\n').entries()){
