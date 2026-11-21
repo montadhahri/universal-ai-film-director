@@ -50,3 +50,13 @@ test('strict CLI requires complete reviewed captures while default remains offli
   assert.equal(run(valid,true),0);
  } finally {fs.rmSync(dir,{recursive:true,force:true});}
 });
+
+test('preproduction report separates offline success from external acceptance and records revision',()=>{
+ const fs=require('node:fs'),os=require('node:os'),path=require('node:path');
+ const {spawnSync}=require('node:child_process');
+ // Inspect the report builder without recursively invoking the regression suite.
+ const source=fs.readFileSync(require.resolve('../preprod/run_validation.js'),'utf8');
+ assert.match(source,/evidence_class:'OFFLINE_HARNESS_ONLY'/);
+ assert.match(source,/external_acceptance:\{agent:'NOT_RUN',creative_quality:'NOT_RUN',media:'NOT_RUN'\}/);
+ assert.match(source,/source_revision:revision.status===0\?revision.stdout.trim\(\):null/);
+});
