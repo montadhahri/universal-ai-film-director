@@ -26,7 +26,12 @@ function run(out=path.join(ROOT,'build/preprod-validation.json')) {
   else if (proc.error) {result.passed=false;result.error=proc.error.message;}
   checks.push(result);
  }
+ const revision=spawnSync('git',['rev-parse','HEAD'],{cwd:ROOT,encoding:'utf8'});
  const report={
+  source_revision:revision.status===0?revision.stdout.trim():null,
+  environment:{node:process.version,platform:process.platform,arch:process.arch},
+  evidence_class:'OFFLINE_HARNESS_ONLY',
+  external_acceptance:{agent:'NOT_RUN',creative_quality:'NOT_RUN',media:'NOT_RUN'},
   report_schema:'preprod-validation-v1',
   timestamp_utc:new Date().toISOString(),
   repository:'montadhahri/universal-ai-film-director',
@@ -38,6 +43,7 @@ function run(out=path.join(ROOT,'build/preprod-validation.json')) {
  fs.mkdirSync(path.dirname(out),{recursive:true});
  fs.writeFileSync(out,JSON.stringify(report,null,2)+'\n');
  for (const item of checks) {console.log((item.passed?'PASS':'FAIL')+': '+item.name);if(!item.passed)console.log(item.stderr_tail||item.error||'');}
+ console.log('External acceptance: NOT_RUN (offline harness only)');
  console.log('Report:',out);
  return report.passed?0:1;
 }
